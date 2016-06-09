@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>It&apos;s Snowing!!!</title>
+    <link>http://www.woodwardweb.com/personal/its_snowing.html</link>
+    <description>It&apos;s the 18th November and it&apos;s snowing!!! Really heaving. Looks cool - might go outside and build a snowman. Wouldn&apos;t mind but I have to drive across 3 countries tomorrow. Doh!...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2004-11-18T22:25:14+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Don&apos;t do that</title>
+    <link>http://www.woodwardweb.com/vsts/dont_do_that.html</link>
+    <description>The source control system within Visual Studio Team System has a very powerful security model. One of the nice things is that if a user does not have read permissions on one of the objects in a tree, then that...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-12-08T18:51:24+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Rein+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/dont_do_that.html#c000785</link>
+    <description>Why isn&apos;t there an option to copy the inherited permissions when you stop inheriting? NTFS permissions does exactly that.</description>
+    <dc:date>2006-01-08T07:17:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=573</comments>   
+    <dc:creator>Rein</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/dont_do_that.html#c000786</link>
+    <description>Time, I guess :-)  But you are right - that would be good from a usability point of view.</description>
+    <dc:date>2006-01-09T09:55:39+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=573</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by James Manning+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/dont_do_that.html#c000788</link>
+    <description>Couple things to note:
+
+1) As long as you know the path ($/foo/bar) and you are an admin, you can use the command-line (in Beta 3 and final) to change the permissions still (granting yourself Read again, for instance)
+
+2) We&apos;ve made a fix so that admins will see such items in the UI regardless of whether they currently have Read permission or not, for exactly this reason.
+
+I&apos;m not sure about the copying of inherited permissions - it seems like a good idea, and it may just be an oversight, I&apos;ve forwarded it along to the responsible dev to find out.</description>
+    <dc:date>2006-01-11T23:39:39+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=573</comments>   
+    <dc:creator>James Manning</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by James Manning+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/dont_do_that.html#c000789</link>
+    <description>On the copy-inherited-permissions-when-you-stop-inheriting, I&apos;ve checked and it appears it&apos;s just an oversight on our part, unfortunately.  It&apos;s not likely to make the bar given how close we are to shipping, but it&apos;s likely to make V2.</description>
+    <dc:date>2006-01-12T03:15:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=573</comments>   
+    <dc:creator>James Manning</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by James Manning+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/dont_do_that.html#c000791</link>
+    <description>Just to confirm, we&apos;ve decided to postpone the copy inherited permissions, but it&apos;s a filed bug now and it&apos;ll be considered (and should be likely) for V2.
+
+Thanks, Rein!</description>
+    <dc:date>2006-01-13T16:44:39+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=573</comments>   
+    <dc:creator>James Manning</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

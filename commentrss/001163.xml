@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>VSTS Guidance Wiki</title>
+    <link>http://www.woodwardweb.com/vsts/vsts_guidance_w.html</link>
+    <description>I just found out about the following project going on at CodePlex out of the patterns and practices project which find a very interesting idea that I am going to try and find out if I can contribute to:- VSTSGuidance:...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-03-15T19:23:16+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

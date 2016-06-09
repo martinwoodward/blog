@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS MSSCCI Provider Updated</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_msscci_prov.html</link>
+    <description><![CDATA[A lot of people were asking about this when I was in Dublin.&nbsp; Brian Harry has announced the version 1.0&nbsp;of the TFS MSSCCI provider allowing you to access the power of Team Foundation Server from the following platforms (among others):-...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-04-07T10:57:15+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Tim+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_msscci_prov.html#c000846</link>
+    <description>Hi Martin,
+I currently use VSS and have VB6, .Net projects along with Crystal Reports, Stored Procedures etc stored in my VSS database.
+I understand that the TFS MSSCCI provider will allow me to access TFS in VB6. 
+Will I still be able to manage other file types within TFS (such as Crystal Reports)?
+Thanks, Tim.
+</description>
+    <dc:date>2006-04-25T09:45:47+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=634</comments>   
+    <dc:creator>Tim</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_msscci_prov.html#c000847</link>
+    <description>Hi Tim,
+
+You can manage any type of file with Team Foundation Server, including Crystal Reports and SQL scripts etc.  If you are using Crystal Reports directly from within Visual Studio then you should be able to use the MSSCCI provider to stay inside Visual Studio 6.  If you are using the Crystal Enterprise Manager stuff, then you will have to save you files locally and then use the Team Explorer client from Microsoft to manage these as you did with your old version control system.  The Team Explorer plug-in is installed into Visual Studio 2005 when you install the client software from the Team Foundation Server disk - if you don&apos;t have a version of Visual Studio 2005 installed on your machine then it will actually install a basic one for you just to allow you to do source control operations.
+
+Hope this helps.  Don&apos;t hesitate to get in touch if you have any other questions or post to the Microsoft forums where there are many folks who hang out and will be able to help.
+
+TFS General:- http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=22&amp;SiteID=1
+
+TFS Version Control (including posts about the MSSCCI provider):- http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=478&amp;SiteID=1
+
+Good luck,
+
+Martin.</description>
+    <dc:date>2006-04-25T10:30:02+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=634</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Tal Tikotzki+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_msscci_prov.html#c000999</link>
+    <description>A ping back on Delphi Integration with TFS through MSSCCI provider is availabl at
+http://blog2.tikotzki.com</description>
+    <dc:date>2007-04-07T11:37:10+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=634</comments>   
+    <dc:creator>Tal Tikotzki</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Roy+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_msscci_prov.html#c001245</link>
+    <description>I have installed MSSCCI so that my TFS will be integrated with SQL Server Management Studio. After I installed it, I now see TFS ain Tools / Options. But now what? How do I check out a file? Do I just open it and try to start typing and get a prompt to check the file out? Any help would be appreciated. Thanks.
+- Roy (Roy.McDougall@himco.com)</description>
+    <dc:date>2008-10-21T12:52:41+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=634</comments>   
+    <dc:creator>Roy</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mark+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_msscci_prov.html#c001339</link>
+    <description>My question exactly here Roy.
+Did you manage to fix it?
+
+Mark.</description>
+    <dc:date>2009-05-07T13:08:09+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=634</comments>   
+    <dc:creator>Mark</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Hardware Mute Hack</title>
+    <link>http://www.woodwardweb.com/technology/hardware_mute_h.html</link>
+    <description>I have a lovely Dell Precision M70 as my main development machine. It&apos;s a notebook so is great for when I am travelling around and has more than enough grunt to handle a few VMWare images running at once for...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-03-25T14:29:13+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by GregM+00:00</title>
+    <link>http://www.woodwardweb.com/technology/hardware_mute_h.html#c002208</link>
+    <description>Yeah, I&apos;ve thought of doing something like this several times for my dell.  I think I have some old plugs around here somewhere.  I&apos;ve been getting better about remembering to mute the darn thing before leaving the office, but I still forget on occasion.
+</description>
+    <dc:date>2006-03-27T01:53:16+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1528</comments>   
+    <dc:creator>GregM</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by MikeC+00:00</title>
+    <link>http://www.woodwardweb.com/technology/hardware_mute_h.html#c002209</link>
+    <description>Have you misspelt the word &apos;collected&apos; in this article?
+ I believe in the context you have used it, the word should be spelt S-T-O-L-E-N :)</description>
+    <dc:date>2006-03-27T10:23:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1528</comments>   
+    <dc:creator>MikeC</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

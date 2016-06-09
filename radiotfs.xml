@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>Radio TFS</title>
+    <link>http://teamsystemrocks.com/files/30/radiotfs/default.aspx</link>
+    <language>en-us</language>
+    <itunes:subtitle>Check in and Check out</itunes:subtitle>
+    <itunes:author>Paul Hacker, Mickey Gousset and Martin Woodward</itunes:author>
+    <itunes:summary>A show about all things related to Microsoft Visual Studio Team System and Microsoft Visual Studio Team Foundation Server</itunes:summary>
+    <description>A show about all things related to Microsoft Visual Studio Team System and Microsoft Visual Studio Team Foundation Server</description>
+
+    <itunes:owner>
+      <itunes:name>Paul Hacker</itunes:name>
+      <itunes:email>radiotfs@gmail.com</itunes:email>
+    </itunes:owner>
+
+    <itunes:image href="http://radiotfs.s3.amazonaws.com/radiotfs.jpg" />
+
+    <itunes:category text="Technology">
+      <itunes:category text="Tech News"/>
+    </itunes:category>
+
+    <item>
+      <title>Radio TFS 02: TFS 2008 What's New and Should You Upgrade</title>
+      <itunes:author>Paul Hacker, Mickey Gousset, Martin Woodward</itunes:author>
+      <itunes:subtitle>What is new in Team Foundation 2008, should you upgrade?</itunes:subtitle>
+      <itunes:summary>This week talk about the new Team Foundation Server 2008, discussing what is new and why you would want to upgrade.  We also introduce the new co-host, Martin Woodward</itunes:summary>
+      <enclosure url="http://radiotfs.s3.amazonaws.com/radio_tfs_002.mp3" length="22123763" type="audio/mpeg" />
+      <guid>http://radiotfs.s3.amazonaws.com/radio_tfs_002.mp3</guid>
+      <pubDate>Wed, 19 Feb 2008 14:26:00 GMT</pubDate>
+      <itunes:duration>46:04</itunes:duration>
+      <itunes:keywords>tfsradio, tfs, vsts, visual studio, team system, team foundation server, build, mvp</itunes:keywords>
+    </item>
+    <item>
+      <title>Radio TFS 01: Team Build 2008</title>
+      <itunes:author>Paul Hacker and Mickey Gousset</itunes:author>
+      <itunes:subtitle>What is new in Team Foundation Build 2008</itunes:subtitle>
+      <itunes:summary>This week we talk about the new build functionality in Team Foundation Server 2008, as well as introduce ourselves.</itunes:summary>
+      <enclosure url="http://radiotfs.s3.amazonaws.com/tfs_radio_001.mp3" length="14885520" type="audio/mpeg" />
+      <guid>http://radiotfs.s3.amazonaws.com/tfs_radio_001.mp3</guid>
+      <pubDate>Wed, 18 Jan 2008 15:51:00 EST</pubDate>
+      <itunes:duration>20:40</itunes:duration>
+      <itunes:keywords>tfsradio, tfs, vsts, visual studio, team system, team foundation server, build, mvp</itunes:keywords>
+    </item>
+
+  </channel>
+</rss>

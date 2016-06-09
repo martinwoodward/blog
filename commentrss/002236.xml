@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>A New Chapter for Cross Platform TFS</title>
+    <link>http://www.woodwardweb.com/teamprise/a_new_chapter_f.html</link>
+    <description>Four years ago this month, I joined a small start-up being created called Teamprise after reading about it on Eric Sink&apos;s blog. Our mission was to bring the benefits of application lifecycle management (ALM) with Microsoft Team Foundation Server to...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-11-09T13:16:49+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Gal Granov+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/a_new_chapter_f.html#c003491</link>
+    <description>Martin,
+
+great news.
+
+u deserve this. i hope there is a lot of $$$ in it also :)
+
+great!</description>
+    <dc:date>2009-11-09T13:23:00+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2236</comments>   
+    <dc:creator>Gal Granov</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by sholdsworth+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/a_new_chapter_f.html#c003492</link>
+    <description>Congrats Martin!
+
+Don&apos;t let the big blue machine crush your Java &amp; Eclipse love too much :)!
+
+
+Best of luck with the new role!</description>
+    <dc:date>2009-11-09T13:58:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2236</comments>   
+    <dc:creator>sholdsworth</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Pedro Pombeiro+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/a_new_chapter_f.html#c003493</link>
+    <description>What an exciting announcement! Congratulations Martin, this is an acknowledgment on the great work you guys have been doing!
+
+I wish all the best for your new role.</description>
+    <dc:date>2009-11-09T14:46:28+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2236</comments>   
+    <dc:creator>Pedro Pombeiro</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Rob Burke+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/a_new_chapter_f.html#c003494</link>
+    <description>Brilliant news. Congrats to you Martin.</description>
+    <dc:date>2009-11-09T17:02:39+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2236</comments>   
+    <dc:creator>Rob Burke</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mitch W+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/a_new_chapter_f.html#c003496</link>
+    <description>Congrats Martin,
+Does this mean the Build Bunny will come standard with TFS then?!</description>
+    <dc:date>2009-11-10T15:29:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2236</comments>   
+    <dc:creator>Mitch W</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Krishnamurthy Dixit+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/a_new_chapter_f.html#c003497</link>
+    <description>Hi Martin,
+
+This is really a fantastice news. Keep it up the good work. 
+
+Congratulations!!!!!
+
+Best Regards,
+Krishnamurthy Dixit</description>
+    <dc:date>2009-11-12T08:30:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2236</comments>   
+    <dc:creator>Krishnamurthy Dixit</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Rob Say+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/a_new_chapter_f.html#c003500</link>
+    <description>Now there&apos;s turn up for the books.. Congratulations - nice move, Carpe diem all that! I can see the grin from here.
+
+Washington is a nice place - get some time off if/when you get out there. </description>
+    <dc:date>2009-11-13T14:05:53+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2236</comments>   
+    <dc:creator>Rob Say</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by AP+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/a_new_chapter_f.html#c003612</link>
+    <description>I have a theory of where this is going. Let&apos;s see if you prove me wrong:
+
+1. Embrace: have a solution that offers cross-platform bug-tracking and version-control, so people would start using Microsoft tools
+
+2. Extend: In the following versions, Windows clients would work better and support more features than non-Windows clients, so people would pay buy Windows instead of other platforms
+
+3. Extinguish: kill support for cross-platform altogether - only Windows clients would be supported</description>
+    <dc:date>2010-01-01T15:46:00+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2236</comments>   
+    <dc:creator>AP</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/a_new_chapter_f.html#c003711</link>
+    <description>@AP - I&apos;ll let you judge us by our actions, but I&apos;m confident that we&apos;ll prove you wrong.  While it is true that the Visual Studio version will probably always have some additional features (such as being able to administer TFS), the Eclipse plug-in will continue to offer the functionality that makes most sense for the Eclipse developer to be able to contribute as a peer with Team Foundation Server.  In fact in some cases there will be features that exist only in the plug-in or on cross-platform clients because they make more sense to those developers.
+
+The thing that impressed me the most about the team, and the thing that ultimately convinced me to join Microsoft, was the fact that they are truly committed to ensuring that all members of the software development project can collaborate with TFS as the central server for communication.  There is also the fact that Microsoft themselves are dependent on the cross-platform capabilities to develop other software that they sell and support as they use TFS internally on many projects.
+
+Anyway - be sure to check back with me in the years to come and let me know how you think we are doing.</description>
+    <dc:date>2010-01-06T09:44:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2236</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

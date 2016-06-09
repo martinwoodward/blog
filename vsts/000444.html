@@ -1,0 +1,1016 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/vsts/creating_a_tfs.html">
+<dc:title>Creating a TFS 2008 with SP1 Slipstreamed ISO image</dc:title>
+<dc:description>Now that TFS 2008 SP1 is here, time to create a version of the TFS installer media that just contains the bits with SP1 applied.&#160; This is essential for installations targeting SQL Server 2008, but also makes the installation process...</dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2008-08-12T14:06:36+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/vsts/visual_studio_t.html" title="Visual Studio Team System 2008 SP1 Now Available!" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/personal/updated_woodwar.html" title="Updated WoodwardWeb" />
+    
+    <title>Creating a TFS 2008 with SP1 Slipstreamed ISO image - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-444" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Creating a TFS 2008 with SP1 Slipstreamed ISO image</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2008-08-12T14:06:36+00:00">August 12, 2008  2:06 PM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/creating_a_tfs.html#comments">10 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>Now that TFS 2008 SP1 is here, time to create a version of the TFS installer media that just contains the bits with SP1 applied.&#160; This is essential for installations targeting SQL Server 2008, but also makes the installation process onto Windows Server 2008 much easier and any installation faster (otherwise you have to install TFS 2008, then apply the service pack).&#160; Note that this is only required for new TFS installations - if you already have TFS installed then you are best of simply running the excellent service pack installer and it will do the business.&#160; Hopefully in a few weeks Microsoft will make a TFS 2008 with SP1 ISO image available, but in the meantime I thought I would write up the process of creating your own as I did mine.</p>  <p><strong>Update</strong>:&#160; After creating the patched install of everything and running it, there were errors for the Team Build and Proxy installers.&#160; Talking with fellow MVP <a href="http://geekswithblogs.net/etiennetremblay/Default.aspx">Etienne Tremblay</a> this is apparently a known issue, documented as such (d'oh, I should really RTFM) and that slipstreaming of the Build and Proxy stuff is not supported at this present time.&#160; I've therefore updated this post to include the TFS SP1 rather than patched Build and Proxy installations so that you can do it the old fashioned way of installing, then patching...</p>  <p><strong>Pre-requisites</strong></p>  <ul>   <li>TFS 2008 Installation DVD (Workgroup, <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=B0155166-B0A3-436E-AC95-37D7E39A440C&amp;displaylang=en">Trial</a> or Full) </li>    <li><a href="http://go.microsoft.com/fwlink/?LinkId=124829">TFS 2008 Service Pack 1</a> </li>    <li>An iso creating tool (I will use <a href="http://isorecorder.alexfeinman.com/isorecorder.htm">ISORecorder</a> because it is good, free and works on Windows Vista x64). </li>    <li>A couple of gigs worth of spare hard disk space to work in. </li> </ul>  <p><strong>Slipstreaming the TFS Installation Files</strong></p>  <ol>   <li>First, you must copy the contents of the TFS installation media onto a temporary folder on your hard drive. In my case I have created a folder called D:\tfs_sp1\source and copied the contents there.      <br /><a href="http://www.woodwardweb.com/WindowsLiveWriter/CreatingaTFS2008withSP1SlipstreamedISOim_96D9/source_2.png"><img style="float: none; margin-left: 25px" height="253" alt="D:\tfs_sp1\source" src="http://www.woodwardweb.com/WindowsLiveWriter/CreatingaTFS2008withSP1SlipstreamedISOim_96D9/source_thumb.png" width="325" /></a> </li>    <li>Extract the contents of the TFS installer executable by running the following command:      <br /><code>en_visual_studio_team_system_2008_team_foundation_server_service_pack_1_x86_x64wow.exe /extract:&lt;location&gt;</code>       <br /><a href="http://www.woodwardweb.com/WindowsLiveWriter/CreatingaTFS2008withSP1SlipstreamedISOim_96D9/Administrator%20Admin%20Cmd%20(2)_2.png"><img style="float: none; margin-left: 25px" height="318" alt="Administrator command shell running extract command." src="http://www.woodwardweb.com/WindowsLiveWriter/CreatingaTFS2008withSP1SlipstreamedISOim_96D9/Administrator%20Admin%20Cmd%20(2)_thumb.png" width="500" /></a> </li>    <li>Run the following command to apply the patch to the contents of the main TFS application installation folder (AT):      <br /><code>msiexec /a &lt;RTM Source Dir&gt;\AT\vs_setup.msi /p TFS90sp1-KB949786.msp TARGETDIR=&lt;SP1 Target Dir&gt;\AT</code>       <br /><a href="http://www.woodwardweb.com/WindowsLiveWriter/CreatingaTFS2008withSP1SlipstreamedISOim_96D9/Administrator%20Admin%20Cmd%20(3)_2.png"><img style="float: none; margin-left: 25px" height="317" alt="Administrator command shell with AT patch command showing" src="http://www.woodwardweb.com/WindowsLiveWriter/CreatingaTFS2008withSP1SlipstreamedISOim_96D9/Administrator%20Admin%20Cmd%20(3)_thumb.png" width="500" /></a> </li>    <li>Note that slipstreaming the Build and Proxy installations is not supported at this time.&#160; Also, the sharepoint extensions folder&#160; (wssExt) does not need patching so we can just copy these over. </li>    <li>Because slipstreaming the Build and Proxy is not supported, you will also want to copy over the original service pack .exe file so that you can run it after installing them. </li>    <li>Also, the Team Foundation Server client (Team Explorer) requires Visual Studio 2008 SP1, not the service pack for TFS.&#160; If you installed Team Explorer without the service pack onto a SP1 server then bad things can happen (I've seen class serialization errors but you might see other symptoms) - therefore you might want to exclude the TFC folder from this SP1 disc so that you have to install it from a Visual Studio Team Suite disc instead - hopefully remembering to run Visual Studio SP1 afterwards.&#160; However if, like me, you frequently install Team Explorer onto your TFS servers so that you can manage them directly from the server then you might want to also include the offline installation for Visual Studio on your new ISO image, that way you can quickly get access to the service pack.&#160; To get hold of the offline installer, download the <a href="http://go.microsoft.com/fwlink/?LinkId=122095">Visual Studio 2008 SP1 iso image</a>, mount the image and then copy the vs90sp1 folder.&#160; </li>    <li>While you are at it, you might as well download the latest copy of the <a href="http://www.microsoft.com/downloads/details.aspx?familyid=ff12844f-398c-4fe9-8b0d-9e84181d9923">TFS Install Guide</a>.&#160; If you are really fancy you can copy all the files over from the root of the RTM source and edit the setup.ini file to point to the new version of the document (mine is TFSInstall-RTM-v080811.chm). </li>    <li>Now we have a nice little package that contains all the bits we need to install TFS SP1 onto a server.&#160; Mine looks like this:&#160; <br /><a href="http://www.woodwardweb.com/WindowsLiveWriter/CreatingaTFS2008withSP1SlipstreamedISOim_96D9/withsp1%20(2)_2.png"><img style="float: none; margin-left: 25px" height="353" alt="withsp1 (2)" src="http://www.woodwardweb.com/WindowsLiveWriter/CreatingaTFS2008withSP1SlipstreamedISOim_96D9/withsp1%20(2)_thumb.png" width="500" /></a>       <br />If we go look inside the AT folder and check the file versions, we can see which assemblies were patched.&#160; The TFS2008 RTM versions of the assemblies were 9.0.21022.8 but the TS 2008 SP1 versions are 9.0.30729.1       <br /><a href="http://www.woodwardweb.com/WindowsLiveWriter/CreatingaTFS2008withSP1SlipstreamedISOim_96D9/Tools_2.png"><img style="float: none; margin-left: 25px" height="246" alt="Tools" src="http://www.woodwardweb.com/WindowsLiveWriter/CreatingaTFS2008withSP1SlipstreamedISOim_96D9/Tools_thumb.png" width="600" /></a> </li>    <li>You could just burn the contents of your SP1 folder to a DVD, but I personally like to have it as an ISO image so that I can easily archive it and point to it from a Virtual PC. To create an ISO image using the excellent <a href="http://isorecorder.alexfeinman.com/">ISORecorder</a> is very easy - just right click on your SP1 folder and select &quot;Create ISO Image&quot;.       <br /><a href="http://www.woodwardweb.com/WindowsLiveWriter/CreatingaTFS2008withSP1SlipstreamedISOim_96D9/CD%20Recording%20Wizard%20(2)_2.png"><img style="float: none; margin-left: 25px" height="309" alt="ISO Recorder" src="http://www.woodwardweb.com/WindowsLiveWriter/CreatingaTFS2008withSP1SlipstreamedISOim_96D9/CD%20Recording%20Wizard%20(2)_thumb.png" width="500" /></a> </li> </ol>  <p>And there you have it. A handy ISO image that should speed up your TFS installations no end.&#160; Happy installing!</p>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/creating_a_tfs.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/vsts/" rel="tag">Vsts</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/" rel="tag">tfs</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/tfs2008/" rel="tag">tfs2008</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">10 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-83555" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Dave</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/creating_a_tfs.html#comment-83555"><abbr class="published" title="2008-08-12T14:17:44+00:00">August 12, 2008  2:17 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(83555, 'Dave')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>You mention the TFS Install Guide, but the link only contains pre-SP1 and SP1Beta install guides. Where can I find a SP1-RTM install guide?</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-83565" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.woodwardweb.com" href="http://www.woodwardweb.com" rel="nofollow">Martin</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/creating_a_tfs.html#comment-83565"><abbr class="published" title="2008-08-12T16:14:50+00:00">August 12, 2008  4:14 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(83565, 'Martin')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Dave,</p>
+
+<p>The version called "TFSInstall-RTM-v080811.chm" contains the latest SP1 information.  The owners of this document have been informed and hopefully they will update the name of it soon to make it less confusing.</p>
+
+<p>Martin.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84275" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://intellects.in" href="http://intellects.in" rel="nofollow">Sameer Dhoot</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/creating_a_tfs.html#comment-84275"><abbr class="published" title="2008-08-21T22:22:32+00:00">August 21, 2008 10:22 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84275, 'Sameer Dhoot')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I am trying to follow the same instructions, the setup quits without any pormpts. I checked the event viewer and its says </p>
+
+<p>"Product: Microsoft Visual Studio 2008 Team Foundation Server - ENU - Update 'KB949786' installed successfully."</p>
+
+<p>But when i try to verify the file version they are indeeed RTM version i.e. 9.0.21022.8 and did not get updated as you noted. I have not yet installed the product as i have to use sql 2008.</p>
+
+<p>Regards,<br />
+Sameer Dhoot.<br />
+<a href="http://intellects.in" rel="nofollow">http://intellects.in</a><br />
+</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84276" class="comment comment-reply">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            <a class="commenter-profile" href="http://www.woodwardweb.com"><img alt="Author Profile Page" src="http://www.woodwardweb.com/mt/mt-static/images/comment/mt_logo.png" width="16" height="16" /></a>
+        
+                            <span class="vcard author"><a title="http://www.woodwardweb.com" href="http://www.woodwardweb.com">Martin Woodward</a></span> replied to <a href="http://www.woodwardweb.com/vsts/creating_a_tfs.html#comment-84275">comment from Sameer Dhoot</a>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/creating_a_tfs.html#comment-84276"><abbr class="published" title="2008-08-22T11:18:48+00:00">August 22, 2008 11:18 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84276, 'Martin Woodward')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Sameer, Are you running on Vista or Windows Server 2008?  If so, you will need to run the command prompt with admin rights before it will work correctly.  Otherwise when running the msiexec try running it with verbose logging enabled (i.e. "msiexec <b>/Lv logfile.txt</b> /a \AT\vs_setup.msi /p TFS90sp1-KB949786.msp TARGETDIR=\AT")  </p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84301" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://geekswithblogs.net/mnf/Default.aspx" href="http://geekswithblogs.net/mnf/Default.aspx" rel="nofollow">Michael Freidgeim</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/creating_a_tfs.html#comment-84301"><abbr class="published" title="2008-09-23T05:46:30+00:00">September 23, 2008  5:46 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84301, 'Michael Freidgeim')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Command in step 2 is truncated.<br />
+And I couldn't find the file. Is it actually the name of SP1 download TFS90sp1-KB949786-ENU.exe ?<br />
+Also I found that TFSInstall-SP1-RTM-v080908.chm has similar section<br />
+"How to: Integrate the Installation of Team Foundation Server and Service Pack 1" </p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84408" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://allegiance.chi-town.com" href="http://allegiance.chi-town.com" rel="nofollow">Nick Pirocanac</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/creating_a_tfs.html#comment-84408"><abbr class="published" title="2009-04-09T22:30:59+00:00">April  9, 2009 10:30 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84408, 'Nick Pirocanac')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hi Martin,</p>
+
+<p>Thanks so much for the detailed explanation of the TFS2008 slipstream build.</p>
+
+<p>I was able to get the Build and TFS client move up to SP1 as well by doing the following:</p>
+
+<p>For TFS Client, I used the VS2008sp1 release, followed your steps, and merged with: VS90sp1-KB945140-X86-ENU.msp. This produced a SP1 version of the TFS client in the TFS folder:</p>
+
+<p>msiexec /l* c:\1\out.txt /a \TFC\vs_setup.msi /p \VS90sp1-KB945140-X86-ENU.msp TARGETDIR=\TFC</p>
+
+<p><br />
+For the Build, I followed your steps exactly. When trying to do the setup, it biffed looking for this assembly: </p>
+
+<p>\BUILD\Program Files\Microsoft Visual Studio 2008 Team Foundation Server\Web Services\Build\bin\Microsoft.TeamFoundation.Build.Client.dll</p>
+
+<p>So, I went to another machine, installed Build from the standard media, and updated with the service pack. Then I found this assembly in: <br />
+C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies</p>
+
+<p>Next, I sorted on version number in that folder, and took all version 9.0.30729.1 files and put them in the \BUILD\Program Files\Microsoft Visual Studio 2008 Team Foundation Server\Web Services\Build\bin folder. <br />
+Then, I went to yet another machine with no vs2008 components on it, and again tried to install Build, and that time, it installed with no errors.<br />
+Sharepoint extensions and the Proxy do not appear to have a patch in the SP1 package that I could see. <br />
+So, if you apply the above to your TFS 2008 ISO, you should get a solid SP1 ISO!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84439" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">daniel levite</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/creating_a_tfs.html#comment-84439"><abbr class="published" title="2009-06-09T19:22:08+00:00">June  9, 2009  7:22 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84439, 'daniel levite')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>when r they going to fix TFS and have a DVD/ or download WITH SP1 applied or another version targeting sql server 2008 outright?   I am amazed they don't have this done.  Is it that few people use TFS or sql server 2008?</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84440" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            <a class="commenter-profile" href="http://www.woodwardweb.com"><img alt="Author Profile Page" src="http://www.woodwardweb.com/mt/mt-static/images/comment/mt_logo.png" width="16" height="16" /></a>
+        
+                            <span class="vcard author"><a title="http://www.woodwardweb.com" href="http://www.woodwardweb.com">Martin Woodward</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/creating_a_tfs.html#comment-84440"><abbr class="published" title="2009-06-10T08:59:22+00:00">June 10, 2009  8:59 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84440, 'Martin Woodward')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I don't think there are any plans to provide a DVD with SP1 applied.  Crazy to me too but there you go.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84463" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.ifthensoftware.com" href="http://www.ifthensoftware.com" rel="nofollow">Manuel Rocha</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/creating_a_tfs.html#comment-84463"><abbr class="published" title="2009-07-20T09:48:10+00:00">July 20, 2009  9:48 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84463, 'Manuel Rocha')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>The crazy thing is They don't have the x64 version of TFS which is so stupid. </p>
+
+<p>By their logic all devellopers enterprise which works with x64 server versions like mine does can't have TFS or if they won't they would have to install a virtual machine or windows a x86 server version which for a develloper enterprise is very bad because we want the x64 server version to deploy x64 programs version and the memory administration made by the x64 operating system is better then the administration made by a x86 server</p>
+
+<p>I have read at microsoft website that TFS 2010 will have a x64 version. Lets wait to see.</p>
+
+<p>Thanks for the tutorial</p>
+
+<p>By the way, what is the tfssp1 folder which you have at the root of your integration?<br />
+</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84464" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            <a class="commenter-profile" href="http://www.woodwardweb.com"><img alt="Author Profile Page" src="http://www.woodwardweb.com/mt/mt-static/images/comment/mt_logo.png" width="16" height="16" /></a>
+        
+                            <span class="vcard author"><a title="http://www.woodwardweb.com" href="http://www.woodwardweb.com">Martin Woodward</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/creating_a_tfs.html#comment-84464"><abbr class="published" title="2009-07-20T10:42:38+00:00">July 20, 2009 10:42 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84464, 'Martin Woodward')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>You'll be glad to hear that TFS 2010 does indeed have x64 support in the early betas.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="444" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-445"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-446"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/ed_blankenship.html">Ed Blankenship on Using TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/case_study_igat.html">Case Study: iGate standardizing on TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/slotting_into_t.html">Slotting into TFS 2010</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/team_build_scre.html">Team Build Screensaver in WPF</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/policy_override.html">Policy Override Email Alerts</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/podcasting/my_current_podc.html">My Current Podcasts</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_2010_beta_1.html">TFS 2010 Beta 1 with Teamprise</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/teched_online_2.html">TechEd Online 2009: Cross Platform Development with Team Foundation Server and Teamprise</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/rock_the_build.html">Rock The Build with TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/building_maven.html">Building Maven Projects with Team Foundation Build</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

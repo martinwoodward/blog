@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Hitchhiker&apos;s Guide to the Galaxy</title>
+    <link>http://www.woodwardweb.com/books/hitchhikers_gui.html</link>
+    <description>Fantastic news. The Hitchhiker&apos;s Guide to the Galaxy is set to be extended this year with new editions of the radio series and also (finally) the movie that Douglas Adams tried so long and hard to get made. Update: 24/9/2004...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2004-08-31T21:12:25+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+  </channel>
+</rss>

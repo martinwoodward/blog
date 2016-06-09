@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Check Out in Team System</title>
+    <link>http://www.woodwardweb.com/vsts/check_out_in_te.html</link>
+    <description>Internally in Teamprise, we have been having a lot of discussions about check-in and check-out in Team System and how to explain this concept to our end users. The problem is that the terms are overloaded depending on the source...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-02-01T07:14:50+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Sandeep Joshi+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/check_out_in_te.html#c001596</link>
+    <description>Thanks for sharing the information. It is quite helpful.</description>
+    <dc:date>2006-05-30T10:19:01+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1011</comments>   
+    <dc:creator>Sandeep Joshi</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Serg+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/check_out_in_te.html#c001597</link>
+    <description>Idiots, they only delayed the merge process, and make it  hardly.
+They could make the option when i want to get latest wersion: manualyy or at checkout !</description>
+    <dc:date>2007-03-03T08:00:09+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1011</comments>   
+    <dc:creator>Serg</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Kevin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/check_out_in_te.html#c001598</link>
+    <description>I understand in C++ that they dependency issue can get really hairy. In Java that does not happen nearly as often.
+
+I only want to work on the latest version of the file. Why? Someone else may have already fixed a bug. Why do I want to fix it, send it to the server, be told I need to merge then see someone else made the exact same or very similar fix? Plus my change my hose over some other code that was checked in to some other Java file.
+
+I don&apos;t see the worth of this way of doing things as it will just get you broken builds because you are not forced to build and use latest when are are about to make changes that can easily affect more than one file.
+
+I want to be prompted every time to let me know I am not using the latest version.</description>
+    <dc:date>2007-08-01T20:43:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1011</comments>   
+    <dc:creator>Kevin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Federico+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/check_out_in_te.html#c001599</link>
+    <description>Thanks for sharing this info!</description>
+    <dc:date>2008-01-23T17:03:53+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1011</comments>   
+    <dc:creator>Federico</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by LosManos+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/check_out_in_te.html#c001600</link>
+    <description>hejdig.
+
+@Serg&amp;Kevin
+The reasons one might not want to always have the latest version is up to every developer.  In my current project I normally do not get the latest while my colleague always does; it is all up to taste and where one work (presentation layer, datalayer, vertically, horizontally, common lib, documentation, ...)
+
+@MartinW
+&gt; currently debating if we should prompt the user when they are
+&gt; checking out the file that is not the latest version to ask them
+&gt; if they want to get the latest version at that time.
+
+The best would be to have it configurable.  I am very helped by a warning every time I touch a commited file so it gets dirty.  This makes me get a feeling for how much I have dirty.  I has also several times stopped me from updating the wrong file.
+
+Happy hacking!
+
+/OF</description>
+    <dc:date>2009-04-17T07:41:03+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1011</comments>   
+    <dc:creator>LosManos</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Understanding the Branches Tab</title>
+    <link>http://www.woodwardweb.com/vsts/understanding_t.html</link>
+    <description><![CDATA[Showing branch history in a visual way&nbsp;is not something that the current version 1.0 of the Microsoft Team Foundation Server client is great at.&nbsp; In fairness to the team, showing the branch history of files in an&nbsp;graphical way is pretty&nbsp;complicated...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-08-11T12:36:55+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by eugene.z+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/understanding_t.html#c002266</link>
+    <description>Martin,
+
+I will have to disagree about branches being used 1% of time. In enterprise level SCM branching is done frequently, and ability to view branching information and perform merges conveniently is a major selling point (ClearCase comes to my mind). May be that function falls into release managener domain and not developer, but you cannot just dismiss it.
+I cannot emphasize enough how many of (prospective) clients have expressed dissatisfaction with current level of branch and merge data detalization in TFS.
+So I do hope MS people will read my comment as well...
+</description>
+    <dc:date>2006-08-11T16:57:16+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1585</comments>   
+    <dc:creator>eugene.z</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Buck Hodges+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/understanding_t.html#c002267</link>
+    <description>One thing to note for folks that get deep into branching and merging is that a baseless merge (tf merge /baseless ...) will create merge relationships that will not show up in the Branches tab.
+
+Buck</description>
+    <dc:date>2006-08-11T22:44:51+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1585</comments>   
+    <dc:creator>Buck Hodges</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Sam Judson+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/understanding_t.html#c002268</link>
+    <description>Coding Horror just published an article about source control with some recommended reading.
+
+http://www.codinghorror.com/blog/archives/000660.html
+
+Amongst them are your own Eric Sink&apos;s Source Control HOWTO : 
+http://www.ericsink.com/scm/source_control.html
+
+and a branching and Merging Primer : http://blogs.msdn.com/chrisbirmele/archive/2006/05/31/611179.aspx
+
+Thought they might interest anyone reading this post.</description>
+    <dc:date>2006-08-16T10:45:05+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1585</comments>   
+    <dc:creator>Sam Judson</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Yonatan Leonov+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/understanding_t.html#c002310</link>
+    <description>Full history including operations made on previous branches is not something I could live without.
+
+So I developed an Add-in for VS that return the minimal functionality which was exist in VSS.
+
+I have shared this Add-in as an open source project called        TFSBranchHistory and you can find it here:
+
+http://www.codeplex.com/Wiki/View.aspx?ProjectName=TFSBranchHistory
+
+Hope it will help someone. and everyone invited to join and improve it.</description>
+    <dc:date>2006-11-06T21:55:51+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1585</comments>   
+    <dc:creator>Yonatan Leonov</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

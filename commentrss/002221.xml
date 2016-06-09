@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Case Study: iGate standardizing on TFS</title>
+    <link>http://www.woodwardweb.com/vsts/case_study_igat.html</link>
+    <description> TFS has a many strengths.&#160; Two of them that I particularly like talking about are it&apos;s performance over a wide area network and the strong IDE integration available for both .NET and Java developers (the latter via Teamprise of...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-06-29T16:10:58+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Stephen+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/case_study_igat.html#c003464</link>
+    <description>This is very cool!
+
+Still I am confused... How can you have 8 offices in 12 countries?  Unless that means they have 8 offices in each of the 12 countries, or some offices sit on the border of two countries and count twice.</description>
+    <dc:date>2009-06-29T19:46:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2221</comments>   
+    <dc:creator>Stephen</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/case_study_igat.html#c003465</link>
+    <description>You know, that is an excellent question.</description>
+    <dc:date>2009-06-29T19:48:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2221</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Stephen+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/case_study_igat.html#c003466</link>
+    <description>I guess they could have telecommuters that expand the country count, but seems odd to count it that way.
+
+By the way, when I view the add comment page from Firefox (3.0.11) I don&apos;t see the Captcha.  That caused my post to fail.  Really confused me till I fired up the page in IETab.</description>
+    <dc:date>2009-06-29T21:36:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2221</comments>   
+    <dc:creator>Stephen</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Stephen+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/case_study_igat.html#c003467</link>
+    <description>Ah, nevermind about the captcha.  I had NoScript turned on for the site.</description>
+    <dc:date>2009-06-29T21:39:16+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2221</comments>   
+    <dc:creator>Stephen</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

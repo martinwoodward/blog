@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Numbers Anyone</title>
+    <link>http://www.woodwardweb.com/web_sites/numbers_anyone.html</link>
+    <description><![CDATA[Interesting article in Wired about &quot;Numbers Stations&quot; that broadcast on Shortwave. These are high-powered transmitters across the planet are are broadcasting strings of numbers, letters, backwards music, or even the noise of a fruit machine. Spectrographic analysis of the signals...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2004-11-15T13:10:38+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+  </channel>
+</rss>

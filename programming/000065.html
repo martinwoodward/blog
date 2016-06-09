@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>Martin Woodward: Generating Excel Files in C#</title>
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/styles-site.css" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.woodwardweb.com/index.rdf" />
+
+<link rel="start" href="http://www.woodwardweb.com/" title="Martin Woodward" />
+<link rel="prev" href="http://www.woodwardweb.com/personal/000064.html" title="It's Snowing!!!" />
+
+<link rel="next" href="http://www.woodwardweb.com//000066.html" title="The Home Computer of 2004?" />
+
+
+<script type="text/javascript" language="javascript">
+<!--
+
+function OpenTrackback (c) {
+    window.open(c,
+                    'trackback',
+                    'width=480,height=480,scrollbars=yes,status=yes');
+}
+
+var HOST = 'www.woodwardweb.com';
+
+// Copyright (c) 1996-1997 Athenia Associates.
+// http://www.webreference.com/js/
+// License is granted if and only if this entire
+// copyright notice is included. By Tomer Shiran.
+
+function setCookie (name, value, expires, path, domain, secure) {
+    var curCookie = name + "=" + escape(value) + ((expires) ? "; expires=" + expires.toGMTString() : "") + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + ((secure) ? "; secure" : "");
+    document.cookie = curCookie;
+}
+
+function getCookie (name) {
+    var prefix = name + '=';
+    var c = document.cookie;
+    var nullstring = '';
+    var cookieStartIndex = c.indexOf(prefix);
+    if (cookieStartIndex == -1)
+        return nullstring;
+    var cookieEndIndex = c.indexOf(";", cookieStartIndex + prefix.length);
+    if (cookieEndIndex == -1)
+        cookieEndIndex = c.length;
+    return unescape(c.substring(cookieStartIndex + prefix.length, cookieEndIndex));
+}
+
+function deleteCookie (name, path, domain) {
+    if (getCookie(name))
+        document.cookie = name + "=" + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+}
+
+function fixDate (date) {
+    var base = new Date(0);
+    var skew = base.getTime();
+    if (skew > 0)
+        date.setTime(date.getTime() - skew);
+}
+
+function rememberMe (f) {
+    var now = new Date();
+    fixDate(now);
+    now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000);
+    setCookie('mtcmtauth', f.author.value, now, '', HOST, '');
+    //setCookie('mtcmtmail', f.email.value, now, '', HOST, '');
+    //setCookie('mtcmthome', f.url.value, now, '', HOST, '');
+}
+
+function forgetMe (f) {
+    deleteCookie('mtcmtmail', '', HOST);
+    deleteCookie('mtcmthome', '', HOST);
+    deleteCookie('mtcmtauth', '', HOST);
+    //f.email.value = '';
+    f.author.value = '';
+    //f.url.value = '';
+}
+
+//-->
+</script>
+
+
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/programming/000065.html">
+<dc:title>Generating Excel Files in C#</dc:title>
+<dc:description>I have been investigating several ways of generating files suitable for use in Excel from a C# application. As with most problems, there is more than one way to crack a nut. Various examples on the web show how to...</dc:description>
+<dc:creator>Martin</dc:creator>
+<dc:date>2004-12-01T04:20:23+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+</head>
+
+<body>
+
+<div id="banner">
+	<H1><SPAN CLASS="textVersion">Martin Woodward</SPAN></H1>
+</div>
+
+<div id="content">
+
+<div class="blog">
+
+<div id="menu">
+<a href="http://www.woodwardweb.com/personal/000064.html">&laquo; It's Snowing!!!</a> |
+
+<a href="http://www.woodwardweb.com/">Martin Woodward</a>
+| <a href="http://www.woodwardweb.com//000066.html">The Home Computer of 2004? &raquo;</a>
+
+</div>
+
+</div>
+
+
+<div class="blog">
+
+<h2 class="date">December 01, 2004</h2>
+
+<div class="blogbody">
+
+<h3 class="title">Generating Excel Files in C#</h3>
+
+<p>I have been investigating several ways of generating files suitable for use in Excel from a C# application.   </p>
+
+<p>As with most problems, there is more than one way to crack a nut.  Various examples on the web show how to generate formatted sheets in Excel, either by controlling Excel from a C# application or by transforming  XML data.  The XML transformation has the disadvantage that is limits your clients to the most recent versions of Excel, whereas dire manipulation of Excel requires that you have it installed on the server.  You also have to be very careful not to leave instances of Excel running in the background, eventually grinding your server to a halt.</p>
+
+<p>This article provides a demonstration of a very simple method to generate a file that will load into Excel.  It is a bit of a hack that I used from a java platform a few years ago, but it works if all you need is a simple data export (with less than 65536 rows).  All you do is set the response stream to the mime type "application/vnd.ms-excel" and then pass a tab delimted set of data with new lines at the end of each row.  </p>
+
+<a name="more"></a>
+<p>Below is a sample code snippet showing a method to generate a simple set of data that will load into Excel (should work with most versions including Excel 95 and above).  The version below also highlights how to request that the browser treats the file as a download and forces the user to save to disk rather than load in the browser.  This also has the advantage that the filename is easily controlled.<br />
+<P><FONT size=2><FONT face=Courier><FONT color=#808080>///</FONT><FONT color=#008000> </FONT></FONT></FONT><FONT size=2><FONT face=Courier><FONT color=#808080>&lt;summary&gt;<BR></FONT><FONT color=#808080>///</FONT></FONT></FONT><FONT size=2><FONT face=Courier><FONT color=#008000> Demo class showing how to generate an Excel Attachment<BR></FONT><FONT color=#808080>///</FONT><FONT color=#008000> </FONT></FONT><FONT face=Courier color=#808080>&lt;/summary&gt;<BR></FONT></FONT><FONT size=2><FONT face=Courier><FONT color=#0000ff>public</FONT> <FONT color=#0000ff>class</FONT> XLWriter<BR>{</FONT></FONT></P><P><FONT size=2><FONT face=Courier><FONT color=#0000ff><SPAN class=360094711-26112004>    </SPAN>public</FONT> <FONT color=#0000ff>static</FONT> <FONT color=#0000ff>void</FONT> Write(HttpResponse response)<BR><SPAN class=360094711-26112004>    </SPAN>{</FONT></FONT></P><P><FONT size=2><FONT face=Courier><FONT color=#008000><SPAN class=360094711-26112004>        </SPAN>// make sure nothing is in response stream<br />
+<B></FONT><SPAN class=360094711-26112004>        </SPAN>response.Clear();<BR><SPAN class=360094711-26112004>        </SPAN>response.Charset = "";</FONT></FONT></P><P><FONT face=Courier size=2></FONT></P><P><FONT size=2><FONT face=Courier><FONT color=#008000>// set MIME type to be Excel file.</FONT><br />
+response.ContentType = "application/vnd.ms-excel";</FONT></FONT></P><P><FONT face=Courier size=2></FONT></P><P><FONT size=2><FONT face=Courier><FONT color=#008000>        // add a header to response to force download (specifying filename)<BR><SPAN class=360094711-26112004>        </SPAN></FONT>response.AddHeader("Content-Disposition", "attachment; filename=\"MyFile.xls\"");</FONT></FONT></P><P><FONT size=2><FONT face=Courier><FONT color=#008000><SPAN class=360094711-26112004>        </SPAN>// Send the data. Tab delimited, with newlines.</FONT><BR><SPAN class=360094711-26112004>        </SPAN>response.Write("Col1\tCol2\tCol3\tCol4\n");<BR></FONT></FONT><SPAN class=360094711-26112004><FONT size=2><br />
+<FONT face=Courier><SPAN class=360094711-26112004>        </SPAN>response.Write("Data 1\tData 2\tData 3\tData 4\n");<BR></FONT></FONT></SPAN><FONT size=2><FONT face=Courier><FONT color=#008000><FONT color=#000000><SPAN class=360094711-26112004>        </SPAN>response.Write("Data 1\tData 2\tData 3\tData 4\n");<BR><SPAN class=360094711-26112004>        </SPAN>response.Write("Data 1\tData 2\tData 3\tData 4\n");<BR><SPAN class=360094711-26112004>        </SPAN>response.Write("Data 1\tData 2\tData 3\tData 4\n");</FONT><BR><SPAN class=360094711-26112004>    </SPAN></FONT><BR></FONT></FONT><FONT size=2><FONT face=Courier><FONT color=#008000><SPAN class=360094711-26112004>        </SPAN>// Close response stream.<BR></FONT><SPAN class=360094711-26112004>        </SPAN>response.End(); </FONT></FONT></P><P><FONT size=2><FONT face=Courier><SPAN class=360094711-26112004>    </SPAN>}</FONT></FONT></P><P><FONT face=Courier size=2>}</FONT></P></p>
+
+<span class="posted">Posted by Martin at December  1, 2004 04:20 AM
+
+<br /></span>
+
+</div>
+
+
+<div class="comments-head"><a name="comments"></a>Comments</div>
+
+<div class="comments-body" id="c000188">
+<p>Why not just output a comma-seperate-values file?</p>
+
+<p>Column 1, Column 2<br />
+Row 1, Row 2</p>
+
+<p>...etc.</p>
+<span class="comments-post">Posted by: Ben at December  1, 2004 11:47 AM</span>
+</div>
+<div class="comments-body" id="c000190">
+<p>I wanted the file generated to load into excel and appear to the user like it was a native excel file.  A CSV formatted file cannot be saved with the XLS extension (it needs to be CSV).</p>
+<span class="comments-post">Posted by: Martin at December  2, 2004 03:54 AM</span>
+</div>
+<div class="comments-body" id="c000203">
+<p>Our ActiveReports for .NET product (http://www.datadynamics.com) includes a component we call SpreadBuilder that provides a full API for creating binary excel files. If our customers continue to show interest in the product, we may improve this component even further in the future. Of course, ActiveReports can also export any of your reports to Excel automatically. </p>
+<span class="comments-post">Posted by: Scott Willeke at January 26, 2005 08:08 PM</span>
+</div>
+<div class="comments-body" id="c000205">
+<p>...and ActiveReports for .NET can be obtained for the sum of.... ;-)</p>
+<span class="comments-post">Posted by: Ben at February  1, 2005 09:21 PM</span>
+</div>
+
+
+
+<div class="comments-head">Post a comment</div>
+
+<div class="comments-body">
+<!--$MTCommentScript$-->
+<form method="post" action="http://www.woodwardweb.com/mt//mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie[0].checked) rememberMe(this)">
+<input type="hidden" name="static" value="1" />
+<input type="hidden" name="entry_id" value="65" />
+
+<div style="width:180px; padding-right:15px; margin-right:15px; float:left; text-align:left; border-right:1px dotted #bbb;">
+	<label for="author">Name:</label><br />
+	<input tabindex="1" id="author" name="author" /><br /><br />
+
+<!--	<label for="email">Email Address:</label><br />
+	<input tabindex="2" id="email" name="email" /><br /><br />
+
+	<label for="url">URL:</label><br />
+	<input tabindex="3" id="url" name="url" /><br /><br />
+-->
+</div>
+
+Remember personal info?<br />
+<input type="radio" id="bakecookie" name="bakecookie" /><label for="bakecookie">Yes</label><input type="radio" id="forget" name="bakecookie" onclick="forgetMe(this.form)" value="Forget Info" style="margin-left: 15px;" /><label for="forget">No</label><br style="clear: both;" />
+
+Anti-spam Code: 1HjmKg
+(please enter below)<br/>
+<label for="code">Anti-spam Code:</label><br />
+<input tabindex="3" id="code" name="code" /><br /><br />
+
+<label for="text">Comments:</label><br />
+<textarea tabindex="4" id="text" name="text" rows="10" cols="50"></textarea><br /><br />
+
+<input style="font-weight: bold;" type="submit" name="post" value="&nbsp;Post&nbsp;" /><br /><br />
+
+</form>
+
+<script type="text/javascript" language="javascript">
+<!--
+//document.comments_form.email.value = getCookie("mtcmtmail");
+document.comments_form.author.value = getCookie("mtcmtauth");
+//document.comments_form.url.value = getCookie("mtcmthome");
+if (getCookie("mtcmtauth")) {
+    document.comments_form.bakecookie[0].checked = true;
+} else {
+    document.comments_form.bakecookie[1].checked = true;
+}
+//-->
+</script>
+</div>
+
+
+</div>
+</div>
+
+
+<div id="links">
+
+<div class="sidetitle">
+Sections
+</div>
+<div class="side">
+
+<a href="http://www.woodwardweb.com/" TITLE="Martin Woodward">Home</a><br />
+<a href="http://www.woodwardweb.com/Books/index.html">Books (7)</a><br />
+<a href="http://www.woodwardweb.com/Buddies/index.html">Buddies (4)</a><br />
+<a href="http://www.woodwardweb.com/Feedback/index.html">Feedback (1)</a><br />
+<a href="http://www.woodwardweb.com/Films/index.html">Films (2)</a><br />
+<a href="http://www.woodwardweb.com/Gadgets/index.html">Gadgets (9)</a><br />
+<a href="http://www.woodwardweb.com/Personal/index.html">Personal (16)</a><br />
+<a href="http://www.woodwardweb.com/Photos/index.html">Photos (2)</a><br />
+<a href="http://www.woodwardweb.com/Programming/index.html">Programming (9)</a><br />
+<a href="http://www.woodwardweb.com/Sandbox/index.html">Sandbox (1)</a><br />
+<a href="http://www.woodwardweb.com/Software/index.html">Software (7)</a><br />
+<a href="http://www.woodwardweb.com/Technology/index.html">Technology (9)</a><br />
+<a href="http://www.woodwardweb.com/Web Design/index.html">Web Design (2)</a><br />
+<a href="http://www.woodwardweb.com/Web Sites/index.html">Web Sites (12)</a><br />
+<a href="http://www.woodwardweb.com/Work/index.html">Work (5)</a><br />
+
+</div>
+
+<div class="sidetitle">
+Search
+</div> 
+<div class="side">
+<form method="get" action="http://www.woodwardweb.com/mt/mt-search.cgi">
+<input type="hidden" name="IncludeBlogs" value="2" />
+<label for="search" accesskey="4">Search this site:</label><br />
+<input id="search" name="search" size="20" /><br />
+<input type="submit" value="Search" />
+</form>
+</div>
+
+<div class="syndicate">
+<a href="http://www.woodwardweb.com/index.xml">Syndicate this site (XML)</a>
+</div>
+
+<div class="syndicate">
+<a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights" /></a><br />
+This weblog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+</div>
+
+
+</div>
+
+<br clear="all" />
+
+
+</body>
+</html>

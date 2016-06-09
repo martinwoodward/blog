@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>MVP Award</title>
+    <link>http://www.woodwardweb.com/personal/mvp_award.html</link>
+    <description><![CDATA[Apologies for being quiet the past couple of weeks.&nbsp; I've been on vacation with my family and it was great.&nbsp; This morning has been spent going though the emails I've missed and catching up on what's been happening while I...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-10-02T13:40:12+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Buck Hodges+00:00</title>
+    <link>http://www.woodwardweb.com/personal/mvp_award.html#c004140</link>
+    <description>Congratulations and keep up the good work!
+
+Buck</description>
+    <dc:date>2006-10-02T16:52:35+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=287</comments>   
+    <dc:creator>Buck Hodges</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Steven St.Jean+00:00</title>
+    <link>http://www.woodwardweb.com/personal/mvp_award.html#c004141</link>
+    <description>Congratulations Martin!  It is well deserved.  Steve</description>
+    <dc:date>2006-10-02T17:08:47+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=287</comments>   
+    <dc:creator>Steven St.Jean</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by eugene.z+00:00</title>
+    <link>http://www.woodwardweb.com/personal/mvp_award.html#c004144</link>
+    <description>Congratulations Martin! Hope to see you around more in the community.
+
+Sincerely, Eugene</description>
+    <dc:date>2006-10-02T17:42:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=287</comments>   
+    <dc:creator>eugene.z</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Anthony Borton+00:00</title>
+    <link>http://www.woodwardweb.com/personal/mvp_award.html#c004151</link>
+    <description>Congratulations on the award. Well deserved!</description>
+    <dc:date>2006-10-02T23:41:42+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=287</comments>   
+    <dc:creator>Anthony Borton</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Cathal+00:00</title>
+    <link>http://www.woodwardweb.com/personal/mvp_award.html#c004156</link>
+    <description>Congratulations Martin, well deserved.</description>
+    <dc:date>2006-10-03T01:04:43+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=287</comments>   
+    <dc:creator>Cathal</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Andy Leonard+00:00</title>
+    <link>http://www.woodwardweb.com/personal/mvp_award.html#c004182</link>
+    <description>Congratulations Martin! 
+:{&gt; Andy</description>
+    <dc:date>2006-10-03T15:06:42+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=287</comments>   
+    <dc:creator>Andy Leonard</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Luis Fraile+00:00</title>
+    <link>http://www.woodwardweb.com/personal/mvp_award.html#c004188</link>
+    <description>Contratulations Martin and see you in the forums :)</description>
+    <dc:date>2006-10-03T17:23:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=287</comments>   
+    <dc:creator>Luis Fraile</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Adrian Lester+00:00</title>
+    <link>http://www.woodwardweb.com/personal/mvp_award.html#c004240</link>
+    <description>Fabulous news, congratulations Martin!</description>
+    <dc:date>2006-10-04T22:53:57+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=287</comments>   
+    <dc:creator>Adrian Lester</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Jack Smego+00:00</title>
+    <link>http://www.woodwardweb.com/personal/mvp_award.html#c004267</link>
+    <description>Congratulations. Excellent work.  Much kudos to the midnight Java guy.</description>
+    <dc:date>2006-10-05T13:19:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=287</comments>   
+    <dc:creator>Jack Smego</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Jim Bannon+00:00</title>
+    <link>http://www.woodwardweb.com/personal/mvp_award.html#c004268</link>
+    <description>Well done Martin - Congratulations!</description>
+    <dc:date>2006-10-05T13:47:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=287</comments>   
+    <dc:creator>Jim Bannon</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by balu+00:00</title>
+    <link>http://www.woodwardweb.com/personal/mvp_award.html#c004768</link>
+    <description>Great going Martin, Congratulations</description>
+    <dc:date>2006-10-24T12:45:40+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=287</comments>   
+    <dc:creator>balu</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

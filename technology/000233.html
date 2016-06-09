@@ -1,0 +1,826 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/technology/bad_names.html">
+<dc:title>Bad Names</dc:title>
+<dc:description><![CDATA[For those of you morning the loss of Monad as it henceforth becomes known as Windows PowerShell (it&rsquo;s impossible to say that without putting some inflection into your voice to try and sound like a voice over for a cheesy...]]></dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2006-04-28T10:37:13+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/vsts/inda_cork_talk.html" title="INDA Cork Talk" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/vsts/tfs_top_tip_4_t.html" title="TFS Top Tip #4:  The Command Line Client is your friend." />
+    
+    <title>Bad Names - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-233" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Bad Names</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-28T10:37:13+00:00">April 28, 2006 10:37 AM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/technology/bad_names.html#comments">4 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>For <a href="http://notgartner.com/posts/4135.aspx">those</a> of you <a href="http://www.hanselman.com/blog/MourningMonadThisWholeMonadMSHMicrosoftCommandShellPowerShellThingIsTearingMeUpInside.aspx">morning</a> the loss of Monad as it <a href="http://tomshardware.co.uk/2006/04/25/powershell_windows_command_line_to_ship_q4/">henceforth becomes known</a> as <a href="http://go.microsoft.com/fwlink/?linkid=64772&amp;clcid=0x409">Windows PowerShell</a> (it&rsquo;s impossible to say that without putting some inflection into your voice to try and sound like a voice over for a cheesy advert) &ndash; we now have a new name to make fun of&nbsp;thanks to Nintendo <a href="http://www.engadget.com/2006/04/27/wii-know-wii-feel-the-same-way/">renaming there next generation console</a> the Nintendo Wii (and actually pronounced wee).&nbsp;&nbsp;It&rsquo;ll no doubt generate more&nbsp;titters&nbsp;than the name of the old <a href="http://en.wikipedia.org/wiki/Atari_TOS">Atari ST operating system</a>.</p>
+<p>Back to the Microsoft choice of Windows PowerShell.&nbsp; Seriously &ndash; why wasn&rsquo;t MSH good enough?&nbsp; A fantastic new object-orientated command line shell does not need a consumer friendly name, in fact a TLA with&nbsp;an &ldquo;in-the-know&rdquo; way of pronouncing it is better for geeks &ndash; and let&rsquo;s face it, the new shell ain&rsquo;t aimed at my Grandma.</p>
+<p>It&rsquo;ll be interesting to see what happens to the popular linux terminal emulator (called <a href="http://powershell.sourceforge.net/">PowerShell</a>) &ndash; hope those guys don&rsquo;t start feeling the weight of the Redmond lawyers trying to protect a name which a)&nbsp;Was allready being used and b) Isn&rsquo;t that good anyway.&nbsp; I know not everyone&nbsp;<a href="http://blog.dragonsharp.com/?p=52">likes my companies name</a>, but a least when you do a <a href="http://www.google.com/search?q=teamprise">Google for it</a> you get to our website&hellip;</p>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/technology/bad_names.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/technology/" rel="tag">Technology</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">4 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-1143" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Anonymous</span>
+        
+                            | <a href="http://www.woodwardweb.com/technology/bad_names.html#comment-1143"><abbr class="published" title="2006-04-28T11:07:50+00:00">April 28, 2006 11:07 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1143, '')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Actually I think PowerShell is a great name - Surely better than MSH. It's like arguing that MUTFS (Mac\Unix TFS) would be better than Teamprise? <br />
+Well, I do agree that Teamprise brings me bad memories of Borland's Inprise so maybe MUTFS would actually be better.</p>
+
+<p>But seriosuly, saying that geeks don't need good "marketing" names is like saying developer tools can look bad because developers don't care. Yet - the screen shots of Teamprise look very attractive...<br />
+</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1144" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.flyingjelly.net" href="http://www.flyingjelly.net" rel="nofollow">Ben</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/technology/bad_names.html#comment-1144"><abbr class="published" title="2006-04-28T12:12:26+00:00">April 28, 2006 12:12 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1144, 'Ben')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Marketing bafflegab aside, geeks come up with the best names anyway. One of the best is the recursive name par-excellence: GNU.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1157" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.woodwardweb.com" href="http://www.woodwardweb.com" rel="nofollow">Martin</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/technology/bad_names.html#comment-1157"><abbr class="published" title="2006-05-02T10:05:48+00:00">May  2, 2006 10:05 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1157, 'Martin')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>You are probably right, after a few days the "Powershell" shock seems to have warn off, I must have just been in denial.  It was such a suprise, I was fully expecting Monad to have been the code-name and MSH to be the final one.  PowerShell seemed so different and more like a name for a Dishwasher tablet than a new shell.</p>
+
+<p>The whole Inprise thing passed me by at the time - though an older company changing it's name is usually a sign of trouble.  I think perhaps you are "projecting" some of your emotions over Borland's troubles towards Teamprise :-)</p>
+
+<p>However, I think we can all agree.  The name "Wii" is still terible after a few days consideration.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2088" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">PowerUser</span>
+        
+                            | <a href="http://www.woodwardweb.com/technology/bad_names.html#comment-2088"><abbr class="published" title="2006-08-26T15:41:44+00:00">August 26, 2006  3:41 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(2088, 'PowerUser')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Mighty scripting is very important, and not only for Geeks. As time passes, many users become technically more advanced, they use their computer as a toolshed for fast data processing.</p>
+
+<p>Just look what the Web has done ? Most web-developers have started with their own homepage and by the time they knew XML, XSLT, Javascript, CSS, HTML and PHP.</p>
+
+<p>I too think, that naming it "PowerShell" sounds a little stupid. But if it helps gaining momentum, attracts more users using a command-line, then I am fine with it.</p>
+
+<p>The disaster of Windows Scripting Host is still in my mind. What could that have been ?! Scriptable applications, IPC scripting, with any language you desire (Ruby, Python, Perl, ObjectRexx, Javascript, VBscript) Jesus! Instead it has become a toytoy for system-administrators, that use it to create desktop-shortcuts, create user-profiles, hookup printers and so on.</p>
+
+<p>I am pretty new to PowerShell and to me it seems, that the thing I dislike the most is not the name, but the lack of ActiveScript support (meaning: Take the language you want).</p>
+
+<p>PowerShell is for PowerUsers.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="233" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-445"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-446"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/herding_develop.html">Herding Developers to Lunch</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/techdays09_talk.html">TechDays09 Talk: VSTS Interoperability</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/visual_studio_2_1.html">Visual Studio 2008 Project Template for TFS Utilities</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_top_tip_16.html">TFS Top Tip #16 - Limit What you Build</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/important_secur.html">Important Security Update for Team System Web Access</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/ddd_coming_to_b.html">DDD Coming to Belfast</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/talk_whats_new.html">Talk: Whats New With Team Foundation Server</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/technology/freezing_time_i.html">Freezing Time in VMWare</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/disabling_tfs_a.html">Disabling TFS Automatic Check out</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/the_year_planne.html">The Year Planner Shuffle</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Determining the last changeset</title>
+    <link>http://www.woodwardweb.com/vsts/determining_the.html</link>
+    <description><![CDATA[We've just been having a discussion internally about ways of numbering our builds.&nbsp; It seems a sensible idea to qualify a build with the changeset number in our TFS repository, that way we are able to easily identify the exact...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-09-12T16:05:06+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Richard Berg+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/determining_the.html#c003103</link>
+    <description>There&apos;s also the little known &quot;tf changeset /latest /i&quot;.  It&apos;s easy to forget because Changeset is the only command that uses the /latest switch.</description>
+    <dc:date>2006-09-12T19:20:53+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2017</comments>   
+    <dc:creator>Richard Berg</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/determining_the.html#c003104</link>
+    <description>Cool, cheers Richard - I hadn&apos;t seen the /latest switch.</description>
+    <dc:date>2006-09-13T08:38:01+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2017</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

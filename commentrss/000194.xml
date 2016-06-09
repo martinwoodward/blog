@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Check in Policy to Force Comments in TFS</title>
+    <link>http://www.woodwardweb.com/vsts/check_in_policy.html</link>
+    <description>Jeff Atwood has posted a sample to allow you to implement what has got to be the single most requested check-in policy for Team System, forcing a user to comment their change. Based on some earlier posts by James Manning,...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-02-28T00:49:56+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/check_in_policy.html#c000476</link>
+    <description>I&apos;m not sure this is the panacea it&apos;s probably suggested to be. I think a good versioning system should be able to show you the changes allowing you to understand them without having to rely on comments. Ok, so comments are pretty good, but if changes are made (and logged) in an atomic manner, you should be able to check the effects of all changes.</description>
+    <dc:date>2006-02-28T15:52:28+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=194</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/check_in_policy.html#c000477</link>
+    <description>I know what you are saying.  A comment that says &quot;changed line 32 to read foobar&quot; is no good.  I try to comment why I have made the change not what.  If people want to see what they can do a diff and get a much more accurate answer...</description>
+    <dc:date>2006-02-28T17:59:19+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=194</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

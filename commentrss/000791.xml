@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>ASP.NET MVC Framework</title>
+    <link>http://www.woodwardweb.com/dotnet/aspnet_mvc_fram.html</link>
+    <description><![CDATA[Some interesting news seems to be coming out of the Alt.NET Conference in Austin.&nbsp;&nbsp;I'd got a few IM's from folks at the conference talking about Scott Guthrie's talk.&nbsp;According to Jeff Palermo's blog, Scott Guthrie showed off a new ASP.NET MVC...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-10-07T00:18:11+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ryan Duffield+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/aspnet_mvc_fram.html#c001053</link>
+    <description>Having used Castle&apos;s MonoRail for over two years now it&apos;s great to see Microsoft finally getting on board.  The Castle team&apos;s response to this news was also very appropriate.</description>
+    <dc:date>2007-10-11T18:52:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=791</comments>   
+    <dc:creator>Ryan Duffield</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

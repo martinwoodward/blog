@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Trip to Kennedy Space Center</title>
+    <link>http://www.woodwardweb.com/personal/trip_to_kennedy.html</link>
+    <description><![CDATA[ Last night I had the privilege of being invited to a party hosted by the good folks running the Visual Studio Industry Partner program that Teamprise is a member of.&nbsp; The venue was the perfect place to host a...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-06-06T18:49:24+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

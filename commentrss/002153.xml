@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>New Team System 2008 Virtual PC to Download</title>
+    <link>http://www.woodwardweb.com/vsts/new_team_system.html</link>
+    <description>UPDATE: Just heard from Brian Randell that the VPC is now ready to download.&#160; Updated links are below. Anthony Borton just pointed out to me that the new version of the Team System evaluation VPC is available.&#160; The Virtual PC...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-03-31T11:57:44+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by El Guapo+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/new_team_system.html#c003368</link>
+    <description>Hello,
+
+Can I upgrade it in-place if I purchase a Team Server license?
+
+Thanks</description>
+    <dc:date>2008-03-31T21:12:15+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2153</comments>   
+    <dc:creator>El Guapo</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

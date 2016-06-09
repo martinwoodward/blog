@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>10 x 10</title>
+    <link>http://www.woodwardweb.com/web_sites/10_x_10.html</link>
+    <description>Ten by Ten is a new interesting project to capture the words and images that are making the news every hour of every day. The top 100 word and images are placed in a 10 x 10 grid for you...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2004-11-10T00:56:59+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>New Version of the TFS Migration Toolkit</title>
+    <link>http://www.woodwardweb.com/vsts/new_version_of.html</link>
+    <description> In a recent episode of .NET Rocks, we got talking about migrating to TFS and taking your SCM history with you.&#160; If you really wanted to go through the pain of doing this then the TFS Migration and Synchronization...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-09-17T06:59:58+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

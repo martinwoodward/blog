@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Removing Old Mail from the Inbox in GMail</title>
+    <link>http://www.woodwardweb.com/technology/removing_old_mail_in_gmail.html</link>
+    <description>I recently moved my domain email over to Google Apps for Domains. So far I have been very happy with it and all my family have been set up with accounts, and all is working well for them to. I...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-12-04T23:55:23+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Dmytro Lapshyn+00:00</title>
+    <link>http://www.woodwardweb.com/technology/removing_old_mail_in_gmail.html#c002644</link>
+    <description>Martin,
+
+This is an excellent write-up on using Excel as a TFS reporting client, thanks! I should say, though, that there&apos;s an inherent problem with Excel-based reporting: security. Let me explain:
+
+Once your administrator gives you the permissions to access the warehouse, you get access to data from ALL team projects, and there&apos;s no easy way to restrict access to a single project. This might be OK for small shops or even large companies that do not need to pass any security-related certifications. 
+
+But imagine a big services firm developing software for a number of customers, or a firm developing software for the healthcare vertical - in such cases, inability to restrict warehouse access to a specific project really becomes an issue. Unfortunately, this issue affects my employer as well, so we had to ditch Excel-based reporting, even though it would have saved us some custom reports development.</description>
+    <dc:date>2008-12-13T07:34:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1736</comments>   
+    <dc:creator>Dmytro Lapshyn</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by anthony oden+00:00</title>
+    <link>http://www.woodwardweb.com/technology/removing_old_mail_in_gmail.html#c002655</link>
+    <description>This is a fantastic write-up. I can tell that this helps give me a leg up into creating reports!
+
+A. </description>
+    <dc:date>2009-01-09T16:30:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1736</comments>   
+    <dc:creator>anthony oden</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Alan James+00:00</title>
+    <link>http://www.woodwardweb.com/technology/removing_old_mail_in_gmail.html#c002792</link>
+    <description>Thanks for this excellent work around. A pity you can&apos;t find such a solution on the Google site. I searched for ages after dropping my Gmail account since I didn&apos;t want copies of old emails out there. Your solution works perfectly.
+
+Alan</description>
+    <dc:date>2009-10-06T11:59:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1736</comments>   
+    <dc:creator>Alan James</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Arjan+00:00</title>
+    <link>http://www.woodwardweb.com/technology/removing_old_mail_in_gmail.html#c003560</link>
+    <description>Thanks, exactly what I needed!
+
+Arjan</description>
+    <dc:date>2009-12-20T21:07:10+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1736</comments>   
+    <dc:creator>Arjan</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

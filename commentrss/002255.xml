@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>One Year at Microsoft, Two Reasons to Celebrate</title>
+    <link>http://www.woodwardweb.com/vsts/one_year_at_mic.html</link>
+    <description>Today, we have two things to celebrate.&#160; First is the fact that we just released a beta version of Team Explorer Everywhere 2010 SP1.&#160; Brian Harry has an excellent write up over on his blog.&#160; I’ll be diving into more...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2010-11-03T20:30:00+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

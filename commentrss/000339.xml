@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Free (as in beer) Teamprise license for CodePlex users</title>
+    <link>http://www.woodwardweb.com/teamprise/free_as_in_beer.html</link>
+    <description><![CDATA[Today, I am pleased to announce that Teamprise are offering complimentary licenses of the Teamprise client suite for anyone wanting to use Teamprise to connect to an open source project on CodePlex.&nbsp; If you want to take advantage of this...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-03-20T23:24:32+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Jeff Atwood+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/free_as_in_beer.html#c012456</link>
+    <description>Wow, this is an amazing offer.. here&apos;s hoping some teams take advantage of it!</description>
+    <dc:date>2007-03-21T02:36:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=339</comments>   
+    <dc:creator>Jeff Atwood</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Sam Judson+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/free_as_in_beer.html#c012468</link>
+    <description>Wow, I&apos;m signing up straight away :)</description>
+    <dc:date>2007-03-21T11:10:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=339</comments>   
+    <dc:creator>Sam Judson</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Florent Santin+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/free_as_in_beer.html#c012470</link>
+    <description>Woooo! That&apos;s a really good news, Thanks TeamPrise!</description>
+    <dc:date>2007-03-21T11:27:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=339</comments>   
+    <dc:creator>Florent Santin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

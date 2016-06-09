@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Golden Rules for Developing TFS Client Applications.</title>
+    <link>http://www.woodwardweb.com/vsts/golden_rules_fo.html</link>
+    <description><![CDATA[Brian Harry has recently posted an excellent word document talking about some guidelines to follow when developing custom TFS extensions.&nbsp; The document is definitely worth a read as it gives you a better understanding of the issues behind the guidance.&nbsp;...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-09-07T16:18:31+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

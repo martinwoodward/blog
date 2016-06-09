@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Visualize your data with the Virtual Earth API</title>
+    <link>http://www.woodwardweb.com/programming/visualize_your.html</link>
+    <description><![CDATA[ At the recent MVP summit, I attended a Mash-up lounge event.&nbsp; It was a bit Web 2.0-ey, but basically they had a bunch of bean bags, fake palm trees, and members of the Windows Live team and some Virtual...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-03-22T17:06:20+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Rob McGovern+00:00</title>
+    <link>http://www.woodwardweb.com/programming/visualize_your.html#c001816</link>
+    <description>Martin, it was great to meet you at the MVP summit.  Thanks for the beer! I&apos;m a terrible blogger (it&apos;s been over a year since my last post) but I love your mashup.</description>
+    <dc:date>2007-03-22T21:30:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1166</comments>   
+    <dc:creator>Rob McGovern</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Sam Judson+00:00</title>
+    <link>http://www.woodwardweb.com/programming/visualize_your.html#c001817</link>
+    <description>I&apos;ve checked, and the aerial topography (big word!) for places like the lake district (and even Spain!) is far superior in virtual earth than either yah** or g**gle.</description>
+    <dc:date>2007-03-23T10:08:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1166</comments>   
+    <dc:creator>Sam Judson</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

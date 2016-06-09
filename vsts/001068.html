@@ -1,0 +1,819 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/vsts/indc_talk_top_t.html">
+<dc:title>INDC Talk:  Top Ten Tips for Team Foundation Server</dc:title>
+<dc:description><![CDATA[Thanks to everyone that came along to my talk at the 2006 Irish National Developers Conference yesterday.&nbsp; As it was Jedi Day, the session&nbsp;was appropriately&nbsp;aimed at&nbsp;being a&nbsp;deep-dive into some tips and tricks when using Team Foundation Server in the real...]]></dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2006-05-05T12:29:26+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/vsts/indc_talk_top_t.html" title="INDC Talk:  Top Ten Tips for Team Foundation Server" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/vsts/indc_talk_top_t.html" title="INDC Talk:  Top Ten Tips for Team Foundation Server" />
+    
+    <title>INDC Talk:  Top Ten Tips for Team Foundation Server - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-1068" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">INDC Talk:  Top Ten Tips for Team Foundation Server</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author">Martin Woodward</span> on <abbr class="published" title="2006-05-05T12:29:26+00:00">May  5, 2006 12:29 PM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/indc_talk_top_t.html#comments">2 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>Thanks to everyone that came along to <a href="http://indc.wordpress.com/2006/04/26/indc-session-top-10-tips-for-team-foundation-server-by-martin-woodward/">my talk</a> at the <a href="http://indc.wordpress.com/">2006 Irish National Developers Conference</a> yesterday.&nbsp; As it was Jedi Day, the session&nbsp;was appropriately&nbsp;aimed at&nbsp;being a&nbsp;deep-dive into some tips and tricks when using Team Foundation Server in the real world.&nbsp; As promised, here is the <a href="http://www.woodwardweb.com/blog/IDC2006_Top_10_Tips_For_TFS.ppt">here is the slide deck (1.9 MB)</a>.&nbsp; The point of the session was for it to be a very interactive and demo led one so the deck might not be that useful, therefore&nbsp;the following&nbsp;is a quick summary of what we discussed:-</p>
+<p><strong>Introduction</strong><br />As an introduction, I attempted to briefly cover what <a href="http://msdn.microsoft.com/vstudio/teamsystem/">Visual Studio Team System</a> is, how a <a href="http://www.woodwardweb.com/vsts/000215.html">deployment looks</a> and how much of a paradigm shifting tool it is.</p>
+<p><strong>#10 &ndash; TF.exe is your Friend</strong> <br />The most flexible and powerful client for TFS Version Control is the command line tool tf.exe so I did a demo.&nbsp; See the&nbsp;an <a href="http://www.woodwardweb.com/vsts/000234.html">earlier blog post</a> for a little more information.&nbsp; Also, we discussed <a href="http://blogs.msdn.com/buckh/archive/2005/12/12/503015.aspx">Buck Hodges tips</a> for improving performance and how some of these also apply to using the VSSImport utility.</p>
+<p><strong>#9 &ndash; Baby Come Back</strong><br />How to access deleted files through the Source Control Explorer.&nbsp; See <a href="http://blogs.msdn.com/csell/archive/2006/04/11/573571.aspx">Clark Sell&rsquo;s blog post</a> on the topic.&nbsp; Clark is a Microsoft Consultant who was involved with the product group testing VSTS in the real world during the development phases and&nbsp;advises customers on using&nbsp;Team System out in the field.&nbsp; He is also a great friend of mine and has recently become a Daddy so the title of this tip was a way of giving subtle props to the guy who first told me about it.</p>
+<p><strong>#8 &ndash; Users are Painful</strong><br />Advise on using active directory groups to manage users in a production configuration.&nbsp; I&rsquo;s been planning on doing a blog post on this topic for ages but I always get distracted.&nbsp; The <a href="http://msdn2.microsoft.com/en-us/library/ms252512(VS.80).aspx">MSDN help on the topic</a> is pretty good&nbsp;now-a-days, also the user permissions dialog now gives you links to all the places you need to add the groups which makes it more discoverable.&nbsp; The slide on this point was relatively useful:-</p>
+<p><a href="http://www.woodwardweb.com/blog/user_pain.png"><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="User_pain" src="http://www.woodwardweb.com/blog/user_pain_thumb.jpg" border="0" /></a></p>
+<p><strong>#7 &ndash; Make TFS Work Your Way</strong><br />A demo of how to customize a work item that was audience driven.&nbsp; I also showed how to change the action behaviour as discussed in a <a href="http://www.woodwardweb.com/vsts/000230.html">previous blog post</a>.</p>
+<p><strong>#6 &ndash; Plan Your Repository<br /></strong>How I think you should plan your repository, as discussed in an <a href="http://www.woodwardweb.com/vsts/000224.html">earlier blog post</a>.&nbsp; Mitch Denny has his <a href="http://notgartner.com/posts/4089.aspx">own opinions</a> on the matter &ndash; personally I think creating a &ldquo;truck&rdquo; or &ldquo;main&rdquo; folder and checking stuff in under that is a small level of indirection that will give you many potential benefits in the future (especially with how Work Items work and&nbsp;the difficulty in moving a&nbsp;work item between projects).&nbsp; But as Mitch points out <a href="http://notgartner.com/posts/4089.aspx">there are other ways</a>&nbsp;and no one answer.&nbsp; Remember, I&rsquo;m a Java guy so I tend to make things complicated in favour of flexibility :-)&nbsp; We also talked a little bit about branching here for folks that had not been to <a href="http://www.woodwardweb.com/vsts/000232.html">one</a> of my <a href="http://www.woodwardweb.com/vsts/000227.html">earlier </a><a href="http://www.woodwardweb.com/vsts/000217.html">talks</a>.</p>
+<p><strong>#5 &ndash; TFS for Everyone Else</strong><br />Demonstrated the <a href="http://blogs.msdn.com/bharry/archive/2006/04/06/570305.aspx">MCCSSI provider</a> allowing you to access TFS version control from Visual Studio 2003 among others and also talked a little bit about <a href="http://www.teamprise.com/">Teamprise</a> which allows you to talk to TFS from Eclipse, Mac and Unix.&nbsp; Hopefully it wasn&rsquo;t too blatant advertisement for my day job but I did want folks to know that Team Foundation Server is ideally suited as an enterprise class tool that the entire enterprise can adopt.</p>
+<p><strong>#4 &ndash; Extending TFS</strong><br />A discussion about the &ldquo;Team System Economy&rdquo; and how extensible the whole of Visual Studio Team System is as well as just Team Foundation Server.&nbsp; There is plenty of opportunity for partner companies like the <a href="http://www.teamprise.com/">one</a> I am lucky enough to work for.&nbsp; Customers are also free to customise and extend team system as they want.&nbsp; I <a href="http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=358913&amp;SiteID=1">ranted</a> a little about how good the Microsoft .NET object model is and advised people to always use that if possible rather than considering using the web services.&nbsp; I had planned on showing an example of using the object model but a lot of interest was sparked on the term &ldquo;Team System Economy&rdquo; (which I actually coined on the spot and had not planned).&nbsp;&nbsp;All the talk&nbsp;meant I was at risk of running over so I cut the demo.&nbsp; If anyone wants to get started with the object model then they could do a lot worse than subscribe to <a href="http://blogs.msdn.com/buckh/default.aspx">Buck Hodges</a>&rsquo; and <a href="http://blogs.msdn.com/jmanning/">James Manning</a>&rsquo;s blogs, read this <a href="http://blogs.msdn.com/buckh/archive/2006/03/15/552288.aspx">particular post</a> from Buck and download the <a href="http://www.vsipdev.com/downloads">Visual Studio SDK</a>.</p>
+<p><strong>#3 &ndash; The Exception To The Rule</strong><br />Talked a little bit about the <a href="http://blogs.msdn.com/buckh/archive/2005/06/29/434099.aspx">TFS Admin Web Service</a> and the Proxy Statistics service (available on http://tfs_at:8080/VersionControl/v1.0/ProxyStatistics.asmx).</p>
+<p><strong>#2 &ndash; Change != Bad</strong><br />Talked about some of the differences and difficulties folks will face when moving to Team Foundation Server.&nbsp; <a href="http://www.woodwardweb.com/vsts/000232.html">My</a> <a href="http://www.woodwardweb.com/vsts/000227.html">earlier </a><a href="http://www.woodwardweb.com/vsts/000217.html">talks</a>&nbsp;go into a lot more detail about this, so I just&nbsp;focussed on explaining what a Changeset is, explained Shelving, talked about the fact that <a href="http://www.woodwardweb.com/vsts/000179.html">Check out != Get Latest</a> and how <a href="http://blogs.vertigosoftware.com/teamsystem/archive/2006/05/03/Comparing_SourceSafe_Labels_to_Team_Foundation_Server_Labels.aspx">labelling works</a> among other points queried by the audience.</p>
+<p><strong>#1 &ndash; Don&rsquo;t Do That</strong><br />A demo of the power of the security model inside TFS Version Control, but some tips of how you should <a href="http://www.woodwardweb.com/vsts/000158.html">be careful</a> when making changes.</p>
+<p>As ever I gave a list of useful places to find out more:-</p>
+<ul>
+<li><a href="http://blogs.msdn.com/robcaron/default.aspx">Rob Caron&rsquo;s Blog </a>&ndash; The &ldquo;Team System Blogfather&rdquo; and all round nice chap (with Irish roots might I add)</li>
+<li><a href="http://teamsystemrocks.com/default.aspx">Team System Rocks</a> &ndash; Great VSTS community site maintained by Team System MVP <a href="http://teamsystemrocks.com/blogs/mickey_gousset/default.aspx">Mickey Gousset</a>.</li>
+<li><a href="http://www.teamprise.com/">Teamprise</a> &ndash; the company I am lucky enough to work for</li>
+<li><a href="http://www.microsoft.com/downloads/details.aspx?familyid=1FA86E00-F0A3-4290-9DA9-6E0378A3A3C5&amp;displaylang=en">VSTS Licensing White Paper</a> &ndash; yes, I&rsquo;m afraid it is that complicated</li>
+<li><a href="http://www.microsoftvirtuallabs.com/express/registration.aspx?LabId=5ede642a-f4e7-4c3a-8d5b-82d3d7540a19">Microsoft VSTS Virtual Labs</a> &ndash; connect in to a ready made VSTS environment, you can give the software a try with no need to install anything on your local machine.</li></ul>
+<p>Hope that summary is a fair one &ndash; if you were one of the attendees then feel free to add a comment if I&rsquo;ve missed something.&nbsp; As ever at Irish User Group events I was&nbsp;impressed with the level&nbsp;and quantity of questions from the audience so I may well have missed something we talked about.&nbsp; If you are in the country and want a more introduction style talk then feel free to come along to my sessions at the .NET user groups&nbsp;in <a href="http://www.developers.ie/event.aspx?s=48">Limerick</a> or <a href="http://www.developers.ie/event.aspx?s=46">Gallway</a> next week.</p>
+<p><font size="1"><strong>Now playing:</strong> <a href="http://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?artistTerm=Brass Incorporated">Brass Incorporated</a> - <a href="http://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?songTerm=Swingin' Cymbal&amp;artistTerm=Brass Incorporated">Swingin' Cymbal</a></font></p>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/indc_talk_top_t.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/teamprise/" rel="tag">Teamprise</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/" rel="tag">Vsts</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">2 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-1680" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.teamsystemrocks.com/blogs/mickey_gousset" href="http://www.teamsystemrocks.com/blogs/mickey_gousset" rel="nofollow">Mickey Gousset</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/indc_talk_top_t.html#comment-1680"><abbr class="published" title="2006-05-05T14:50:04+00:00">May  5, 2006  2:50 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1680, 'Mickey Gousset')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Dang, I wish I was several thousand miles closer so I could participate.  That is some awesome content that you covered.  Great Job!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1681" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Jalil Abdollahi</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/indc_talk_top_t.html#comment-1681"><abbr class="published" title="2007-09-08T13:49:11+00:00">September  8, 2007  1:49 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1681, 'Jalil Abdollahi')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>hi Martin <br />
+I've got a question ...<br />
+How can I let other clients Load my Project Portal in their browsers?</p>
+
+<p>when they wanna try to load them ... it asks to enter user name and passwords... How can I remove this? and let them view my portal as an anonymous !!???</p>
+
+<p>thanks for your great advices</p>
+
+<p>sincerely yours</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="1068" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-836"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-837"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/changeset_comme.html">Changeset comments are editable in TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_on_the_main.html">TFS on the Mainframe</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/speaking_at_the.html">Speaking at the Virtual Team System Users Group</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/podcasting/radio_tfs_on_te.html">Radio TFS on Team System 2010 First Impressions</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/hosted_tfs_for.html">Hosted TFS for BizSpark Companies</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_2010_api_by.html">TFS 2010 API By Example: Introduction</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/codeplex_open_s.html">CodePlex Open Source Wiki Engine</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/ed_blankenship.html">Ed Blankenship on Using TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/case_study_igat.html">Case Study: iGate standardizing on TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/slotting_into_t.html">Slotting into TFS 2010</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<opml version="1.0">
+  <head />
+  <body>
+    <outline title="Buddies">
+      <outline title="Adrian's Blog" xmlUrl="http://adrianlester.blogspot.com/atom.xml" htmlUrl="http://adrianlester.blogspot.com" description="Welcome to my blog.  I've three main interests in life - techie IT things, church based youthwork, and food :)" />
+      <outline title="Google Blog Search: &quot;martin woodward&quot;" xmlUrl="http://blogsearch.google.com/blogsearch_feeds?hl=en&amp;filter=0&amp;scoring=d&amp;q=%22martin+woodward%22&amp;ie=utf-8&amp;num=100&amp;output=rss" htmlUrl="http://blogsearch.google.com/blogsearch?hl=en&amp;filter=0&amp;scoring=d&amp;q=%22martin+woodward%22&amp;ie=ISO-8859-1&amp;num=100" description="Google Blog Search Results: &lt;b&gt;212&lt;/b&gt; results for &lt;b&gt;martin-woodward&lt;/b&gt; - showing &lt;b&gt;1&lt;/b&gt; through &lt;b&gt;100&lt;/b&gt;" />
+      <outline title="Clark Sell" xmlUrl="http://csell.net/SyndicationService.asmx/GetAtom" htmlUrl="http://csell.net/" description="" />
+      <outline title="Dan's Blog" xmlUrl="http://danschreiber.blogspot.com/atom.xml" htmlUrl="http://danschreiber.blogspot.com" description="Observations at the Intersection of Church &amp; State" />
+      <outline title="del.icio.us/jcansdale" xmlUrl="http://del.icio.us/rss/jcansdale" htmlUrl="http://del.icio.us/jcansdale" description="" />
+      <outline title="del.icio.us/kevinpdavis" xmlUrl="http://del.icio.us/rss/kevinpdavis" htmlUrl="http://del.icio.us/kevinpdavis" description="" />
+      <outline title="del.icio.us/mebecker" xmlUrl="http://del.icio.us/rss/mebecker" htmlUrl="http://del.icio.us/mebecker" description="" />
+      <outline title="Martin Woodward" xmlUrl="http://feeds.feedburner.com/MartinWoodward" htmlUrl="http://www.woodwardweb.com/" description="" />
+      <outline title="Flying Jelly" xmlUrl="http://flyingjelly.net/xml/rss2.xml" />
+      <outline title="Eric.Weblog()" xmlUrl="http://software.ericsink.com/rss.xml" htmlUrl="http://software.ericsink.com/" description="Thoughts about software from yet another person who invented the Internet" />
+      <outline title="duality's Photos" xmlUrl="http://www.flickr.com/services/feeds/photos_public.gne?id=22875777@N00&amp;format=rss_200" htmlUrl="http://www.flickr.com/photos/dualitys/" description="A feed of duality's Photos" />
+      <outline title="Phil Hunter" xmlUrl="http://www.philhunter.com/blog/index.php/feed/" htmlUrl="http://www.philhunter.com/blog" description="" />
+    </outline>
+    <outline title="VSTS">
+      <outline title="Accentient Blog" xmlUrl="http://blog.accentient.com/SyndicationService.asmx/GetRss" htmlUrl="http://blog.accentient.com/" description="" />
+      <outline title="Michael Ruminer" xmlUrl="http://blog.magenic.com/michaelr/Rss.aspx" htmlUrl="http://blog.magenic.com/michaelr/" description=".NET and Microsoft Technology Focus" />
+      <outline title="A New Humble Blog" xmlUrl="http://blogs.counterpunchsoftware.com/atom.xml" htmlUrl="http://blogs.counterpunchsoftware.com/default.html" description="" />
+      <outline title="Aaron Hallberg" xmlUrl="http://blogs.msdn.com/aaronhallberg/rss.xml" htmlUrl="http://blogs.msdn.com/aaronhallberg/default.aspx" description="Team Build (Build Automation) - Visual Studio North Carolina" />
+      <outline title="bharry's WebLog" xmlUrl="http://blogs.msdn.com/bharry/rss.xml" htmlUrl="http://blogs.msdn.com/bharry/default.aspx" description="" />
+      <outline title="bmalcolm's WebLog" xmlUrl="http://blogs.msdn.com/bmalcolm/rss.xml" htmlUrl="http://blogs.msdn.com/bmalcolm/default.aspx" description="" />
+      <outline title="Buck Hodges" xmlUrl="http://blogs.msdn.com/buckh/rss.xml" htmlUrl="http://blogs.msdn.com/buckh/default.aspx" description="Team Build (Build Automation) - Version Control - Team Foundation Server - Team System - Visual Studio North Carolina" />
+      <outline title="Jason Barile - Microsoft in Raleigh, NC" xmlUrl="http://blogs.msdn.com/jasonba/rss.xml" htmlUrl="http://blogs.msdn.com/jasonba/default.aspx" description="Discussions about Microsoft in Raleigh, NC, Visual Studio Team Foundation Server, and Software Testing" />
+      <outline title="James Manning's blog" xmlUrl="http://blogs.msdn.com/jmanning/rss.xml" htmlUrl="http://blogs.msdn.com/jmanning/default.aspx" description="Visual Studio North Carolina&#xD;&#xA;" />
+      <outline title="John Lawrence (MSFT)" xmlUrl="http://blogs.msdn.com/johnlawr/rss.xml" htmlUrl="http://blogs.msdn.com/johnlawr/default.aspx" description="Managing development with Microsoft Visual Studio Team System &amp; Team Foundation" />
+      <outline title="Jason Prickett's Blog" xmlUrl="http://blogs.msdn.com/jpricket/rss.xml" htmlUrl="http://blogs.msdn.com/jpricket/default.aspx" description="" />
+      <outline title="Mario: TFS Version Control" xmlUrl="http://blogs.msdn.com/mrod/rss.xml" htmlUrl="http://blogs.msdn.com/mrod/default.aspx" description="" />
+      <outline title="Randy Miller's Blog" xmlUrl="http://blogs.msdn.com/randymiller/rss.xml" htmlUrl="http://blogs.msdn.com/randymiller/default.aspx" description="MSF for Agile Software Development News" />
+      <outline title="Rick LaPlante's WebLog" xmlUrl="http://blogs.msdn.com/rickla/rss.xml" htmlUrl="http://blogs.msdn.com/rickla/default.aspx" description="" />
+      <outline title="Rob Caron" xmlUrl="http://blogs.msdn.com/robcaron/rss.xml" htmlUrl="http://blogs.msdn.com/robcaron/default.aspx" description="A Team System Nexus" />
+      <outline title="Robert Horvick's Weblog" xmlUrl="http://blogs.msdn.com/roberthorvick/rss.xml" htmlUrl="http://blogs.msdn.com/roberthorvick/default.aspx" description="TFS Version Control, Version Control Migration and some random things I rant about" />
+      <outline title="Software Engineering with Visual Studio Team System" xmlUrl="http://blogs.msdn.com/sam/rss.xml" htmlUrl="http://blogs.msdn.com/sam/default.aspx" description="" />
+      <outline title="TFS Migration Blog" xmlUrl="http://blogs.msdn.com/tfs_migration/atom.xml" htmlUrl="http://blogs.msdn.com/tfs_migration/default.aspx" description="" />
+      <outline title="Visual Studio 2005 Team System" xmlUrl="http://blogs.msdn.com/vstsue/rss.xml" htmlUrl="http://blogs.msdn.com/vstsue/default.aspx" description="Creating the content you need, when you need it, so you can get your job done." />
+      <outline title="Team System" xmlUrl="http://blogs.vertigosoftware.com/teamsystem/rss.aspx" htmlUrl="http://blogs.vertigosoftware.com/teamsystem/default.aspx" description="Visual Studio Team System: tips, tricks, and techniques" />
+      <outline title="Channel 9: VSTS Videos" xmlUrl="http://channel9.msdn.com/rss.aspx?ForumID=14&amp;TagID=121&amp;Mode=0&amp;sortby=0&amp;sortorder=1" htmlUrl="http://channel9.msdn.com/ShowForum.aspx?ForumID=14" description="Next time your manager comes to you and tells you that you're going to be filming amateur videos, run, run hard and don't look back." />
+      <outline title="Channel 9: Visual Studio Videos" xmlUrl="http://channel9.msdn.com/rss.aspx?ForumID=14&amp;TagID=7&amp;Mode=0&amp;sortby=0&amp;sortorder=1" htmlUrl="http://channel9.msdn.com/ShowForum.aspx?ForumID=14" description="Next time your manager comes to you and tells you that you're going to be filming amateur videos, run, run hard and don't look back." />
+      <outline title="del.icio.us/steven_borg" xmlUrl="http://del.icio.us/rss/steven_borg" htmlUrl="http://del.icio.us/steven_borg" description="" />
+      <outline title="del.icio.us/tag/vsts" xmlUrl="http://del.icio.us/rss/tag/vsts" htmlUrl="http://del.icio.us/tag/vsts" description="" />
+      <outline title="VSTS Bloggers" xmlUrl="http://feeds.feedburner.com/VstsBloggers" htmlUrl="http://www.teamsystemrocks.com/" description="The latest posts from around the VSTS Blogosphere." />
+      <outline title="Etienne's VSTS World" xmlUrl="http://geekswithblogs.net/etiennetremblay/rss.aspx" htmlUrl="http://geekswithblogs.net/etiennetremblay/" description="Fascinating tidbits about VSTS and .NET (well I hope...)" />
+      <outline title="Feature Specifications for Visual Studio and .NET Framework &quot;Orcas&quot;" xmlUrl="http://msdn.microsoft.com/vstudio/future/specs/released_features.xml" htmlUrl="http://msdn2.microsoft.com/en-us/vstudio/aa948851.aspx" description="This page lists specifications for Visual Studio and .NET &quot;Orcas&quot;." />
+      <outline title="Team System News" xmlUrl="http://teamsystemrocks.com/blogs/team_system_news/rss.aspx" htmlUrl="http://teamsystemrocks.com/blogs/team_system_news/default.aspx" description="News, links and articles about Team System" />
+      <outline title="VSTSPlugins" xmlUrl="http://vstsplugins.sourceforge.net/index.php/feed/" htmlUrl="http://vstsplugins.sourceforge.net" description="A collection of open source plugins for Visual Studio Team System" />
+      <outline title="TFS Plug-in for CruiseControl.NET" xmlUrl="http://www.codeplex.com/Project/ProjectRss.aspx?ProjectName=TFSCCNetPlugin" htmlUrl="http://www.codeplex.com/TFSCCNetPlugin/Project/ProjectRss.aspx" description="A plug-in to allow communication with Team Foundation Server for the popular open source build automation tool CruiseControl.NET" />
+      <outline title="Team System Source Control Client" xmlUrl="http://www.codeplex.com/Project/ProjectRss.aspx?ProjectName=tsscc" htmlUrl="http://www.codeplex.com/tsscc/Project/ProjectRss.aspx" description="This is a Window Client for the Team System &lt;br&gt;&amp;#62; Source Control Client." />
+    </outline>
+    <outline title="Software">
+      <outline title="YuMDaP.net's blog" xmlUrl="http://blog.yumdap.net/feeds/index.rss2" htmlUrl="http://blog.yumdap.net/" description="...some yada-yada of topical interest" />
+      <outline title="Plastic Bugs" xmlUrl="http://plasticbugs.com/wp-rss2.php" htmlUrl="http://plasticbugs.com" description="Home of the 'Original' GIMPshop" />
+    </outline>
+    <outline title="News">
+      <outline title="Guardian Unlimited: News blog" xmlUrl="http://blogs.guardian.co.uk/news/index.rdf" htmlUrl="http://blogs.guardian.co.uk/news/" description="" />
+      <outline title="Guardian Unlimited: Technology blog" xmlUrl="http://blogs.guardian.co.uk/technology/index.xml" htmlUrl="http://blogs.guardian.co.uk/technology/" description="" />
+      <outline title="onBoard Articles" xmlUrl="http://www.onboard.jetbrains.com/articles.xml" htmlUrl="http://www.onboard.jetbrains.com" description="Articles published in the JetBrains onBoard magazine" />
+      <outline title="New Scientist - Latest Headlines" xmlUrl="http://www.pheedo.com/f/newscientist_online-news" htmlUrl="http://www.newscientist.com/news.ns" description="New Scientist.com - The World's No. 1 Science and Technology News Service" />
+      <outline title="KableNET" xmlUrl="http://xml.newsisfree.com/feeds/90/4090.xml" htmlUrl="http://www.kablenet.com/" description="International e-government and information age public service news from Kable, the publisher of Government Computing. Information, research and conferences on the business and technology of central, local, defence, health, justice, education. (By http://www.newsisfree.com/syndicate.php - FOR PERSONAL AND NON COMMERCIAL USE ONLY!)" />
+    </outline>
+    <outline title="MSDN">
+      <outline title="Bill O'Brien's WebLog" xmlUrl="http://blogs.msdn.com/bobrien/rss.xml" htmlUrl="http://blogs.msdn.com/bobrien/default.aspx" description="" />
+      <outline title="Clare Dillon's Blog" xmlUrl="http://blogs.msdn.com/clare_dillon/rss.xml" htmlUrl="http://blogs.msdn.com/clare_dillon/default.aspx" description="News from Microsoft Ireland's Developer &amp; Platform Group" />
+      <outline title="All About Interop" xmlUrl="http://blogs.msdn.com/DotNetInterop/rss.xml" htmlUrl="http://blogs.msdn.com/dotnetinterop/default.aspx" description="Connecting .NET to just about anything else" />
+      <outline title="Jensen Harris: An Office User Interface Blog" xmlUrl="http://blogs.msdn.com/jensenh/rss.xml" htmlUrl="http://blogs.msdn.com/jensenh/default.aspx" description="" />
+      <outline title="Noah Coad's Code" xmlUrl="http://blogs.msdn.com/noahc/rss.xml" htmlUrl="http://blogs.msdn.com/noahc/default.aspx" description="Microsoft Visual Studio Debugger Program Manager (part of Team System)&lt;br/&gt;&#xD;&#xA;Former C# MVP, KC5VXG, a Coding Dude" />
+      <outline title="Welcome to The Metaverse" xmlUrl="http://blogs.msdn.com/richardt/rss.xml" htmlUrl="http://blogs.msdn.com/richardt/default.aspx" description="Navigating the service-oriented, identity aware, platform neutral, technology agnostic metaverse." />
+      <outline title="Robert Burke's Weblog" xmlUrl="http://blogs.msdn.com/robburke/rss.xml" htmlUrl="http://blogs.msdn.com/robburke/default.aspx" description="[.NET|MSDN|AI|Photography|Moose]" />
+      <outline title="vincem's WebLog" xmlUrl="http://blogs.msdn.com/vincem/rss.xml" htmlUrl="http://blogs.msdn.com/vincem/default.aspx" description="Microsoft Consultant, Author:The Build Master" />
+      <outline title="Notes from the field..." xmlUrl="http://blogs.msdn.com/William_Zentmayer/rss.xml" htmlUrl="http://blogs.msdn.com/william_zentmayer/default.aspx" description="William Zentmayer - Architect Evangelist" />
+      <outline title="Dave Northey's Blog" xmlUrl="http://blogs.technet.com/daven/rss.xml" htmlUrl="http://blogs.technet.com/daven/default.aspx" description="" />
+      <outline title="David Weiss" xmlUrl="http://feeds.feedburner.com/davidweiss" htmlUrl="http://davidweiss.blogspot.com/index.html" description="" />
+      <outline title="Port25" xmlUrl="http://feeds.feedburner.com/Port25/" htmlUrl="http://port25.technet.com/default.aspx" description="Port 25 is open. The people, insights, and analysis from the Microsoft Open Source Software Lab. Send us your feedback and ideas. We want to hear from you. " />
+      <outline title="MSDN: Coding 4 Fun" xmlUrl="http://msdn.microsoft.com/coding4fun/rss.xml" htmlUrl="http://msdn.microsoft.com/coding4fun/" description="The latest information for people who write software for fun." />
+      <outline title="MSDN Subscriber Downloads" xmlUrl="http://msdn.microsoft.com/subscriptions/rss.xml" htmlUrl="http://msdn.microsoft.com/subscriptions/" description="Products recently posted to MSDN Subscriber Downloads." />
+      <outline title="Neopoleon.com" xmlUrl="http://neopoleon.com/blog/Rss.aspx" />
+      <outline title="simon.says" xmlUrl="http://simonguest.com/rss.aspx" htmlUrl="http://simonguest.com/blogs/smguest/default.aspx" description="The only guy at Microsoft allowed to log in as guest" />
+      <outline title="TestDriven.NET by Jamie Cansdale" xmlUrl="http://weblogs.asp.net/nunitaddin/Rss.aspx" htmlUrl="http://weblogs.asp.net/nunitaddin/default.aspx" description="Zero Friction Unit Testing for Visual Studio .NET" />
+      <outline title="ScottGu's Blog" xmlUrl="http://weblogs.asp.net/scottgu/Rss.aspx" htmlUrl="http://weblogs.asp.net/scottgu/default.aspx" description="Scott Guthrie lives in Seattle and builds a few products for Microsoft" />
+    </outline>
+    <outline title="DotNet">
+      <outline title="CodePlex Weblog" xmlUrl="http://blogs.msdn.com/codeplex/rss.xml" htmlUrl="http://blogs.msdn.com/codeplex/default.aspx" description="" />
+      <outline title="Dan Fernandez's Blog" xmlUrl="http://blogs.msdn.com/danielfe/rss.xml" htmlUrl="http://blogs.msdn.com/danielfe/default.aspx" description="Lead Product Manager - Visual Studio Express" />
+      <outline title="Eric Gunnerson's C# Compendium" xmlUrl="http://blogs.msdn.com/ericgu/rss.xml" htmlUrl="http://blogs.msdn.com/ericgu/default.aspx" description="" />
+      <outline title="aWorkBlogByGus" xmlUrl="http://blogs.msdn.com/gusperez/rss.xml" htmlUrl="http://blogs.msdn.com/gusperez/default.aspx" description="Gus Perez on C#, .NET Development and Software Testing" />
+      <outline title="James Newkirk's Blog" xmlUrl="http://blogs.msdn.com/jamesnewkirk/rss.xml" htmlUrl="http://blogs.msdn.com/jamesnewkirk/default.aspx" description="Adding to the kipple... One post at a time." />
+      <outline title="ComputerZen.com - Scott Hanselman" xmlUrl="http://feeds.feedburner.com/ScottHanselman" htmlUrl="http://www.hanselman.com/blog/" description="Scott Hanselman's Thoughts on .NET, WebServices, and Life" />
+      <outline title="Enterprise .NET Community: Your Enterprise .NET Community" xmlUrl="http://feeds.feedburner.com/techtarget/tssnet/home" htmlUrl="http://www.theserverside.net" description="TheServerSide is a developer community, containing up-to-date news, discussions, patterns, resources, and media" />
+      <outline title="Microsoft Live Labs" xmlUrl="http://labs.live.com/photosynth/blogs/SyndicationService.asmx/GetAtom" htmlUrl="http://labs.live.com/photosynth/blogs/" description="" />
+      <outline title="Team System Rocks!" xmlUrl="http://teamsystemrocks.blogspot.com/atom.xml" htmlUrl="http://teamsystemrocks.blogspot.com" description="This blog is about my adventures into one of Microsoft's latest development tools, Team System." />
+      <outline title="A Portion of Buff" xmlUrl="http://weblogs.asp.net/jarnold/Rss.aspx" htmlUrl="http://weblogs.asp.net/jarnold/default.aspx" description="Everybody else had one, so..." />
+      <outline title="Turtle" xmlUrl="http://www.codeplex.com/Project/ProjectRss.aspx?ProjectName=Turtle" htmlUrl="http://www.codeplex.com/Turtle/Project/ProjectRss.aspx" description="Turtle is a free, open source client for Microsoft Team Foundation Server source control services.  It is an alternative to the VSTS plugin for Visual Studio, or for those who may be using using TFS f" />
+      <outline title="CodePlex" xmlUrl="http://www.codeplex.com/rss.ashx" htmlUrl="http://www.codeplex.com/rss.ashx" description="This is the main RSS feed for CodePlex. This feed contains notifications of new project on the CodePlex site, as well as periodic statistics like Most Popular Project and Most Active Project." />
+      <outline title="Coding Horror: Jeff Atwood" xmlUrl="http://www.codinghorror.com/blog/index.xml" htmlUrl="http://www.codinghorror.com/blog/" description="programming and human factors - Jeff Atwood" />
+      <outline title="public MattBerther : ISerializable" xmlUrl="http://www.mattberther.com/?feed=rss2" htmlUrl="http://www.mattberther.com" description="Matt Berther on C#, XML, and anything else that comes to mind..." />
+    </outline>
+    <outline title="Eclipse Plugin">
+      <outline title="David L's Blog" xmlUrl="http://blogs.msdn.com/davidlem/rss.xml" htmlUrl="http://blogs.msdn.com/davidlem/default.aspx" description="Time spent here you'll never get back!" />
+      <outline title="Keith Rowe's WebLog" xmlUrl="http://blogs.msdn.com/error.htm?aspxerrorpath=/keithrowe/rss.aspx" />
+      <outline title="Joe Sango's Blog" xmlUrl="http://jsango.blogspot.com/atom.xml" htmlUrl="http://jsango.blogspot.com" description="My development endeavor's covering Visual Studio Team System, .NET, Java, J2EE and EAI." />
+      <outline title="notgartner.com: Mitch Denny's Blog" xmlUrl="http://notgartner.com/Rss.aspx" htmlUrl="http://notgartner.wordpress.com" description="Mitch Denny, Senior Consultant at Readify" />
+      <outline title="Eclipse Proposals and Reviews" xmlUrl="http://www.eclipse.org/projects/reviews-rss.php" htmlUrl="http://www.eclipse.org/projects/" description="Upcoming Creation, Validation, and Release Reviews of Projects &#xA;and Proposals along with state changes to Proposals (new proposals, updated proposals, approved&#xA;projects, etc) at the Eclipse Foundation." />
+      <outline title="VSTS Tools for Eclipse: News" xmlUrl="http://www.gotdotnet.com/workspaces/rss.aspx?id=634099bd-f71d-431f-9458-85d23439ce68&amp;feed=news" htmlUrl="http://www.gotdotnet.com//workspaces/workspace.aspx?id=634099bd-f71d-431f-9458-85d23439ce68" description="A suite of tools and plug-ins for the Eclipse IDE to provide integration with Visual Studio 2005 Team System." />
+    </outline>
+    <outline title="Java">
+      <outline title="James Gosling" xmlUrl="http://blogs.sun.com/jag/feed/entries/rss" htmlUrl="http://blogs.sun.com/jag/" description="James Gosling's Weblog" />
+      <outline title="Rob Woollen's Blog" xmlUrl="http://dev2dev.bea.com/blog/rwoollen/index.xml" htmlUrl="http://dev2dev.bea.com/blog/rwoollen/" description="" />
+      <outline title="BEA dev2dev" xmlUrl="http://dev2dev.bea.com/rss/" />
+      <outline title="Vinny Carpenter's blog" xmlUrl="http://feeds.feedburner.com/VinnyCarpentersBlog/" htmlUrl="http://www.j2eegeek.com/blog" description="Java Geek in search of a clever and creative tag line :)" />
+      <outline title="Stefen Bodewig" xmlUrl="http://stefan.samaflost.de/blog/en/index.rss" htmlUrl="http://stefan.samaflost.de/blog" description="Mixed Content" />
+      <outline title="java.net News" xmlUrl="http://today.java.net/pub/q/news_rss?x-ver=1.0" htmlUrl="http://today.java.net/today/news" description="&#xA;	java.net&#xA;   " />
+      <outline title="Java.NET Blogs" xmlUrl="http://weblogs.java.net/pub/q/weblogs_rss?x-ver=1.0" />
+    </outline>
+    <outline title="Competition">
+      <outline title="Google Blog Search: teamplain" xmlUrl="http://blogsearch.google.com/blogsearch_feeds?hl=en&amp;q=teamplain&amp;ie=utf-8&amp;num=100&amp;output=rss" htmlUrl="http://blogsearch.google.com/blogsearch?hl=en&amp;q=teamplain&amp;ie=ISO-8859-1&amp;num=100" description="Google Blog Search Results: &lt;b&gt;127&lt;/b&gt; results for &lt;b&gt;teamplain&lt;/b&gt; - showing &lt;b&gt;1&lt;/b&gt; through &lt;b&gt;100&lt;/b&gt;" />
+      <outline title="TeamPlain - Hakan" xmlUrl="http://dev.devbiz.com/blogs/hakan/atom.aspx" htmlUrl="http://dev.devbiz.com/blogs/hakan/default.aspx" description="" />
+      <outline title="TeamPlain - Jeff" xmlUrl="http://dev.devbiz.com/blogs/jeff/atom.aspx" htmlUrl="http://dev.devbiz.com/blogs/jeff/default.aspx" description="" />
+      <outline title="devBiz Bloggers" xmlUrl="http://dev.devbiz.com/blogs/MainFeed.aspx?GroupID=6" htmlUrl="http://dev.devbiz.com/blogs/default.aspx?GroupID=6" description="devBiz Bloggers" />
+      <outline title="TeamPlain for Team System" xmlUrl="http://dev.devbiz.com/blogs/teamplain/rss.aspx" htmlUrl="http://dev.devbiz.com/blogs/teamplain/default.aspx" description="" />
+      <outline title="TeamPlain - Support" xmlUrl="http://dev.devbiz.com/forums/rss.aspx?ForumID=15&amp;Mode=0" htmlUrl="http://dev.devbiz.com/forums/15/ShowForum.aspx" description="Feature requests, bug reports, questions and problems related to TeamPlain" />
+    </outline>
+    <outline title="Teamprise">
+      <outline title="Google Blog Search: teamprise" xmlUrl="http://blogsearch.google.com/blogsearch_feeds?hl=en&amp;q=teamprise&amp;filter=0&amp;scoring=d&amp;ie=utf-8&amp;num=100&amp;output=rss" htmlUrl="http://blogsearch.google.com/blogsearch?hl=en&amp;q=teamprise&amp;filter=0&amp;scoring=d&amp;ie=ISO-8859-1&amp;num=100" description="Google Blog Search Results: &lt;b&gt;198&lt;/b&gt; results for &lt;b&gt;teamprise&lt;/b&gt; - showing &lt;b&gt;1&lt;/b&gt; through &lt;b&gt;100&lt;/b&gt;" />
+      <outline title="Google Blog Search: eclipse &quot;team foundation server&quot;" xmlUrl="http://blogsearch.google.com/blogsearch_feeds?hl=en&amp;scoring=d&amp;q=eclipse+%22team+foundation+server%22&amp;ie=utf-8&amp;num=100&amp;output=rss" htmlUrl="http://blogsearch.google.com/blogsearch?hl=en&amp;scoring=d&amp;q=eclipse+%22team+foundation+server%22&amp;ie=ISO-8859-1&amp;num=100" description="Google Blog Search Results: &lt;b&gt;128&lt;/b&gt; results for &lt;b&gt;eclipse team-foundation-server&lt;/b&gt; - showing &lt;b&gt;1&lt;/b&gt; through &lt;b&gt;100&lt;/b&gt;" />
+      <outline title="Teamprise Support" xmlUrl="http://support.teamprise.com/rss.php" htmlUrl="http://support.teamprise.com//" description="" />
+      <outline title="JSPWiki" xmlUrl="http://wiki.teamprise.com/rss.rdf" htmlUrl="http://wiki.teamprise.com/" description="Teamprise Wiki Updates" />
+      <outline title="simply complex" xmlUrl="http://www.benpryor.com/blog/index.php?/feeds/index.rss2" htmlUrl="http://www.benpryor.com/blog/" description="a software blog by Ben Pryor" />
+      <outline title="Teamprise Blogs" xmlUrl="http://www.teamprise.com/blog/index.xml" htmlUrl="http://www.teamprise.com/blog/" description="Weblogs from the developers of Teamprise" />
+    </outline>
+    <outline title="Mac">
+      <outline title="cabel.name" xmlUrl="http://cabel.name/atom.xml" htmlUrl="http://www.cabel.name/index.html" description="" />
+      <outline title="Daring Fireball" xmlUrl="http://daringfireball.net/index.xml" htmlUrl="http://daringfireball.net/" description="Mac and web curmudgeonry/nerdery. By John Gruber." />
+    </outline>
+    <outline title="Blogs">
+      <outline title="The Dilbert Blog" xmlUrl="http://dilbertblog.typepad.com/the_dilbert_blog/index.rdf" />
+      <outline title="Paul Daniels' Diary" xmlUrl="http://journals.aol.co.uk/thepauldaniels/PaulDanielsDiary/atom.xml" htmlUrl="http://journals.aol.co.uk/thepauldaniels/PaulDanielsDiary/" description="" />
+      <outline title="Joe Beda's EightyPercent.net" xmlUrl="http://www.eightypercent.net/rss.xml" htmlUrl="http://www.eightypercent.net" description="Are we there yet?" />
+    </outline>
+    <outline title="TDD">
+      <outline title="Brian Button - One Agile Coder" xmlUrl="http://feeds.feedburner.com/BrianButton-OneAgileCoder" htmlUrl="http://www.agileprogrammer.com/oneagilecoder/" description="Blogging on all things .Net, C#, and Agile" />
+      <outline title="Geek Noise" xmlUrl="http://feeds.feedburner.com/GeekNoise" htmlUrl="http://www.peterprovost.org/" description="Rants, rambles, news and notes from Peter Provost" />
+      <outline title="Joe Walnes" xmlUrl="http://joe.truemesh.com/blog/index.xml" htmlUrl="http://joe.truemesh.com/blog/" description="Objects, adaptable and maintainable designs, agile, enterprise systems, XP, Java and .NET, blah blah." />
+      <outline title="Martin Fowler's Bliki" xmlUrl="http://martinfowler.com/bliki/bliki.rss" htmlUrl="http://martinfowler.com/bliki" description="A cross between a blog and wiki of my partly-formed ideas on software development" />
+      <outline title="Nunit Blog" xmlUrl="http://nunit.com/blogs/?feed=rss2" htmlUrl="http://nunit.com/blogs" description="NUnit, TDD and the role of tests in agile development" />
+      <outline title="TestDriven.NET" xmlUrl="http://weblogs.asp.net/error.aspx?aspxerrorpath=/NUnitAddin/Rss.aspx" />
+      <outline title="Thoughts On ..." xmlUrl="http://www.williamcaputo.com/index.xml" htmlUrl="http://www.williamcaputo.com/" description="" />
+    </outline>
+    <outline title="Conferences">
+      <outline title="Irish National Developers Conference" xmlUrl="http://feeds.feedburner.com/IrishNationalDevelopersConference" htmlUrl="http://netli.wordpress.com" description="" />
+      <outline title="Dev Events" xmlUrl="http://nimtug.org/forums/rss.aspx?ForumID=14&amp;PostID=56" htmlUrl="http://nimtug.org/forums/14/ShowForum.aspx" description="Suggestions, Questions and Feedback on NIMTUG Deve Events" />
+    </outline>
+    <outline title="Comics">
+      <outline title="Dilbert" xmlUrl="http://feeds.feedburner.com/tapestrydilbert" htmlUrl="http://www.dilbert.com/" description="Unofficial Dilbert RSS Feed by TapestryComics.com" />
+    </outline>
+    <outline title="Tech">
+      <outline title="TechCrunch" xmlUrl="http://feeds.feedburner.com/Techcrunch" htmlUrl="http://www.techcrunch.com" description="TechCrunch profiles the companies, products and events that are defining and transforming the new web. TechCrunch is written by Michael Arrington." />
+      <outline title="ZDNet UK News" xmlUrl="http://feeds.feedburner.com/zdnetuk/news/20" htmlUrl="http://news.zdnet.co.uk/" description="News at ZDNet UK" />
+      <outline title="The Google Weblog" xmlUrl="http://google.blogspace.com/rss" htmlUrl="http://google.blogspace.com/" description="new google news fast" />
+      <outline title="The Daily WTF" xmlUrl="http://thedailywtf.com/Rss.aspx" htmlUrl="http://thedailywtf.com/" description="Curious Perversions in Information Technology" />
+      <outline title="Microsoft Monitor" xmlUrl="http://weblogs.jupiterresearch.com/msft/index.xml" htmlUrl="http://www.microsoftmonitor.com/" description="" />
+      <outline title="The Well-Formed Web" xmlUrl="http://wellformedweb.org/news?rss" htmlUrl="http://wellformedweb.org/news/" description="Exploring the limits of XML and HTTP" />
+      <outline title="Engadget" xmlUrl="http://www.engadget.com/rss.xml" htmlUrl="http://www.engadget.com" description="Engadget" />
+      <outline title="Think Secret" xmlUrl="http://www.thinksecret.com/rss.xml" />
+      <outline title="Wired News: Top Stories" xmlUrl="http://www.wired.com/news_drop/netcenter/netcenter.rdf" htmlUrl="http://www.wired.com/" description="Get the latest headlines from Wired News, the net's leading chronicle of how technology affects our lives, culture and work." />
+    </outline>
+    <outline title="VSTS Forums">
+      <outline title="MSDN: Visual Studio Team Edition for Software Testers" xmlUrl="http://forums.microsoft.com/library/errorpages/custom.htm?aspxerrorpath=/ServiceDown.aspx/rss.aspx" />
+      <outline title="MSDN Forums: Team Foundation Server - General" xmlUrl="http://forums.microsoft.com/MSDN/rss.aspx?ForumID=22&amp;Mode=0&amp;SiteID=1" htmlUrl="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=22&amp;SiteID=1" description="Discuss Team Foundation Server general concepts." />
+      <outline title="MSDN Forums: Team Foundation Server - Administration" xmlUrl="http://forums.microsoft.com/MSDN/rss.aspx?ForumID=477&amp;Mode=0&amp;SiteID=1" htmlUrl="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=477&amp;SiteID=1" description="Discuss Team Foundation Server administration and operations." />
+      <outline title="MSDN Forums: Team Foundation Server - Version Control" xmlUrl="http://forums.microsoft.com/MSDN/rss.aspx?ForumID=478&amp;Mode=0&amp;SiteID=1" htmlUrl="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=478&amp;SiteID=1" description="Discuss Team Foundation Version Control, including branching, merging, and shelving." />
+      <outline title="MSDN Forums: Team Foundation Server - Work Item Tracking" xmlUrl="http://forums.microsoft.com/MSDN/rss.aspx?ForumID=479&amp;Mode=0&amp;SiteID=1" htmlUrl="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=479&amp;SiteID=1" description="Discuss Team Foundation Work Item Tracking, including work item customization and Office integration." />
+      <outline title="MSDN Forums: Team Foundation Server - Build Automation" xmlUrl="http://forums.microsoft.com/MSDN/rss.aspx?ForumID=481&amp;Mode=0&amp;SiteID=1" htmlUrl="https://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=481&amp;SiteID=1" description="Discuss Team Foundation Server's build automation features." />
+      <outline title="MSDN: Microsoft Solutions Framework - MSF" xmlUrl="http://forums.microsoft.com/ServiceDown.aspx/rss.aspx" />
+      <outline title="TFS Source Control" xmlUrl="http://teamfoundationserver.co.uk/Web/forums/rss.aspx?ForumID=12&amp;Mode=0" htmlUrl="http://teamfoundationserver.co.uk/Web/forums/12/ShowForum.aspx" description="For everything Source control based" />
+      <outline title="Getting to know TFS" xmlUrl="http://teamfoundationserver.co.uk/Web/forums/rss.aspx?ForumID=4&amp;Mode=0" htmlUrl="http://teamfoundationserver.co.uk/Web/forums/4/ShowForum.aspx" description="Discussions and resources relating to getting started with TFS" />
+      <outline title="Help me!" xmlUrl="http://teamfoundationserver.co.uk/Web/forums/rss.aspx?ForumID=6&amp;Mode=0" htmlUrl="http://teamfoundationserver.co.uk/Web/forums/6/ShowForum.aspx" description="Problems with TFS? Post here to get help." />
+    </outline>
+    <outline title="Linux">
+      <outline title="Ubuntu Blog" xmlUrl="http://fridge.ubuntu.com/node/feed" htmlUrl="http://fridge.ubuntu.com" description="" />
+      <outline title="New Linux User" xmlUrl="http://www.newlinuxuser.com/feed" htmlUrl="http://www.newlinuxuser.com" description="Howtos, Explanations, and Good Ole' Geeky Fun!" />
+    </outline>
+    <outline title="CCNET">
+      <outline title="CCNET_DEV" xmlUrl="http://groups.google.com.ag/group/ccnet-devel/feed/atom_v1_0_msgs.xml?num=50" htmlUrl="http://groups.google.com.ag/group/ccnet-devel/feed/" description="" />
+    </outline>
+    <outline title="Jornalist Blogs">
+      <outline title="BEYOND NORTHERN IRAQ: mail2bni@yahoo.co.uk" xmlUrl="http://stuarthughes.blogspot.com/rss/atom.xml" htmlUrl="http://stuarthughes.blogspot.com" description="" />
+      <outline title="Kevin Sites Blog" xmlUrl="http://www.kevinsites.net/rss.xml" htmlUrl="http://www.kevinsites.net/" description="First-person account of a reporter's life on the front lines of war." />
+    </outline>
+    <outline title="Codeplex">
+      <outline title="TeFoSe.Net" xmlUrl="http://www.codeplex.com/Project/ProjectRss.aspx?ProjectName=TeFoSe" htmlUrl="http://www.codeplex.com/TeFoSe/Project/ProjectRss.aspx" description="This project will be a Team Foundation Server Client GUI with extended functionality. &lt;br&gt;The GUI will look like the familiar Source Safe GUI offering developer specific features for queries against TFS" />
+      <outline title="TfsAlert" xmlUrl="http://www.codeplex.com/Project/ProjectRss.aspx?ProjectName=TfsAlert" htmlUrl="http://www.codeplex.com/TfsAlert/Project/ProjectRss.aspx" description="TfsAlert is a Windows System Tray application which monitors for subscribed TFS notifications and will display a balloon window accordingly.  In addition to notifications a user will have the ability " />
+      <outline title="TFS Follow Branches History Add-in for VS" xmlUrl="http://www.codeplex.com/Project/ProjectRss.aspx?ProjectName=TFSBranchHistory" htmlUrl="http://www.codeplex.com/TFSBranchHistory/Project/ProjectRss.aspx" description="This Project come to fill the missing feature of viewing full History of an item following its branches." />
+    </outline>
+    <outline title="Eclipse">
+      <outline title="EclipseZone: Eclipse Tips and Tricks" xmlUrl="http://www.eclipsezone.com/forumRSS/18111.xml" htmlUrl="http://www.eclipsezone.com" description="Useful tips &amp; tricks that help you achieve greater performance and success using Eclipse." />
+      <outline title="EclipseZone: Eclipse Announcements" xmlUrl="http://www.eclipsezone.com/forumRSS/18112.xml" htmlUrl="http://www.eclipsezone.com" description="null" />
+    </outline>
+    <outline title="Podcasting">
+      <outline title=".NET Rocks! Full MP3 Downloads" xmlUrl="http://www.franklins.net/DotNetRocks_FullMP3.ashx" htmlUrl="http://www.dotnetrocks.com/" description=".NET Rocks! is an Internet Audio Talk Show for Microsoft .NET Developers." />
+    </outline>
+    <outline title="Resharper EAP">
+      <outline title="Resharper" xmlUrl="http://www.jetbrains.net/confluence/spaces/createrssfeed.action;jsessionid=01CA0A0573B6924D06F977FC1816EB8D?spaces=ReSharper&amp;types=page&amp;statuses=created&amp;maxResults=15&amp;publicFeed=true&amp;rssType=rss" htmlUrl="http://www.jetbrains.net/confluence" description="The 15 most recent creations of pages in space ReSharper." />
+      <outline title="Confluence RSS Feed" xmlUrl="http://www.jetbrains.net/confluence/spaces/createrssfeed.action;jsessionid=4433C5F8F008664606BD54D81E873A2A?spaces=ReSharper&amp;types=page&amp;statuses=modified&amp;maxResults=15&amp;publicFeed=true&amp;rssType=rss" htmlUrl="http://www.jetbrains.net/confluence" description="The 15 most recent modifications to pages in space ReSharper." />
+    </outline>
+  </body>
+</opml>

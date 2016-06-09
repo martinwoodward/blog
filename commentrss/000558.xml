@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Unlocking Files in VSTS</title>
+    <link>http://www.woodwardweb.com/vsts/unlocking_files.html</link>
+    <description>Just posted a reply to the VSTS Forums, but this is such a common question that I thought I&apos;d post the response here in a place that Google is more likely to stumble across it. The problem is when somebody...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-10-13T12:19:30+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Lee+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/unlocking_files.html#c001010</link>
+    <description>Iâve followed the steps and receive the following message:
+Tf10152: the item xxx must remain locked because its file type prevents multiple check-outs.
+
+any sugestions?</description>
+    <dc:date>2007-05-19T01:07:00+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=558</comments>   
+    <dc:creator>Lee</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Brian+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/unlocking_files.html#c001012</link>
+    <description>To get the full path to a file or folder in TFS, just right click the item in Source Control Explorer, click Properties, select the value listed for the &quot;Server Name&quot; property and then click CTRL-C or right click and select copy.</description>
+    <dc:date>2007-05-22T23:42:23+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=558</comments>   
+    <dc:creator>Brian</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Owais Aized+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/unlocking_files.html#c001384</link>
+    <description>Thanks Brother i stucked on this issue for a long time and it work successfully... Thanks a lot
+
+regards
+Owais Aized
+</description>
+    <dc:date>2009-08-07T05:13:17+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=558</comments>   
+    <dc:creator>Owais Aized</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Changeset based Build Numbering</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_based.html</link>
+    <description><![CDATA[Here at Teamprise we've recently changed our build numbering scheme.&nbsp; We use the traditional Major.Minor.Revision.Build approach with Major.Minor.Revision being the only thing an end user should care about and Major.Minor the only thing we would every do any marketing for.&nbsp;...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-02-13T14:10:52+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by GregM+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_based.html#c003164</link>
+    <description>We do the incrementing value as well, in a header file that gets modified and checked in as the first part of the build step (we&apos;re a C++ shop).  My question is how do you get the build number into the product?</description>
+    <dc:date>2007-02-13T23:35:31+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2060</comments>   
+    <dc:creator>GregM</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_based.html#c003165</link>
+    <description>Greg,
+
+In the java world it is really easy.  We get the changeset data into a variable in Ant and then we use that variable to do a number of substitutions in .properties files but also to name the jar files.  Eclipse uses a naming convention to indicate which is the latest version (which works very similar to the 0.0.0.qualifier system used by .NET Assemblies.
+
+So, to answer your question when we do the check-out of the files we then do a string substitution inside those file replacing it with the build number that we have generated.
+
+Not sure if that helps in your C++ world.  I&apos;m afriad I get scared now-a-days when I have to work in unmanaged code...</description>
+    <dc:date>2007-02-14T16:05:07+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2060</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by GregM+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_based.html#c003166</link>
+    <description>Okay, so you do change the source after it is retrieved from source control.  That&apos;s the main think I was wondering about.  I suppose we could also hook it up using an environment variable.  We already use an environment variable to control whether or not the build is an &quot;official&quot; one.  
+
+I wonder if the Vault command line client would return this value for us.  I don&apos;t see anything obvious in the help.  I&apos;ll have to do some digging.
+
+This would result in a huge inflation of our build numbers... we hit a transaction number of 100000 back in December (we have history in our tree for over 10 years, it was imported from VSS).  I&apos;m guessing that would really confuse some people.  Thanks for the idea.</description>
+    <dc:date>2007-02-15T23:43:42+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2060</comments>   
+    <dc:creator>GregM</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by GregM+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_based.html#c003167</link>
+    <description>Oops, &quot;the main thing&quot;, not &quot;the main think&quot;.</description>
+    <dc:date>2007-02-15T23:52:09+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2060</comments>   
+    <dc:creator>GregM</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_based.html#c003168</link>
+    <description>Greg,
+
+I&apos;d have to ask my colleagues over on the SourceGear side of the fence about the usage of the Vault command line as it is something I don&apos;t do every day.
+
+I would think that possibly something like &quot;vault HISTORY -rowlimit 1 pathToProject&quot; might give you enough to be able to parse out the changeset - however I&apos;d have to ask them.
+
+Good luck,
+
+Martin.</description>
+    <dc:date>2007-02-16T11:56:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2060</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Joshua Flanagan+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_based.html#c003169</link>
+    <description>I was using this same approach for my projects at work, until we ran into the UInt16 limit of .NET version numbers (which didn&apos;t take long at all, since the changeset is global to the entire server, and we have hundreds of project teams using the same server).
+Now we have to do some ugly modulo math and split the changeset number between the Revision and Build.</description>
+    <dc:date>2007-03-26T01:37:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2060</comments>   
+    <dc:creator>Joshua Flanagan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Vladiv+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_based.html#c003170</link>
+    <description>Hi Martin,
+
+You mentioned: &quot;I&apos;m also going to be modifying the CruiseControl.NET integration to TFS to make versioning based on changeset numbers easier.&quot; Do you still have plans to do so?
+
+Thanks, Vladiv</description>
+    <dc:date>2009-01-20T19:34:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2060</comments>   
+    <dc:creator>Vladiv</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ian Freeman+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_based.html#c003522</link>
+    <description>I&apos;ve been using the revision from Subversion as the revision number in .net assemblies for a long time. TFS&apos; changeset incrementing is identical in execution to Subversion&apos;s revision incrementing. I desired all the advantages you mentioned when I started practicing this, and also being able to easily determine what revision a customer is running when they are beta testing.
+
+It&apos;s trivial to create a DLL component to be used during the Visual Studio build process to automatically sync the assembly version number (also innosetup script version number(s)) with version control. TortoiseSVN exposes a nice API for this.
+
+The only thing I&apos;ve struggled with in the past is what to do for the build number. Many people use fixed numeric codes there to specify whether the code is alpha, beta, release, etc. I think that a bad practice though as there&apos;s no way for a user (or package installer) to know that v1.2.1 is really much older than v1.2.0 because x.x.1 signifies alpha while x.x.0 signifies release. I suppose there&apos;s ways to get around this, but I&apos;ve chosen to exclude it eompletely. I use marketing.major.minor.revision. Marketing is only changed for marketing (or executive) reasons (&quot;Try new AOL v109!&quot;), major changes when significant implementations details or features have changed, minor signifies insignificant changes or small bugfixes, and revision is hid except tucked away in an About page. If a customer will be reporting issues in beta testing then I will usually print the revision number on all window titlebars. The marketing number may seem strange, but it allows developers a degree of freedom when dealing with management.</description>
+    <dc:date>2009-12-08T22:02:31+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2060</comments>   
+    <dc:creator>Ian Freeman</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Michael Lane+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_based.html#c004289</link>
+    <description>If you are using TFS team build every build done on the build server creates a label automatically anyway...so in that case there is no advantage to using the changeset number as I can see.</description>
+    <dc:date>2010-03-04T02:32:02+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2060</comments>   
+    <dc:creator>Michael Lane</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

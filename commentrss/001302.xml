@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Publishing Builds to a Deep Drop Location</title>
+    <link>http://www.woodwardweb.com/vsts/publishing_buil_1.html</link>
+    <description>Nasty things start to happen on Windows systems when you start having paths that are longer than 254 characters. When NTFS is the underlying filesystem you can have up to 32767 unicode characters in the path, however in parts of...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-03-02T06:59:44+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Kenny Kerr+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/publishing_buil_1.html#c002067</link>
+    <description>The MAX_PATH limitation is not a limitation of NTFS. Rather it is a limitation of the .NET Framework I/O wrappers. Many APIs however adopt this limitation. The Windows Shell API is a good example. But it is not a limitation in NTFS or of the native File Management API which can support over 32 thousand Unicode characters in local file paths.</description>
+    <dc:date>2009-03-02T08:23:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1302</comments>   
+    <dc:creator>Kenny Kerr</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/publishing_buil_1.html#c002068</link>
+    <description>Kenny,
+
+Very true, I guess I should not say that it is a file system limitation at all. I kinda knew this which is why I talk about local paths rather than talking about the \\?\C:\ way of working.
+
+It was my understanding that the native Windows shell support 3 types of path:
+
+
+Local Paths (C:\Dir\File.txt)
+UNC (\\Server\Volume\File.txt)
+Long UNC (\\?\C:\Dir\File.txt)
+
+
+Taking the Win32 GetFullPathName function for example, it has two versions - the ANSI one (GetFullPathNameA) and the Unicode one (GetFullPathNameW).  
+
+Are we saying that the fault in .NET is that it is calling the ANSI versions of the Win32 classes rather than the Unicode variants?  If you use a local path (C:\) with the unicode variants are you still limited to MAX_PATH (260 characters) and would need to use the Long UNC style to use up to 32k?  
+
+Anyway - it is clear that this is not an underlying file system issue but rather an API one. It is also clear that .NET makes the underlying Win32 issues even worse rather than the same or better?
+
+I know that it is probably too late for .NET 4.0 but I would love to file a bug in Connect around this issue and be as precise about the issue as possible to stand a chance of getting the issue fixed in the BCL of a later version of .NET.
+
+Thanks for the correction - I will re-word the introduction to this post.</description>
+    <dc:date>2009-03-02T13:00:51+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1302</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Wes MacDonald+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/publishing_buil_1.html#c002069</link>
+    <description>This is a simple work around to a very annoying problem.</description>
+    <dc:date>2009-03-02T13:48:24+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1302</comments>   
+    <dc:creator>Wes MacDonald</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

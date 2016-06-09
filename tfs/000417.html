@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Martin Woodward: Aligning Build Numbers with Assembly Versions in TFS2008.</title>
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/styles-site.css" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/MartinWoodward" />
+
+<link rel="start" href="http://www.woodwardweb.com/" title="Martin Woodward" />
+<link rel="prev" href="http://www.woodwardweb.com/vsts/000416.html" title="Upgrading from TFS 2008 Trial to TFS 2008 Full" />
+
+
+
+
+
+   <script type="text/javascript" src="http://www.woodwardweb.com/mt-site.js"></script>
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/tfs/000417.html">
+<dc:title>Aligning Build Numbers with Assembly Versions in TFS2008.</dc:title>
+<dc:description>I like my build numbers to be the same number that my assemblies are versioned with (and my end deliverables).&amp;#160; It just makes things easier to track, that way if I get a bug report in from a customer I...</dc:description>
+<dc:creator>Martin</dc:creator>
+<dc:date>2008-02-05T11:19:38+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+
+<!-- Google tracker -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-71966-1";
+urchinTracker();
+</script>
+
+</head>
+
+<body>
+
+<div id="banner">
+	<H1><SPAN CLASS="textVersion">Martin Woodward</SPAN></H1>
+</div>
+
+<div id="content">
+
+<div class="blog">
+
+<div id="menu">
+<a href="http://www.woodwardweb.com/vsts/000416.html">&laquo; Upgrading from TFS 2008 Trial to TFS 2008 Full</a> |
+
+<a href="http://www.woodwardweb.com/">Martin Woodward</a>
+
+</div>
+
+</div>
+
+
+<div class="blog">
+
+<h2 class="date">February 05, 2008</h2>
+
+<div class="blogbody">
+
+<h3 class="title">Aligning Build Numbers with Assembly Versions in TFS2008.</h3>
+
+<p>I like my build numbers to be the same number that my assemblies are versioned with (and my end deliverables).&#160; It just makes things easier to track, that way if I get a bug report in from a customer I can look at the version and easily look at the label in source control to see what code that included. In all deliverables provided to the customer, we always output the version obtained from the current assembly somewhere at the start of any diagnostic information, that way you can easily tell what version they are on and instantly track this back.&#160; This all helps to make it easy for bugs to be filed against the correct version and reported in which version they have been fixed (using the nice integration between Team Build and the Work Item tracking portion of TFS).</p>  <p>People are often surprised that this feature does not work &quot;out the box&quot; with Team Build, so I thought I would just take the time to document how I made this work for us internally.&#160; As you'll be able to see, in TFS2008 all the basic hooks are provided for us to support this way of working.</p>  <p>Firstly, our .NET version numbering uses a slightly different scheme to our Java version numbering.&#160; In our Java products, the &quot;build number&quot; portion of the version number is actually the <a href="http://www.woodwardweb.com/vsts/000329.html">changeset number of TFS at that point in time</a>.&#160; In .NET there are 4 components to a typical assembly version number (1.0.1234.5678) and the maximum value for each number is 65535.&#160; Our production TFS server is currently at changeset 7698 which means that we would get about 6 years out of such a build numbering scheme for .NET - that would be perfectly satisfactory if you had a changeset epoch after each major release (so you would reset the build number to be current changeset - 7698 if we did a major version today).&#160; However Team Build needs a unique name for each build - using a changeset based approach risks having two builds with the same build number.&#160; So rather than do a changeset based system, I decided to make the .NET build numbers be a straight-forward incrementing number. I rely of the default functionality of Team Build to create a label for that build number to track the number back to version control.&#160; The incrementing number value is stored in a file on the default drop location for the build.</p>  <p>Another thing that I should explain is that I don't personally like the &quot;standard&quot; Microsoft way of versioning assemblies as:-</p>  <blockquote>   <p>&lt;Major&gt;.&lt;Minor&gt;.&lt;Build&gt;.&lt;Service&gt;</p> </blockquote>  <p>To me, it reads much easier as:-</p>  <blockquote>   <p>&lt;Major&gt;.&lt;Minor&gt;.&lt;Service&gt;.&lt;Build&gt;</p> </blockquote>  <p>Where &lt;Build&gt; is the number that increments every time a build is performed.&#160; As far as I am concerned, this difference is mostly cosmetic as it doesn't change the way the CLR resolves the assembly versions, however feel free to correct me in the comments if I am talking rubbish.</p>  <p>So - onto how we accomplish this.&#160; Firstly, in TFS2008 there is a convenient target for you to override to generate your custom build numbers called &quot;BuildNumberOverrideTarget&quot;.&#160; The important thing is that each build number must be unique, therefore a good rule of thumb is to use something like BuildDefinitionName_1.0.0.1234.&#160; Inside the BuildNumberOverrideTarget you simply set &quot;BuildNumber&quot; property to be what you want.&#160; Here is ours:-</p>  <div style="line-height: 90%"><pre><span style="color: blue">&lt;</span><span style="color: maroon">PropertyGroup</span><span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">VersionMajor</span><span style="color: blue">&gt;</span>1<span style="color: blue">&lt;</span>/<span style="color: maroon">VersionMajor</span><span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">VersionMinor</span><span style="color: blue">&gt;</span>0<span style="color: blue">&lt;</span>/<span style="color: maroon">VersionMinor</span><span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">VersionService</span><span style="color: blue">&gt;</span>0<span style="color: blue">&lt;</span>/<span style="color: maroon">VersionService</span><span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">VersionBuild</span><span style="color: blue">&gt;</span>0<span style="color: blue">&lt;</span>/<span style="color: maroon">VersionBuild</span><span style="color: blue">&gt;</span> 
+<span style="color: blue">&lt;</span>/<span style="color: maroon">PropertyGroup</span><span style="color: blue">&gt;</span>
+<span style="color: blue">&lt;</span><span style="color: maroon">Target</span> <span style="color: red">Name</span>=&quot;<span style="color: blue">BuildNumberOverrideTarget</span>&quot;<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span>!-- Create a custom build number, matching the assembly version --<span style="color: blue">&gt;</span>      
+  <span style="color: blue">&lt;</span><span style="color: maroon">Message</span> <span style="color: red">Text</span>=&quot;<span style="color: blue">Loading last build number from file &amp;quot;$(DropLocation)\buildnumber.txt&amp;quot;</span>&quot; /<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">IncrementingNumber</span> <span style="color: red">NumberFile</span>=&quot;<span style="color: blue">$(DropLocation)\buildnumber.txt</span>&quot;<span style="color: blue">&gt;</span> 
+    <span style="color: blue">&lt;</span><span style="color: maroon">Output</span> <span style="color: red">TaskParameter</span>=&quot;<span style="color: blue">NextNumber</span>&quot; <span style="color: red">PropertyName</span>=&quot;<span style="color: blue">VersionBuild</span>&quot; /<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span>/<span style="color: maroon">IncrementingNumber</span><span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">PropertyGroup</span><span style="color: blue">&gt;</span> 
+    <span style="color: blue">&lt;</span><span style="color: maroon">BuildNumber</span><span style="color: blue">&gt;</span>$(BuildDefinitionName)_$(VersionMajor).$(VersionMinor).$(VersionService).$(VersionBuild)<span style="color: blue">&lt;</span>/<span style="color: maroon">BuildNumber</span><span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span>/<span style="color: maroon">PropertyGroup</span><span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">Message</span> <span style="color: red">Text</span>=&quot;<span style="color: blue">Build number set to &amp;quot;$(BuildNumber)&amp;quot;</span>&quot; /<span style="color: blue">&gt;</span>  
+<span style="color: blue">&lt;</span>/<span style="color: maroon">Target</span><span style="color: blue">&gt;</span></pre></div>
+
+<p>The first thing I do is call a quick custom task I wrote that increments the build number stored in the passed file.&#160; I wanted to do this while keeping a lock on the file itself in case two builds tried to update the same file at the same time.&#160; We then take this new number and build the BuildNumber based upon that value.&#160; The code for the Incrementing Number task is very simple and is given below:-</p>
+
+<div style="line-height: 90%; BORDER:1px solid; OVERFLOW: auto; WIDTH: 98%; HEIGHT: 300px;"><pre><span style="color: blue">using</span> System; 
+<span style="color: blue">using</span> System.IO; 
+<span style="color: blue">using</span> Microsoft.Build.Framework; 
+<span style="color: blue">using</span> Microsoft.Build.Utilities; 
+
+<p><span style="color: blue">namespace</span> Teamprise.Tasks <br />
+{ <br />
+    <span style="color: gray">/// &lt;summary&gt;</span> <br />
+    <span style="color: gray">///   A simple task to increment the number stored in a passed file.</span> <br />
+    <span style="color: gray">/// &lt;/summary&gt;</span> <br />
+    <span style="color: blue">public</span> <span style="color: blue">class</span> IncrementingNumber : Task <br />
+    { <br />
+        <span style="color: blue">public</span> <span style="color: blue">override</span> <span style="color: blue">bool</span> Execute() <br />
+        { <br />
+            NextNumber = IncrementNumber(); <br />
+            <span style="color: blue">return</span> <span style="color: maroon">true</span>; <br />
+        } <br />
+        <span style="color: blue">public</span> <span style="color: blue">int</span> IncrementNumber() <br />
+        { <br />
+            <span style="color: blue">using</span> (FileStream fs = <span style="color: blue">new</span> FileStream(NumberFile, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)) <br />
+            { <br />
+                StreamReader reader = <span style="color: blue">new</span> StreamReader(fs); </p>
+
+<p>                <span style="color: blue">long</span> pos = <span style="color: maroon">0</span>; <br />
+                String line = reader.ReadLine(); </p>
+
+<p>                <span style="color: green">// Ignore comments in file</span> <br />
+                <span style="color: blue">while</span> (line != <span style="color: blue">null</span> &amp;&amp; line.StartsWith(<span style="color: maroon">&quot;#&quot;</span>)) <br />
+                { <br />
+                    pos = pos + line.Length + System.Environment.NewLine.Length; <br />
+                    line = reader.ReadLine(); <br />
+                } </p>
+
+<p>                <span style="color: blue">int</span> number = -<span style="color: maroon">1</span>; <br />
+                <span style="color: blue">if</span> (line != <span style="color: blue">null</span>) <br />
+                { <br />
+                    number = Int32.Parse(line); <br />
+                } <br />
+                NextNumber = number + <span style="color: maroon">1</span>; </p>
+
+<p>                <span style="color: green">// Rewind the file stream back to the beginning of the number part.</span> <br />
+                fs.Position = pos; </p>
+
+<p>                StreamWriter writer = <span style="color: blue">new</span> StreamWriter(fs); <br />
+                writer.WriteLine(NextNumber.ToString()); <br />
+                writer.Flush(); <br />
+                writer.Close(); <br />
+            } <br />
+            <span style="color: blue">return</span> NextNumber; <br />
+        } <br />
+        [Required] <br />
+        <span style="color: blue">public</span> <span style="color: blue">string</span> NumberFile { <span style="color: blue">get</span>; <span style="color: blue">set</span>; } <br />
+        [Output] <br />
+        <span style="color: blue">public</span> <span style="color: blue">int</span> NextNumber { <span style="color: blue">get</span>; <span style="color: blue">set</span>; } <br />
+    } <br />
+}</pre></div></p>
+
+<p>You compile this code into an assembly of your choice that lives alongside the TFSBuild.proj file in the build configuration folder in source control and is this loaded using the UsingTask call at the begging of your MSBuild project, i.e.</p>
+
+<div style="line-height: 90%"><pre><span style="color: blue">&lt;</span><span style="color: maroon">UsingTask</span> <span style="color: red">TaskName</span>=&quot;<span style="color: blue">Teamprise.Tasks.IncrementingNumber</span>&quot; 
+           <span style="color: red">AssemblyFile</span>=&quot;<span style="color: blue">Teamprise.Tasks.dll</span>&quot; /<span style="color: blue">&gt;</span></pre></div>
+
+<p>The next thing that we have to do is to take the new version and force this into the assemblyinfo files.&#160; Personally, I prefer the AssemblyInfo files stored in source control to have a certain well defined number for each release branch (i.e. 1.0.0.0), and make it the build server that versions them.&#160; Some people like to check these back into source control - if you do that, be sure to check them in with the special comment of &quot;***NO_CI***&quot; to ensure that the check-in does not trigger any CI builds potentially putting you into an infinite loop of building.</p>
+
+<p>So, we modify our assembly version files after they have been downloaded from source control using a technique borrowed from <a href="http://richardsbraindump.blogspot.com/2007/07/versioning-builds-with-tfs-and-msbuild.html">Richard Banks</a>, our interpretation of this is given below:-</p>
+
+<div style="line-height: 90%"><pre><span style="color: blue">&lt;</span><span style="color: maroon">ItemGroup</span><span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">AssemblyInfoFiles</span> <span style="color: red">Include</span>=&quot;<span style="color: blue">$(SolutionRoot)\**\assemblyinfo.cs</span>&quot; /<span style="color: blue">&gt;</span> 
+<span style="color: blue">&lt;</span>/<span style="color: maroon">ItemGroup</span><span style="color: blue">&gt;</span>   
+<span style="color: blue">&lt;</span><span style="color: maroon">Target</span> <span style="color: red">Name</span>=&quot;<span style="color: blue">AfterGet</span>&quot;<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span>!-- Update all the assembly info files with generated version info --<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">Message</span> <span style="color: red">Text</span>=&quot;<span style="color: blue">Modifying AssemblyInfo files under &amp;quot;$(SolutionRoot)&amp;quot;.</span>&quot; /<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">Attrib</span> <span style="color: red">Files</span>=&quot;<span style="color: blue">@(AssemblyInfoFiles)</span>&quot; <span style="color: red">Normal</span>=&quot;<span style="color: blue">true</span>&quot; /<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">FileUpdate</span> <span style="color: red">Files</span>=&quot;<span style="color: blue">@(AssemblyInfoFiles)</span>&quot;                                 
+              <span style="color: red">Regex</span>=&quot;<span style="color: blue">AssemblyVersion\(&amp;quot;.*&amp;quot;\)\]</span>&quot;                 
+              <span style="color: red">ReplacementText</span>=&quot;<span style="color: blue">AssemblyVersion(&amp;quot;$(VersionMajor).$(VersionMinor).$(VersionService).$(VersionBuild)&amp;quot;)]</span>&quot; /<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">FileUpdate</span> <span style="color: red">Files</span>=&quot;<span style="color: blue">@(AssemblyInfoFiles)</span>&quot; 
+              <span style="color: red">Regex</span>=&quot;<span style="color: blue">AssemblyFileVersion\(&amp;quot;.*&amp;quot;\)\]</span>&quot; 
+              <span style="color: red">ReplacementText</span>=&quot;<span style="color: blue">AssemblyFileVersion(&amp;quot;$(VersionMajor).$(VersionMinor).$(VersionService).$(VersionBuild)&amp;quot;)]</span>&quot; /<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">Message</span> <span style="color: red">Text</span>=&quot;<span style="color: blue">AssemblyInfo files updated to version &amp;quot;$(VersionMajor).$(VersionMinor).$(VersionService).$(VersionBuild)&amp;quot;</span>&quot; /<span style="color: blue">&gt;</span> 
+<span style="color: blue">&lt;</span>/<span style="color: maroon">Target</span><span style="color: blue">&gt;</span></pre></div>
+
+<p>As you can see, we are making use of the custom Attrib task that is provided by the essential <a href="http://msbuildtasks.tigris.org/">MSBuild Community Tasks</a> to set the files to read/write and then we are calling the MSBuild Community Task FileUpdate to do a couple of regular expression search replaces on the appropriate parts of the files.</p>
+
+<p>And that's about all that needs to be done.&#160; Now our builds have nice incrementing numbers that have the version number included that is the same as the assembly info files.</p>
+
+<a name="more"></a>
+
+
+<div class = "shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/tfs/000417.html" type="text/javascript" charset="utf-8"></script>
+</div>
+<br/>
+
+<span class="posted">Posted by Martin at February  5, 2008 11:19 AM
+
+<br /></span>
+
+</div>
+
+
+                     
+
+                                          <div id="comments" class="comments">
+                        <div class="comments-content">
+                           
+                        </div>
+
+                         
+                        <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="417" />
+                           
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-head">Post a comment</h2>
+                              
+                              <div class="comments-body">
+                              
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">Name:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">Email Address:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          Remember personal info?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">Comments: </label>
+                                    <textarea id="comment-text" name="text" rows="10" cols="30"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="Preview" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="Post" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+
+<div align="center"><A HREF="http://www.teamprise.com">Teamprise</A> - <A HREF="http://www.teamprise.com">Team Foundation Server (TFS) Plugin for Eclipse</A>.</div>
+
+</div>
+</div>
+
+
+<div id="links">
+
+<div class="sidetitle">
+Sections
+</div>
+<div class="side">
+
+<a href="http://www.woodwardweb.com/" TITLE="Martin Woodward">Home</a><br />
+<a href="http://www.woodwardweb.com/Books/">Books (8)</a><br />
+<a href="http://www.woodwardweb.com/Buddies/">Buddies (10)</a><br />
+<a href="http://www.woodwardweb.com/Dotnet/">Dotnet (35)</a><br />
+<a href="http://www.woodwardweb.com/Films/">Films (2)</a><br />
+<a href="http://www.woodwardweb.com/Gadgets/">Gadgets (10)</a><br />
+<a href="http://www.woodwardweb.com/Java/">Java (14)</a><br />
+<a href="http://www.woodwardweb.com/Personal/">Personal (59)</a><br />
+<a href="http://www.woodwardweb.com/Photos/">Photos (2)</a><br />
+<a href="http://www.woodwardweb.com/Podcasting/">Podcasting (14)</a><br />
+<a href="http://www.woodwardweb.com/Programming/">Programming (28)</a><br />
+<a href="http://www.woodwardweb.com/Sandbox/">Sandbox (2)</a><br />
+<a href="http://www.woodwardweb.com/Software/">Software (9)</a><br />
+<a href="http://www.woodwardweb.com/TFS Top Tip/">TFS Top Tip (15)</a><br />
+<a href="http://www.woodwardweb.com/Teamprise/">Teamprise (50)</a><br />
+<a href="http://www.woodwardweb.com/Technology/">Technology (45)</a><br />
+<a href="http://www.woodwardweb.com/Vista/">Vista (20)</a><br />
+<a href="http://www.woodwardweb.com/Vsts/">Vsts (154)</a><br />
+<a href="http://www.woodwardweb.com/Web Design/">Web Design (2)</a><br />
+<a href="http://www.woodwardweb.com/Web Sites/">Web Sites (20)</a><br />
+<a href="http://www.woodwardweb.com/Work/">Work (6)</a><br />
+<a href="http://www.woodwardweb.com/tfs/">tfs (19)</a><br />
+<a href="http://www.woodwardweb.com/tfs2005/">tfs2005 (14)</a><br />
+<a href="http://www.woodwardweb.com/tfs2008/">tfs2008 (18)</a><br />
+
+</div>
+
+<div class="sidetitle">
+Search
+</div> 
+<div class="side">
+<form method="get" action="http://www.woodwardweb.com/mt/mt-search.cgi">
+<input type="hidden" name="IncludeBlogs" value="2" />
+<label for="search" accesskey="4">Search this site:</label><br />
+<input id="search" name="search" size="20" /><br />
+<input type="submit" value="Search" />
+</form>
+</div>
+
+<div class="syndicate">
+<a href="http://feeds.feedburner.com/MartinWoodward">Syndicate this site (XML)</a>
+<br/><br/>
+<a href="http://clustrmaps.com/counter/maps.php?url=http://www.woodwardweb.com" id="clustrMapsLink"><img src="http://clustrmaps.com/counter/index2.php?url=http://www.woodwardweb.com" border=0 alt="Locations of visitors to this page"onError="this.onError=null; this.src='http://www.meetomatic.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/'">
+</a>
+</div>
+
+<div class="syndicate">
+<a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights" /></a><br />
+This weblog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+</div>
+
+
+</div>
+
+<br clear="all" />
+
+
+</body>
+</html>

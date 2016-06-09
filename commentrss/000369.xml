@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Marking all mail as read in Gmail</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html</link>
+    <description><![CDATA[This took me a while to figure out, so I am writing down here to help me remember later.&nbsp; It may also be useful if you are playing with Gmail at all (BTW, the spam filtering on Gmail is very...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-07-05T17:34:48+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by wackazong+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c031247</link>
+    <description>Perfect! Much better than fussing around with a ruba script. Thanks a lot, I had exactly the same problem.</description>
+    <dc:date>2007-08-10T12:46:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>wackazong</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Stefan+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c033997</link>
+    <description>Thanks for posting this!</description>
+    <dc:date>2007-09-10T17:41:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Stefan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Anonymous+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c041106</link>
+    <description>THANKS a lot !</description>
+    <dc:date>2007-11-27T12:38:30+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Anonymous</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Akshay+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c048769</link>
+    <description>Thank you!</description>
+    <dc:date>2008-01-30T13:24:36+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Akshay</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ethan+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c052758</link>
+    <description>I can&apos;t find the &quot;Select all conversations that match this search&quot; button.
+
+Where is it?</description>
+    <dc:date>2008-02-24T02:52:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Ethan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Luke+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c061523</link>
+    <description>Thanks for this info.</description>
+    <dc:date>2008-05-07T21:09:35+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Luke</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Berlin+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c065137</link>
+    <description>THANKS! Have been amazingly useful</description>
+    <dc:date>2008-06-02T00:24:45+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Berlin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Karl+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c065187</link>
+    <description>Thanks very much! A darn sight more helpful than Google help!!!!</description>
+    <dc:date>2008-06-02T14:12:14+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Karl</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by russ+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084295</link>
+    <description>yes! thank you for this one!!</description>
+    <dc:date>2008-09-13T19:49:20+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>russ</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Marshall+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084312</link>
+    <description>Awesome! Thanks a lot, this is perfect.</description>
+    <dc:date>2008-10-21T09:51:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Marshall</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Jerry+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084327</link>
+    <description>I was having a hard time with this too.  Thanks for sharing the solution!</description>
+    <dc:date>2008-11-26T23:53:05+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Jerry</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Elizabeth+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084329</link>
+    <description>Thank you so much!!! My 5,214 unread messages have finally turned to 0!!!</description>
+    <dc:date>2008-12-08T04:38:52+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Elizabeth</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by shaun+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084346</link>
+    <description>That was amazing!  Used it to clear out my spam folder as well!  Now I can use gmail on my phone finally!!   Thanks so much.</description>
+    <dc:date>2009-01-15T16:35:40+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>shaun</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Chris+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084347</link>
+    <description>thanks man.  I had thousands of unread mails.  I&apos;m actually going to start using my inbox like a normal person now :)</description>
+    <dc:date>2009-01-19T06:44:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Chris</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Donal+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084350</link>
+    <description>Nice one, just changing to Google Apps mail and this works a treat to mark all as read when I import them in.  </description>
+    <dc:date>2009-01-21T21:46:51+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Donal</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by anonymous+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084367</link>
+    <description>Thanks, that really helped.</description>
+    <dc:date>2009-02-12T20:01:49+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>anonymous</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Jo+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084373</link>
+    <description>thanks!</description>
+    <dc:date>2009-02-28T14:12:27+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Jo</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by James+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084389</link>
+    <description>Yessssss!   Thanks, great tip.  </description>
+    <dc:date>2009-03-12T23:12:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>James</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ashish Jain+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084392</link>
+    <description>Thanks</description>
+    <dc:date>2009-03-21T10:39:37+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Ashish Jain</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by adam+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084400</link>
+    <description>Fantastic! Thanks</description>
+    <dc:date>2009-04-01T20:37:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>adam</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Brian Fitzsimons+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084403</link>
+    <description>You know, thats been bugging me for ages but I just havent had time to figure out how to do it. Thanks for helping me solve this little annoyance !
+
+Brian</description>
+    <dc:date>2009-04-05T17:22:58+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Brian Fitzsimons</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Matt Cope+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084430</link>
+    <description>That&apos;s really useful, thanks for posting!</description>
+    <dc:date>2009-05-23T13:24:58+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Matt Cope</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Orion Storm+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084433</link>
+    <description>So simple, so awesome. Thank You.</description>
+    <dc:date>2009-06-02T22:12:10+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Orion Storm</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Derek+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084450</link>
+    <description>Thanks for the tip, just saved me a ton of time. Very useful!</description>
+    <dc:date>2009-06-20T18:59:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Derek</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Kun Akos+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084458</link>
+    <description>Thanks a lot! I&apos;m really surprised how great gmail is. I used an email client before, but gmails filtering and archiving options are way better, and safer. Anyway, this solved the problem of thunderbird leaving all messages as unread on gmail...</description>
+    <dc:date>2009-07-08T12:27:34+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Kun Akos</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Tiago+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084465</link>
+    <description>Thanks for the info, worked like a charm.</description>
+    <dc:date>2009-07-21T20:30:22+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Tiago</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Matt+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084467</link>
+    <description>Thanks</description>
+    <dc:date>2009-07-23T14:08:49+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Matt</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by chris_rocks+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084477</link>
+    <description>Woww...very good..thank u</description>
+    <dc:date>2009-08-04T23:52:45+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>chris_rocks</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by bstring+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084484</link>
+    <description>Maybe things have change since this was posted, but I&apos;m not seeing the link mentioned in step 3 about selecting all conversations that match the search. I can only select what is shown in the first page of the search. Am I missing it or is it not there any longer?</description>
+    <dc:date>2009-08-29T06:06:05+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>bstring</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by ferrgle+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084494</link>
+    <description>Yey - Thats been bugging me for ages</description>
+    <dc:date>2009-09-18T15:24:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>ferrgle</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by larshugo+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084496</link>
+    <description>Great info! Started to mark the first and then the second page.. This made it all much easier!!</description>
+    <dc:date>2009-09-22T10:47:14+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>larshugo</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Kashi+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084502</link>
+    <description>thanks a lot...It was really helpful!!!!</description>
+    <dc:date>2009-09-29T13:25:36+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Kashi</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ganga+00:00</title>
+    <link>http://www.woodwardweb.com/technology/marking_all_mai.html#c084503</link>
+    <description>thanks! was really useful and time saving!!</description>
+    <dc:date>2009-10-02T00:31:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=369</comments>   
+    <dc:creator>Ganga</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Vista Admin Shell Icon</title>
+    <link>http://www.woodwardweb.com/vista/vista_admin_she.html</link>
+    <description><![CDATA[ In Windows Vista, one of the first things I do on a new machine is create an "Admin Shell".&nbsp;&nbsp;The steps I do are as follows:- Copy the shortcut of&nbsp;your favorite command prompt (PowerShell or&nbsp;cmd.exe) Rename the shortcut "Admin&nbsp;Shell" or...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-04-30T17:32:52+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by chadbr+00:00</title>
+    <link>http://www.woodwardweb.com/vista/vista_admin_she.html#c034513</link>
+    <description>This is *exactly* what I was looking for - - THANKS!
+</description>
+    <dc:date>2007-09-18T04:45:45+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=349</comments>   
+    <dc:creator>chadbr</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

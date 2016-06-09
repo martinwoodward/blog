@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Brian the Build Bunny Backgrounds</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build.html</link>
+    <description> It turns out that the little video I posted yesterday has taken on a bit of a life of it&apos;s own.&#160; Last time I checked, it was in the top 10 Science and Technology posts for YouTube in Ireland.&#160;...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-05-30T11:40:07+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Anthony Borton+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build.html#c002019</link>
+    <description>You should be on commission Martin. I just ordered my very own Nabaztag bunny :)
+
+Pity you couldn&apos;t make it to TechEd US this year. Would have been great to catch up with you. I know you had a very good reason though.
+
+Cheers
+Anthony</description>
+    <dc:date>2008-06-02T17:40:48+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1259</comments>   
+    <dc:creator>Anthony Borton</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

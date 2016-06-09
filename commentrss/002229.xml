@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Changeset comments are editable in TFS</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_comme.html</link>
+    <description>A feature of changeset metadata in Team Foundation Server 2008 is that it is actually editable.&#160; If you look at the changeset details for a historical check-in in Visual Studio you will notice that the comment and check-in notes fields...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-10-13T12:13:56+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Tara+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_comme.html#c003474</link>
+    <description>That was helpful, glad you made a post of it for others to benefit too. :)</description>
+    <dc:date>2009-10-14T05:01:37+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2229</comments>   
+    <dc:creator>Tara</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Eyal+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_comme.html#c003475</link>
+    <description>found my self quite a few times editing comments even just for spelling fixes or when educating new developers about the fact that comments should contains more info than just &quot;bug fix&quot;</description>
+    <dc:date>2009-10-14T12:03:04+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2229</comments>   
+    <dc:creator>Eyal</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Matt R+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/changeset_comme.html#c003479</link>
+    <description>I agree.  I have also run into a few instances where I&apos;ve had need to update the comments.  In some cases, they were just typos.  In other cases, I had forgotten to list a specific change I had committed, and wanted to record it in the comments.  The need doesn&apos;t come up very often, but it is a feature I&apos;ve found useful.</description>
+    <dc:date>2009-10-20T21:49:14+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2229</comments>   
+    <dc:creator>Matt R</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

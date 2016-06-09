@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title><![CDATA[&quot;Fix Windows Search&quot; Registry Hacks]]></title>
+    <link>http://www.woodwardweb.com/technology/fix_windows_sea.html</link>
+    <description><![CDATA[On the off chance that you read my blog and not Scott Hanselman's (shame on you) then I wanted to draw your attention to some invaluable registry tweaks he&nbsp;just posted - especially if you've been forced into installing Windows Desktop...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-11-24T10:41:03+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

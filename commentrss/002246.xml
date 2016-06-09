@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Goodbye Teamprise, Hello Team Explorer Everywhere</title>
+    <link>http://www.woodwardweb.com/teamprise/goodbye_teampri.html</link>
+    <description> In case you missed it, as part of Bob Muglia’s keynote announcing the launch of Visual Studio 2010 last week he also announced the launch of Microsoft® Visual Studio® Team Explorer Everywhere 2010.&#160; This is the initial release of...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2010-04-21T09:56:57+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by ryan+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/goodbye_teampri.html#c004735</link>
+    <description>will &apos;codeplex only&apos; licenses still exist for TEE like they did for teamprise?</description>
+    <dc:date>2010-04-21T12:49:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2246</comments>   
+    <dc:creator>ryan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/goodbye_teampri.html#c004737</link>
+    <description>Ryan - yes, we still provide a complimentary CodePlex license.  See http://codeplex.codeplex.com/wikipage?title=Obtaining%20the%20Team%20Explorer%20Everywhere%20Client for more details but basically you download the trial version then enter the license key given on the CodePlex page.</description>
+    <dc:date>2010-04-21T22:06:12+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2246</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

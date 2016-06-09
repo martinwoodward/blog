@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>The Year Planner Shuffle</title>
+    <link>http://www.woodwardweb.com/dotnet/the_year_planne.html</link>
+    <description> Today is the first day of the new year in the office and so it is time for me to do the dance that I always do after Auld Lang Syne, and that is the Annual Year Planner Shuffle.&#160;...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-01-05T13:05:29+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ross+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/the_year_planne.html#c002058</link>
+    <description>These year planners are fantastic! Thanks for putting them up.</description>
+    <dc:date>2009-04-30T14:40:40+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1289</comments>   
+    <dc:creator>Ross</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

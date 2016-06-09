@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>I Love Resharper</title>
+    <link>http://www.woodwardweb.com/dotnet/i_love_resharpe.html</link>
+    <description><![CDATA[As I've mentioned before, I love Resharper from those crazily clever folks at JetBrains.&nbsp; Today I installed an Early Access version of 3.0.2 into Visual Studio 2008 and all the goodness has returned.&nbsp; No need to write a Using statement...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-08-08T11:06:28+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Igor Abade+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/i_love_resharpe.html#c001882</link>
+    <description>I second that, Martin. As an early user of ReSharper (having used IntelliJ IDEA before that) right now I just can&apos;t develop without it anymore. Actually, it&apos;s quite funny when I go to another dev&apos;s computer which doesn&apos;t have ReSharper installed. I feel a little &quot;impaired&quot; - none of my shortcut keys work anymore! :-D</description>
+    <dc:date>2007-08-08T15:42:36+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1202</comments>   
+    <dc:creator>Igor Abade</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Damien McGivern+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/i_love_resharpe.html#c001883</link>
+    <description>hear, hear!</description>
+    <dc:date>2007-08-08T22:34:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1202</comments>   
+    <dc:creator>Damien McGivern</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Martin Woodward: TFS Top Tip #4:  The Command Line Client is your friend.</title>
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/styles-site.css" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/MartinWoodward" />
+
+<link rel="start" href="http://www.woodwardweb.com/" title="Martin Woodward" />
+<link rel="prev" href="http://www.woodwardweb.com/technology/000233.html" title="Bad Names" />
+
+
+
+
+
+   <script type="text/javascript" src="http://www.woodwardweb.com/mt-site.js"></script>
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/000234.html">
+<dc:title>TFS Top Tip #4:  The Command Line Client is your friend.</dc:title>
+<dc:description><![CDATA[If you are going to be doing more than the basic check-in / check-out options then it pays to get to know the command line client &ndash; tf.&nbsp; The command line client is actually the most flexible and powerful client...]]></dc:description>
+<dc:creator>Martin</dc:creator>
+<dc:date>2006-04-28T16:39:48+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+
+<!-- Google tracker -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-71966-1";
+urchinTracker();
+</script>
+
+</head>
+
+<body>
+
+<div id="banner">
+	<H1><SPAN CLASS="textVersion">Martin Woodward</SPAN></H1>
+</div>
+
+<div id="content">
+
+<div class="blog">
+
+<div id="menu">
+<a href="http://www.woodwardweb.com/technology/000233.html">&laquo; Bad Names</a> |
+
+<a href="http://www.woodwardweb.com/">Martin Woodward</a>
+
+</div>
+
+</div>
+
+
+<div class="blog">
+
+<h2 class="date">April 28, 2006</h2>
+
+<div class="blogbody">
+
+<h3 class="title">TFS Top Tip #4:  The Command Line Client is your friend.</h3>
+
+<p>If you are going to be doing more than the basic check-in / check-out options then it pays to get to know the command line client &ndash; tf.&nbsp; The command line client is actually the most flexible and powerful client to Team Foundation Version Control.</p>
+<p>For more information, consult the <a href="http://msdn2.microsoft.com/en-us/library/cc31bk2e.aspx">MSDN help documentation</a>.&nbsp; <a href="http://www.teamprise.com/">Teamprise</a> users will be glad to hear that a large percentage of the commands are implemented in V1.0 of our command line client meaning that you can do these actions from a Mac or Unix box as well (<a href="http://kb.teamprise.com/article/view/8">install instructions are posted in the Knowledge Base</a>).&nbsp; If you are running on Windows then you are probably better off sticking to Microsoft&rsquo;s command line client that gets installed as part of the Team Foundation Server client installation (and accessible via a Visual Studio 2005 command shell).</p>
+<p>For example, to show&nbsp;all the check-outs by everyone on a path in the repository:-</p>
+<p><code>&nbsp; tf status /server:http://yourservernamehere:8080 /user:* /recursive $/TeamProject/</code></p>
+<p>For more examples, see an excellent&nbsp;post from <a href="http://blogs.msdn.com/jmanning/archive/2006/04/07/571151.aspx">James Manning</a>&nbsp;or some of my previous posts:-</p>
+<ul>
+<li><a href="http://www.woodwardweb.com/dotnet/000116.html">Hatteras Command Line Tips</a> (from back when tf.exe was called h.exe which saved a keypress :-), however the documentation was no where near as good as it is now&nbsp;)</li>
+<li><a href="http://www.woodwardweb.com/vsts/000143.html">Unlocking files in VSTS</a></li></ul>
+<p>The command line client is also excellent for scripting purposes (our automated build system relies heavily on it).&nbsp; I urge you to spend a few moments with a strong cup of coffee, the <a href="http://msdn2.microsoft.com/en-us/library/cc31bk2e.aspx">help documentation</a> and just have a play around.&nbsp; Once you realise what commands are available then you&rsquo;ll know what&rsquo;s possible if you come across a situation in the future where you reach limitations in the UI.</p>
+
+<a name="more"></a>
+
+
+<span class="posted">Posted by Martin at April 28, 2006 04:39 PM
+
+<br /></span>
+
+</div>
+
+
+                     
+
+                                          <div id="comments" class="comments">
+                        <div class="comments-content">
+                           
+                        </div>
+
+                         
+                        <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="234" />
+                           
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-head">Post a comment</h2>
+                              
+                              <div class="comments-body">
+                              
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">Name:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">Email Address:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          Remember personal info?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">Comments: </label>
+                                    <textarea id="comment-text" name="text" rows="10" cols="30"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="Preview" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="Post" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+
+
+
+
+
+
+</div>
+</div>
+
+
+<div id="links">
+
+<div class="sidetitle">
+Sections
+</div>
+<div class="side">
+
+<a href="http://www.woodwardweb.com/" TITLE="Martin Woodward">Home</a><br />
+<a href="http://www.woodwardweb.com/Books/">Books (8)</a><br />
+<a href="http://www.woodwardweb.com/Buddies/">Buddies (10)</a><br />
+<a href="http://www.woodwardweb.com/Dotnet/">Dotnet (23)</a><br />
+<a href="http://www.woodwardweb.com/Films/">Films (2)</a><br />
+<a href="http://www.woodwardweb.com/Gadgets/">Gadgets (9)</a><br />
+<a href="http://www.woodwardweb.com/Java/">Java (9)</a><br />
+<a href="http://www.woodwardweb.com/Personal/">Personal (31)</a><br />
+<a href="http://www.woodwardweb.com/Photos/">Photos (2)</a><br />
+<a href="http://www.woodwardweb.com/Podcasting/">Podcasting (8)</a><br />
+<a href="http://www.woodwardweb.com/Programming/">Programming (23)</a><br />
+<a href="http://www.woodwardweb.com/Sandbox/">Sandbox (2)</a><br />
+<a href="http://www.woodwardweb.com/Software/">Software (6)</a><br />
+<a href="http://www.woodwardweb.com/Teamprise/">Teamprise (13)</a><br />
+<a href="http://www.woodwardweb.com/Technology/">Technology (27)</a><br />
+<a href="http://www.woodwardweb.com/Vsts/">Vsts (57)</a><br />
+<a href="http://www.woodwardweb.com/Web Design/">Web Design (2)</a><br />
+<a href="http://www.woodwardweb.com/Web Sites/">Web Sites (19)</a><br />
+<a href="http://www.woodwardweb.com/Work/">Work (5)</a><br />
+
+</div>
+
+<div class="sidetitle">
+Search
+</div> 
+<div class="side">
+<form method="get" action="http://www.woodwardweb.com/mt/mt-search.cgi">
+<input type="hidden" name="IncludeBlogs" value="2" />
+<label for="search" accesskey="4">Search this site:</label><br />
+<input id="search" name="search" size="20" /><br />
+<input type="submit" value="Search" />
+</form>
+</div>
+
+<div class="syndicate">
+<a href="http://feeds.feedburner.com/MartinWoodward">Syndicate this site (XML)</a>
+<br/><br/>
+<a href="http://clustrmaps.com/counter/maps.php?url=http://www.woodwardweb.com" id="clustrMapsLink"><img src="http://clustrmaps.com/counter/index2.php?url=http://www.woodwardweb.com" border=0 alt="Locations of visitors to this page"onError="this.onError=null; this.src='http://www.meetomatic.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/'">
+</a>
+</div>
+
+<div class="syndicate">
+<a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights" /></a><br />
+This weblog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+</div>
+
+
+</div>
+
+<br clear="all" />
+
+
+</body>
+</html>

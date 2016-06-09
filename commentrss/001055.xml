@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Folder Structure in Team Foundation Server Version Control</title>
+    <link>http://www.woodwardweb.com/vsts/folder_structur.html</link>
+    <description><![CDATA[I&rsquo;ve seen a few forum posts on this topic and talk about it a lot whenever meeting new users to Team Foundation Server so I thought it worthwhile posting on the subject. When you create a new team project on...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-04-11T16:49:15+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by James Manning+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/folder_structur.html#c001645</link>
+    <description>Excellent recommendation - I usually end up recommending &quot;branches&quot; instead of &quot;branch&quot;, but that&apos;s likely just leftover from the &quot;trunk/tags/branches&quot; chants from svn where I first picked it up (http://svnbook.red-bean.com/en/1.1/ch05s04.html)
+
+Since we both do namespace branching, I&apos;ve actually recommended that svnbook page to a couple of friends that asked for quick recommendations on setting up new projects in TF :)</description>
+    <dc:date>2006-04-12T03:03:48+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1055</comments>   
+    <dc:creator>James Manning</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Clay+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/folder_structur.html#c001646</link>
+    <description>What would you do with Build files?  These files would be placed above the trunk folder, yet the build information should be inside the trunk (or its branch).  I&apos;m not sure there is a good answer, but was wondering if you had any thoughts on this.</description>
+    <dc:date>2006-04-24T09:44:46+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1055</comments>   
+    <dc:creator>Clay</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/folder_structur.html#c001647</link>
+    <description>Yeah - that is a good question.  We don&apos;t curently use TeamBuild so I don&apos;t have a good answer for you there.  
+
+For the build server that we do have we (as you point out) manage our builds  using files that are in a folder inside the trunk folder.</description>
+    <dc:date>2006-04-24T11:56:52+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1055</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Keith Hill+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/folder_structur.html#c001648</link>
+    <description>We use this structure:
+
+$/Branches
+$/Branches/BugFix
+$/Branches/Feature
+$/Branches/Release
+$/Main/Doc
+$/Main/Imports
+$/Main/Prototypes
+$/Main/Samples
+$/Main/Src
+$/Main/Test
+$/Main/Tools
+$/Main/UserDoc
+
+I view Release branches as just another branch but perhaps there&apos;s a discoverability benefit to moving Release branches up to the top.  I also like &quot;Main&quot; over trunk.  It is shorter and more importantly IMO places the proper emphasis on the &quot;main&quot; branch.  :-)</description>
+    <dc:date>2006-04-24T18:41:41+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1055</comments>   
+    <dc:creator>Keith Hill</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Dan+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/folder_structur.html#c001649</link>
+    <description>Do you put your .sln solution file in the trunk folder, and the .csproj project files in each project folder?
+
+When you branch, do you right-click on the trunk folder and branch from there?</description>
+    <dc:date>2007-01-24T22:28:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1055</comments>   
+    <dc:creator>Dan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/folder_structur.html#c001650</link>
+    <description>Dan,
+
+Good point.  I do it like this:-
+
+$/TeamProject/trunk/Solution1/sol.sln
+$/TeamProject/trunk/Solution1/Project1/proj1.csproj
+$/TeamProject/trunk/Solution1/Project2/proj2.vbproj
+
+Often a TeamProject can contain multiple solutions, Java Projects etc.
+
+When I branch, I typically branch from trunk upwards, that way everything under trunk is branched - i.e all the projects.
+
+If you just have one solution under your Team Project then this may well be overkill - but worth doing if you have more than one solution.
+
+Hope that helps,
+
+Martin.</description>
+    <dc:date>2007-01-25T09:12:40+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1055</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Paresh+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/folder_structur.html#c001651</link>
+    <description>Hi,
+
+I need recommendation for following scenario. 
+
+We have outsourced a project. Should we create 2 branches ? what do you recommend when there are multiple countries involved in development and the projects in diff. countries are supposed to be readonly. 
+
+thanks
+Paresh</description>
+    <dc:date>2008-09-16T10:52:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1055</comments>   
+    <dc:creator>Paresh</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/folder_structur.html#c001652</link>
+    <description>Paresh,
+
+Take a look at the TFS Branching Guidance on CodePlex and see if that helps with your scenario.
+
+Good luck,
+
+Martin.</description>
+    <dc:date>2008-09-16T10:57:53+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1055</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

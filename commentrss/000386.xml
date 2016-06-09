@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>ARCast.TV - Team Foundation Server Down Under and Cross-Platform</title>
+    <link>http://www.woodwardweb.com/teamprise/arcasttv_team_f.html</link>
+    <description><![CDATA[ Ron Jacobs has posted up an ARCast video from TechEd 2007 in Australia.&nbsp; About 3 minutes in he does a nice interview with an organization using Team Foundation Server in a cross-platform environment.&nbsp; While I spend a lot of...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-10-18T11:25:30+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+  </channel>
+</rss>

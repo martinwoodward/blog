@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Mount gMail as a filesystem</title>
+    <link>http://www.woodwardweb.com/technology/mount_gmail_as.html</link>
+    <description>Been wondering what to do with all those GMail invites? Well thanks to a couple of new developments you can now mount a gmail account as an external file system. First up, for lovers of penguins we have GmailFS a...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2004-10-29T09:05:42+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Flamsmark+00:00</title>
+    <link>http://www.woodwardweb.com/technology/mount_gmail_as.html#c002815</link>
+    <description>2.3ish GB is nothing to scoff at, but what if we want a full drive? how could we use several accounts  attached togeather to build a single larger drive, with a standard drive letter [on windows]?</description>
+    <dc:date>2005-07-17T22:58:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1789</comments>   
+    <dc:creator>Flamsmark</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

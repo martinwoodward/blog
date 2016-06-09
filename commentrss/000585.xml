@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Chicken or Beef?</title>
+    <link>http://www.woodwardweb.com/personal/chicken_or_beef.html</link>
+    <description>If I were clever like Eric Sink or Bill Caputo, I&apos;d be able to turn that catchy title in to a witty and insightful post about the software industry. But sadly for you, I&apos;m not and (as witnessed in this...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-01-24T00:30:46+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Adrian Lester+00:00</title>
+    <link>http://www.woodwardweb.com/personal/chicken_or_beef.html#c000794</link>
+    <description>You didn&apos;t exactly travel light in your previous job either. What was it - 3 laptops and a PDA?  No wonder they&apos;d to charter a flight just for your bags :)</description>
+    <dc:date>2006-01-24T22:35:23+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=585</comments>   
+    <dc:creator>Adrian Lester</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/personal/chicken_or_beef.html#c000795</link>
+    <description>Is there not a vegan option? b(^_^)</description>
+    <dc:date>2006-01-25T15:17:34+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=585</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by JiggaDigga+00:00</title>
+    <link>http://www.woodwardweb.com/personal/chicken_or_beef.html#c000833</link>
+    <description>Great reading, keep up the great posts.
+Peace, JiggaDigga</description>
+    <dc:date>2006-04-07T17:40:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=585</comments>   
+    <dc:creator>JiggaDigga</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

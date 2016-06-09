@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>CruiseControl 2.7.1 RC3 - now with TFS Support!</title>
+    <link>http://www.woodwardweb.com/teamprise/cruisecontrol_2.html</link>
+    <description><![CDATA[Paul Julius just announced that RC3 of CruiseControl 2.7.1 has been released from the Agile 2007 conference.&nbsp; From my point of view this is fantastic news, because it includes a patch I submitted to the project to include integration between...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-08-15T16:00:23+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Hey Martin+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/cruisecontrol_2.html#c033472</link>
+    <description>Martin,
+
+Any update on whether the 
+VSTF plugin works for CruiseControl.NET v1.3?
+
+I hear it works for 1.1 but what about 1.3?
+
+Could you please email me back?
+
+Thanks.</description>
+    <dc:date>2007-09-05T04:16:06+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=378</comments>   
+    <dc:creator>Hey Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/cruisecontrol_2.html#c033507</link>
+    <description>Yup, the CruiseControl.NET integration works with CCNET 1.3.  I&apos;ve just done a new release to include some patches that have recently been submited and tested against that and all seems to be working fine.</description>
+    <dc:date>2007-09-05T10:55:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=378</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

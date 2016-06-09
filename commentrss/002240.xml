@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Creating Custom Workflow Activities for TFS Build 2010</title>
+    <link>http://www.woodwardweb.com/vsts/tfs/creating_custom.html</link>
+    <description>Fellow Microsoft TFS Program Manager Jim Lamb has a good post detailing how to create a custom workflow activity in Team Foundation Build 2010 using the first of what I am sure will be many activities to stamp your assemblies...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-11-27T23:32:06+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

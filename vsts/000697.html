@@ -1,0 +1,794 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/vsts/tfs_top_tip_9_s.html">
+<dc:title>TFS Top Tip #9 - Secret Registry Hacks</dc:title>
+<dc:description><![CDATA[So,&nbsp;this isn't exactly original material - but I was having a chat with somebody today who I consider very knowledgeable about Visual Studio Team System and they were not aware of these so hopefully re-posting&nbsp;some will help more people discover...]]></dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2006-09-18T19:28:25+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/vsts/tfs_top_tip_9_s.html" title="TFS Top Tip #9 - Secret Registry Hacks" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/vsts/tfs_top_tip_9_s.html" title="TFS Top Tip #9 - Secret Registry Hacks" />
+    
+    <title>TFS Top Tip #9 - Secret Registry Hacks - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-697" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">TFS Top Tip #9 - Secret Registry Hacks</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author">Martin Woodward</span> on <abbr class="published" title="2006-09-18T19:28:25+00:00">September 18, 2006  7:28 PM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/tfs_top_tip_9_s.html#comments">2 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>So,&nbsp;this isn't exactly original material - but I was having a chat with somebody today who I consider very knowledgeable about Visual Studio Team System and they were not aware of these so hopefully re-posting&nbsp;some will help more people discover them.&nbsp; Strictly speaking, as all of these have been mentioned somewhere before the word "Secret" isn't&nbsp;correct - however it gave&nbsp;an otherwise very dull post a certain bit of excitement which kept you reading this far so forgive me.&nbsp; The usual Caveats about messing with the registry apply, also the default settings are generally more logical to new users so use with caution.&nbsp; Most of these tips apply to HKEY_LOCAL_MACHINE as well as HKEY_CURRENT_USER - I normally set them as a user preference so as not to confuse anyone else that should happen to use my machine.</p> <h4>Hack #1 - Stopping Team Explorer from connecting on Visual Studio 2005 Start-up</h4> <blockquote> <p>Add a DWORD value called "AutoLoadServer" under HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation.&nbsp; Zero means do not reconnect automatically.</p></blockquote> <p>I first read about this setting over at <a>Tim Noonan</a>'s blog.&nbsp; This can be very handy if, like me, you frequently change TFS servers.&nbsp; I&nbsp;jump between the work TFS instance, CodePlex&nbsp;and a test or VPC versions of TFS.&nbsp; I know which server I want to connect to when starting VS 2005, and frequently it is not the one I connected to last time.&nbsp; Adding the following setting means that I have to manually pick the server I want to connect to from the "Add Existing Project..." button.</p> <h4>Hack #2 - Don't get Missing Files</h4> <blockquote> <p>Add a DWORD value called DisableGetMissingFiles under HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation\SourceControl.&nbsp; Any value other than zero will disable getting files from the server automatically.</p></blockquote> <p>Another <a>Tim Noonan</a>&nbsp;special.&nbsp; This setting determines if files missing from the solution or project are automatically downloaded.&nbsp; I normally switch this off and so get the files only when I say "Get Latest" on a particular solution or project, this is especially useful when you are not always connected.</p> <h4>Hack #3 - Bypass proxy server</h4> <blockquote> <p>Add a String value called BypassProxyOnLocal under HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation\RequestSettings.&nbsp; A value of "true" will bypass.</p></blockquote> <p>This one from the legendry <a href="http://blogs.msdn.com/buckh/">Buck Hodges</a>.&nbsp; In some network configurations, the Microsoft Team Foundation Server client will connect to your Team Foundation Server via a web proxy server.&nbsp; This should be avoided as it slows everything down and the NTLM authentication used by TFS doesn't play well with some proxy configurations.&nbsp; I've seen this&nbsp;pop up as a&nbsp;problem with environments that use a proxy.pac file to control proxy access rather than hard-coding the entries in the Internet Options, LAN Settings (or for folks that don't have Bypass local set up).&nbsp; You should probably only use this setting if you know you are having this problem (often diagnosed by an intermittent failure of Team Explorer to connect but easily checked using a network sniffing tool such as Ethereal).</p> <h4>Hack #4 - TFS Version Control Proxy Settings</h4> <blockquote> <p>See HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation\SourceControl\Proxy.&nbsp; A String value called Url containing the proxy address and a String value called Enabled set to true will enable the source control proxy.</p></blockquote> <p>The easier way to enter values for what machine to use as a TFS Version Control Proxy&nbsp;is to go to into Visual Studio with Team Explorer installed and select Options, Source Control, Tools, Options, Source Control, Visual Studio Team Foundation Server, Proxy Settings.&nbsp; However, if you are running a tf.exe script or TFS .NET API code as part of a service and you want the code to go via a proxy then the HKEY_LOCAL_MACHINE version of this setting is very useful for setting a default.</p> <h4>Hack #5 - Configuring the TreeDiff Power Toy</h4> <p>See <a href="http://blogs.msdn.com/bharry/">Brian Harry</a>'s excellent post about some registry tweaks for <a href="http://blogs.msdn.com/bharry/archive/2006/09/08/746254.aspx">Configuring the TreeDiff Power Toy</a> to your whim.</p>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/tfs_top_tip_9_s.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/tfs_top_tip/" rel="tag">TFS Top Tip</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/" rel="tag">Vsts</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/" rel="tag">tfs</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/tfs2005/" rel="tag">tfs2005</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">2 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-1091" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">azri</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/tfs_top_tip_9_s.html#comment-1091"><abbr class="published" title="2008-01-14T18:37:36+00:00">January 14, 2008  6:37 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1091, 'azri')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>my office have proxy server ... so haw to used internet without proxy server </p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1314" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">arya hakha</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/tfs_top_tip_9_s.html#comment-1314"><abbr class="published" title="2009-03-21T18:45:47+00:00">March 21, 2009  6:45 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1314, 'arya hakha')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hi<br />
+i want access the rigestry from pc clint to server computer at the universty <br />
+can i hack it? rigestry- group policy  and other command disable by administartor<br />
+please help me .please<br />
+thanks a lot</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="697" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-836"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-837"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/changeset_comme.html">Changeset comments are editable in TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_on_the_main.html">TFS on the Mainframe</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/speaking_at_the.html">Speaking at the Virtual Team System Users Group</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/podcasting/radio_tfs_on_te.html">Radio TFS on Team System 2010 First Impressions</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/hosted_tfs_for.html">Hosted TFS for BizSpark Companies</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_2010_api_by.html">TFS 2010 API By Example: Introduction</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/codeplex_open_s.html">CodePlex Open Source Wiki Engine</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/ed_blankenship.html">Ed Blankenship on Using TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/case_study_igat.html">Case Study: iGate standardizing on TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/slotting_into_t.html">Slotting into TFS 2010</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

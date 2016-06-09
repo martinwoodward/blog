@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>Martin Woodward: Fishy Tale</title>
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/styles-site.css" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.woodwardweb.com/index.rdf" />
+
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="prev" href="http://www.woodwardweb.com/technology/000050.html" title="Mount gMail as a filesystem" />
+
+
+
+<script type="text/javascript" language="javascript">
+<!--
+
+function OpenTrackback (c) {
+    window.open(c,
+                    'trackback',
+                    'width=480,height=480,scrollbars=yes,status=yes');
+}
+
+var HOST = 'www.woodwardweb.com';
+
+// Copyright (c) 1996-1997 Athenia Associates.
+// http://www.webreference.com/js/
+// License is granted if and only if this entire
+// copyright notice is included. By Tomer Shiran.
+
+function setCookie (name, value, expires, path, domain, secure) {
+    var curCookie = name + "=" + escape(value) + ((expires) ? "; expires=" + expires.toGMTString() : "") + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + ((secure) ? "; secure" : "");
+    document.cookie = curCookie;
+}
+
+function getCookie (name) {
+    var prefix = name + '=';
+    var c = document.cookie;
+    var nullstring = '';
+    var cookieStartIndex = c.indexOf(prefix);
+    if (cookieStartIndex == -1)
+        return nullstring;
+    var cookieEndIndex = c.indexOf(";", cookieStartIndex + prefix.length);
+    if (cookieEndIndex == -1)
+        cookieEndIndex = c.length;
+    return unescape(c.substring(cookieStartIndex + prefix.length, cookieEndIndex));
+}
+
+function deleteCookie (name, path, domain) {
+    if (getCookie(name))
+        document.cookie = name + "=" + ((path) ? "; path=" + path : "") + ((domain) ? "; domain=" + domain : "") + "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+}
+
+function fixDate (date) {
+    var base = new Date(0);
+    var skew = base.getTime();
+    if (skew > 0)
+        date.setTime(date.getTime() - skew);
+}
+
+function rememberMe (f) {
+    var now = new Date();
+    fixDate(now);
+    now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000);
+    setCookie('mtcmtauth', f.author.value, now, '', HOST, '');
+    setCookie('mtcmtmail', f.email.value, now, '', HOST, '');
+    setCookie('mtcmthome', f.url.value, now, '', HOST, '');
+}
+
+function forgetMe (f) {
+    deleteCookie('mtcmtmail', '', HOST);
+    deleteCookie('mtcmthome', '', HOST);
+    deleteCookie('mtcmtauth', '', HOST);
+    f.email.value = '';
+    f.author.value = '';
+    f.url.value = '';
+}
+
+//-->
+</script>
+
+
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com//000051.html">
+<dc:title>Fishy Tale</dc:title>
+<dc:description>Took this picture from my phone (Sony Erricson T610). The camera is pretty poor, however nice picture of the base of a lampost on the Queen&apos;s Bridge in Belfast. In the background is the Waterfront concert hall and you might...</dc:description>
+<dc:creator>Martin</dc:creator>
+<dc:date>2004-10-30T15:01:12+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+</head>
+
+<body>
+
+<div id="banner">
+<h1><a href="http://www.woodwardweb.com/" accesskey="1"><SPAN CLASS="textVersion">Martin Woodward</SPAN></a></h1>
+<span class="description"></span>
+</div>
+
+<div id="content">
+
+<div class="blog">
+
+<div id="menu">
+<a href="http://www.woodwardweb.com/technology/000050.html">&laquo; Mount gMail as a filesystem</a> |
+
+<a href="http://www.woodwardweb.com/">Home</a>
+
+</div>
+
+</div>
+
+
+<div class="blog">
+
+<h2 class="date">October 30, 2004</h2>
+
+<div class="blogbody">
+
+<h3 class="title">Fishy Tale</h3>
+
+<p><img alt="fish.jpg" src="http://www.woodwardweb.com/fish.jpg" width="164" height="200" border="0" alt="Fish gargole on Queen's Bridge in Belfast" />Took this picture from my <a href="http://www.amazon.co.uk/exec/obidos/ASIN/B0000C8RAY/woodwardwebcom">phone</a> (<a href="http://www.amazon.co.uk/exec/obidos/ASIN/B0000C8RAY/woodwardwebcom">Sony Erricson T610</a>).  The camera is pretty poor, however nice picture of the base of a lampost on the <a href="http://www.multimap.com/map/browse.cgi?lat=54.6&lon=-5.9216&scale=5000&icon=x" title="Show location in Multimap">Queen's Bridge in Belfast</a>.  In the background is the <a href="http://www.waterfront.co.uk/">Waterfront</a> concert hall and you might just be able to make out my office.<br />
+</p>
+
+<a name="more"></a>
+
+
+<span class="posted">Posted by Martin at October 30, 2004 03:01 PM
+
+<br /></span>
+
+</div>
+
+
+</div>
+</div>
+
+
+<div id="links">
+
+<div class="sidetitle">
+Sections
+</div>
+<div class="side">
+
+<a href="http://www.woodwardweb.com/index.html" TITLE="Martin Woodward">Home</a><br />
+<a href="http://www.woodwardweb.com/Books/index.html">Books (6)</a><br />
+<a href="http://www.woodwardweb.com/Buddies/index.html">Buddies (4)</a><br />
+<a href="http://www.woodwardweb.com/Feedback/index.html">Feedback (1)</a><br />
+<a href="http://www.woodwardweb.com/Films/index.html">Films (1)</a><br />
+<a href="http://www.woodwardweb.com/Gadgets/index.html">Gadgets (8)</a><br />
+<a href="http://www.woodwardweb.com/Personal/index.html">Personal (7)</a><br />
+<a href="http://www.woodwardweb.com/Programming/index.html">Programming (1)</a><br />
+<a href="http://www.woodwardweb.com/Sandbox/index.html">Sandbox (1)</a><br />
+<a href="http://www.woodwardweb.com/Software/index.html">Software (5)</a><br />
+<a href="http://www.woodwardweb.com/Technology/index.html">Technology (4)</a><br />
+<a href="http://www.woodwardweb.com/Web Design/index.html">Web Design (2)</a><br />
+<a href="http://www.woodwardweb.com/Web Sites/index.html">Web Sites (8)</a><br />
+<a href="http://www.woodwardweb.com/Work/index.html">Work (4)</a><br />
+
+</div>
+
+
+
+<div class="sidetitle">
+Search
+</div> 
+<div class="side">
+<form method="get" action="http://www.woodwardweb.com/mt/mt-search.cgi">
+<input type="hidden" name="IncludeBlogs" value="2" />
+<label for="search" accesskey="4">Search this site:</label><br />
+<input id="search" name="search" size="20" /><br />
+<input type="submit" value="Search" />
+</form>
+</div>
+
+<div class="sidetitle">
+Recent Entries
+</div>
+<div class="side">
+<a href="http://www.woodwardweb.com//000051.html">Fishy Tale</a><br />
+<a href="http://www.woodwardweb.com/technology/000050.html">Mount gMail as a filesystem</a><br />
+<a href="http://www.woodwardweb.com/personal/000049.html">I'm back online!</a><br />
+<a href="http://www.woodwardweb.com/web_sites/000048.html">BBC Newstracker system goes live</a><br />
+<a href="http://www.woodwardweb.com/web_sites/000047.html">SpaceShipOne is in space</a><br />
+<a href="http://www.woodwardweb.com/software/000046.html">Pocket SharpMT</a><br />
+<a href="http://www.woodwardweb.com/software/000045.html">Skype Out</a><br />
+<a href="http://www.woodwardweb.com/gadgets/000044.html">New Toy</a><br />
+<a href="http://www.woodwardweb.com/books/000038.html">Hitchhiker's Guide to the Galaxy</a><br />
+<a href="http://www.woodwardweb.com/software/000037.html">XP Service Pack 2</a><br />
+
+</div>
+
+<div class="sidetitle">
+Archives
+</div>
+<div class="side">
+<a href="http://www.woodwardweb.com/archive/200410.html">October 2004</a><br />
+<a href="http://www.woodwardweb.com/archive/200409.html">September 2004</a><br />
+<a href="http://www.woodwardweb.com/archive/200408.html">August 2004</a><br />
+<a href="http://www.woodwardweb.com/archive/200407.html">July 2004</a><br />
+<a href="http://www.woodwardweb.com/archive/200406.html">June 2004</a><br />
+<a href="http://www.woodwardweb.com/archive/200405.html">May 2004</a><br />
+<a href="http://www.woodwardweb.com/archive/200404.html">April 2004</a><br />
+<a href="http://www.woodwardweb.com/archive/200403.html">March 2004</a><br />
+<a href="http://www.woodwardweb.com/archive/200402.html">February 2004</a><br />
+<a href="http://www.woodwardweb.com/archive/200401.html">January 2004</a><br />
+<a href="http://www.woodwardweb.com/archive/200312.html">December 2003</a><br />
+<a href="http://www.woodwardweb.com/archive/200311.html">November 2003</a><br />
+<a href="http://www.woodwardweb.com/archive/200310.html">October 2003</a><br />
+<a href="http://www.woodwardweb.com/archive/200309.html">September 2003</a><br />
+<a href="http://www.woodwardweb.com/archive/200307.html">July 2003</a><br />
+<a href="http://www.woodwardweb.com/archive/200012.html">December 2000</a><br />
+<a href="http://www.woodwardweb.com/archive/200007.html">July 2000</a><br />
+<a href="http://www.woodwardweb.com/archive/200005.html">May 2000</a><br />
+<a href="http://www.woodwardweb.com/archive/200004.html">April 2000</a><br />
+<a href="http://www.woodwardweb.com/archive/200001.html">January 2000</a><br />
+
+</div>
+
+<div class="syndicate">
+<a href="http://www.woodwardweb.com/index.rdf">Syndicate this site (XML)</a>
+</div>
+
+<div class="syndicate">
+<a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights" /></a><br />
+This weblog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+</div>
+
+
+</div>
+
+<br clear="all" />
+
+
+</body>
+</html>

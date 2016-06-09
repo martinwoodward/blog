@@ -1,0 +1,1357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/">
+<dc:title>Martin Woodward</dc:title>
+<dc:description></dc:description>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <title>Martin Woodward: April 2006 Archives</title>
+
+
+    <link rel="prev" href="http://www.woodwardweb.com/2006/03/" title="March 2006" />
+    <link rel="next" href="http://www.woodwardweb.com/2006/05/" title="May 2006" />
+
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-archive-listing mt-datebased-monthly-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <h1 id="page-title" class="archive-title">April 2006 Archives</h1>
+
+
+
+
+
+                            
+                            <div id="entry-1552" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/tfs_top_tip_4_t.html" rel="bookmark">TFS Top Tip #4:  The Command Line Client is your friend.</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-28T16:39:48+00:00">April 28, 2006  4:39 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/tfs_top_tip_4_t.html#comments">2 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>If you are going to be doing more than the basic check-in / check-out options then it pays to get to know the command line client &ndash; tf.&nbsp; The command line client is actually the most flexible and powerful client to Team Foundation Version Control.</p>
+<p>For more information, consult the <a href="http://msdn2.microsoft.com/en-us/library/cc31bk2e.aspx">MSDN help documentation</a>.&nbsp; <a href="http://www.teamprise.com/">Teamprise</a> users will be glad to hear that a large percentage of the commands are implemented in V1.0 of our command line client meaning that you can do these actions from a Mac or Unix box as well (<a href="http://kb.teamprise.com/article/view/8">install instructions are posted in the Knowledge Base</a>).&nbsp; If you are running on Windows then you are probably better off sticking to Microsoft&rsquo;s command line client that gets installed as part of the Team Foundation Server client installation (and accessible via a Visual Studio 2005 command shell).</p>
+<p>For example, to show&nbsp;all the check-outs by everyone on a path in the repository:-</p>
+<p><code>&nbsp; tf status /server:http://yourservernamehere:8080 /user:* /recursive $/TeamProject/</code></p>
+<p>For more examples, see an excellent&nbsp;post from <a href="http://blogs.msdn.com/jmanning/archive/2006/04/07/571151.aspx">James Manning</a>&nbsp;or some of my previous posts:-</p>
+<ul>
+<li><a href="http://www.woodwardweb.com/dotnet/000116.html">Hatteras Command Line Tips</a> (from back when tf.exe was called h.exe which saved a keypress :-), however the documentation was no where near as good as it is now&nbsp;)</li>
+<li><a href="http://www.woodwardweb.com/vsts/000143.html">Unlocking files in VSTS</a></li></ul>
+<p>The command line client is also excellent for scripting purposes (our automated build system relies heavily on it).&nbsp; I urge you to spend a few moments with a strong cup of coffee, the <a href="http://msdn2.microsoft.com/en-us/library/cc31bk2e.aspx">help documentation</a> and just have a play around.&nbsp; Once you realise what commands are available then you&rsquo;ll know what&rsquo;s possible if you come across a situation in the future where you reach limitations in the UI.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1969" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/technology/bad_names.html" rel="bookmark">Bad Names</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-28T10:37:13+00:00">April 28, 2006 10:37 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/technology/bad_names.html#comments">4 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>For <a href="http://notgartner.com/posts/4135.aspx">those</a> of you <a href="http://www.hanselman.com/blog/MourningMonadThisWholeMonadMSHMicrosoftCommandShellPowerShellThingIsTearingMeUpInside.aspx">morning</a> the loss of Monad as it <a href="http://tomshardware.co.uk/2006/04/25/powershell_windows_command_line_to_ship_q4/">henceforth becomes known</a> as <a href="http://go.microsoft.com/fwlink/?linkid=64772&amp;clcid=0x409">Windows PowerShell</a> (it&rsquo;s impossible to say that without putting some inflection into your voice to try and sound like a voice over for a cheesy advert) &ndash; we now have a new name to make fun of&nbsp;thanks to Nintendo <a href="http://www.engadget.com/2006/04/27/wii-know-wii-feel-the-same-way/">renaming there next generation console</a> the Nintendo Wii (and actually pronounced wee).&nbsp;&nbsp;It&rsquo;ll no doubt generate more&nbsp;titters&nbsp;than the name of the old <a href="http://en.wikipedia.org/wiki/Atari_TOS">Atari ST operating system</a>.</p>
+<p>Back to the Microsoft choice of Windows PowerShell.&nbsp; Seriously &ndash; why wasn&rsquo;t MSH good enough?&nbsp; A fantastic new object-orientated command line shell does not need a consumer friendly name, in fact a TLA with&nbsp;an &ldquo;in-the-know&rdquo; way of pronouncing it is better for geeks &ndash; and let&rsquo;s face it, the new shell ain&rsquo;t aimed at my Grandma.</p>
+<p>It&rsquo;ll be interesting to see what happens to the popular linux terminal emulator (called <a href="http://powershell.sourceforge.net/">PowerShell</a>) &ndash; hope those guys don&rsquo;t start feeling the weight of the Redmond lawyers trying to protect a name which a)&nbsp;Was allready being used and b) Isn&rsquo;t that good anyway.&nbsp; I know not everyone&nbsp;<a href="http://blog.dragonsharp.com/?p=52">likes my companies name</a>, but a least when you do a <a href="http://www.google.com/search?q=teamprise">Google for it</a> you get to our website&hellip;</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1550" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/inda_cork_talk.html" rel="bookmark">INDA Cork Talk</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-27T23:21:11+00:00">April 27, 2006 11:21 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Tonight I <a href="http://www.developers.ie/session.aspx?s=47">spoke at the Cork INDA group</a>.&nbsp; Despite the excellent weather outside loads of people turned up and sat in on a talk on Source Control, which shows true dedication (especially from the folks standing at the back).&nbsp; I particularly enjoyed it that the audience asked loads of questions that got us off onto interesting tangents.&nbsp; Thanks again to <a href="http://developers.ie/blogs/joegill/">Joe</a> for organising everything.</p>
+<p>I arrived in Cork city early this morning and it is a very pleasant place to hang out.&nbsp; If you are a geek in the city then I would recommend sitting in the <a href="http://www.clarioncork.com/">Clarion Hotel</a> as it is a very pleasant environment to work with free Wifi and they serve an excellent cup of hot tea.&nbsp; Anyone who knows the Marketing manager for <a href="http://www.teamprise.com/">Teamprise</a> will know that he has great taste in hotels and the Clarion is one he would like.&nbsp; Sadly, when I&rsquo;m booking hotels myself I tend to go&nbsp;a little more low-budget, but the one I am currently sitting in&nbsp;has plenty of old world charm.&nbsp; Cork also has a municipal Wifi service &ndash; while you have to pay &euro;10 a day to access that, the signal strength is pretty good from&nbsp;the hotel room from which I write this post.</p>
+<p>As promised, here is the slide deck as a <a href="http://www.woodwardweb.com/blog/SourceControl101WithTFS_CORK.zip">zipped Powerpoint file (2196 KB)</a>&nbsp; &ndash; also some useful links that were mentioned during questions.</p>
+<ul>
+<li><a href="http://software.ericsink.com/scm/source_control.html">Eric Sink&rsquo;s SourceControl HOWTO</a> &ndash; a series of great source control posts from my boss.&nbsp;</li>
+<li><a href="http://blogs.msdn.com/robcaron/default.aspx">Rob Caron&rsquo;s Blog </a>&ndash; The &ldquo;Team System Blogfather&rdquo; and all round nice chap (with Irish roots might I add)</li>
+<li><a href="http://teamsystemrocks.com/default.aspx">Team System Rocks</a> &ndash; Great VSTS community site maintained by Team System MVP <a href="http://teamsystemrocks.com/blogs/mickey_gousset/default.aspx">Mickey Gousset</a>.</li>
+<li><a href="http://vstsplugins.sourceforge.net/">CruiseControl.NET Plugin for TFS</a></li>
+<li><a href="http://www.teamprise.com/">Teamprise</a> &ndash; the company I am lucky enough to work for</li>
+<li><a href="http://www.microsoft.com/downloads/details.aspx?familyid=1FA86E00-F0A3-4290-9DA9-6E0378A3A3C5&amp;displaylang=en">VSTS Licensing White Paper</a> &ndash; yes, I&rsquo;m afraid it is that complicated</li>
+<li><a href="http://www.microsoftvirtuallabs.com/express/registration.aspx?LabId=5ede642a-f4e7-4c3a-8d5b-82d3d7540a19">Microsoft VSTS Virtual Labs</a> &ndash; connect in to a ready made VSTS environment, you can give the software a try with no need to install anything on your local machine.</li></ul>
+<p>Also, the book that we gave away (<a href="http://www.amazon.co.uk/exec/obidos/ASIN/1590596234/woodwardwebcom">Eric Sink on The Business Of Software</a>)&nbsp;is available from <a href="http://www.amazon.co.uk/exec/obidos/ASIN/1590596234/woodwardwebcom">Amazon</a>.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1549" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/irish_national.html" rel="bookmark">Irish National Developers Conference</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-27T13:55:05+00:00">April 27, 2006  1:55 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><a href="http://indc.wordpress.com/"><img alt="Irish National Developers Conference - for the community, by the community." src="http://www.developers.ie/Images/indc.gif" align="right" border="0" /></a>If you are in or around Dublin next week (May 3rd &amp; 4th 2006), then I would strongly encourage you to come along to the&nbsp;2006 <a href="http://indc.wordpress.com/">Irish National Developers Conference</a>.&nbsp; This conference is being organised by local .NET development community, and is aimed squarely at the development community.&nbsp; <a href="http://weblogs.asp.net/scottgu/">Scott Guthrie</a> will be speaking as will <a href="http://indc.wordpress.com/speakers/">other excellent local speakers</a> (I&rsquo;ll also&nbsp;be tagging along to make the other speakers look good).</p>
+<p>The event will also feature the opportunity to try out the technologies being talked about in Hands On Labs using equipment and resources being kindly supplied by the New Horizons training centre.</p>
+<p>The <a href="http://indc.wordpress.com/agenda/">sessions</a> promise to be quite hard-core, much more in-depth than the usual presentation, but there is plenty available to interest most folks.&nbsp; Also, there is plenty of opportunity to talk with other local developers and find out what exciting things are happening in your area.</p>
+<p>The speakers will be hanging around the labs at different times in the day so it is your opportunity to get advice, help and tips from them.&nbsp; The event is only &euro;50 to attend, with money going towards the event expenses &ndash; all that information for less than the price of a night out!</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1966" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/top_tfs_tip_3_r.html" rel="bookmark">TFS Top Tip #3:  Removing the Resolve Check-In Action from a Work Item</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-27T13:35:40+00:00">April 27, 2006  1:35 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/top_tfs_tip_3_r.html#comments">8 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>I don&rsquo;t know about you, but I love associating my check-ins with work items using the Pending Changes view, it makes it so easy to maintain requirements traceability and helps me feel less guilty as I&rsquo;m doing one more thing that I should have been doing for years.&nbsp; </p>
+<p>The only problem with the default definitions for Bug and Task are that if you select the item then by default the &ldquo;Resolve&rdquo; check-in action is selected.&nbsp; This is annoying for me as it the action I want to take in probably about 5% of check-ins.&nbsp; 95% of the time I just want to associate and 90% of the time I forgot that I have to change the default setting and end up going back to the work item and re-activating it.</p>
+<p><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="A bug with the Resolve and Associate actions displayed.  Resolve is the default." src="http://www.woodwardweb.com/blog/remove_resolve.png" border="0" /></p>
+<p>The &ldquo;Resolve&rdquo; option is displayed when a state transition in the work item&rsquo;s workflow is defined as having an action defined for check-in.&nbsp; Below is the transition section from the MSF Agile Bug:-</p>
+<div style="FONT-FAMILY: Courier New"><span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">TRANSITION</span>&nbsp;<span style="COLOR: red">from</span>="<SPAN style="color: blue">Active</SPAN>"&nbsp;<span style="COLOR: red">to</span>="<SPAN style="color: blue">Resolved</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASONS</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">DEFAULTREASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Fixed</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Deferred</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Duplicate</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">As&nbsp;Designed</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Unable&nbsp;to&nbsp;Reproduce</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Obsolete</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">REASONS</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELDS</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">System.AssignedTo</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">COPY</span>&nbsp;<span style="COLOR: red">from</span>="<SPAN style="color: blue">field</SPAN>"&nbsp;<span style="COLOR: red">field</span>="<SPAN style="color: blue">System.CreatedBy</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">Microsoft.VSTS.Common.ActivatedDate</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">READONLY</span>&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">Microsoft.VSTS.Common.ActivatedBy</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">READONLY</span>&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">Microsoft.VSTS.Common.ResolvedBy</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">COPY</span>&nbsp;<span style="COLOR: red">from</span>="<SPAN style="color: blue">currentuser</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">VALIDUSER</span>&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REQUIRED</span>&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">Microsoft.VSTS.Common.ResolvedDate</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">SERVERDEFAULT</span>&nbsp;<span style="COLOR: red">from</span>="<SPAN style="color: blue">clock</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELDS</span><span style="COLOR: blue">&gt;</span> <br /><strong>&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">ACTIONS</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">ACTION</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Microsoft.VSTS.Actions.Checkin</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">ACTIONS</span><span style="COLOR: blue">&gt;</span></strong> <br /><span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">TRANSITION</span><span style="COLOR: blue">&gt;</span></div>
+<p>If you remove the actions section from the transition from Active to Resolved transition then the only check-in action available will be &ldquo;Associate&rdquo;.&nbsp; Admittedly, this means that I have to edit the work item after finishing checking in files to move it from Active to Resolved &ndash; but I find this works better for me.&nbsp; I usually leave a little comment in the history as I change the state to say (at a high level) what I did and in the case of bugs any help I need to give to help&nbsp;the fix be verified by the test verification team.</p>
+<p>&nbsp;</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1547" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/tfs_tip_2_chang.html" rel="bookmark">TFS Top Tip #2: Changing the Logged In User</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-26T15:15:46+00:00">April 26, 2006  3:15 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/tfs_tip_2_chang.html#comments">2 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><a href="http://www.woodwardweb.com/blog/username_cache.gif"></a><a href="http://www.woodwardweb.com/blog/username_cache.gif"></a><a href="http://www.woodwardweb.com/blog/username_cache.gif"></a><a href="http://www.woodwardweb.com/blog/username_cache.gif"></a><a href="http://www.woodwardweb.com/blog/username_cache.gif"><img alt="Windows User Cache Dialog" src="http://www.woodwardweb.com/blog/username_cache_thumb.jpg" align="right" border="0" /></a>When you connect to a Team Foundation Server, the Microsoft client API attempts to connect with your current credentials&nbsp;that the process is running with under Windows.&nbsp; If you are on a different domain than your TFS server or the user that you are logged in with does not have access, then you will be prompted to enter your login credentials using the standard login dialog box that you will be familiar with from Internet Explorer.</p>
+<p>However, what if you pass credentials and now you would like to pass in a different set.&nbsp; In <a href="http://www.teamprise.com/">Teamprise</a> it is easy enough because we have to ask you them every time you connect.&nbsp; With the Microsoft API your credentials are cached in the standard windows store.</p>
+<p>To access this store (and remove your cached credentials allowing you to re-authenticate as a different user) then go to Control Panel, User Accounts, Advanced Tab, Manage Passwords.&nbsp; You should then locate your TFS Server instance and select Remove.</p>
+<p>&nbsp;</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1546" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/tfs_top_tip_1_w.html" rel="bookmark">TFS Top Tip #1 - WIQL Seperators</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-25T16:13:21+00:00">April 25, 2006  4:13 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/tfs_top_tip_1_w.html#comments">4 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p></p>
+<p>I thought I&rsquo;d try and post some quick Top Tips for Team Foundation Server &ndash; in no particular order apart from as I think of them.&nbsp; Today, this came up in the <a href="http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=366920&amp;SiteID=1">forums</a> so I thought I&rsquo;d elaborate.</p>
+<p>WIQL (pronounced Wickle), stands for Work Item Query Language and is what is used when talking to the work item store in Team Foundation Server.&nbsp; It has a SQL like construct and is used to pass queries to the server.&nbsp; Visual Studio 2005 comes with a Query Editor that generate WIQL.&nbsp; While the query editor is straightforward, it is pretty powerful and allows you to do most things.</p>
+<p>However, the query editor is region sensitive which sometimes causes confusion.&nbsp; Take the following example where I am using an &ldquo;IN&rdquo; statement to list a set of values for the work item status:-</p>
+<p><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="An example of using the IN statement in Visual Studio 2005 Work Item Query Editor" src="http://www.woodwardweb.com/blog/in_usage_example.png" border="0" /></p>
+<p>Note that the values are separated by commas.&nbsp; Those of you from a SQL background find this very sensible, but what the query editor is actually doing is taking the list of values and converting them into the following WIQL statement:-</p>
+<div style="FONT-FAMILY: Courier New">SELECT&nbsp;&nbsp;&nbsp;[System.Id],&nbsp;[System.WorkItemType],&nbsp;[Microsoft.VSTS.Common.Rank],&nbsp;[System.State],&nbsp;[System.AssignedTo],&nbsp;[System.Title]&nbsp; <br />FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WorkItems&nbsp; <br />WHERE&nbsp;&nbsp;&nbsp;&nbsp;[System.TeamProject]&nbsp;=&nbsp;@project&nbsp;&nbsp; <br />AND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.State]&nbsp;IN&nbsp;(<span style="COLOR: maroon">'Active'</span>,&nbsp;<span style="COLOR: maroon">'Pending'</span>,&nbsp;<span style="COLOR: maroon">'Proposed'</span>,&nbsp;<span style="COLOR: maroon">'Requested'</span>)&nbsp; <br />ORDER&nbsp;BY&nbsp;[Microsoft.VSTS.Common.Rank],&nbsp;[System.WorkItemType],&nbsp;[System.Id]</div>
+<p>(A top sub-tip is that it is possible to save WIQL files from Visual Studio by editing the query then selecting File, Save Query As.. and then select file.&nbsp; To run a saved query from the file system double click the *.wiq file from explorer)</p>
+<p>The comma separator used by the query editor is actually being picked up from the &ldquo;List separator&rdquo; of your regional settings (shown below)&nbsp;(Start, Control Panel, Regional Settings, Customize&hellip;)</p>
+<p><a href="http://www.woodwardweb.com/blog/region_settings.png"><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="Region_settings" src="http://www.woodwardweb.com/blog/region_settings_thumb.jpg" border="0" /></a></p>
+<p>If you are in one of the many regions of the world that use a different list separator then you have to use that in the Visual Studio 2005 Query Editor.&nbsp; For example, if I change my list separator to be a semi-colon and then re-edit the query in the Visual Studio 2005 Query Editor I get the following:-</p>
+<p><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="Same WIQL, different list seperator" src="http://www.woodwardweb.com/blog/in_usage_example_semicolon.png" border="0" /></p>
+<p>This behaviour has some interesting side effects.&nbsp; Remember when I said that the Visual Studio 2005 Query Editor &ldquo;allows you to do most things&rdquo;.&nbsp; Well, one small problem is forcing the editor to take a character to say that you want the following to be treated as a string.&nbsp; For example, if you have a comma in the text value you are trying to use in an &ldquo;IN&rdquo; statement then you are hosed because the query editor assumes that this is a new value in your list.&nbsp; For example, if you try the following:</p>
+<p><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="Query names" src="http://www.woodwardweb.com/blog/in_usage_example_names.png" border="0" /></p>
+<p>This actually gets translated by the query editor as the following:</p>
+<div style="FONT-FAMILY: Courier New">SELECT&nbsp;&nbsp;&nbsp;[System.Id],&nbsp;[System.WorkItemType],&nbsp;[Microsoft.VSTS.Common.Rank],&nbsp;[System.State],&nbsp;[System.AssignedTo],&nbsp;[System.Title]&nbsp; <br />FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WorkItems&nbsp; <br />WHERE&nbsp;&nbsp;&nbsp;&nbsp;[System.TeamProject]&nbsp;=&nbsp;@project&nbsp;&nbsp; <br />AND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.AssignedTo]&nbsp;IN&nbsp;(<span style="COLOR: maroon">''</span><span style="COLOR: maroon">'Woodward'</span>,&nbsp;<span style="COLOR: maroon">'Martin'</span><span style="COLOR: maroon">''</span>,&nbsp;<span style="COLOR: maroon">''</span><span style="COLOR: maroon">'Sell'</span>,&nbsp;<span style="COLOR: maroon">'Clark'</span><span style="COLOR: maroon">''</span>)&nbsp; <br />ORDER&nbsp;BY&nbsp;[Microsoft.VSTS.Common.Rank],&nbsp;[System.WorkItemType],&nbsp;[System.Id]</div>
+<p>As you can tell, it parses on the commas first, which is not want you wanted at all.&nbsp; If you manually type in the WIQL correctly as <code>IN (&lsquo;Woodward, Martin&rsquo;, &lsquo;Sell, Clark&rsquo;)</code> then the query editor will display this as <code>Woodward, Martin, Sell, Clark</code> &ndash; which in turn gets treated as <code>IN (&lsquo;Woodward&rsquo;,&rsquo;Martin&rsquo;,&rsquo;Sell&rsquo;,&rsquo;Clark&rsquo;)</code> when the WIQL is generated by the editor.&nbsp; </p>
+<p>Hey ho &ndash; <a href="http://www.csell.net/">Clark Sell</a> has a <a href="http://csell.net/PermaLink,guid,aae3824a-d5d5-4326-a5b0-d7ee1b5c1d25.aspx">post</a> about changing the regional settings to enable to to query assigned to names but be warned it may have nasty side effects in other programs on your machine.</p>
+<p>Hmm.&nbsp; When I thought about posting a TFS Tip a day for the next couple of weeks I didn&rsquo;t intend them to be this long.&nbsp; Expect the next one to be more concise&hellip;</p>
+<p><font size="1"><strong>Now playing:</strong> <a href="http://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?artistTerm=Carl Franklin">Carl Franklin</a> - <a href="http://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?songTerm=Avalon, AJAX, Vista, and more with Tim Huckaby&amp;artistTerm=Carl Franklin">Avalon, AJAX, Vista, and more with Tim Huckaby</a></font></p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1963" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/nimtug_talk.html" rel="bookmark">NIMTUG Talk</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-25T11:12:14+00:00">April 25, 2006 11:12 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/nimtug_talk.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p></p>
+<p>Thanks to everyone that came along to my talk in Belfast last night.&nbsp; It was great to catch up with some old friends and good fun to stand up in front of my home crowd.</p>
+<p>As promised, here is the copy of the slide deck as a <a href="http://www.woodwardweb.com/blog/SourceControl101WithTFS_BELFAST.zip">zipped PowerPoint File (2.4 MB)</a> and some links for further reading:-</p>
+<ul>
+<li><a href="http://software.ericsink.com/scm/source_control.html">Eric Sink&rsquo;s SourceControl HOWTO</a> &ndash; a series of great source control posts from my boss.&nbsp;</li>
+<li><a href="http://blogs.msdn.com/robcaron/default.aspx">Rob Caron&rsquo;s Blog </a>&ndash; The &ldquo;Team System Blogfather&rdquo; and all round nice chap (with Irish roots might I add)</li>
+<li><a href="http://teamsystemrocks.com/default.aspx">Team System Rocks</a> &ndash; Great VSTS community site.</li>
+<li><a href="http://vstsplugins.sourceforge.net/">CruiseControl.NET Plugin for TFS</a></li>
+<li><a href="http://www.teamprise.com/">Teamprise</a> &ndash; the company I am lucky enough to work for</li>
+<li><a href="http://www.microsoft.com/downloads/details.aspx?familyid=1FA86E00-F0A3-4290-9DA9-6E0378A3A3C5&amp;displaylang=en">VSTS Licensing White Paper</a> &ndash; yes, I&rsquo;m afraid it is that complicated</li></ul>
+<p>If you have any more questions about Team Foundation Server then please do not hesitate to get in touch directly or via one of the forums that I frequently hang out in:-</p>
+<ul>
+<li>TFS General<br /><a href="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=22&amp;SiteID=1" rel="nofollow">http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=22&amp;SiteID=1</a></li>
+<li>TFS Version Control (including posts about the MSSCCI provider):- <a href="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=478&amp;SiteID=1" rel="nofollow"><br />http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=478&amp;SiteID=1</a></li></ul>
+<p>Also, the book that we gave away (<a href="http://www.amazon.co.uk/exec/obidos/ASIN/1590596234/woodwardwebcom">Eric Sink on The Business Of Software</a>)&nbsp;is available from <a href="http://www.amazon.co.uk/exec/obidos/ASIN/1590596234/woodwardwebcom">Amazon</a>.</p>
+<p><font size="1"><strong>Now playing:</strong> <a href="http://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?artistTerm=BBC Radio 4">BBC Radio 4</a> - <a href="http://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?songTerm=Why Chile Works&amp;artistTerm=BBC Radio 4">Why Chile Works</a></font></p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1544" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/what_checkin_po.html" rel="bookmark">What Check-in Policies Do You Want?</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-18T18:22:22+00:00">April 18, 2006  6:22 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/what_checkin_po.html#comments">2 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Now V1.0 of <a href="http://www.teamprise.com/">Teamprise</a> is out the door, we have started on the next release and are looking at the features that people want.&nbsp; One of these is Check-in policy support.&nbsp; Due to the way check-in policies are implemented in Team Foundation Server it presents us with several architectural challenges.</p>
+<p>I&rsquo;d be interested to hear what Check-in policies&nbsp;people either use currently or would like to have.&nbsp; Feel free to join in the discussion even if&nbsp;you only currently use Team Foundation Server to manage your .NET projects.&nbsp; To get the discussion started here are the ones that I&rsquo;ve heard discussed previously:-</p>
+<ul>
+<li>Work-Item has been associated</li>
+<li>Comment has been entered</li>
+<li>Code passes static code analysis rules (FxCop etc)</li>
+<li>File names pass certain regular expression rules (i.e. forbid people from checking in *.tmp files or that pesky Thumbs.db file)</li>
+<li>Code being checked in compiles</li>
+<li>A defined set of unit tests associated with code have been ran and passed.</li></ul>
+<p>Anyone got any others?&nbsp; Any of those listed above useful or totally useless?&nbsp; If you don&rsquo;t want to post a comment to this blog &ndash; I&rsquo;d be very happy to hear from you <a href="javascript:var dom='%77%6F%6F%64%77%61%72%64%77%65%62%2E%63%6F%6D',e2='mailto' + ': ', ad='%62%6C%6F%67%2E%63%6F%6D%6D%65%6E%74';var e0=e2+ad+'%40'+dom+'?Subject=CheckinPolicy: ';(window.location?window.location.replace(e0):document.write(e0));">in private</a>.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1543" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/teamprise_v10_n.html" rel="bookmark">Teamprise V1.0 Now Released!</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-11T19:56:42+00:00">April 11, 2006  7:56 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/teamprise_v10_n.html#comments">4 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>A few minutes ago we flicked on the switch to release <a href="http://www.teamprise.com/">Teamprise</a> v1.0 to public release.&nbsp; If you have tried out any of the preview versions then I urge you to upgrade as this one has a some new features along with many bug fixes.&nbsp; Now the excitement really begins :-)</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1960" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/folder_structur.html" rel="bookmark">Folder Structure in Team Foundation Server Version Control</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-11T16:49:15+00:00">April 11, 2006  4:49 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/folder_structur.html#comments">8 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>I&rsquo;ve seen a few forum posts on this topic and talk about it a lot whenever meeting new users to Team Foundation Server so I thought it worthwhile posting on the subject.</p>
+<p>When you create a new team project on the Team Foundation server, the new team project wizard will ask you where you want to create&nbsp;a folder in source control for your project.&nbsp; Every team project has to have a root level folder to store files under &ndash; in fact under the covers TFS uses annotations on that root level folder to store team project level source control settings (such as check-in notes, check-in policies and if you want to disable checking out of files with no lock).</p>
+<p>The temptation I&rsquo;ve seen with a number of first time users is to put the solution file under the root level folder.&nbsp; The problem comes when they want another solution for that team project or perhaps that want to branch.&nbsp; Instead, I usually follow the convention in the picture below when creating new Team Projects &ndash; in this case one called &ldquo;Oryx&rdquo;.</p>
+<p><a href="http://www.woodwardweb.com/blog/example_structure.png"><img style="FLOAT: none; MARGIN-LEFT: 25px" alt="An example project folder structure - click to enlarge image" src="http://www.woodwardweb.com/blog/example_structure_thumb1.jpg" border="0" /></a><a href="http://www.woodwardweb.com/blog/example_structure.png"></a></p>
+<p>Team Foundation Server supports namespace branching &ndash; i.e. when you branch you tell the server to take a folder and branch it into another folder.&nbsp; Obviously &ndash; that folder cannot be below where you are branching from otherwise you would get yourself into a recursive loop.&nbsp; Now different branching models are the topic for a whole other discussion &ndash; however if you don&rsquo;t know what you want to do just yet, then it is probably safe just to create a folder for your main development line called &ldquo;trunk&rdquo; &ndash; you might never branch, but if you do at least you can branch at the root level of your team project.</p>
+<p>Another problem is where to draw the boundary between Team Projects?&nbsp;&nbsp; A team project usually shares a common set of requirements and are working towards an end goal.&nbsp; For example, if I was creating a medium sized&nbsp;e-commerce site for a company it would probably all be under one team project even though the site might be made up of multiple interfaces (internet, VoxML, customer service desktop), a core business logic engine built using .NET 1.1, .NET 2.0 and Java components with a mixture of legacy interop and a relational DB for the backend.&nbsp; The reason I&rsquo;d have all this as one team project is that they have one key deliverable that the business is interested in and also one requirement&nbsp;that may span multiple delivery teams.&nbsp; When you are considering Team projects you should think how your requirements are defined by the business rather than how your teams are currently organised.&nbsp; The internal organisation of teams can be mapped as sub folders in the project folder structure and also used to define your areas in the project classification for work items.</p>
+<p>The security model inside Team Foundation Server is incredibly powerful and you can break down the permissions inside your team project to a more granular level than is used by default.&nbsp; For example, each development group could have full rights to their project deliverable, but only read access to the others.&nbsp; You could even configure it so that nobody had permissions to edit a file in the /releases/1.0.0 folder once it had been released etc etc.&nbsp;</p>
+<p>The thing that&nbsp;affects a lot of&nbsp;users migrating from VSS is the fact that shared folders are not supported&nbsp;in Team Foundation Server.&nbsp; Shared&nbsp;folders where often used as a poor mans version of branching,&nbsp;in TFS you have the real thing&nbsp;&ndash;&nbsp;however some people also relied on them to&nbsp;set out their source in a particular way when sharing code between teams.&nbsp; I&rsquo;m afraid that this way of working is not well supported in TFS and you will have to use scripts to copy files around into the directory structure that you require.</p>
+<p>Like most things, change can be uncomfortable &ndash; but once you get used to Team Foundation Server you will love it.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1541" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/java/jni_on_intel_ba.html" rel="bookmark">JNI on Intel Based Macs</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-10T15:18:09+00:00">April 10, 2006  3:18 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>The day that&nbsp;Intel Macs first started shipping I walked into an Apple store, downloaded <a href="http://www.teamprise.com/">Teamprise</a> and tried to run it to see if it would work.&nbsp; It didn&rsquo;t.&nbsp; I wasn&rsquo;t that surprised, but I had kinda been hoping that the magic of Rosetta would just take over and automagically make it work.&nbsp; But sadly Rosetta (while clever) isn&rsquo;t that clever.</p>
+<p>You see, although on most of the marketing material it says our client is 100% Java, that is not strictly true.&nbsp; It should say 100% java rounded to the nearest percent &ndash; in terms of lines of code we are actually about 99.8% Java with a few small lines of JNI code to call a few (very isolated) native functions.&nbsp; While we seriously did consider a marketing tagline of &ldquo;nearly 100% java&rdquo; or &ldquo;99.8% Java&rdquo;, however we felt that the message would just confuse things.</p>
+<p>So &ndash; what are we doing in native code I hear you ask?&nbsp; Well, one thing we are not doing is calling into the Microsoft client libraries for Team Foundation Server access &ndash; some days I wish we were as it would mean a lot less work getting the client to run on Windows.&nbsp; However,&nbsp;when it comes to getting the client running everywhere else we would have been scuppered.&nbsp; Nope, all our Team Foundation Client logic is java talking&nbsp;to the web services running on your Team Foundation Server, meaning that you only need to install our client and you are good to go.</p>
+<p>We use native code in a couple of small places:-</p>
+<ol>
+<li>&ldquo;Advanced&rdquo; File handling.&nbsp; We need to set a read-only file read-write when it gets checked out and we have to work under a 1.4 version of the JRE.&nbsp; While Java 1.4&nbsp;it has a nice file.setReadOnly() method, there is not file.setReadOnly(false) or file.setReadWrite() method so we had to write our own.&nbsp; This is the only real bit of functionality that was must-have for our client that required native code.</li>
+<li>Terminal handling.&nbsp; Calculating the number of columns and rows in a console terminal from within the command line client.&nbsp; Had we not have already developed a JNI library for&nbsp;the read/write issue&nbsp;we probably wouldn&rsquo;t have added one for this, but it makes the command line client environment a lot nicer.</li></ol>
+<p>So you see &ndash; including comments and blank lines in&nbsp;the source for our&nbsp;native c code we have less than 300 lines &ndash; less than 0.2 % or our code base at the time of writing.</p>
+<p>Of course, our Teamprise Explorer Client uses SWT, which has a great deal of native code in it allowing Java applications to write nice looking and performant GUI&rsquo;s cross-platform.&nbsp; However, the only code we have written falls into one of the two categories above.</p>
+<p>Anyway, there is an interesting article over at Apple Developer Connection discussing how to get your <a href="http://developer.apple.com/java/jniuniversal.html">JNI to compile as a universal binary</a>.&nbsp; While&nbsp;our JNI code in our Mac version of the Eclipse Plugin and Command Line Client&nbsp;is compiled as a universal binary, we currently do not officially support the Mac on Intel platform as of version 1.0 &ndash; this is mainly due to the fact that the SWT code at the time we were developing was in the process of being ported to MacIntel.&nbsp; </p>
+<p><a href="http://www.edwardthomson.com/blog/">Ed</a>, one of my fellow developers here at <a href="http://www.teamprise.com/">Teamprise</a>, has a <a href="http://www.edwardthomson.com/blog/2006/04/teamprise_on_intel_os_x.html">great article</a> on the topic&nbsp;which explains our reasons for not supporting Intel based Macs as of V1.0.&nbsp; It is something that we are working on and won&rsquo;t be that way for long (in fact, as Ed mentions, if you&nbsp;contact us&nbsp;then we&rsquo;ll send you an&nbsp;unsupported MacIntel build right now).&nbsp;&nbsp;Personally, I&rsquo;m looking forward to the day when I can take one machine into a demo and show our client running on Mac OS, Windows and Linux &ndash; but we&rsquo;ll have to wait for better virtualization support for the new intel based Mac&rsquo;s until that can happen.</p>
+<p>&nbsp;</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1540" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/grabbed_by_the.html" rel="bookmark">Grabbed by the Monads</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-07T21:16:32+00:00">April  7, 2006  9:16 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/grabbed_by_the.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>If (like me)&nbsp;you are slowly getting hooked on <a href="http://channel9.msdn.com/wiki/default.aspx/Channel9.MSHWiki">MSH</a> (or <a href="http://channel9.msdn.com/wiki/default.aspx/Channel9.MSHWiki">Monad</a>), the <a href="http://blogs.msdn.com/jmanning/default.aspx">James Manning</a>&rsquo;s latest post will interest you&nbsp;&ndash; an early implementation of a <a href="http://blogs.msdn.com/jmanning/archive/2006/04/07/570810.aspx">MSH Provider for Team Foundation Server Version Control</a> allowing you to access the repository as if it were any other mapped drive. Sweet!</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1957" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/tfs_msscci_prov.html" rel="bookmark">TFS MSSCCI Provider Updated</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-07T10:57:15+00:00">April  7, 2006 10:57 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/tfs_msscci_prov.html#comments">5 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>A lot of people were asking about this <a href="http://www.woodwardweb.com/vsts/000217.html">when I was in Dublin</a>.&nbsp; <a href="http://blogs.msdn.com/bharry/default.aspx">Brian Harry</a> has <a href="http://blogs.msdn.com/bharry/archive/2006/04/06/570305.aspx">announced</a> the version 1.0&nbsp;of the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=32202966-EF04-442F-8C5C-88BDF15F551C&amp;displaylang=en">TFS MSSCCI provider</a> allowing you to access the power of Team Foundation Server from the following platforms (among others):-</p>
+<ul>
+<li>Visual Studio .NET 2003</li>
+<li>Visual Visual Basic 6 SP6 </li>
+<li>Visual C++ 6 SP6 </li>
+<li>SQL Server Management Studio</li></ul>
+<p>Don&rsquo;t forget, that you can will need at least Team Explorer installed on your machine and you need to make sure your developers have a Team Foundation Server CAL, but for most folks this will allow them to adopt Team Foundation Server right away, and then can use more and more of the power of Visual Studio Team System as they do more projects in VS 2005.&nbsp; You&rsquo;ll still need Team Explorer and the Command Line Client (tf.exe)&nbsp;to do more powerful&nbsp;administrative&nbsp;tasks.&nbsp;&nbsp;With this <u><font color="#0000ff">MSSCCI provider </font></u>and with <a href="http://www.teamprise.com/">Teamprise</a> you are now in a much better position for day-to-day development integrated in your IDE with Team Foundation Server than you are with most source control systems (even VSS).</p>
+<p>The provider is not officially supported by Microsoft, however they will actively be working on it over the next few months.&nbsp; See <a href="http://blogs.msdn.com/robcaron/archive/2006/04/06/570317.aspx">Rob</a>&rsquo;s&nbsp;or <a href="http://blogs.msdn.com/bharry/archive/2006/04/06/570305.aspx">Brian</a>&rsquo;s posts for more information.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1538" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/teamprise/what_is_teampri.html" rel="bookmark">What is Teamprise?</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-07T09:39:35+00:00">April  7, 2006  9:39 AM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>If you want to know more about what I&rsquo;ve been up to lately, then take a look at Ben&rsquo;s <a href="http://www.benpryor.com/blog/index.php?/archives/10-What-is-Teamprise.html">latest post</a>.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1537" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/buddies/ed_is_blogging.html" rel="bookmark">Ed is Blogging</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-05T20:34:41+00:00">April  5, 2006  8:34 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Fellow Teamprise developer <a href="http://www.edwardthomson.com/blog/">Ed Thomson</a>&nbsp;has started blogging.&nbsp; As you can tell from the header image in his blog, Ed is our resident Mac lover&nbsp;and his office is festooned with&nbsp;shiney&nbsp;Apple goodies (including one of those fancy new MacIntel machines).&nbsp; He uses Teamprise on Mac full time for development which has helped us&nbsp;catch numerous places where we didn&rsquo;t look nice when presented on a Mac OS.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1954" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/apple_boot_camp.html" rel="bookmark">Apple Boot Camp</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-05T15:26:59+00:00">April  5, 2006  3:26 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/apple_boot_camp.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><img height="197" alt="Bootmanager" src="http://www.woodwardweb.com/blog/bootmanager.gif" width="185" align="right" border="0" />My company (<a href="http://www.teamprise.com/">Teamprise</a>)&nbsp;develop a plugin for Eclipse to talk to Microsoft Team Foundation Server (TFS).&nbsp; We also have a stand-alone client and a command line client &ndash; all of which run on Windows, Mac and Unix.&nbsp; As well as helping to develop and test the product I often go out and demo it to people as it is one of those things that has got to be seen to be believed.&nbsp; It would be really nice to demo all three operating systems from the one machine.&nbsp; While I am still holding out for some virtualization support Apple have <a href="http://www.apple.com/macosx/bootcamp/">just announced a public beta of Boot Camp</a>, their boot manager making it very easy to dual boot XP on a MacIntel machine.</p>
+<p>While this is great tactic to encourage switchers from MS platforms into the Mac world, it will also be a boon for multi-platform development shops&nbsp;like my own.</p>
+<p>I also find it very interesting that the <a href="http://www.pcmag.com/image_popup/0,1871,s=1565&amp;iid=127601,00.asp">page</a> announcing this also talks about OS X 10.5 (Leopard) which is rumoured to have virtualization support built in to the operating system meaning you could dual run Mac OS X and Windows XP app without re-booting.&nbsp; Now that I would love to see &ndash; either through the operating system direct or via <a href="http://www.vmware.com/">VMWare</a>.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1535" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/inda_dublin_tal.html" rel="bookmark">INDA Dublin Talk Slide Deck</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-05T10:21:34+00:00">April  5, 2006 10:21 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/inda_dublin_tal.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p></p>
+<p>If you came along to my <a href="http://www.developers.ie/session.aspx?s=44">talk last night in Dublin</a>, then thanks for your time.&nbsp; I really enjoyed the chat as folks got stuck in and asked questions rather than just listening to me drone on.&nbsp; It&rsquo;s also the first time I&rsquo;ve spoke at an event and then wandered through into the bar to have pints lined up in front of me.&nbsp; Admitidly, they were pints courtesy of the Microsoft tab (thanks <a href="http://blogs.msdn.com/clare_dillon/">Clare</a>) but then conversation after my talk was fantastic &ndash; my turn to learn a lot from the assembled crowd.</p>
+<p>Anyway, as promised here is my slide deck (as <a onclick="javascript:urchinTracker ('/downloads/slides/dublin/ppt');" href="http://www.woodwardweb.com/blog/SourceControl101WithTFS_DUBLIN_PPT.zip">zipped ppt</a> and a <a onclick="javascript:urchinTracker ('/downloads/slides/dublin/pdf');" href="http://www.woodwardweb.com/blog/SourceControl101WithTFS_DUBLIN_PDF.zip">zipped pdf</a>).&nbsp; There are a set of links in the slides but the following are things that came up in questions:-</p>
+<ul>
+<li><a href="http://software.ericsink.com/scm/source_control.html">Eric Sink&rsquo;s SourceControl HOWTO</a> &ndash; a series of great source control posts from my boss.&nbsp;</li>
+<li><a href="http://blogs.msdn.com/robcaron/default.aspx">Rob Caron&rsquo;s Blog </a>&ndash; The &ldquo;Team System Blogfather&rdquo; and all round nice chap (with Irish roots might I add)</li>
+<li><a href="http://teamsystemrocks.com/default.aspx">Team System Rocks</a> &ndash; Great VSTS community site.</li>
+<li><a href="http://vstsplugins.sourceforge.net/">CruiseControl.NET Plugin for TFS</a></li>
+<li><a href="http://www.gotdotnet.com/workspaces/workspace.aspx?id=812a68af-5e74-48c6-9623-1a4469142a84">Process Template Editor UI</a></li>
+<li><a href="http://go.microsoft.com/fwlink/?LinkId=59385">TFS User Admin Tool</a>&nbsp; &ndash; Help you get those users added in all the right places.</li>
+<li><a href="http://www.teamprise.com/">Teamprise</a> &ndash; the company I am lucky enough to work for</li>
+<li><a href="http://www.microsoft.com/downloads/details.aspx?familyid=1FA86E00-F0A3-4290-9DA9-6E0378A3A3C5&amp;displaylang=en">VSTS Licensing White Paper</a> &ndash; yes, I&rsquo;m afraid it is that complicated</li></ul>
+<p>Also &ndash; the new version of the MSSCCI provider is due <a href="http://blogs.msdn.com/bharry/archive/2006/03/24/559876.aspx">any day now</a>.&nbsp; Keep your eye on <a href="http://blogs.msdn.com/bharry/">Brian Harry&rsquo;s blog</a> for more information.</p>
+<p>Hope folks had as much fun as I did and that there was something in the talk for everyone.&nbsp; I understand&nbsp;a video of the event will shortly be available on the <a href="http://www.developers.ie/">INDA web site</a>.</p>
+<p>If you missed the talk then I&rsquo;ll be giving it again at the following dates / locations:- </p>
+<ul>
+<li><a href="http://nimtug.org/events/1/default.aspx">Belfast &ndash; April 24th</a></li>
+<li><a href="http://www.developers.ie/session.aspx?s=47">Cork &ndash; April 27th</a></li>
+<li><a href="http://www.developers.ie/session.aspx?s=48">Limerick &ndash; May 11th</a></li>
+<li><a href="http://www.developers.ie/session.aspx?s=46">Galway &ndash; May 12th</a></li></ul>
+<p>I&rsquo;ll be modifying the talk as I go along so no two will be the same.&nbsp;&nbsp; However you might want to skip watching the video if you are going to come along to my talk as it will spoil some of the jokes :-)</p>
+<p><a onclick="javascript:urchinTracker ('/downloads/slides/dublin/ppt');" href="http://www.woodwardweb.com/blog/SourceControl101WithTFS_DUBLIN_PPT.zip">File Attachment: SourceControl101WithTFS_DUBLIN_PPT.zip (2146 KB)</a></p>
+<p><a onclick="javascript:urchinTracker ('/downloads/slides/dublin/pdf');" href="http://www.woodwardweb.com/blog/SourceControl101WithTFS_DUBLIN_PDF.zip">File Attachment: SourceControl101WithTFS_DUBLIN_PDF.zip (7812 KB)</a></p>
+<p><font size="1"><strong>Now playing:</strong> </font><a href="http://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?artistTerm=Scott Hanselman and Carl Franklin"><font size="1">Scott Hanselman and Carl Franklin</font></a><font size="1"> - </font><a href="http://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?songTerm=Microsoft Command Shell (MONAD)&amp;artistTerm=Scott Hanselman and Carl Franklin"><font size="1">Microsoft Command Shell (MONAD)</font></a></p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1534" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/personal/polishing_my_sh.html" rel="bookmark">Polishing My Shoes</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-04T14:45:43+00:00">April  4, 2006  2:45 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/personal/polishing_my_sh.html#comments">4 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>I am giving a <a href="http://www.developers.ie/session.aspx?s=44">talk tonight</a>.  As usual, I'm busy avoiding preparing for it.  It is a rare day now-a-days that I put on a shirt and smart trousers but as I'm meeting folks I've never met before in a city I've never been to, I thought I'd better make an effort.</p>
+
+<p>While polishing my shoes this morning it occurred to me that this was probably one of the few things that I do that my father and grandfather would have done in a similar way.  Sure, you can get those cream things that paint your shoes black but you cannot beat a good old fashioned bit of spit, brush and polish to make them look nice.</p>
+
+<p>My job is based over the internet (which was largely developed in my lifetime).  The food I eat is very different to what my own parents eat and has far too many herbs and bits of "foreign muck" for my grandparents to have considered eating.  Most of the clothes I wear are made out of materials recently invented and non of them are made in the country I live.  I just drove over a hundred miles in a morning without thinking about it and I am now writing this blog post over wireless internet access from my laptop in my hotel room (that I booked and found directions to using the internet)</p>
+
+<p>Polishing my shoes makes me smile as it is about the only thing I do that my father and grandfather would recognise about my life and it feels good to be doing something the proper old fashioned way.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1951" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/team_foundation_2.html" rel="bookmark">Team Foundation Server Deployment</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-04-03T15:04:14+00:00">April  3, 2006  3:04 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/team_foundation_2.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><a href="http://www.woodwardweb.com/blog/tfs_deployment.png"></a><a href="http://www.woodwardweb.com/blog/tfs_deployment.png"><img alt="A typical TFS Deployment" src="http://www.woodwardweb.com/blog/tfs_deployment_thumb2.jpg" align="right" border="0" /></a>In some recent forums posts, it has struck me that it is sometimes not clear to people what an install of Microsoft Team Foundation Server looks like.&nbsp; I&rsquo;m posting a copy of a (very simple) slide I normally use when explaining this to people in the hope that others will find it useful.&nbsp; If you want this as a powerpoint slide or&nbsp;PDF&nbsp;then feel free to get in touch.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+
+
+                            <div class="content-nav">
+                                <a href="http://www.woodwardweb.com/2006/03/">&laquo; March 2006</a> |
+                                <a href="http://www.woodwardweb.com/">Main Index</a> |
+                                <a href="http://www.woodwardweb.com/archives.html">Archives</a>
+                                | <a href="http://www.woodwardweb.com/2006/05/">May 2006 &raquo;</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-1741"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-1742"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-8"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=radiotfs&amp;limit=20';return false;" rel="tag">radiotfs</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2010/05/">May 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/04/">April 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/03/">March 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/02/">February 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/11/">November 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_top_tip_4_t.html">TFS Top Tip #4:  The Command Line Client is your friend.</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/technology/bad_names.html">Bad Names</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/inda_cork_talk.html">INDA Cork Talk</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/irish_national.html">Irish National Developers Conference</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/top_tfs_tip_3_r.html">TFS Top Tip #3:  Removing the Resolve Check-In Action from a Work Item</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_tip_2_chang.html">TFS Top Tip #2: Changing the Logged In User</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_top_tip_1_w.html">TFS Top Tip #1 - WIQL Seperators</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/nimtug_talk.html">NIMTUG Talk</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/what_checkin_po.html">What Check-in Policies Do You Want?</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/teamprise_v10_n.html">Teamprise V1.0 Now Released!</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Visio Templates for UML 2.0</title>
+    <link>http://www.woodwardweb.com/programming/visio_templates.html</link>
+    <description>Recently discovered these excellent UML 2.0 Stencils and Templates for Visio by Pavel Hruby. While I am still waiting for my ideal UML drawing tool, I keep coming back to Visio. It is much better than Rose and better performing...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2004-12-03T18:38:08+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Sean Kearon+00:00</title>
+    <link>http://www.woodwardweb.com/programming/visio_templates.html#c001460</link>
+    <description>As for UML editors, take a look at Enterprise Architect from http://www.sparxsystems.com/.  It has its quirks, but is a top notch tool for a bargin basement price.</description>
+    <dc:date>2005-04-20T12:27:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=900</comments>   
+    <dc:creator>Sean Kearon</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Sean Kearon+00:00</title>
+    <link>http://www.woodwardweb.com/programming/visio_templates.html#c001461</link>
+    <description>Reposting as I can&apos;t see my comments from yesterday.  For an excellent, highly featured UML tool, try Enterprise Architect from http://www.sparxsystems.com/.  It&apos;s superb and extremely cheap at about 180 euros for the corporate edition.  
+
+I don&apos;t see how anyone could use Visio for anything of any scale as, afaik, it is a diagramming tool only and does not hold a model that you can take views of in many diagrams.  Please correct me if I&apos;m wrong.  I used Visio in an to map business processes for a month and would not want to go near it again.</description>
+    <dc:date>2005-04-21T09:44:09+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=900</comments>   
+    <dc:creator>Sean Kearon</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/programming/visio_templates.html#c001462</link>
+    <description>I agree with you that Visio sucks at UML modelling but is ok for small projects.  Visio does hold a model though that you can use on mutiple diagrams.  It ain&apos;t much good, I&apos;ll give you that!
+
+I have yet to use a UML tool that gives me the freedom to logically model as well as giving me checking to allow my to physically model.  I include tools such as Rational Rose, Together Control Center, Poseidon and Visio when I say that the existing UML tools just don&apos;t cut it.
+
+I&apos;ll take a look at this one from Sparx and see what I think.  I think one of the problems is that I am probably more after a diagraming tool than a tool that give me round-tripping capabilities.  One of the problems I find with roundtripping type tools such as Together is the temptation (as a developer at heart who does large scale system design) to get into implementation level of detail too early.  Another problem is that I often need to logically model a system that sits across many platforms (.Net and Java) and that involves Shrink Wrapped components as part of the overall solution.</description>
+    <dc:date>2005-04-22T10:14:14+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=900</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

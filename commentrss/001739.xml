@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Visual Studio 2008 Project Template for TFS Utilities</title>
+    <link>http://www.woodwardweb.com/vsts/visual_studio_2_1.html</link>
+    <description>My friend and fellow Team System MVP, Neno Loje, has been on a blogging frenzy this year. Recently he has published a handy Visual Studio template if you do a lot of playing with Team Foundation Server API calls (as...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-01-31T15:12:10+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Kenny Kerr+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/visual_studio_2_1.html#c002683</link>
+    <description>The MAX_PATH limitation is not a limitation of NTFS. Rather it is a limitation of the .NET Framework I/O wrappers. Many APIs however adopt this limitation. The Windows Shell API is a good example. But it is not a limitation in NTFS or of the native File Management API which can support over 32 thousand Unicode characters in local file paths.</description>
+    <dc:date>2009-03-02T08:23:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1739</comments>   
+    <dc:creator>Kenny Kerr</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/visual_studio_2_1.html#c002684</link>
+    <description>Kenny,
+
+Very true, I guess I should not say that it is a file system limitation at all. I kinda knew this which is why I talk about local paths rather than talking about the \\?\C:\ way of working.
+
+It was my understanding that the native Windows shell support 3 types of path:
+
+
+Local Paths (C:\Dir\File.txt)
+UNC (\\Server\Volume\File.txt)
+Long UNC (\\?\C:\Dir\File.txt)
+
+
+Taking the Win32 GetFullPathName function for example, it has two versions - the ANSI one (GetFullPathNameA) and the Unicode one (GetFullPathNameW).  
+
+Are we saying that the fault in .NET is that it is calling the ANSI versions of the Win32 classes rather than the Unicode variants?  If you use a local path (C:\) with the unicode variants are you still limited to MAX_PATH (260 characters) and would need to use the Long UNC style to use up to 32k?  
+
+Anyway - it is clear that this is not an underlying file system issue but rather an API one. It is also clear that .NET makes the underlying Win32 issues even worse rather than the same or better?
+
+I know that it is probably too late for .NET 4.0 but I would love to file a bug in Connect around this issue and be as precise about the issue as possible to stand a chance of getting the issue fixed in the BCL of a later version of .NET.
+
+Thanks for the correction - I will re-word the introduction to this post.</description>
+    <dc:date>2009-03-02T13:00:51+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1739</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Wes MacDonald+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/visual_studio_2_1.html#c002685</link>
+    <description>This is a simple work around to a very annoying problem.
+</description>
+    <dc:date>2009-03-02T13:48:24+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1739</comments>   
+    <dc:creator>Wes MacDonald</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Greg Collins+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/visual_studio_2_1.html#c002697</link>
+    <description>Congratulations Martin!</description>
+    <dc:date>2009-03-15T17:28:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1739</comments>   
+    <dc:creator>Greg Collins</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mac Noland+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/visual_studio_2_1.html#c002700</link>
+    <description>Nice work Martin!  Well deserved!</description>
+    <dc:date>2009-03-24T03:28:25+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1739</comments>   
+    <dc:creator>Mac Noland</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mike Swanson+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/visual_studio_2_1.html#c002701</link>
+    <description>Thanks for the great write-up, Martin. I think you posted this mere seconds before I redirected that page to a new blog post here: http://blogs.msdn.com/mswanson/archive/2009/03/26/mix09-keynote-and-session-videos.aspx. Didn&apos;t want your readers to miss out on the session renamer batch file.</description>
+    <dc:date>2009-03-27T17:47:49+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1739</comments>   
+    <dc:creator>Mike Swanson</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Bryan Hinton+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/visual_studio_2_1.html#c002716</link>
+    <description>Teamprise continues to do great stuff - thanks Martin!</description>
+    <dc:date>2009-04-25T14:48:17+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1739</comments>   
+    <dc:creator>Bryan Hinton</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Will Crick+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/visual_studio_2_1.html#c002743</link>
+    <description>Nice work. Next step is invoking builds on a Linux box!</description>
+    <dc:date>2009-06-15T13:43:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1739</comments>   
+    <dc:creator>Will Crick</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

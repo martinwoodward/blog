@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!-- InstanceBegin template="/Templates/Normal Page.dwt" codeOutsideHTMLIsLocked="false" -->
+<HEAD>
+<!-- InstanceBeginEditable name="doctitle" -->
+<TITLE>HTML Editor</TITLE>
+	<STYLE>
+.cbToolbar
+{
+	HEIGHT:30px; 
+	WIDTH:100%;
+	PADDING:0px;
+	BACKGROUND-COLOR:menu;
+}
+.tbDivider
+{
+	BORDER-RIGHT:2 groove;
+}
+.tbButton, .tbButtonDown, .tbButtonRaise
+{
+	COLOR:buttontext;
+	CURSOR:hand;
+	HEIGHT:24;
+	BORDER:1px solid buttonface;
+	PADDING:2px 2px 2px 2px;
+	TEXT-DECORATION:none;
+	MARGIN-TOP:1;
+}
+.tbButtonDown
+{
+	BORDER-COLOR:threeddarkshadow threedhighlight threedhighlight threeddarkshadow;
+}
+.cbToolbar, .trButtons
+{
+	FONT-SIZE:x-small;
+}
+.cbToolbar IMG
+{
+	BORDER:none;
+	HEIGHT:22px;
+	WIDTH:23px;
+	MARGIN-RIGHT:3px;
+}
+.cbToolbar TD
+{
+	VERTICAL-ALIGN:middle;
+}
+.tbButtonRaise, .tbButton A:hover, .tbButton:hover
+{
+	BORDER:1px solid;
+	BORDER-COLOR:threedhighlight threedshadow threedshadow threedhighlight;
+}
+BUTTON   { cursor:hand;       }
+.toolBar { cursor:hand;       }
+	.htmlEditBox {
+		height:200; 
+	  width:400; 
+		background-color:white; 
+		font-face:Arial; 
+		padding:3;    
+	  border:inset #CCCCCC;  
+	  overflow-x=auto; 
+		overflow-y=scroll
+	}
+	</STYLE>
+	<SCRIPT FOR="cbButton" EVENT="onclick()" LANGUAGE="JavaScript" >
+			document.execCommand(this.id);
+			htmlEdit.focus();
+	</SCRIPT>
+	<SCRIPT FOR="cbButton" EVENT="onmouseover()" LANGUAGE="JavaScript" >
+		window.status = this.title;	
+		return true;
+	</SCRIPT>
+	<SCRIPT FOR="cbButton" EVENT="onmouseout()" LANGUAGE="JavaScript" >
+		window.status = "";	
+		return true;
+	</SCRIPT>
+	<SCRIPT>
+		function subForm()
+		{
+			htmlEditForm.htmlView.value = htmlEdit.innerHTML;			
+			//htmlEditForm.submit();
+			return true;
+		}
+		function putText()
+		{
+			htmlEditForm.htmlView.value = htmlEdit.innerText;			
+			//htmlEditForm.submit();
+			return true;
+		}		
+		function putForm()
+		{
+			htmlEdit.innerHTML = htmlEditForm.htmlView.value;
+			return true;
+		}
+		function viewHTMLSource(checkbox)
+		{
+			
+			if (checkbox.checked) {
+				checkbox.form.htmlSource.value = htmlEdit.innerHTML;
+				htmlEdit.style.display = "none";
+				checkbox.form.htmlSource.style.display = "";
+				checkbox.form.htmlSource.focus();
+			} 
+			else {
+				htmlEdit.innerHTML = checkbox.form.htmlSource.value;
+				checkbox.form.htmlSource.style.display = "none";
+				htmlEdit.style.display = "";
+				htmlEdit.focus();
+			}
+		}
+		function showMsg(flag)
+		{
+			alert( "flag=" + flag);
+			}
+
+	</SCRIPT>
+
+<!-- InstanceEndEditable --> 
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1"/>
+<link rel="stylesheet" href="http://www.woodwardweb.com/styles-site.css" type="text/css" />
+<SCRIPT LANGUAGE="JavaScript" SRC="/js/nav.js" TYPE="text/javascript"></SCRIPT>
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</HEAD>
+
+<BODY>
+
+<DIV ID="mainBody"> <!-- InstanceBeginEditable name="mainBody" --> 
+      <H2 CONTENTEDITABLE>Dynamic Editor</H2>
+      <P>This page will only work in IE 5.5 or above.  It demonstrates the use of the CONTENTEDITABLE attribute.</P>
+
+<FORM NAME="htmlEditForm" ACTION="#" METHOD="post">
+<INPUT TYPE="Hidden" NAME="htmlInput">
+<TABLE>
+	<TR>
+		<TD>
+		<!-- Toolbar Control -->
+		<TABLE class="cbToolbar">
+		<TR>
+			<TD NOWRAP>
+				<A CLASS="tbButton" NAME="cbButton" ID="Bold" HREF="javascript:void(0)" 
+				   TITLE="Bold" UNSELECTABLE="on">
+				<IMG SRC="/images/toolbar/form-bold.gif" ALIGN="absmiddle"></A>
+			</TD>
+			<TD NOWRAP>
+				<A CLASS="tbButton" NAME="cbButton" ID="Italic" HREF="javascript:void(0)" 
+				   TITLE="Italic" UNSELECTABLE="on">
+				<IMG SRC="/images/toolbar/form-italic.gif" ALIGN="absmiddle"></A>
+			</TD>
+			<TD CLASS="tbDivider" NOWRAP>
+				<A CLASS="tbButton" NAME="cbButton" ID="Underline" HREF="javascript:void(0)" 
+				   TITLE="Underline" UNSELECTABLE="on">
+				<IMG SRC="/images/toolbar/form-under.gif" ALIGN="absmiddle"></A>
+			</TD>
+			<TD NOWRAP>
+				<A CLASS="tbButton" NAME="cbButton" HREF="javascript:void(0)" UNSELECTABLE="on" 
+				   ID="JustifyLeft" TITLE="Align Left">
+				<IMG SRC="/images/toolbar/form-justify_left.gif" ALIGN="absmiddle"></A>
+			</TD>
+			<TD NOWRAP>
+				<A CLASS="tbButton" NAME="cbButton" HREF="javascript:void(0)" UNSELECTABLE="on" 
+				   ID="JustifyCenter" TITLE="Align Middle">
+				<IMG SRC="/images/toolbar/form-justify_center.gif" ALIGN="absmiddle"></A>
+			</TD>
+			<TD NOWRAP CLASS="tbDivider">
+				<A CLASS="tbButton" NAME="cbButton" HREF="javascript:void(0)" UNSELECTABLE="on" 
+				   ID="JustifyRight" TITLE="Align Right">
+				<IMG SRC="/images/toolbar/form-justify_right.gif" ALIGN="absmiddle"></A>
+			</TD>
+			<TD NOWRAP>
+				<A CLASS="tbButton" NAME="cbButton" ID="InsertOrderedList" HREF="javascript:void(0)" 
+				   TITLE="Numbered List" UNSELECTABLE="on">
+				<IMG SRC="/images/toolbar/form-numlist.gif" ALIGN="absmiddle"></A>
+			</TD>
+			<TD NOWRAP>
+				<A CLASS="tbButton" NAME="cbButton" HREF="javascript:void(0)" UNSELECTABLE="on" 
+				   ID="InsertUnorderedList" TITLE="Buleted List">
+				<IMG SRC="/images/toolbar/form-bullist.gif" ALIGN="absmiddle"></A>
+			</TD>
+			<TD NOWRAP>
+				<A CLASS="tbButton" NAME="cbButton" HREF="javascript:void(0)" UNSELECTABLE="on" 
+				   ID="Outdent" TITLE="Decrease Indent">
+				<IMG SRC="/images/toolbar/form-deindent.gif" ALIGN="absmiddle"></A>
+			</TD>
+			<TD NOWRAP CLASS="tbDivider">
+				<A CLASS="tbButton" NAME="cbButton" HREF="javascript:void(0)" UNSELECTABLE="on" 
+				   ID="Indent" TITLE="Increase Indent">
+				<IMG SRC="/images/toolbar/form-inindent.gif" ALIGN="absmiddle"></A>
+			</TD>
+			<TD NOWRAP>
+				<INPUT TYPE="Checkbox" NAME="cbViewSource" onClick="viewHTMLSource(this);">
+				Source View
+			</TD>
+			<TD WIDTH="100%">&nbsp;
+			   
+			</TD>
+		</TR>
+		</TABLE>
+		<!-- End of Toolbar Control -->
+		
+		</TD>
+	</TR>
+	<TR>
+		<TD><DIV ID="htmlEdit" CONTENTEDITABLE ALIGN="left" CLASS="htmlEditBox"></DIV><textarea name="htmlSource" ALIGN="left" CLASS="htmlEditBox" STYLE="display: none;"></TEXTAREA></TD>
+	</TR>
+	<TR>
+		<TD>
+			<BUTTON TITLE="Post Changes" onclick="subForm();">Get HTML</BUTTON>
+			<BUTTON TITLE="Post Changes" onclick="putText();">Get Text</BUTTON>			
+			<BUTTON TITLE="Post Changes" onclick="putForm();">Put HTML</BUTTON>			
+		</TD>
+	</TR>
+</TABLE>
+HTML Generated:
+<P>
+<TEXTAREA COLS="80" ROWS="15" NAME="htmlView"></TEXTAREA>
+<P>
+
+</FORM>
+
+
+
+  <!-- InstanceEndEditable --></DIV>
+
+</BODY>
+<!-- InstanceEnd --></HTML>

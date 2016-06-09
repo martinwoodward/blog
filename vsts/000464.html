@@ -1,0 +1,766 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/vsts/getting_started.html">
+<dc:title>Getting Started with the TFS Data Warehouse</dc:title>
+<dc:description>Whenever I talk about TFS, one of the things I always mention is the fact that because all the data about the software project is now being tracked in a SQL Server database, Microsoft were able to stick a Data...</dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2008-12-12T13:43:22+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/dotnet/tfs_build_api_b_1.html" title="TFS Build API by Example #2: Get the Latest Build." />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/vsts/new_visual_stud.html" title="New Visual Studio 2010 Video Podcast 10-4" />
+    
+    <title>Getting Started with the TFS Data Warehouse - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-464" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Getting Started with the TFS Data Warehouse</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2008-12-12T13:43:22+00:00">December 12, 2008  1:43 PM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/getting_started.html#comments">2 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>Whenever I talk about TFS, one of the things I always mention is the fact that because all the data about the software project is now being tracked in a SQL Server database, Microsoft were able to stick a Data Warehouse over the top of all that raw data to give you a really good view on reporting.&#160; This is where the real benefits of standardizing on a single ALM solution can really reap rewards and Microsoft in their wisdom give us these reporting features in all versions of TFS including the 5-user limited TFS Workgroup edition that is included with most peoples MSDN subscription.</p>  <p>The only problem with the reporting side is that many people think that this means they have to go learn SQL Server Reporting Services to write reports.&#160; While you might want to figure out Reporting Services to provide custom reports automatically to your team and customers, I personally get the most value out of using my trusty old bedfellow, the tool that got me my first paid “programming” gig and is probably the most abused software package on the planet – Excel.</p>  <p>Excel is a great tool for doing ad-hoc data analysis and digging into some numbers to try and figure something out.&#160; It also makes a great prototyping tool to help you figure out exactly what the regular report is that you want to see and then you can go figure out&#160; in SQL Reporting Services.&#160; Another great feature about Excel is that many managers are very happy to fiddle around in Excel so rather than having them bother you with questions about how the project is going you can simply point them at Excel and it will keep them quiet for days as they slice and dice the data :-)</p>  <p>Let’s get started with doing TFS Data Analysis in Excel by trying to dig into which projects are active in our TFS instance – let’s see which Team Projects are having files checked in over time.</p>  <h4><strong>Connecting Excel 2007 to the TFS Data Warehouse</strong></h4>  <p>The first thing that we need to do is set up a connection to the TFS Data Warehouse from Excel.&#160; Go to Data, From Other Sources, From Analysis Services.</p>  <p><a href="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_2.png"><img title="Showing the import options in Excel 2007" style="border-right: 0px; border-top: 0px; display: block; float: none; margin-left: auto; border-left: 0px; margin-right: auto; border-bottom: 0px" height="284" alt="Showing the import options in Excel 2007" src="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_thumb.png" width="550" border="0" /></a> </p>  <p>Then enter the details for your TFS Warehouse.&#160; This is usually the server running SQL for your TFS instance (i.e. your TFS Data Tier).&#160; I am connecting to a TFS Server instance that has the database and the TFS application tier installed on the same machine.&#160; My SQL Administrator has given me permissions to access the TFS Data Warehouse so I log in using my Windows credentials.</p>  <p><img title="Connecting to TFS" style="display: block; float: none; margin-left: auto; margin-right: auto" height="300" alt="Connecting to TFS" src="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_0e6bc12b-131c-4ddf-aa64-22ef43c553ae.png" width="409" border="0" /> </p>  <p>We then want to connect to the TFS Warehouse, so just press next.</p>  <p><img title="Chosing the Team System cube" style="display: block; float: none; margin-left: auto; margin-right: auto" height="300" alt="Chosing the Team System cube" src="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_b6bedabc-5920-4198-900f-ea80c9038877.png" width="410" border="0" /> </p>  <p>And then we save out this connection so that we can use it again, or share with others by pressing Finish.</p>  <p><img title="Save Connection Details wizard page" style="display: block; float: none; margin-left: auto; margin-right: auto" height="300" alt="Save Connection Details wizard page" src="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_33470665-b9e5-44ff-98aa-d85d5b01aeeb.png" width="354" border="0" /> </p>  <p>Next we get to choose how we want to import the data.&#160; In this example, I’m going to choose a simple pivot table, but you might want a pivot chart if you really want to please your managers by giving them pretty pictures to look at :-)</p>  <p><img title="Import Data dialog" style="display: block; float: none; margin-left: auto; margin-right: auto" height="292" alt="Import Data dialog" src="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_4ebe7462-e0e1-446f-bbb7-143724cb732f.png" width="340" border="0" /> </p>  <h4><strong>Play with all that Lovely Data</strong></h4>  <p>Now we get an empty pivot table, and we get to see all the things that we can report on.&#160; This is where the magic begins and if you have never seen this before you will not believe how easy it is to get data out.</p>  <p><a href="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_9.png"><img title="Excel showing a pivot table" style="display: block; float: none; margin-left: auto; margin-right: auto" height="300" alt="Excel showing a pivot table" src="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_thumb_1.png" width="438" border="0" /></a> </p>  <p>In the PivotTable Field List on the right hand side you get presented with a list of the facts that you would like to report on.&#160; Commonly we need the date going across the top of our report, so lets scroll down in the field list until we find the Date section and we’ll drag the Date.Year Week Date down to the column labels.</p>  <p></p>  <p></p>  <p></p>  <p></p>  <p></p>  <p><img title="The Pivot Field List" style="display: block; float: none; margin-left: auto; margin-right: auto" height="300" alt="The Pivot Field List" src="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_1106bd06-2476-4d73-8c1b-536af78dec27.png" width="122" border="0" /> </p>  <p>The other dimension that we typically want to have is by Team Project.&#160; So let’s scroll down to the Team Project area and drag the Team Project field onto our Row Labels.&#160; Now we have our dimensions configured, you should have a spreadsheet that looks something like this.</p>  <p><img title="Our dimenions ready for some data" style="display: block; float: none; margin-left: auto; margin-right: auto" height="300" alt="Our dimenions ready for some data" src="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_672f457c-4eeb-4771-b779-9f0879c17440.png" width="443" border="0" /> </p>  <p>Note that the dates at the top are actually expandable so that you can drill down onto the weeks of the year that you are after.&#160; Also – if there is an area that you want to exclude from the report for some reason you can right click on the value, select Filter, Hide.&#160; So far so good – but this doesn’t tell us much yet.&#160; We want the stuff that we actually want to report on.&#160; We said that we wanted to see where code was being checked in, so lets scroll up to the Code Churn fields and drag the Code Churn Count into our Values area.&#160; The Code Chrun Count tells us how many files are being checked in for each area.</p>  <p><img title="File modifed by Team project" style="display: block; float: none; margin-left: auto; margin-right: auto" height="300" alt="File modifed by Team project" src="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_011c5e75-1e2e-4250-8d1a-b51b02344e9c.png" width="440" border="0" /> </p>  <p>As you can see, we already have the beginning of a useful report.&#160; By Team Project is a bit of a broad area though.&#160; For version control stuff like this, we may well want to drill down further and look at folder inside of version control.&#160; Not a problem at all – simply scroll down and add the Filename.Parent_ID field to the Row Labels and remove the Team Project label now as it is not that necessary.&#160; You can now drill down as much as you like – getting a summary of the files changes in each area as you go.</p>  <p><a href="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_14.png"><img title="Our finished report" style="display: block; float: none; margin-left: auto; margin-right: auto" height="300" alt="Our finished report" src="http://www.woodwardweb.com/WindowsLiveWriter/GettingStartedwiththeTFSDataWarehouse_B368/image_thumb_2.png" width="466" border="0" /></a> </p>  <p>I hope that gives you a quick taste as to the power and ease of use of the TFS Data Warehouse.&#160; Once you know how to connect Excel to TFS, the rest is all very easy and quite intuitive.&#160; It will take you some time to poke about in the fields available for you to know what they all are and how they can be used.&#160; It takes a little while to get your head around the fact that all this data is available and accessible but the power, depth and yet the simplicity of it all is game changing and is one of the reasons why I became a TFS Fan. </p>  <p>TFS 2010 sees some huge improvements in the reporting areas, with very nice looking and easy to customize sample reports, but also more advanced examples of Excel report speadsheets.&#160; However, you don’t have to wait for TFS 2010 to come along to start drilling into your data.&#160; Go fire up Excel and do it today!</p>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/getting_started.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/vsts/" rel="tag">Vsts</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/" rel="tag">tfs</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/tfs2005/" rel="tag">tfs2005</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/tfs2008/" rel="tag">tfs2008</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=excel&amp;limit=20';return false;" rel="tag">excel</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">2 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-84331" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            <a class="commenter-profile" href="http://dmitriyl.livejournal.com/"><img alt="Author Profile Page" src="http://www.woodwardweb.com/mt/mt-static/images/comment/livejournal_logo.png" width="16" height="16" /></a>
+        
+                            <span class="vcard author"><a title="http://dmitriyl.livejournal.com/" href="http://dmitriyl.livejournal.com/" rel="nofollow">Dmytro Lapshyn</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/getting_started.html#comment-84331"><abbr class="published" title="2008-12-13T07:34:29+00:00">December 13, 2008  7:34 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84331, 'Dmytro Lapshyn')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Martin,</p>
+
+<p>This is an excellent write-up on using Excel as a TFS reporting client, thanks! I should say, though, that there's an inherent problem with Excel-based reporting: security. Let me explain:</p>
+
+<p>Once your administrator gives you the permissions to access the warehouse, you get access to data from ALL team projects, and there's no easy way to restrict access to a single project. This might be OK for small shops or even large companies that do not need to pass any security-related certifications. </p>
+
+<p>But imagine a big services firm developing software for a number of customers, or a firm developing software for the healthcare vertical - in such cases, inability to restrict warehouse access to a specific project really becomes an issue. Unfortunately, this issue affects my employer as well, so we had to ditch Excel-based reporting, even though it would have saved us some custom reports development.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84344" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">anthony oden</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/getting_started.html#comment-84344"><abbr class="published" title="2009-01-09T16:30:26+00:00">January  9, 2009  4:30 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84344, 'anthony oden')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>This is a fantastic write-up. I can tell that this helps give me a leg up into creating reports!</p>
+
+<p>A. </p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="464" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-445"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-446"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/herding_develop.html">Herding Developers to Lunch</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/techdays09_talk.html">TechDays09 Talk: VSTS Interoperability</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/visual_studio_2_1.html">Visual Studio 2008 Project Template for TFS Utilities</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_top_tip_16.html">TFS Top Tip #16 - Limit What you Build</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/important_secur.html">Important Security Update for Team System Web Access</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/ddd_coming_to_b.html">DDD Coming to Belfast</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/talk_whats_new.html">Talk: Whats New With Team Foundation Server</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/technology/freezing_time_i.html">Freezing Time in VMWare</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/disabling_tfs_a.html">Disabling TFS Automatic Check out</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/the_year_planne.html">The Year Planner Shuffle</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

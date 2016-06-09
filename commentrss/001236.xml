@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS Top Tip #15 - Baseline your Builds</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_15.html</link>
+    <description><![CDATA[Microsoft Team Foundation Server 2008 has a great new improved build system (often referred to as "Team Build").&nbsp; An advantage of running your build from Team Build is that (by default) all changes between your current build and the last...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-01-16T07:36:36+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Alex+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_15.html#c001940</link>
+    <description>ha! I thought only our home made build solution had this kind of problem...</description>
+    <dc:date>2008-01-25T11:34:25+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1236</comments>   
+    <dc:creator>Alex</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Paul+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_15.html#c001941</link>
+    <description>I used this tip to set the attachment size to 10 MB using 10485760 as the value in the Invoke textbox. I then clicked on invoke &amp; then a new browser page was displayed with nothing in it.
+
+I did log into the TFS server machine as a member of the adminstrators group.
+
+Am I supposed to restart any services or reboot the server?  I tried rebooting once but the max attachment size was still being referenced as 4MB on the attachment tab screen when I went into the TFS webpage &amp; attempted to attach a 8 MB file to a bug work item. On my attempt, I got an error that the attachment size was exceeded.
+
+Any clues?</description>
+    <dc:date>2008-12-12T20:20:52+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1236</comments>   
+    <dc:creator>Paul</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

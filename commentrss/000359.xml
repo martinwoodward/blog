@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Long Live the World&apos;s Smallest TFS Proxy</title>
+    <link>http://www.woodwardweb.com/personal/long_live_the_w.html</link>
+    <description><![CDATA[Good news World's Smallest TFS Proxy fans.&nbsp; At 11:10 this morning, the friendly man from Dell appeared at my door&nbsp;with a new motherboard flown in from Holland this morning.&nbsp; With-in twenty minutes he had the motherboards swapped out and we...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-06-01T11:57:19+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Rob Burke+00:00</title>
+    <link>http://www.woodwardweb.com/personal/long_live_the_w.html#c021810</link>
+    <description>Very impressed by the story of Dell&apos;s swift response and great to hear that the little guy is breathing again!!</description>
+    <dc:date>2007-06-01T12:11:51+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=359</comments>   
+    <dc:creator>Rob Burke</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Adrian+00:00</title>
+    <link>http://www.woodwardweb.com/personal/long_live_the_w.html#c022412</link>
+    <description>Hurrah!!!</description>
+    <dc:date>2007-06-04T12:42:12+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=359</comments>   
+    <dc:creator>Adrian</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

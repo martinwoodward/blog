@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Orcas Beta 1 Available Soon!</title>
+    <link>http://www.woodwardweb.com/vsts/orcas_beta_1_av.html</link>
+    <description><![CDATA[Those of you lucky enough to have an MSDN subscription can go download Beta 1 very shortly, according to the announcement&nbsp;it is available now (but it isn't showing up in my MSDN subscription yet) - I suspect that the lovely...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-04-19T21:05:38+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Greg+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/orcas_beta_1_av.html#c002388</link>
+    <description>The Orcas Beta 1 Team Suite VPC is available now (I&apos;m downloading part 3 as I write this  :) on MS Downloads...
+
+http://www.microsoft.com/downloads/details.aspx?familyid=36b6609e-6f3d-40f4-8c7d-ad111679d8dc&amp;displaylang=en&amp;tm</description>
+    <dc:date>2007-04-19T21:34:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1656</comments>   
+    <dc:creator>Greg</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Jim Donaghy+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/orcas_beta_1_av.html#c002390</link>
+    <description>Any luck on the side-by-side install of Orcas with VS2005?</description>
+    <dc:date>2007-04-25T16:50:01+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1656</comments>   
+    <dc:creator>Jim Donaghy</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

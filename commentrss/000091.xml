@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Resharper 2.0 Plan Announced</title>
+    <link>http://www.woodwardweb.com/dotnet/resharper_20_pl.html</link>
+    <description>Jetbrains have announced the plan for Resharper 2.0, including the much awaited support for Visual Studio 2005!. Fantastic news as VS 2005 without resharper is worse than VS 2003 in my humble opinion. (I&apos;d forgotton just how much Resharper does...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-03-30T19:03:26+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+  </channel>
+</rss>

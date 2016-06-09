@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>INDA Dublin Talk Slide Deck</title>
+    <link>http://www.woodwardweb.com/vsts/inda_dublin_tal.html</link>
+    <description><![CDATA[ If you came along to my talk last night in Dublin, then thanks for your time.&nbsp; I really enjoyed the chat as folks got stuck in and asked questions rather than just listening to me drone on.&nbsp; It&rsquo;s also...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-04-05T10:21:34+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Ruben Bartelink+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/inda_dublin_tal.html#c001041</link>
+    <description>Thanks very much for a very good session.  BTW coincidentally this thread on WTOT popped up over night too...
+http://thread.gmane.org/gmane.comp.windows.off-topic/30719</description>
+    <dc:date>2006-04-05T10:40:40+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=217</comments>   
+    <dc:creator>Ruben Bartelink</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>I&apos;m a Total Idiot</title>
+    <link>http://www.woodwardweb.com/personal/im_a_total_idio.html</link>
+    <description>Usually, I am very good at the 24 hour clock. It comes from a childhood of setting the VCR because my parents just could never figure it out. However I turned up for my 9.30 flight this evening, only to...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-03-17T05:35:41+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/personal/im_a_total_idio.html#c001620</link>
+    <description>Kampai Martin-san!</description>
+    <dc:date>2006-03-17T12:27:14+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1034</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mitch Denny+00:00</title>
+    <link>http://www.woodwardweb.com/personal/im_a_total_idio.html#c001621</link>
+    <description>Hi Martin,
+
+I did the same thing on a flight back from Singapore to Melbourne. Only my crime was worse. I read 20:00 as 10pm for some reason.</description>
+    <dc:date>2006-03-17T12:54:47+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1034</comments>   
+    <dc:creator>Mitch Denny</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

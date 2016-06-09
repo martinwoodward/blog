@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS Top Tip #11 - Removing source control files from your local file system</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_11.html</link>
+    <description>One of the questions that came up from one of our users was &quot;how do I delete the files from my local file system - and tell Team Foundation Server that I have done this&quot;. The first thing you might...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-12-12T12:45:58+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Grant Holliday+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_11.html#c001762</link>
+    <description>Great tip Martin! I&apos;ve always wondered about this one but never tried to find out.</description>
+    <dc:date>2006-12-12T21:18:16+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1139</comments>   
+    <dc:creator>Grant Holliday</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by paso+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_11.html#c001763</link>
+    <description>One of our users complained about having TFS removed his local files and that a Force Get did NOT retrieve any files at all. 
+
+Turned out that in his workspace he had mapped his local folder to a non-existing folder on the Server (via direct edit; not using the Browse button)
+
+Something like:
+
+Active ...... $/&apos;root-folder&apos; ...... W:\Main
+
+Active ...... $/&apos;non-existing folder&apos; ...... W:\Main\Library\Library1
+
+When getting the latest version of Libary1, TFS decided that there were NO files in the specified server folder (because it didn&apos;t exist) and removed all files on the local folder (W:\Main\Library\Library1).  A Force Get did not retrieve any files.
+
+When the &apos;invalid&apos; mapping was removed, a Get Latest retrieved all files.
+
+
+
+So, I guess this mapping acts like a &apos;cloacked&apos; folder and effectively removes the files from your local folder.</description>
+    <dc:date>2007-06-20T09:44:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1139</comments>   
+    <dc:creator>paso</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Manasvi Sareen+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_11.html#c001764</link>
+    <description>Hi
+
+This method is not working with TFS 2008(using VSTS 2008 at client side), any idea about that ???</description>
+    <dc:date>2008-11-24T09:22:19+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1139</comments>   
+    <dc:creator>Manasvi Sareen</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_11.html#c001765</link>
+    <description>Works on all my machines - what is happening for you?</description>
+    <dc:date>2009-04-02T10:24:03+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1139</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by leefwu+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_11.html#c001766</link>
+    <description>Thanks for your help.</description>
+    <dc:date>2009-04-07T04:01:03+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1139</comments>   
+    <dc:creator>leefwu</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Kamran+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_11.html#c001767</link>
+    <description>I usually just go into the Source Control pane (from Team Explorer) and delete it there, it tracks all changes even if the files aren&apos;t in your solution (in my case, Sandcastle content files).</description>
+    <dc:date>2009-07-31T21:33:36+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1139</comments>   
+    <dc:creator>Kamran</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_11.html#c001768</link>
+    <description>Kamran - that is a great way to delete the file from both the server and your local file system. What this tip was explaining was how to delete the files locally *but not* delete the server version.  Apologies for the confusion.</description>
+    <dc:date>2009-08-03T10:35:53+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1139</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Alan+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_11.html#c001769</link>
+    <description>How does this relate to &quot;cloak&quot;?</description>
+    <dc:date>2009-08-13T11:53:39+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1139</comments>   
+    <dc:creator>Alan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_11.html#c001770</link>
+    <description>Cloaking a folder or file in the workspace tells TFS that when you do a get latest you do not want to include a particular file or folder. Cloaking something that was previously included in the workspace will have the affect of it being removed from your local file system and TFS knowing that so it works as you would hope.  Cloaking is most useful when you want this to be a more permanent arrangement - i.e. give me everything in the $/TeamProject/main/source folder apart from everything in the $/TeamProject/main/source/HugeBinaryFiles folder because that folder doesn&apos;t affect what you are working on and you don&apos;t want to have to pay the penalty of downloading that folder or keeping in sync with changes to it.
+
+Hope that helps,
+
+Martin.</description>
+    <dc:date>2009-08-13T12:05:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1139</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

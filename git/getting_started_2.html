@@ -1,0 +1,754 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/git/getting_started_2.html">
+<dc:title>Getting Started with LibGit2Sharp</dc:title>
+<dc:description>If you want to work with your local Git repositories in some .NET code then LibGit2Sharp is your friend.&#160; It’s the open source library used by the Visual Studio Tools for Git and gives you a very idiomatic way to...</dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2013-05-11T13:44:35+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/java/eclipse_juno_th.html" title="Eclipse Juno Themes on Windows" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/git/setting_up_the.html" title="Setting up the Perfect Git Command Line Environment on Windows" />
+    
+    <title>Getting Started with LibGit2Sharp - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-2273" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Getting Started with LibGit2Sharp</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2013-05-11T13:44:35+00:00">May 11, 2013  1:44 PM</abbr>
+
+                                        </span>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>If you want to work with your local Git repositories in some .NET code then <a href="https://github.com/libgit2/libgit2sharp">LibGit2Sharp</a> is your friend.&#160; It’s the open source library used by the <a href="http://aka.ms/Git4VS">Visual Studio Tools for Git</a> and gives you a very idiomatic way to talk to Git from C# or VB.NET.&#160; I thought it would be worth a quick tutorial post showing how easy it is to get started by querying a repository helping us learn a bit about the library but also learn more about Git itself. As LibGit2Sharp is open source in this example I’m going to point to cloned copy of the repository I have locally already by using the Git tooling in Visual Studio or by typing <font face="Courier New">git clone https://github.com/libgit2/libgit2sharp.git</font>. However you can obviously point to any Git repository you already have locally.</p>  <p>To begin, create a new console project in Visual Studio. We need to add a reference to the Lib2Sharp library and the quickest way to do that is to open the NuGet package manager by right-clicking on your project in Solution Explorer and select Manage NuGet Packages…&#160; Search online for “LibGit2Sharp” and Install.</p>  <p><a href="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-LibGit2Sharp_1091B/nuget_2.png"><img title="NPM to install LibGit2Sharp" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; float: none; padding-top: 0px; padding-left: 0px; margin-left: auto; display: block; padding-right: 0px; border-top-width: 0px; margin-right: auto" border="0" alt="NPM to install LibGit2Sharp" src="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-LibGit2Sharp_1091B/nuget_thumb.png" width="450" height="300" /></a></p>  <p>Then accessing an existing repo is trivial, simply use the LibGit2Sharp.Repository class. A handy way to get a particular commit is by its hash if you know it.</p>  <pre style="font-family: ; background: white; color: "><font face="Consolas"><font size="2"><font color="#000000">&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#0000ff">public</font></span><font color="#000000">&#160;</font><span style="color: "><font color="#0000ff">static</font></span><font color="#000000">&#160;</font><span style="color: "><font color="#0000ff">void</font></span><font color="#000000"> Main(</font><span style="color: "><font color="#0000ff">string</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000">[] args)<br />&#160;&#160;&#160;&#160;&#160; {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#0000ff">using</font></span><font color="#000000"> (</font><span style="color: "><font color="#0000ff">var</font></span><font color="#000000"> repo = </font><span style="color: "><font color="#0000ff">new</font></span><font color="#000000">&#160;</font><span style="color: "><font color="#2b91af">Repository</font></span><font color="#000000">(</font><span style="color: "><font color="#a31515">@&quot;D:\source\LibGit2Sharp&quot;</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000">))<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#2b91af">Commit</font></span><font color="#000000"> commit = repo.Lookup&lt;</font><span style="color: "><font color="#2b91af">Commit</font></span><font color="#000000">&gt;(</font><span style="color: "><font color="#a31515">&quot;73b48894238c3e9c37f9f3a696bbd4bffcf45ce5&quot;</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000">);<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#2b91af">Console</font></span><font color="#000000">.WriteLine(</font><span style="color: "><font color="#a31515">&quot;Author: {0}&quot;</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000">, commit.Author.Name);<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#2b91af">Console</font></span><font color="#000000">.WriteLine(</font><span style="color: "><font color="#a31515">&quot;Message: {0}&quot;</font></span></font><font color="#000000" size="2">, commit.MessageShort);<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br />&#160;&#160;&#160;&#160;&#160; }</font></font></pre>
+
+<p>But what if we just want the commit that’s the latest of the current branch, in Git-speak we want the “Tip” of “Head”. LibGit2Sharp gives you an easy way to get to the Head through the repository object. So we can do the following:</p>
+
+<pre style="font-family: ; background: white; color: "><font face="Consolas"><font color="#000000"><font style="font-size: 13.5pt">&#160;&#160;&#160; </font></font><font size="2"><span style="color: "><font color="#0000ff">public</font></span><font color="#000000">&#160;</font><span style="color: "><font color="#0000ff">static</font></span><font color="#000000">&#160;</font><span style="color: "><font color="#0000ff">void</font></span><font color="#000000"> Main(</font><span style="color: "><font color="#0000ff">string</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000">[] args)<br />&#160;&#160;&#160;&#160;&#160; {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#0000ff">using</font></span><font color="#000000"> (</font><span style="color: "><font color="#0000ff">var</font></span><font color="#000000"> repo = </font><span style="color: "><font color="#0000ff">new</font></span><font color="#000000">&#160;</font><span style="color: "><font color="#2b91af">Repository</font></span><font color="#000000">(</font><span style="color: "><font color="#a31515">@&quot;D:\source\LibGit2Sharp&quot;</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000">))<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#2b91af">Commit</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000"> commit = repo.Head.Tip;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#2b91af">Console</font></span><font color="#000000">.WriteLine(</font><span style="color: "><font color="#a31515">&quot;Author: {0}&quot;</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000">, commit.Author.Name);<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#2b91af">Console</font></span><font color="#000000">.WriteLine(</font><span style="color: "><font color="#a31515">&quot;Message: {0}&quot;</font></span></font><font color="#000000" size="2">, commit.MessageShort);<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; }<br />&#160;&#160;&#160;&#160;&#160; }</font></font></pre>
+
+<p>A point in time in the repository is represented by a Commit. Each Commit points to a Tree which you can think of as a directory/folder. A Tree can contain a Blob (i.e. the contents of a file) or another Tree (i.e. a sub-folder).</p>
+
+<p>So if you want to list the contents at the root of the repository then you can do</p>
+
+<pre style="font-family: ; background: white; color: "><font face="Consolas"><font size="2"><font color="#000000">&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#0000ff">foreach</font></span><font color="#000000">(</font><span style="color: "><font color="#2b91af">TreeEntry</font></span><font color="#000000"> treeEntry </font><span style="color: "><font color="#0000ff">in</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000"> commit.Tree)<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#2b91af">Console</font></span><font color="#000000">.WriteLine(</font><span style="color: "><font color="#a31515">&quot;Path:{0} - Type:{1}&quot;</font></span></font><font color="#000000" size="2">, treeEntry.Path, treeEntry.TargetType);<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; }</font></font><br /></pre>
+
+<p>That will give you something like the following when against the LibGit2Sharp repository</p>
+
+<pre style="font-family: courier, monospace !important; background: black; color: white; padding-bottom: 10px; padding-top: 10px; padding-left: 10px; padding-right: 10px">Path:.gitattributes - Type:Blob<br />Path:.gitignore - Type:Blob<br />Path:.gitmodules - Type:Blob<br />Path:.mailmap - Type:Blob<br />Path:.travis.yml - Type:Blob<br />Path:CHANGES.md - Type:Blob<br />Path:CI-build.msbuild - Type:Blob<br />Path:LICENSE.md - Type:Blob<br />Path:Lib - Type:Tree<br />Path:LibGit2Sharp.Tests - Type:Tree<br />Path:LibGit2Sharp.sln - Type:Blob<br />Path:LibGit2Sharp - Type:Tree<br />Path:README.md - Type:Blob<br />Path:ResharperSettings.xml - Type:Blob<br />Path:UpdateLibgit2ToSha.ps1 - Type:Blob<br />Path:build.libgit2sharp.cmd - Type:Blob<br />Path:build.libgit2sharp.sh - Type:Blob<br />Path:build.libgit2sharp.x64.cmd - Type:Blob<br />Path:libgit2 - Type:GitLink<br />Path:nuget.package - Type:Tree<br />Path:square-logo.png - Type:Blob<br /></pre>
+
+<p>To see which files changed in a particular commit.&#160; To do that we need to find the diff between the commit and it’s parent. For now let’s just assume that we have a single parent (i.e. we’re not a merge commit). Therefore we can do this</p>
+
+<pre style="font-family: ; background: white; color: "><font face="Consolas"><font size="2"><font color="#000000">&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#2b91af">Tree</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000"> commitTree = repo.Head.Tip.Tree;<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#2b91af">Tree</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000"> parentCommitTree = repo.Head.Tip.Parents.Single().Tree;<br /> <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#2b91af">TreeChanges</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000"> changes = repo.Diff.Compare(parentCommitTree, commitTree);<br /> <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#2b91af">Console</font></span><font color="#000000">.WriteLine(</font><span style="color: "><font color="#a31515">&quot;{0} files changed.&quot;</font></span><font color="#000000">,changes.Count());</font></font></font></pre>
+
+<p>And finally to iterate over the changes to show what files changed in that commit</p>
+
+<pre style="font-family: ; background: white; color: "><font face="Consolas"><font size="2"><font color="#000000">&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#0000ff">foreach</font></span><font color="#000000">(</font><span style="color: "><font color="#2b91af">TreeEntryChanges</font></span><font color="#000000"> treeEntryChanges </font><span style="color: "><font color="#0000ff">in</font></span></font></font><font face="Consolas"><font size="2"><font color="#000000"> changes)<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; {<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </font><span style="color: "><font color="#2b91af">Console</font></span><font color="#000000">.WriteLine(</font><span style="color: "><font color="#a31515">&quot;Path:{0} +{1} -{2} &quot;</font></span></font><font color="#000000" size="2">, <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; treeEntryChanges.Path, <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; treeEntryChanges.LinesAdded,<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; treeEntryChanges.LinesDeleted<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; );<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; }</font></font></pre>
+
+<p>That then gives the following output</p>
+
+<pre style="font-family: courier, monospace !important; background: black; color: white; padding-bottom: 10px; padding-top: 10px; padding-left: 10px; padding-right: 10px">Author: nulltoken<br />Message: Release LibGit2Sharp v0.11<br />3 files changed.<br />Path:LibGit2Sharp.Tests\DiffTreeToTreeFixture.cs +35 -11<br />Path:LibGit2Sharp.Tests\LibGit2Sharp.Tests.csproj +1 -0<br />Path:LibGit2Sharp.Tests\TestHelpers\OdbHelper.cs +17 -0<br /></pre>
+
+<p>This post obviously just scratches at the surface of what is possible with LibGit2Sharp. We’re starting the process of trying to flesh out the documentation for the project from the current starting position of none, but it the meantime if you want to see some more examples of using LibGit2Sharp then take a look at the <a href="https://github.com/libgit2/libgit2sharp/tree/vNext/LibGit2Sharp.Tests">Unit Tests</a>.</p>
+Source Code: <a href="http://www.woodwardweb.com/code/Commit1.cs">Commit1.cs</a>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/git/getting_started_2.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/git/" rel="tag">Git</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/git/libgit2/" rel="tag">LibGit2</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=git&amp;limit=20';return false;" rel="tag">git</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=libgit2&amp;limit=20';return false;" rel="tag">libgit2</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=libgit2sharp&amp;limit=20';return false;" rel="tag">libgit2sharp</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-1741"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-1742"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tee&amp;limit=20';return false;" rel="tag">tee</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2014/01/">January 2014</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2013/05/">May 2013</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2012/06/">June 2012</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2011/07/">July 2011</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2011/06/">June 2011</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2011/05/">May 2011</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2011/03/">March 2011</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/12/">December 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/11/">November 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/10/">October 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/09/">September 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/06/">June 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/05/">May 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/04/">April 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/03/">March 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/02/">February 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/11/">November 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/git/setting_up_the.html">Setting up the Perfect Git Command Line Environment on Windows</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/git/getting_started_2.html">Getting Started with LibGit2Sharp</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/java/eclipse_juno_th.html">Eclipse Juno Themes on Windows</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs/tfs_from_the_ra.html">TFS from the Raspberry Pi</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs/community_tfs_b.html">Community TFS Build Extensions Released</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs/eclipse_37_indi.html">Eclipse 3.7 (Indigo) with Team Explorer Everywhere 2010 SP1</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/creating_a_http.html">Creating a HTTPHandler in WebMatrix</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs/incremental_bui.html">Incremental Builds with TFS 2010</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/programming/getting_started_1.html">Getting Started with the TFS SDK for Java</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/personal/excel_year_plan_1.html">Excel Year Planner Re-visited</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

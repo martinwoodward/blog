@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Pre-caching your TFS Proxy</title>
+    <link>http://www.woodwardweb.com/vsts/precaching_your.html</link>
+    <description><![CDATA[ The Team Foundation Server Version Control Proxy is a wonderful thing - despite the not so catchy name.&nbsp; It sits between a remote office and your Team Foundation Server Application Tier and caches requests for file downloads from that...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-04-05T11:21:38+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Adrian+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/precaching_your.html#c003205</link>
+    <description>Thanks Martin, this will be very useful for me soon!
+
+Adrian</description>
+    <dc:date>2007-04-05T13:31:27+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2073</comments>   
+    <dc:creator>Adrian</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Steven St.Jean+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/precaching_your.html#c003206</link>
+    <description>Martin,
+
+The clever part is it&apos;s simplicity.  Bravo!
+
+- Steve</description>
+    <dc:date>2007-04-05T17:15:57+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2073</comments>   
+    <dc:creator>Steven St.Jean</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Abhishek Bagchi+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/precaching_your.html#c003207</link>
+    <description>Thanks Martin...I am going to implement this.
+
+Abhishek</description>
+    <dc:date>2009-01-28T09:21:09+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2073</comments>   
+    <dc:creator>Abhishek Bagchi</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mayur+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/precaching_your.html#c003208</link>
+    <description>Greetings Martin,
+I have done pre catching thing half way as per your article.
+Created new workspace and folder mappings.It was done successsfully.
+Configured my TFS server with TFS proxy.
+Run the script.
+Now it is catching from tfs main server.Not from proxy.
+It is giving error as follow:
+TF15013:the requested team foundation server is not registerd with proxy server.
+I have restarted my main server but again same error.
+Could you plz help me in solving this error?
+Regards,
+Mayur Bondre</description>
+    <dc:date>2009-08-05T11:50:01+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2073</comments>   
+    <dc:creator>Mayur</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

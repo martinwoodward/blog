@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS Top Tip #6 - Setting the Maximum Attachment Size for Work Items</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_6_s.html</link>
+    <description><![CDATA[By default, the maximum attachment size for attachments to work items in Team Foundation Server is 4Mb.&nbsp; It is handy that this feature exists because people may accidentally attach massive files when they should really be attaching something a little...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-06-26T10:38:02+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Paul+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_6_s.html#c001269</link>
+    <description>I used this tip to set the attachment size to 10 MB using 10485760 as the value in the Invoke textbox. I then clicked on invoke &amp; then a new browser page was displayed with nothing in it.
+
+I did log into the TFS server machine as a member of the adminstrators group.
+
+Am I supposed to restart any services or reboot the server? I tried rebooting once but the max attachment size was still being referenced as 4MB on the attachment tab screen when I went into the TFS webpage &amp; attempted to attach a 8 MB file to a bug work item. On my attempt, I got an error that the attachment size was exceeded.
+
+Any clues?</description>
+    <dc:date>2009-01-08T20:43:09+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=670</comments>   
+    <dc:creator>Paul</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

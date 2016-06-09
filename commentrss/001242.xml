@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Aligning Build Numbers with Assembly Versions in TFS2008.</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html</link>
+    <description>I like my build numbers to be the same number that my assemblies are versioned with (and my end deliverables).&#160; It just makes things easier to track, that way if I get a bug report in from a customer I...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-02-05T11:19:38+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Andrew Fry+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001966</link>
+    <description>Hi Richard,
+
+This is excellent and exactly what i&apos;ve been looking for as we used to do this process with NAnt and now are migrating to TF Build.
+
+A couple of questions:
+
+You don&apos;t checkout or checkin the buildnumber.txt file.  So where does this live?  In the $(DropLocation), but where is this?
+
+My buildnumber.txt sits alongside my TFSBuild.proj file and i have to check it out in the BuildNumberOverrideTarget, however this is causing me problems as this is called before the &apos;BeforeGet&apos; or any of the get targets so the file is not actually there!
+
+Cheers,
+Andy</description>
+    <dc:date>2008-10-09T10:26:00+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>Andrew Fry</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001967</link>
+    <description>The Drop location is the network folder than all the builds get copied to when they have finished being built ready for staging.  Therefore the buildnumber.txt is actually not under version control.
+
+However I am not completely happy with this scenario.
+
+If you store your buildnumber.txt file alongside the TFSBuild.proj file then Team Build will actually get that file for you as part of the bootstrap process.  It actually downloads everything in folder that the TFSBuild.proj file lives (but doesn&apos;t download things in sub-folder by default).  Therefore you will have it in BeforeGet.  
+
+You will at some point obviously want to check this file in at some point (probably in BeforeGet or AfterGet).  When you do this check-in (by doing an exec of the TFS command line &quot;tf /checkin&quot;, but sure to check-in with a comment of &quot;***NO_CI***&quot; to ensure that the check-in didn&apos;t trigger another CI build which would put you in a recursive build loop.
+
+Hope that helps,
+
+Martin.</description>
+    <dc:date>2008-10-09T10:38:24+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Romain Prieto+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001968</link>
+    <description>Hi,
+
+I completely agree on using an incremented number at the end of the version number! But how should it be called to avoid confusion with TFS&apos;s whole &quot;build number&quot;? I&apos;ll go with &quot;revision suffix&quot; for the rest of this comment...
+
+So, with the same idea in mind, our approach to this was slightly different. In BuildNumberOverrideTarget, we call a custom task just like you do, except that it doesn&apos;t read the revision suffix from a file and write it back. Instead it queries the BuildStore, gets the biggest existing suffix for that build definition, and adds 1.
+
+A loop on the existing build data can give us this information quite easily:
+
+
+------------------------------------------
+using Microsoft.TeamFoundation.Client;
+using Microsoft.TeamFoundation.Build.Proxy;
+...
+TeamFoundationServer server = TeamFoundationServerFactory.GetServer(this.TfsUrl);
+BuildStore store = (BuildStore)server.GetService(typeof(BuildStore));
+BuildData[] buildList = store.GetListOfBuilds(this.TfsProject, this.TfsBuildType);
+foreach (BuildData data in buildList)
+{
+   // just find the biggest revision suffix in use
+   // by looking at the end of each data.BuildNumber
+}
+------------------------------------------
+
+
+That&apos;s it we have the new revision suffix, and we can use it when overriding the build number.
+
+What do you think about this approach?
+We haven&apos;t been using it for long but it seems to work fine for the moment.
+
+Cheers
+
+Romain</description>
+    <dc:date>2008-10-14T03:52:48+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>Romain Prieto</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Abhishek Bagchi+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001969</link>
+    <description>Hi I successfully implemented the concept of incrementing revision number  but I am not able to checkin the Files.
+
+I am using following commands
+
+
+
+but the TF.exe command failed and exites with 100 code
+
+Please help me</description>
+    <dc:date>2009-01-05T08:22:15+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>Abhishek Bagchi</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001970</link>
+    <description>Personally I do not like the build process to check in files that it modifies.  However - to figure out what is going wrong in your case I would take a look at the BuildLog.txt from the build as that will contain the error message from tf.exe
+
+Good luck,
+
+Martin.</description>
+    <dc:date>2009-01-05T10:02:43+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by niall+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001971</link>
+    <description>sorry I didn&apos;t stick in the actual error message it is, the error I get is 
+error MSB4067: The element  beneath element  is unrecognized.
+
+I could be to do with the version of TeamBuild i.e. I&apos;m using 2005.</description>
+    <dc:date>2009-03-10T17:42:04+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>niall</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by niall+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001972</link>
+    <description>sorry I&apos;ll try this again, the TeamBuild will not pick up the BuildNumber property.
+
+here&apos;s the error
+error MSB4067: The element @BuildNumber@ beneath element @PropertyGroup@ is unrecognized.
+
+I&apos;m using TeamBuild 2005.</description>
+    <dc:date>2009-03-10T18:21:35+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>niall</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by tfs novice+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001973</link>
+    <description>I&apos;m implementing this on TFS 2008 but I&apos;m getting error MSB4036: The &quot;Attrib&quot; task was not found.  Thanks in advance for your help. Below is the tail end of the BuildLog.txt:
+
+
+------------------------------------------
+Done building target &quot;CoreGet&quot; in project &quot;TFSBuild.proj&quot;.
+Target &quot;AfterGet&quot; in file &quot;C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\BuildType\TFSBuild.proj&quot; from project &quot;C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\BuildType\TFSBuild.proj&quot;:
+Task &quot;Message&quot;
+  Modifying AssemblyInfo files under &quot;C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\Sources&quot;.
+Done executing task &quot;Message&quot;.
+C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\BuildType\TFSBuild.proj(252,5): error MSB4036: The &quot;Attrib&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with  in the project file, or in the *.tasks files located in the &quot;C:\WINDOWS\Microsoft.NET\Framework\v3.5&quot; directory.
+Done building target &quot;AfterGet&quot; in project &quot;TFSBuild.proj&quot; -- FAILED.
+Done Building Project &quot;C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\BuildType\TFSBuild.proj&quot; (EndToEndIteration target(s)) -- FAILED.
+
+Build FAILED.
+
+&quot;C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\BuildType\TFSBuild.proj&quot; (EndToEndIteration target) (1) -&gt;
+(AfterGet target) -&gt; 
+  C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\BuildType\TFSBuild.proj(252,5): error MSB4036: The &quot;Attrib&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with  in the project file, or in the *.tasks files located in the &quot;C:\WINDOWS\Microsoft.NET\Framework\v3.5&quot; directory.
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:01.96
+------------------------------------------
+</description>
+    <dc:date>2009-06-05T21:11:47+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>tfs novice</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by tfs novice+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001974</link>
+    <description>The text from the log I posted was cut off.  Here&apos;s another try...
+
+error MSB4036: The &quot;Attrib&quot; task was not found.
+Check the following: 
+1.) The name of the task in the project file is the same as the name of the task class. 
+2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 
+3.) The task is correctly declared with  in the project file, or in the *.tasks files located in the &quot;C:\WINDOWS\Microsoft.NET\Framework\v3.5&quot; directory.</description>
+    <dc:date>2009-06-05T21:23:11+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>tfs novice</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by tfs novice+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001975</link>
+    <description>Figured it out...
+
+I missed the part about installing MSBuild Community Tasks.  All is well after I installed it and added this to TFSBuild.proj:</description>
+    <dc:date>2009-06-11T01:21:41+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>tfs novice</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by sliderhouserules+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001976</link>
+    <description>Attrib is part of the MSBuild Community Tasks project...</description>
+    <dc:date>2009-06-11T17:35:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>sliderhouserules</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by sliderhouserules+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001977</link>
+    <description>Oops, hadn&apos;t refreshed yet today when I replied there... missed your post right before mine.</description>
+    <dc:date>2009-06-11T18:37:04+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>sliderhouserules</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Nene+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/aligning_build.html#c001978</link>
+    <description>Done executing task &quot;Get&quot;.
+Task &quot;SetBuildProperties&quot; skipped, due to false condition; ( &apos;$(GetVersion)&apos; != &apos;$(SourceGetVersion)&apos; ) was evaluated as ( &apos;C87748&apos; != &apos;C87748&apos; ).
+Done building target &quot;CoreGet&quot; in project &quot;TFSBuild.proj&quot;.
+Target &quot;AfterGet&quot; in file &quot;C:\MyAccount_Build\BuildType\TFSBuild.proj&quot; from project &quot;C:\MyAccount_Build\BuildType\TFSBuild.proj&quot;:
+Task &quot;Message&quot;
+  Modifying AssemblyInfo files under &apos;C:\MyAccount_Build\Sources&apos; and &apos;C:\MyAccount_Build\BuildType&apos;.
+Done executing task &quot;Message&quot;.
+Using &quot;Attrib&quot; task from assembly &quot;C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll&quot;.
+Task &quot;Attrib&quot;
+Done executing task &quot;Attrib&quot;.
+Using &quot;FileUpdate&quot; task from assembly &quot;C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll&quot;.
+Task &quot;FileUpdate&quot;
+C:\MyAccount_Build\BuildType\TFSBuild.proj : error : Object reference not set to an instance of an object.
+Done executing task &quot;FileUpdate&quot; -- FAILED.
+Done building target &quot;AfterGet&quot; in project &quot;TFSBuild.proj&quot; -- FAILED.
+Done Building Project &quot;C:\MyAccount_Build\BuildType\TFSBuild.proj&quot; (EndToEndIteration target(s)) -- FAILED.
+
+Build FAILED.
+Can someone let me know where I went wrong.</description>
+    <dc:date>2009-09-22T19:42:48+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1242</comments>   
+    <dc:creator>Nene</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

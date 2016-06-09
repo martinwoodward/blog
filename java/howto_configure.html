@@ -1,0 +1,1597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/java/howto_configure.html">
+<dc:title>HowTo: Configure SVN+SSH with Subclipse on Windows</dc:title>
+<dc:description>Problem: Use ssh tunnelling to access a Subversion repository using SSH tunneling (i.e. with a subversion repository url of svn+ssh://myservername/myrepo) using the Subclipse subversion integration with Eclipse. I tried various things and used each of the three interfaces for configuring...</dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2005-11-27T00:09:34+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/personal/google_analysis.html" title="Google Analysis" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/technology/configuring_ntp.html" title="Configuring NTP on Windows Server 2003" />
+    
+    <title>HowTo: Configure SVN+SSH with Subclipse on Windows - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-1475" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">HowTo: Configure SVN+SSH with Subclipse on Windows</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2005-11-27T00:09:34+00:00">November 27, 2005 12:09 AM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/java/howto_configure.html#comments">36 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p><b>Problem:</b><br />
+Use ssh tunnelling to access a Subversion repository using SSH tunneling (i.e. with a subversion repository url of svn+ssh://myservername/myrepo) using the Subclipse subversion integration with Eclipse.  I tried various things and used each of the three interfaces for configuring Subclipse (Window, Preferences..., Team, SVN).  </p>
+
+<p>When I used JavaHL (JNI) I got the following error,  "svn: Can't create tunnel: The system cannot find the file specified."  SVN Command Line gave me a similar error.  Finally the JavaSVN interface (1.0) just did not want to authenticate with my server at all.  Did various searches on Google and couldn't find an answer that worked, just lots of people with a similar problem.  Anyway, the following works for me...</p>
+
+<p><B>Solution:</B><br />
+You need to create an environment variable called "SVN_SSH" that points to an executable file that accepts the same command line arguments as ssh on unix.  I did this by doing the following:-<br />
+<OL><LI>Set up ssh keys.  Not going to cover that here as you can easily Google for that.  You need to end up with your public key on the SVN server and your private key loaded into Paegent locally.</LI><br />
+<LI>Download and installed the excellent <a href="http://tortoisesvn.sourceforge.net/">TortoiseSVN</a> client for Windows.</LI><br />
+<LI>Set the following environment variable (by right-clicking on My Computer, Properties, Advanced, Environment Variables, New):-</p>
+
+<p>Variable name: <code>SVN_SSH</code><br />
+Variable value: <code>C:\\Program Files\\TortoiseSVN\\bin\\TortoisePlink.exe</code></p>
+
+<p>(The "\\" is very important, otherwise it won't work.  Equally, you cannot use the plink.exe that comes with putty as that fires up a command shell window which is really annoying.  The TortoisePlink.exe is a windows implementation of plink that doesn't bring up any UI)<br />
+</LI><br />
+<LI>Configure the Subclipse plugin to use JavaHL (JNI)</LI><br />
+<LI>Restart Eclipse</LI><br />
+<LI>Do a little victory jig (optional)</LI><br />
+</OL><br />
+</p>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/java/howto_configure.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/java/" rel="tag">Java</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">36 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-2165" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Sam Judson</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2165"><abbr class="published" title="2005-11-29T10:12:21+00:00">November 29, 2005 10:12 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hi Martin</p>
+
+<p>Just saw the post about your new job in Illinois - congrats.</p>
+
+<p>Sam (from BT)</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2166" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Jez</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2166"><abbr class="published" title="2005-12-03T00:46:52+00:00">December  3, 2005 12:46 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>What the hell are you on about? :)</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2177" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://innercurmudgeon.com" href="http://innercurmudgeon.com" rel="nofollow">John Carney</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2177"><abbr class="published" title="2006-01-14T05:24:55+00:00">January 14, 2006  5:24 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I tried the above and it didn't work. What worked for me was editing the Subversion config file, which is at C:\Documents and Settings\\Application Data\Subversion\config.</p>
+
+<p>It's an INI-style file, uncomment the line reading [tunnels] and add the following line underneath it:<br />
+ssh = C:\Program Files\TortoiseSVN\bin\TortoisePlink.exe</p>
+
+<p>Obviously you will need to modify the line if you have installed TortoiseSVN somewhere else.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2238" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Christopher Yu</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2238"><abbr class="published" title="2006-05-06T18:47:57+00:00">May  6, 2006  6:47 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I tried this method, but still had to enter my password on EACH update.  </p>
+
+<p><a href="http://docs.codehaus.org/display/CASTOR/SVN+Access+from+Eclipse+Using+Subclipse" rel="nofollow">http://docs.codehaus.org/display/CASTOR/SVN+Access+from+Eclipse+Using+Subclipse</a><br />
+ <br />
+worked for me and does NOT require ANY third part applications.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2282" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Dust</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2282"><abbr class="published" title="2006-09-11T09:44:43+00:00">September 11, 2006  9:44 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Sweet, thanks for the info. I had a similar problem with AnkhSVN and Visual Studio 2005, and the environment variable fixed it.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2284" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">K123</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2284"><abbr class="published" title="2006-09-12T11:59:42+00:00">September 12, 2006 11:59 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p># Install Subclipse plugin from <a href="http://subclipse.tigris.org/" rel="nofollow">http://subclipse.tigris.org/</a> if you have not already installed it.</p>
+
+<p>If you have to enter password you many multiple times like I did (note I have cygwin installed) then follow the below instruction. Might work for you.</p>
+
+<p># In Eclipse, under Windows --> Preferences --> Team --> SVN --> SVN interface: make sure you have selected JavaSVN.</p>
+
+<p>Now i only have to enter my password once, no errors</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2302" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">anonymous</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2302"><abbr class="published" title="2006-10-06T05:12:55+00:00">October  6, 2006  5:12 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Nice!  Thanks for the excellent instructions.  I did the optional victory jig.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2320" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://games.cs.drexel.edu" href="http://games.cs.drexel.edu" rel="nofollow">Louis</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2320"><abbr class="published" title="2006-11-30T15:31:09+00:00">November 30, 2006  3:31 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks for the tip!<br />
+For others having problems, I had to generate the key on my server, then use puttygen to convert it to .ppk format (otherwise pageant complains about the OPEN-SSH file type).</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2338" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Dmitry Makhno</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2338"><abbr class="published" title="2007-02-12T12:50:54+00:00">February 12, 2007 12:50 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Cross link to this post added here:<br />
+<a href="http://confluence.public.thoughtworks.org/display/CCNET/Subversion+Source+Control+Block" rel="nofollow">http://confluence.public.thoughtworks.org/display/CCNET/Subversion+Source+Control+Block</a></p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2342" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://blog.aplpi.com" href="http://blog.aplpi.com" rel="nofollow">Stephen Mulcahy</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2342"><abbr class="published" title="2007-02-14T21:04:54+00:00">February 14, 2007  9:04 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hi Martin,</p>
+
+<p>I've just been dabbling with Subclipse and was having problems with svn+ssh repositories .. your instructions here worked a treat to get things going. </p>
+
+<p>Thanks,</p>
+
+<p>-stephen</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2357" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Jason McVetta</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2357"><abbr class="published" title="2007-03-05T17:45:32+00:00">March  5, 2007  5:45 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I used PuTTY's "plink" component -- which I already had installed in C:\opt -- instead of installing TortoiseSVN. It was pretty easy, and it works seamlessly with the Pageant authentication agent too:</p>
+
+<p>[tunnels]<br />
+ssh = c:\\opt\\plink.exe</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2358" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.woodwardweb.com" href="http://www.woodwardweb.com" rel="nofollow">Martin Woodward</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2358"><abbr class="published" title="2007-03-06T08:56:17+00:00">March  6, 2007  8:56 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hi Jason,</p>
+
+<p>The advantage of the plink that comes with TortoiseSVN is that it doen't fire up a command shell when run.  In the version of Plink that I had with my Putty installation it kept firing up a command window when connecting - while I was able to get that window to run minimized, it was still annoying for me.</p>
+
+<p>Did you not have that problem?  I'm wondering if the Putty plink has changed recently?</p>
+
+<p>M.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2369" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Blaine Simpson</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2369"><abbr class="published" title="2007-03-21T02:39:49+00:00">March 21, 2007  2:39 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>All of this configuration work, other than generating keys, is unnecessary.</p>
+
+<p>Just use the Pure Java SSH provider instead of the JNI one.  Just like with JDBC drivers, if a pure Java product will do what you want, everything is much easier.</p>
+
+<p>I've helped people use Svn with Eclipse for years, and the pure driver ssh providers are always better.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2385" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Glen Mazza</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2385"><abbr class="published" title="2007-04-12T15:12:29+00:00">April 12, 2007  3:12 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks for taking the time to post this.  This fixed the Subclipse problem I was having.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2401" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Mingyan</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2401"><abbr class="published" title="2007-05-31T23:02:10+00:00">May 31, 2007 11:02 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>This is the best discussion on the tunnel error about svn. The 'pure java' solution works for me. What I did is: in Eclipse, Windows->Preferences->Team->SVN->svn interfaces, choose SVNKIT(pure java) instead of the default JavaHL (JNI).<br />
+Thank you all.<br />
+</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2413" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">abhishek gupta</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2413"><abbr class="published" title="2007-07-03T10:02:08+00:00">July  3, 2007 10:02 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>martin u r awesome. <br />
+thanx a lot man. i spent one whole day just trying to figure out the problem. Finally the problem was to use "\\" instead of "\". never mind thanx anyways</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2432" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">alp</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2432"><abbr class="published" title="2007-09-18T21:07:38+00:00">September 18, 2007  9:07 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>thank you, that helped me alot</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2433" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Teemu</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2433"><abbr class="published" title="2007-09-28T10:17:40+00:00">September 28, 2007 10:17 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>But there is no "Windows->Preferences->Team" in Eclipse.</p>
+
+<p>So how the configuration shoudl happen?</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2472" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">rich w</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2472"><abbr class="published" title="2007-12-25T01:13:33+00:00">December 25, 2007  1:13 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>worked like a charm. thanks</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2477" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">abhishek gupta</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2477"><abbr class="published" title="2008-01-15T03:08:33+00:00">January 15, 2008  3:08 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p><br />
+I am using eclpse 3.3 and have installed <br />
+subversion<br />
+svnservice <br />
+tortoise svn <br />
+putty <br />
+Also I have private and public key.. </p>
+
+<p>I am unable to use svn+ssh protocol to checkout projects? </p>
+
+<p>Does the public key expire ot something after 5-6 months because it has been 6 months since I checked out this project at the site and since then I have reinstalled my PC... Please help ... </p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2484" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Anonymous</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2484"><abbr class="published" title="2008-01-27T21:38:58+00:00">January 27, 2008  9:38 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>worked awesome..thanks !!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2507" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Javier</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2507"><abbr class="published" title="2008-03-07T11:40:56+00:00">March  7, 2008 11:40 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I needed a few attempts, but it finally worked perfectly. Thanks.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2509" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Michael O'Brien</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2509"><abbr class="published" title="2008-03-11T21:00:56+00:00">March 11, 2008  9:00 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Martin, thank you for your details on the SVN_SSH env variable - I was able to automate SVN via command-line ant with it.<br />
+/michael </p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2520" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Vajahat</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2520"><abbr class="published" title="2008-04-17T13:43:55+00:00">April 17, 2008  1:43 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Yes just slect the pure java Interface from the Window->Configuration>Team>SVN and then select SVNKit Pure interface</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2528" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Selvan</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2528"><abbr class="published" title="2008-04-25T13:30:25+00:00">April 25, 2008  1:30 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Wonderful! It actually works!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2530" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">mike</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2530"><abbr class="published" title="2008-05-01T10:57:16+00:00">May  1, 2008 10:57 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>THANK GOD!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2531" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Anurat Chapanond</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2531"><abbr class="published" title="2008-05-01T11:20:30+00:00">May  1, 2008 11:20 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>You are a genius!</p>
+
+<p>Thanks so much!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2561" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">rma</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2561"><abbr class="published" title="2008-06-01T21:15:27+00:00">June  1, 2008  9:15 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thank you VERY much!!!! It works!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2571" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Biren</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2571"><abbr class="published" title="2008-06-26T00:34:05+00:00">June 26, 2008 12:34 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>You are a darling my friend. You solved my pain.<br />
+thanks a ton</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2612" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.lexalytics.com" href="http://www.lexalytics.com" rel="nofollow">Deb</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2612"><abbr class="published" title="2008-09-10T16:38:03+00:00">September 10, 2008  4:38 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks, this worked great for me!  I was pulling my hair out!</p>
+
+<p>-D</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2618" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Dave</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2618"><abbr class="published" title="2008-09-16T16:19:43+00:00">September 16, 2008  4:19 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks Martin. This solution worked for me.<br />
+I recently started seeing the 2 messages:<br />
+ - "The system cannot find the file specified..."<br />
+ - "Can't create tunnel..."<br />
+Which I had never seen before. And SVN was working fine.<br />
+I thought I had set it to use the pure Java drivers.<br />
+So, I checked and found that I only had one choice (JNI).<br />
+And, until I came across your fix. Subclipse would not work.<br />
+I even tried Revert-Reinstall.<br />
+-Dave<br />
+</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2696" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">James</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2696"><abbr class="published" title="2009-03-13T05:02:37+00:00">March 13, 2009  5:02 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks for that, it worked a treat first go!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2702" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">ja</span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2702"><abbr class="published" title="2009-03-31T16:06:45+00:00">March 31, 2009  4:06 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>To save your password set this in your Windows Env Variables:</p>
+
+<p>Variable name: SVN_SSH<br />
+Variable value: C:\\Program Files\\TortoiseSVN\\bin\\TortoisePlink.exe -l username -pw password</p>
+
+<p>;)</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2705" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://varunkrish.com" href="http://varunkrish.com" rel="nofollow">VarunKrish</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2705"><abbr class="published" title="2009-04-04T20:23:36+00:00">April  4, 2009  8:23 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>u rock man </p>
+
+<p>i was dead when SVN was not working on my eclipse after i setup a 1.6 repo and basically svkit is not supporting the same (i was using it b4)</p>
+
+<p>had to use javaHL and u made my day</p>
+
+<p>plink rocks</p>
+
+<p>i was annoyed to see popups with cygwin's ssh</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2725" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://jadeworld.com" href="http://jadeworld.com" rel="nofollow">David</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2725"><abbr class="published" title="2009-05-11T01:18:08+00:00">May 11, 2009  1:18 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thankyou so much for this little tutorial!</p>
+
+<p>Was bashing my head against the keyboard to this solved my problem.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2733" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            <a class="commenter-profile" href="http://justinfaulkner.myopenid.com/"><img alt="Author Profile Page" src="http://www.woodwardweb.com/mt/mt-static/images/comment/openid_logo.png" width="16" height="16" /></a>
+        
+                            <span class="vcard author"><a title="http://justinfaulkner.myopenid.com/" href="http://justinfaulkner.myopenid.com/" rel="nofollow">justinfaulkner.myopenid.com</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/java/howto_configure.html#comment-2733"><abbr class="published" title="2009-06-05T20:15:48+00:00">June  5, 2009  8:15 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>All I had to do was Go to Window->Preferences->Team->SVN->SVN Interface and switch to SVNKit, then the problem fixed itself.</p>
+
+<p>Thanks for the great post (that although wasn't quite the fix for me, it helped me find a solution that worked for me in the comments).</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-1741"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-1742"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-8"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=radiotfs&amp;limit=20';return false;" rel="tag">radiotfs</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2010/05/">May 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/04/">April 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/03/">March 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/02/">February 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/11/">November 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/speaking_at_the_1.html">Speaking at the Test Manager Forum</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/using_team_expl.html">Using Team Explorer Everywhere with CodePlex</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/goodbye_teampri.html">Goodbye Teamprise, Hello Team Explorer Everywhere</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/java/speaking_at_ecl.html">Speaking at EclipseCon 2010</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/whats_in_a_name.html">What&rsquo;s in a Name?</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs/bulk_editing_a.html">Bulk Editing a Build Definition Workspace Mapping</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/personal/working_for_mic.html">Working for Microsoft, Three Months In</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/were_hiring.html">We are Hiring!</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs/creating_custom.html">Creating Custom Workflow Activities for TFS Build 2010</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/to_msbuild_or_n.html">To MSBuild or not to MSBuild</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

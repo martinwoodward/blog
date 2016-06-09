@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Whatever Happened to Bob?</title>
+    <link>http://www.woodwardweb.com/personal/whatever_happen.html</link>
+    <description>Just reading Ben&apos;s blog. He has been playing with 2D Fractal Terrains (as you do). Seeing the landscape Ben generated instantly brought back so many memories. A school friend of mine, called Robert Parsons, used a similar algorithm to generate...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-04-06T12:31:58+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whatever_happen.html#c002869</link>
+    <description>&gt; He was the first hacker I met that I knew was better than me.
+
+I hang around on the Debian and GNOME lists, so I&apos;m well aware there are many many better than I am! ;-)
+
+Nice post.</description>
+    <dc:date>2005-04-06T14:08:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1833</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Tom+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whatever_happen.html#c002870</link>
+    <description>Look on friends re-uninited for this guy?</description>
+    <dc:date>2005-05-04T10:52:05+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1833</comments>   
+    <dc:creator>Tom</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whatever_happen.html#c002871</link>
+    <description>Yup - no joy.</description>
+    <dc:date>2005-05-04T20:35:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1833</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

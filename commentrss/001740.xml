@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TechEd Online 2009: Cross Platform Development with Team Foundation Server and Teamprise</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html</link>
+    <description>Last week at TechEd 2009 North America, I had the pleasure of sitting down with Brian Keller to discuss Teamprise past, present and future. If you have Silverlight installed you can watch the interview or you can download the video...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-05-19T11:32:40+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ian+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002729</link>
+    <description>Good post.  When there&apos;s no rain in the forecast, I&apos;ve been riding my bike (the kind with pedals, not exhaust pipes) to work.  I&apos;ve been burning through podcasts at an alarming rate, so I&apos;m looking for more.  I&apos;ll check these out!</description>
+    <dc:date>2009-05-28T14:07:58+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Ian</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by ozgrant.com+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002730</link>
+    <description>Thanks Martin! Some good picks in there.</description>
+    <dc:date>2009-05-29T06:00:00+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>ozgrant.com</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by William Bartholomew+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002741</link>
+    <description>Those naughty naughty rabbits!</description>
+    <dc:date>2009-06-11T23:15:25+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>William Bartholomew</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Tom Hall+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002742</link>
+    <description>Funny that you&apos;ve blogged about this because the other day I was considering asking you a how-to question which was how to stop policy overrides on certain policies... Realising it wasnt possible I subscribed to all check-in alerts - we only have about 10 projects and 9-12 developers at the moment so I&apos;m not being mailbombed yet... Your tip will come in useful :)</description>
+    <dc:date>2009-06-11T23:45:23+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Tom Hall</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Stephen+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002747</link>
+    <description>This is very cool!
+
+Still I am confused... How can you have 8 offices in 12 countries?  Unless that means they have 8 offices in each of the 12 countries, or some offices sit on the border of two countries and count twice.</description>
+    <dc:date>2009-06-29T19:46:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Stephen</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002748</link>
+    <description>You know, that is an excellent question.</description>
+    <dc:date>2009-06-29T19:48:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Stephen+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002749</link>
+    <description>I guess they could have telecommuters that expand the country count, but seems odd to count it that way.
+
+By the way, when I view the add comment page from Firefox (3.0.11) I don&apos;t see the Captcha.  That caused my post to fail.  Really confused me till I fired up the page in IETab.</description>
+    <dc:date>2009-06-29T21:36:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Stephen</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Stephen+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002750</link>
+    <description>Ah, nevermind about the captcha.  I had NoScript turned on for the site.</description>
+    <dc:date>2009-06-29T21:39:16+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Stephen</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Kenneth+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002752</link>
+    <description>Sounds great - longer episodes are more than welcome! And the more often a new episode pops up on my iPhone, the happier I am :)
+
+In other words - great works guys - I&apos;m really enjoying your podcasts, and I&apos;ve learned a lot! Thanks!
+
+Kind regards,
+Kenneth
+(form Denmark)
+</description>
+    <dc:date>2009-07-01T18:47:39+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Kenneth</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mango+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002784</link>
+    <description>can we use delegate authentication when we use the api in  a web application in TFS2010?</description>
+    <dc:date>2009-09-23T14:05:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Mango</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Luis Fraile+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002786</link>
+    <description>Great work Martin :) Congratulations.</description>
+    <dc:date>2009-09-27T17:05:36+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Luis Fraile</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Wayne+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002787</link>
+    <description>An idea whose time has come.   It appears to me, though, that IBM is working toward buiding eclipse interfaces with the mainframe.  It would be even better if say a java programmer who is also writing mainframe code could actually stay in the eclipse interface and edit, build and deploy his mainframe (yes, even COBOL and Assembler) code without even logging into the mainframe directly.  </description>
+    <dc:date>2009-09-28T22:03:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Wayne</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Peter+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002790</link>
+    <description>Your last sentence is a cliffhanger -- looking very much forward to a post on how to dell if a server you want to talk to is in the new or old style!</description>
+    <dc:date>2009-10-03T04:24:46+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Peter</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002791</link>
+    <description>@Peter - thanks!  I&apos;ve put that series of posts on hold for a while because from conversations I&apos;ve had with the team some of the names of those classes will be changing before Beta 2.  When Beta 2 comes out I&apos;ll re-do this post and start the series back up again.
+
+Many thanks,
+
+Martin.</description>
+    <dc:date>2009-10-05T15:52:49+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Tara+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002793</link>
+    <description>That was helpful, glad you made a post of it for others to benefit too. :)</description>
+    <dc:date>2009-10-14T05:01:37+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Tara</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Eyal+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_online_2.html#c002794</link>
+    <description>found my self quite a few times editing comments even just for spelling fixes or when educating new developers about the fact that comments should contains more info than just &quot;bug fix&quot;</description>
+    <dc:date>2009-10-14T12:03:04+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1740</comments>   
+    <dc:creator>Eyal</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>HowTo: Configure SVN+SSH with Subclipse on Windows</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html</link>
+    <description>Problem: Use ssh tunnelling to access a Subversion repository using SSH tunneling (i.e. with a subversion repository url of svn+ssh://myservername/myrepo) using the Subclipse subversion integration with Eclipse. I tried various things and used each of the three interfaces for configuring...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-11-27T00:09:34+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Sam Judson+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c000308</link>
+    <description>Hi Martin
+
+Just saw the post about your new job in Illinois - congrats.
+
+Sam (from BT)</description>
+    <dc:date>2005-11-29T10:12:21+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Sam Judson</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Jez+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c000309</link>
+    <description>What the hell are you on about? :)</description>
+    <dc:date>2005-12-03T00:46:52+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Jez</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by John Carney+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c000338</link>
+    <description>I tried the above and it didn&apos;t work. What worked for me was editing the Subversion config file, which is at C:\Documents and Settings\\Application Data\Subversion\config.
+
+It&apos;s an INI-style file, uncomment the line reading [tunnels] and add the following line underneath it:
+ssh = C:\Program Files\TortoiseSVN\bin\TortoisePlink.exe
+
+Obviously you will need to modify the line if you have installed TortoiseSVN somewhere else.</description>
+    <dc:date>2006-01-14T05:24:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>John Carney</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Christopher Yu+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c001168</link>
+    <description>I tried this method, but still had to enter my password on EACH update.  
+
+http://docs.codehaus.org/display/CASTOR/SVN+Access+from+Eclipse+Using+Subclipse
+ 
+worked for me and does NOT require ANY third part applications.</description>
+    <dc:date>2006-05-06T18:47:57+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Christopher Yu</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Dust+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c002979</link>
+    <description>Sweet, thanks for the info. I had a similar problem with AnkhSVN and Visual Studio 2005, and the environment variable fixed it.</description>
+    <dc:date>2006-09-11T09:44:43+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Dust</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by K123+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c003048</link>
+    <description># Install Subclipse plugin from http://subclipse.tigris.org/ if you have not already installed it.
+
+If you have to enter password you many multiple times like I did (note I have cygwin installed) then follow the below instruction. Might work for you.
+
+# In Eclipse, under Windows --&gt; Preferences --&gt; Team --&gt; SVN --&gt; SVN interface: make sure you have selected JavaSVN.
+
+Now i only have to enter my password once, no errors</description>
+    <dc:date>2006-09-12T11:59:42+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>K123</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by anonymous+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c004287</link>
+    <description>Nice!  Thanks for the excellent instructions.  I did the optional victory jig.</description>
+    <dc:date>2006-10-06T05:12:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>anonymous</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Louis+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c006686</link>
+    <description>Thanks for the tip!
+For others having problems, I had to generate the key on my server, then use puttygen to convert it to .ppk format (otherwise pageant complains about the OPEN-SSH file type).</description>
+    <dc:date>2006-11-30T15:31:09+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Louis</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Dmitry Makhno+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c010252</link>
+    <description>Cross link to this post added here:
+http://confluence.public.thoughtworks.org/display/CCNET/Subversion+Source+Control+Block</description>
+    <dc:date>2007-02-12T12:50:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Dmitry Makhno</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Stephen Mulcahy+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c010422</link>
+    <description>Hi Martin,
+
+I&apos;ve just been dabbling with Subclipse and was having problems with svn+ssh repositories .. your instructions here worked a treat to get things going. 
+
+Thanks,
+
+-stephen</description>
+    <dc:date>2007-02-14T21:04:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Stephen Mulcahy</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Jason McVetta+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c011629</link>
+    <description>I used PuTTY&apos;s &quot;plink&quot; component -- which I already had installed in C:\opt -- instead of installing TortoiseSVN. It was pretty easy, and it works seamlessly with the Pageant authentication agent too:
+
+[tunnels]
+ssh = c:\\opt\\plink.exe</description>
+    <dc:date>2007-03-05T17:45:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Jason McVetta</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c011671</link>
+    <description>Hi Jason,
+
+The advantage of the plink that comes with TortoiseSVN is that it doen&apos;t fire up a command shell when run.  In the version of Plink that I had with my Putty installation it kept firing up a command window when connecting - while I was able to get that window to run minimized, it was still annoying for me.
+
+Did you not have that problem?  I&apos;m wondering if the Putty plink has changed recently?
+
+M.</description>
+    <dc:date>2007-03-06T08:56:17+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Blaine Simpson+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c012457</link>
+    <description>All of this configuration work, other than generating keys, is unnecessary.
+
+Just use the Pure Java SSH provider instead of the JNI one.  Just like with JDBC drivers, if a pure Java product will do what you want, everything is much easier.
+
+I&apos;ve helped people use Svn with Eclipse for years, and the pure driver ssh providers are always better.</description>
+    <dc:date>2007-03-21T02:39:49+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Blaine Simpson</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Glen Mazza+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c014504</link>
+    <description>Thanks for taking the time to post this.  This fixed the Subclipse problem I was having.</description>
+    <dc:date>2007-04-12T15:12:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Glen Mazza</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mingyan+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c021723</link>
+    <description>This is the best discussion on the tunnel error about svn. The &apos;pure java&apos; solution works for me. What I did is: in Eclipse, Windows-&gt;Preferences-&gt;Team-&gt;SVN-&gt;svn interfaces, choose SVNKIT(pure java) instead of the default JavaHL (JNI).
+Thank you all.
+</description>
+    <dc:date>2007-05-31T23:02:10+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Mingyan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by abhishek gupta+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c027180</link>
+    <description>martin u r awesome. 
+thanx a lot man. i spent one whole day just trying to figure out the problem. Finally the problem was to use &quot;\\&quot; instead of &quot;\&quot;. never mind thanx anyways</description>
+    <dc:date>2007-07-03T10:02:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>abhishek gupta</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by alp+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c034578</link>
+    <description>thank you, that helped me alot</description>
+    <dc:date>2007-09-18T21:07:38+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>alp</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Teemu+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c035242</link>
+    <description>But there is no &quot;Windows-&gt;Preferences-&gt;Team&quot; in Eclipse.
+
+So how the configuration shoudl happen?</description>
+    <dc:date>2007-09-28T10:17:40+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Teemu</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by rich w+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c044305</link>
+    <description>worked like a charm. thanks</description>
+    <dc:date>2007-12-25T01:13:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>rich w</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by abhishek gupta+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c046741</link>
+    <description>
+I am using eclpse 3.3 and have installed 
+subversion
+svnservice 
+tortoise svn 
+putty 
+Also I have private and public key.. 
+
+I am unable to use svn+ssh protocol to checkout projects? 
+
+Does the public key expire ot something after 5-6 months because it has been 6 months since I checked out this project at the site and since then I have reinstalled my PC... Please help ... </description>
+    <dc:date>2008-01-15T03:08:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>abhishek gupta</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Anonymous+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c048415</link>
+    <description>worked awesome..thanks !!</description>
+    <dc:date>2008-01-27T21:38:58+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Anonymous</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Javier+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c054343</link>
+    <description>I needed a few attempts, but it finally worked perfectly. Thanks.</description>
+    <dc:date>2008-03-07T11:40:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Javier</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Michael O'Brien+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c054675</link>
+    <description>Martin, thank you for your details on the SVN_SSH env variable - I was able to automate SVN via command-line ant with it.
+/michael </description>
+    <dc:date>2008-03-11T21:00:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Michael O'Brien</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Vajahat+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c059030</link>
+    <description>Yes just slect the pure java Interface from the Window-&gt;Configuration&gt;Team&gt;SVN and then select SVNKit Pure interface</description>
+    <dc:date>2008-04-17T13:43:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Vajahat</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Selvan+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c060001</link>
+    <description>Wonderful! It actually works!</description>
+    <dc:date>2008-04-25T13:30:25+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Selvan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by mike+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c060686</link>
+    <description>THANK GOD!</description>
+    <dc:date>2008-05-01T10:57:16+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>mike</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Anurat Chapanond+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c060690</link>
+    <description>You are a genius!
+
+Thanks so much!</description>
+    <dc:date>2008-05-01T11:20:30+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Anurat Chapanond</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by rma+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c065101</link>
+    <description>Thank you VERY much!!!! It works!</description>
+    <dc:date>2008-06-01T21:15:27+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>rma</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Biren+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c071589</link>
+    <description>You are a darling my friend. You solved my pain.
+thanks a ton</description>
+    <dc:date>2008-06-26T00:34:05+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Biren</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Deb+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c084294</link>
+    <description>Thanks, this worked great for me!  I was pulling my hair out!
+
+-D</description>
+    <dc:date>2008-09-10T16:38:03+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Deb</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Dave+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c084300</link>
+    <description>Thanks Martin. This solution worked for me.
+I recently started seeing the 2 messages:
+ - &quot;The system cannot find the file specified...&quot;
+ - &quot;Can&apos;t create tunnel...&quot;
+Which I had never seen before. And SVN was working fine.
+I thought I had set it to use the pure Java drivers.
+So, I checked and found that I only had one choice (JNI).
+And, until I came across your fix. Subclipse would not work.
+I even tried Revert-Reinstall.
+-Dave
+</description>
+    <dc:date>2008-09-16T16:19:43+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>Dave</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by James+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c084390</link>
+    <description>Thanks for that, it worked a treat first go!</description>
+    <dc:date>2009-03-13T05:02:37+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>James</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by ja+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c084399</link>
+    <description>To save your password set this in your Windows Env Variables:
+
+Variable name: SVN_SSH
+Variable value: C:\\Program Files\\TortoiseSVN\\bin\\TortoisePlink.exe -l username -pw password
+
+;)</description>
+    <dc:date>2009-03-31T16:06:45+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>ja</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by VarunKrish+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c084402</link>
+    <description>u rock man 
+
+i was dead when SVN was not working on my eclipse after i setup a 1.6 repo and basically svkit is not supporting the same (i was using it b4)
+
+had to use javaHL and u made my day
+
+plink rocks
+
+i was annoyed to see popups with cygwin&apos;s ssh</description>
+    <dc:date>2009-04-04T20:23:36+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>VarunKrish</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by David+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c084426</link>
+    <description>Thankyou so much for this little tutorial!
+
+Was bashing my head against the keyboard to this solved my problem.</description>
+    <dc:date>2009-05-11T01:18:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>David</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by justinfaulkner.myopenid.com+00:00</title>
+    <link>http://www.woodwardweb.com/java/howto_configure.html#c084436</link>
+    <description>All I had to do was Go to Window-&gt;Preferences-&gt;Team-&gt;SVN-&gt;SVN Interface and switch to SVNKit, then the problem fixed itself.
+
+Thanks for the great post (that although wasn&apos;t quite the fix for me, it helped me find a solution that worked for me in the comments).</description>
+    <dc:date>2009-06-05T20:15:48+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=155</comments>   
+    <dc:creator>justinfaulkner.myopenid.com</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

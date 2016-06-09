@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>The new ePassport</title>
+    <link>http://www.woodwardweb.com/personal/the_new_epasspo.html</link>
+    <description><![CDATA[ Soon, we'll be going on holiday for the first time since my son was born.&nbsp; This means that we had to apply for a passport for my 2 year-old, which was&nbsp;a fun process.&nbsp; Anyway, the passport arrived this morning...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-08-15T11:08:40+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/personal/the_new_epasspo.html#c003094</link>
+    <description>And will it help stop terrorism?
+
+
+...nope.</description>
+    <dc:date>2006-08-16T15:14:10+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2005</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by FUD+00:00</title>
+    <link>http://www.woodwardweb.com/personal/the_new_epasspo.html#c003095</link>
+    <description>Now now Ben, you&apos;re not supposed to ask that question. Please sit in the corner quietly until the security services can come round and re-educate you.</description>
+    <dc:date>2006-08-28T10:04:48+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2005</comments>   
+    <dc:creator>FUD</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

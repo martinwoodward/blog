@@ -1,0 +1,1292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/dotnet/generating_exce.html">
+<dc:title>Generating Excel Files in C#</dc:title>
+<dc:description>I have been investigating several ways of generating files suitable for use in Excel from a C# application. As with most problems, there is more than one way to crack a nut. Various examples on the web show how to...</dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2004-12-01T04:20:23+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/dotnet/generating_exce.html" title="Generating Excel Files in C#" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/dotnet/generating_exce.html" title="Generating Excel Files in C#" />
+    
+    <title>Generating Excel Files in C# - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-480" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Generating Excel Files in C#</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author">Martin Woodward</span> on <abbr class="published" title="2004-12-01T04:20:23+00:00">December  1, 2004  4:20 AM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comments">21 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>I have been investigating several ways of generating files suitable for use in Excel from a C# application.   </p>
+
+<p>As with most problems, there is more than one way to crack a nut.  Various examples on the web show how to generate formatted sheets in Excel, either by controlling Excel from a C# application or by transforming  XML data.  The XML transformation has the disadvantage that is limits your clients to the most recent versions of Excel, whereas dire manipulation of Excel requires that you have it installed on the server.  You also have to be very careful not to leave instances of Excel running in the background, eventually grinding your server to a halt.</p>
+
+<p>This article provides a demonstration of a very simple method to generate a file that will load into Excel.  It is a bit of a hack that I used from a java platform a few years ago, but it works if all you need is a simple data export (with less than 65536 rows).  All you do is set the response stream to the mime type "application/vnd.ms-excel" and then pass a tab delimted set of data with new lines at the end of each row.  </p>
+                                    </div>
+
+
+                                    <div id="more" class="asset-more">
+                                        <p>Below is a sample code snippet showing a method to generate a simple set of data that will load into Excel (should work with most versions including Excel 95 and above).  The version below also highlights how to request that the browser treats the file as a download and forces the user to save to disk rather than load in the browser.  This also has the advantage that the filename is easily controlled.<br />
+<DIV style="FONT-FAMILY: Courier New"><SPAN style="COLOR: gray">///&nbsp;&lt;summary&gt;</SPAN> <BR><SPAN style="COLOR: gray">///&nbsp;Demo&nbsp;class&nbsp;showing&nbsp;how&nbsp;to&nbsp;generate&nbsp;an&nbsp;Excel&nbsp;Attachment</SPAN> <BR><SPAN style="COLOR: gray">///&nbsp;&lt;/summary&gt;</SPAN> <BR><SPAN style="COLOR: blue">public</SPAN>&nbsp;<SPAN style="COLOR: blue">class</SPAN>&nbsp;XLWriter <BR>{ <BR><BR>&nbsp;&nbsp;<SPAN style="COLOR: blue">public</SPAN>&nbsp;<SPAN style="COLOR: blue">static</SPAN>&nbsp;<SPAN style="COLOR: blue">void</SPAN>&nbsp;Write(HttpResponse&nbsp;response) <BR>&nbsp;&nbsp;{ <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;<SPAN style="COLOR: green">//&nbsp;make&nbsp;sure&nbsp;nothing&nbsp;is&nbsp;in&nbsp;response&nbsp;stream</SPAN> <BR>&nbsp;&nbsp;&nbsp;&nbsp;response.Clear(); <BR>&nbsp;&nbsp;&nbsp;&nbsp;response.Charset&nbsp;=&nbsp;<SPAN style="COLOR: maroon">""</SPAN>; <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;<SPAN style="COLOR: green">//&nbsp;set&nbsp;MIME&nbsp;type&nbsp;to&nbsp;be&nbsp;Excel&nbsp;file.</SPAN> <BR>&nbsp;&nbsp;&nbsp;&nbsp;response.ContentType&nbsp;=&nbsp;<SPAN style="COLOR: maroon">"application/vnd.ms-excel"</SPAN>; <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;<SPAN style="COLOR: green">//&nbsp;add&nbsp;a&nbsp;header&nbsp;to&nbsp;response&nbsp;to&nbsp;force&nbsp;download&nbsp;(specifying&nbsp;filename)</SPAN> <BR>&nbsp;&nbsp;&nbsp;&nbsp;response.AddHeader(<SPAN style="COLOR: maroon">"Content-Disposition"</SPAN>,&nbsp;<SPAN style="COLOR: maroon">"attachment;&nbsp;filename=\"MyFile.xls\""</SPAN>); <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;<SPAN style="COLOR: green">//&nbsp;Send&nbsp;the&nbsp;data.&nbsp;Tab&nbsp;delimited,&nbsp;with&nbsp;newlines.</SPAN> <BR>&nbsp;&nbsp;&nbsp;&nbsp;response.Write(<SPAN style="COLOR: maroon">"Col1\tCol2\tCol3\tCol4\n"</SPAN>); <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;response.Write(<SPAN style="COLOR: maroon">"Data&nbsp;1\tData&nbsp;2\tData&nbsp;3\tData&nbsp;4\n"</SPAN>); <BR>&nbsp;&nbsp;&nbsp;&nbsp;response.Write(<SPAN style="COLOR: maroon">"Data&nbsp;1\tData&nbsp;2\tData&nbsp;3\tData&nbsp;4\n"</SPAN>); <BR>&nbsp;&nbsp;&nbsp;&nbsp;response.Write(<SPAN style="COLOR: maroon">"Data&nbsp;1\tData&nbsp;2\tData&nbsp;3\tData&nbsp;4\n"</SPAN>); <BR>&nbsp;&nbsp;&nbsp;&nbsp;response.Write(<SPAN style="COLOR: maroon">"Data&nbsp;1\tData&nbsp;2\tData&nbsp;3\tData&nbsp;4\n"</SPAN>); <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;<SPAN style="COLOR: green">//&nbsp;Close&nbsp;response&nbsp;stream.</SPAN> <BR>&nbsp;&nbsp;&nbsp;&nbsp;response.End(); <BR><BR>&nbsp;&nbsp;} <BR><BR>}</DIV></p>
+                                    </div>
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/dotnet/generating_exce.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/dotnet/" rel="tag">Dotnet</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">21 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-723" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Ben</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-723"><abbr class="published" title="2004-12-01T11:47:44+00:00">December  1, 2004 11:47 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(723, 'Ben')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Why not just output a comma-seperate-values file?</p>
+
+<p>Column 1, Column 2<br />
+Row 1, Row 2</p>
+
+<p>...etc.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-725" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Martin</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-725"><abbr class="published" title="2004-12-02T03:54:00+00:00">December  2, 2004  3:54 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(725, 'Martin')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I wanted the file generated to load into excel and appear to the user like it was a native excel file.  A CSV formatted file cannot be saved with the XLS extension (it needs to be CSV).</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-731" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Scott Willeke</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-731"><abbr class="published" title="2005-01-26T20:08:40+00:00">January 26, 2005  8:08 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(731, 'Scott Willeke')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Our ActiveReports for .NET product (http://www.datadynamics.com) includes a component we call SpreadBuilder that provides a full API for creating binary excel files. If our customers continue to show interest in the product, we may improve this component even further in the future. Of course, ActiveReports can also export any of your reports to Excel automatically. </p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-733" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Ben</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-733"><abbr class="published" title="2005-02-01T21:21:37+00:00">February  1, 2005  9:21 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(733, 'Ben')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>...and ActiveReports for .NET can be obtained for the sum of.... ;-)</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-755" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Tom</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-755"><abbr class="published" title="2005-06-17T11:53:55+00:00">June 17, 2005 11:53 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(755, 'Tom')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Don't know ActiveReports price, but ExcelLite .NET component (http://www.gemboxsoftware.com/ExcelLite.htm) does the same and costs 160 EUR (~$190). You pay per developer; server or client deployment is royalty free.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-863" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">HRao</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-863"><abbr class="published" title="2006-06-08T12:05:01+00:00">June  8, 2006 12:05 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(863, 'HRao')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hi How can write the percentage sign % into excel using C# . Please respond </p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-895" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Bibi</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-895"><abbr class="published" title="2006-09-01T18:26:55+00:00">September  1, 2006  6:26 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(895, 'Bibi')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hi,</p>
+
+<p>How can I implement and use this xmlwriter class? I copy it to XMLWriter.cs but httpresponse gives error? I'm a beginner to c# and it would be really good if you help me. Thanks</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-896" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.woodwardweb.com" href="http://www.woodwardweb.com" rel="nofollow">Martin</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-896"><abbr class="published" title="2006-09-02T14:58:37+00:00">September  2, 2006  2:58 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(896, 'Martin')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Bibi,</p>
+
+<p>If you post the error that may help.  My guess is that you need the appropraite "using" statement at the top of the class.  Also - the class is called XLWriter, XMLWriter.</p>
+
+<p>Cheers,</p>
+
+<p>Martin.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-927" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://none" href="http://none" rel="nofollow">hafiz</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-927"><abbr class="published" title="2006-11-07T15:55:53+00:00">November  7, 2006  3:55 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(927, 'hafiz')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>hi all...i have an excel image button when I click it will take the data from my page and download it as an excel file. When i drag and drop/or save it as a .txt file it shows all the crazy html/xml codes. I just want it to display as tab delimited contents. I am having very difficulty. can anyone help? thanks,<br />
+hafiz (guile786@aol.com)</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-933" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Bibhuti Prasanna</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-933"><abbr class="published" title="2006-11-20T04:51:11+00:00">November 20, 2006  4:51 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(933, 'Bibhuti Prasanna')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hi, I am not able to read data from excel cells if it contains errors. When the cell has data which has been converted from number to text, a green triangle appears on top left of the cell. It is then that the data reader reads a null value from that field. Using data set made no difference neither did disabling the background error checking of excel through code. Please help!!!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-965" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Mohammad</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-965"><abbr class="published" title="2007-02-23T06:34:57+00:00">February 23, 2007  6:34 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(965, 'Mohammad')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hello .<br />
+Thanks about your sample code<br />
+this code is very well<br />
+ </p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-966" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">John Bailo</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-966"><abbr class="published" title="2007-02-26T16:42:23+00:00">February 26, 2007  4:42 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(966, 'John Bailo')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Any tips on how to do simple formatting on the cells?  Such as Bold and Italics?<br />
+</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1057" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://E:\Myprojects\ref.txt" href="http://E:\Myprojects\ref.txt" rel="nofollow">parijay</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-1057"><abbr class="published" title="2007-10-24T07:25:15+00:00">October 24, 2007  7:25 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1057, 'parijay')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Good</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1088" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">velkumar</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-1088"><abbr class="published" title="2007-12-28T06:42:32+00:00">December 28, 2007  6:42 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1088, 'velkumar')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Dear sir..<br />
+I am using Windows application.<br />
+i want to create Excel file, rename the Sheets and i want to add sheets...</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1110" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Samip Jani</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-1110"><abbr class="published" title="2008-02-12T11:36:39+00:00">February 12, 2008 11:36 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1110, 'Samip Jani')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hey thnx......<br />
+This is great good stuff..<br />
+Only if you could have added how can one format the cell it would have been excellent</p>
+
+<p>Neways a great help..</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1229" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Akhil</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-1229"><abbr class="published" title="2008-09-16T06:08:18+00:00">September 16, 2008  6:08 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1229, 'Akhil')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>The type or namespace name 'HttpResponse' could not be found (are you missing a using directive or an assembly reference?)</p>
+
+<p><br />
+This is the error that i encountered. What is the appropriate using statement that i'm missing here. </p>
+
+<p>Thanks and regards<br />
+Akhil.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1230" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            <img alt="Author Profile Page" src="http://www.woodwardweb.com/mt/mt-static/images/comment/mt_logo.png" width="16" height="16" />
+        
+                            <span class="vcard author">Martin Woodward</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-1230"><abbr class="published" title="2008-09-16T08:51:28+00:00">September 16, 2008  8:51 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1230, 'Martin Woodward')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>See <a href="http://msdn.microsoft.com/en-us/library/system.web.httpresponse.aspx">MSDN</a>, it's System.Web.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1256" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Roshni</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-1256"><abbr class="published" title="2008-12-05T03:56:00+00:00">December  5, 2008  3:56 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1256, 'Roshni')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I need to format my Excel report which is being generated through C#. Please let me know how to format each cell, if i have a given format.</p>
+
+<p>Also i want thatthe user should get a prompt or dialouge box to savethe excel. Please let me know how thse 2 functionality can be achieved.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1327" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Joe Way</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-1327"><abbr class="published" title="2009-04-15T17:08:04+00:00">April 15, 2009  5:08 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1327, 'Joe Way')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Please can someone help me to do the export to excel but into differetn sheets.</p>
+
+<p>Thanks for help<br />
+Joe Way</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1337" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">deepak</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-1337"><abbr class="published" title="2009-05-05T11:56:29+00:00">May  5, 2009 11:56 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1337, 'deepak')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hi<br />
+Can anyone tell how to remove '1' from excel work sheetname..<br />
+For eg: I want the worksheet name as 'project', not 'project 1'</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1376" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">shubhang mathur</span>
+        
+                            | <a href="http://www.woodwardweb.com/dotnet/generating_exce.html#comment-1376"><abbr class="published" title="2009-07-28T08:42:34+00:00">July 28, 2009  8:42 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1376, 'shubhang mathur')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>thanks for your code but how can i create second worksheet from this code???????????????????</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="480" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-836"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-837"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/changeset_comme.html">Changeset comments are editable in TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_on_the_main.html">TFS on the Mainframe</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/speaking_at_the.html">Speaking at the Virtual Team System Users Group</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/podcasting/radio_tfs_on_te.html">Radio TFS on Team System 2010 First Impressions</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/hosted_tfs_for.html">Hosted TFS for BizSpark Companies</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_2010_api_by.html">TFS 2010 API By Example: Introduction</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/codeplex_open_s.html">CodePlex Open Source Wiki Engine</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/ed_blankenship.html">Ed Blankenship on Using TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/case_study_igat.html">Case Study: iGate standardizing on TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/slotting_into_t.html">Slotting into TFS 2010</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

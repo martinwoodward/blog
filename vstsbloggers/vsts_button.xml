@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<custombuttons xmlns="http://toolbar.google.com/custombuttons/">
+
+  <button>
+	<site>http://teamsystemrocks.com/default.aspx</site>
+	<title>Team System Bloggers</title>
+	<description>Everying to do with Microsoft Visual Studio Team System</description>
+	<search>http://www.google.com/search?q={query}</search>
+    <icon mode="base64" type="image/x-icon">
+AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAvAAAAqAAAAL8AAAC/AAAAvwAAAKcAAAAvAAAALwAAAKgAAAC/AAAAvwAAAL8AAACn
+AAAALwAAAAAAAAAAtUcw/7A4Kf+hLyj/ki4m/5QwMP8AAAC/AAAAYUOcQv8qjif/Kn8m/ylsJv8n
+Xyb/AAAAvwAAAGEAAAAwAAAAMMg/CP/TUyX/zE0f/8I+Cv+RBQD/AAAAvwAAAL8YqQX/Nbgf/zOz
+HP8dpAb/B2UA/wAAAL8AAAC/AAAAvwAAAL/pYiD/8Y5g/+6GVP/cXyT/khAE/0hanf9LVX//LckT
+/3fnYP91417/QMkk/wtyAP9BQZP/S0uN/0tLef9mZov/7Gsr//OWa//vi13/3F8k/5gdEf8ChOP/
+AHPf/0TRMf+N7Hf/hOlx/0PKJ/8LcgD/Ch7F/wYK4/8AAMD/Cgpc//p1MP/1q4v/8Z54/9VnNP+E
+FhH/AcP9/wCd/f8/0DH/ovWQ/5jvhf9VyTz/DmkB/0BY6/8oMvv/AQTL/wEBWf//fDv//9rA//3G
+pv/gfU3/nh4L/wPF/f8Epv3/O9c8/8/+vf/D/rj/btlc/xCCAP9/gf//UFr1/wcMw/8BAVD/+KyF
+//+4i///q3v/6HA1/5ZYRv8Hxv3/CKz9/yy7fv+i+Iz/mPeL/1fZPv8bnCn/hIj+/15m9/8HDMP/
+BgZT/wAAAC/QPhj/yRYD/6YYDf81oLv/Ku3//xG//v8AcKL/DpgC/xCmAv8FiQP/N2eW/4qN/P9o
+cPn/BwzD/yYmaP/YbE7/1VYp/9JnNv+7JAn/nT0x/6P//P8m3f//BppE/zm5Gv9KvzP/F5wN/xCF
+Hv/Ez+r/kJH//xMc1f8fH5L/5Fwm//zEof/6tpP/2HE+/7sWBv9GxfH/ErH7/ynBLv+x+Zv/r/qj
+/2DNSv8KmAD/W3LY/0BD+f8SFuD/dHbe//CFVP//0Kv//9a1/+lxPv+cHQ//A1u//wJItv8wukj/
+uv+l/9P/zf9r3FD/DI8D/wMDq/8AAKr/Nzmx/wAAAL8AAAAA8olZ//JtOP+/Phj/KmeV/wCl7P8A
+e93/BG2S/0rSTv9g5D3/K7EU/wpHdf8tMef/HCPg/wEDq/9NT6n/AAAAAAAAAAAAAAAAr6S4/xvU
+//98////G9P//wBg2/9vr6n/AAAAqJzBuv9JRf//wcP//3l//f8NFdT/Hx+g/wAAAAAAAAAAAAAA
+ALLg//8Zxf//jP///y/f//8AbdP/mLXi/wAAAGDS1Pz/QUb//8HC//+Hj///CgzX/0tMvf8AAAAA
+AAAAAAAAAAAAAAAAgND//xOu/v8Tj+7/aqTe/wAAAC8AAAAAAAAAAKOp+/82O/f/ICTp/1Va3P8A
+AAAvgwcAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAgAAAAOAA
+AADgAAAA8OEAAA==
+    </icon>
+	<feed refresh-interval="1800" refresh-onclick="false">http://feeds.feedburner.com/VstsBloggers</feed>
+  </button>
+  
+</custombuttons>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TechEd Developers 2007 Videos Now Available</title>
+    <link>http://www.woodwardweb.com/vsts/teched_develope.html</link>
+    <description><![CDATA[ At this years TechEd EMEA, they were doing a pilot recording video of the speakers along-side the usual audio/visual recordings that you get on your conference DVD's a few months after the event.&nbsp; At an event such as this...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-11-14T15:02:05+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Dmytro Lapshyn+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teched_develope.html#c001065</link>
+    <description>It&apos;s a pity, though, that the videos are not downloadable. Not even with a stream capturing tool like SDP.
+
+I don&apos;t mind the DRM per se, I&apos;d just want to download the videos at work and then obtain a license from my home PC to be able to watch the videos at home.</description>
+    <dc:date>2007-11-17T13:18:46+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=803</comments>   
+    <dc:creator>Dmytro Lapshyn</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

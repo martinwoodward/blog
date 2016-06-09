@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>iTunes 7.0.2 on Vista</title>
+    <link>http://www.woodwardweb.com/vista/itunes_702_on_v.html</link>
+    <description><![CDATA[So, next on my list was to get iTunes working so that I can easily feed my podcast addiction.&nbsp; I am very nearly at the point of purchasing a new MP3 player so I am ready for any excuse to...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-01-16T21:06:06+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by JO+00:00</title>
+    <link>http://www.woodwardweb.com/vista/itunes_702_on_v.html#c002423</link>
+    <description>Dear Martin,
+
+First of all thanks for taking the time to share.
+
+I tried you procedure but iTunes is still crashing giving me a compatibility error message.
+
+Do you happen to have a new tip to overcome this frustrating problem?
+
+Thanks in advance
+
+JO</description>
+    <dc:date>2007-08-24T19:32:37+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1638</comments>   
+    <dc:creator>JO</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by WIll+00:00</title>
+    <link>http://www.woodwardweb.com/vista/itunes_702_on_v.html#c002439</link>
+    <description>i installed itunes with this compatibility mode and it came up with a message saying that its wrong, so i used this method to remove it thanks it wouldn&apos;t work the other ways =]</description>
+    <dc:date>2007-10-15T17:27:20+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1638</comments>   
+    <dc:creator>WIll</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Nullable DateTime</title>
+    <link>http://www.woodwardweb.com/dotnet/nullable_dateti.html</link>
+    <description>Found my second thing in .Net that really sucks. In .Net DateTime is a reference type and is therefore not nullable (Unlike the Java.Sql.Date class in java). I am talking to a SQL Server database with a nullable DateTime field...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-03-25T17:40:38+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/nullable_dateti.html#c001474</link>
+    <description>So, the hack I went with in the end was to wrap my problem DateTime in an element called &quot;NullableDateTime&quot; which just contained a single DateTime (xs:date) element.  When I ran XSDObjectGen over it gives me a class which was nearly what I needed.  Apparently this is the most interoperable way of doing it so that Java clients can also access the web service.
+
+Nasty.</description>
+    <dc:date>2005-03-29T11:26:41+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=921</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Maruf+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/nullable_dateti.html#c001475</link>
+    <description>Martin, I am facing a similar problem. I would appreciate if you could email me the class or provide some details. 
+I have never used XSDObjectGen tool.
+I appreciate your help.
+
+Thanks,
+Maruf
+
+mail: maruf.dolani@no-spam.gmail.com</description>
+    <dc:date>2005-05-07T09:03:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=921</comments>   
+    <dc:creator>Maruf</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Michael Brown+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/nullable_dateti.html#c001476</link>
+    <description>Not sure if you&apos;re still reading these comments but NHibernate-contrib provides classes that wrap reference types (booleans, dates, strings, etc) in Nullable types to address that very issue. I think I&apos;ve seen it as a pattern either in the GoF book or on the c2.com wiki.
+
+Congrats on the new position at Sourcegear/Teamprise!
+
+Michael</description>
+    <dc:date>2005-11-29T04:35:35+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=921</comments>   
+    <dc:creator>Michael Brown</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Michael Brown+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/nullable_dateti.html#c001477</link>
+    <description>Sorry I meant value types not reference types.</description>
+    <dc:date>2005-11-29T04:46:17+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=921</comments>   
+    <dc:creator>Michael Brown</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/nullable_dateti.html#c001478</link>
+    <description>Cheers Michael, I&apos;ve been hearing a lot of buzz about NHibernate but haven&apos;t checked it out yet - I think I will do that right now!</description>
+    <dc:date>2005-11-29T05:15:03+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=921</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

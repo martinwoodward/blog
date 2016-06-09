@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Updated WoodwardWeb</title>
+    <link>http://www.woodwardweb.com/personal/updated_woodwar.html</link>
+    <description>To celebrate my 5 year anniversary of blogging, I gave this site a long overdue refresh over the weekend.&#160; While I&apos;ve been publishing stuff on the Woodwardweb.com domain since 1999, that was initially just putting pages up with notepad and...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-08-20T14:01:11+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Anthony Borton+00:00</title>
+    <link>http://www.woodwardweb.com/personal/updated_woodwar.html#c003430</link>
+    <description>Hi Martin. 
+The refresh to your blog looks great and I love the cartoon image of you :)
+
+Cheers
+Anthony</description>
+    <dc:date>2008-08-21T05:55:00+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2174</comments>   
+    <dc:creator>Anthony Borton</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Steven St Jean+00:00</title>
+    <link>http://www.woodwardweb.com/personal/updated_woodwar.html#c003431</link>
+    <description>Very nice update.  Very crisp and clean.  I&apos;m thinking that you need to ask the marketing folks to do an Anime or Manga version that you could rotate through randomly upon access. ;-)
+
+- Steve</description>
+    <dc:date>2008-08-21T18:51:45+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2174</comments>   
+    <dc:creator>Steven St Jean</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/personal/updated_woodwar.html#c003432</link>
+    <description>If you wait long enough, I wink...</description>
+    <dc:date>2008-08-21T19:31:15+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2174</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

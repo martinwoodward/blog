@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Brian the Build Bunny</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html</link>
+    <description>I&apos;m always keen try new and novel ways to keep in touch with the status of my software projects.&#160; Fortunately, Team Foundation Server provides many ways to do this.&#160; While the Build Wallboard is fun if you have a spare...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-05-28T22:22:02+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by ET+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003387</link>
+    <description>I LOVE IT!!! I WANT ONE!!!
+
+Cheers,
+
+ET</description>
+    <dc:date>2008-05-28T22:49:39+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>ET</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Greg Duncan+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003388</link>
+    <description>LOL... That rocks.
+
+I want a Build Bunny now! Do you think we could talk MS into giving some away at PDC?  ;)
+
+Thanks for posting this.  :)</description>
+    <dc:date>2008-05-28T23:10:06+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Greg Duncan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ian+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003389</link>
+    <description>Awesome!</description>
+    <dc:date>2008-05-29T00:26:35+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Ian</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Sam Judson+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003390</link>
+    <description>Absolutely love it :)</description>
+    <dc:date>2008-05-29T09:40:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Sam Judson</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by rr+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003391</link>
+    <description>&quot;your bunny TFS...&quot;
+
+(by analogy with &quot;your bunny wrote..&quot; and used to be said by russian developers..)</description>
+    <dc:date>2008-05-29T12:00:06+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>rr</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003392</link>
+    <description>I suspect that &quot;your bunny VSS&quot; would be a more common phrase ;-)</description>
+    <dc:date>2008-05-29T15:06:38+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ramon Durães+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003393</link>
+    <description>very good !!!</description>
+    <dc:date>2008-05-29T16:03:28+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Ramon Durães</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mac Noland+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003394</link>
+    <description>I love it Martin!  You continue to amaze me!!!  I think Thomson Reuters might need a &quot;Build Bunny!&quot;</description>
+    <dc:date>2008-05-29T19:13:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Mac Noland</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ed Blankenship+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003395</link>
+    <description>Wow Martin this is great.  I love it.  Please do share some code wisdom when you get the chance... I think I&apos;m going to order one now!</description>
+    <dc:date>2008-05-30T04:16:36+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Ed Blankenship</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Fabian Crabus+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003396</link>
+    <description>The Nabaztags are great. We&apos;ve already two of them. Especially funny if they&apos;re trying to speak German.
+
+More in German: http://www.agimatec.de/blog/2008/04/talking-builds-oder-killerhase-im-schafspelz/</description>
+    <dc:date>2008-06-03T09:25:39+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Fabian Crabus</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Dave Largen+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003397</link>
+    <description>I would love to get an overview of the code you use to control Brian with TFS.  I just convinced my boss to order one for our office.</description>
+    <dc:date>2008-06-05T14:19:42+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Dave Largen</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Simon Tiffert+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003398</link>
+    <description>@Dave: Today I released a Nabaztag plugin for the continuous build server TeamCity. 
+You can check out the Java sources at google code: 
+http://code.google.com/p/buildbunny/</description>
+    <dc:date>2008-07-04T16:32:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Simon Tiffert</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Matt Poland+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003399</link>
+    <description>I just started a .Net-based API over at CodePlex.
+
+http://www.codeplex.com/NabaztagLib</description>
+    <dc:date>2008-07-04T16:38:40+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Matt Poland</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by John O'Neill+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003400</link>
+    <description>
+I smell a killer app.  :)
+
+Martin, I&apos;ll be calling later to license the IP rights for North America.  I&apos;m off to call China to find a factory...
+
+- John</description>
+    <dc:date>2008-10-24T16:57:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>John O'Neill</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Fabrice BARBIN+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003401</link>
+    <description>Nabaztag rabbits are awesome!!
+
+I just launched NabazGroove, a playful application to connect Microsoft Office Groove 2007 with a Nabaztag. 
+
+If you are interested, you can have a look here: http://blog.fbarbin.com/nabazgroove/
+
+(NabazGroove will also be demoed during TechED Dev at Barcelona)</description>
+    <dc:date>2008-11-09T11:25:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Fabrice BARBIN</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Elbert van Eck+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003402</link>
+    <description>he i&apos;m a student from the netherlands
+i study application development
+i resently baught an nabaztag 
+i am very interested in the code used for this project
+so i hope you can email me the files you used to make this happen 
+i would really appriciate it 
+
+thanks in advance
+
+Elbert van Eck</description>
+    <dc:date>2009-09-10T15:09:20+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Elbert van Eck</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/brian_the_build_1.html#c003403</link>
+    <description>Elbert - see http://www.woodwardweb.com/vsts/behind_brian_th.html
+
+Good luck,
+
+Martin.</description>
+    <dc:date>2009-09-10T15:11:24+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2163</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

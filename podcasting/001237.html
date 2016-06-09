@@ -1,0 +1,1283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/podcasting/itunes_76_freez.html">
+<dc:title>iTunes Freezing on Close</dc:title>
+<dc:description><![CDATA[I swear, one day I'll learn.&nbsp; Despite having promised myself to steer clear of the initial release of any Windows version of iTunes because they are consistently broke in some pretty severe ways - I read this report on Engadget...]]></dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2008-01-21T09:40:53+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html" title="iTunes Freezing on Close" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html" title="iTunes Freezing on Close" />
+    
+    <title>iTunes Freezing on Close - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-1237" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">iTunes Freezing on Close</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author">Martin Woodward</span> on <abbr class="published" title="2008-01-21T09:40:53+00:00">January 21, 2008  9:40 AM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comments">22 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>I swear, one day I'll learn.&nbsp; Despite having <a href="http://www.woodwardweb.com/podcasting/000371.html">promised myself to steer clear</a> of the initial release of any Windows version of iTunes because they are consistently broke in some pretty severe ways - I read <a href="http://www.engadget.com/2008/01/15/apples-itunes-7-6-plays-nice-with-64-bit-vista/">this report on Engadget</a> and decided to upgrade thinking that they may finally haved solved the issues I have been having.&nbsp; (My main one being that I could consistently crash iTunes on any PC by downloading a podcast and pressing the "pause" button during the download).</p> <p>However, iTunes 7.6 gave me a great new issue - iTunes wouldn't close.&nbsp; Every time I tried to close it (by pressing the X button, or doing File, Close) it would freeze and start consuming as much of my CPU as possible - the only way to get rid of it was to kill the process in Task Manager.</p> <p>Anyway - after a bit of playing, I eventually figured out that this was something wrong with how they are calling <a href="http://en.wikipedia.org/wiki/Bonjour_(software)">Bonjour</a>.&nbsp; iTunes has the ability to listen for other shared libraries and to share your own library - which is something I had enabled so that I could stream stuff off my laptop onto the Mac Mini and vice-versa.&nbsp; It does this using Apple's Bonjour service.</p> <p>On my system, the Bonjour service is installed under the catchy name of </p> <p>"##Id_String1.6844F930_1628_4223_B5CC_5BB94B879762##"</p> <p>Very user friendly - I think I'll start using GUID's for all my user interfaces :-).&nbsp; Anyway.&nbsp; If I stop this service, I can close iTunes down happily.&nbsp; It will even now let me go into the preferences in iTunes and disable sharing - something that was locking up iTunes 7.6 before (and what made me suspect the Bonjour integration).</p> <p>Therefore - if you are having the same problems as me, right click on My Computer and select Manage.&nbsp; Then go to Services and Applications, Services, select "##Id_String1.6844F930_1628_4223_B5CC_5BB94B879762##" and press "Stop".&nbsp; Then right click, select properties and change the Start-up type from "Automatic" to "Disabled".</p> <p>This obviously removes the sharing capabilities - but at least it allows you to sync your iPod.&nbsp; When I finally got iTunes 7.6 to actually work a little bit, I was unsurprised to see that they have still not fixed the bug with the download manager, so if you attempt to do anything to a downloading purchase, podcast or whatever then it will still crash iTunes and will consume most of the available CPU while downloading.&nbsp; Sigh.</p>
+<p><strong>Update:</strong>People are reporting that this same issue is true with iTunes 7.6, 7.7 and 7.7.1 so I've removed the version number from the title of this post.  Luckily now that I've disabled Bonjour and sharing things seem to be working better for me so hadn't noticed myself that this was the case.  Additionally, if you have ESET NOD32 Antivirus installed then you might want to look at <a href="http://www.eset.com/support/kb.php?option=com_kb&Itemid=29&page=articles&articleid=760">this forum post</a>.</p>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/podcasting/itunes_76_freez.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/podcasting/" rel="tag">Podcasting</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/technology/" rel="tag">Technology</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">22 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-1942" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Karl B.</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1942"><abbr class="published" title="2008-01-21T20:48:04+00:00">January 21, 2008  8:48 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1942, 'Karl B.')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I was having the exact same problem.  Thanks for fixing it.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1943" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Adrian</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1943"><abbr class="published" title="2008-01-22T10:23:20+00:00">January 22, 2008 10:23 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1943, 'Adrian')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Sounds just like my fix for Windows Defender :)  It doesn't crash my PC - it just hogs CPU when it kicks off (usually triggered by me wanting to do something in a hurry and needing all the CPU I can get.  How does it know?) In another stroke of great UI design it and doesn't have a pause button.  Now every time I boot up windows I smile when a pop up appears to say there's an error and it couldn't start the process.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1944" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">andrew</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1944"><abbr class="published" title="2008-01-28T02:02:17+00:00">January 28, 2008  2:02 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1944, 'andrew')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>thanks so much man</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1945" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://kazzart.com" href="http://kazzart.com" rel="nofollow">Kazzart</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1945"><abbr class="published" title="2008-01-29T11:27:36+00:00">January 29, 2008 11:27 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1945, 'Kazzart')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>OMG thank you SO much for this! I was having exactly the same problem with itunes freezing on close and it was driving me insane. I searched the apple site and found nothing helpful. I even tried reinstalling it to no avail. Stopping the Bonjour service fixed this perfectly for me. Thank you again!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1946" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Joakim</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1946"><abbr class="published" title="2008-01-29T15:49:48+00:00">January 29, 2008  3:49 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1946, 'Joakim')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks! Works like a charm</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1947" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Pamela</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1947"><abbr class="published" title="2008-01-31T17:59:18+00:00">January 31, 2008  5:59 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1947, 'Pamela')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>OMG!! You are the coolest! THANK YOU!!!!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1948" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Luke Whiteman</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1948"><abbr class="published" title="2008-02-21T21:02:45+00:00">February 21, 2008  9:02 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1948, 'Luke Whiteman')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Amazing. Great fix!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1949" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">The Dude</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1949"><abbr class="published" title="2008-03-08T02:07:03+00:00">March  8, 2008  2:07 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1949, 'The Dude')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hey, thanks man.  I was having that same problem.  Nice find.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1950" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Matt</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1950"><abbr class="published" title="2008-03-24T00:59:20+00:00">March 24, 2008 12:59 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1950, 'Matt')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thankyou so much!  That's fixed it. :-D</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1951" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.informdevelopment.com" href="http://www.informdevelopment.com" rel="nofollow">jan</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1951"><abbr class="published" title="2008-04-01T11:07:47+00:00">April  1, 2008 11:07 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1951, 'jan')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>fixed! - many, many thanks.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1952" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Luke Ray</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1952"><abbr class="published" title="2008-04-13T03:35:12+00:00">April 13, 2008  3:35 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1952, 'Luke Ray')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>OMG! I've been trying to sort this for ages! It has been doing my head in so much. You rule!!! </p>
+
+<p>You having my deepest thanks.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1953" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">HesH</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1953"><abbr class="published" title="2008-05-01T03:16:59+00:00">May  1, 2008  3:16 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1953, 'HesH')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Yup! Worked for me. Thnx</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1954" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">otis</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1954"><abbr class="published" title="2008-05-21T22:51:39+00:00">May 21, 2008 10:51 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1954, 'otis')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>well i have itunes and it sucks, first of all is super slow and thank god i dd nt set it up as my default player because it would take hours to load and well, i have an ipod and when i conected to my PC windows vista it takes like 30 min to update my music tht is why i dont update my ipod tht much, my friend got the new ipod nano and well he was going to conected to my laptop and i got an error saying tht my itunes was an old version i was ok, i'd download the new itunes, wht a surprise the stupid new itunes took up to 4 hours to be downloadd to my computer, i was so mad tht i told my friend, to buy the zune or other mp3 player because this itunes crap its nt working fr me, i even thought of purchasing a new ipod but hell no!!!!!!! im going to sell my old version 27gb and get a "normal" mp3 player, and also i was thinking of getting a mcbook but hells to the NO!!!!!!i'd rather keep my PC windows vista might suck but its better then the itunes</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1955" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">James</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1955"><abbr class="published" title="2008-05-25T23:28:35+00:00">May 25, 2008 11:28 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1955, 'James')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks so much, not being able to close iTunes in Vista was driving me nuts!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1956" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Penny</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1956"><abbr class="published" title="2008-07-13T22:04:07+00:00">July 13, 2008 10:04 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1956, 'Penny')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks so much. This was driving me crazy - I finally stopped getting mad and figured out where it was freezing, then searched and found your post. Fixed it right away.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1957" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Adrian</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1957"><abbr class="published" title="2008-07-14T10:46:16+00:00">July 14, 2008 10:46 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1957, 'Adrian')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Same problem with the new itunes, followed this instruccions for the lates realease in jully 11, and new iphone fixed the problem.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1958" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Tommy B</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1958"><abbr class="published" title="2008-07-25T04:00:33+00:00">July 25, 2008  4:00 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1958, 'Tommy B')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thank you very much!!!!!!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1959" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Fredrik</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1959"><abbr class="published" title="2008-08-04T20:55:29+00:00">August  4, 2008  8:55 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1959, 'Fredrik')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Just want to join the chorus praising you for this simple and invaluable fix. Just followed your steps, and now iTunes closes without causing any trouble :)<br />
+Thank you!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1960" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">CP</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1960"><abbr class="published" title="2008-08-10T11:02:54+00:00">August 10, 2008 11:02 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1960, 'CP')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Great tip.  Thanks a million.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1961" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Ron</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1961"><abbr class="published" title="2008-08-25T15:45:40+00:00">August 25, 2008  3:45 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1961, 'Ron')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>hey man, thanks much. i google'd this problem and i stumbled into your entry.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1962" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">m</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1962"><abbr class="published" title="2008-08-26T19:42:09+00:00">August 26, 2008  7:42 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1962, 'm')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks for the link to the ESET info. Worked perfectly.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1963" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">foofooo</span>
+        
+                            | <a href="http://www.woodwardweb.com/podcasting/itunes_76_freez.html#comment-1963"><abbr class="published" title="2008-08-30T07:58:38+00:00">August 30, 2008  7:58 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1963, 'foofooo')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>EXCELLENT!</p>
+
+<p>Itunes was freezing up and doing my head in, and I thought it was bad programmers at Apple doing this on purpose. It turned out that my NOD32 2.7 was acting up.</p>
+
+<p>Thank you so much for the fix. Worked excellent.</p>
+
+<p>Itunes 7.7 in Windows XP SP3 runs smooth.</p>
+
+<p><br />
+=)</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="1237" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-836"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-837"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/changeset_comme.html">Changeset comments are editable in TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_on_the_main.html">TFS on the Mainframe</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/speaking_at_the.html">Speaking at the Virtual Team System Users Group</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/podcasting/radio_tfs_on_te.html">Radio TFS on Team System 2010 First Impressions</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/hosted_tfs_for.html">Hosted TFS for BizSpark Companies</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_2010_api_by.html">TFS 2010 API By Example: Introduction</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/codeplex_open_s.html">CodePlex Open Source Wiki Engine</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/ed_blankenship.html">Ed Blankenship on Using TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/case_study_igat.html">Case Study: iGate standardizing on TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/slotting_into_t.html">Slotting into TFS 2010</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

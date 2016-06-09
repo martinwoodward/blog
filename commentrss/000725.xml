@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Why have Keyword Expansion?</title>
+    <link>http://www.woodwardweb.com/programming/why_have_keywor.html</link>
+    <description><![CDATA[Every source control system I have worked with until recently supported keyword expansion.&nbsp; My code comment blocks have always tended to be something like (in Java):-/** * Description. * @author $Author: martin $ * @version $Revision: 12 $ $Date: 2007-01-02...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-01-02T16:49:38+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Victor Bagga+00:00</title>
+    <link>http://www.woodwardweb.com/programming/why_have_keywor.html#c001050</link>
+    <description>We used the keyword $Revision: $ to initialize a variable and provided a mechanism to get the version number of software installed in the field. Without this feature we could not determine if the customer has a correct version or not.</description>
+    <dc:date>2007-10-04T17:24:53+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=725</comments>   
+    <dc:creator>Victor Bagga</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

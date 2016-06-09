@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS Top Tip #2: Changing the Logged In User</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_tip_2_chang.html</link>
+    <description><![CDATA[When you connect to a Team Foundation Server, the Microsoft client API attempts to connect with your current credentials&nbsp;that the process is running with under Windows.&nbsp; If you are on a different domain than your TFS server or the user...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-04-26T15:15:46+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by anon+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_tip_2_chang.html#c001022</link>
+    <description>Good tip, thank you for posting it.  Here&apos;s another way:  Use runas /user:domain\username cmd.exe.  This gives you a command prompt as a different user.  Then use tf.exe from that command prompt.  You can spawn multiple and simultaneous command prompts as various users and party on TFS from each one.  Cheers.</description>
+    <dc:date>2007-06-09T04:43:18+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=642</comments>   
+    <dc:creator>anon</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Arijit Chatterjee+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_tip_2_chang.html#c001390</link>
+    <description>Great,
+Really helped me.
+</description>
+    <dc:date>2009-09-02T06:45:19+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=642</comments>   
+    <dc:creator>Arijit Chatterjee</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

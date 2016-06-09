@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>BEA Joins Eclipse</title>
+    <link>http://www.woodwardweb.com/java/bea_joins_eclip.html</link>
+    <description>Interesting news from Javaworld. BEA are to announce that they are to join the Eclipse foundation. Hopefully this signals that Weblogic Workshop will be integrated with Eclipse (just as IBM integrate at the moment for WSAD). This only leave Sun...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-02-23T07:17:38+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/java/bea_joins_eclip.html#c002123</link>
+    <description>Thank bejesus for that - workshop is a crock! :-D</description>
+    <dc:date>2005-03-04T15:04:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1401</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

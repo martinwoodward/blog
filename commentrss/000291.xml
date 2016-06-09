@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS Top Tip #10 - Keep Your Shelves Tidy</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_10.html</link>
+    <description><![CDATA[Team Foundation Server source control has a great feature called Shelving.&nbsp; Shelving lets you set store a batch of pending changes onto the server and optionally remove them from your local workspace.&nbsp; It comes in really handy for the times...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-10-05T11:03:00+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Francisco Lomas+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_10.html#c067221</link>
+    <description>Hi!! Great tip!! One question, is there a way to perform the delete of the shelve in an automatic way? A politic or something?</description>
+    <dc:date>2008-06-12T23:23:07+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=291</comments>   
+    <dc:creator>Francisco Lomas</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by imsuryawan+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_10.html#c084333</link>
+    <description>very helpful for me... this post give me a better overview of shelving using TFS. thanks..</description>
+    <dc:date>2008-12-16T06:34:22+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=291</comments>   
+    <dc:creator>imsuryawan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by sangita+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_10.html#c084418</link>
+    <description>Hi 
+ i need urgent help as i unshelved only 1 file and by mistake unchecked check box -&apos;Preserve shelveset on server&apos; so after uncheck of single file my whole changeset has gone!! is there any way to get it back..i think microsoft&apos;s functionality flaw that even not giving message before deleting whole shelveset..please help me .
+thank you.
+</description>
+    <dc:date>2009-04-30T12:41:31+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=291</comments>   
+    <dc:creator>sangita</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_10.html#c084419</link>
+    <description>I do not know of a way of recovering the contents of a shelveset after deleting it - but I&apos;ll ask around and see if anyone else knows.</description>
+    <dc:date>2009-04-30T13:34:27+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=291</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Manu Sharma+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_10.html#c084429</link>
+    <description>Hi,
+
+I have one question. Is there a way we can unshelve pending changes if we know only shelveset name and don&apos;t know owner name. Please help. 
+</description>
+    <dc:date>2009-05-18T09:58:41+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=291</comments>   
+    <dc:creator>Manu Sharma</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ashish+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_10.html#c084451</link>
+    <description>Today , i stuck at same issue to overwrite old shelving-in changes with new one.. i go through your blog and now i have same shelve name with latest changes.
+
+thanks great tip, it help me lot ..</description>
+    <dc:date>2009-06-23T07:54:03+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=291</comments>   
+    <dc:creator>Ashish</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

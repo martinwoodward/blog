@@ -1,0 +1,934 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/">
+<dc:title>Martin Woodward</dc:title>
+<dc:description></dc:description>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <title>Martin Woodward: September 2006 Archives</title>
+
+
+    <link rel="prev" href="http://www.woodwardweb.com/2006/08/" title="August 2006" />
+    <link rel="next" href="http://www.woodwardweb.com/2006/10/" title="October 2006" />
+
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-archive-listing mt-datebased-monthly-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <h1 id="page-title" class="archive-title">September 2006 Archives</h1>
+
+
+
+
+
+                            
+                            <div id="entry-2020" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/tfs_top_tip_9_s.html" rel="bookmark">TFS Top Tip #9 - Secret Registry Hacks</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-09-18T19:28:25+00:00">September 18, 2006  7:28 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/tfs_top_tip_9_s.html#comments">2 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>So,&nbsp;this isn't exactly original material - but I was having a chat with somebody today who I consider very knowledgeable about Visual Studio Team System and they were not aware of these so hopefully re-posting&nbsp;some will help more people discover them.&nbsp; Strictly speaking, as all of these have been mentioned somewhere before the word "Secret" isn't&nbsp;correct - however it gave&nbsp;an otherwise very dull post a certain bit of excitement which kept you reading this far so forgive me.&nbsp; The usual Caveats about messing with the registry apply, also the default settings are generally more logical to new users so use with caution.&nbsp; Most of these tips apply to HKEY_LOCAL_MACHINE as well as HKEY_CURRENT_USER - I normally set them as a user preference so as not to confuse anyone else that should happen to use my machine.</p> <h4>Hack #1 - Stopping Team Explorer from connecting on Visual Studio 2005 Start-up</h4> <blockquote> <p>Add a DWORD value called "AutoLoadServer" under HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation.&nbsp; Zero means do not reconnect automatically.</p></blockquote> <p>I first read about this setting over at <a>Tim Noonan</a>'s blog.&nbsp; This can be very handy if, like me, you frequently change TFS servers.&nbsp; I&nbsp;jump between the work TFS instance, CodePlex&nbsp;and a test or VPC versions of TFS.&nbsp; I know which server I want to connect to when starting VS 2005, and frequently it is not the one I connected to last time.&nbsp; Adding the following setting means that I have to manually pick the server I want to connect to from the "Add Existing Project..." button.</p> <h4>Hack #2 - Don't get Missing Files</h4> <blockquote> <p>Add a DWORD value called DisableGetMissingFiles under HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation\SourceControl.&nbsp; Any value other than zero will disable getting files from the server automatically.</p></blockquote> <p>Another <a>Tim Noonan</a>&nbsp;special.&nbsp; This setting determines if files missing from the solution or project are automatically downloaded.&nbsp; I normally switch this off and so get the files only when I say "Get Latest" on a particular solution or project, this is especially useful when you are not always connected.</p> <h4>Hack #3 - Bypass proxy server</h4> <blockquote> <p>Add a String value called BypassProxyOnLocal under HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation\RequestSettings.&nbsp; A value of "true" will bypass.</p></blockquote> <p>This one from the legendry <a href="http://blogs.msdn.com/buckh/">Buck Hodges</a>.&nbsp; In some network configurations, the Microsoft Team Foundation Server client will connect to your Team Foundation Server via a web proxy server.&nbsp; This should be avoided as it slows everything down and the NTLM authentication used by TFS doesn't play well with some proxy configurations.&nbsp; I've seen this&nbsp;pop up as a&nbsp;problem with environments that use a proxy.pac file to control proxy access rather than hard-coding the entries in the Internet Options, LAN Settings (or for folks that don't have Bypass local set up).&nbsp; You should probably only use this setting if you know you are having this problem (often diagnosed by an intermittent failure of Team Explorer to connect but easily checked using a network sniffing tool such as Ethereal).</p> <h4>Hack #4 - TFS Version Control Proxy Settings</h4> <blockquote> <p>See HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation\SourceControl\Proxy.&nbsp; A String value called Url containing the proxy address and a String value called Enabled set to true will enable the source control proxy.</p></blockquote> <p>The easier way to enter values for what machine to use as a TFS Version Control Proxy&nbsp;is to go to into Visual Studio with Team Explorer installed and select Options, Source Control, Tools, Options, Source Control, Visual Studio Team Foundation Server, Proxy Settings.&nbsp; However, if you are running a tf.exe script or TFS .NET API code as part of a service and you want the code to go via a proxy then the HKEY_LOCAL_MACHINE version of this setting is very useful for setting a default.</p> <h4>Hack #5 - Configuring the TreeDiff Power Toy</h4> <p>See <a href="http://blogs.msdn.com/bharry/">Brian Harry</a>'s excellent post about some registry tweaks for <a href="http://blogs.msdn.com/bharry/archive/2006/09/08/746254.aspx">Configuring the TreeDiff Power Toy</a> to your whim.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1601" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/teamprise/teamprise_v2_pr.html" rel="bookmark">Teamprise V2 Preview 2</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-09-15T18:06:48+00:00">September 15, 2006  6:06 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Just wanted to let folks know that <a href="http://www.teamprise.com/preview/preview-register.py">Preview 2</a> is now available for download to our preview program customers.&nbsp; If you want to take a look at <a href="http://www.teamprise.com/preview/preview-register.py">Preview 2</a>, then you can sign up <a href="http://www.teamprise.com/preview/preview-register.py">here</a>.&nbsp; This preview release builds on the code we released last month&nbsp;in <a href="http://www.woodwardweb.com/vsts/000265.html">Preview 1</a>, including some new features, lots of performance improvements and also&nbsp;suggestions&nbsp;from our <a href="http://support.teamprise.com/index.php">existing Preview Program community</a>.</p> <h4>What is new in Preview 2?</h4> <p>A lot of the changes this time are under the hood - many of which you won't notice if you've been happily using Teamprise so far, but they are based on our performance and scalability testing.&nbsp; We actually have&nbsp;made significant changes to our&nbsp;web service&nbsp;proxy&nbsp;layer&nbsp;to make it much faster and&nbsp;orders of magnitude&nbsp;more memory efficient - especially for servers with&nbsp;a large&nbsp;number of&nbsp;Team Projects.&nbsp; The command line client start up times are also significantly improved.&nbsp; There were however some new features that&nbsp;everyone will notice:-</p> <h4><a href="http://www.woodwardweb.com/WindowsLiveWriter/TeampriseV2Preview2_FD83/merge_wizard3.png" atomicselection="true"><img height="188" alt="The anticipation mounts.  Merge is not quite ready, but some of the supporting dialogs are." src="http://www.woodwardweb.com/WindowsLiveWriter/TeampriseV2Preview2_FD83/merge_wizard_thumb3.png" width="240" align="right"></a>Branching support.&nbsp; </h4> <p>You can add branches and view the&nbsp;branches of a file&nbsp;from within the Source Control Explorer.&nbsp; Branch merge functionality is still not completed, if you really wanted you can go through the Merge wizard up until the point where you are about to perform the merge, and then you will get the "Feature not yet implemented" message.&nbsp; Merge will be in the next preview once we have worked through all the possible&nbsp;merge conflict use-cases.</p> <h4>&nbsp;Label Support.&nbsp; </h4> <p><img height="108" alt="Label options are now available." src="http://www.woodwardweb.com/WindowsLiveWriter/TeampriseV2Preview2_FD83/label3.png" width="209" align="right">You can now apply, modify and search for&nbsp;labels.&nbsp; It may seem that this has taken us a while to get into Teamprise.&nbsp; The reason for the delay is that there were some slight differences in the way our .NET SOAP stack interpreted the WSDL for the one of the label methods in the TFS web service.&nbsp; In all the tens of TFS&nbsp;web service methods we talk to from Java, this was the first one that we hit an interoperability issue with.&nbsp; Fortunately, because of the work we did in our SOAP proxy layer to improve performance we have also been able to fix this issue meaning labels are now available.</p> <h4>Better Off-line Support</h4> <p>This one jumped up the priority stack due to feedback we got on the <a href="http://support.teamprise.com/index.php">forums</a> and via email.&nbsp; Due to the nature of the Team Foundation Server protocol in V1 we do not have full off-line support.&nbsp;&nbsp;However, in Version 1 of Teamprise we errored a lot if you tried&nbsp;to work in Eclipse while disconnected from the network.&nbsp; In V2 Preview 2, if you are unable to connect to the server the plug-in will prompt you if you would like to work offline and will not attempt to talk to the server again until you restart Eclipse.&nbsp; You can&nbsp;get on with some work as long as you understand that you are responsible for manually syncing your changes up when you next&nbsp;connect to TFS.&nbsp; To edit a file while offline you must manually mark it as read/write.&nbsp; You should avoid renaming or deleting files while offline.&nbsp; When you next connect, all the read/write files will have a little question mark on them inside Eclipse.&nbsp; First thing you should do is to Synchronize your project (Team, Synchronize).&nbsp; This will then show you files that you need to add and files that have changed on the server while you were offline.&nbsp; You can safely pend adds for all your files here.&nbsp; Then you need to go back into package explorer and mark the files that you edited as read-only and check them out again.&nbsp; TFS does not overwrite these files with the latest version when you do a check out.&nbsp; Finally you need to check-in all your changes.&nbsp; While this is by no means perfect, it allows you to do some work should you not be able to connect.&nbsp; In future versions we hope to improve the offline&nbsp;story significantly.&nbsp; Thanks again to all&nbsp;our preview program volunteers for letting us know about this, please let us know if this helps.</p> <h4>Work Item Improvements</h4> <p><img height="157" alt="Screenshot showing ability to search for work items with-in pending changes view." src="http://www.woodwardweb.com/WindowsLiveWriter/TeampriseV2Preview2_FD83/wit_associate_search3.png" width="385" align="right">A lot of work has gone on under the hood with the work item area making it more reliable and handling many more of the edge cases around peoples customized process templates (again, largely thanks to feedback from our existing preview program community).&nbsp; There have been some other new additions, my own personal favorite is that you can now do a work item search from within the Pending Changes view, making it even easier to track down that work item that you want to associate your check-in with.</p> <p>I would like to thank everyone so far who has sent in comments from being part of our preview program.&nbsp; It gives all of the development team invaluable feedback to ensure that we have a great V2 product when it ships later in the year and also that people looking to purchase V2 get the product that they want.&nbsp; Keep the <a href="http://support.teamprise.com/">feedback coming</a>, it is great to hear from you.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1600" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/the_measurement.html" rel="bookmark">The Measurement Dilemma</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-09-14T11:37:09+00:00">September 14, 2006 11:37 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/the_measurement.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Visual Studio Team Foundation Server gives a fantastic ability to track and report on various facts about your software development process.&nbsp; It frees managers (and team members) from the chore of&nbsp;recording and collating&nbsp;data about the development process.&nbsp;&nbsp;Managers can now&nbsp;get on with managing the project -&nbsp;removing obstacles before they seriously impact the team, reporting on the progress of the project to&nbsp;its owners and organizing deliverables to maximize the productivity of the teams.&nbsp; With all new powers, there comes some danger and the need for responsibility (just ask <a href="http://www.primaryresources.co.uk/english/kingmidas.htm">King Midas</a> or the scriptwriters of <a href="http://www.imdb.com/title/tt0315327/">countless</a> <a href="http://www.imdb.com/title/tt0207201/">Hollywood</a> <a href="http://www.imdb.com/title/tt0086393/">films</a>).&nbsp; </p> <h3><font size="2"><img height="307" alt="Uncertainty principle for position and monentum along with the Uncertainty principle for energy and time." src="http://www.woodwardweb.com/WindowsLiveWriter/TheMeasurementDilemma_A0E1/heisenberg_uncertainty_principle.gif" width="255" align="right">The Uncertainty Principle</font></h3> <p>The uncertainty principle was first enunciated by Werner Heisenberg in 1927.&nbsp; Broadly stated&nbsp;is describes that we can know the path an electron takes as it moves through space&nbsp;or we can know its position as a given point in time - but we can not know both.&nbsp; Any attempt to measure one will unavoidably disturb the other.&nbsp; What Heisenberg proved is sometimes&nbsp;improving the instruments won't help&nbsp;- <em>a measurement affects the thing being measured and that it is an immutable property of the universe.</em></p> <p>The reporting aspects of Team Foundation Server are a new, more accurate,&nbsp;instrument to take measurements&nbsp;inside your software development process but you need to be wary about the things you do measure.&nbsp; The metrics need to mean something useful rather than just be interesting.&nbsp; The affect of taking the metric should be carefully considered before taking it.&nbsp; This is not a new problem that Team Foundation Server has introduced, just that because it makes it so easy to get data out of the system the temptations are greater.</p> <p>Lets take an&nbsp;example of measurements affecting the process in the world of business rather than in the world of quantum mechanics.&nbsp;&nbsp;In the UK, we recently had our telephone directory enquiries system de-regulated.&nbsp; This meant that instead of just one number to dial when you wanted to get the telephone number of the local pizza shop, you now have a multitude of providers offering you that service.&nbsp; After a few months, a study was carried out by a consumer organization to rate the different telephone directory information companies.&nbsp; When a person calls directory enquiries, their goal is that they get the correct number for the person or service that they require - therefore when the consumer organization did the study they looked at accuracy and cost of the call.&nbsp; Costs were more or less equivalent across the&nbsp;new companies&nbsp;- a one off charge of 50p per number.&nbsp; The thing that surprised everyone is how in-accurate many of these new companies were.&nbsp; All the companies talked to the same central number database so there must have been something else going on.&nbsp; It turned out that many of these call-centers bonused their staff on the quantity of calls they got through a day - a reasonable measure for the company as there is a direct relationship between numbers of calls and revenue. The problem with this measurement is that it is in the interests of the staff not to bother being accurate, but to give the person a number (any number) to get them off the phone and move onto the next.&nbsp; It only takes a couple of times for a customer to call one particular directory service and be given the wrong number for them to stop using that company and go with&nbsp;a more reliable one...</p> <p>Similar things happen in the software development process.&nbsp; For example,&nbsp;I think it is a bad thing to look back at an iteration and ask the question "who&nbsp;did what".&nbsp; The more useful measure is&nbsp;which requirements did we solve and how many hours did we collectively spend doing this.&nbsp; There are a few reasons for this.&nbsp; </p> <p>In any software team there are different characters that are needed.&nbsp; Take the software developers for example (because this is the world I tend to live in).&nbsp; You have the "hardened pros" who can just sit down, concentrate on their task and churn out the code, you have the "junior" people learning more&nbsp;and you have "floaters" - people that tend to&nbsp;move around a bit helping others out while getting on with their own deliverables when nobody is blocked.&nbsp; In any large development, you need this mix of people.&nbsp; Too many floaters and you spend your time discussing clever frameworks to reduce the amount of&nbsp;code needed to be churned out, Not enough floaters and you find that tasks can get blocked for weeks on end.&nbsp; The same is true of all the characters in the team.&nbsp; You need a mix of them, and you need them to work as a team for the benefit of the software development overall.</p> <p>Measuring an individuals productivity is incredibly hard, because you can measure certain facts (such as how many lines of code did they write a day, how many bugs and tasks assigned to an individual have been resolved) but do these facts tell you anything about how good&nbsp;a person is at their job or how much they individually contributed to the success of a project?&nbsp;&nbsp;As Heisenberg showed us, the&nbsp;downside of&nbsp;measuring is that&nbsp;this affects the process.&nbsp; If individuals within a team are rated based on how many tasks they have completed then this inevitably leads to people being more selfish.&nbsp; They are more likely to ignore somebody who is stuck on something, and concentrate on making their own score as high as possible.</p> <p>In a large development process, it is frequently healthy to have a certain amount of competition between teams.&nbsp; This bonds a team together and makes them collectively strive to out-do the other teams increasing productivity.&nbsp; The downside of competition between teams is that it increases the feelings of "them-and-us" between groups, which can often get in the way of successful delivery.</p> <p>I'm afraid that I have no easy answers, and no silver bullets.&nbsp; There is nothing I can say "you must do this" and "you mustn't do that".&nbsp; This is because software development is a hard and complicated problem that&nbsp;depends on the individual circumstances you face and the goals you are trying to achieve.</p> <p>Team Foundation Server is a fantastic new instrument that allows a manager to take accurate measurements of their software development process, but you should keep Werner Heisenberg in mind,&nbsp;think about what the affect of taking the measurement will be and resist the temptation to abuse your new found powers.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-2017" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/determining_the.html" rel="bookmark">Determining the last changeset</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-09-12T16:05:06+00:00">September 12, 2006  4:05 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/determining_the.html#comments">2 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>We've just been having a discussion internally about ways of numbering our builds.&nbsp; It seems a sensible idea to qualify a build with the changeset number in our TFS repository, that way we are able to easily identify the exact status of all the files included in that build without the need to add a label into TFS.&nbsp; My thought process when figuring out how to get the data was a typical one so I thought I'd post it here...</p> <p>Idea 1)&nbsp; My first thought was to go directly to the web services.&nbsp; I know there is an Administration web service for VersionControl that gives you lots of nice jucy stats about your TFS instance including the maximum changeset&nbsp;ID (the QueryRepositoryInformation operation on http://tfs_at:8080/VersionControl/v1.0/Administration.asmx).&nbsp; However, as I've ranted about before, going against the web services should always be avoided and only used as a last resort when all other alternatives have been ruled out -&nbsp;so I thought I'd try to resist the temptation and do it another way.</p> <p>Idea 2)&nbsp; Well, in that case I thought I'd use the API.&nbsp; I could have done this using the .NET API, but as I work for Teamprise, I have access to our Java API which has the advantage of running from our Unix build server.</p> <p>Idea 3)&nbsp; Then I realised, I didn't need to do any of this rubbish and that the functionality was already available with careful use of the Command Line Client (tf) - again Teamprise has a version of tf that runs from unix so I can happily use my commands on our unix box as well.&nbsp; (For those new to tf then see <a href="http://www.woodwardweb.com/vsts/000234.html">TFS Top Tip #4</a>).&nbsp; In the end, the command I needed was:-</p> <blockquote><pre>tf history /s:http://tfs_at:8080 /stopafter:1 /noprompt /recursive /version:T $/MyProject/trunk</pre></blockquote>
+<p>Simple really.&nbsp; But I thought this illustrated a key point about using TFS.&nbsp; Because the capability for extension is so huge, the temptation is to use it when often you can simply do it in the UI or from the command line.&nbsp; If&nbsp;you cannot&nbsp;and there isn't a tool already available to do it, then you should look to the tried, tested and&nbsp;performance tweaked&nbsp;API.&nbsp; Finally, if the method really isn't exposed in the API then you could go direct to the webservices, but you are now in the territory of being un-supported and things may well break as new versions of TFS are released.</p>
+<p>People might suggest you go direct to the database, but there are many reasons why you shouldn't.&nbsp; Mainly that unless you work for the TFS teams at Microsoft you'll probably do it wrong.&nbsp; Also a lot of data is cached in memory in the Application Tier - messing with the database under the hood is a sure-fire way of corrupting your TFS instance.&nbsp; The final reason is that if you corrupt&nbsp;TFS by messing with the tables after all these warnings, don't be expecting anyone to help you.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1598" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/software/microsoft_max.html" rel="bookmark">Microsoft Max</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-09-11T11:11:51+00:00">September 11, 2006 11:11 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/software/microsoft_max.html#comments">2 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>I just discovered <a href="http://www.microsoft.com/max/index.html">Microsoft Max</a>.&nbsp; While the application still seems to be in the early stages, it has to be the prettiest application I have ever used - just take a look at the semi-transparent splash screen with it's lovely wobbly progress bar.&nbsp; </p> <p><img style="border-top-width: 0px; border-left-width: 0px; float: none; border-bottom-width: 0px; margin-left: 25px; border-right-width: 0px" height="166" alt="The Microsoft Max splash screen on my Windows Royale desktop." src="http://www.woodwardweb.com/WindowsLiveWriter/MicrosoftMax_9D6E/sshot-1%5B12%5D.png" width="498" border="0"> </p> <p>This is currently a photo-organizing/sharing app based on top of the WPF and WCF&nbsp;stuff in the <a href="http://www.woodwardweb.com/dotnet/000278.html">.NET 3.0 release</a> (think <a href="http://picasa.google.com/">Picasa</a> but from Microsoft).&nbsp; I'm pretty happy to see that my Dell M70 with Nvida Quadro&nbsp;FX Go&nbsp;1400 graphics card qualifies as a "Tier 2" device for WPF world - hopefully signifying a Vista upgrade will actually give me the fancy look and feel.</p> <p>As far as the application goes - currently it allows you to automatically share photos with your friends so that they automatically receive&nbsp;new photos inside Microsoft Max.&nbsp; It also has a decent RSS aggregator.&nbsp; Apple has something similar in the iLife suite of products for Mac OS X, I think it is iPhoto, don't remember.&nbsp; Anyway the use case I have in mind is an easy way for my father to get the latest photos of my family growing up automatically on his desktop so that he can print them / burn them to DVD.</p> <p>However, while Microsoft Max looks incredibly nice, there are some problems with the current architecture as I see it.&nbsp; The main one is that without the equivalent of a .Mac account, files are transferred directly between my machine and my fathers - meaning&nbsp;both machines have to be&nbsp;on for this to work.&nbsp; It also has to make it through the multiplicity of NAT's, firewalls etc separating our machines.&nbsp; I&nbsp;hoping that there is a backing Windows Live online service in the works to help with this, we'll see.&nbsp; The fact that you have to have a MS Passport to use the software certainly suggests that this may be the case.&nbsp; The lack of information on the Max web site leads you to think that this is the basis of some sort of social network type application - more indications that in the Web 2.0 world Microsoft are stepping up the pace to justify a specific OS to be an ideal complement to peoples new online lifestyles.</p> <p>Anyway, this bodes well for applications coming the pipe from Microsoft to make Vista a more consumer friendly OS.&nbsp; Also it shows what can be done with WPF.&nbsp; </p> <p>While WPF has me very excited, I'm also a little scared.&nbsp; You are going to have to have a modicum of graphical talent to use WPF sensibly or you could very rapidly have a very ugly application.&nbsp; It's looking like application vendors are going to have to hire some of the creative talents from the games studios to make apps that are visually pleasing.&nbsp; </p> <p>One thing is certain, the Windows world is&nbsp;going to have a revolution in UI design over the next 5 years - probably&nbsp;the biggest change&nbsp;in the&nbsp;history of Windows -&nbsp;and anyone not keeping up is soon going to&nbsp;have a very dated looking application.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-2015" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/tfs_power_toys.html" rel="bookmark">TFS Power Toys</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-09-08T11:05:40+00:00">September  8, 2006 11:05 AM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><a href="http://blogs.msdn.com/bharry/">Brian Harry</a> has been on a blogging spree this week!.&nbsp; Last night he&nbsp;<a href="http://blogs.msdn.com/bharry/archive/2006/09/07/744993.aspx">announced some new Team Foundation Server Power Toys</a>.&nbsp; This also shows a new and very welcome trend from Microsoft's DevDiv - the Power Toys are available as a <a href="http://go.microsoft.com/?linkid=5431080">separate download</a>, but more interestingly many of them&nbsp;also integrate seamlessly&nbsp;into the IDE.&nbsp; This is a great way of providing new features to customers in a much more Agile fashion.&nbsp; It is fantastic to see a large company like Microsoft being able to move in a more&nbsp;nimble way and not have to wait for that big release train to come along.</p> <p>There are many interesting things in the Power Toys and the supplied word documentation is also pretty good.&nbsp; There are a new set of commands for manipulating work items from the command line (a bit like the "wit" command in Teamprise) - however&nbsp;Microsoft have&nbsp;implemented a feature which we had discussed internally but not got around to yet, which is output as XML.&nbsp; Anyone that has tried to write some sort of shim over the existing tf.exe commands will know how hard that is - output as XML gives a very easy way of making the command line computer readable.</p> <p>If all that was not enough -&nbsp;Brian has also announced that support is now available for the MSSCCI provider.&nbsp; This is also very welcome news for adoption of Team Foundation Server.&nbsp; Visual Studio Team System will handle IDE integration for VS 2005 and up, the MSSCCI provider will all the older Visual Studio products you are likely to come across in an enterprise and of course <a href="http://www.teamprise.com">Teamprise</a> can enable your Java&nbsp;or Embedded developers&nbsp;and the folks running Mac, Linux or other flavors of Unix.&nbsp; This means that an organization can migrate all its development efforts into Team Foundation Server.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1596" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/golden_rules_fo.html" rel="bookmark">Golden Rules for Developing TFS Client Applications.</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-09-07T16:18:31+00:00">September  7, 2006  4:18 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><a href="http://blogs.msdn.com/bharry/">Brian Harry</a> has recently <a href="http://blogs.msdn.com/bharry/archive/2006/09/07/744340.aspx">posted an excellent word document</a> talking about some guidelines to follow when developing custom TFS extensions.&nbsp; The document is definitely worth a read as it gives you a better understanding of the issues behind the guidance.&nbsp; It is quite Version Control API centric and it would be nice to see similar detailed advice&nbsp;regarding the WIT stuff, but&nbsp;some of it (especially the first tip) holds true for all aspects of TFS integration.</p> <p>I had started ranting about how much I agreed with the document, but I've just deleted the rant as it was getting in-coherent.&nbsp; Just let's say that you should really pay attention to this <a href="http://blogs.msdn.com/bharry/attachment/744340.ashx">3 paged document</a> if you are writing a TFS integration - take it from somebody who found out many of the lessons the hard way :-)</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1595" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/personal/how_do_normal_p.html" rel="bookmark">How do &quot;Normal&quot; people cope?</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-09-07T14:36:08+00:00">September  7, 2006  2:36 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>We have some friends staying with us from out of town at the moment.&nbsp; They are actually friends of my parents - the type of people that were always around when I was growing up and I called my Aunt and Uncle even though they are not blood-relatives.&nbsp; Anyway, they have recently retired and have decided to buy a computer and get on the Internet.</p> <p>Considering they have never really used a computer in their lives, it is really interesting to see how well they have got on.&nbsp; Impressively, they have managed to download pictures from their digital camera onto their hard-drive and print them out.&nbsp; Also, they have recently managed to transfer some songs from CD's&nbsp;onto an MP3 player which they brought with them on Holiday.</p> <p>The discussion I found particularly interesting was a discussion they had between themselves about the annoying pop-up dialogs that come up every now and then.&nbsp; Having heard many scare stories about viruses etc - they are concerned about *any* dialog box that pops up when they are working as they are scared that it is some nasty script kiddie trying to trick them into stealing their credit card numbers.&nbsp; Most modal dialog boxes they ignore and try to get rid of as quickly as possible - avoiding the "OK" button unless they really know they want to do it.&nbsp; Anyway, the conclusion that they had come to between themselves was:-</p> <blockquote> <p>If it says "Upgrade" then you have to pay.&nbsp; If it says "Update" then it is usually free and safe to accept.</p></blockquote> <p>An interesting (and often correct) assumption I thought.&nbsp; Anyway, the whole day left me with a realization that I need to be more precise in the language used to convey messages to users - I'm also going to be sure to try to pick words that are easily translatable for folks who happen to be using a system in a language that is not their first.&nbsp; It's fascinating to see the coping strategies that people adopt when using unfamiliar technology - but also frightening how far we have yet to go to make consumer electronics more friendly to the "normal" people that we would like to buy them.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-2012" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/dotnet/net_framework_3.html" rel="bookmark">.NET Framework 3.0 RC1 Released</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-09-02T15:55:02+00:00">September  2, 2006  3:55 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>I've been involved with Indigo for&nbsp;exactly 2 years this week, through&nbsp;the various changes in product name.&nbsp; Anyway&nbsp;<a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=19E21845-F5E3-4387-95FF-66788825C1AF&amp;displaylang=en">RC1 of .NET 3.0</a> was <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=19E21845-F5E3-4387-95FF-66788825C1AF&amp;displaylang=en">released</a> yesterday (just <a href="http://www.woodwardweb.com/vsts/000146.html">under a year since .NET 2.0</a>).&nbsp; I'm currently downloading it and will install over my beta version of WinFX.&nbsp; I'm quite interested to find out if the .NET Framework assemblies get revved at all or if the framework has the same v2.0.50727 libraries that were released with .NET 2.0 last year + the WinFX stuff.&nbsp; I'll soon find out...</p> <p><strong>Update:</strong> Looks like it is .NET 2.0 + WCF, WWF and WPF (which I'm very glad about to be honest).&nbsp; Right then, off to have a play with my TFS Proxy Sync service (which uses WCF to listen to check-in notifications from the Team Foundation Server...)</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1593" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/team_system_web.html" rel="bookmark">Team System Web Chat</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-09-01T09:13:50+00:00">September  1, 2006  9:13 AM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Next week you can have the opportunity to join the VSTS product group to discuss the features available in the different editions and Team Foundation Server.&nbsp; If you have some feedback that you have been dying to give about the product then this is&nbsp;a great opportunity to influence the team directly.</p> <p><b>Join the <a href="http://msdn.microsoft.com/chats">chat</a> on Wednesday September 6th, 2006 10:00am - 11:00am Pacific time (6pm BST)</b> <p><b></b> <p>To see your local time of when this chat is, click <a href="http://www.timeanddate.com/worldclock/fixedtime.html?year=2006&amp;month=9&amp;day=6&amp;hour=10&amp;min=0&amp;sec=0&amp;p1=234">here</a>.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+
+
+                            <div class="content-nav">
+                                <a href="http://www.woodwardweb.com/2006/08/">&laquo; August 2006</a> |
+                                <a href="http://www.woodwardweb.com/">Main Index</a> |
+                                <a href="http://www.woodwardweb.com/archives.html">Archives</a>
+                                | <a href="http://www.woodwardweb.com/2006/10/">October 2006 &raquo;</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-1741"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-1742"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-8"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=radiotfs&amp;limit=20';return false;" rel="tag">radiotfs</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2010/05/">May 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/04/">April 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/03/">March 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/02/">February 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/11/">November 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_top_tip_9_s.html">TFS Top Tip #9 - Secret Registry Hacks</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/teamprise_v2_pr.html">Teamprise V2 Preview 2</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/the_measurement.html">The Measurement Dilemma</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/determining_the.html">Determining the last changeset</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/software/microsoft_max.html">Microsoft Max</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_power_toys.html">TFS Power Toys</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/golden_rules_fo.html">Golden Rules for Developing TFS Client Applications.</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/personal/how_do_normal_p.html">How do &quot;Normal&quot; people cope?</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/net_framework_3.html">.NET Framework 3.0 RC1 Released</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/team_system_web.html">Team System Web Chat</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Teamprise V1.1 Released</title>
+    <link>http://www.woodwardweb.com/vsts/teamprise_v11_r.html</link>
+    <description><![CDATA[Today we released Teamprise V1.1 to the general public (available here).&nbsp; Version 1.1 is a maintenance release to address several issues that our customers have reported. Most notably, Version 1.1 now fully supports NTLM authentication (including NTLMv2). If you were...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-07-18T17:09:21+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+  </channel>
+</rss>

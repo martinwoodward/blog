@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Generating Excel Files in C#</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html</link>
+    <description>I have been investigating several ways of generating files suitable for use in Excel from a C# application. As with most problems, there is more than one way to crack a nut. Various examples on the web show how to...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2004-12-01T04:20:23+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001437</link>
+    <description>Why not just output a comma-seperate-values file?
+
+Column 1, Column 2
+Row 1, Row 2
+
+...etc.</description>
+    <dc:date>2004-12-01T11:47:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001438</link>
+    <description>I wanted the file generated to load into excel and appear to the user like it was a native excel file.  A CSV formatted file cannot be saved with the XLS extension (it needs to be CSV).</description>
+    <dc:date>2004-12-02T03:54:00+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Scott Willeke+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001439</link>
+    <description>Our ActiveReports for .NET product (http://www.datadynamics.com) includes a component we call SpreadBuilder that provides a full API for creating binary excel files. If our customers continue to show interest in the product, we may improve this component even further in the future. Of course, ActiveReports can also export any of your reports to Excel automatically.</description>
+    <dc:date>2005-01-26T20:08:40+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Scott Willeke</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001440</link>
+    <description>...and ActiveReports for .NET can be obtained for the sum of.... ;-)</description>
+    <dc:date>2005-02-01T21:21:37+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Tom+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001441</link>
+    <description>Don&apos;t know ActiveReports price, but ExcelLite .NET component (http://www.gemboxsoftware.com/ExcelLite.htm) does the same and costs 160 EUR (~$190). You pay per developer; server or client deployment is royalty free.</description>
+    <dc:date>2005-06-17T11:53:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Tom</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by HRao+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001442</link>
+    <description>Hi How can write the percentage sign % into excel using C# . Please respond</description>
+    <dc:date>2006-06-08T12:05:01+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>HRao</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Bibi+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001443</link>
+    <description>Hi,
+
+How can I implement and use this xmlwriter class? I copy it to XMLWriter.cs but httpresponse gives error? I&apos;m a beginner to c# and it would be really good if you help me. Thanks</description>
+    <dc:date>2006-09-01T18:26:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Bibi</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001444</link>
+    <description>Bibi,
+
+If you post the error that may help.  My guess is that you need the appropraite &quot;using&quot; statement at the top of the class.  Also - the class is called XLWriter, XMLWriter.
+
+Cheers,
+
+Martin.</description>
+    <dc:date>2006-09-02T14:58:37+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by hafiz+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001445</link>
+    <description>hi all...i have an excel image button when I click it will take the data from my page and download it as an excel file. When i drag and drop/or save it as a .txt file it shows all the crazy html/xml codes. I just want it to display as tab delimited contents. I am having very difficulty. can anyone help? thanks,
+hafiz (guile786@aol.com)</description>
+    <dc:date>2006-11-07T15:55:53+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>hafiz</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Bibhuti Prasanna+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001446</link>
+    <description>Hi, I am not able to read data from excel cells if it contains errors. When the cell has data which has been converted from number to text, a green triangle appears on top left of the cell. It is then that the data reader reads a null value from that field. Using data set made no difference neither did disabling the background error checking of excel through code. Please help!!!</description>
+    <dc:date>2006-11-20T04:51:11+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Bibhuti Prasanna</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mohammad+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001447</link>
+    <description>Hello .
+Thanks about your sample code
+this code is very well</description>
+    <dc:date>2007-02-23T06:34:57+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Mohammad</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by John Bailo+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001448</link>
+    <description>Any tips on how to do simple formatting on the cells?  Such as Bold and Italics?</description>
+    <dc:date>2007-02-26T16:42:23+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>John Bailo</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by parijay+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001449</link>
+    <description>Good</description>
+    <dc:date>2007-10-24T07:25:15+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>parijay</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by velkumar+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001450</link>
+    <description>Dear sir..
+I am using Windows application.
+i want to create Excel file, rename the Sheets and i want to add sheets...</description>
+    <dc:date>2007-12-28T06:42:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>velkumar</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Samip Jani+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001451</link>
+    <description>Hey thnx......
+This is great good stuff..
+Only if you could have added how can one format the cell it would have been excellent
+
+Neways a great help..</description>
+    <dc:date>2008-02-12T11:36:39+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Samip Jani</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Akhil+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001452</link>
+    <description>The type or namespace name &apos;HttpResponse&apos; could not be found (are you missing a using directive or an assembly reference?)
+
+
+This is the error that i encountered. What is the appropriate using statement that i&apos;m missing here. 
+
+Thanks and regards
+Akhil.</description>
+    <dc:date>2008-09-16T06:08:18+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Akhil</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001453</link>
+    <description>See MSDN, it&apos;s System.Web.</description>
+    <dc:date>2008-09-16T08:51:28+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Roshni+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001454</link>
+    <description>I need to format my Excel report which is being generated through C#. Please let me know how to format each cell, if i have a given format.
+
+Also i want thatthe user should get a prompt or dialouge box to savethe excel. Please let me know how thse 2 functionality can be achieved.</description>
+    <dc:date>2008-12-05T03:56:00+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Roshni</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Joe Way+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001455</link>
+    <description>Please can someone help me to do the export to excel but into differetn sheets.
+
+Thanks for help
+Joe Way</description>
+    <dc:date>2009-04-15T17:08:04+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>Joe Way</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by deepak+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001456</link>
+    <description>Hi
+Can anyone tell how to remove &apos;1&apos; from excel work sheetname..
+For eg: I want the worksheet name as &apos;project&apos;, not &apos;project 1&apos;</description>
+    <dc:date>2009-05-05T11:56:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>deepak</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by shubhang mathur+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/generating_exce.html#c001457</link>
+    <description>thanks for your code but how can i create second worksheet from this code???????????????????</description>
+    <dc:date>2009-07-28T08:42:34+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=898</comments>   
+    <dc:creator>shubhang mathur</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

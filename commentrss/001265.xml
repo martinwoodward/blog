@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Behind Brian the Build Bunny</title>
+    <link>http://www.woodwardweb.com/vsts/behind_brian_th.html</link>
+    <description> Since posting about Brian the Build Bunny, I have been getting a steady stream of emails from people who would like to know more about how it works. Team Foundation Server provides a mechanism by which you can subscribe...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-07-23T16:31:57+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Luis Fraile+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/behind_brian_th.html#c002029</link>
+    <description>Nice hehehe, we musty do something with builds and Multidomo ;)</description>
+    <dc:date>2008-07-23T22:41:47+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1265</comments>   
+    <dc:creator>Luis Fraile</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mac Noland+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/behind_brian_th.html#c002030</link>
+    <description>This is great Martin!  If my manager&apos;s manager&apos;s manager, can approve the spending request, we might give this a shot!  If we do, I&apos;ll let you know how it goes.</description>
+    <dc:date>2008-07-28T20:52:07+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1265</comments>   
+    <dc:creator>Mac Noland</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by oo+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/behind_brian_th.html#c002031</link>
+    <description>Cool, though you can&apos;t trust the bunny. My own rabbit is not reliable at all and hangs at least twice a day. But its good fun anyway, even when I have to reset it every few hours or so.</description>
+    <dc:date>2008-10-29T10:15:10+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1265</comments>   
+    <dc:creator>oo</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Howard van Rooijen+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/behind_brian_th.html#c002032</link>
+    <description>Hehe, actually the orginal motivation for my &quot;Team Foundation Server Notification Event project template&quot; project was to get my nabaztag working via TFS! Awesome project.</description>
+    <dc:date>2008-11-09T22:51:43+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1265</comments>   
+    <dc:creator>Howard van Rooijen</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Christian Jacob+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/behind_brian_th.html#c002033</link>
+    <description>We are using Team Build for only a couple of days now. After having read about Brian, I got myself a Nabaztag, too. And now guess what... company policies prevent me from getting it connected to the internet... *sigh*</description>
+    <dc:date>2009-02-05T18:57:01+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1265</comments>   
+    <dc:creator>Christian Jacob</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

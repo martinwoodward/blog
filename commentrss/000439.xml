@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Hardware Hacking for Geeks</title>
+    <link>http://www.woodwardweb.com/books/hardware_hackin.html</link>
+    <description>Ever wanted to connect your toaster to the internet, turn a skyscraper into a giant display, add a web server to your filter coffee machine or make a furby say things that will severely disturb the kids - then have...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2004-03-25T07:56:19+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Jonathan+00:00</title>
+    <link>http://www.woodwardweb.com/books/hardware_hackin.html#c000713</link>
+    <description>First time reading this blog, just wanted to say hi.</description>
+    <dc:date>2004-11-03T21:33:42+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=439</comments>   
+    <dc:creator>Jonathan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Andie+00:00</title>
+    <link>http://www.woodwardweb.com/books/hardware_hackin.html#c000714</link>
+    <description>Found your site through blogspot and wanted to say hi</description>
+    <dc:date>2004-11-05T16:15:02+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=439</comments>   
+    <dc:creator>Andie</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ming Ho Lee+00:00</title>
+    <link>http://www.woodwardweb.com/books/hardware_hackin.html#c000715</link>
+    <description>Bonjour</description>
+    <dc:date>2004-11-08T03:51:03+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=439</comments>   
+    <dc:creator>Ming Ho Lee</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Authur Daily+00:00</title>
+    <link>http://www.woodwardweb.com/books/hardware_hackin.html#c000721</link>
+    <description>Took the day off and was just reading up some blogs and thought I would post here</description>
+    <dc:date>2004-11-10T22:26:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=439</comments>   
+    <dc:creator>Authur Daily</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by john+00:00</title>
+    <link>http://www.woodwardweb.com/books/hardware_hackin.html#c000730</link>
+    <description>Hi there.</description>
+    <dc:date>2005-01-01T13:42:07+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=439</comments>   
+    <dc:creator>john</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>What&apos;s Your Pocket Knife Language?</title>
+    <link>http://www.woodwardweb.com/personal/whats_your_pock_1.html</link>
+    <description>As a professional programmer, the languages I code in during the day are very much dependant on the particular project I am working on.&#160; Also as a programmer I have a very low threshold for repetitive or complex tasks -...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-05-19T14:46:02+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Sam Judson+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whats_your_pock_1.html#c003376</link>
+    <description>C# too - but then again I&apos;ve always been a microsoftie.
+
+I keep wishing I had to time to learn something like IronPython as I&apos;m sure it would make a great pocket knife language.</description>
+    <dc:date>2008-05-19T15:05:46+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2161</comments>   
+    <dc:creator>Sam Judson</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Kenny Kerr+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whats_your_pock_1.html#c003377</link>
+    <description>I code in C++ day and night but when I need to prototype something quickly I also use C#.</description>
+    <dc:date>2008-05-19T15:35:52+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2161</comments>   
+    <dc:creator>Kenny Kerr</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whats_your_pock_1.html#c003378</link>
+    <description>Lately I more and more use Windows Powershell scripts.</description>
+    <dc:date>2008-05-19T19:47:43+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2161</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Luis Fraile+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whats_your_pock_1.html#c003379</link>
+    <description>C# too hehe, but I have been always working in Microsoft environments so ...</description>
+    <dc:date>2008-05-19T21:03:02+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2161</comments>   
+    <dc:creator>Luis Fraile</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Alan Stevens+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whats_your_pock_1.html#c003380</link>
+    <description>I still use Visual FoxPro as my pocket knife. I haven&apos;t found a more productive environment for &quot;run once&quot; development.
+
+++Alan</description>
+    <dc:date>2008-05-19T23:32:49+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2161</comments>   
+    <dc:creator>Alan Stevens</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Jason Stangroome+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whats_your_pock_1.html#c003381</link>
+    <description>I use PowerShell. All the power of the .NET framework plus easy handling of command-line arguments, file system, and XML, which is usually what my custom tools are written for.</description>
+    <dc:date>2008-05-20T02:19:25+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2161</comments>   
+    <dc:creator>Jason Stangroome</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Geoff Taylor+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whats_your_pock_1.html#c003382</link>
+    <description>I&apos;ve started using PowerShell for this kind of thing - and with TFS inside PowerGui [http://coolthingoftheday.blogspot.com/2008/05/want-to-access-tfs-work-items-via.html] you have one less excuse for not checking it out!</description>
+    <dc:date>2008-05-20T09:29:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2161</comments>   
+    <dc:creator>Geoff Taylor</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whats_your_pock_1.html#c003383</link>
+    <description>Hi Geoff,
+
+I keep trying to force myself to use PowerShell (even getting rid of my default cmd shortcut for a while) and I&apos;ve always failed to get past that initial hump.  I think I just need to bite the bullet and spend a day getting up to speed.  Everyone who gets over that initial hurdle seems to love it.
+
+Thanks for the link - I guess I have to check it out now :-)</description>
+    <dc:date>2008-05-20T10:28:05+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2161</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Steve+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whats_your_pock_1.html#c003384</link>
+    <description>For me, it&apos;s IronPython (in preference to PowerShell, as a scripting tool for working against .Net APIs), against a default day-job language of C#.  It used to be Java, when the day-job language was C++.</description>
+    <dc:date>2008-05-20T10:55:27+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2161</comments>   
+    <dc:creator>Steve</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Rob Say+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whats_your_pock_1.html#c003385</link>
+    <description>Unix Tools - ksh, sed, awk et al for low level stuff, even ms-dos scripting if I fancy a challenge. Don&apos;t dive into compiled stuff unless I think I am going to reuse it or need to do work at higher level .. and then it&apos;s Java which also pays the rent. Doing pocket knife stuff with it keeps me up to speed with more esoteric stuff which I don&apos;t use day-to-day.
+
+I think the comments reflect your current readerships interests :)</description>
+    <dc:date>2008-05-21T14:21:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2161</comments>   
+    <dc:creator>Rob Say</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Perica+00:00</title>
+    <link>http://www.woodwardweb.com/personal/whats_your_pock_1.html#c003386</link>
+    <description>Portable Python of course</description>
+    <dc:date>2008-05-26T12:32:52+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2161</comments>   
+    <dc:creator>Perica</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

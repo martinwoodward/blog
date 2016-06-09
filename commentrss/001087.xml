@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>MSDN Webcast Follow-up</title>
+    <link>http://www.woodwardweb.com/vsts/msdn_webcast_fo.html</link>
+    <description><![CDATA[Thanks to the folks that dropped by the webcast early today.&nbsp; Hopefully it was ok &ndash; I found it very weird talking to the sheep in the field outside my house while all you folks were &ldquo;out there&rdquo;.&nbsp; Anyway, here...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-06-22T17:32:40+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

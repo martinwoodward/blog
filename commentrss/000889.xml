@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Visual Studio Auto Complete Error</title>
+    <link>http://www.woodwardweb.com/programming/visual_studio_a.html</link>
+    <description>Been using Visual Studio 2003 lately, not a bad editor (no where near as good as intellij for Java for pretty good). Today, all of a sudden the autocomplete feature - called Intellisense (TM - M$) stopped working. Now normally,...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2004-11-10T00:10:41+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben Hill+00:00</title>
+    <link>http://www.woodwardweb.com/programming/visual_studio_a.html#c001432</link>
+    <description>Alternatively, you could use Emacs! ;-)</description>
+    <dc:date>2004-11-10T12:55:22+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=889</comments>   
+    <dc:creator>Ben Hill</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Moi+00:00</title>
+    <link>http://www.woodwardweb.com/programming/visual_studio_a.html#c001433</link>
+    <description>Is this the same problem as in earlier versions of VS? If so then just deleting the .ncb file(s) should be enough.</description>
+    <dc:date>2006-03-21T12:39:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=889</comments>   
+    <dc:creator>Moi</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/programming/visual_studio_a.html#c001434</link>
+    <description>Cool - thanks Moi, I&apos;ll give that a try!</description>
+    <dc:date>2006-03-21T13:55:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=889</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Samantha+00:00</title>
+    <link>http://www.woodwardweb.com/programming/visual_studio_a.html#c001435</link>
+    <description>Thanks so much!  It worked for me.</description>
+    <dc:date>2008-06-03T08:32:43+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=889</comments>   
+    <dc:creator>Samantha</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

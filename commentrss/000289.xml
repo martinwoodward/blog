@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Locale sensitive String sorting in Java</title>
+    <link>http://www.woodwardweb.com/java/locale_sensitiv.html</link>
+    <description><![CDATA[So, the day after I get made a Microsoft MVP I do&nbsp;two posts about Java - go figure.&nbsp; Anyway, today I had one of those moments where you thought you understood something and then realize you didn't and probably a...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-10-03T16:30:32+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Jarle Nygård+00:00</title>
+    <link>http://www.woodwardweb.com/java/locale_sensitiv.html#c004212</link>
+    <description>We struggle with this every day... We do most of our sorting in the database (Order by...), so it&apos;s sorted by collation. Which is fine for some customers, but not fine for others. So we should probably move the sorting into code and sort it according to their locale. 
+
+It sort of annoys me that most, if not all, example code comes with out Globalization code. And almost no &quot;Best Practices&quot; uses Globalization code. Perhaps I should start a blog on this? :)
+
+ - Jarle NygÃ¥rd -
+System Developer, Synergi.com
+</description>
+    <dc:date>2006-10-04T06:51:14+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=289</comments>   
+    <dc:creator>Jarle Nygård</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

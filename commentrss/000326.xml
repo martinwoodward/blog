@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Getting excited about the next Orcas CTP</title>
+    <link>http://www.woodwardweb.com/dotnet/getting_excited.html</link>
+    <description><![CDATA[I'm getting really excited about the next CTP for the next release of Visual Studio (Codenamed Orcas).&nbsp; Not only will previews of some great new features in&nbsp;Team Foundation Server be coming along, Scott Guthrie just announced a bunch of changes...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-01-22T16:56:57+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+  </channel>
+</rss>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>I Love Shelving</title>
+    <link>http://www.woodwardweb.com/vsts/i_love_shelving.html</link>
+    <description><![CDATA[No - this is not a post about the big news in Northern Ireland this past week.&nbsp; On Friday night I was in the middle of a rather large change that I wasn't ready to check-in to the mainline of...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-12-17T16:46:03+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by bart+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/i_love_shelving.html#c002478</link>
+    <description>You could of course think about &apos;why you need to shelve&apos;. I only shelve during the day, if I have to move from one pc to another.
+
+But if I read your story, I seem to get the impression you are making too big change sets ? Or not ?
+
+My idea about a check-in is that it needs to be rather small and you keep your files checked out as short as possible ?</description>
+    <dc:date>2008-01-16T08:45:14+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1720</comments>   
+    <dc:creator>bart</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/i_love_shelving.html#c002479</link>
+    <description>I totally agree with you.  I normally try to keep changes very small and do frequent check-ins / get latest during the day to keep in sync.
+
+In this particular case, I was avoiding checking in to the main line of code because we were in a product stabilization period prior to releasing a preview version to our customers.  In effect, I was using shelving as I might have used a private branch - but just for a couple of days.
+
+Also - I ended up using shelving to transfer a change in progress between my dying dev machine and my working laptop.
+
+All in all, shelving (though it has its quirks) is a really useful feature of TFS.</description>
+    <dc:date>2008-01-17T20:41:46+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1720</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

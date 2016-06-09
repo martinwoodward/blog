@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Why Software Estimation is Hard</title>
+    <link>http://www.woodwardweb.com/programming/why_software_es.html</link>
+    <description><![CDATA[Over the years, I have tried many different approaches to software estimation.&#160; From the Ceiling and Weller method (look up to the ceiling, scratch your chin and say &quot;Well-errr&quot;), FITA analysis (Finger In The Air) through various variations (both formal...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-06-26T14:46:55+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ed Blankenship+00:00</title>
+    <link>http://www.woodwardweb.com/programming/why_software_es.html#c003405</link>
+    <description>Martin,
+
+This was a great post.  So true!  These are great suggestions and pros about Agile software methodologies.</description>
+    <dc:date>2008-06-26T15:19:57+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2168</comments>   
+    <dc:creator>Ed Blankenship</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by James+00:00</title>
+    <link>http://www.woodwardweb.com/programming/why_software_es.html#c003406</link>
+    <description>Agile techniques are worthwhile in any project, but a big problem in software project management is that the technology is changing so quickly.
+
+This is great for keeping the stuff interesting and fun (sometimes). But if you are laying bricks, it would be good to know that the latest version of the Earth (or the bricks) doesn&apos;t have any &apos;new features&apos;.</description>
+    <dc:date>2008-07-07T09:18:47+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2168</comments>   
+    <dc:creator>James</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Paul+00:00</title>
+    <link>http://www.woodwardweb.com/programming/why_software_es.html#c003407</link>
+    <description>Martin, although I know what you mean about estimating software development projects--I tend to lean toward the thought that as you gain experience this sort of things becomes easier, and guesstimating a project based on previous experience usually works well for me. I have learned the hard way to tack on 10% time/money to my guesstimates though for those unforeseen &quot;firewall&quot; issues.</description>
+    <dc:date>2008-07-08T17:42:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2168</comments>   
+    <dc:creator>Paul</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Edward Thomson+00:00</title>
+    <link>http://www.woodwardweb.com/programming/why_software_es.html#c003408</link>
+    <description>Martin - great post, the sudoku analogy is a lovely one.  My friends and family frequently don&apos;t understand it when I talk about planning and scheduling of software projects.
+
+&quot;Oh, so you&apos;re going to have it done by then?&quot;  they ask.  My response is always &quot;I hope so!&quot;
+
+Next time, I&apos;ll give them the sudoku analogy!</description>
+    <dc:date>2008-08-20T16:53:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2168</comments>   
+    <dc:creator>Edward Thomson</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Kris Bogaert+00:00</title>
+    <link>http://www.woodwardweb.com/programming/why_software_es.html#c003409</link>
+    <description>I often apply the principle: A good developer should do this in X days. In the end I double all the numbers and add an additional margin of 10%. So far it often was succesfull for my type of IT projects (package integration and customisation) which mostly take around 6 months in duration.</description>
+    <dc:date>2008-09-04T21:00:11+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2168</comments>   
+    <dc:creator>Kris Bogaert</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by softwaredevelopment+00:00</title>
+    <link>http://www.woodwardweb.com/programming/why_software_es.html#c003410</link>
+    <description>interesting post!! thanks for this post its really helpful and have great suggestion.. give a thumbs up on su!!</description>
+    <dc:date>2009-02-10T00:58:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2168</comments>   
+    <dc:creator>softwaredevelopment</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Anup Pachlag+00:00</title>
+    <link>http://www.woodwardweb.com/programming/why_software_es.html#c003411</link>
+    <description>Very interesting post and the Soduku Analogy is just great ! I have also realized that a bottom up approach works better than a Top down approach when it comes to estimating</description>
+    <dc:date>2009-03-04T20:11:02+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2168</comments>   
+    <dc:creator>Anup Pachlag</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Manny @SharpToss+00:00</title>
+    <link>http://www.woodwardweb.com/programming/why_software_es.html#c003412</link>
+    <description>Excellent post Martin. The Sudoku analogy IS very apt.</description>
+    <dc:date>2009-04-08T23:05:15+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2168</comments>   
+    <dc:creator>Manny @SharpToss</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

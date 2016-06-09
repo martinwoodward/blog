@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>30 Useful Team Build Properties</title>
+    <link>http://www.woodwardweb.com/vsts/30_useful_team.html</link>
+    <description><![CDATA[If you are going to get into the Zen of TFS Team Build, then at some point you are going to have to read the TeamBuild .targets file (located in %ProgramFiles%\MSBuild\Microsoft\VisualStudio\TeamBuild\Microsoft.TeamFoundation.Build.targets).&nbsp;&nbsp;The TeamBuild build scripts are&nbsp;usually extensions of this master build...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-07-24T14:09:40+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by adi+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/30_useful_team.html#c001873</link>
+    <description>Trackback from http://dotmad.blogspot.com/2007/07/30-useful-team-build-properties-from.html</description>
+    <dc:date>2007-07-28T23:41:01+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1199</comments>   
+    <dc:creator>adi</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Sudheer+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/30_useful_team.html#c001874</link>
+    <description>But remember, you cannot get the value of the &quot;RequestedBy&quot; in the MSBuild Script. Looks like you need to write a custom task : See:
+http://blogs.msdn.com/gautamg/archive/2005/12/20/505863.aspx</description>
+    <dc:date>2007-10-24T21:56:15+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1199</comments>   
+    <dc:creator>Sudheer</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/30_useful_team.html#c001875</link>
+    <description>Sudheer,
+
+RequestedBy and RequestedFor are available inside the Team Build 2008 build scripts, so with TFS2008 you won&apos;t need that workaround.
+
+Cheers,
+
+Martin.</description>
+    <dc:date>2007-10-25T08:37:47+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1199</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Greg+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/30_useful_team.html#c001876</link>
+    <description>Thanks for posting this.  Its very useful!
+
+Cheers
+Greg</description>
+    <dc:date>2008-07-03T18:04:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1199</comments>   
+    <dc:creator>Greg</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by John+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/30_useful_team.html#c001877</link>
+    <description>RequestedFor can&apos;t be overridden right? 
+It&apos;s only there to query against?</description>
+    <dc:date>2008-07-16T15:42:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1199</comments>   
+    <dc:creator>John</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Reza+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/30_useful_team.html#c001878</link>
+    <description>thanks for this post. Relly useful!!!!</description>
+    <dc:date>2009-02-02T22:02:06+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1199</comments>   
+    <dc:creator>Reza</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by David Campey+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/30_useful_team.html#c001879</link>
+    <description>Trackback from: http://campey.blogspot.com/2009/05/incremental-get.html</description>
+    <dc:date>2009-05-12T11:37:11+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1199</comments>   
+    <dc:creator>David Campey</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Rob Burke+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/30_useful_team.html#c001880</link>
+    <description>I&apos;ve been knee-deep in TFS and MSBuild for the past couple of weeks, and Google keeps sending me back to your blog, where I am consistently delivered the tidbits and top tips I&apos;m after. I really appreciate all the effort you&apos;ve put into this site over the years and - as if it were ever in doubt - it&apos;s crystal clear why you are held in such high regard by the community. Thank you Martin!!</description>
+    <dc:date>2009-07-28T15:56:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1199</comments>   
+    <dc:creator>Rob Burke</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

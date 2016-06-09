@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title><![CDATA[&quot;Electricity Gone&quot; Moment]]></title>
+    <link>http://www.woodwardweb.com/personal/electricity_gon.html</link>
+    <description><![CDATA[This morning while I was preparing for a customer demo that I'll be doing over LiveMeeting later today, my DSL connection stopped working.&nbsp; I have a reasonably complicated home office network arrangement - but it is most often my VPN...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-11-28T07:46:57+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Paul Roub+00:00</title>
+    <link>http://www.woodwardweb.com/personal/electricity_gon.html#c001076</link>
+    <description>Heh.  I do every one of those same things, and when my net connection is down I seem unable to retain that fact for more than a few minutes at a time.  The number of times I&apos;ve started to load my ISP&apos;s site to check for status reports...</description>
+    <dc:date>2007-11-28T14:32:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=811</comments>   
+    <dc:creator>Paul Roub</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

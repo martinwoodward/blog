@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Teamprise 2.1 Released</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_21_re.html</link>
+    <description><![CDATA[Yesterday&nbsp;we made version 2.1 of Teamprise publicly available.&nbsp; If you've previously installed Teamprise, then I recommend that you upgrade to this version as it includes a number of bug-fixes that while not critical are definitely useful.&nbsp;&nbsp;People who purchased a Teamprise...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-03-09T14:46:40+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Sajee+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_21_re.html#c001809</link>
+    <description>Congrats Martin.  It looks great!</description>
+    <dc:date>2007-03-10T00:52:19+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1162</comments>   
+    <dc:creator>Sajee</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

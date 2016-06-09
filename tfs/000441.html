@@ -1,0 +1,785 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/tfs/000441.html">
+<dc:title>Behind Brian the Build Bunny</dc:title>
+<dc:description> Since posting about Brian the Build Bunny, I have been getting a steady stream of emails from people who would like to know more about how it works. Team Foundation Server provides a mechanism by which you can subscribe...</dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2008-07-23T16:31:57+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+<!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/teamprise/000440.html" title="Teamprise 3.1 is now available" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/podcasting/000442.html" title="Radio TFS is back with Version Control 101" />
+    
+    <title>Behind Brian the Build Bunny - Martin Woodward</title>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-441" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Behind Brian the Build Bunny</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2008-07-23T16:31:57+00:00">July 23, 2008  4:31 PM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/tfs/000441.html#comments">No Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p><a href="http://www.youtube.com/watch?v=Is32fWJJA-I" target="_blank"><img height="250" alt="Watch the Brian the Build Bunny video in full" src="http://www.woodwardweb.com/WindowsLiveWriter/BehindBriantheBuildBunny_D2A9/brian_whiteboard_23c64a49-4965-4c8a-8355-e73a041120ab.gif" width="295" align="right" /></a> Since posting about <a href="http://www.woodwardweb.com/gadgets/000434.html" target="_blank">Brian the Build Bunny</a>, I have been getting a steady stream of emails from people who would like to know more about how it works.</p>  <p><a href="http://msdn.microsoft.com/en-us/magazine/cc507647.aspx" target="_blank">Team Foundation Server provides a mechanism by which you can subscribe to events when certain things happen</a>.&#160; This is actually how many of the components in TFS are integrated between themselves and like the rest of the TFS glue - Microsoft make these events available so you can customize your TFS instance.</p>  <p>At a high level, I purchased a <a href="http://www.nabaztag.com/" target="_blank">Nabaztag</a> bunny and decorated it with the Visual Studio logo and Brian the Build Bunny was born. The code behind Brian the Build Bunny is actually very simple, a web service (in my case sat in IIS on my TFS server) listens for the events and then converts this into a string on text which it sends to the Nabaztag servers.&#160; Nabaztag run this text through a Text to Speech engine and generate an MP3 file with the results, they then notify my build bunny about the MP3 file and he downloads the file over his WiFi connection and plays it on his speakers.</p>  <p>But if you want the full gory details then read on.</p> 
+                                    </div>
+
+
+                                    <div id="more" class="asset-more">
+                                        <p>  <h4>Brian the Build Bunny Project.</h4>  <p><strong>Pre-requisites:</strong></p>  <ul>   <li>1 Team Foundation Server instance (a VPC one to play with first is recommended) </li>    <li>1 Nabaztag bunny </li>    <li>1 Wifi connection to the internet for the bunny to use </li>    <li>1 sheet of clear labels (to print the Visual Studio logo as Brian's bow tie).&#160; I used Avery J8560, but then again I'm a crazy European with metric pages. </li> </ul>  <p><strong>Preparation:</strong></p>  <ol>   <li>Ensure your bunny is registered with Nabaztag and you have your serial number and API token. </li>    <li>Ensure your Team Foundation Server instance (or where-ever you want to host the &quot;bunny listener&quot;) code has internet access so that it is able to talk to the Nabaztag server.&#160; Try pasting the following URL into Internet Explorer on the TFS instance to make sure you can get out and talk to Nabaztag:      <br />      <pre>http://api.nabaztag.com/vl/FR/api.jsp?sn=SERIAL&amp;token=TOKEN&amp;voice=UK-Mistermuggles&amp;tts=Hello+my+name+is+Brian+the+Build+Bunny.</pre><br />
+Remembering to insert your build bunny's serial number and API token obtained when you registered your bunny with Nabaztag. </li></p>
+
+<p>  <li>Download the image <a title="http://www.woodwardweb.com/brian/files/teamsystem.png" href="http://www.woodwardweb.com/brian/files/teamsystem.png" target="_blank">teamsystem.png</a> (70 KB) and print out the Team System logo on a clear label.&#160; Cut around the logo and stick onto your bunny to turn him into a smart looking Build Bunny. </li><br />
+</ol></p>
+
+<p><strong>Code:</strong></p>
+
+<p>You can download the example code using the following link, (VS 2008 project using C# in .NET 2.0):</p>
+
+<p><a href="http://www.woodwardweb.com/brian/files/BunnyLink.zip" target="_blank"><img style="float: none; margin-left: 25px" height="64" alt="sln_download" src="http://www.woodwardweb.com/WindowsLiveWriter/BehindBriantheBuildBunny_D2A9/sln_download_0e46ec2d-c737-4656-b8c6-533a3265a065.gif" width="250" /></a> </p>
+
+<p>There are many ways to listen for Team Foundation Server SOAP events. You can have a &quot;proper&quot; web service living on IIS, or you have have a hosted WCF process listening to a particular port. In my particular case I was happy with the IIS approach and so used the excellent <a href="http://blogs.conchango.com/howardvanrooijen/archive/2007/06/14/TFS-Notification-Web-Services-Project-Template-v.1.2.aspx" target="_blank">Team Foundation Server Notification Event project template</a> from <a href="http://blogs.conchango.com/howardvanrooijen/" target="_blank">Howard van Rooijen</a> at <a href="http://www.conchango.com/" target="_blank">Conchango</a> as that's the fastest way to get up and running when doing this type of project.&#160; If you wanted to go down the WCF route then take a look at <a href="http://geekswithblogs.net/hinshelm/" target="_blank">Martin Hinshelwood</a>'s <a href="http://codeplex.com/TFSEventHandler" target="_blank">TFS Event Handler project up on CodePlex</a>.</p>
+
+<p>I created a quick class library that is a thin wrapper over the Nabaztag API, and exposes functionality via the Bunny class including building and sending of the HTTP message to the Nabaztag servers. <br/><img style="float: none; margin-left: 25px" height="207" alt="Bunny class diagram" src="http://www.woodwardweb.com/WindowsLiveWriter/BehindBriantheBuildBunny_D2A9/bunny_class_36af2a05-26b6-4a6b-a0cb-13a80ed07088.gif" width="481" />&#160; </p>
+
+<p>I then created a TFS Web Services Notification project (using <a href="http://blogs.conchango.com/howardvanrooijen/archive/2007/06/14/TFS-Notification-Web-Services-Project-Template-v.1.2.aspx" target="_blank">Howard's template</a>).&#160; This gives me ready-made code to hook into various events - but I just wanted the build completion event and the check-in event for this example.</p>
+
+<p>Build completion event: 
+  <br /><img style="float: none; margin-left: 0px" height="471" alt="Build Completition Code" src="http://www.woodwardweb.com/WindowsLiveWriter/BehindBriantheBuildBunny_D2A9/build_notification_code_f23f6410-492f-4a29-b76b-a3c934369c59.gif" width="770" /></p>
+
+<p>Check-in event:<br/><img style="float: none; margin-left: 0px" height="473" alt="Code executed on check-in event" src="http://www.woodwardweb.com/WindowsLiveWriter/BehindBriantheBuildBunny_D2A9/checkin_event_code_d3c033b2-085e-46d5-bc35-a9a1bce2e2d8.gif" width="772" /></p>
+
+<p>As you can see, I really don't do that much - just build up a string based on the data in the TFS event and then send that string to the bunny.</p>
+
+<p><strong>Subscribing the Bunny Listener to the TFS Events</strong></p>
+
+<p>Finally, once the web services are ready and listening - I must now tell TFS to send a SOAP message to my web services at the appropriate time.&#160; To do this, I used the command line tool BisSubscribe.exe.&#160; This can be found on your TFS server in the %ProgramFiles%\Microsoft Visual Studio 2008 Team Foundation Server\TF Setup directory. </p>
+
+<p>If you open up a command prompt and cd to it then you can type:</p>
+
+<p></p>
+
+<pre>bissubscribe /eventType BuildCompletionEvent /address http://localhost:8181/bunnylisener/BuildCompletionEndpoint.asmx /deliveryType Soap /server http://localhost:8080
+bissubscribe /eventType CheckinEvent /address http://localhost:8181/bunnylisener/CheckInEndpoint.asmx /deliveryType Soap /server http://localhost:8080</pre>
+
+<p>Where the webservices are running at <code>http://localhost:8181/bunnylistener</code>.</p>
+
+<p><strong>Exercises for the Reader:</strong></p>
+
+<p><strong></strong></p>
+
+<p>As you can see, the code above is just a starter.&#160; There are many things that you can get this new notification device to do and the code above is designed more of a sample that I can use in a talk rather than full on production code. That said, if anyone is interested in starting up a CodePlex project around this then please drop me a line.&#160; However, the following things are on my TODO list:</p>
+
+<ul>
+  <li>Subscribe to BuildCompletionEvent2 which has some more relevant information </li>
+
+<p>  <li>Use the GlobalSecurityService API to obtain the users real names and speak those rather than the userid. </li></p>
+
+<p>  <li>Store the bunny config data in web.config rather than hard-coding bunny details in BunnyConstants class </li></p>
+
+<p>  <li>Allow multiple bunnies to be registered (perhaps with a UI), allow each voice to be separately configured </li></p>
+
+<p>  <li>Make sending of messages to Nabaztag asynchronous </li><br />
+</ul></p>
+
+<p>Additionally - rather than using the eventing service to trigger Brian on build completition events, it might be interesting to write the &quot;Bunny Link&quot; as a windows service and get it to subscribe to the build queue using the same API as demonstrated by my <a href="http://www.woodwardweb.com/vsts/000395.html" target="_blank">Build Wallboard sample</a>.&#160; That way you could make Brian talk when a build was queued or many other things.</p>
+
+<p>If anyone has any questions or would like more details then please drop me a line.</p>
+                                    </div>
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/tfs/000441.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/vsts/" rel="tag">Vsts</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/" rel="tag">tfs</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/tfs2008/" rel="tag">tfs2008</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">No Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-79264" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.lfraile.net" href="http://www.lfraile.net" rel="nofollow">Luis Fraile</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/tfs/000441.html#comment-79264"><abbr class="published" title="2008-07-23T22:41:47+00:00">July 23, 2008 10:41 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(79264, 'Luis Fraile')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Nice hehehe, we musty do something with builds and Multidomo ;)</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-80182" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://team-foundation-server.blogspot.com" href="http://team-foundation-server.blogspot.com" rel="nofollow">Mac Noland</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/tfs/000441.html#comment-80182"><abbr class="published" title="2008-07-28T20:52:07+00:00">July 28, 2008  8:52 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(80182, 'Mac Noland')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>This is great Martin!  If my manager's manager's manager, can approve the spending request, we might give this a shot!  If we do, I'll let you know how it goes.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="441" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-445"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-446"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-9"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=films&amp;limit=20';return false;" rel="tag">films</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/000444.html">Creating a TFS 2008 with SP1 Slipstreamed ISO image</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/000443.html">Visual Studio Team System 2008 SP1 Now Available!</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/podcasting/000442.html">Radio TFS is back with Version Control 101</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/tfs/000441.html">Behind Brian the Build Bunny</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/000440.html">Teamprise 3.1 is now available</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/programming/000439.html">Why Software Estimation is Hard</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/000438.html">Coolest Team System Gadget contest</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/000437.html">Teamprise Case Study: Thomson Reuters</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/000436.html">Last Check-in Date Explained</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/gadgets/000435.html">Brian the Build Bunny Backgrounds</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

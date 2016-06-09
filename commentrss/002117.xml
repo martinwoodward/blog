@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Getting Ubuntu 7.10 working in Microsoft Virtual PC 2007</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html</link>
+    <description><![CDATA[The new "Gutsy Gibbon" version of Ubuntu was officially released this week.&nbsp; While some of the developers at Teamprise use Ubuntu as their primary OS, I personally prefer Windows Vista, however I keep an Ubuntu image around so that I...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-10-19T15:29:43+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Devon+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003277</link>
+    <description>Fantastic tips, I actually had to disable hardware virtualization before I could get anywhere, but that wasn&apos;t the first time that a *nix flavor rejected my BIOS.</description>
+    <dc:date>2007-10-30T06:41:22+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Devon</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Enos+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003278</link>
+    <description>I just attempted virtualizing ubuntu7.10 with virtualPC and encountered exactly the same problems with the mouse and video resolution. Is there &quot;better&quot; virtualization software that would make this easie?</description>
+    <dc:date>2007-11-16T17:47:35+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Enos</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Lane+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003279</link>
+    <description>Thank you for your tips! I found myself lovin&apos; it!</description>
+    <dc:date>2007-11-19T07:35:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Lane</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Rowan+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003280</link>
+    <description>Your help is much appreciated, I can now here and touch.
+
+Cheers.</description>
+    <dc:date>2007-11-19T10:24:19+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Rowan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003281</link>
+    <description>Enos,
+
+As mentioned, VMWare works with Ubuntu no problems.
+
+Martin.</description>
+    <dc:date>2007-11-19T15:16:17+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Dan+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003282</link>
+    <description>Great tips. When editing menu.lst, though, it is better practice to update the Automagic Kernels List portion of the file. Modify either the &quot;default kernel options&quot; or &quot;additional options to use with the default boot option, but not with the alternatives&quot; section. (Follow the comments in menu.lst.) After you&apos;ve made the change, run update-grub to rebuild the boot choices. This method ensures that your custom options will be included when you install kernel updates.
+
+Also, instead of removing the usplash package, which breaks a dependency for the ubuntu-desktop metapackage, you can just disable it by removing the &quot;splash&quot; kernel option from menu.lst.</description>
+    <dc:date>2007-11-23T20:26:48+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Dan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Greg+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003283</link>
+    <description>Wow, Martin!  Very detailed yet simple instructions!  Thanks you for taking the time to share with us linux noobs.</description>
+    <dc:date>2007-11-30T19:10:34+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Greg</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Gabriel Lozano-Moran+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003284</link>
+    <description>&gt; Sometime when I do this,
+&gt; when the UI comes into view
+&gt; and the mouse is captured
+&gt; but it is like the virtual
+&gt; PC is only showing the top
+&gt; left hand corner of the screen
+
+I had the same problem. On the boot screen remove the &quot;splash&quot; from the options as well.</description>
+    <dc:date>2007-12-13T21:06:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Gabriel Lozano-Moran</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by J-J+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003285</link>
+    <description>Linux newbie here!
+I tried and I guess I did exactly as adviced, but I can&apos;t get the mouse to work.
+
+It worked for a while between liveboot and installation.
+
+Maybe I do somethin wrong but I can&apos;t figure out what.
+
+Cheers,
+J-J</description>
+    <dc:date>2007-12-20T12:55:06+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>J-J</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Matt Jacoby+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003286</link>
+    <description>Thanks alot! You definitely saved me a lot of time fixing that mouse issue. 
+
+Happy Holidays!</description>
+    <dc:date>2007-12-24T06:09:46+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Matt Jacoby</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Greg Ritter+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003287</link>
+    <description>Thanks for the great article. I wrote a similar article at http://arcanecode.wordpress.com/2007/10/18/installing-ubuntu-710-under-virtual-pc-2007/
+today that describes my experience with getting Ubuntu 7.10 running on Virtual PC 2007; I ran into a couple of additional issues not described here, so my steps are slightly different.</description>
+    <dc:date>2008-01-11T18:13:47+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Greg Ritter</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mark+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003288</link>
+    <description>Great info, and thanks Dan for the very helpful comment too!
+
+Between this and the ArcaneCode blog entry, I got things working nicely...</description>
+    <dc:date>2008-01-31T01:05:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Mark</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Sebastian N+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003289</link>
+    <description>Thank You so much! Really appreciate it.</description>
+    <dc:date>2008-02-03T14:31:45+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Sebastian N</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by vipul +00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003290</link>
+    <description>thanks for ur help till now 
+but plz extend ur courtesy to help me install my wifi card and 
+use it for internet access</description>
+    <dc:date>2008-02-28T14:40:20+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>vipul </dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Gary+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003291</link>
+    <description>Still not got networkin working after following the steps. It worked on the Live CD though without any configuration :( - any help?</description>
+    <dc:date>2008-03-02T08:12:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Gary</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by lpameifk3+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003292</link>
+    <description>Very awesome tips.  The &apos;tulip&apos; in the modules got my network working like a champ.
+
+I wonder why they force you to click &quot;Wired&quot; connection.  Shouldn&apos;t that be the default?</description>
+    <dc:date>2008-03-04T17:48:14+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>lpameifk3</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by karl+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003293</link>
+    <description>For networking all I selected was manual and dhcp and everything connected fine through my host pc through a router and a cable modem.The remove Usplash has totally destroyed my linux installation gives this error and wont load.
+Kernel Panic - not syncing: VFS unable to mount root fs on unknown wn-block(0,0) so thanks for that now I have to reinstall it.</description>
+    <dc:date>2008-03-15T21:25:25+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>karl</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Alex+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003294</link>
+    <description>Thanks a billion! I&apos;ve tried a whack of different web guides on how to get Ubuntu working on VPC2007 -- yours actually works!</description>
+    <dc:date>2008-04-10T01:48:42+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Alex</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Craig+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003295</link>
+    <description>I have tried the i8042.noloop command everywhere it just wont work, i have managed to install ubuntu already on the virtual hd, but the mouse will not work, what ever i try</description>
+    <dc:date>2008-04-18T21:57:47+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Craig</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Craig+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003296</link>
+    <description>I have tried the i8042.noloop command everywhere it just wont work, i have managed to install ubuntu already on the virtual hd, but the mouse will not work, what ever i try</description>
+    <dc:date>2008-04-18T21:58:06+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Craig</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Milind+00:00</title>
+    <link>http://www.woodwardweb.com/programming/getting_ubuntu.html#c003297</link>
+    <description>Hey Martin 
+i have setup ubuntu 7.10 in virtual pc 2007 with win xp sp1 as host.
+Can you tell me step by step instructions to access the ubuntu from my host using telnet? Because right now i cannot telnet to my virutal pc ubuntu ?</description>
+    <dc:date>2008-12-19T05:41:21+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2117</comments>   
+    <dc:creator>Milind</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>My Pint Sized TFS Proxy</title>
+    <link>http://www.woodwardweb.com/vsts/my_pint_sized_t.html</link>
+    <description><![CDATA[ I use Team Foundation Server over the end of a VPN connection to from my house in the UK over to Teamprise HQ back in Champaign, IL.&nbsp; Using Team Foundation Server the performance has been satisfactory, but I've always...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-08-23T11:25:19+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Chris Menegay+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/my_pint_sized_t.html#c003097</link>
+    <description>This makes no sense. If you are the only person using the proxy, the files on the proxy should always be the same as the ones in your workspace. Is there something you failed to mention? Is the proxy hit by others?</description>
+    <dc:date>2006-08-26T22:53:07+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2007</comments>   
+    <dc:creator>Chris Menegay</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/my_pint_sized_t.html#c003098</link>
+    <description>Chris,
+
+As I mentioned, the performance improvements are most when doing a full clean get of files that I have (mostly) already got before.  I do this more than most people as I often create a new workspace to do some work in and that requires me to re-get a branch of the source tree into my machine again.  
+
+Like you say, using the TFS Proxy for the &quot;average&quot; single remote user won&apos;t speed things up for them in day to day use becuase (as you point out) the majority of their calls will not be achieving as cache hit.
+
+Funnily enough, I&apos;m currently writing a service that lives on the TFS proxy that subscribes to the check-in event and pre-caches that version of the file at the remote proxy server.  That will then help users on remote sites as it will increase the likelyhood of cache hits.
+
+Cheers,
+
+Martin.</description>
+    <dc:date>2006-08-29T12:15:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2007</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Buck Hodges+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/my_pint_sized_t.html#c003099</link>
+    <description>A really simple, though less elegant approach, to pre-loading the cache is to have a workspace on some machine (maybe even the proxy itself) and run &quot;tf get&quot; in it every 15 minutes via the Windows task scheduler.  To save space, you could delete the files in the workspace each time, since the server keeps track of the workspace &quot;has.&quot;</description>
+    <dc:date>2006-09-01T16:33:30+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2007</comments>   
+    <dc:creator>Buck Hodges</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Chris Rathjen+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/my_pint_sized_t.html#c003100</link>
+    <description>I have something similar to what Buck described on one of our local proxies. I think it might even be set to locally delete everything under the workspace root, as he suggested (that box&apos;s drive isn&apos;t particularly huge).
+
+Of course, where that falls short compared to your approach is the fact that it has to compute the get every time - yours should be able to avoid that - and it has to have the superset of everyone&apos;s mappings, which means that get can be VERY expensive.
+
+The only downside of yours that I can think of is that if you *don&apos;t* want every file on the server, you&apos;d have to filter the items from the events through the mappings you care about - somehow. But, you probably have the whole tree mapped *somewhere* amongst your various workspaces so I doubt that applies to you.
+
+I think, somewhere between the two, lies a great power tool or product idea...</description>
+    <dc:date>2006-09-13T18:26:03+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2007</comments>   
+    <dc:creator>Chris Rathjen</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

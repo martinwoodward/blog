@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Netgear and Creative announce standalone Skype phones</title>
+    <link>http://www.woodwardweb.com/technology/creative_announ.html</link>
+    <description>Like buses, you wait for ages then two come along at once. Following a wave of Skype announcements at CES, Creative have announced a new Skype phone. Unlike previous offerings, this one does not need a computer to make Skype...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-01-12T10:12:00+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/technology/creative_announ.html#c000348</link>
+    <description>A wifi Skype phone, how cool!!</description>
+    <dc:date>2006-01-16T11:30:01+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=166</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

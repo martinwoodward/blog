@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Martin Woodward: TFS Top Tip #7 - Determine when TFS Trial Edition will expire</title>
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/styles-site.css" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/MartinWoodward" />
+
+<link rel="start" href="http://www.woodwardweb.com/" title="Martin Woodward" />
+<link rel="prev" href="http://www.woodwardweb.com/personal/000259.html" title="One Space or Two?" />
+
+<link rel="next" href="http://www.woodwardweb.com/vsts/000261.html" title="Teamprise V1.1 Released" />
+
+
+
+
+   <script type="text/javascript" src="http://www.woodwardweb.com/mt-site.js"></script>
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/vsts/000260.html">
+<dc:title>TFS Top Tip #7 - Determine when TFS Trial Edition will expire</dc:title>
+<dc:description><![CDATA[Like a lot of early adopters, we installed the Team Foundation Server 180&ndash;day trial edition so that we could use is right away while we were waiting for our TFS license key. Anyway, if you want to know what the...]]></dc:description>
+<dc:creator>Martin</dc:creator>
+<dc:date>2006-07-06T11:31:17+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+
+<!-- Google tracker -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-71966-1";
+urchinTracker();
+</script>
+
+</head>
+
+<body>
+
+<div id="banner">
+	<H1><SPAN CLASS="textVersion">Martin Woodward</SPAN></H1>
+</div>
+
+<div id="content">
+
+<div class="blog">
+
+<div id="menu">
+<a href="http://www.woodwardweb.com/personal/000259.html">&laquo; One Space or Two?</a> |
+
+<a href="http://www.woodwardweb.com/">Martin Woodward</a>
+| <a href="http://www.woodwardweb.com/vsts/000261.html">Teamprise V1.1 Released &raquo;</a>
+
+</div>
+
+</div>
+
+
+<div class="blog">
+
+<h2 class="date">July 06, 2006</h2>
+
+<div class="blogbody">
+
+<h3 class="title">TFS Top Tip #7 - Determine when TFS Trial Edition will expire</h3>
+
+<p>Like a lot of early adopters, we installed the Team Foundation Server 180&ndash;day trial edition so that we could use is right away while we were waiting for our TFS license key.</p>
+<p>Anyway, if you want to know what the installation date of your TFS server is then the easiest way is to type the following command in a Visual Studio 2005 command prompt:-</p>
+<p><code>tf changeset 1 /server:http://servername:8080 /noprompt</code></p>
+<p>Where <em>servername</em> is your TFS instance.&nbsp; I get the following result:-</p>
+<p><code>Changeset: 1<br />User: tfssetup<br />Date: 20 February 2006 19:57:54<br />Comment:<br />Items:<br />&nbsp; add $/</code></p>
+<p>During the installation, Team Foundation Server creates the root branch of the source tree and this is the first changeset on your system.&nbsp; If you add 180 days to this date then you get when your trial will expire.</p>
+<p>Now, in my case it is even more confusing.&nbsp; I installed the Release Candidate of TFS on February 20th, and then upgraded to the 180&ndash;day trial edition of TFS on March 21st.&nbsp; A fact that I can tell from my installation log file located on the Team Foundation Server in the following directory:-</p>
+<p><code>C:\Program Files\Microsoft Visual Studio 2005 Team Foundation Server\Microsoft Visual Studio 2005 Team Foundation Server - ENU\Logs</code></p>
+<p>Which date will be used for the expiry of my server?&nbsp; Well at the moment I have no idea, so I am assuming the earlier of these dates will be used just in case&hellip;</p>
+<p>However, for most people who went straight to the 180&ndash;day trial, the command at the top of this post will give them the date of initial install.</p>
+
+<a name="more"></a>
+
+
+<span class="posted">Posted by Martin at July  6, 2006 11:31 AM
+
+<br /></span>
+
+</div>
+
+
+                     
+
+                                          <div id="comments" class="comments">
+                        <div class="comments-content">
+                                                      <h3 class="comments-head">Comments</h3>
+                           <a id="c001353"></a>
+                           <div class="comment-body" id="comment-1353">
+                              <div class="comment-content">
+                                 <p>Here's an on-line date calculator to help calculate the 180 days:</p>
+
+<p><a href="http://www.timeanddate.com/date/dateadd.html" rel="nofollow">http://www.timeanddate.com/date/dateadd.html</a><br />
+</p>
+                              </div>
+                              <p class="comment-footer">
+                                 Posted by:
+                                 <a href="http://devmatter.blogspot.com/" rel="nofollow">Jeff B.</a>  |
+                                 <a href="#comment-1353">July  7, 2006 05:15 PM</a>
+                              </p>
+                           </div>
+                                                      
+                           <a id="c001764"></a>
+                           <div class="comment-body" id="comment-1764">
+                              <div class="comment-content">
+                                 <p>I have Beta 3 Refresh installed.  My first changeset date is November 23, 2005.  How do I determine when the install will expire?  It's obviously not 180 days, as it's nearing 270 now.   Is there an expiry?  Am I going to be in trouble in 4 days (270 days from install)?</p>
+                              </div>
+                              <p class="comment-footer">
+                                 Posted by:
+                                 <a href="http://www.geekswithblogs.com/optikal" rel="nofollow">Dylan</a>  |
+                                 <a href="#comment-1764">August 16, 2006 10:21 PM</a>
+                              </p>
+                           </div>
+                                                      
+                           <a id="c001770"></a>
+                           <div class="comment-body" id="comment-1770">
+                              <div class="comment-content">
+                                 <p>Dylan.  Honestly, I've no idea when (or if) Beta 3 Refresh expires.  It is very possible that they didn't put any timebomb code into the early Beta's - but I have no idea.</p>
+
+<p>My honest recommendation would be to migrate to the RTM version ASAP.  By sticking on Beta 3R you are exposed to a large number of bugs that the product team know about and have fixed.  Also - none of the Team System Extensions currently available will work against Beta 3R.</p>
+                              </div>
+                              <p class="comment-footer">
+                                 Posted by:
+                                 <a href="http://www.woodwardweb.com" rel="nofollow">Martin</a>  |
+                                 <a href="#comment-1770">August 17, 2006 09:15 AM</a>
+                              </p>
+                           </div>
+                                                      
+                           <a id="c002322"></a>
+                           <div class="comment-body" id="comment-2322">
+                              <div class="comment-content">
+                                 <p>TFS takes expiration date from registry.</p>
+                              </div>
+                              <p class="comment-footer">
+                                 Posted by:
+                                 smart  |
+                                 <a href="#comment-2322">August 30, 2006 04:59 PM</a>
+                              </p>
+                           </div>
+                           
+                        </div>
+
+                         
+                        <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="260" />
+                           
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-head">Post a comment</h2>
+                              
+                              <div class="comments-body">
+                              
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">Name:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">Email Address:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          Remember personal info?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">Comments: </label>
+                                    <textarea id="comment-text" name="text" rows="10" cols="30"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="Preview" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="Post" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+
+
+
+
+
+
+</div>
+</div>
+
+
+<div id="links">
+
+<div class="sidetitle">
+Sections
+</div>
+<div class="side">
+
+<a href="http://www.woodwardweb.com/" TITLE="Martin Woodward">Home</a><br />
+<a href="http://www.woodwardweb.com/Books/">Books (8)</a><br />
+<a href="http://www.woodwardweb.com/Buddies/">Buddies (10)</a><br />
+<a href="http://www.woodwardweb.com/Dotnet/">Dotnet (26)</a><br />
+<a href="http://www.woodwardweb.com/Films/">Films (2)</a><br />
+<a href="http://www.woodwardweb.com/Gadgets/">Gadgets (10)</a><br />
+<a href="http://www.woodwardweb.com/Java/">Java (11)</a><br />
+<a href="http://www.woodwardweb.com/Personal/">Personal (38)</a><br />
+<a href="http://www.woodwardweb.com/Photos/">Photos (2)</a><br />
+<a href="http://www.woodwardweb.com/Podcasting/">Podcasting (9)</a><br />
+<a href="http://www.woodwardweb.com/Programming/">Programming (23)</a><br />
+<a href="http://www.woodwardweb.com/Sandbox/">Sandbox (2)</a><br />
+<a href="http://www.woodwardweb.com/Software/">Software (8)</a><br />
+<a href="http://www.woodwardweb.com/TFS Top Tip/">TFS Top Tip (7)</a><br />
+<a href="http://www.woodwardweb.com/Teamprise/">Teamprise (24)</a><br />
+<a href="http://www.woodwardweb.com/Technology/">Technology (31)</a><br />
+<a href="http://www.woodwardweb.com/Vsts/">Vsts (79)</a><br />
+<a href="http://www.woodwardweb.com/Web Design/">Web Design (2)</a><br />
+<a href="http://www.woodwardweb.com/Web Sites/">Web Sites (20)</a><br />
+<a href="http://www.woodwardweb.com/Work/">Work (5)</a><br />
+
+</div>
+
+<div class="sidetitle">
+Search
+</div> 
+<div class="side">
+<form method="get" action="http://www.woodwardweb.com/mt/mt-search.cgi">
+<input type="hidden" name="IncludeBlogs" value="2" />
+<label for="search" accesskey="4">Search this site:</label><br />
+<input id="search" name="search" size="20" /><br />
+<input type="submit" value="Search" />
+</form>
+</div>
+
+<div class="syndicate">
+<a href="http://feeds.feedburner.com/MartinWoodward">Syndicate this site (XML)</a>
+<br/><br/>
+<a href="http://clustrmaps.com/counter/maps.php?url=http://www.woodwardweb.com" id="clustrMapsLink"><img src="http://clustrmaps.com/counter/index2.php?url=http://www.woodwardweb.com" border=0 alt="Locations of visitors to this page"onError="this.onError=null; this.src='http://www.meetomatic.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/'">
+</a>
+</div>
+
+<div class="syndicate">
+<a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights" /></a><br />
+This weblog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+</div>
+
+
+</div>
+
+<br clear="all" />
+
+
+</body>
+</html>

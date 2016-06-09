@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS 2010 API By Example: Introduction</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_2010_api_by.html</link>
+    <description>As I am exploring programming against TFS 2010, I usually build myself up a collection of code snippets that show me how to do various discrete operations. I thought it would be useful for me to post some of these...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-08-26T15:21:52+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Mango+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_2010_api_by.html#c003469</link>
+    <description>can we use delegate authentication when we use the api in  a web application in TFS2010?</description>
+    <dc:date>2009-09-23T14:05:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2224</comments>   
+    <dc:creator>Mango</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Peter+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_2010_api_by.html#c003470</link>
+    <description>Your last sentence is a cliffhanger -- looking very much forward to a post on how to dell if a server you want to talk to is in the new or old style!</description>
+    <dc:date>2009-10-03T04:24:46+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2224</comments>   
+    <dc:creator>Peter</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_2010_api_by.html#c003471</link>
+    <description>@Peter - thanks!  I&apos;ve put that series of posts on hold for a while because from conversations I&apos;ve had with the team some of the names of those classes will be changing before Beta 2.  When Beta 2 comes out I&apos;ll re-do this post and start the series back up again.
+
+Many thanks,
+
+Martin.</description>
+    <dc:date>2009-10-05T15:52:49+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2224</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by molafish+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_2010_api_by.html#c004171</link>
+    <description>Don&apos;t forget about this :D
+
+The RC is out now, so don&apos;t worry about Beta 2,</description>
+    <dc:date>2010-02-20T03:56:39+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2224</comments>   
+    <dc:creator>molafish</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

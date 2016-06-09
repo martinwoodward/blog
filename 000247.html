@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Martin Woodward: TFS Top Tip #5 - What to do if you lock yourself out of your repository</title>
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/styles-site.css" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/MartinWoodward" />
+
+<link rel="start" href="http://www.woodwardweb.com/" title="Martin Woodward" />
+<link rel="prev" href="http://www.woodwardweb.com/gadgets/000246.html" title="Didigo USB memory key with ePaper display" />
+
+
+
+
+
+   <script type="text/javascript" src="http://www.woodwardweb.com/mt-site.js"></script>
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/000247.html">
+<dc:title>TFS Top Tip #5 - What to do if you lock yourself out of your repository</dc:title>
+<dc:description><![CDATA[This tip is a follow up from my rather less helpful post &ldquo;Don&rsquo;t Do That&rdquo; where I discussed the &ldquo;Inherit security settings&rdquo; option in the security settings tab for the Source Control Explorer when talking to Team Foundation Server.&nbsp; The...]]></dc:description>
+<dc:creator>Martin</dc:creator>
+<dc:date>2006-05-19T10:03:47+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+
+<!-- Google tracker -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-71966-1";
+urchinTracker();
+</script>
+
+</head>
+
+<body>
+
+<div id="banner">
+	<H1><SPAN CLASS="textVersion">Martin Woodward</SPAN></H1>
+</div>
+
+<div id="content">
+
+<div class="blog">
+
+<div id="menu">
+<a href="http://www.woodwardweb.com/gadgets/000246.html">&laquo; Didigo USB memory key with ePaper display</a> |
+
+<a href="http://www.woodwardweb.com/">Martin Woodward</a>
+
+</div>
+
+</div>
+
+
+<div class="blog">
+
+<h2 class="date">May 19, 2006</h2>
+
+<div class="blogbody">
+
+<h3 class="title">TFS Top Tip #5 - What to do if you lock yourself out of your repository</h3>
+
+<p><img alt="Inherit security settings option" src="http://www.woodwardweb.com/images/blog/tfs_properties_thumb.png" align="right" border="0" />This tip is a follow up from my rather less helpful post &ldquo;<a href="http://www.woodwardweb.com/vsts/000158.html">Don&rsquo;t Do That</a>&rdquo; where I discussed the &ldquo;Inherit security settings&rdquo; option in the security settings tab for the Source Control Explorer when talking to Team Foundation Server.&nbsp; The issue with this check-box is that if you un-tick it then all the settings for every group on that folder are removed meaning that you have to go through every group and make sure that they have the correct permissions before you press the OK button.&nbsp; Even if you are a project administrator and you un-tick this box and press OK without giving project administrators rights to the folder or file&nbsp;you will not be able to go back and adjust the permissions.</p>
+<p>However, I have found a work around should you be left stranded in this way.&nbsp; If you log in to TFS with the credentials of somebody who is a local administrator on the server then you will be able to view the folder and reset the security permissions.&nbsp; The easiest way to do this is to log on locally to your TFS application tier machine as the TFSSetup user and use the source control explorer&nbsp;on that machine&nbsp;to rectify the problem.&nbsp; Obviously it is not ideal but at least you are not totally stranded.</p>
+<p>Rather embarrassingly, I found this work-around totally by accident while up on stage&nbsp;presenting my recent talk &ldquo;<a href="http://www.woodwardweb.com/vsts/000237.html">Top Ten Tips for Team Foundation Server</a>&rdquo;.&nbsp; My finale was going to be trashing my TFS installation by un-ticking this box and pressing OK without giving the Project Administrators the appropriate rights &ndash; however it wasn&rsquo;t as dramatic as I&rsquo;d planned.&nbsp; Turns out that this was because I was also the TFSSetup user on the VPC I was using as the TFS server.&nbsp; At least next time I can make it dramatic&nbsp;and then&nbsp;show folks how to fix it!</p>
+
+<a name="more"></a>
+
+
+<span class="posted">Posted by Martin at May 19, 2006 10:03 AM
+
+<br /></span>
+
+</div>
+
+
+                     
+
+                                          <div id="comments" class="comments">
+                        <div class="comments-content">
+                           
+                        </div>
+
+                         
+                        <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="247" />
+                           
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-head">Post a comment</h2>
+                              
+                              <div class="comments-body">
+                              
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">Name:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">Email Address:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          Remember personal info?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">Comments: </label>
+                                    <textarea id="comment-text" name="text" rows="10" cols="30"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="Preview" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="Post" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+
+
+
+
+
+
+</div>
+</div>
+
+
+<div id="links">
+
+<div class="sidetitle">
+Sections
+</div>
+<div class="side">
+
+<a href="http://www.woodwardweb.com/" TITLE="Martin Woodward">Home</a><br />
+<a href="http://www.woodwardweb.com/Books/">Books (8)</a><br />
+<a href="http://www.woodwardweb.com/Buddies/">Buddies (10)</a><br />
+<a href="http://www.woodwardweb.com/Dotnet/">Dotnet (25)</a><br />
+<a href="http://www.woodwardweb.com/Films/">Films (2)</a><br />
+<a href="http://www.woodwardweb.com/Gadgets/">Gadgets (10)</a><br />
+<a href="http://www.woodwardweb.com/Java/">Java (10)</a><br />
+<a href="http://www.woodwardweb.com/Personal/">Personal (33)</a><br />
+<a href="http://www.woodwardweb.com/Photos/">Photos (2)</a><br />
+<a href="http://www.woodwardweb.com/Podcasting/">Podcasting (8)</a><br />
+<a href="http://www.woodwardweb.com/Programming/">Programming (23)</a><br />
+<a href="http://www.woodwardweb.com/Sandbox/">Sandbox (2)</a><br />
+<a href="http://www.woodwardweb.com/Software/">Software (7)</a><br />
+<a href="http://www.woodwardweb.com/Teamprise/">Teamprise (17)</a><br />
+<a href="http://www.woodwardweb.com/Technology/">Technology (27)</a><br />
+<a href="http://www.woodwardweb.com/Vsts/">Vsts (63)</a><br />
+<a href="http://www.woodwardweb.com/Web Design/">Web Design (2)</a><br />
+<a href="http://www.woodwardweb.com/Web Sites/">Web Sites (19)</a><br />
+<a href="http://www.woodwardweb.com/Work/">Work (5)</a><br />
+
+</div>
+
+<div class="sidetitle">
+Search
+</div> 
+<div class="side">
+<form method="get" action="http://www.woodwardweb.com/mt/mt-search.cgi">
+<input type="hidden" name="IncludeBlogs" value="2" />
+<label for="search" accesskey="4">Search this site:</label><br />
+<input id="search" name="search" size="20" /><br />
+<input type="submit" value="Search" />
+</form>
+</div>
+
+<div class="syndicate">
+<a href="http://feeds.feedburner.com/MartinWoodward">Syndicate this site (XML)</a>
+<br/><br/>
+<a href="http://clustrmaps.com/counter/maps.php?url=http://www.woodwardweb.com" id="clustrMapsLink"><img src="http://clustrmaps.com/counter/index2.php?url=http://www.woodwardweb.com" border=0 alt="Locations of visitors to this page"onError="this.onError=null; this.src='http://www.meetomatic.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/'">
+</a>
+</div>
+
+<div class="syndicate">
+<a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights" /></a><br />
+This weblog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+</div>
+
+
+</div>
+
+<br clear="all" />
+
+
+</body>
+</html>

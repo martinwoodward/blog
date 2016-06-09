@@ -1,0 +1,994 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/">
+<dc:title>Martin Woodward</dc:title>
+<dc:description></dc:description>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <title>Martin Woodward: October 2007 Archives</title>
+
+
+    <link rel="prev" href="http://www.woodwardweb.com/2007/09/" title="September 2007" />
+    <link rel="next" href="http://www.woodwardweb.com/2007/11/" title="November 2007" />
+
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-archive-listing mt-datebased-monthly-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <h1 id="page-title" class="archive-title">October 2007 Archives</h1>
+
+
+
+
+
+                            
+                            <div id="entry-1705" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/tfs_2008_beta_2.html" rel="bookmark">TFS 2008 Beta 2 VPC Expiration Issue (again)</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-29T17:32:45+00:00">October 29, 2007  5:32 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>So, to stop my <a href="http://blogs.msdn.com/jeffbe/archive/2007/10/27/update-on-expiring-vs2008-beta2-vpcs.aspx">Beta 2 VPC image from expiring this week</a>, I thought I'd try out an "upgrade" of one of the VSTS + TFS Beta 2 VPC images to a full copy of Windows Server Enterprise Edition with a retail key (as provided by my MSDN account, that Microsoft kindly supply me as a perk of being a <a href="http://msdn2.microsoft.com/en-gb/teamsystem/bb734814.aspx">Team System MVP</a>).&nbsp; Here are a few observations in case you try to do the same:-</p> <ol> <li>I needed to use a recent copy of the Windows Server 2003 R2 Enterprise Edition media (32-bit).&nbsp; The ISO image I had from my March 2007 MSDN DVD did not work, so I ended up having to use one from September 2007 (number 2939.4 if you are looking).&nbsp; Jeff mentioned that he used the June version which was 2939.3)</li> <li>The setup didn't want to run at first.&nbsp; In the end, I let it perform a bunch of Windows Updates that it had in it's queue, restarted and tried again. This time it worked fine.</li> <li>When completing the upgrade, everything seems to be working fine, apart from the Documents and Reporting nodes are showing with the dreaded "little red crosses".&nbsp; A quick peek in the event log showed that I needed to re-grant the Network Service user rights to the "C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files" directory.&nbsp; A quick right-click and add on the security tab of the Temporary ASP.NET File directory and everything seemed to be ok.</li></ol> <p>Other than those little hiccups - seemed to work ok.&nbsp; Certainly quicker than rebuilding the image from ISO's but still took quite a while (couple of hours including time to install those windows updates).&nbsp; I'll report back here if I find any other issues.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1704" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/update_on_beta.html" rel="bookmark">Update on Beta 2 VPC Premature Expiration</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-29T11:30:27+00:00">October 29, 2007 11:30 AM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><a href="http://blogs.msdn.com/jeffbe/archive/2007/10/27/update-on-expiring-vs2008-beta2-vpcs.aspx">Jeff Beehler has posted an update on the Beta 2 expiration issue</a>.&nbsp; He currently&nbsp;see's three possible alternatives:</p> <ul> <li><strong>Do nothing</strong>: if you don't need to use your VPC for more than an hour or so at at time (for instance for demos), then you can probably tolerate the behavior of the timed out OS.  <li><strong>Upgrade OS to fully licensed version: </strong>if you have access to a fully licensed version of Windows Server, follow the steps above and upgrade the expired OS.&nbsp;  <li><strong>Use new VPC images:</strong> if you can't upgrade the VPC OS and want to continue to use VS2008 / TFS2008 Beta2 on a regular basis, you'll probably want to use the new VPC images which we'll publish early the week of October 29.&nbsp; If you have data in TFS, you'll need to follow the instructions on <a href="http://msdn2.microsoft.com/en-us/library/ms404879%28VS.90%29.aspx">moving TFS servers</a>. </li></ul> <p>Obviously there is a forth, and that is to set keep the date of your host OS machine to before November 1st before firing up this virtual machine - however this can have some issues - I'm not completely sure what the behavior of TFS would be if changesets and work item revisions started appearing before earlier ones on the system - however the fact that Jeff doesn't mention messing with date/times indicates that there might be some issues there.</p> <p>The option I'm going to try is upgrading to a license key from my MSDN subscription - I'll report back how I get on.</p> <p>Anyway - keep an eye on <a href="http://blogs.msdn.com/jeffbe/">Jeff's blog</a> for more details.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-2121" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/personal/speaking_at_mic.html" rel="bookmark">Speaking at Microsoft TechEd Developers 2007 in Barcelona</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-27T00:57:49+00:00">October 27, 2007 12:57 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/personal/speaking_at_mic.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><a href="http://www.microsoft.com/europe/teched-developers"><img height="113" alt="TechEd Developers Registration" src="http://www.woodwardweb.com/WindowsLiveWriter/SpeakingatMicrosoftTechEdDevelopers2007i_D88/clip_image001.gif" width="240" border="0"></a>I'm joining my good friend <a href="http://mcwtech.com/cs/blogs/brianr/">Brian Randell</a> to do a session on Team Build 2008&nbsp;at <a href="http://www.mseventseurope.com/teched/07/developers/content/Pages/Default.aspx">TechEd Developers in Barcelona</a> on November 8th.&nbsp; If you are at TechEd then please do come along -&nbsp;it is shaping up to be a fun talk.&nbsp; If you can't make it to the talk, then I'll be loitering around the Team System Ask The Experts area during other times.&nbsp; Feel free to drop me a line if you want to meet up.</p> <p><strong>TLA316 Code It and Ship It with Team Build 2008<br></strong>Brian Randell , Martin Woodward  <p>This session covers how to define an end-to-end build process using Team System and Team Build 2008. First you'll learn what's new and changed from Team Build 2005. You'll learn how to manage the build, do desktop builds, and how you can setup Team Build to work in a continuous integration environment. You'll then learn how to customize the build process to perform all your build steps including running unit tests, creating custom build actions, generating setup programs and deploying to staging servers. Finally, you'll get a crash course in the new managed API for working with Team Build 2008. <p>Thu Nov 8 09:00 - 10:15 Room 115</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1702" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_14.html" rel="bookmark">TFS Top Tip #14: The only 2 things you need to know when customizing Team Build</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-26T23:09:24+00:00">October 26, 2007 11:09 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>If you are customizing a team build, then there are only two things you need to know to get you started.&nbsp; The rest you can (mostly) figure out from there.</p> <ol> <li>Your build is defined in a file called TFSBuild.proj for your particular Team Build Type.&nbsp; You probably figured that bit out already.&nbsp; The first thing you need to know is that the TFSBuild.proj file inherits most of its logic from a file called Microsoft.TeamFoundation.Build.targets which lives in <br><code>%ProgramFiles%\MSBuild\Microsoft\VisualStudio\TeamBuild\Microsoft.TeamFoundation.Build.targets</code>.<br>If you open this file in Notepad you can see that it is exceptionally well commented.&nbsp; There is no smoke and mirrors with Team Build, if it happens at all then it triggered by this file. Note that you should <strong>never edit the Microsoft.TeamFoundation.Build.targets</strong> file.&nbsp; In Team Build 2008 there are so many hook points provided for you to insert your own logic into the build that you should never need to.&nbsp; Microsoft goes to some rather extreme lengths to ensure backwards compatibility with this file (i.e. a TFSBuild.proj file written with the TFS2005 targets file in mind will work just great with the 2008 targets file).&nbsp; If you modify the targets file, not only are you setting your self up for deployment nightmares but you servicing nightmares as well if you attempt to upgrade to later version or even possibly service packs - don't say I didn't tell you ;-) <li>If you get a bit lost in reading the targets file - the MSDN help for build customizations is pretty good.&nbsp; The best starting point is the page "<a href="http://msdn2.microsoft.com/en-us/library/ms400710(VS.90).aspx">Understanding Team Foundation Build Configuration Files</a>" - however the pages that this links to that I refer to constantly are <a href="http://msdn2.microsoft.com/aa337604(VS.90).aspx">Customizable Team Foundation Build Targets</a> and <a href="http://msdn2.microsoft.com/aa337598(VS.90).aspx">Customizable Team Foundation Build Properties</a>.&nbsp; That said - most of the comments in those MSDN help pages are actually in the targets file itself - just sometimes the property or task you are after is easier to find in the MSDN help.</li></ol>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1701" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/vsts_2008_beta.html" rel="bookmark">VSTS 2008 Beta 2 VPC suffers from Premature Expiration</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-25T22:03:10+00:00">October 25, 2007 10:03 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/vsts_2008_beta.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>If you are/were planning on using that Beta 2 VPC of Team System or TFS that you downloaded after November 1st, then think again.&nbsp; <a href="http://blogs.msdn.com/jeffbe">Jeff Beehler</a> has posted to warn folks that the group have recently discovered that the VPC will expire early due to the timeout in the operating system.&nbsp; See <a href="http://blogs.msdn.com/jeffbe/archive/2007/10/25/vs2008-beta2-vpcs-expiring-prematurely.aspx">Jeff's post</a> for more details.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1700" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/technology/virtual_machine.html" rel="bookmark">Virtual Machine Additions for Linux</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-23T13:25:49+00:00">October 23, 2007  1:25 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/technology/virtual_machine.html#comments">3 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Yesterday, <a href="http://www.microsoft.com/downloads/details.aspx?familyid=bf12642f-77dc-4d45-ae4e-e1b05e0a2674&amp;displaylang=en&amp;tm">Version 2.0 of the Virtual Machine Additions for Linux</a> were released on the Microsoft Download Center.&nbsp; Officially, this provides addition support for Virtual Server 2005 SP1, however I have read reports from the beta program suggesting they may also work under Virtual PC (albeit unsupported).&nbsp; The additions are for RedHat and SuSE based Linux distributions.&nbsp; I tried converting the supplied RPM files into .DEB files for installation in Ubuntu, but the scripts would then get installed specifically test for being installed on a Debian distribution and fail early.&nbsp; If I was feeling adventurous I'd remove these checks and see what happened - but my Linux knowledge is a little sketchy so I'll stick with VMWare for now for heavy duty Ubuntu use until I read about someone clever getting them up and running.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-2117" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/programming/getting_ubuntu.html" rel="bookmark">Getting Ubuntu 7.10 working in Microsoft Virtual PC 2007</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-19T15:29:43+00:00">October 19, 2007  3:29 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comments">21 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>The new "Gutsy Gibbon" version of <a href="http://www.ubuntu.com">Ubuntu</a> was officially <a href="http://www.ubuntu.com/news/ubuntu710">released</a> this week.&nbsp; While some of the developers at Teamprise use Ubuntu as their primary OS, I personally prefer Windows Vista, however I keep an Ubuntu image around so that I can quickly test any new UI code I write in an alternate OS.&nbsp; Getting Ubuntu to install in VMWare is pretty trivial - the standard installation seems to work just fine.&nbsp; However getting it to work in Microsoft Virtual PC is a little more complicated - the various tricks are located in various forum and bug posts around the web that I can never find when I need them so I am collating them here for my own use later - hopefully you may also find them useful.&nbsp; Please bear in mind that I know enough about Linux to be dangerous rather than useful, so this may not be the "best" way - however it is my way ;-)</p>
+        </div>
+
+
+
+        <div class="asset-more-link">
+            Continue reading <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#more" rel="bookmark">Getting Ubuntu 7.10 working in Microsoft Virtual PC 2007</a>.
+        </div>
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1698" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/teamprise/arcasttv_team_f.html" rel="bookmark">ARCast.TV - Team Foundation Server Down Under and Cross-Platform</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-18T11:25:30+00:00">October 18, 2007 11:25 AM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><a href="http://channel9.msdn.com/ShowPost.aspx?PostID=348628"><img height="176" alt="ARCast.TV TFS Down Under" src="http://www.woodwardweb.com/WindowsLiveWriter/ARC.TVTeamFoundationServerDownUnderandCr_A0A5/arccast_35ac6107-2cc6-480e-a5fb-51723ab926dd.jpg" width="263" align="right"></a> Ron Jacobs has posted up an <a href="http://channel9.msdn.com/shows/ARCast_with_Ron_Jacobs">ARCast</a> video from <a href="http://www.microsoft.com/australia/teched07/index.aspx">TechEd 2007 in Australia</a>.&nbsp; About 3 minutes in he does a <a href="http://channel9.msdn.com/ShowPost.aspx?PostID=348628">nice interview with an organization using Team Foundation Server in a cross-platform environment</a>.&nbsp; While I spend a lot of time talking about the <a href="http://www.woodwardweb.com/vsts/000169.html">performance of TFS over the WAN</a> and extending the benefits of Team Foundation Server outside of Visual Studio by using the <a href="http://www.teamprise.com/">Teamprise Clients</a> as well as the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=87E1FFBD-A484-4C3A-8776-D560AB1E6198&amp;displaylang=en">Microsoft MSSCCI provider</a>(pronounced "Miss-key") - it is always nice to hear it from real people in a real company....</p> <p>Anyway - if you have a spare 15 minutes, <a href="http://channel9.msdn.com/ShowPost.aspx?PostID=348628">go take a look</a>.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1697" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/hit_by_a_bus_us.html" rel="bookmark">&quot;Hit By a Bus&quot; Use Cases</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-15T16:56:59+00:00">October 15, 2007  4:56 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>One of the great things about version control is that it covers a number of "Hit by a Bus" scenarios.&nbsp; I say this with an air of joviality, but each actual use case is never a nice one.&nbsp; I once worked with a guy, who supposedly once worked at a place where the "Hit By a Bus" scenario was a real one.&nbsp; Mostly you need them when a member of the team has had to leave at short notice because <a href="http://www.woodwardweb.com/vsts/000143.html">they quit</a>/ were sacked / had a family emergency etc. Anyway, there are a number of times when you thank your chosen deity for the fact that you implemented a decent source control system giving you one less thing to worry about, especially when times are tough.&nbsp; Today, I <a href="http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=2271260&amp;SiteID=1&amp;mode=1">ran across a question on the MSDN forums</a> where someone was having one of these days and as usual, it is time to dust off the <a href="http://msdn2.microsoft.com/en-us/library/z51z7zy0(VS.80).aspx">tf command line</a>, or fire up the <a href="http://www.attrice.info/cm/tfs/index.htm">excellent TFS Sidekicks from Attrice</a> - in <a href="http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=2271260&amp;SiteID=1&amp;mode=1">this example</a> it was to query history with a filter on the user that you want the history for.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1696" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/dotnet/aspnet_mvc_fram.html" rel="bookmark">ASP.NET MVC Framework</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-07T00:18:11+00:00">October  7, 2007 12:18 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/dotnet/aspnet_mvc_fram.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Some interesting news seems to be coming out of the <a href="http://www.altnetconf.com/">Alt.NET Conference in Austin</a>.&nbsp;&nbsp;I'd got a few IM's from folks at the conference talking about Scott Guthrie's talk.&nbsp;According to <a href="http://codebetter.com/blogs/jeffrey.palermo/default.aspx">Jeff Palermo</a>'s blog, <a href="http://weblogs.asp.net/scottgu/">Scott Guthrie</a> <a href="http://codebetter.com/blogs/jeffrey.palermo/archive/2007/10/05/altnetconf-scott-guthrie-announces-asp-net-mvc-framework-at-alt-net-conf.aspx">showed off a new ASP.NET MVC Framework</a>.&nbsp; This looks very interesting and might well tempt me back into ASP.NET development.&nbsp; I really like parts of ASP.NET but that whole postback / viewstate thing just confused me.&nbsp; I was used to doing web applications the hard way and having this abstracted away from me into a semi-winform like representation of a web page just got in my way when building sites.&nbsp; It also made them pretty hard to unit test.</p> <p>Having used (and even written) a few MVC frameworks in the past, I'm really interested to see what it is all about.&nbsp; Looking forward for some more&nbsp;information soon.&nbsp; <a href="http://codebetter.com/blogs/jeffrey.palermo/archive/2007/10/05/altnetconf-scott-guthrie-announces-asp-net-mvc-framework-at-alt-net-conf.aspx">Jeff's post</a> has a few tantilising details which make me thing this is exactly what I want from ASP.NET.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-2113" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/personal/do_you_come_her.html" rel="bookmark">Do you come here often?</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-06T23:02:40+00:00">October  6, 2007 11:02 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/personal/do_you_come_her.html#comments">3 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>An odd smirk followed by "You come here a lot" is not what you want to hear when at the customs&nbsp;desk waiting to come into the US.&nbsp; Immediately I expected the worst - an armed&nbsp;SWAT team absailing from the ceiling to lead me off into a quiet room for interrogation&nbsp;while the&nbsp;snapping sounds of latex gloves ricochet out of the distant bowels of the customs hall.</p> <p>When travelling for work, you get asked some interesting and always flummoxing questions&nbsp;on your way in to a country&nbsp;- one particular favorite appears to be "When did you last come to the United States", the other more boring question is "what is the purpose of your visit to the United States, Business? - what kind of business?".&nbsp; After 8 hours sat on a plane cursing myself for choosing <a href="http://www.woodwardweb.com/personal/000171.html">chicken over beef again</a>&nbsp;- the questions at customs always seem to throw me.&nbsp; So much so that as I stand in line for hours waiting to have questions fired at me by&nbsp;the seriously grumpy immigration official, I prepare answers to all the questions I have had before so that I don't freeze during my passport stamping/fingerprinting session.</p> <p>However, this particular incident did not start well.&nbsp; The person in front of me was obviously not familiar with customs procedures and had even more difficulty than me in coming up with plausible answers to strangely suprising questions.&nbsp; Then I made matters worse because I waited to be called. Usually not waiting to be called is a shoutable offence. But in this particular case, unbeknown to&nbsp;me,&nbsp;I was expected to go forwards without being called.&nbsp; In the end I got shouted at&nbsp;for my hesitation&nbsp;- not a good start.</p> <p>Then came the swipe of the passport and some tapping at the computer followed by an evil smirk and the words&nbsp;"you come here a lot."&nbsp; I was expecting a question - this was clearly a statement of fact.&nbsp; The lack of a question mark left me in a spin - should I respond to a statement?&nbsp; What was that visible (if fleeting)&nbsp;display of emotion all about? - I'd never seen&nbsp;such a brazen display of humanity&nbsp;at&nbsp;the customs booth before.&nbsp; This was clearly an un-usual encounter and it clearly&nbsp;wasn't going to&nbsp;end well.</p> <p>The official simply said "I did you the last 3 times".&nbsp; He didn't bother asking any questions - he just stamped my passport,&nbsp;performed the fingerprinting/photo taking dance without another word (though when I knew to swap fingers and then look at the camera at the correct time it raised another smile).&nbsp; He then sent me on my way.&nbsp;&nbsp;As I look at my passport&nbsp;now&nbsp;I can see that of the 12&nbsp;US entrance stamps in my&nbsp;couple-year-old passport, his writing is on 7 of them.&nbsp; </p> <p>However, the encounter&nbsp;left me&nbsp;stunned - this was almost a conversation (albeit a little one-sided).&nbsp; As I left the customs hall I nearly thought of a clever response but by then the opportunity had been lost.</p> <p>At least I have a new scenario to mull over for the next time I find myself waiting hours to get through customs.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1694" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vista/admin_command_p.html" rel="bookmark">&quot;Admin Command Prompt Here&quot; Registry Hack</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-05T02:19:51+00:00">October  5, 2007  2:19 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vista/admin_command_p.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><img height="120" alt="admin_prompt" src="http://www.woodwardweb.com/WindowsLiveWriter/AdminCommandPromptHereRegistryHack_11DDE/admin_prompt_f841d23a-58de-4099-84ac-ebf5c7f2f44a.png" width="256"> A neat (if not well known) feature of Windows Vista is the built in ability to do a "Command Prompt Here" by selecting a folder, keeping the shift key down and right clicking on the folder.&nbsp; While this is neat, I've sometimes found myself needing an Command Prompt with full administrative privileges.</p> <p>I stumbled upon an excellent tip from Randy Rants on how to get an <a href="http://www.randyrants.com/2007/02/vista_tip_eleva.html">elevated command prompt here</a>.&nbsp; </p> <p>Personally, I like my admin command prompts to have a dark red background color so that I remember it is running with elevated privileges (see my <a href="http://www.woodwardweb.com/vista/000349.html">previous post if you want a admin command prompt icon</a> using this meme).&nbsp; Anyway, my registry entires look something like:-</p> <blockquote><code> <p>Windows Registry Editor Version 5.00  <p>[HKEY_CLASSES_ROOT\Directory\shell\runas]<br>@="Admin Comm&amp;and Prompt here"<br>"NoWorkingDirectory"=""<br>"Extended"=""  <p>[HKEY_CLASSES_ROOT\Directory\shell\runas\command]<br>@="cmd.exe /t:4f /k \"pushd %L &amp;&amp; title Command Prompt\""</p></code></blockquote> <p>Have fun - usual warnings about registry hacking and backing up etc. According to Randy this should also work for XP users who run with non-Admin privileges.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+
+
+                            <div class="content-nav">
+                                <a href="http://www.woodwardweb.com/2007/09/">&laquo; September 2007</a> |
+                                <a href="http://www.woodwardweb.com/">Main Index</a> |
+                                <a href="http://www.woodwardweb.com/archives.html">Archives</a>
+                                | <a href="http://www.woodwardweb.com/2007/11/">November 2007 &raquo;</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-1741"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-1742"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-8"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=radiotfs&amp;limit=20';return false;" rel="tag">radiotfs</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2010/05/">May 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/04/">April 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/03/">March 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/02/">February 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/11/">November 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_2008_beta_2.html">TFS 2008 Beta 2 VPC Expiration Issue (again)</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/update_on_beta.html">Update on Beta 2 VPC Premature Expiration</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/personal/speaking_at_mic.html">Speaking at Microsoft TechEd Developers 2007 in Barcelona</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_14.html">TFS Top Tip #14: The only 2 things you need to know when customizing Team Build</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/vsts_2008_beta.html">VSTS 2008 Beta 2 VPC suffers from Premature Expiration</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/technology/virtual_machine.html">Virtual Machine Additions for Linux</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/programming/getting_ubuntu.html">Getting Ubuntu 7.10 working in Microsoft Virtual PC 2007</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/arcasttv_team_f.html">ARCast.TV - Team Foundation Server Down Under and Cross-Platform</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/hit_by_a_bus_us.html">&quot;Hit By a Bus&quot; Use Cases</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/aspnet_mvc_fram.html">ASP.NET MVC Framework</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

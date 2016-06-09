@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Apple Boot Camp</title>
+    <link>http://www.woodwardweb.com/vsts/apple_boot_camp.html</link>
+    <description><![CDATA[My company (Teamprise)&nbsp;develop a plugin for Eclipse to talk to Microsoft Team Foundation Server (TFS).&nbsp; We also have a stand-alone client and a command line client &ndash; all of which run on Windows, Mac and Unix.&nbsp; As well as helping...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-04-05T15:26:59+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/apple_boot_camp.html#c001638</link>
+    <description>One of the most interesting bits about Boot Camp (for me anyway) is the resolution between a BIOS loader (Windows XP and Vista *still* use BOIS), and EFI (Extensible Firmware Interface) which is the model for the interface between operating systems and platform firmware that Macs use.
+
+However, a former Starbucks barista poked fun at the idea of booting Windows anywhere you don&apos;t have to. &quot;We have this shorthand term we use when a customer wants a nonfat decaf latte; we call the drink a &quot;why bother&quot;. This is kinda like one of those&quot;.</description>
+    <dc:date>2006-04-06T11:41:38+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1049</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

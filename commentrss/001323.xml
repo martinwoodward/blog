@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS on the Mainframe</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_on_the_main.html</link>
+    <description>I’m playing with a lot of cool stuff at the moment as we get ready for Team Foundation Server 2010, but accessing TFS from the Mac or inside Eclipse doesn’t give me as many of those “it shouldn’t work that...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-09-23T21:07:26+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Luis Fraile+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_on_the_main.html#c002087</link>
+    <description>Great work Martin :) Congratulations.</description>
+    <dc:date>2009-09-27T17:05:36+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1323</comments>   
+    <dc:creator>Luis Fraile</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Wayne+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_on_the_main.html#c002088</link>
+    <description>An idea whose time has come.   It appears to me, though, that IBM is working toward buiding eclipse interfaces with the mainframe.  It would be even better if say a java programmer who is also writing mainframe code could actually stay in the eclipse interface and edit, build and deploy his mainframe (yes, even COBOL and Assembler) code without even logging into the mainframe directly.</description>
+    <dc:date>2009-09-28T22:03:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1323</comments>   
+    <dc:creator>Wayne</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

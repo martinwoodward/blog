@@ -1,0 +1,172 @@
+BODY
+{
+	background-color : White;
+	background-repeat : no-repeat;
+	background-attachment : scroll;
+	background-position: top left;
+ 	background-image: url("/images/back.jpg");
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : x-small;
+	color : Black;
+}
+
+A {
+	color : #0000FF;
+	text-decoration : none;	
+}
+
+A:hover, A:active {
+	text-decoration : underline;
+}
+
+#header { 
+	margin-bottom: 0px;
+}
+
+#header H1
+{
+	background-image: url(/images/martin_woodward.gif);
+	background-repeat : no-repeat;
+	background-position : top right;
+	float : right;
+	clear:right;
+	margin-bottom : 10px;
+	height : 25px;
+	width:200px;
+	font-size : 16pt;
+}
+
+SPAN.textVersion
+{
+	display: none;
+}
+
+#breadcrumBar {
+	float: right;
+	margin-bottom: 3px;
+	clear:right;
+}
+
+#breadcrumBar .breadcrum {
+	font-size: 8pt;
+}
+
+#breadcrumBar A {
+	color: Black;
+	text-decoration : none;
+}
+
+#breadcrumBar A:hover {
+	text-decoration : underline;
+}
+
+#mainBody
+{
+	margin-top : 70px;
+	margin-left : 90px;
+/*	float: left;
+	*/
+}
+
+#navbar
+{
+	float: left;
+	position : absolute;
+	top : 70px;
+	left : 10px;
+	width : 125px;
+}
+
+#navbar H3
+{
+	font-size : small;
+	font-weight : normal;
+}
+
+#navbar LI
+{
+	list-style-type : none;
+	font-size : x-small;
+	padding-bottom: 3px;
+}
+
+#navbar LI LI
+{
+	padding-top: 3px;
+	padding-left: 15px;
+	
+}
+
+
+#navbar UL
+{
+	margin : 0px;
+}
+
+.PostTitle
+{
+	font-size:16px;
+	font-weight:bold
+}
+
+.Post
+{
+	margin-bottom:20px;
+	font-size:15px;
+	padding-right:15px;
+	line-height:22px;
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : x-small;
+	color : Black;	
+}
+
+.PostFooter
+{
+	margin-bottom:10px;
+	margin-left:0px;
+	color:gray;
+	font-size:10px
+}
+
+#Title
+{
+	font-size:43px;
+	padding-left:0px;
+	padding-top:10px;
+	text-transform:none
+}
+
+#Description
+{
+	padding:0px;
+	padding-top:10px;
+	font-size:12px;
+	font-weight:normal
+}
+
+#main
+{
+	margin:20px;
+	border:1px solid #000;
+	background:#fff;
+	padding:0px 0px 15px 15px
+}
+
+.DateHeader
+{
+	border-bottom:solid 1px #C3CFE5;
+	font-size:18px;
+	text-align:left;
+	margin-top:30px;
+	width:300px;
+	margin-bottom:0px;
+	color:gray;
+	font-weight:bold
+}
+
+#ArchiveLabel{font-weight:bold;font-size:18px}
+
+#Archives{font-size:12px;margin-top:15px}
+
+
+

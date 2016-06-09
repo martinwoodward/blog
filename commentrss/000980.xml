@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Konfabulator Unix Utils</title>
+    <link>http://www.woodwardweb.com/technology/konfabulator_un.html</link>
+    <description>I&apos;ve been a keen user of Konfabulator for a while now. I even paid for a couple of licenses in the pre-Yahoo days. It&apos;s really easy to hack up your own widgets, and I have a strange self-distructive streak that...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-11-08T13:47:09+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by outcast+00:00</title>
+    <link>http://www.woodwardweb.com/technology/konfabulator_un.html#c001540</link>
+    <description>Tail.exe is in the W2K3 Resource Kit. 
+
+mmm. spent many an hour watching mail logs scroll by ...</description>
+    <dc:date>2006-03-06T15:52:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=980</comments>   
+    <dc:creator>outcast</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

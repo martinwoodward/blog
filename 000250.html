@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Martin Woodward: Configuring CruiseControl.NET for CodePlex</title>
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/styles-site.css" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/MartinWoodward" />
+
+<link rel="start" href="http://www.woodwardweb.com/" title="Martin Woodward" />
+<link rel="prev" href="http://www.woodwardweb.com/vsts/000249.html" title="Team Foundation Concepts:  The Team Project" />
+
+
+
+
+
+   <script type="text/javascript" src="http://www.woodwardweb.com/mt-site.js"></script>
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/000250.html">
+<dc:title>Configuring CruiseControl.NET for CodePlex</dc:title>
+<dc:description><![CDATA[Apologies for being quiet on the blogging front lately, we&rsquo;ve been busy getting ready for TechEd in Boston next week.&nbsp; I&rsquo;ll soon be able to share some exciting news so stay tuned.&nbsp; One of the areas I have been playing...]]></dc:description>
+<dc:creator>Martin</dc:creator>
+<dc:date>2006-06-07T04:37:08+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+
+<!-- Google tracker -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-71966-1";
+urchinTracker();
+</script>
+
+</head>
+
+<body>
+
+<div id="banner">
+	<H1><SPAN CLASS="textVersion">Martin Woodward</SPAN></H1>
+</div>
+
+<div id="content">
+
+<div class="blog">
+
+<div id="menu">
+<a href="http://www.woodwardweb.com/vsts/000249.html">&laquo; Team Foundation Concepts:  The Team Project</a> |
+
+<a href="http://www.woodwardweb.com/">Martin Woodward</a>
+
+</div>
+
+</div>
+
+
+<div class="blog">
+
+<h2 class="date">June 07, 2006</h2>
+
+<div class="blogbody">
+
+<h3 class="title">Configuring CruiseControl.NET for CodePlex</h3>
+
+<p>Apologies for being quiet on the blogging front lately, we&rsquo;ve been busy getting ready for TechEd in Boston next week.&nbsp; I&rsquo;ll soon be able to share some exciting news so stay tuned.&nbsp; One of the areas I have been playing with in my spare time&nbsp;recently is with <a href="http://www.codeplex.com/">CodePlex</a> &ndash; the new developer community site from Microsoft that used Team Foundation Server for SourceControl and Work Item Tracking.&nbsp; I noticed that the Turtle project had a work item to configure CruiseControl.NET to talk to their project tree so I thought I&rsquo;d quickly describe how to do it here in case anyone else is interested.</p>
+<p>First things first, you&rsquo;ll need to install <a href="http://ccnet.thoughtworks.com/">CruiseControl.NET 1.0</a> on your build server, the <a href="http://download.microsoft.com/download/2/a/d/2ad44873-8ccb-4a1b-9c0d-23224b3ba34c/VSTFClient.img">TFS Client</a> and also the <a href="http://prdownloads.sourceforge.net/vstsplugins/ccnet_vsts_plugin_1_2_0_bin.zip?download">TFS Source Control Block</a> from <a href="http://vstsplugins.sourceforge.net/">VSTSPlugins</a>.&nbsp; (To be honest, you don&rsquo;t actually need to install the TFS Client, you could just copy the <a href="http://vstsplugins.sourceforge.net/index.php/archives/news/2006/11">appropriate assemblies</a> into the CruiseControl server directory).</p>
+<p>Then, you have to configure the source control block (along with your tasks and publishers) in your ccnet.config file.&nbsp; Below is an example:-</p>
+<div style="FONT-SIZE: x-small; FONT-FAMILY: Courier New"><span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">cruisecontrol</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">project</span>&nbsp;<span style="COLOR: red">name</span>="<SPAN style="color: blue">CodeplexExample</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">sourcecontrol</span>&nbsp;<span style="COLOR: red">type</span>="<SPAN style="color: blue">vsts</SPAN>"&nbsp;<span style="COLOR: red">autoGetSource</span>="<SPAN style="color: blue">true</SPAN>"&nbsp;<span style="COLOR: red">applyLabel</span>="<SPAN style="color: blue">false</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">server</span><span style="COLOR: blue">&gt;</span>https://tfs01.codeplex.com<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">server</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">username</span><span style="COLOR: blue">&gt;</span><strong>USERNAME</strong>_cp<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">username</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">password</span><span style="COLOR: blue">&gt;</span><strong>PASSWORD</strong><span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">password</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">domain</span><span style="COLOR: blue">&gt;</span>SND.RNO.GBL<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">domain</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">project</span><span style="COLOR: blue">&gt;</span>$/Foobar<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">project</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">workingDirectory</span><span style="COLOR: blue">&gt;</span>c:\source\Foobar<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">workingDirectory</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">cleanCopy</span><span style="COLOR: blue">&gt;</span>true<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">cleanCopy</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">sourcecontrol</span><span style="COLOR: blue">&gt;</span> <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">tasks</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">msbuild</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">executable</span><span style="COLOR: blue">&gt;</span>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\MSBuild.exe<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">executable</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">workingDirectory</span><span style="COLOR: blue">&gt;</span>c:\source\Foobar\FoorbarConsoleApp<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">workingDirectory</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">projectFile</span><span style="COLOR: blue">&gt;</span>FoorbarConsoleApp.sln<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">projectFile</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">buildArgs</span><span style="COLOR: blue">&gt;</span>/noconsolelogger&nbsp;/p:Configuration=Debug&nbsp;/v:diag<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">buildArgs</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">targets</span><span style="COLOR: blue">&gt;</span>Build<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">targets</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">timeout</span><span style="COLOR: blue">&gt;</span>15<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">timeout</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">logger</span><span style="COLOR: blue">&gt;</span>ThoughtWorks.CruiseControl.MsBuild.XmlLogger,ThoughtWorks.CruiseControl.MsBuild.dll<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">logger</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">msbuild</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">tasks</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">publishers</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>!--&nbsp;Insert&nbsp;publishers&nbsp;here&nbsp;--<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">publishers</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">project</span><span style="COLOR: blue">&gt;</span> <br /><span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">cruisecontrol</span><span style="COLOR: blue">&gt;</span></div>
+<p>Remember to substitute &ldquo;USERNAME&rdquo; and &ldquo;PASSWORD&rdquo; for your appropriate values.&nbsp; Note that your username should be suffixed with _cp.&nbsp; In the example above, I&rsquo;m using the MSBuild Task &ndash; more information on that is available <a href="http://confluence.public.thoughtworks.org/display/CCNET/MsBuild+Task">here</a>.</p>
+<p>Anyway, it all seems to work perfectly.&nbsp; All this has reminded me that I want to fix / improve a few things with the CruiseControl.NET plugin &ndash; better add that to my todo list &ndash; but hopefully it should be good to get people started.</p>
+
+<a name="more"></a>
+
+
+<span class="posted">Posted by Martin at June  7, 2006 04:37 AM
+
+<br /></span>
+
+</div>
+
+
+                     
+
+                                          <div id="comments" class="comments">
+                        <div class="comments-content">
+                           
+                        </div>
+
+                         
+                        <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="250" />
+                           
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-head">Post a comment</h2>
+                              
+                              <div class="comments-body">
+                              
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">Name:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">Email Address:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          Remember personal info?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">Comments: </label>
+                                    <textarea id="comment-text" name="text" rows="10" cols="30"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="Preview" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="Post" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+
+
+
+
+
+
+</div>
+</div>
+
+
+<div id="links">
+
+<div class="sidetitle">
+Sections
+</div>
+<div class="side">
+
+<a href="http://www.woodwardweb.com/" TITLE="Martin Woodward">Home</a><br />
+<a href="http://www.woodwardweb.com/Books/">Books (8)</a><br />
+<a href="http://www.woodwardweb.com/Buddies/">Buddies (10)</a><br />
+<a href="http://www.woodwardweb.com/Dotnet/">Dotnet (25)</a><br />
+<a href="http://www.woodwardweb.com/Films/">Films (2)</a><br />
+<a href="http://www.woodwardweb.com/Gadgets/">Gadgets (10)</a><br />
+<a href="http://www.woodwardweb.com/Java/">Java (10)</a><br />
+<a href="http://www.woodwardweb.com/Personal/">Personal (33)</a><br />
+<a href="http://www.woodwardweb.com/Photos/">Photos (2)</a><br />
+<a href="http://www.woodwardweb.com/Podcasting/">Podcasting (8)</a><br />
+<a href="http://www.woodwardweb.com/Programming/">Programming (23)</a><br />
+<a href="http://www.woodwardweb.com/Sandbox/">Sandbox (2)</a><br />
+<a href="http://www.woodwardweb.com/Software/">Software (7)</a><br />
+<a href="http://www.woodwardweb.com/Teamprise/">Teamprise (18)</a><br />
+<a href="http://www.woodwardweb.com/Technology/">Technology (27)</a><br />
+<a href="http://www.woodwardweb.com/Vsts/">Vsts (66)</a><br />
+<a href="http://www.woodwardweb.com/Web Design/">Web Design (2)</a><br />
+<a href="http://www.woodwardweb.com/Web Sites/">Web Sites (19)</a><br />
+<a href="http://www.woodwardweb.com/Work/">Work (5)</a><br />
+
+</div>
+
+<div class="sidetitle">
+Search
+</div> 
+<div class="side">
+<form method="get" action="http://www.woodwardweb.com/mt/mt-search.cgi">
+<input type="hidden" name="IncludeBlogs" value="2" />
+<label for="search" accesskey="4">Search this site:</label><br />
+<input id="search" name="search" size="20" /><br />
+<input type="submit" value="Search" />
+</form>
+</div>
+
+<div class="syndicate">
+<a href="http://feeds.feedburner.com/MartinWoodward">Syndicate this site (XML)</a>
+<br/><br/>
+<a href="http://clustrmaps.com/counter/maps.php?url=http://www.woodwardweb.com" id="clustrMapsLink"><img src="http://clustrmaps.com/counter/index2.php?url=http://www.woodwardweb.com" border=0 alt="Locations of visitors to this page"onError="this.onError=null; this.src='http://www.meetomatic.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/'">
+</a>
+</div>
+
+<div class="syndicate">
+<a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights" /></a><br />
+This weblog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+</div>
+
+
+</div>
+
+<br clear="all" />
+
+
+</body>
+</html>

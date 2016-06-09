@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Workspace 101: An introduction to TFS Workspaces</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_a.html</link>
+    <description>One of the concepts that people need to understand when they begin to work with Team Foundation Server Version Control is that of the Team Foundation Server (TFS) Workspace. So I thought I would write a series of blog-posts covering...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-02-27T15:54:38+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Greg+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_a.html#c003180</link>
+    <description>Great post... Thanks for taking the time to write this up and I&apos;m looking forward to the reset in this series...
+
+Thanks again.</description>
+    <dc:date>2007-02-27T20:53:52+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2064</comments>   
+    <dc:creator>Greg</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by El Guapo+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_a.html#c003181</link>
+    <description>Great post... subscribed!</description>
+    <dc:date>2007-02-28T15:18:36+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2064</comments>   
+    <dc:creator>El Guapo</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Rajotte+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_a.html#c003182</link>
+    <description>Great overview! Keep them coming.</description>
+    <dc:date>2007-02-28T18:04:05+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2064</comments>   
+    <dc:creator>Martin Rajotte</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by quazy+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_a.html#c003183</link>
+    <description>Thanks for the intro to TFS workspaces.  As a Java developer, I had been really confused it.</description>
+    <dc:date>2007-03-09T13:23:53+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2064</comments>   
+    <dc:creator>quazy</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Hooman+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_a.html#c003184</link>
+    <description>Well done, nice and easy explanation</description>
+    <dc:date>2008-07-25T02:33:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2064</comments>   
+    <dc:creator>Hooman</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Derek Greer+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_a.html#c003185</link>
+    <description>&quot;... if you un-mark a file as read/write, edit it and then do a &quot;Get Latest&quot; on that file then it will not be replaced ...&quot;
+
+I think you meant to say &quot;... if you mark a file ...&quot; (i.e. change a file from read-only to read-write).</description>
+    <dc:date>2008-10-20T23:14:36+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2064</comments>   
+    <dc:creator>Derek Greer</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

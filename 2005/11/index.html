@@ -1,0 +1,915 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/">
+<dc:title>Martin Woodward</dc:title>
+<dc:description></dc:description>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <title>Martin Woodward: November 2005 Archives</title>
+
+
+    <link rel="prev" href="http://www.woodwardweb.com/2005/10/" title="October 2005" />
+    <link rel="next" href="http://www.woodwardweb.com/2005/12/" title="December 2005" />
+
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-archive-listing mt-datebased-monthly-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <h1 id="page-title" class="archive-title">November 2005 Archives</h1>
+
+
+
+
+
+                            
+                            <div id="entry-1475" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/java/howto_configure.html" rel="bookmark">HowTo: Configure SVN+SSH with Subclipse on Windows</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2005-11-27T00:09:34+00:00">November 27, 2005 12:09 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/java/howto_configure.html#comments">36 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><b>Problem:</b><br />
+Use ssh tunnelling to access a Subversion repository using SSH tunneling (i.e. with a subversion repository url of svn+ssh://myservername/myrepo) using the Subclipse subversion integration with Eclipse.  I tried various things and used each of the three interfaces for configuring Subclipse (Window, Preferences..., Team, SVN).  </p>
+
+<p>When I used JavaHL (JNI) I got the following error,  "svn: Can't create tunnel: The system cannot find the file specified."  SVN Command Line gave me a similar error.  Finally the JavaSVN interface (1.0) just did not want to authenticate with my server at all.  Did various searches on Google and couldn't find an answer that worked, just lots of people with a similar problem.  Anyway, the following works for me...</p>
+
+<p><B>Solution:</B><br />
+You need to create an environment variable called "SVN_SSH" that points to an executable file that accepts the same command line arguments as ssh on unix.  I did this by doing the following:-<br />
+<OL><LI>Set up ssh keys.  Not going to cover that here as you can easily Google for that.  You need to end up with your public key on the SVN server and your private key loaded into Paegent locally.</LI><br />
+<LI>Download and installed the excellent <a href="http://tortoisesvn.sourceforge.net/">TortoiseSVN</a> client for Windows.</LI><br />
+<LI>Set the following environment variable (by right-clicking on My Computer, Properties, Advanced, Environment Variables, New):-</p>
+
+<p>Variable name: <code>SVN_SSH</code><br />
+Variable value: <code>C:\\Program Files\\TortoiseSVN\\bin\\TortoisePlink.exe</code></p>
+
+<p>(The "\\" is very important, otherwise it won't work.  Equally, you cannot use the plink.exe that comes with putty as that fires up a command shell window which is really annoying.  The TortoisePlink.exe is a windows implementation of plink that doesn't bring up any UI)<br />
+</LI><br />
+<LI>Configure the Subclipse plugin to use JavaHL (JNI)</LI><br />
+<LI>Restart Eclipse</LI><br />
+<LI>Do a little victory jig (optional)</LI><br />
+</OL><br />
+</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1892" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/personal/google_analysis.html" rel="bookmark">Google Analysis</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2005-11-26T13:39:09+00:00">November 26, 2005  1:39 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><a href="/images/blog/geomap.html" onclick="window.open('/images/blog/geomap.html','popup','width=795,height=495,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); urchinTracker ('/images/traffic_geomap'); return false"><img src="/images/blog/geomap-thumb.gif" width="150" height="93" border="0" alt="GeoMap Location Data" /></a>Well, despite the massive load that Google Analytics took, they have done me proud and are now happily tracking the data from 3 of the sites I look after that I'm most interested in.  This blog, <a href="http://vstsplugins.sourceforge.net" onClick="javascript:urchinTracker ('/outgoing/vstsplugins');">VSTSPlugins</a> and <a href="http://www.vstseclipse.org" onClick="javascript:urchinTracker ('/outgoing/vstseclipse');">VSTSEclipse</a>.</p>
+
+<p>First surprise was that my blog actually gets quite a few hits - significantly more than the other two sites.  While we are only talking 100's in a day, it is still a lot more than I thought - and that doesn't include those people who read all my content using RSS.  I only really write stuff here of interest to myself or when I don't find something in Google and have to work it out.  Anyway, it's nice to have you.  I might pay more attention to my spelling and grammar now that I know people are reading.  </p>
+
+<p>The next surprise was how distributed around the world people where (see a <a href="/images/blog/geomap.html" onclick="window.open('/images/blog/geomap.html','popup','width=795,height=495,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false">screenshot</a> of the very nice GeoMap overlay feature).  Previously I'd assumed that most of the traffic was folks I've worked with before.  While I recognised many of the connecting domains, there are a good few I don't which is nice.</p>
+
+<p>Finally, it was good to see a large firefox population for this blog (just over 30% with the rest of the lion's share going to IE).  I also have a nice spread of OS's including Windows Vista, Mac, Linux, SunOS and the odd splattering of mobile devices.</p>
+
+<p>Anyway, hopefully <a href="http://www.google.com/analytics" onClick="javascript:urchinTracker ('/outgoing/recommend/google_analytics');">Google Analytics</a> will open it's doors again soon for new users so others can benefit from the fantastic data and great UI that it provides.  All for free as well - amazing.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1891" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/dotnet/ready_to_launch.html" rel="bookmark">Ready to Launch Ireland Talk</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2005-11-24T19:39:32+00:00">November 24, 2005  7:39 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>If you had the mis-fortune of hearing me speak at the Belfast launch event for  SQL 2005 / Visual Studio 2005 / Biztalk 2006 this morning then the following links may be of interest:-<UL><LI><a href="http://blogs.msdn.com/robcaron/default.aspx">Rob Caron's Blog</a> - Best place for VSTS related information</LI><br />
+<LI><a href="http://lab.msdn.microsoft.com/teamsystem/">Visual Studio Team System</a> - Official Microsoft pages</LI><br />
+<LI><a href="http://vstsplugins.sourceforge.net/">VSTSPlugins</a> - Open source integrations with VSTS, including the CruiseControl.NET integration demonstrated</LI><br />
+<LI><a href="http://ccnet.thoughtworks.com/">CruiseControl.NET</a> - The Continuous Integration build server</LI><br />
+<LI><a href="http://www.teamprise.com/">Teamprise</a> - Access VSTS from inside Eclipse running on Windows, Mac OS X or Linux</LI><br />
+</UL></p>
+
+<p>Update:  If you are after the times I quoted for VSS vs VSTS then see <a href="http://www.woodwardweb.com/vsts/000169.html">this post.</a></p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1471" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/technology/all_our_base_ar.html" rel="bookmark">All Our Base Are Belong To Google?</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2005-11-16T13:26:26+00:00">November 16, 2005  1:26 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Ok, so I'm probably not the first or the last person to use that sentance.  Anyway, <a href="http://base.google.com">Google Base</a> is responding to requests.  See the <a href="http://googleblog.blogspot.com/2005/11/first-base.html">Google Blog post</a> for more details.  This could develop into a massive tagged, searchable repository or it could just be another Web 2.0 idea that won't stick, filling up with out of date classified adverts, spam and pictures you probably shouldn't look at from work.  </p>
+
+<p>I can see where this fits into the Google master vision of making the worlds information searchable, but I don't quite get it yet.  I didn't get the point of <a href="http://del.icio.us/martinwoodward">del.icio.us</a> for a while and now I use it everyday so I'm no pointer for internet trends.  Anyway, time will tell.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1888" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/web_sites/google_analytic.html" rel="bookmark">Google Analytics</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2005-11-14T17:07:08+00:00">November 14, 2005  5:07 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Google has recently announced it's new <a href="http://www.google.com/analytics/">Analytics</a> service.  I've just added the tracker to this site so we'll see what the data looks like in a few hours.  From all the screen shots it looks pretty nice, will post an update when I see what it thinks to my small site traffic...</p>
+
+<p>Rather than being a <a href="http://www.eightypercent.net/Archive/2005/03/24.html">20% time</a> project, this appears to be the result of Google buying Web Analytics firm <a href="http://www.urchin.com/">Urchin</a> back in March.  Looks like they've done a <a href="http://www.keyhole.com">Keyhole</a> and are now giving away the basic service for free.  In this case to massively bolster Google's AdSense scheme.</p>
+
+<p><B>UPDATE: </B>  As of 20:09 on the 15th November (24 hours after adding the tracking code), still not got any reports to look at in Google Analytics.  I guess that a lot of people signed up for the service yesterday...</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1469" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/team_system_vpc.html" rel="bookmark">Team System VPC Available</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2005-11-14T10:07:24+00:00">November 14, 2005 10:07 AM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Via <a href="http://msmvps.com/joesango/">Joe</a>, the new Team System VPC is now available for download at the MSDN Download Center.  Installing Team System is an education in itself and one of the best ways to learn how all the moving parts hang together.  However it does take a while to install (especially into a VPC).  My record so far is a whole working day for the installation into a shiny new Virtual PC (including Windows 2003 Standard Edition).</p>
+
+<p>If you are wanting a VPC image to have a play with - to do a quick demo, or just try out Team Foundation Server features of Team System then this is for you.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1468" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/web_sites/egoless_program.html" rel="bookmark">Egoless Programming</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2005-11-11T18:40:12+00:00">November 11, 2005  6:40 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/web_sites/egoless_program.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>I colleague of mine, Mike Cooper, just pointed me towards the "<a href="http://news.zdnet.co.uk/business/employment/0,39020648,2111465,00.htm">Ten Commandments of Egoless Programming</a>".  Hopefully not because he thinks I need to heed the advice - but it is always good to think about your own behaviour when revewing and pairing.  Reading the article made me think back to the first code review sessions I've held with people where they often need to take things less personally, but also to some great pairing sessions I've had with people that really adhere to these rules whether they knew they did or not.  I can't help it, I'm in a retrospective mood just lately.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-1885" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/technology/konfabulator_un.html" rel="bookmark">Konfabulator Unix Utils</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2005-11-08T13:47:09+00:00">November  8, 2005  1:47 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/technology/konfabulator_un.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>I've been a keen user of <a href="http://www.konfabulator.com">Konfabulator</a> for a while now.  I even paid for a couple of licenses in the pre-Yahoo days.  It's really easy to hack up your own widgets, and I have a strange self-distructive streak that means I enjoy writing in javascript every now and then.</p>
+
+<p>Today, I've just noticed a load of familiar looking exe files in:-</p>
+
+<p><code>C:\Program Files\Pixoria\Konfabulator\UnixUtils\usr\local\wbin</code></p>
+
+<p>With names like ls.exe, grep.exe, less.exe, curl.exe.  Fire up a command shell and they are (you guessed it) ports of handy little unix utils.  I now feel inspired to write a pretty version of tail for windows...</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+
+
+                            <div class="content-nav">
+                                <a href="http://www.woodwardweb.com/2005/10/">&laquo; October 2005</a> |
+                                <a href="http://www.woodwardweb.com/">Main Index</a> |
+                                <a href="http://www.woodwardweb.com/archives.html">Archives</a>
+                                | <a href="http://www.woodwardweb.com/2005/12/">December 2005 &raquo;</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-1741"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-1742"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-8"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=radiotfs&amp;limit=20';return false;" rel="tag">radiotfs</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2010/05/">May 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/04/">April 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/03/">March 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/02/">February 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/11/">November 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/java/howto_configure.html">HowTo: Configure SVN+SSH with Subclipse on Windows</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/personal/google_analysis.html">Google Analysis</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/ready_to_launch.html">Ready to Launch Ireland Talk</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/technology/all_our_base_ar.html">All Our Base Are Belong To Google?</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/web_sites/google_analytic.html">Google Analytics</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/team_system_vpc.html">Team System VPC Available</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/web_sites/egoless_program.html">Egoless Programming</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/technology/konfabulator_un.html">Konfabulator Unix Utils</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

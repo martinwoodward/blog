@@ -1,0 +1,1291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/vsts/aligning_build.html">
+<dc:title>Aligning Build Numbers with Assembly Versions in TFS2008.</dc:title>
+<dc:description>I like my build numbers to be the same number that my assemblies are versioned with (and my end deliverables).&#160; It just makes things easier to track, that way if I get a bug report in from a customer I...</dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2008-02-05T11:19:38+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/vsts/upgrading_from.html" title="Upgrading from TFS 2008 Trial to TFS 2008 Full" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/dotnet/ddd_is_coming_t.html" title="DDD is coming to Ireland" />
+    
+    <title>Aligning Build Numbers with Assembly Versions in TFS2008. - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-1242" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Aligning Build Numbers with Assembly Versions in TFS2008.</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author">Martin Woodward</span> on <abbr class="published" title="2008-02-05T11:19:38+00:00">February  5, 2008 11:19 AM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comments">13 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>I like my build numbers to be the same number that my assemblies are versioned with (and my end deliverables).&#160; It just makes things easier to track, that way if I get a bug report in from a customer I can look at the version and easily look at the label in source control to see what code that included. In all deliverables provided to the customer, we always output the version obtained from the current assembly somewhere at the start of any diagnostic information, that way you can easily tell what version they are on and instantly track this back.&#160; This all helps to make it easy for bugs to be filed against the correct version and reported in which version they have been fixed (using the nice integration between Team Build and the Work Item tracking portion of TFS).</p>  <p>People are often surprised that this feature does not work &quot;out the box&quot; with Team Build, so I thought I would just take the time to document how I made this work for us internally.&#160; As you'll be able to see, in TFS2008 all the basic hooks are provided for us to support this way of working.</p>  <p>Firstly, our .NET version numbering uses a slightly different scheme to our Java version numbering.&#160; In our Java products, the &quot;build number&quot; portion of the version number is actually the <a href="http://www.woodwardweb.com/vsts/000329.html">changeset number of TFS at that point in time</a>.&#160; In .NET there are 4 components to a typical assembly version number (1.0.1234.5678) and the maximum value for each number is 65535.&#160; Our production TFS server is currently at changeset 7698 which means that we would get about 6 years out of such a build numbering scheme for .NET - that would be perfectly satisfactory if you had a changeset epoch after each major release (so you would reset the build number to be current changeset - 7698 if we did a major version today).&#160; However Team Build needs a unique name for each build - using a changeset based approach risks having two builds with the same build number.&#160; So rather than do a changeset based system, I decided to make the .NET build numbers be a straight-forward incrementing number. I rely of the default functionality of Team Build to create a label for that build number to track the number back to version control.&#160; The incrementing number value is stored in a file on the default drop location for the build.</p>  <p>Another thing that I should explain is that I don't personally like the &quot;standard&quot; Microsoft way of versioning assemblies as:-</p>  <blockquote>   <p>&lt;Major&gt;.&lt;Minor&gt;.&lt;Build&gt;.&lt;Service&gt;</p> </blockquote>  <p>To me, it reads much easier as:-</p>  <blockquote>   <p>&lt;Major&gt;.&lt;Minor&gt;.&lt;Service&gt;.&lt;Build&gt;</p> </blockquote>  <p>Where &lt;Build&gt; is the number that increments every time a build is performed.&#160; As far as I am concerned, this difference is mostly cosmetic as it doesn't change the way the CLR resolves the assembly versions, however feel free to correct me in the comments if I am talking rubbish.</p>  <p>So - onto how we accomplish this.&#160; Firstly, in TFS2008 there is a convenient target for you to override to generate your custom build numbers called &quot;BuildNumberOverrideTarget&quot;.&#160; The important thing is that each build number must be unique, therefore a good rule of thumb is to use something like BuildDefinitionName_1.0.0.1234.&#160; Inside the BuildNumberOverrideTarget you simply set &quot;BuildNumber&quot; property to be what you want.&#160; Here is ours:-</p>  <p>   <pre class="xml" name="code">&lt;PropertyGroup&gt; 
+  &lt;VersionMajor&gt;1&lt;/VersionMajor&gt; 
+  &lt;VersionMinor&gt;0&lt;/VersionMinor&gt; 
+  &lt;VersionService&gt;0&lt;/VersionService&gt; 
+  &lt;VersionBuild&gt;0&lt;/VersionBuild&gt; 
+&lt;/PropertyGroup&gt;
+&lt;Target Name=&quot;BuildNumberOverrideTarget&quot;&gt; 
+  &lt;!-- Create a custom build number, matching the assembly version --&gt;      
+  &lt;Message Text=&quot;Loading last build number from file &amp;quot;$(DropLocation)\buildnumber.txt&amp;quot;&quot; /&gt; 
+  &lt;IncrementingNumber NumberFile=&quot;$(DropLocation)\buildnumber.txt&quot;&gt; 
+    &lt;Output TaskParameter=&quot;NextNumber&quot; PropertyName=&quot;VersionBuild&quot; /&gt; 
+  &lt;/IncrementingNumber&gt; 
+  &lt;PropertyGroup&gt; 
+    &lt;BuildNumber&gt;$(BuildDefinitionName)_$(VersionMajor).$(VersionMinor).$(VersionService).$(VersionBuild)&lt;/BuildNumber&gt; 
+  &lt;/PropertyGroup&gt; 
+  &lt;Message Text=&quot;Build number set to &amp;quot;$(BuildNumber)&amp;quot;&quot; /&gt;  
+&lt;/Target&gt;</pre>
+</p>
+
+<p>The first thing I do is call a quick custom task I wrote that increments the build number stored in the passed file.&#160; I wanted to do this while keeping a lock on the file itself in case two builds tried to update the same file at the same time.&#160; We then take this new number and build the BuildNumber based upon that value.&#160; The code for the Incrementing Number task is very simple and is given below:-</p>
+
+<div style="border-right: 1px solid; border-top: 1px solid; overflow: auto; border-left: 1px solid; width: 98%; line-height: 90%; border-bottom: 1px solid; height: 300px">
+  <pre><span style="color: blue">using</span> System; 
+<span style="color: blue">using</span> System.IO; 
+<span style="color: blue">using</span> Microsoft.Build.Framework; 
+<span style="color: blue">using</span> Microsoft.Build.Utilities; 
+
+<p><span style="color: blue">namespace</span> Teamprise.Tasks <br />
+{ <br />
+    <span style="color: gray">/// &lt;summary&gt;</span> <br />
+    <span style="color: gray">///   A simple task to increment the number stored in a passed file.</span> <br />
+    <span style="color: gray">/// &lt;/summary&gt;</span> <br />
+    <span style="color: blue">public</span> <span style="color: blue">class</span> IncrementingNumber : Task <br />
+    { <br />
+        <span style="color: blue">public</span> <span style="color: blue">override</span> <span style="color: blue">bool</span> Execute() <br />
+        { <br />
+            NextNumber = IncrementNumber(); <br />
+            <span style="color: blue">return</span> <span style="color: maroon">true</span>; <br />
+        } <br />
+        <span style="color: blue">public</span> <span style="color: blue">int</span> IncrementNumber() <br />
+        { <br />
+            <span style="color: blue">using</span> (FileStream fs = <span style="color: blue">new</span> FileStream(NumberFile, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None)) <br />
+            { <br />
+                StreamReader reader = <span style="color: blue">new</span> StreamReader(fs); </p>
+
+<p>                <span style="color: blue">long</span> pos = <span style="color: maroon">0</span>; <br />
+                String line = reader.ReadLine(); </p>
+
+<p>                <span style="color: green">// Ignore comments in file</span> <br />
+                <span style="color: blue">while</span> (line != <span style="color: blue">null</span> &amp;&amp; line.StartsWith(<span style="color: maroon">&quot;#&quot;</span>)) <br />
+                { <br />
+                    pos = pos + line.Length + System.Environment.NewLine.Length; <br />
+                    line = reader.ReadLine(); <br />
+                } </p>
+
+<p>                <span style="color: blue">int</span> number = -<span style="color: maroon">1</span>; <br />
+                <span style="color: blue">if</span> (line != <span style="color: blue">null</span>) <br />
+                { <br />
+                    number = Int32.Parse(line); <br />
+                } <br />
+                NextNumber = number + <span style="color: maroon">1</span>; </p>
+
+<p>                <span style="color: green">// Rewind the file stream back to the beginning of the number part.</span> <br />
+                fs.Position = pos; </p>
+
+<p>                StreamWriter writer = <span style="color: blue">new</span> StreamWriter(fs); <br />
+                writer.WriteLine(NextNumber.ToString()); <br />
+                writer.Flush(); <br />
+                writer.Close(); <br />
+            } <br />
+            <span style="color: blue">return</span> NextNumber; <br />
+        } <br />
+        [Required] <br />
+        <span style="color: blue">public</span> <span style="color: blue">string</span> NumberFile { <span style="color: blue">get</span>; <span style="color: blue">set</span>; } <br />
+        [Output] <br />
+        <span style="color: blue">public</span> <span style="color: blue">int</span> NextNumber { <span style="color: blue">get</span>; <span style="color: blue">set</span>; } <br />
+    } <br />
+}</pre><br />
+</div></p>
+
+<p>You compile this code into an assembly of your choice that lives alongside the TFSBuild.proj file in the build configuration folder in source control and is this loaded using the UsingTask call at the begging of your MSBuild project, i.e.</p>
+
+<div style="line-height: 90%">
+  <pre><span style="color: blue">&lt;</span><span style="color: maroon">UsingTask</span> <span style="color: red">TaskName</span>=&quot;<span style="color: blue">Teamprise.Tasks.IncrementingNumber</span>&quot; 
+           <span style="color: red">AssemblyFile</span>=&quot;<span style="color: blue">Teamprise.Tasks.dll</span>&quot; /<span style="color: blue">&gt;</span></pre>
+</div>
+
+<p>The next thing that we have to do is to take the new version and force this into the assemblyinfo files.&#160; Personally, I prefer the AssemblyInfo files stored in source control to have a certain well defined number for each release branch (i.e. 1.0.0.0), and make it the build server that versions them.&#160; Some people like to check these back into source control - if you do that, be sure to check them in with the special comment of &quot;***NO_CI***&quot; to ensure that the check-in does not trigger any CI builds potentially putting you into an infinite loop of building.</p>
+
+<p>So, we modify our assembly version files after they have been downloaded from source control using a technique borrowed from <a href="http://richardsbraindump.blogspot.com/2007/07/versioning-builds-with-tfs-and-msbuild.html">Richard Banks</a>, our interpretation of this is given below:-</p>
+
+<div style="line-height: 90%">
+  <pre><span style="color: blue">&lt;</span><span style="color: maroon">ItemGroup</span><span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">AssemblyInfoFiles</span> <span style="color: red">Include</span>=&quot;<span style="color: blue">$(SolutionRoot)\**\assemblyinfo.cs</span>&quot; /<span style="color: blue">&gt;</span> 
+<span style="color: blue">&lt;</span>/<span style="color: maroon">ItemGroup</span><span style="color: blue">&gt;</span>   
+<span style="color: blue">&lt;</span><span style="color: maroon">Target</span> <span style="color: red">Name</span>=&quot;<span style="color: blue">AfterGet</span>&quot;<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span>!-- Update all the assembly info files with generated version info --<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">Message</span> <span style="color: red">Text</span>=&quot;<span style="color: blue">Modifying AssemblyInfo files under &amp;quot;$(SolutionRoot)&amp;quot;.</span>&quot; /<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">Attrib</span> <span style="color: red">Files</span>=&quot;<span style="color: blue">@(AssemblyInfoFiles)</span>&quot; <span style="color: red">Normal</span>=&quot;<span style="color: blue">true</span>&quot; /<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">FileUpdate</span> <span style="color: red">Files</span>=&quot;<span style="color: blue">@(AssemblyInfoFiles)</span>&quot;                                 
+              <span style="color: red">Regex</span>=&quot;<span style="color: blue">AssemblyVersion\(&amp;quot;.*&amp;quot;\)\]</span>&quot;                 
+              <span style="color: red">ReplacementText</span>=&quot;<span style="color: blue">AssemblyVersion(&amp;quot;$(VersionMajor).$(VersionMinor).$(VersionService).$(VersionBuild)&amp;quot;)]</span>&quot; /<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">FileUpdate</span> <span style="color: red">Files</span>=&quot;<span style="color: blue">@(AssemblyInfoFiles)</span>&quot; 
+              <span style="color: red">Regex</span>=&quot;<span style="color: blue">AssemblyFileVersion\(&amp;quot;.*&amp;quot;\)\]</span>&quot; 
+              <span style="color: red">ReplacementText</span>=&quot;<span style="color: blue">AssemblyFileVersion(&amp;quot;$(VersionMajor).$(VersionMinor).$(VersionService).$(VersionBuild)&amp;quot;)]</span>&quot; /<span style="color: blue">&gt;</span> 
+  <span style="color: blue">&lt;</span><span style="color: maroon">Message</span> <span style="color: red">Text</span>=&quot;<span style="color: blue">AssemblyInfo files updated to version &amp;quot;$(VersionMajor).$(VersionMinor).$(VersionService).$(VersionBuild)&amp;quot;</span>&quot; /<span style="color: blue">&gt;</span> 
+<span style="color: blue">&lt;</span>/<span style="color: maroon">Target</span><span style="color: blue">&gt;</span></pre>
+</div>
+
+<p>As you can see, we are making use of the custom Attrib task that is provided by the essential <a href="http://msbuildtasks.tigris.org/">MSBuild Community Tasks</a> to set the files to read/write and then we are calling the MSBuild Community Task FileUpdate to do a couple of regular expression search replaces on the appropriate parts of the files.</p>
+
+<p>And that's about all that needs to be done.&#160; Now our builds have nice incrementing numbers that have the version number included that is the same as the assembly info files.</p>
+<link href="/css/SyntaxHighlighter.css" type="text/css" rel="stylesheet" /></link><script language="javascript" src="/js/shCore.js"></script><script language="javascript" src="/js/shBrushCSharp.js"></script><script language="javascript" src="/js/shBrushXml.js"></script><script language="javascript">
+
+<p>dp.SyntaxHighlighter.ClipboardSwf = '/js/clipboard.swf';<br />
+dp.SyntaxHighlighter.HighlightAll('code');</script></p>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/aligning_build.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/vsts/" rel="tag">Vsts</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/" rel="tag">tfs</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/tfs2008/" rel="tag">tfs2008</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">13 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-1966" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Andrew Fry</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1966"><abbr class="published" title="2008-10-09T10:26:00+00:00">October  9, 2008 10:26 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1966, 'Andrew Fry')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hi Richard,</p>
+
+<p>This is excellent and exactly what i've been looking for as we used to do this process with NAnt and now are migrating to TF Build.</p>
+
+<p>A couple of questions:</p>
+
+<p>You don't checkout or checkin the buildnumber.txt file.  So where does this live?  In the $(DropLocation), but where is this?</p>
+
+<p>My buildnumber.txt sits alongside my TFSBuild.proj file and i have to check it out in the BuildNumberOverrideTarget, however this is causing me problems as this is called before the 'BeforeGet' or any of the get targets so the file is not actually there!</p>
+
+<p>Cheers,<br />
+Andy</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1967" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Martin Woodward</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1967"><abbr class="published" title="2008-10-09T10:38:24+00:00">October  9, 2008 10:38 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1967, 'Martin Woodward')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>The Drop location is the network folder than all the builds get copied to when they have finished being built ready for staging.  Therefore the buildnumber.txt is actually not under version control.</p>
+
+<p>However I am not completely happy with this scenario.</p>
+
+<p>If you store your buildnumber.txt file alongside the TFSBuild.proj file then Team Build will actually get that file for you as part of the bootstrap process.  It actually downloads everything in folder that the TFSBuild.proj file lives (but doesn't download things in sub-folder by default).  Therefore you will have it in BeforeGet.  </p>
+
+<p>You will at some point obviously want to check this file in at some point (probably in BeforeGet or AfterGet).  When you do this check-in (by doing an exec of the TFS command line "tf /checkin", but sure to check-in with a comment of "***NO_CI***" to ensure that the check-in didn't trigger another CI build which would put you in a recursive build loop.</p>
+
+<p>Hope that helps,</p>
+
+<p>Martin.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1968" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Romain Prieto</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1968"><abbr class="published" title="2008-10-14T03:52:48+00:00">October 14, 2008  3:52 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1968, 'Romain Prieto')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hi,</p>
+
+<p>I completely agree on using an incremented number at the end of the version number! But how should it be called to avoid confusion with TFS's whole <em>"build number"</em>? I'll go with <em>"revision suffix"</em> for the rest of this comment...</p>
+
+<p>So, with the same idea in mind, our approach to this was slightly different. In <em>BuildNumberOverrideTarget</em>, we call a custom task just like you do, except that it doesn't read the revision suffix from a file and write it back. Instead it queries the <em>BuildStore</em>, gets the biggest existing suffix for that build definition, and adds 1.</p>
+
+<p>A loop on the existing build data can give us this information quite easily:</p>
+
+<pre>
+------------------------------------------
+using Microsoft.TeamFoundation.Client;
+using Microsoft.TeamFoundation.Build.Proxy;
+...
+TeamFoundationServer server = TeamFoundationServerFactory.GetServer(this.TfsUrl);
+BuildStore store = (BuildStore)server.GetService(typeof(BuildStore));
+BuildData[] buildList = store.GetListOfBuilds(this.TfsProject, this.TfsBuildType);
+foreach (BuildData data in buildList)
+{
+   // just find the biggest revision suffix in use
+   // by looking at the end of each data.BuildNumber
+}
+------------------------------------------
+</pre>
+
+<p>That's it we have the new revision suffix, and we can use it when overriding the build number.</p>
+
+<p>What do you think about this approach?<br />
+We haven't been using it for long but it seems to work fine for the moment.</p>
+
+<p>Cheers</p>
+
+<p>Romain</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1969" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Abhishek Bagchi</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1969"><abbr class="published" title="2009-01-05T08:22:15+00:00">January  5, 2009  8:22 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1969, 'Abhishek Bagchi')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hi I successfully implemented the concept of incrementing revision number  but I am not able to checkin the Files.</p>
+
+<p>I am using following commands</p>
+
+<p></p>
+
+<p>but the TF.exe command failed and exites with 100 code</p>
+
+<p>Please help me</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1970" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.woodwardweb.com" href="http://www.woodwardweb.com" rel="nofollow">Martin Woodward</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1970"><abbr class="published" title="2009-01-05T10:02:43+00:00">January  5, 2009 10:02 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1970, 'Martin Woodward')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Personally I do not like the build process to check in files that it modifies.  However - to figure out what is going wrong in your case I would take a look at the BuildLog.txt from the build as that will contain the error message from tf.exe</p>
+
+<p>Good luck,</p>
+
+<p>Martin.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1971" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">niall</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1971"><abbr class="published" title="2009-03-10T17:42:04+00:00">March 10, 2009  5:42 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1971, 'niall')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>sorry I didn't stick in the actual error message it is, the error I get is <br />
+error MSB4067: The element  beneath element  is unrecognized.</p>
+
+<p>I could be to do with the version of TeamBuild i.e. I'm using 2005.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1972" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">niall</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1972"><abbr class="published" title="2009-03-10T18:21:35+00:00">March 10, 2009  6:21 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1972, 'niall')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>sorry I'll try this again, the TeamBuild will not pick up the BuildNumber property.</p>
+
+<p>here's the error<br />
+error MSB4067: The element @BuildNumber@ beneath element @PropertyGroup@ is unrecognized.</p>
+
+<p>I'm using TeamBuild 2005.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1973" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">tfs novice</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1973"><abbr class="published" title="2009-06-05T21:11:47+00:00">June  5, 2009  9:11 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1973, 'tfs novice')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I'm implementing this on TFS 2008 but I'm getting error MSB4036: The "Attrib" task was not found.  Thanks in advance for your help. Below is the tail end of the BuildLog.txt:</p>
+
+<pre>
+------------------------------------------
+Done building target "CoreGet" in project "TFSBuild.proj".
+Target "AfterGet" in file "C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\BuildType\TFSBuild.proj" from project "C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\BuildType\TFSBuild.proj":
+Task "Message"
+  Modifying AssemblyInfo files under "C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\Sources".
+Done executing task "Message".
+C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\BuildType\TFSBuild.proj(252,5): error MSB4036: The "Attrib" task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is "public" and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with  in the project file, or in the *.tasks files located in the "C:\WINDOWS\Microsoft.NET\Framework\v3.5" directory.
+Done building target "AfterGet" in project "TFSBuild.proj" -- FAILED.
+Done Building Project "C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\BuildType\TFSBuild.proj" (EndToEndIteration target(s)) -- FAILED.
+
+<p>Build FAILED.</p>
+
+<p>"C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\BuildType\TFSBuild.proj" (EndToEndIteration target) (1) -><br />
+(AfterGet target) -> <br />
+  C:\Documents and Settings\svc-alv-tfs-svc\Local Settings\Temp\POC_TeamBuild_WDP\POC\BuildType\TFSBuild.proj(252,5): error MSB4036: The "Attrib" task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is "public" and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with  in the project file, or in the *.tasks files located in the "C:\WINDOWS\Microsoft.NET\Framework\v3.5" directory.</p>
+
+<p>    0 Warning(s)<br />
+    1 Error(s)</p>
+
+<p>Time Elapsed 00:00:01.96<br />
+------------------------------------------<br />
+</p></pre>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1974" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">tfs novice</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1974"><abbr class="published" title="2009-06-05T21:23:11+00:00">June  5, 2009  9:23 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1974, 'tfs novice')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>The text from the log I posted was cut off.  Here's another try...</p>
+
+<p>error MSB4036: The "Attrib" task was not found.<br />
+Check the following: <br />
+1.) The name of the task in the project file is the same as the name of the task class. <br />
+2.) The task class is "public" and implements the Microsoft.Build.Framework.ITask interface. <br />
+3.) The task is correctly declared with  in the project file, or in the *.tasks files located in the "C:\WINDOWS\Microsoft.NET\Framework\v3.5" directory.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1975" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">tfs novice</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1975"><abbr class="published" title="2009-06-11T01:21:41+00:00">June 11, 2009  1:21 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1975, 'tfs novice')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Figured it out...</p>
+
+<p>I missed the part about installing MSBuild Community Tasks.  All is well after I installed it and added this to TFSBuild.proj:</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1976" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">sliderhouserules</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1976"><abbr class="published" title="2009-06-11T17:35:29+00:00">June 11, 2009  5:35 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1976, 'sliderhouserules')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Attrib is part of the MSBuild Community Tasks project...</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1977" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">sliderhouserules</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1977"><abbr class="published" title="2009-06-11T18:37:04+00:00">June 11, 2009  6:37 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1977, 'sliderhouserules')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Oops, hadn't refreshed yet today when I replied there... missed your post right before mine.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1978" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Nene</span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/aligning_build.html#comment-1978"><abbr class="published" title="2009-09-22T19:42:48+00:00">September 22, 2009  7:42 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1978, 'Nene')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Done executing task "Get".<br />
+Task "SetBuildProperties" skipped, due to false condition; ( '$(GetVersion)' != '$(SourceGetVersion)' ) was evaluated as ( 'C87748' != 'C87748' ).<br />
+Done building target "CoreGet" in project "TFSBuild.proj".<br />
+Target "AfterGet" in file "C:\MyAccount_Build\BuildType\TFSBuild.proj" from project "C:\MyAccount_Build\BuildType\TFSBuild.proj":<br />
+Task "Message"<br />
+  Modifying AssemblyInfo files under 'C:\MyAccount_Build\Sources' and 'C:\MyAccount_Build\BuildType'.<br />
+Done executing task "Message".<br />
+Using "Attrib" task from assembly "C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll".<br />
+Task "Attrib"<br />
+Done executing task "Attrib".<br />
+Using "FileUpdate" task from assembly "C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll".<br />
+Task "FileUpdate"<br />
+C:\MyAccount_Build\BuildType\TFSBuild.proj : error : Object reference not set to an instance of an object.<br />
+Done executing task "FileUpdate" -- FAILED.<br />
+Done building target "AfterGet" in project "TFSBuild.proj" -- FAILED.<br />
+Done Building Project "C:\MyAccount_Build\BuildType\TFSBuild.proj" (EndToEndIteration target(s)) -- FAILED.</p>
+
+<p>Build FAILED.<br />
+Can someone let me know where I went wrong.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="1242" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-836"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-837"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/changeset_comme.html">Changeset comments are editable in TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_on_the_main.html">TFS on the Mainframe</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/speaking_at_the.html">Speaking at the Virtual Team System Users Group</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/podcasting/radio_tfs_on_te.html">Radio TFS on Team System 2010 First Impressions</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/hosted_tfs_for.html">Hosted TFS for BizSpark Companies</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_2010_api_by.html">TFS 2010 API By Example: Introduction</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/codeplex_open_s.html">CodePlex Open Source Wiki Engine</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/ed_blankenship.html">Ed Blankenship on Using TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/case_study_igat.html">Case Study: iGate standardizing on TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/slotting_into_t.html">Slotting into TFS 2010</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

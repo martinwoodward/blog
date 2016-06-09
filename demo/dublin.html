@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Dublin Traffic Cameras</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+img.campic
+{
+	height:288;
+	width:384;
+	margin-top:5px;
+	margin-left:5px;
+}
+</style>
+<script src="http://dev.virtualearth.net/mapcontrol/v4/mapcontrol.js"></script>
+<script language="JavaScript">
+<!--
+
+var map = null;
+var layerid = 1;
+
+var currentPos = new VELatLong(53.345632,-6.251907);
+	
+function GetMap()
+{
+	Msn.Drawing.Graphic.CreateGraphic = function(f,b) {
+          if (document.all) return new Msn.Drawing.VMLGraphic(f,b);
+          else {
+            var d = new RegExp("Firefox/(.*)").exec(navigator.userAgent);
+            if(d[1] && parseFloat(d[1]) >= 1.5)
+                  return new Msn.Drawing.SVGGraphic(f,b)
+            throw new Msn.Drawing.Exception(L_GraphicsInitError_Text)
+          }
+        };
+
+
+	map = new VEMap('myMap');
+	map.LoadMap(currentPos, 14 , "r", false);
+	
+	AddDataLayer( 'dublin_webcam.xml', 'webcam.gif' );
+
+//	var pin1 = new VEPushpin(
+//			1, 
+//		new VELatLong(53.35593053, -6.26512527), 
+//		"webcam.gif", 
+//		"Dorset Street / Frederick Street", 
+//		"http://www.dublintraffic.com/Site0Camera2.jpg"
+//	);
+//	map.AddPushpin(pin1);
+
+	VEPushpin.ShowDetailOnMouseOver = false;
+	VEPushpin.OnMouseOverCallback = function(y, x, title, details)
+	{
+		if ((y + 400) > window.document.body.clientWidth)
+		{
+			y = window.document.body.clientWidth - 400;
+		}
+		if ((x + 300) > window.document.body.clientHeight)
+		{
+			x = window.document.body.clientHeight - 300;
+		}
+		
+		
+		webcamPic.style.top = x;
+		webcamPic.style.left = y;
+		webcamPic.style.visibility = "visible";
+		webcamPic.innerHTML = "<IMG CLASS=\"campic\" SRC=\"" + details + "\" BORDER=\"0\" ALIGN=\"center\" /><br/>"
+		webcamTitle.style.top = x + 272;
+		webcamTitle.style.left = y;
+		webcamTitle.style.visibility = "visible";
+		webcamTitle.innerHTML = unescape(title);
+	}
+	
+//	map.AttachEvent("onclick", OnMapClick);
+
+} 
+
+function hideWebcam()
+{
+	webcamPic.style.visibility="hidden";
+	webcamTitle.style.visibility="hidden";
+}
+	  
+ function AddDataLayer( dataSource, dataIcon )
+ {
+	var veLayerSpec = new VELayerSpecification();
+	veLayerSpec.Type = VELayerType.GeoRSS;
+	veLayerSpec.ID = layerid;
+	veLayerSpec.LayerSource = dataSource;
+	veLayerSpec.Method = 'get';
+	veLayerSpec.IconUrl = dataIcon;
+//	veLayerSpec.FnCallback = onFeedLoad;
+	map.AddLayer(veLayerSpec);
+	layerid++;
+ }
+
+	    
+   function OnMapClick(e)
+   {
+      alert("Location" + e.view.LatLong.Latitude + "," + e.view.LatLong.Longitude);
+   }
+
+// -->
+</script>
+</head>
+
+<body onLoad="GetMap();">
+  <div onClick="hideWebcam();" id='myMap' style="position:relative; width:100%; height:100%"></div>
+  <div onClick="hideWebcam();" id="webcamPic" style="background-image:url(webcam_back.png); background-position:center; background-repeat:no-repeat; position:absolute; top: 100; left: 200; width:400; height=300; visibility:hidden; cursor:hand;">
+  </div>
+  	<div onClick="hideWebcam();" id="webcamTitle" style="background-image:url(title_back.png); background-position:bottom background-repeat:no-repeat; font:Verdana, Arial, Helvetica, sans-serif; font-size:12px; text-shadow:#000000; font-variant:small-caps; color:#FFFFFF; position:absolute; top:472; left:200; height:28px; width:400px; visibility:hidden; padding-left:10px; padding-top:5px;  cursor:hand;"></div>  
+
+</body>
+</html> 

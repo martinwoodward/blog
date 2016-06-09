@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Microsoft Max</title>
+    <link>http://www.woodwardweb.com/software/microsoft_max.html</link>
+    <description><![CDATA[I just discovered Microsoft Max.&nbsp; While the application still seems to be in the early stages, it has to be the prettiest application I have ever used - just take a look at the semi-transparent splash screen with it's lovely...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-09-11T11:11:51+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Grant Hollidy+00:00</title>
+    <link>http://www.woodwardweb.com/software/microsoft_max.html#c002283</link>
+    <description>Hi Martin - 
+
+In regards to the WCF and NAT stuff, I don&apos;t know if you&apos;ve seen this.
+
+http://relay.labs.live.com/
+
+But it seems to fill the WCF+NAT gap.
+
+Grant</description>
+    <dc:date>2006-09-11T12:57:27+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1598</comments>   
+    <dc:creator>Grant Hollidy</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Simon Phillips+00:00</title>
+    <link>http://www.woodwardweb.com/software/microsoft_max.html#c002459</link>
+    <description>Max project was closed Oct 2006
+
+--- Quote ---
+Thank you for participating in the beta of Microsoft Codename Max. Over the past year, youâve sent us tons of fantastic feedback that weâve incorporated not only into Max, but into the platform layer with the Windows Presentation Foundation (WPF) and the Windows Communication Foundation (WCF). 
+--- End Quote ---</description>
+    <dc:date>2007-11-26T17:32:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1598</comments>   
+    <dc:creator>Simon Phillips</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

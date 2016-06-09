@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Jack Vaughan on Brian Harry&apos;s SD West Keynote</title>
+    <link>http://www.woodwardweb.com/vsts/jack_vaughan_on.html</link>
+    <description><![CDATA[I wasn't at SD West this year, however I'd heard that Brian Harry was going to be doing an interesting keynote.&nbsp; Jack Vaughan has recently published some of his "take-aways" from Brian's presentation and it certainly looks like there was...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-05-01T12:09:03+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Sajee+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/jack_vaughan_on.html#c002391</link>
+    <description>Watch Brian&apos;s keynote here:
+http://blip.tv/file/get/Eagle-TeamFoundationExperences958.wmv
+</description>
+    <dc:date>2007-05-01T16:37:43+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1663</comments>   
+    <dc:creator>Sajee</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

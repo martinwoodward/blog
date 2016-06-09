@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>New Visual Studio 2010 Video Podcast 10-4</title>
+    <link>http://www.woodwardweb.com/vsts/new_visual_stud.html</link>
+    <description> Brian Keller (of This Week on Channel 9 fame) has just announced a new weekly show on Channel 9 called 10-4 where you can learn about what&apos;s coming in Visual Studio 2010 and the .NET Framework 4.0. http://channel9.msdn.com/shows/10-4/ Each...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-12-19T15:09:11+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Eric Matz+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/new_visual_stud.html#c001271</link>
+    <description>Great summary, Martin.  I think if you&apos;re diligent about reviewing your pending changes (which we all should be), having auto checkout enabled won&apos;t be a problem.  That being said, the VS IDE has a habit of making files writable (and therefore checking them out) without your knowledge, and I find it nice to know when that&apos;s happening.</description>
+    <dc:date>2009-01-13T16:39:30+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=832</comments>   
+    <dc:creator>Eric Matz</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ross+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/new_visual_stud.html#c001335</link>
+    <description>These year planners are fantastic! Thanks for putting them up.</description>
+    <dc:date>2009-04-30T14:40:40+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=832</comments>   
+    <dc:creator>Ross</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Len Ocin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/new_visual_stud.html#c001347</link>
+    <description>I do not know how others *not* make the mistake of accidentally checking out files you don&apos;t want, and not notice it.  (Or maybe it&apos;s just me being so accident prone)
+This definitely will save a lot of agony in our team.</description>
+    <dc:date>2009-06-03T04:20:25+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=832</comments>   
+    <dc:creator>Len Ocin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

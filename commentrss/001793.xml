@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>L.E.D. Cats Eyes</title>
+    <link>http://www.woodwardweb.com/gadgets/led_cats_eyes.html</link>
+    <description>As I may have mentioned to anyone that will listen to me - I am currently getting up at a daft time of the morning to beat the traffic into work. On my journeys I have noticed a completely new...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2004-11-08T21:52:57+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Harry Woodford+00:00</title>
+    <link>http://www.woodwardweb.com/gadgets/led_cats_eyes.html#c002816</link>
+    <description>Hi Martin.
+I can&apos;t find where you are from,I myself live Halifax Nova Scotia Canada,and have been trying to start up interest in Catseye&apos;s.One big reason and one that gets forgotten is that they allert drivers when they wander off there lane,we seem to be getting a lot of this lately,good work.Harry.</description>
+    <dc:date>2006-07-09T14:53:18+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1793</comments>   
+    <dc:creator>Harry Woodford</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

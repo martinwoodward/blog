@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>The Software Lifecycle Blog</title>
+    <link>http://www.woodwardweb.com/vsts/the_software_li.html</link>
+    <description>[Via Rob] Some smart folks over at Avanade have started blogging about the Software Lifecycle (being Avanade, you&apos;d expect this to be heavily focused on VSTS and it is). If anyone is going to be getting serious about using VSTS...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-01-09T09:43:11+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Rana+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/the_software_li.html#c003627</link>
+    <description>When i click on Software Lifecycle link, iam getting the following error. 
+&quot;The resource cannot be found.&quot; 
+http://sdlcguy.com/blogs/the_software_lifecycle_blog/default.aspx</description>
+    <dc:date>2006-09-21T14:03:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=161</comments>   
+    <dc:creator>Rana</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/the_software_li.html#c004139</link>
+    <description>Looks like the blog has moved.  I&apos;ve updated the article to now point to http://www.sdlcguy.com/blog/default.aspx
+
+Thanks for letting me know,
+
+Martin.</description>
+    <dc:date>2006-10-02T12:53:42+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=161</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

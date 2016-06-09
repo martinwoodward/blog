@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+  <channel>
+    <title>Dublin Traffic Cameras</title>
+    <link />
+    <description>List of traffic cameras in and around Dublin</description>
+    <mappointIntlCode>cht</mappointIntlCode>
+    <item>
+      <title>Dorset Street / Frederick Street</title>
+      <description>http://www.dublintraffic.com/Site0Camera2.jpg</description>
+      <geo:lat>53.35593053</geo:lat>
+      <geo:long>-6.26512527</geo:long>
+    </item>
+    <item>
+      <title>O'Connell St / Parnell St</title>
+      <description>http://www.dublintraffic.com/Site0Camera3.jpg</description>
+      <geo:lat>53.3523828</geo:lat>
+      <geo:long>-6.2616920</geo:long>
+    </item>
+    <item>
+      <title>Gardiner Street / Summerhill</title>
+      <description>http://www.dublintraffic.com/Site0Camera4.jpg</description>
+      <geo:lat>53.3541631</geo:lat>
+      <geo:long>-6.2567138</geo:long>
+    </item>
+    <item>
+      <title>Dawson St / Stephen's Green</title>
+      <description>http://www.dublintraffic.com/Site0Camera5.jpg</description>
+      <geo:lat>53.339457</geo:lat>
+      <geo:long>-6.258602</geo:long>
+    </item>
+    <item>
+      <title>O'Connell Bridge</title>
+      <description>http://www.dublintraffic.com/Site0Camera6.jpg</description>
+      <geo:lat>53.347810</geo:lat>
+      <geo:long>-6.2593960</geo:long>
+    </item>
+    <item>
+      <title>College Green</title>
+      <description>http://www.dublintraffic.com/Site0Camera7.jpg</description>
+      <geo:lat>53.3446847</geo:lat>
+      <geo:long>-6.2595034</geo:long>
+    </item>
+    <item>
+      <title>Pearse St / D'Olier St</title>
+      <description>http://www.dublintraffic.com/Site0Camera9.jpg</description>
+      <geo:lat>53.3456838</geo:lat>
+      <geo:long>-6.2571430</geo:long>
+    </item>
+    <item>
+      <title>The Quays from Liberty Hall</title>
+      <description>http://www.dublintraffic.com/Site0Camera10.jpg</description>
+      <geo:lat>53.3478614</geo:lat>
+      <geo:long>-6.2569284</geo:long>
+    </item>
+    <item>
+      <title>Christchurch</title>
+      <description>http://www.dublintraffic.com/Site0Camera11.jpg</description>
+      <geo:lat>53.3429936</geo:lat>
+      <geo:long>-6.2715626</geo:long>
+    </item>
+    <item>
+      <title>Stephen's Green West / South</title>
+      <description>http://www.dublintraffic.com/Site0Camera12.jpg</description>
+      <geo:lat>53.337562</geo:lat>
+      <geo:long>-6.262550</geo:long>
+    </item>
+    <item>
+      <title>Dean St / Patrick St</title>
+      <description>http://www.dublintraffic.com/Site0Camera20.jpg</description>
+      <geo:lat>53.3388684</geo:lat>
+      <geo:long>-6.2725496</geo:long>
+    </item>
+    <item>
+      <title>Pearst St / Erne St</title>
+      <description>http://www.dublintraffic.com/Site0Camera23.jpg</description>
+      <geo:lat>53.3431473</geo:lat>
+      <geo:long>-6.2446332</geo:long>
+    </item>
+    <item>
+      <title>Stephens Green East</title>
+      <description>http://www.dublintraffic.com/Site0Camera46.jpg</description>
+      <geo:lat>53.3368568</geo:lat>
+      <geo:long>-6.2567138</geo:long>
+    </item>
+    <item>
+      <title>Stephens Green North</title>
+      <description>http://www.dublintraffic.com/Site0Camera47.jpg</description>
+      <geo:lat>53.3394962</geo:lat>
+      <geo:long>-6.25877380</geo:long>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS Power Toys</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_power_toys.html</link>
+    <description><![CDATA[Brian Harry has been on a blogging spree this week!.&nbsp; Last night he&nbsp;announced some new Team Foundation Server Power Toys.&nbsp; This also shows a new and very welcome trend from Microsoft's DevDiv - the Power Toys are available as a...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-09-08T11:05:40+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

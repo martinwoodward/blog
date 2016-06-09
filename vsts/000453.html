@@ -1,0 +1,723 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/vsts/filtering_wit_c.html">
+<dc:title>Filtering WIT Client Meta-data</dc:title>
+<dc:description>In TFS 2008 SP1, a new feature was quietly introduced, WIT Client Metadata Filtering.&#160; This feature could boost the performance of your Team Foundation Server experience, reduce the amount of traffic flowing over your network and reduce the data porosity...</dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2008-09-24T11:24:39+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/vsts/new_version_of.html" title="New Version of the TFS Migration Toolkit" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/vsts/visual_studio_t_1.html" title="Visual Studio Team System 2010" />
+    
+    <title>Filtering WIT Client Meta-data - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-453" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Filtering WIT Client Meta-data</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2008-09-24T11:24:39+00:00">September 24, 2008 11:24 AM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/filtering_wit_c.html#comments">No Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <h3>In TFS 2008 SP1, a new feature was quietly introduced, WIT Client Metadata Filtering.&#160; This feature could boost the performance of your Team Foundation Server experience, reduce the amount of traffic flowing over your network and reduce the data porosity of your TFS instance. Yet it is not enabled by default. In this post I'm going to explain the feature, what it does and how and when to enable it.</h3>  <p>But first, what the heck is WIT meta-data and why do you care about filtering it?</p>  <h4><strong>WIT Meta-data Explained</strong></h4>  <p>Team Foundation Server has the concept of we all know and love of "Work Items". A work item is a bug, task, requirement, feature - whatever you have defined as the main elements of work that make up your software development process. TFS has a very flexible Work Item Tracking system (known by the <a href="http://en.wikipedia.org/wiki/TLA">TLA</a> of WIT). The key to the flexibility of the WIT functionality is that everything that makes up the work item is customizable. How it looks, what data can be stored and what states the work item can be in are all configurable by editing the work item definition in TFS. A single Team Foundation Server instance is split into multiple Team Projects, each one able to have its own work item definitions independent of the other projects on that server.</p>  <p>When you work with work items in Visual Studio or Eclipse, one of the nice things about TFS is that if you change a field the client instantly knows what other fields need to change and what values are permitted. There is no delay while the client asks the server something - it just happens. This is because the rules that make up the work item definition are actually all downloaded to the client machine and kept in sync with the server so that the client always knows exactly which values are available for each field. These rules make up what is known as the WIT meta-data.</p>  <p><a href="http://www.woodwardweb.com/WindowsLiveWriter/FilteringWITClientMetadata_981F/image_2.png"><img title="image" style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; margin: 0px 0px 5px 10px; border-right-width: 0px" height="174" alt="image" src="http://www.woodwardweb.com/WindowsLiveWriter/FilteringWITClientMetadata_981F/image_thumb.png" width="304" align="right" border="0" /></a>Let's make this a little less abstract and take a look at one of the default work items that comes in the MSF Agile process - the Task.</p>  <p>In a Task, we have basic stuff like the title. The client displaying the task needs to know that you want to see the title. You want to see it on the top left hand side, it contains text and that it is mandatory. That's at least 4 rules already - field name, data type, form position and validation rules. Next we have the "Discipline". It is a mandatory text field that has a set of allowable values that appear in a drop down box. The rules for this field cover not only the field type, validation position etc but also all of the allowed values for it (or "constants" in the meta-data world). Then we have a few more fields. The "Assigned To" field contains everyone that the work item can belong to. By default, this is the full name of everyone who has access to your Team Foundation Server instance (this is a dumb default by the way - <a href="http://blogs.msdn.com/team_foundation/archive/2005/05/23/421178.aspx">but a topic for another day</a>). Not only do the work item rules have to store every single person that the work item can be assigned to, it also has to remember who created the work item and (in the case of a MSF Agile "bug" for example) know that when it is marked as resolved that it should default to being re-assigned back to the person who raised it. And these are only a few of the fields and possible state transitions that are possible for a single work item type in a particular Team Project.</p>  <p>As you can tell, this meta-data quickly mounts up. Not only that, you can change a work item template at any time and the allowed values in the fields change quite often (for example as new people are added to the project or a build is run). This means that the client has to be kept up to date of the changes made to each work item type as they are made. An interesting problem.</p>  <p>How this is solved in TFS is that the work item client maintains the state of its locally downloaded meta-data and what versions it has of them. Whenever it talks to the server to perform a work item related query it tells the server what versions of each of the types of meta-data it is on and the server then sends back all the stuff it doesn't know about yet along with the data the client was actually asking for.</p>  <p>For example, when you make a query in TFS to see what work items are assigned to you at the moment it queries TFS and in the same request tells TFS what versions of all the meta-data tables it has. In the response from TFS you get the results of the query and also any rows to be modified in the meta-data.</p>  <p>So far so good. Sounds like a good way of achieving a very rich client side experience. One of the problems with it is that when Team Foundation Server 2005 shipped the client received ALL the metadata for ALL team projects on the server, regardless of how many of those projects the user had access to. This is obviously less than ideal - not only is some information about other projects in TFS leaking out but it imposes a limit to the number of Team Projects on a server.</p>  <p>This Team Project limit is well documented in a MSDN article from Bill Essary "<a href="http://msdn.microsoft.com/en-us/library/aa974183(VS.80).aspx">Team Foundation Server Project Limits</a>". The more team projects you have, the more meta-data that exists. This has to be downloaded to the client the first time it connects, and every time a service pack is applied. Not only that, the meta-data has to be built up by the server, sent over the wire and loaded into memory to be used by the client. If you have too many Team Projects on the server, you'll get too much meta-data. Too much memory will be needed in the client, or worse, too much memory gets consumed by the server processing all the client download requests causing excessive IIS worker process recycling and severely impacting TFS performance. To take the perverse case, if you apply a TFS service pack to a production instance with 200MB of WIT Metadata then usually the service pack will "stamp" the meta-data cache meaning all new clients will need to download a new version of the entire cache next time they connect. You apply the service pack on a Saturday and everything is looking good. Monday morning rolls around and at 9am everyone boots up their machines and logs into TFS and starts requesting the 200MB download all at the same time, saturating the IIS server running TFS and the network connection to it meaning they will all have to wait a long time to get up and running.</p>  <p>In Team Foundation Server 2008 SP1, a new feature was introduced that alleviates at least some of these issues - WIT Client Meta-data filtering. The feature is pretty simple, by setting a flag in your TFS web.config all clients will only get the WIT meta-data applicable to their user-id. This decreases the amount of meta-data that the client must download and parse.</p>  <p>For a system like CodePlex this feature is a great boon. CodePlex is the Open Source hosting solution from Microsoft and it uses TFS at the back-end. They have several TFS server instances each hosting many team projects. Typically a developer hosting a project on CodePlex might have access to one or two projects on a server, but in the past they had to download all the meta-data for all projects on that server when they wanted to connect with Visual Studio or Teamprise. CodePlex were one of the first organizations to enable WIT Meta-data filtering, even before SP1 was publically available. After the feature was enabled, the average meta-data download size went from about 40Mb to 3.5MB - that makes a big difference to the initial connection speed when you start downloading that amount of data over the internet.</p>  <p>In fact, this feature makes so much sense you might be wondering why it is not enabled by default. The reason is that some applications (especially server-side ones, such as Team System Web Access), actually made use of the fact that WIT Meta-data is the same for all users and so they only download a single copy of it. This worked great in the old days, but if WIT meta-data filtering were enabled then they would only see the WIT meta-data belonging to the first user to connect.</p>  <p>Thankfully, the WIT team took this into account. Not only is the feature disabled by default but they also make it so that you could control which client applications were excluded from the meta-data filtering by providing their user agent.</p>  <h4><strong>Enabling WIT Meta-data filtering.</strong></h4>  <p>Now that we have been through all the gory details, let's finally see how to switch on the feature.</p>  <p>In the appSettings section of the <font face="Courier New">%ProgramFiles%\Microsoft Visual Studio 2008 Team Foundation Server\Web Services\WorkItemTracking\web.config</font> file add the following keys</p>  <div>   <div style="padding-right: 0px; padding-left: 0px; font-size: 8pt; padding-bottom: 0px; overflow: visible; width: 100%; color: black; border-top-style: none; line-height: 12pt; padding-top: 0px; font-family: consolas, &#39;Courier New&#39;, courier, monospace; border-right-style: none; border-left-style: none; background-color: #f4f4f4; border-bottom-style: none">     <pre style="padding-right: 0px; padding-left: 0px; font-size: 8pt; padding-bottom: 0px; margin: 0em; overflow: visible; width: 100%; color: black; border-top-style: none; line-height: 12pt; padding-top: 0px; font-family: consolas, &#39;Courier New&#39;, courier, monospace; border-right-style: none; border-left-style: none; background-color: #f4f4f4; border-bottom-style: none"><span style="color: #606060">   1:</span> <span style="color: #0000ff">&lt;</span><span style="color: #800000">add</span> <span style="color: #ff0000">key</span> <span style="color: #0000ff">=&quot;filterClientMetadata&quot;</span> <span style="color: #ff0000">value</span><span style="color: #0000ff">=&quot;true&quot;</span><span style="color: #0000ff">/&gt;</span></pre>
+
+<p>    <pre style="padding-right: 0px; padding-left: 0px; font-size: 8pt; padding-bottom: 0px; margin: 0em; overflow: visible; width: 100%; color: black; border-top-style: none; line-height: 12pt; padding-top: 0px; font-family: consolas, &#39;Courier New&#39;, courier, monospace; border-right-style: none; border-left-style: none; background-color: #f4f4f4; border-bottom-style: none"><span style="color: #606060">   2:</span> <span style="color: #0000ff">&lt;</span><span style="color: #800000">add</span> <span style="color: #ff0000">key</span> <span style="color: #0000ff">=&quot;excludedUserAgents&quot;</span> <span style="color: #ff0000">value</span><span style="color: #0000ff">=&quot;WebAccess:w3wp:witfields:witimport:witexport:witadmin&quot;</span><span style="color: #0000ff">/&gt;</span></pre><br />
+  </div><br />
+</div></p>
+
+<p>The <em>filterClientMetadata</em> switch determines whether to filter client metadata based on the calling user's access rights (true) or not (false). If not provided the setting will default to false. </p>
+
+<p>The <em>excludedUserAgents</em> switch is a colon delimitated list of strings that may appear in the requested clients HttpRequest UserAgent header. You can take a look at your IIS logs or your TFS Activity logs to determine what user agents are used, but a handy feature of the TFS .NET API is that the executable name using the API is recorded in the user agent string, meaning that you can easily find your specific utility and exclude it if necessary. As far as I am aware, the only publically accessible application that makes use of shared meta-data is Team System Web Access, so we put "WebAccess" in our excluded user agents setting.  We also put in the names of the utilities in Team System that need to see all the metadata to report back correct information to the TFS administrators.</p>
+
+<p>Note that the text provided in the excluded user agents setting can appear anywhere in the string using a case insensitive search. Also note that all requests coming from the same machine as the TFS application tier are automatically excluded.</p>
+
+<p>And that is all there is to it. The next time a new client connects they will only get meta-data relevant to them.</p>
+
+<h4><strong>Effect on the Team Project Limit</strong></h4>
+
+<p>This might be too nuanced to place into a general guidance document, but the limits on the numbers of Team Projects on a server start to get a bit of wiggle room once this feature is enabled. If most users in TFS only have access to a handful of projects, the soft limit can go moderately high, so long as multiple administrators do not make a fresh, first connect concurrently. Using the meta-data filtering, the total number of team projects probably becomes less of a factor in determining the total size of the meta-data. Instead, the biggest factor probably becomes the total number of users on a server.</p>
+
+<p>That said, for "normal" companies, if you are bumping up on these limits already (with the product only having been around since 2005) then you are possibly not using Team Projects correctly. Team Projects should be fairly large, long running things - not created one per solution as some people seem to want to do. However, if you do have tens of Team Projects on a server, with the majority of users only having access to a subset of them then I definitely recommend you take a look at client meta-data filtering.</p>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/filtering_wit_c.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/teamprise/" rel="tag">Teamprise</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/" rel="tag">Vsts</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/" rel="tag">tfs</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/tfs2008/" rel="tag">tfs2008</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="453" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-445"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-446"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/herding_develop.html">Herding Developers to Lunch</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/techdays09_talk.html">TechDays09 Talk: VSTS Interoperability</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/visual_studio_2_1.html">Visual Studio 2008 Project Template for TFS Utilities</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_top_tip_16.html">TFS Top Tip #16 - Limit What you Build</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/important_secur.html">Important Security Update for Team System Web Access</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/ddd_coming_to_b.html">DDD Coming to Belfast</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/talk_whats_new.html">Talk: Whats New With Team Foundation Server</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/technology/freezing_time_i.html">Freezing Time in VMWare</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/disabling_tfs_a.html">Disabling TFS Automatic Check out</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/the_year_planne.html">The Year Planner Shuffle</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

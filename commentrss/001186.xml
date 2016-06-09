@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>The Business Traveler&apos;s Hotel Charter</title>
+    <link>http://www.woodwardweb.com/personal/the_business_tr.html</link>
+    <description><![CDATA[I don't travel as much as I used to, but there are some things about a hotel that caters to business travelers that they should get right.&nbsp; Forget about your fancy shmancy decor and strange&nbsp;taps that take you 5 minutes...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-06-03T14:18:30+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Matthew Pass+00:00</title>
+    <link>http://www.woodwardweb.com/personal/the_business_tr.html#c001834</link>
+    <description>Amen to all of those!</description>
+    <dc:date>2007-06-04T11:35:16+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1186</comments>   
+    <dc:creator>Matthew Pass</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Grant+00:00</title>
+    <link>http://www.woodwardweb.com/personal/the_business_tr.html#c001835</link>
+    <description>Agree with all yours.
+
+Some of my pet hates of hotel rooms:
+* Hotels without room service
+* Noisy refridgerators
+* Cluttered desk - nowhere to put your laptop down
+
+I could go on as well :)</description>
+    <dc:date>2007-06-20T14:38:30+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1186</comments>   
+    <dc:creator>Grant</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mick+00:00</title>
+    <link>http://www.woodwardweb.com/personal/the_business_tr.html#c001836</link>
+    <description>Get an apartment next time !!</description>
+    <dc:date>2007-06-22T12:15:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1186</comments>   
+    <dc:creator>Mick</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

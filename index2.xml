@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:icbm="http://postneo.com/icbm">
+
+<channel>
+<title>Martin Woodward</title>
+<link>http://www.woodwardweb.com/</link>
+<description></description>
+<dc:language>en-us</dc:language>
+
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+
+<dc:creator>blog@woodwardweb.com</dc:creator>
+<dc:date>2006-01-12T10:12:00+00:00</dc:date>
+<admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=3.2" />
+<sy:updatePeriod>hourly</sy:updatePeriod>
+<sy:updateFrequency>1</sy:updateFrequency>
+<sy:updateBase>2000-01-01T12:00+00:00</sy:updateBase>
+
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>Creative announce standalone Skype phone</title>
+<link>http://www.woodwardweb.com/technology/000166.html</link>
+<description><![CDATA[<p><a href="http://www.woodwardweb.com/images/blog/creative_skype.html" onclick="window.open('http://www.woodwardweb.com/images/blog/creative_skype.html','popup','width=500,height=376,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://www.woodwardweb.com/images/blog/creative_skype-thumb.jpg" width="132" height="100" border="0" /></a>Following a wave of <a href="http://www.kqzyfj.com/click-1724271-10386647" target="_top" onmouseover="window.status='http://www.skype.com';return true;" onmouseout="window.status=' ';return true;">Skype</a> announcements at CES, Creative have <a href="http://www.creative.com/press/releases/welcome.asp?pid=12292">announced</a> a new <a href="http://www.kqzyfj.com/click-1724271-10386647" target="_top" onmouseover="window.status='http://www.skype.com';return true;" onmouseout="window.status=' ';return true;">Skype</a> phone.  Unlike all the others on the market, this one does not need a computer to make <a href="http://www.kqzyfj.com/click-1724271-10386647" target="_top" onmouseover="window.status='http://www.skype.com';return true;" onmouseout="window.status=' ';return true;">Skype</a> calls but can do it all from the phone with a network connection.  Available later in the year, this might the device I am looking for to get <a href="http://www.kqzyfj.com/click-1724271-10386647" target="_top" onmouseover="window.status='http://www.skype.com';return true;" onmouseout="window.status=' ';return true;">Skype</a> past the wife acceptance boundary.<br />
+</p>]]></description>
+<slash:comments>0</slash:comments>
+<guid isPermaLink="false">166@http://www.woodwardweb.com/</guid>
+<dc:subject>Technology</dc:subject>
+<dc:date>2006-01-12T10:12:00+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000166.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>Bill Caputo on Stubbornness</title>
+<link>http://www.woodwardweb.com/programming/000165.html</link>
+<description><![CDATA[<p>A nice <a href="http://www.williamcaputo.com/archives/000256.html">post</a> to start the day from <a href="http://www.williamcaputo.com/">Bill Caputo</a>.  I know he doesn't think of himself as an XP evangelist anymore, but I like to think of him as the <i>Pragmatic</i> Evangelist.</p>]]></description>
+<slash:comments>0</slash:comments>
+<guid isPermaLink="false">165@http://www.woodwardweb.com/</guid>
+<dc:subject>Programming</dc:subject>
+<dc:date>2006-01-11T09:29:26+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000165.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>The Guntlet</title>
+<link>http://www.woodwardweb.com/dotnet/000164.html</link>
+<description><![CDATA[<p><a href="http://blogs.msdn.com/buckh/">Buck Hodges</a> recently posted about a <a href="http://blogs.msdn.com/buckh/archive/2006/01/10/511188.aspx">problem with locks based on files types and shelving in VSTS Source Control</a>.  In the post he mentions a system called Gauntlet that is used internally in some teams at Microsoft.</p>
+
+<p>The Gauntlet system is very interesting to me.  I've never seen it in action and have only had snippets of conversations with Microsoft people (and I have to say mostly it is them <a href="http://blogs.msdn.com/hippietim/archive/2005/02/07/368705.aspx">moaning about it</a>).  </p>
+
+<p>From Buck's article, Gauntlet runs by processing a queue of shelvesets.  (A Shelveset is a great new feature in VSTS Source Control where you can save your code on the server but outside of the main source tree - you can think of it a bit like a temporary working branch - but see Chris Rathjen's post <a href="http://blogs.msdn.com/crathjen/archive/2005/04/06/405909.aspx">Is Shelving just a fancy word for branching?</a> for more)</p>
+
+<p>Anyway, each shelveset is processed, and providing the code does not break the build (i.e. compiles, passed static code analysis and unit tests) then it is added to the main source tree.</p>
+
+<p>To me, this is Continuous Integration by another name.  Many people are using CruiseControl (and CruiseControl.NET) to acheive the same benefits but the Gauntlet has some additional benefits:-</p>
+
+<p><UL><LI>The code is not committed to the main branch until it is proven by the server that it will not break the build.</LI><LI>Main branch build and labels can be reserved for "integration builds" or releases - that way you can very easily provide the users of that build with a list of differences between the builds</LI><br />
+</UL></p>
+
+<p>The downsides seems to be:-<br />
+<UL><LI>More complicated development process, slowing down development</LI><LI>Increased time before a code change appears in the main branch</LI><LI>Complicated process discourages small incremental checkin-ins</LI><LI>When you submit your change, there may be a queue of changes being processed and one of those might break your code, no easy way of preventing this</LI><LI>Similarly, if you are relying on a change that then doesn't get passed the Gauntlet then odds are additional queued changes by you will also fail</LI></UL></p>
+
+<p>Using an open source toolset, an equivalent process could be done by using patch files.  It would be pretty painful with today's toolsets but could be simplified.</p>
+
+<p>Like everything, you have to have a process that meets the needs of your organisation.  Development is always a matter of control vs speed of delivery.  Personally, I think CI in the traditional sense with CruiseControl strikes a nice balance in most organisations.</p>
+
+<p>But if anyone in Microsoft land fancies describing Gauntlet in a but more detail and perhaps a quick pros / cons of using a similar process versus CI with CruiseControl (or MSBuild for that matter) I for one would love to read it.<br />
+</p>]]></description>
+<slash:comments>0</slash:comments>
+<guid isPermaLink="false">164@http://www.woodwardweb.com/</guid>
+<dc:subject>Dotnet</dc:subject>
+<dc:date>2006-01-10T18:19:16+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000164.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>How to rollback file state from before a check-in in VSTS</title>
+<link>http://www.woodwardweb.com/vsts/000163.html</link>
+<description><![CDATA[<p>It's probably obvious this one, but it took me a minute to figure it out.  In VSTS source control, file version numbers do not go 1,2,3,4.. but they are versioned by the changeset number that the change was in.  For example, I am currently looking at a file in my repository that has the following versions in its history:-</p>
+
+<p>539, 538, 493, 451, 386, 4.</p>
+
+<p>At first that is a little wired, but you get used to it.  A changeset in VSTS is the transaction under which a commit to the source repository occurs.  It can contain edits to files, renames (what everyone apart from Microsoft usually calls move), add, deletes, etc.  Once you realise that all your check-ins to the source control are done in one atomic unit you start to understand how different VSTS source control is from VSS...  (You also realise that there really is no excuse anymore for breaking the build in a CI environment)</p>
+
+<p>Anyway, Somewhere during changeset 538 I did something to one of the 6 files that I modified that broke what I thought I was fixing in a non-obvious way (by non-obvious I mean we don't have a unit tests that covers it - yet).  I want to restore the state of my source tree to before changeset 538, then go through my changes one by one to figure out which one is at fault.</p>
+
+<p>I simply did a "Get Specific Version" and entered the changeset before the one I wanted (i.e. 537).  I could have also entered the date and time this morning that I last synced my code repository if I wanted to get rid of all my mornings work.</p>
+
+<p>Simple I know, but it's nice when something is easy...<br />
+</p>]]></description>
+<slash:comments>0</slash:comments>
+<guid isPermaLink="false">163@http://www.woodwardweb.com/</guid>
+<dc:subject>Vsts</dc:subject>
+<dc:date>2006-01-10T14:32:41+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000163.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>New web project model for VS 2005.</title>
+<link>http://www.woodwardweb.com/dotnet/000162.html</link>
+<description><![CDATA[<p>Scott Guthrie has posted about a <a href="http://weblogs.asp.net/scottgu/archive/2005/12/07/432630.aspx">new web project type</a> that will be available for VS 2005.  I know quite a few people have been running into difficulties with the <a href="http://weblogs.asp.net/scottgu/archive/2005/08/21/423201.aspx">shipped way</a> that web projects work in VS 2005 (especially when it comes to automating the build process outside of Visual Studio) and this new model sounds like an interesting hybrid.</p>
+
+<p>While the model is interesting in itself, just wanted to say I also am really enjoying the new found agility, responsiveness and transparency at Microsoft - especially from the DevDiv guys.  </p>]]></description>
+<slash:comments>1</slash:comments>
+<guid isPermaLink="false">162@http://www.woodwardweb.com/</guid>
+<dc:subject>Dotnet</dc:subject>
+<dc:date>2006-01-09T09:53:50+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000162.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>The Software Lifecycle Blog</title>
+<link>http://www.woodwardweb.com/vsts/000161.html</link>
+<description><![CDATA[<p>[Via <a href="http://blogs.msdn.com/robcaron/archive/2006/01/08/510721.aspx">Rob</a>]  Some <a href="http://sdlcguy.com/blogs/the_software_lifecycle_blog/archive/2005/12/06/3.aspx">smart folks</a> over at Avanade have started blogging about the <a href="http://sdlcguy.com/blogs/the_software_lifecycle_blog/default.aspx">Software Lifecycle</a> (being Avanade, you'd expect this to be heavily focused on VSTS and it is).  If anyone is going to be getting serious about using VSTS "out there" then you'd expect these guys to be bleeding edge.  Anyway, so far the contents looks pretty useful - much better than the drivel you will find at this blog.  Also, I know at least one of the guys is a fan of obscure British television comedy so he deserves respect!</p>]]></description>
+<slash:comments>0</slash:comments>
+<guid isPermaLink="false">161@http://www.woodwardweb.com/</guid>
+<dc:subject>Vsts</dc:subject>
+<dc:date>2006-01-09T09:43:11+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000161.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>Customising VSTS Work Item Types</title>
+<link>http://www.woodwardweb.com/vsts/000160.html</link>
+<description><![CDATA[<p>[Via <a href="http://blogs.msdn.com/robcaron/">Rob</a>]  Dave McKinstry has recently posted about his <a href="http://weblogs.asp.net/dmckinstry/archive/2006/01/03/434440.aspx">Approach to Process Customization with TFS</a>.  While I have been practising my work item definitions on a scratch project inside a team system VPC before applying them to the production box, he lays out a good process to help you avoid mistakes.</p>
+
+<p>Now if only there was a nice tool that followed this workflow but did all the global search / replaces for you.  Another project for the back-burner me thinks.</p>]]></description>
+<slash:comments>1</slash:comments>
+<guid isPermaLink="false">160@http://www.woodwardweb.com/</guid>
+<dc:subject>Vsts</dc:subject>
+<dc:date>2006-01-06T13:34:20+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000160.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>Improving TF Command Line Performance</title>
+<link>http://www.woodwardweb.com/vsts/000159.html</link>
+<description><![CDATA[<p><a href="http://blogs.msdn.com/buckh/default.aspx">Buck Hodges</a> has done an excellent <a href="http://blogs.msdn.com/buckh/archive/2005/12/12/503015.aspx">post</a> on improving performance of the team foundation source control command line (tf.exe).  More details <a href="http://blogs.msdn.com/buckh/archive/2005/12/12/503015.aspx">here</a>.</p>]]></description>
+<slash:comments>0</slash:comments>
+<guid isPermaLink="false">159@http://www.woodwardweb.com/</guid>
+<dc:subject>Vsts</dc:subject>
+<dc:date>2005-12-14T14:01:34+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000159.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>Don&apos;t do that</title>
+<link>http://www.woodwardweb.com/vsts/000158.html</link>
+<description><![CDATA[<p><a href="http://www.woodwardweb.com/images/blog/tfs_properties_full.png" target="_blank"><img alt="tfs_properties_full.png" src="http://www.woodwardweb.com/images/blog/tfs_properties_thumb.png" width="186" height="100" border="0" alt="Inherit permissions option - leave alone unless you are really sure!" /></a>The source control system within Visual Studio Team System has a very powerful security model.  One of the nice things is that if a user does not have read permissions on one of the objects in a tree, then that object is totally hidden from view - the server never even tells the client about it's existence.</p>
+
+<p>While this is very nice, there is an option on the security settings for each object that allows you to disable inherited permission from the parent. It's a nice feature , but <b>USE THIS FEATURE CAREFULLY</b>.  In Beta3 Refresh, when you de-select it - by default all of the permissions on that object get removed.  You have to maually select which ones you want to add to it.  This is exactly by design and maybe the behaviour you want.  However, if you remove read permissions for everyone - that includes you.  You will no longer be able to view it in the tree and so not able to select the object so that you can retore your read permission.  It just sit's there in your repository totally hidden.  </p>
+
+<p>As I did this on a folder containing lots of very important files, and quickly I had that horrible sinking feeling.  Luckily I was able to recover because I happened to add read permissions for one user before I pressed ok.  I made that user admin and then logged in as him to restore read permissions for everyone.  If I hadn't have done this, I think I'd have been left toally lost, pehaps hacking around in the TFS Database schema and re-starting the TFS service several times to try and restore something resembling my old source tree.</p>
+
+<p>Anyway, let this be a warning.  Don't disable "Inherit security settings" from an object in source control in Visual Studio Team System unless you really know what you are doing and you have left yourself an escape route!<br />
+</p>]]></description>
+<slash:comments>4</slash:comments>
+<guid isPermaLink="false">158@http://www.woodwardweb.com/</guid>
+<dc:subject>Vsts</dc:subject>
+<dc:date>2005-12-08T18:51:24+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000158.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>Opening Pandora&apos;s Box</title>
+<link>http://www.woodwardweb.com/web_sites/000157.html</link>
+<description><![CDATA[<p>Just discovered the website - <a href="http://www.pandora.com">Pandora</a>.  Basically, it allows you to create a streaming music station by typing in the names of some songs or bands that you like.  It will then play you music by those artists and similar ones.  It is great for discovering new music and re-discovering tunes that you have heard on the radio but forgotten who they were by.  Currently it is free and also free of audio adverts.  They also offer a subscription service which will remove all commercials.  Pandora is currently only available to people in the US.  I'm in the States at the minute so I can't tell if it is doing any IP resolving to determine location or it is just using the ZIP code which you enter on registration.  </p>
+
+<p>At the risk of inventing a new Web 2.0 buzzword, the interface could be described as FLAX (FLash and Xml) - it's pretty nice and does a good job of masking the restrictions imposed by the music licensing deals that the company has struck.</p>
+
+<p>If you (like me) spend a lot of time tied to your computer then this is an ideal source of background music.  So far I've done a couple of quick "Stations".  A <a href="http://www.pandora.com/?sc=sh3986461">relaxed one</a> and one full of <a href="http://www.pandora.com/?sc=sh3994306">pop</a>.  Be warned, I like my music like my movies - unchallenging.  However, thanks to Pandora this is changing and I'm listening to stuff I would never have thought to buy myself from iTunes.<br />
+</p>]]></description>
+<slash:comments>1</slash:comments>
+<guid isPermaLink="false">157@http://www.woodwardweb.com/</guid>
+<dc:subject>Web Sites</dc:subject>
+<dc:date>2005-12-08T05:35:34+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000157.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>Configuring NTP on Windows Server 2003</title>
+<link>http://www.woodwardweb.com/technology/000156.html</link>
+<description><![CDATA[<p>Recently, a colleague and I were struggling to get a Windows 2003 domain controller configured to use an external NTP time source.  We were doing all the old registry hacks that you used to have to do to no affect.</p>
+
+<p>It turns out that there is a domain controller group policy that now affects the behavior of the windows time service.  What I don't quite understand is that it overrides the registry settings even if it is left as "Not Configured" in the group policy.   Anyway if you do the settings as a domain controller policy and reboot the PDC, it works fine.  There is probably a better way to get this working, if you find it let me know!</p>
+
+<p>For more information, see the following article from Microsoft:-  <A HREF="http://www.microsoft.com/technet/prodtechnol/windowsserver2003/technologies/security/ws03mngd/26_s3wts.mspx">Windows Time Service Configuration for Windows Server 2003</A></p>]]></description>
+<slash:comments>0</slash:comments>
+<guid isPermaLink="false">156@http://www.woodwardweb.com/</guid>
+<dc:subject>Technology</dc:subject>
+<dc:date>2005-12-06T07:47:58+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000156.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>HowTo: Configure SVN+SSH with Subclipse on Windows</title>
+<link>http://www.woodwardweb.com/java/000155.html</link>
+<description><![CDATA[<p><b>Problem:</b><br />
+Use ssh tunnelling to access a Subversion repository using SSH tunneling (i.e. with a subversion repository url of svn+ssh://myservername/myrepo) using the Subclipse subversion integration with Eclipse.  I tried various things and used each of the three interfaces for configuring Subclipse (Window, Preferences..., Team, SVN).  </p>
+
+<p>When I used JavaHL (JNI) I got the following error,  "svn: Can't create tunnel: The system cannot find the file specified."  SVN Command Line gave me a similar error.  Finally the JavaSVN interface (1.0) just did not want to authenticate with my server at all.  Did various searches on Google and couldn't find an answer that worked, just lots of people with a similar problem.  Anyway, the following works for me...</p>
+
+<p><B>Solution:</B><br />
+You need to create an environment variable called "SVN_SSH" that points to an executable file that accepts the same command line arguments as ssh on unix.  I did this by doing the following:-<br />
+<OL><LI>Set up ssh keys.  Not going to cover that here as you can easily Google for that.  You need to end up with your public key on the SVN server and your private key loaded into Paegent locally.</LI><br />
+<LI>Download and installed the excellent <a href="http://tortoisesvn.sourceforge.net/">TortoiseSVN</a> client for Windows.</LI><br />
+<LI>Set the following environment variable (by right-clicking on My Computer, Properties, Advanced, Environment Variables, New):-</p>
+
+<p>Variable name: <code>SVN_SSH</code><br />
+Variable value: <code>C:\\Program Files\\TortoiseSVN\\bin\\TortoisePlink.exe</code></p>
+
+<p>(The "\\" is very important, otherwise it won't work.  Equally, you cannot use the plink.exe that comes with putty as that fires up a command shell window which is really annoying.  The TortoisePlink.exe is a windows implementation of plink that doesn't bring up any UI)<br />
+</LI><br />
+<LI>Configure the Subclipse plugin to use JavaHL (JNI)</LI><br />
+<LI>Restart Eclipse</LI><br />
+<LI>Do a little victory jig (optional)</LI><br />
+</OL><br />
+</p>]]></description>
+<slash:comments>2</slash:comments>
+<guid isPermaLink="false">155@http://www.woodwardweb.com/</guid>
+<dc:subject>Java</dc:subject>
+<dc:date>2005-11-27T00:09:34+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000155.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>Google Analysis</title>
+<link>http://www.woodwardweb.com/personal/000154.html</link>
+<description><![CDATA[<p><a href="/images/blog/geomap.html" onclick="window.open('/images/blog/geomap.html','popup','width=795,height=495,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); urchinTracker ('/images/traffic_geomap'); return false"><img src="/images/blog/geomap-thumb.gif" width="150" height="93" border="0" alt="GeoMap Location Data" /></a>Well, despite the massive load that Google Analytics took, they have done me proud and are now happily tracking the data from 3 of the sites I look after that I'm most interested in.  This blog, <a href="http://vstsplugins.sourceforge.net" onClick="javascript:urchinTracker ('/outgoing/vstsplugins');">VSTSPlugins</a> and <a href="http://www.vstseclipse.org" onClick="javascript:urchinTracker ('/outgoing/vstseclipse');">VSTSEclipse</a>.</p>
+
+<p>First surprise was that my blog actually gets quite a few hits - significantly more than the other two sites.  While we are only talking 100's in a day, it is still a lot more than I thought - and that doesn't include those people who read all my content using RSS.  I only really write stuff here of interest to myself or when I don't find something in Google and have to work it out.  Anyway, it's nice to have you.  I might pay more attention to my spelling and grammar now that I know people are reading.  </p>
+
+<p>The next surprise was how distributed around the world people where (see a <a href="/images/blog/geomap.html" onclick="window.open('/images/blog/geomap.html','popup','width=795,height=495,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false">screenshot</a> of the very nice GeoMap overlay feature).  Previously I'd assumed that most of the traffic was folks I've worked with before.  While I recognised many of the connecting domains, there are a good few I don't which is nice.</p>
+
+<p>Finally, it was good to see a large firefox population for this blog (just over 30% with the rest of the lion's share going to IE).  I also have a nice spread of OS's including Windows Vista, Mac, Linux, SunOS and the odd splattering of mobile devices.</p>
+
+<p>Anyway, hopefully <a href="http://www.google.com/analytics" onClick="javascript:urchinTracker ('/outgoing/recommend/google_analytics');">Google Analytics</a> will open it's doors again soon for new users so others can benefit from the fantastic data and great UI that it provides.  All for free as well - amazing.</p>]]></description>
+<slash:comments>0</slash:comments>
+<guid isPermaLink="false">154@http://www.woodwardweb.com/</guid>
+<dc:subject>Personal</dc:subject>
+<dc:date>2005-11-26T13:39:09+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000154.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>Ready to Launch Ireland Talk</title>
+<link>http://www.woodwardweb.com/dotnet/000153.html</link>
+<description><![CDATA[<p>If you had the mis-fortune of hearing me speak at the Belfast launch event for  SQL 2005 / Visual Studio 2005 / Biztalk 2006 this morning then the following links may be of interest:-<UL><LI><a href="http://blogs.msdn.com/robcaron/default.aspx">Rob Caron's Blog</a> - Best place for VSTS related information</LI><br />
+<LI><a href="http://lab.msdn.microsoft.com/teamsystem/">Visual Studio Team System</a> - Official Microsoft pages</LI><br />
+<LI><a href="http://vstsplugins.sourceforge.net/">VSTSPlugins</a> - Open source integrations with VSTS, including the CruiseControl.NET integration demonstrated</LI><br />
+<LI><a href="http://ccnet.thoughtworks.com/">CruiseControl.NET</a> - The Continuous Integration build server</LI><br />
+<LI><a href="http://www.teamprise.com/">Teamprise</a> - Access VSTS from inside Eclipse running on Windows, Mac OS X or Linux</LI><br />
+</UL><br />
+</p>]]></description>
+<slash:comments>0</slash:comments>
+<guid isPermaLink="false">153@http://www.woodwardweb.com/</guid>
+<dc:subject>Dotnet</dc:subject>
+<dc:date>2005-11-24T19:39:32+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000153.xml
+</wfw:commentRss>
+</item>
+<item>
+<icbm:latitude>54.7569</icbm:latitude> 
+<icbm:longitude>-6.3483</icbm:longitude>
+<title>All Our Base Are Belong To Google?</title>
+<link>http://www.woodwardweb.com/technology/000151.html</link>
+<description><![CDATA[<p>Ok, so I'm probably not the first or the last person to use that sentance.  Anyway, <a href="http://base.google.com">Google Base</a> is responding to requests.  See the <a href="http://googleblog.blogspot.com/2005/11/first-base.html">Google Blog post</a> for more details.  This could develop into a massive tagged, searchable repository or it could just be another Web 2.0 idea that won't stick, filling up with out of date classified adverts, spam and pictures you probably shouldn't look at from work.  </p>
+
+<p>I can see where this fits into the Google master vision of making the worlds information searchable, but I don't quite get it yet.  I didn't get the point of <a href="http://del.icio.us/martinwoodward">del.icio.us</a> for a while and now I use it everyday so I'm no pointer for internet trends.  Anyway, time will tell.</p>]]></description>
+<slash:comments>0</slash:comments>
+<guid isPermaLink="false">151@http://www.woodwardweb.com/</guid>
+<dc:subject>Technology</dc:subject>
+<dc:date>2005-11-16T13:26:26+00:00</dc:date>
+<wfw:commentRss>
+  http://www.woodwardweb.com/commentrss/000151.xml
+</wfw:commentRss>
+</item>
+
+
+</channel>
+</rss>

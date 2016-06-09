@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Java on Ubuntu</title>
+    <link>http://www.woodwardweb.com/java/java_on_ubuntu.html</link>
+    <description><![CDATA[Teamprise currently requires a Java JRE with DES encryption available in the JVM for the magic of NTLM authentication to work correctly.&nbsp; Unfortunately, the GCJ that ships by default with Ubuntu and other Debian based distributions does not have one.&nbsp;...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-06-27T18:10:28+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

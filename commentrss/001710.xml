@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Team Foundation Server 2008 - What&apos;s New Talk</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_4.html</link>
+    <description><![CDATA[ Last night I had the pleasure of presenting to my local .NET User Group (NIMTUG) on what is new in Team Foundation Server 2008.&nbsp; Interestingly, most of the audience where new to TFS completely so I also covered a...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-11-20T14:43:39+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Scott Miller+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_4.html#c002456</link>
+    <description>From you slide on page 15.  Does this mean that I cannot build a .NET 3.5 solution in the build server UNLESS I am using TFS2008?</description>
+    <dc:date>2007-11-23T10:01:53+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1710</comments>   
+    <dc:creator>Scott Miller</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_4.html#c002458</link>
+    <description>Scott,
+
+I have not tried this myself, but according to Buck Hodges on the team, âonly a TFS 2008 build agent can build a 3.5 project (or a VS 2008 solution that targets 2.0 framework), because of the change to the version in the solution file.â
+
+So, you can see that it is the build agent when doing an automated build that is the problem.  To upgrade the build agent you will also need to upgrade TFS to 2008.  If you are not using the automated build stuff then you can certainly store a VS2008 solution in TFS 2005 and build it locally using you VS2008 client.
+
+Hope that makes sense - if you disagree then let me know.
+
+Martin.</description>
+    <dc:date>2007-11-26T10:10:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1710</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Senthilak+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_4.html#c002486</link>
+    <description>Very nice and Useful..
+
+Thanks ....</description>
+    <dc:date>2008-01-29T09:35:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1710</comments>   
+    <dc:creator>Senthilak</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Simone Busoli+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_4.html#c002500</link>
+    <description>Very cool, I wasn&apos;t aware of the TFS API you use in the demo application. Thanks!</description>
+    <dc:date>2008-02-29T16:14:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1710</comments>   
+    <dc:creator>Simone Busoli</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Greg Collins+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_4.html#c002504</link>
+    <description>Great Presentation!
+
+I noticed that in your presentation you mention that multiple build services can run on the same machine.  Is this achieved through the use of virtual servers?  Or is there another trick?
+
+Cheers
+Greg</description>
+    <dc:date>2008-03-05T18:53:15+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1710</comments>   
+    <dc:creator>Greg Collins</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_4.html#c002505</link>
+    <description>The trick on running multiple build agents on one server is kinda detailed on Buck Hodges blog (http://blogs.msdn.com/buckh/archive/2007/08/14/tfs-2008-a-basic-guide-to-team-build-2008.aspx) â the section titled âAdvanced Topicsâ.  Basically in TFS2008 the build agent can be run as an interactive process on the port of your choice.    You can copy the build agents binaries and the .exe.config into separate directories and configure to run on different ports if you really want to.
+
+That said, Iâve never really found a real need for this and when I was giving my talk I pointed out that I donât particularly recommend folks do that.  I should probably take that line out of the deck as it just confuses matters.  Once you start copying binaries around out of the installed directories you can run into problems with servicing â i.e. making sure you have the correct version of the build agent after service packs / hotfixes etc have been applied.
+
+I can see the need for multiple build machines, and virtualized build environments â but not sure about the need for multiple build agents processes on the same machine.  Now that MSBuild supports the ability to perform builds on multiple threads, you can get more out of your hardware.  That said, if you are lucky enough to have a machine that has plenty of spare resources then virtualization might be the better way to go.  
+
+Hope that helps â sorry about any confusion.
+</description>
+    <dc:date>2008-03-06T13:12:19+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1710</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Saqib+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_4.html#c002506</link>
+    <description>Is it possible to use the Team Build feature to build non .Net code OR not build the code at all but do some ther tasks to generate a report of work items, etc.</description>
+    <dc:date>2008-03-06T20:24:28+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1710</comments>   
+    <dc:creator>Saqib</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ravi+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_4.html#c002636</link>
+    <description>Hi
+Could you please let me know how does the Issue Tracking / Management and the Workflow Management works in TFS 2008?
+
+Thanks</description>
+    <dc:date>2008-11-07T16:09:07+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1710</comments>   
+    <dc:creator>Ravi</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Bose+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_4.html#c002674</link>
+    <description>Hi Martin
+  
+   I have a problem with Automation Build in TFS Visual Studio 2008.
+  My application was initially developed in Visual studio 2005 but when i try to create a automated build using the TFS VS2008 the application is not trying to complile my presentation layer.
+Could you please suggest me a way to do this?
+Or do i need to convert my project to Visual studio 2008 before providing Automation Build.
+
+Regards
+Bose </description>
+    <dc:date>2009-02-12T16:58:09+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1710</comments>   
+    <dc:creator>Bose</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by John+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_4.html#c002713</link>
+    <description>is SQL 2005 professional enough to install TFS 2008?</description>
+    <dc:date>2009-04-15T21:08:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1710</comments>   
+    <dc:creator>John</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Martin Woodward: TFS Top Tip Archives</title>
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/styles-site.css" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/MartinWoodward" />
+
+<script language="javascript" type="text/javascript">
+function OpenComments (c) {
+    window.open(c,
+                    'comments',
+                    'width=480,height=480,scrollbars=yes,status=yes');
+}
+
+function OpenTrackback (c) {
+    window.open(c,
+                    'trackback',
+                    'width=480,height=480,scrollbars=yes,status=yes');
+}
+</script>
+
+
+<!-- Google tracker -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-71966-1";
+urchinTracker();
+</script>
+
+</head>
+
+<body>
+
+<div id="banner">
+	<H1><SPAN CLASS="textVersion">Martin Woodward</SPAN></H1>
+</div>
+
+<div id="content">
+
+
+<div id="intro">
+This is the personal weblog for <A HREF="http://www.woodwardweb.com">Martin Woodward</A>.
+
+If you are interested in a <A HREF="http://www.teamprise.com">Team Foundation Server (TFS) Plugin for Eclipse</A> then please visit <A HREF="http://www.teamprise.com">Teamprise</A> who not only happen to pay my wages, but also kindly host this site for me.
+
+A list of available feeds for my site can be found <A HREF="http://www.woodwardweb.com/personal/000263.html">here</A>.
+</div>
+
+<div class="blog">
+
+
+
+
+<h2 class="date">January 16, 2008</h2>
+
+
+<div class="blogbody">
+
+<a name="000411"></a>
+<a href="http://www.woodwardweb.com/tfs_top_tip/000411.html">
+<h3 class="title">TFS Top Tip #15 - Baseline your Builds</h3>
+</a>
+<p>Microsoft Team Foundation Server 2008 has a great new improved build system (often referred to as "Team Build").&nbsp; An advantage of running your build from Team Build is that (by default) all changes between your current build and the last good one are reported in the build report and any work items that were associated with those changesets are automatically updated with the build number they were fixed in.</p> <p>However, when demonstrating this feature - the following thing always catches me out and is important to remember when using Team Build in production.&nbsp; The very first time you run a build, it does not associate that build with changesets or update any work items.</p> <p>Therefore, the first time your create a new build definition you should manually run a build and make sure it is successful.&nbsp; </p> <p>In fact I would recommend you do this anyway, even if the changeset association thing wasn't the case, after all you need to test that the new build definition you created actually works!</p> <p>The reason why Team Build 2008 works in this way is that when Team Build successfully completes a build it stores the label applied to that last good build.&nbsp; The next time it runs a build that is successful it will compare the two labels to detect which changesets were included in the build.&nbsp; It will then look over those changesets for any associated work items and update them to include the build number in which they were fixed.</p> <p>This tip is also true if you upgrade from TFS2005 to TFS2008.&nbsp; Once the upgrade is complete you should run your builds once manually to check that they are all still working fine and to give a baseline from which changes can be detected. </p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/tfs_top_tip/000411.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/tfs_top_tip/000411.html"> 7:36 AM</a>
+	
+	| <a href="http://www.woodwardweb.com/tfs_top_tip/000411.html#comments">Comments (1)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">October 26, 2007</h2>
+
+
+<div class="blogbody">
+
+<a name="000390"></a>
+<a href="http://www.woodwardweb.com/tfs_top_tip/000390.html">
+<h3 class="title">TFS Top Tip #14: The only 2 things you need to know when customizing Team Build</h3>
+</a>
+<p>If you are customizing a team build, then there are only two things you need to know to get you started.&nbsp; The rest you can (mostly) figure out from there.</p> <ol> <li>Your build is defined in a file called TFSBuild.proj for your particular Team Build Type.&nbsp; You probably figured that bit out already.&nbsp; The first thing you need to know is that the TFSBuild.proj file inherits most of its logic from a file called Microsoft.TeamFoundation.Build.targets which lives in <br><code>%ProgramFiles%\MSBuild\Microsoft\VisualStudio\TeamBuild\Microsoft.TeamFoundation.Build.targets</code>.<br>If you open this file in Notepad you can see that it is exceptionally well commented.&nbsp; There is no smoke and mirrors with Team Build, if it happens at all then it triggered by this file. Note that you should <strong>never edit the Microsoft.TeamFoundation.Build.targets</strong> file.&nbsp; In Team Build 2008 there are so many hook points provided for you to insert your own logic into the build that you should never need to.&nbsp; Microsoft goes to some rather extreme lengths to ensure backwards compatibility with this file (i.e. a TFSBuild.proj file written with the TFS2005 targets file in mind will work just great with the 2008 targets file).&nbsp; If you modify the targets file, not only are you setting your self up for deployment nightmares but you servicing nightmares as well if you attempt to upgrade to later version or even possibly service packs - don't say I didn't tell you ;-) <li>If you get a bit lost in reading the targets file - the MSDN help for build customizations is pretty good.&nbsp; The best starting point is the page "<a href="http://msdn2.microsoft.com/en-us/library/ms400710(VS.90).aspx">Understanding Team Foundation Build Configuration Files</a>" - however the pages that this links to that I refer to constantly are <a href="http://msdn2.microsoft.com/aa337604(VS.90).aspx">Customizable Team Foundation Build Targets</a> and <a href="http://msdn2.microsoft.com/aa337598(VS.90).aspx">Customizable Team Foundation Build Properties</a>.&nbsp; That said - most of the comments in those MSDN help pages are actually in the targets file itself - just sometimes the property or task you are after is easier to find in the MSDN help.</li></ol>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/tfs_top_tip/000390.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/tfs_top_tip/000390.html">11:09 PM</a>
+	
+	| <a href="http://www.woodwardweb.com/tfs_top_tip/000390.html#comments">Comments (0)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">July 21, 2007</h2>
+
+
+<div class="blogbody">
+
+<a name="000373"></a>
+<a href="http://www.woodwardweb.com/tfs_top_tip/000373.html">
+<h3 class="title">TFS Top Tip #13 - Watch where you drop stuff</h3>
+</a>
+<p>With Team Build in Team Foundation Server, you can have multiple build types for multiple projects.&nbsp; For example, we have a build that runs fast that we can have running <a href="http://en.wikipedia.org/wiki/Continuous_Integration">Continuous Integration</a> on, and a slower build (that does obfuscation, release packaging etc) that is run on demand when we want to perform a release to QA (some of which later go on to become public releases).</p> <p>A neat feature in the Team Build stuff is that you specify a drop location for your builds and the packaged binaries along with the build log and test results will be placed in a folder corresponding to the build name.&nbsp; In all the demos you see, this will typically be specified as something like <a href="file://\\server\drop">\\server\drop</a> and you may well do this yourself at first.&nbsp; Pretty quickly the drop folder will fill up with builds and get confusing.</p> <p>A better way is a rather simple solution that I almost didn't mention, however&nbsp;when I mentioned this to a friend of mine and it caused some head-slapping, so I thought I'd discuss it here.&nbsp; Apologies if you'd already figured this out this rather basic step.</p> <p>Simply, put your builds into folders.&nbsp; Something like:-</p> <ul> <li>\\server\drop\product\buildType\</li></ul> <p>To give an example:-</p> <ul> <li>\\jeeves\drop\teamprise\ci  <li>\\jeeves\drop\teamprise\release</li></ul> <p>You can obviously take this further if need be.&nbsp; For example we currently have builds going on in two main places, we are putting Teamprise 2.2 through final testing while, in parallel, we work on the next major release in trunk.&nbsp; In the example above,&nbsp;it means we have 4 builds types in total and&nbsp;can follow the convention of \\server\drop\product\branch\buildType&nbsp;to make:-</p> <ul> <li>\\jeeves\drop\teamprise\2.2\ci  <li>\\jeeves\drop\teamprise\2.2\release  <li>\\jeeves\drop\teamprise\trunk\ci  <li>\\jeeves\drop\teamprise\trunk\release</li></ul> <p>&nbsp;Pretty simple really, but helps to plan this stuff up front.</p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/tfs_top_tip/000373.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/tfs_top_tip/000373.html"> 5:13 AM</a>
+	
+	| <a href="http://www.woodwardweb.com/tfs_top_tip/000373.html#comments">Comments (1)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">January  4, 2007</h2>
+
+
+<div class="blogbody">
+
+<a name="000318"></a>
+<a href="http://www.woodwardweb.com/tfs_top_tip/000318.html">
+<h3 class="title">TFS Top Tip #12 - Specifying a proxy server at the command line</h3>
+</a>
+<p>If (<a href="http://www.woodwardweb.com/vsts/000273.html">like me</a>) you are using the <a href="http://msdn2.microsoft.com/en-us/cc31bk2e(VS.80).aspx">tf.exe</a> command line to access your Team Foundation Server via a Version Control Proxy from a remote office, then the following tip is extremely useful - much more so than my previous <a href="http://www.woodwardweb.com/vsts/000286.html">registry hack</a>.&nbsp; </p> <p>There is currently no option with the Microsoft command line to pass a version control proxy server in to TF.exe.&nbsp; It will pick one up if you have one set in the registry if you have used&nbsp;the Team Explorer GUI&nbsp;- but that isn't great for scripted scenarios.&nbsp; <a href="http://blogs.msdn.com/jmanning/">James Manning</a> recently pointed me in the direction of an undocumented environment variable called TFSPROXY.&nbsp; If set, the TFS client will use that setting to proxy your requests.&nbsp; Therefore the following will call tf.exe passing a proxy server to use in your connection:-</p> <blockquote><pre>@echo off
+setlocal
+set TFSPROXY=http://your_proxy_server:8081
+tf %*
+endlocal</pre></blockquote>
+<p>I saved this in a batch file called "tfvp.cmd" (for "tf via proxy"), therefore if I want to call tf via my proxy and I'm in a shell that doesn't have the environment variable set I can call my script.</p>
+<p>The only command that this really useful for is when doing a tfs get command, as only the download is sent via the version control proxy server,&nbsp;the majority of requests go direct to the&nbsp;main Team Foundation Server application tier that you are connected to.</p>
+<p>By the way, if you are using the&nbsp;Teamprise command line&nbsp;client then you can use the&nbsp;/proxy:http://your_proxy_server:8081 argument to specify a proxy server to use for the connection, I've just logged a bug so that we will also accept this undocumented environment variable, but we'll make it so that passing one explicitly will override any picked up from the environment variable.</p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/tfs_top_tip/000318.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/tfs_top_tip/000318.html"> 4:07 PM</a>
+	
+	| <a href="http://www.woodwardweb.com/tfs_top_tip/000318.html#comments">Comments (1)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">December 12, 2006</h2>
+
+
+<div class="blogbody">
+
+<a name="000312"></a>
+<a href="http://www.woodwardweb.com/tfs_top_tip/000312.html">
+<h3 class="title">TFS Top Tip #11 - Removing source control files from your local file system</h3>
+</a>
+<p>One of the questions that came up from one of our users was "how do I delete the files from my local file system - and tell Team Foundation Server that I have done this".</p> <p>The first thing you might try is to just delete them locally.&nbsp; However, Team Foundation Server (TFS)&nbsp;uses your <a href="http://msdn2.microsoft.com/en-us/library/ms181383(VS.80).aspx">workspace</a> to keep track of what files you have downloaded and what version you have of them.&nbsp; The reason it does this is so that it can maintain your files without a costly (both in terms of network and CPU processing) sync step.&nbsp; With TFS, when you say "Get latest", you only get the latest version of files that have changed since you last got them.&nbsp; Nothing is downloaded that you don't need (thereby saving you network traffic).&nbsp; A really neat thing about TFS is that if you delete a file on the server and check that delete in, then when somebody does a "Get Latest", the file is deleted&nbsp;on their local system as well -&nbsp;very nice.&nbsp; Moves and renames also exhibit this behavior -&nbsp;really useful for keeping&nbsp;the local file system in sync with the servers.&nbsp; </p> <p>But, if you have deleted a file locally (using Windows Explorer for example)&nbsp;then do a "Get Latest" the file is not downloaded - because the server thinks you already have it.&nbsp; You can easily download the file by going to "Get Specific Version..." and selecting the "Force get" option - which will download all files, regardless of if the server things you have them or not.</p> <p>The question I was asked was how&nbsp;to tell the server&nbsp;you have removed the file&nbsp;from&nbsp;your system, without deleting it from the server.&nbsp; In the end, it took me a while to figure out the answer (and the help of <a href="http://blogs.msdn.com/buckh/">Buck Hodges</a>)</p> <p><img style="float: none; margin-left: 25px" height="307" alt="The Get Specific Dialog with changeset 1 inside." src="http://www.woodwardweb.com/WindowsLiveWriter/TFSTopTip11Removingsourcecontrolfilesfro_B380/get_changeset_1%5B2%5D.png" width="514"> </p> <p>The answer is, if you do a "Get Specific Version..." on the files, and select <a href="http://msdn2.microsoft.com/en-us/library/ms181408(VS.80).aspx">Changeset</a> 1, the files will be deleted locally and the server will know this.&nbsp; The color of the file in the Source Control explorer will go from black to gray and will have the phrase "Not downloaded" in the latest column.</p> <p><a href="http://msdn2.microsoft.com/en-us/library/ms181408(VS.80).aspx">Changeset</a> 1 is a special <a href="http://msdn2.microsoft.com/en-us/library/ms181408(VS.80).aspx">changeset</a> on your Team Foundation Server instance.&nbsp; It was created as part of the setup routine and only contains one thing - the root node ($/) in your source control tree.&nbsp; If you do a get for <a href="http://msdn2.microsoft.com/en-us/library/ms181408(VS.80).aspx">changeset</a> 1 on any actual files then they will not exist at that point in time on the system so will be deleted locally and the server will know this.</p> <p>Anyway, I thought this worthy of a TFS Tip post.&nbsp; Not only because it highlights how to do something that is non-obvious, but also because once you understand how it works, you will&nbsp;understand&nbsp;a large part&nbsp;of what you need to know about Team Foundation Server Source Control.</p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/tfs_top_tip/000312.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/tfs_top_tip/000312.html">12:45 PM</a>
+	
+	| <a href="http://www.woodwardweb.com/tfs_top_tip/000312.html#comments">Comments (2)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">October  5, 2006</h2>
+
+
+<div class="blogbody">
+
+<a name="000291"></a>
+<a href="http://www.woodwardweb.com/vsts/000291.html">
+<h3 class="title">TFS Top Tip #10 - Keep Your Shelves Tidy</h3>
+</a>
+<p>Team Foundation Server source control has a great feature called Shelving.&nbsp; Shelving lets you set store a batch of pending changes onto the server and optionally remove them from your local workspace.&nbsp; It comes in really handy for the times when you want to backup your code and store it on the server but don't want to commit it to source control.&nbsp; I also sometimes use it when I would like a remote colleague to take a look at some code I have written before I commit it into the code base.&nbsp; For more information about Shelving, see the <a href="http://msdn2.microsoft.com/en-us/library/ms181403.aspx">MSDN documentation</a>.&nbsp; A Shelveset is identified by developer and the name the developer gave it when shelving.</p> <p>One of the features of shelving (and how it differs from working in a private developer branch) is that a Shelveset is in itself not versioned.&nbsp; If the same developer saves a Shelveset with the same name, then it will overwrite the previous Shelveset.&nbsp; This comes in really handy when you have a Shelveset that you commonly use for one thing - for example, I have a Shelveset that I normally call "Work In Progress" (actually, I normally call it "wip" because I am lazy when it comes to typing, but you get the idea).&nbsp; If I need to stop work, but I haven't been able to get to a point where I can check-in the code, then I shelve the pending changes and call the Shelveset "Work In Progress".&nbsp; That way, I only have one of these and I know the purpose of it.</p> <p>However, most of the time when you shelve, it is a temporary thing.&nbsp; You create a Shelveset and then you unshelve it - and then you no longer want it.&nbsp; The old shelvesets will sit on your shelf gathering dust until you&nbsp;tidy them up by deleting them.&nbsp; The unshelve dialog has a "Delete" button that you can use to delete a particular shelveset.</p> <p><img style="border-top-width: 0px; border-left-width: 0px; float: none; border-bottom-width: 0px; margin-left: 25px; border-right-width: 0px" height="380" src="http://www.woodwardweb.com/WindowsLiveWriter/TFSTopTip10KeepYourShelvesTidy_9031/Unshelve_Dialog%5B7%5D.png" width="535"> </p> <p>Additionally, if you press "Details", then you get to see more information about the shelveset in question - but you also get a couple of other options controlling the behavior that occurs while the unshelve is being performed:-</p> <p><img style="border-top-width: 0px; border-left-width: 0px; float: none; border-bottom-width: 0px; margin-left: 25px; border-right-width: 0px" height="55" src="http://www.woodwardweb.com/WindowsLiveWriter/TFSTopTip10KeepYourShelvesTidy_9031/Shelveset_Details_Closeup%5B2%5D.png" width="230"> </p> <p>If you un-check the "Preserve shelveset on server" check-box then your shelveset will be automatically deleted after you successfully unshelve it - which is a quite handy (if slightly hidden) feature.</p> <p>It's good practice to delete the shelvesets when you no longer need them.&nbsp; Not only will it get rid of clutter for you, it will also help when another person is trying to unshelve something that you have placed there for them.</p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/000291.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/vsts/000291.html">11:03 AM</a>
+	
+	| <a href="http://www.woodwardweb.com/vsts/000291.html#comments">Comments (1)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">September 18, 2006</h2>
+
+
+<div class="blogbody">
+
+<a name="000286"></a>
+<a href="http://www.woodwardweb.com/vsts/000286.html">
+<h3 class="title">TFS Top Tip #9 - Secret Registry Hacks</h3>
+</a>
+<p>So,&nbsp;this isn't exactly original material - but I was having a chat with somebody today who I consider very knowledgeable about Visual Studio Team System and they were not aware of these so hopefully re-posting&nbsp;some will help more people discover them.&nbsp; Strictly speaking, as all of these have been mentioned somewhere before the word "Secret" isn't&nbsp;correct - however it gave&nbsp;an otherwise very dull post a certain bit of excitement which kept you reading this far so forgive me.&nbsp; The usual Caveats about messing with the registry apply, also the default settings are generally more logical to new users so use with caution.&nbsp; Most of these tips apply to HKEY_LOCAL_MACHINE as well as HKEY_CURRENT_USER - I normally set them as a user preference so as not to confuse anyone else that should happen to use my machine.</p> <h4>Hack #1 - Stopping Team Explorer from connecting on Visual Studio 2005 Start-up</h4> <blockquote> <p>Add a DWORD value called "AutoLoadServer" under HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation.&nbsp; Zero means do not reconnect automatically.</p></blockquote> <p>I first read about this setting over at <a>Tim Noonan</a>'s blog.&nbsp; This can be very handy if, like me, you frequently change TFS servers.&nbsp; I&nbsp;jump between the work TFS instance, CodePlex&nbsp;and a test or VPC versions of TFS.&nbsp; I know which server I want to connect to when starting VS 2005, and frequently it is not the one I connected to last time.&nbsp; Adding the following setting means that I have to manually pick the server I want to connect to from the "Add Existing Project..." button.</p> <h4>Hack #2 - Don't get Missing Files</h4> <blockquote> <p>Add a DWORD value called DisableGetMissingFiles under HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation\SourceControl.&nbsp; Any value other than zero will disable getting files from the server automatically.</p></blockquote> <p>Another <a>Tim Noonan</a>&nbsp;special.&nbsp; This setting determines if files missing from the solution or project are automatically downloaded.&nbsp; I normally switch this off and so get the files only when I say "Get Latest" on a particular solution or project, this is especially useful when you are not always connected.</p> <h4>Hack #3 - Bypass proxy server</h4> <blockquote> <p>Add a String value called BypassProxyOnLocal under HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation\RequestSettings.&nbsp; A value of "true" will bypass.</p></blockquote> <p>This one from the legendry <a href="http://blogs.msdn.com/buckh/">Buck Hodges</a>.&nbsp; In some network configurations, the Microsoft Team Foundation Server client will connect to your Team Foundation Server via a web proxy server.&nbsp; This should be avoided as it slows everything down and the NTLM authentication used by TFS doesn't play well with some proxy configurations.&nbsp; I've seen this&nbsp;pop up as a&nbsp;problem with environments that use a proxy.pac file to control proxy access rather than hard-coding the entries in the Internet Options, LAN Settings (or for folks that don't have Bypass local set up).&nbsp; You should probably only use this setting if you know you are having this problem (often diagnosed by an intermittent failure of Team Explorer to connect but easily checked using a network sniffing tool such as Ethereal).</p> <h4>Hack #4 - TFS Version Control Proxy Settings</h4> <blockquote> <p>See HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation\SourceControl\Proxy.&nbsp; A String value called Url containing the proxy address and a String value called Enabled set to true will enable the source control proxy.</p></blockquote> <p>The easier way to enter values for what machine to use as a TFS Version Control Proxy&nbsp;is to go to into Visual Studio with Team Explorer installed and select Options, Source Control, Tools, Options, Source Control, Visual Studio Team Foundation Server, Proxy Settings.&nbsp; However, if you are running a tf.exe script or TFS .NET API code as part of a service and you want the code to go via a proxy then the HKEY_LOCAL_MACHINE version of this setting is very useful for setting a default.</p> <h4>Hack #5 - Configuring the TreeDiff Power Toy</h4> <p>See <a href="http://blogs.msdn.com/bharry/">Brian Harry</a>'s excellent post about some registry tweaks for <a href="http://blogs.msdn.com/bharry/archive/2006/09/08/746254.aspx">Configuring the TreeDiff Power Toy</a> to your whim.</p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/000286.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/vsts/000286.html"> 7:28 PM</a>
+	
+	| <a href="http://www.woodwardweb.com/vsts/000286.html#comments">Comments (1)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">August 31, 2006</h2>
+
+
+<div class="blogbody">
+
+<a name="000276"></a>
+<a href="http://www.woodwardweb.com/vsts/000276.html">
+<h3 class="title">TFS Top Tip #8 - Where to get help</h3>
+</a>
+<p>Recently, I've had a surge of emails asking various questions about Team Foundation Server and how to do certain things.&nbsp; While I always (eventually) respond, it can sometimes take me a while.&nbsp; If you have questions about Team Foundation Server then the best place to go is the <a href="http://forums.microsoft.com/MSDN/default.aspx?ForumGroupID=5&amp;SiteID=1">MSDN forums</a>.&nbsp; These forums are monitored by the VSTS team as well as by the Team System MVP's and other folks who know stuff about the product.&nbsp; Unlike a lot of&nbsp;newsgroups, these forums are actually a very welcoming and friendly place to ask questions.&nbsp; I personally hang out on the following forums:-</p> <ul> <li><b><a href="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=22&amp;SiteID=1">Team Foundation Server - General</a></b>  <li><b><a href="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=68&amp;SiteID=1">Team Foundation Server - Setup</a></b>  <li><b><a href="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=478&amp;SiteID=1">Team Foundation Server - Version Control</a></b>  <li><b><a href="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=479&amp;SiteID=1">Team Foundation Server - Work Item Tracking</a></b>  <li><b><a href="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=477&amp;SiteID=1">Team Foundation Server - Administration</a></b>  <li><b><a href="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=481&amp;SiteID=1">Team Foundation Server - Build Automation</a></b>  <li><b><a href="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=482&amp;SiteID=1">Team Foundation Server - Process Templates</a></b>  <li><b><a href="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=480&amp;SiteID=1">Team Foundation Server - Reporting</a></b>  <li><b><a href="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=20&amp;SiteID=1">Visual Studio Team System - General</a></b>  <li><b><a href="http://forums.microsoft.com/MSDN/ShowForum.aspx?ForumID=18&amp;SiteID=1">Visual Studio Team System - Developers</a></b></li></ul> <p>As well as the official <a href="http://forums.microsoft.com/MSDN/default.aspx?ForumGroupID=5&amp;SiteID=1">MSDN forums</a>, you can also try one of the community ones.&nbsp; These don't tend to get the traffic from Team folks but are still good resources.&nbsp; It's also a good place to ask questions that you might not want to ask on a Microsoft resource (such as how does TFS stack up against Product B) and get an answer from somebody who is not paid by Microsoft.</p> <ul> <li><a href="http://teamsystemrocks.com/forums/default.aspx">Team System Rocks</a> (excellent community resource site)  <li><a href="http://teamfoundationserver.org/Web/forums/default.aspx">TeamFoundationServer.org</a>&nbsp;(a new UK based resource)</li></ul> <p>At <a href="http://www.teamprise.com/">Teamprise</a> we also have our own <a href="http://support.teamprise.com">forum</a> and <a href="http://kb.teamprise.com">knowledge base</a> that are worth checking out if the question is related to use of Team Foundation Server from Java or on the Unix / Mac / Linux platforms.</p> <p>Before you ask the question, it is probably worth checking the <a href="http://msdn2.microsoft.com/en-us/library/ms181232.aspx">MSDN documentation</a> first or using your <a href="http://www.google.com/">favorite search engine</a>, but don't worry about asking if you can't find your answer - the folks on these forums are always happy to point you to the best resource.</p> <p>You never know, if you ask a question on these forums then you might still get me answering it if you are unlucky enough.&nbsp; By asking the question in a public forum you are doing a service for the next person that comes down the line with the same problem as they'll be able to see somebody else with the same issue and (hopefully) the answer.</p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/000276.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/vsts/000276.html">10:59 AM</a>
+	
+	| <a href="http://www.woodwardweb.com/vsts/000276.html#comments">Comments (0)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">July  6, 2006</h2>
+
+
+<div class="blogbody">
+
+<a name="000260"></a>
+<a href="http://www.woodwardweb.com/tfs_top_tip/000260.html">
+<h3 class="title">TFS Top Tip #7 - Determine when TFS Trial Edition will expire</h3>
+</a>
+<p><strong>UPDATE</strong>:&nbsp; <a href="http://blogs.msdn.com/bharry/">Brian Harry</a> has <a href="http://blogs.msdn.com/bharry/archive/2006/08/23/714412.aspx">posted a new utility</a> to help you determine the trial expiration dates on your server.&nbsp; View <a href="http://blogs.msdn.com/bharry/archive/2006/08/23/714412.aspx">Brian's post for more details</a>.</p> <p>Like a lot of early adopters, we installed the Team Foundation Server 180–day trial edition so that we could use is right away while we were waiting for our TFS license key.</p> <p>Anyway, if you want to know what the installation date of your TFS server is then the easiest way is to type the following command in a Visual Studio 2005 command prompt:-</p> <p><code>tf changeset 1 /server:http://servername:8080 /noprompt</code></p> <p>Where <em>servername</em> is your TFS instance.&nbsp; I get the following result:-</p> <p><code>Changeset: 1<br>User: tfssetup<br>Date: 20 February 2006 19:57:54<br>Comment:<br>Items:<br>&nbsp; add $/</code></p> <p>During the installation, Team Foundation Server creates the root branch of the source tree and this is the first changeset on your system.&nbsp; If you add 180 days to this date then you get when your trial will expire.</p> <p>Now, in my case it is even more confusing.&nbsp; I installed the Release Candidate of TFS on February 20th, and then upgraded to the 180–day trial edition of TFS on March 21st.&nbsp; A fact that I can tell from my installation log file located on the Team Foundation Server in the following directory:-</p> <p><code>C:\Program Files\Microsoft Visual Studio 2005 Team Foundation Server\Microsoft Visual Studio 2005 Team Foundation Server - ENU\Logs</code></p> <p>Which date will be used for the expiry of my server?&nbsp; Well at the moment I have no idea, so I am assuming the earlier of these dates will be used just in case…</p> <p>However, for most people who went straight to the 180–day trial, the command at the top of this post will give them the date of initial install.</p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/tfs_top_tip/000260.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/tfs_top_tip/000260.html">11:31 AM</a>
+	
+	| <a href="http://www.woodwardweb.com/tfs_top_tip/000260.html#comments">Comments (5)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">June 26, 2006</h2>
+
+
+<div class="blogbody">
+
+<a name="000257"></a>
+<a href="http://www.woodwardweb.com/vsts/000257.html">
+<h3 class="title">TFS Top Tip #6 - Setting the Maximum Attachment Size for Work Items</h3>
+</a>
+<p>By default, the maximum attachment size for attachments to work items in Team Foundation Server is 4Mb.&nbsp; It is handy that this feature exists because people may accidentally attach massive files when they should really be attaching something a little smaller.&nbsp; However &ndash; for some people 4Mb is just not enough and they&nbsp;want more (or even less).</p>
+<p>To do this, you can use one of the WIT Web services that isn&rsquo;t exposed via the object model.&nbsp; The easiest way is to log on to the Team Foundation Server as an administrator and then fire up the following in Internet Explorer:-</p>
+<p>http://localhost:8080/WorkItemTracking/v1.0/ConfigurationSettingsService.asmx?op=SetMaxAttachmentSize</p>
+<p>In the &ldquo;maxSize&rdquo; box, enter the required size in bytes.&nbsp; The maximum size for MaxSize is 2Gb, but you probably want to keep it smaller than that unless you really need people attaching VPC images to your work items :-)&nbsp;&nbsp; Note that this&nbsp;setting is applied server wide (across all Team projects).&nbsp; See <a href="http://msdn2.microsoft.com/en-us/library/ms400780.aspx">MSDN Help</a> for more information (and thanks to Mohammad Iqubal for <a href="http://forums.microsoft.com/MSDN/showpost.aspx?postid=499684&amp;siteid=1">posting</a> a link to the help in the <a href="http://forums.microsoft.com/MSDN/default.aspx?ForumGroupID=5&amp;SiteID=1">MSDN Forums</a>).</p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/000257.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/vsts/000257.html">10:38 AM</a>
+	
+	| <a href="http://www.woodwardweb.com/vsts/000257.html#comments">Comments (0)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">May 19, 2006</h2>
+
+
+<div class="blogbody">
+
+<a name="000247"></a>
+<a href="http://www.woodwardweb.com/vsts/000247.html">
+<h3 class="title">TFS Top Tip #5 - What to do if you lock yourself out of your repository</h3>
+</a>
+<p><img alt="Inherit security settings option" src="http://www.woodwardweb.com/images/blog/tfs_properties_thumb.png" align="right" border="0" />This tip is a follow up from my rather less helpful post &ldquo;<a href="http://www.woodwardweb.com/vsts/000158.html">Don&rsquo;t Do That</a>&rdquo; where I discussed the &ldquo;Inherit security settings&rdquo; option in the security settings tab for the Source Control Explorer when talking to Team Foundation Server.&nbsp; The issue with this check-box is that if you un-tick it then all the settings for every group on that folder are removed meaning that you have to go through every group and make sure that they have the correct permissions before you press the OK button.&nbsp; Even if you are a project administrator and you un-tick this box and press OK without giving project administrators rights to the folder or file&nbsp;you will not be able to go back and adjust the permissions.</p>
+<p>However, I have found a work around should you be left stranded in this way.&nbsp; If you log in to TFS with the credentials of somebody who is a local administrator on the server then you will be able to view the folder and reset the security permissions.&nbsp; The easiest way to do this is to log on locally to your TFS application tier machine as the TFSSetup user and use the source control explorer&nbsp;on that machine&nbsp;to rectify the problem.&nbsp; Obviously it is not ideal but at least you are not totally stranded.</p>
+<p>Rather embarrassingly, I found this work-around totally by accident while up on stage&nbsp;presenting my recent talk &ldquo;<a href="http://www.woodwardweb.com/vsts/000237.html">Top Ten Tips for Team Foundation Server</a>&rdquo;.&nbsp; My finale was going to be trashing my TFS installation by un-ticking this box and pressing OK without giving the Project Administrators the appropriate rights &ndash; however it wasn&rsquo;t as dramatic as I&rsquo;d planned.&nbsp; Turns out that this was because I was also the TFSSetup user on the VPC I was using as the TFS server.&nbsp; At least next time I can make it dramatic&nbsp;and then&nbsp;show folks how to fix it!</p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/000247.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/vsts/000247.html">10:03 AM</a>
+	
+	| <a href="http://www.woodwardweb.com/vsts/000247.html#comments">Comments (1)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">April 28, 2006</h2>
+
+
+<div class="blogbody">
+
+<a name="000234"></a>
+<a href="http://www.woodwardweb.com/vsts/000234.html">
+<h3 class="title">TFS Top Tip #4:  The Command Line Client is your friend.</h3>
+</a>
+<p>If you are going to be doing more than the basic check-in / check-out options then it pays to get to know the command line client &ndash; tf.&nbsp; The command line client is actually the most flexible and powerful client to Team Foundation Version Control.</p>
+<p>For more information, consult the <a href="http://msdn2.microsoft.com/en-us/library/cc31bk2e.aspx">MSDN help documentation</a>.&nbsp; <a href="http://www.teamprise.com/">Teamprise</a> users will be glad to hear that a large percentage of the commands are implemented in V1.0 of our command line client meaning that you can do these actions from a Mac or Unix box as well (<a href="http://kb.teamprise.com/article/view/8">install instructions are posted in the Knowledge Base</a>).&nbsp; If you are running on Windows then you are probably better off sticking to Microsoft&rsquo;s command line client that gets installed as part of the Team Foundation Server client installation (and accessible via a Visual Studio 2005 command shell).</p>
+<p>For example, to show&nbsp;all the check-outs by everyone on a path in the repository:-</p>
+<p><code>&nbsp; tf status /server:http://yourservernamehere:8080 /user:* /recursive $/TeamProject/</code></p>
+<p>For more examples, see an excellent&nbsp;post from <a href="http://blogs.msdn.com/jmanning/archive/2006/04/07/571151.aspx">James Manning</a>&nbsp;or some of my previous posts:-</p>
+<ul>
+<li><a href="http://www.woodwardweb.com/dotnet/000116.html">Hatteras Command Line Tips</a> (from back when tf.exe was called h.exe which saved a keypress :-), however the documentation was no where near as good as it is now&nbsp;)</li>
+<li><a href="http://www.woodwardweb.com/vsts/000143.html">Unlocking files in VSTS</a></li></ul>
+<p>The command line client is also excellent for scripting purposes (our automated build system relies heavily on it).&nbsp; I urge you to spend a few moments with a strong cup of coffee, the <a href="http://msdn2.microsoft.com/en-us/library/cc31bk2e.aspx">help documentation</a> and just have a play around.&nbsp; Once you realise what commands are available then you&rsquo;ll know what&rsquo;s possible if you come across a situation in the future where you reach limitations in the UI.</p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/000234.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/vsts/000234.html"> 4:39 PM</a>
+	
+	| <a href="http://www.woodwardweb.com/vsts/000234.html#comments">Comments (2)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">April 27, 2006</h2>
+
+
+<div class="blogbody">
+
+<a name="000230"></a>
+<a href="http://www.woodwardweb.com/vsts/000230.html">
+<h3 class="title">TFS Top Tip #3:  Removing the Resolve Check-In Action from a Work Item</h3>
+</a>
+<p>I don&rsquo;t know about you, but I love associating my check-ins with work items using the Pending Changes view, it makes it so easy to maintain requirements traceability and helps me feel less guilty as I&rsquo;m doing one more thing that I should have been doing for years.&nbsp; </p>
+<p>The only problem with the default definitions for Bug and Task are that if you select the item then by default the &ldquo;Resolve&rdquo; check-in action is selected.&nbsp; This is annoying for me as it the action I want to take in probably about 5% of check-ins.&nbsp; 95% of the time I just want to associate and 90% of the time I forgot that I have to change the default setting and end up going back to the work item and re-activating it.</p>
+<p><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="A bug with the Resolve and Associate actions displayed.  Resolve is the default." src="http://www.woodwardweb.com/blog/remove_resolve.png" border="0" /></p>
+<p>The &ldquo;Resolve&rdquo; option is displayed when a state transition in the work item&rsquo;s workflow is defined as having an action defined for check-in.&nbsp; Below is the transition section from the MSF Agile Bug:-</p>
+<div style="FONT-FAMILY: Courier New"><span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">TRANSITION</span>&nbsp;<span style="COLOR: red">from</span>="<SPAN style="color: blue">Active</SPAN>"&nbsp;<span style="COLOR: red">to</span>="<SPAN style="color: blue">Resolved</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASONS</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">DEFAULTREASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Fixed</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Deferred</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Duplicate</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">As&nbsp;Designed</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Unable&nbsp;to&nbsp;Reproduce</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Obsolete</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">REASONS</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELDS</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">System.AssignedTo</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">COPY</span>&nbsp;<span style="COLOR: red">from</span>="<SPAN style="color: blue">field</SPAN>"&nbsp;<span style="COLOR: red">field</span>="<SPAN style="color: blue">System.CreatedBy</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">Microsoft.VSTS.Common.ActivatedDate</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">READONLY</span>&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">Microsoft.VSTS.Common.ActivatedBy</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">READONLY</span>&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">Microsoft.VSTS.Common.ResolvedBy</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">COPY</span>&nbsp;<span style="COLOR: red">from</span>="<SPAN style="color: blue">currentuser</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">VALIDUSER</span>&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REQUIRED</span>&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">Microsoft.VSTS.Common.ResolvedDate</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">SERVERDEFAULT</span>&nbsp;<span style="COLOR: red">from</span>="<SPAN style="color: blue">clock</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELDS</span><span style="COLOR: blue">&gt;</span> <br /><strong>&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">ACTIONS</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">ACTION</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Microsoft.VSTS.Actions.Checkin</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">ACTIONS</span><span style="COLOR: blue">&gt;</span></strong> <br /><span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">TRANSITION</span><span style="COLOR: blue">&gt;</span></div>
+<p>If you remove the actions section from the transition from Active to Resolved transition then the only check-in action available will be &ldquo;Associate&rdquo;.&nbsp; Admittedly, this means that I have to edit the work item after finishing checking in files to move it from Active to Resolved &ndash; but I find this works better for me.&nbsp; I usually leave a little comment in the history as I change the state to say (at a high level) what I did and in the case of bugs any help I need to give to help&nbsp;the fix be verified by the test verification team.</p>
+<p>&nbsp;</p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/000230.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/vsts/000230.html"> 1:35 PM</a>
+	
+	| <a href="http://www.woodwardweb.com/vsts/000230.html#comments">Comments (8)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">April 26, 2006</h2>
+
+
+<div class="blogbody">
+
+<a name="000229"></a>
+<a href="http://www.woodwardweb.com/vsts/000229.html">
+<h3 class="title">TFS Top Tip #2: Changing the Logged In User</h3>
+</a>
+<p><a href="http://www.woodwardweb.com/blog/username_cache.gif"></a><a href="http://www.woodwardweb.com/blog/username_cache.gif"></a><a href="http://www.woodwardweb.com/blog/username_cache.gif"></a><a href="http://www.woodwardweb.com/blog/username_cache.gif"></a><a href="http://www.woodwardweb.com/blog/username_cache.gif"><img alt="Windows User Cache Dialog" src="http://www.woodwardweb.com/blog/username_cache_thumb.jpg" align="right" border="0" /></a>When you connect to a Team Foundation Server, the Microsoft client API attempts to connect with your current credentials&nbsp;that the process is running with under Windows.&nbsp; If you are on a different domain than your TFS server or the user that you are logged in with does not have access, then you will be prompted to enter your login credentials using the standard login dialog box that you will be familiar with from Internet Explorer.</p>
+<p>However, what if you pass credentials and now you would like to pass in a different set.&nbsp; In <a href="http://www.teamprise.com/">Teamprise</a> it is easy enough because we have to ask you them every time you connect.&nbsp; With the Microsoft API your credentials are cached in the standard windows store.</p>
+<p>To access this store (and remove your cached credentials allowing you to re-authenticate as a different user) then go to Control Panel, User Accounts, Advanced Tab, Manage Passwords.&nbsp; You should then locate your TFS Server instance and select Remove.</p>
+<p>&nbsp;</p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/000229.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/vsts/000229.html"> 3:15 PM</a>
+	
+	| <a href="http://www.woodwardweb.com/vsts/000229.html#comments">Comments (1)</a>
+	
+	
+</div>
+
+</div>
+
+
+
+
+
+<h2 class="date">April 25, 2006</h2>
+
+
+<div class="blogbody">
+
+<a name="000228"></a>
+<a href="http://www.woodwardweb.com/vsts/000228.html">
+<h3 class="title">TFS Top Tip #1 - WIQL Seperators</h3>
+</a>
+<p></p>
+<p>I thought I&rsquo;d try and post some quick Top Tips for Team Foundation Server &ndash; in no particular order apart from as I think of them.&nbsp; Today, this came up in the <a href="http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=366920&amp;SiteID=1">forums</a> so I thought I&rsquo;d elaborate.</p>
+<p>WIQL (pronounced Wickle), stands for Work Item Query Language and is what is used when talking to the work item store in Team Foundation Server.&nbsp; It has a SQL like construct and is used to pass queries to the server.&nbsp; Visual Studio 2005 comes with a Query Editor that generate WIQL.&nbsp; While the query editor is straightforward, it is pretty powerful and allows you to do most things.</p>
+<p>However, the query editor is region sensitive which sometimes causes confusion.&nbsp; Take the following example where I am using an &ldquo;IN&rdquo; statement to list a set of values for the work item status:-</p>
+<p><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="An example of using the IN statement in Visual Studio 2005 Work Item Query Editor" src="http://www.woodwardweb.com/blog/in_usage_example.png" border="0" /></p>
+<p>Note that the values are separated by commas.&nbsp; Those of you from a SQL background find this very sensible, but what the query editor is actually doing is taking the list of values and converting them into the following WIQL statement:-</p>
+<div style="FONT-FAMILY: Courier New">SELECT&nbsp;&nbsp;&nbsp;[System.Id],&nbsp;[System.WorkItemType],&nbsp;[Microsoft.VSTS.Common.Rank],&nbsp;[System.State],&nbsp;[System.AssignedTo],&nbsp;[System.Title]&nbsp; <br />FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WorkItems&nbsp; <br />WHERE&nbsp;&nbsp;&nbsp;&nbsp;[System.TeamProject]&nbsp;=&nbsp;@project&nbsp;&nbsp; <br />AND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.State]&nbsp;IN&nbsp;(<span style="COLOR: maroon">'Active'</span>,&nbsp;<span style="COLOR: maroon">'Pending'</span>,&nbsp;<span style="COLOR: maroon">'Proposed'</span>,&nbsp;<span style="COLOR: maroon">'Requested'</span>)&nbsp; <br />ORDER&nbsp;BY&nbsp;[Microsoft.VSTS.Common.Rank],&nbsp;[System.WorkItemType],&nbsp;[System.Id]</div>
+<p>(A top sub-tip is that it is possible to save WIQL files from Visual Studio by editing the query then selecting File, Save Query As.. and then select file.&nbsp; To run a saved query from the file system double click the *.wiq file from explorer)</p>
+<p>The comma separator used by the query editor is actually being picked up from the &ldquo;List separator&rdquo; of your regional settings (shown below)&nbsp;(Start, Control Panel, Regional Settings, Customize&hellip;)</p>
+<p><a href="http://www.woodwardweb.com/blog/region_settings.png"><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="Region_settings" src="http://www.woodwardweb.com/blog/region_settings_thumb.jpg" border="0" /></a></p>
+<p>If you are in one of the many regions of the world that use a different list separator then you have to use that in the Visual Studio 2005 Query Editor.&nbsp; For example, if I change my list separator to be a semi-colon and then re-edit the query in the Visual Studio 2005 Query Editor I get the following:-</p>
+<p><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="Same WIQL, different list seperator" src="http://www.woodwardweb.com/blog/in_usage_example_semicolon.png" border="0" /></p>
+<p>This behaviour has some interesting side effects.&nbsp; Remember when I said that the Visual Studio 2005 Query Editor &ldquo;allows you to do most things&rdquo;.&nbsp; Well, one small problem is forcing the editor to take a character to say that you want the following to be treated as a string.&nbsp; For example, if you have a comma in the text value you are trying to use in an &ldquo;IN&rdquo; statement then you are hosed because the query editor assumes that this is a new value in your list.&nbsp; For example, if you try the following:</p>
+<p><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="Query names" src="http://www.woodwardweb.com/blog/in_usage_example_names.png" border="0" /></p>
+<p>This actually gets translated by the query editor as the following:</p>
+<div style="FONT-FAMILY: Courier New">SELECT&nbsp;&nbsp;&nbsp;[System.Id],&nbsp;[System.WorkItemType],&nbsp;[Microsoft.VSTS.Common.Rank],&nbsp;[System.State],&nbsp;[System.AssignedTo],&nbsp;[System.Title]&nbsp; <br />FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WorkItems&nbsp; <br />WHERE&nbsp;&nbsp;&nbsp;&nbsp;[System.TeamProject]&nbsp;=&nbsp;@project&nbsp;&nbsp; <br />AND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.AssignedTo]&nbsp;IN&nbsp;(<span style="COLOR: maroon">''</span><span style="COLOR: maroon">'Woodward'</span>,&nbsp;<span style="COLOR: maroon">'Martin'</span><span style="COLOR: maroon">''</span>,&nbsp;<span style="COLOR: maroon">''</span><span style="COLOR: maroon">'Sell'</span>,&nbsp;<span style="COLOR: maroon">'Clark'</span><span style="COLOR: maroon">''</span>)&nbsp; <br />ORDER&nbsp;BY&nbsp;[Microsoft.VSTS.Common.Rank],&nbsp;[System.WorkItemType],&nbsp;[System.Id]</div>
+<p>As you can tell, it parses on the commas first, which is not want you wanted at all.&nbsp; If you manually type in the WIQL correctly as <code>IN (&lsquo;Woodward, Martin&rsquo;, &lsquo;Sell, Clark&rsquo;)</code> then the query editor will display this as <code>Woodward, Martin, Sell, Clark</code> &ndash; which in turn gets treated as <code>IN (&lsquo;Woodward&rsquo;,&rsquo;Martin&rsquo;,&rsquo;Sell&rsquo;,&rsquo;Clark&rsquo;)</code> when the WIQL is generated by the editor.&nbsp; </p>
+<p>Hey ho &ndash; <a href="http://www.csell.net/">Clark Sell</a> has a <a href="http://csell.net/PermaLink,guid,aae3824a-d5d5-4326-a5b0-d7ee1b5c1d25.aspx">post</a> about changing the regional settings to enable to to query assigned to names but be warned it may have nasty side effects in other programs on your machine.</p>
+<p>Hmm.&nbsp; When I thought about posting a TFS Tip a day for the next couple of weeks I didn&rsquo;t intend them to be this long.&nbsp; Expect the next one to be more concise&hellip;</p>
+<p><font size="1"><strong>Now playing:</strong> <a href="http://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?artistTerm=Carl Franklin">Carl Franklin</a> - <a href="http://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?songTerm=Avalon, AJAX, Vista, and more with Tim Huckaby&amp;artistTerm=Carl Franklin">Avalon, AJAX, Vista, and more with Tim Huckaby</a></font></p>
+
+
+
+<div class="posted">
+<div class = "shareblock"><script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/000228.html" type="text/javascript" charset="utf-8"></script></div>
+
+
+	Posted by Martin at <a href="http://www.woodwardweb.com/vsts/000228.html"> 4:13 PM</a>
+	
+	| <a href="http://www.woodwardweb.com/vsts/000228.html#comments">Comments (4)</a>
+	
+	
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div id="links">
+
+<div class="sidetitle">
+Sections
+</div>
+<div class="side">
+
+<a href="http://www.woodwardweb.com/" TITLE="Martin Woodward">Home</a><br />
+
+<a href="http://www.woodwardweb.com/Books/">Books (9)</a><br />
+
+<a href="http://www.woodwardweb.com/Buddies/">Buddies (10)</a><br />
+
+<a href="http://www.woodwardweb.com/Dotnet/">Dotnet (38)</a><br />
+
+<a href="http://www.woodwardweb.com/Films/">Films (2)</a><br />
+
+<a href="http://www.woodwardweb.com/Gadgets/">Gadgets (12)</a><br />
+
+<a href="http://www.woodwardweb.com/Java/">Java (16)</a><br />
+
+<a href="http://www.woodwardweb.com/Personal/">Personal (61)</a><br />
+
+<a href="http://www.woodwardweb.com/Photos/">Photos (2)</a><br />
+
+<a href="http://www.woodwardweb.com/Podcasting/">Podcasting (17)</a><br />
+
+<a href="http://www.woodwardweb.com/Programming/">Programming (34)</a><br />
+
+<a href="http://www.woodwardweb.com/Sandbox/">Sandbox (2)</a><br />
+
+<a href="http://www.woodwardweb.com/Software/">Software (10)</a><br />
+
+<a href="http://www.woodwardweb.com/Teamprise/">Teamprise (58)</a><br />
+
+<a href="http://www.woodwardweb.com/Technology/">Technology (47)</a><br />
+
+<a href="http://www.woodwardweb.com/tfs/">tfs (35)</a><br />
+
+<a href="http://www.woodwardweb.com/tfs2005/">tfs2005 (20)</a><br />
+
+<a href="http://www.woodwardweb.com/tfs2008/">tfs2008 (32)</a><br />
+
+<a href="http://www.woodwardweb.com/TFS Top Tip/">TFS Top Tip (15)</a><br />
+
+<a href="http://www.woodwardweb.com/Vista/">Vista (20)</a><br />
+
+<a href="http://www.woodwardweb.com/Vsts/">Vsts (176)</a><br />
+
+<a href="http://www.woodwardweb.com/Web Design/">Web Design (2)</a><br />
+
+<a href="http://www.woodwardweb.com/Web Sites/">Web Sites (20)</a><br />
+
+<a href="http://www.woodwardweb.com/Work/">Work (6)</a><br />
+
+</div>
+
+<div class="sidetitle">
+Search
+</div> 
+<div class="side">
+<form method="get" action="http://www.woodwardweb.com/mt/mt-search.cgi">
+<input type="hidden" name="IncludeBlogs" value="2" />
+<label for="search" accesskey="4">Search this site:</label><br />
+<input id="search" name="search" size="20" /><br />
+<input type="submit" value="Search" />
+</form>
+</div>
+
+<div class="syndicate">
+<a href="http://feeds.feedburner.com/MartinWoodward">Syndicate this site (XML)</a>
+<br/><br/>
+<a href="http://clustrmaps.com/counter/maps.php?url=http://www.woodwardweb.com" id="clustrMapsLink"><img src="http://clustrmaps.com/counter/index2.php?url=http://www.woodwardweb.com" border=0 alt="Locations of visitors to this page"onError="this.onError=null; this.src='http://www.meetomatic.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/'">
+</a>
+</div>
+
+
+<div class="syndicate">
+<a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights" /></a><br />
+This weblog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+</div>
+
+
+</div>
+
+<div class="powered">
+Powered by<br /><a href="http://www.movabletype.org">Movable Type 4.2-en</a><br />   
+
+</div>
+
+<br clear="all" />
+
+
+
+</body>
+</html>

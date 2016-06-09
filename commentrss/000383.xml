@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Do you come here often?</title>
+    <link>http://www.woodwardweb.com/personal/do_you_come_her.html</link>
+    <description><![CDATA[An odd smirk followed by "You come here a lot" is not what you want to hear when at the customs&nbsp;desk waiting to come into the US.&nbsp; Immediately I expected the worst - an armed&nbsp;SWAT team absailing from the ceiling...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-10-06T23:02:40+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Etienne+00:00</title>
+    <link>http://www.woodwardweb.com/personal/do_you_come_her.html#c036082</link>
+    <description>Loved it bro.  I&apos;ve a lot of similar experience and for me it&apos;s don&apos;t say anything more than what you are asked.  That as worked for me in the past so i&apos;m sticking with it.
+
+Cheers,
+
+ET</description>
+    <dc:date>2007-10-07T22:42:24+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=383</comments>   
+    <dc:creator>Etienne</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Rob+00:00</title>
+    <link>http://www.woodwardweb.com/personal/do_you_come_her.html#c036151</link>
+    <description>Ahh - a magnificent chance to use the french phrase: &quot;l&apos;esprit d&apos;escalier&quot;, the spirit of the staircase. That  moment when you think of that fantastic reposte and that it just long enough after the fact to render it impotent.
+
+I&apos;ve come to the conclusion that standing in the queue is actually part of the security check. Being utterly bored and losing track of where you are is probably the best way to display the fact that you aren&apos;t bricking it.
+
+Anyway you *know* it&apos;s wishful thinking, just think what might have happened if you&apos;d got that quip out. Don&apos;t have nightmares..</description>
+    <dc:date>2007-10-08T09:02:37+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=383</comments>   
+    <dc:creator>Rob</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mick+00:00</title>
+    <link>http://www.woodwardweb.com/personal/do_you_come_her.html#c036782</link>
+    <description>The next time you get stuck into an interesting coding problem or derive satisfaction from answering some tricky question on any of the forums you monitor - ponder how lucky you are not to have his job - choice of Chicken or Beef pales in comparison.
+
+but yes we&apos;ve all been there ...
+like the time I was leaving LA and the security lady brought me back my brand new bag and said it got torn while they were checking it - no appology / nada - what can you say ... she looked very menacing and she was [as they say in all good ganster movies] carrying ...</description>
+    <dc:date>2007-10-16T03:17:24+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=383</comments>   
+    <dc:creator>Mick</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

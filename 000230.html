@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Martin Woodward: Top TFS Tip #3:  Removing the Resolve Check-In Action from a Work Item</title>
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/styles-site.css" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/MartinWoodward" />
+
+<link rel="start" href="http://www.woodwardweb.com/" title="Martin Woodward" />
+<link rel="prev" href="http://www.woodwardweb.com/vsts/000229.html" title="TFS Top Tip #2: Changing the Logged In User" />
+
+
+
+
+
+   <script type="text/javascript" src="http://www.woodwardweb.com/mt-site.js"></script>
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/000230.html">
+<dc:title>Top TFS Tip #3:  Removing the Resolve Check-In Action from a Work Item</dc:title>
+<dc:description><![CDATA[I don&rsquo;t know about you, but I love associating my check-ins with work items using the Pending Changes view, it makes it so easy to maintain requirements traceability and helps me feel less guilty as I&rsquo;m doing one more thing...]]></dc:description>
+<dc:creator>Martin</dc:creator>
+<dc:date>2006-04-27T13:35:40+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+
+<!-- Google tracker -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-71966-1";
+urchinTracker();
+</script>
+
+</head>
+
+<body>
+
+<div id="banner">
+	<H1><SPAN CLASS="textVersion">Martin Woodward</SPAN></H1>
+</div>
+
+<div id="content">
+
+<div class="blog">
+
+<div id="menu">
+<a href="http://www.woodwardweb.com/vsts/000229.html">&laquo; TFS Top Tip #2: Changing the Logged In User</a> |
+
+<a href="http://www.woodwardweb.com/">Martin Woodward</a>
+
+</div>
+
+</div>
+
+
+<div class="blog">
+
+<h2 class="date">April 27, 2006</h2>
+
+<div class="blogbody">
+
+<h3 class="title">Top TFS Tip #3:  Removing the Resolve Check-In Action from a Work Item</h3>
+
+<p>I don&rsquo;t know about you, but I love associating my check-ins with work items using the Pending Changes view, it makes it so easy to maintain requirements traceability and helps me feel less guilty as I&rsquo;m doing one more thing that I should have been doing for years.&nbsp; </p>
+<p>The only problem with the default definitions for Bug and Task are that if you select the item then by default the &ldquo;Resolve&rdquo; check-in action is selected.&nbsp; This is annoying for me as it the action I want to take in probably about 5% of check-ins.&nbsp; 95% of the time I just want to associate and 90% of the time I forgot that I have to change the default setting and end up going back to the work item and re-activating it.</p>
+<p><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="A bug with the Resolve and Associate actions displayed.  Resolve is the default." src="http://www.woodwardweb.com/blog/remove_resolve.png" border="0" /></p>
+<p>The &ldquo;Resolve&rdquo; option is displayed when a state transition in the work item&rsquo;s workflow is defined as having an action defined for check-in.&nbsp; Below is the transition section from the MSF Agile Bug:-</p>
+<div style="FONT-FAMILY: Courier New"><span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">TRANSITION</span>&nbsp;<span style="COLOR: red">from</span>="<SPAN style="color: blue">Active</SPAN>"&nbsp;<span style="COLOR: red">to</span>="<SPAN style="color: blue">Resolved</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASONS</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">DEFAULTREASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Fixed</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Deferred</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Duplicate</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">As&nbsp;Designed</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Unable&nbsp;to&nbsp;Reproduce</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REASON</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Obsolete</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">REASONS</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELDS</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">System.AssignedTo</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">COPY</span>&nbsp;<span style="COLOR: red">from</span>="<SPAN style="color: blue">field</SPAN>"&nbsp;<span style="COLOR: red">field</span>="<SPAN style="color: blue">System.CreatedBy</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">Microsoft.VSTS.Common.ActivatedDate</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">READONLY</span>&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">Microsoft.VSTS.Common.ActivatedBy</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">READONLY</span>&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">Microsoft.VSTS.Common.ResolvedBy</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">COPY</span>&nbsp;<span style="COLOR: red">from</span>="<SPAN style="color: blue">currentuser</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">VALIDUSER</span>&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">REQUIRED</span>&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">FIELD</span>&nbsp;<span style="COLOR: red">refname</span>="<SPAN style="color: blue">Microsoft.VSTS.Common.ResolvedDate</SPAN>"<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">SERVERDEFAULT</span>&nbsp;<span style="COLOR: red">from</span>="<SPAN style="color: blue">clock</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELD</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">FIELDS</span><span style="COLOR: blue">&gt;</span> <br /><strong>&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">ACTIONS</span><span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span><span style="COLOR: maroon">ACTION</span>&nbsp;<span style="COLOR: red">value</span>="<SPAN style="color: blue">Microsoft.VSTS.Actions.Checkin</SPAN>"&nbsp;/<span style="COLOR: blue">&gt;</span> <br />&nbsp;&nbsp;<span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">ACTIONS</span><span style="COLOR: blue">&gt;</span></strong> <br /><span style="COLOR: blue">&lt;</span>/<span style="COLOR: maroon">TRANSITION</span><span style="COLOR: blue">&gt;</span></div>
+<p>If you remove the actions section from the transition from Active to Resolved transition then the only check-in action available will be &ldquo;Associate&rdquo;.&nbsp; Admittedly, this means that I have to edit the work item after finishing checking in files to move it from Active to Resolved &ndash; but I find this works better for me.&nbsp; I usually leave a little comment in the history as I change the state to say (at a high level) what I did and in the case of bugs any help I need to give to help&nbsp;the fix be verified by the test verification team.</p>
+<p>&nbsp;</p>
+
+<a name="more"></a>
+
+
+<span class="posted">Posted by Martin at April 27, 2006 01:35 PM
+
+<br /></span>
+
+</div>
+
+
+                     
+
+                                          <div id="comments" class="comments">
+                        <div class="comments-content">
+                           
+                        </div>
+
+                         
+                        <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="230" />
+                           
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-head">Post a comment</h2>
+                              
+                              <div class="comments-body">
+                              
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">Name:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">Email Address:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          Remember personal info?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">Comments: </label>
+                                    <textarea id="comment-text" name="text" rows="10" cols="30"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="Preview" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="Post" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+
+
+
+
+
+
+</div>
+</div>
+
+
+<div id="links">
+
+<div class="sidetitle">
+Sections
+</div>
+<div class="side">
+
+<a href="http://www.woodwardweb.com/" TITLE="Martin Woodward">Home</a><br />
+<a href="http://www.woodwardweb.com/Books/">Books (8)</a><br />
+<a href="http://www.woodwardweb.com/Buddies/">Buddies (10)</a><br />
+<a href="http://www.woodwardweb.com/Dotnet/">Dotnet (23)</a><br />
+<a href="http://www.woodwardweb.com/Films/">Films (2)</a><br />
+<a href="http://www.woodwardweb.com/Gadgets/">Gadgets (9)</a><br />
+<a href="http://www.woodwardweb.com/Java/">Java (9)</a><br />
+<a href="http://www.woodwardweb.com/Personal/">Personal (31)</a><br />
+<a href="http://www.woodwardweb.com/Photos/">Photos (2)</a><br />
+<a href="http://www.woodwardweb.com/Podcasting/">Podcasting (8)</a><br />
+<a href="http://www.woodwardweb.com/Programming/">Programming (23)</a><br />
+<a href="http://www.woodwardweb.com/Sandbox/">Sandbox (2)</a><br />
+<a href="http://www.woodwardweb.com/Software/">Software (6)</a><br />
+<a href="http://www.woodwardweb.com/Teamprise/">Teamprise (12)</a><br />
+<a href="http://www.woodwardweb.com/Technology/">Technology (26)</a><br />
+<a href="http://www.woodwardweb.com/Vsts/">Vsts (54)</a><br />
+<a href="http://www.woodwardweb.com/Web Design/">Web Design (2)</a><br />
+<a href="http://www.woodwardweb.com/Web Sites/">Web Sites (19)</a><br />
+<a href="http://www.woodwardweb.com/Work/">Work (5)</a><br />
+
+</div>
+
+<div class="sidetitle">
+Search
+</div> 
+<div class="side">
+<form method="get" action="http://www.woodwardweb.com/mt/mt-search.cgi">
+<input type="hidden" name="IncludeBlogs" value="2" />
+<label for="search" accesskey="4">Search this site:</label><br />
+<input id="search" name="search" size="20" /><br />
+<input type="submit" value="Search" />
+</form>
+</div>
+
+<div class="syndicate">
+<a href="http://feeds.feedburner.com/MartinWoodward">Syndicate this site (XML)</a>
+<br/><br/>
+<a href="http://clustrmaps.com/counter/maps.php?url=http://www.woodwardweb.com" id="clustrMapsLink"><img src="http://clustrmaps.com/counter/index2.php?url=http://www.woodwardweb.com" border=0 alt="Locations of visitors to this page"onError="this.onError=null; this.src='http://www.meetomatic.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/'">
+</a>
+</div>
+
+<div class="syndicate">
+<a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights" /></a><br />
+This weblog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+</div>
+
+
+</div>
+
+<br clear="all" />
+
+
+</body>
+</html>

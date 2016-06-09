@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>028 9018 4242 is the new 555  </title>
+    <link>http://www.woodwardweb.com/personal/028_9018_4242_i.html</link>
+    <description>Anyone who watches the Simpsons or Ghostbusters (555 2368) is aware that numbers beginning with 555 in the states are usually fake. While looking for information about international dialing from the UK, I stumbled upon the official Ofcom list of...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-02-09T11:22:21+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Sam Judson+00:00</title>
+    <link>http://www.woodwardweb.com/personal/028_9018_4242_i.html#c002185</link>
+    <description>Thats cool - I just took some photos of a phone booth being used as a prop for the new series of Wire In The Blood (Robson Green TV Show) fillming in Newcastle. It had some &apos;adult calling cards&apos; in and I&apos;m sure the numbers started with 01632.
+
+Damn, that means they&apos;re not real :(</description>
+    <dc:date>2006-02-09T13:40:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1502</comments>   
+    <dc:creator>Sam Judson</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Bluetooth support on Dell Precision M70 with Vista</title>
+    <link>http://www.woodwardweb.com/vista/bluetooth_suppo.html</link>
+    <description><![CDATA[ Today, I received a fancy new Microsoft Wireless Notebook Presenter 8000 mouse courtesy of Microsoft.&nbsp; This is a Bluetooth enabled mouse with some useful extra buttons for slide advance and a built in laser pointer when presenting.&nbsp; It is...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-02-20T18:05:23+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Kenny Kerr+00:00</title>
+    <link>http://www.woodwardweb.com/vista/bluetooth_suppo.html#c002348</link>
+    <description>Thanks for the tip Martin. How do you find the Precision laptops? Iâm in the market for a new laptop and am thinking of getting a Dell âworkstationâ laptop.</description>
+    <dc:date>2007-02-21T00:09:04+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1644</comments>   
+    <dc:creator>Kenny Kerr</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vista/bluetooth_suppo.html#c002349</link>
+    <description>Iâve found mine very good and very reliable.  Itâs a bit chunky looking but certainly has the power to run a VPC or two while doing standard development type tasks.  For me it strikes the right balance between battery life and raw power â I have the second battery that slots into the removable media bay and this allows me to get work done when on the road.  I have an M70 which is feeling a little dated â the M90 looks like a nice little machine and they have updated the case.  I am very jealous of the Core2 Duo action â I could do with some of that :-).  I travel a bit to exhibitions etc and I see a few of the Precision range of laptops around which makes me feel in good company.
+
+BTW â I went for the 1680 x 1050 resolution internal screen as that gives me plenty of real estate without being too large to carry but easy enough to read when running at 96dpi in native resolution.
+
+In terms of alternatives, the Apple Mac Book pro is nice â however I still think I would prefer a Dell for day-to-day work because there are still a few small niggles when running Vista on a Mac machine (small things like keyboard mappings etc).  Other folks seem to also like the Toshibas, but I prefer to customize the build more (however I would like tablet PC functionality at times).  People in my company have a habit of purchasing from âboutiqueâ high-performance machine vendors and I think I&apos;m seen as quite boring with my choice of a Dell, however Iâve been happy with it.  
+
+I have no complaints at all with the build quality of mine which was made in Dell&apos;s EMEA assembly plant not that far from me in Ireland.</description>
+    <dc:date>2007-02-21T09:41:53+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1644</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by David Brand+00:00</title>
+    <link>http://www.woodwardweb.com/vista/bluetooth_suppo.html#c002360</link>
+    <description>It seems that Microsoft has removed Bluetooth support from Vista, that was included in Windows XP SP2. Did your Dell update include a bluetooth utility?
+</description>
+    <dc:date>2007-03-06T15:53:30+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1644</comments>   
+    <dc:creator>David Brand</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vista/bluetooth_suppo.html#c002361</link>
+    <description>David,
+
+The base install of Vista included some Bluetooth support for me.  The Dell drivers flashed the bluetooth chipset in my laptop then installed an updated driver - however I think all the Bluetooth dialogs are Vista ones (and very similar tp Win XP)</description>
+    <dc:date>2007-03-08T10:09:23+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1644</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

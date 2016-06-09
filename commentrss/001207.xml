@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title><![CDATA[&quot;Admin Command Prompt Here&quot; Registry Hack]]></title>
+    <link>http://www.woodwardweb.com/vista/admin_command_p.html</link>
+    <description><![CDATA[ A neat (if not well known) feature of Windows Vista is the built in ability to do a "Command Prompt Here" by selecting a folder, keeping the shift key down and right clicking on the folder.&nbsp; While this is...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-10-05T02:19:51+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by sazwqa+00:00</title>
+    <link>http://www.woodwardweb.com/vista/admin_command_p.html#c001887</link>
+    <description>Liked the red background concept.
+
+PS: Just a quick note, If am previewing my post aftering entering correct captcha, I shdn&apos;t be bothered to enter captcha again. What say ?
+
+Thanks.</description>
+    <dc:date>2008-10-05T16:10:09+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1207</comments>   
+    <dc:creator>sazwqa</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

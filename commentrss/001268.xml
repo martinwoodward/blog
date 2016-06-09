@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Creating a TFS 2008 with SP1 Slipstreamed ISO image</title>
+    <link>http://www.woodwardweb.com/vsts/creating_a_tfs.html</link>
+    <description>Now that TFS 2008 SP1 is here, time to create a version of the TFS installer media that just contains the bits with SP1 applied.&#160; This is essential for installations targeting SQL Server 2008, but also makes the installation process...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-08-12T14:06:36+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Dave+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/creating_a_tfs.html#c002035</link>
+    <description>You mention the TFS Install Guide, but the link only contains pre-SP1 and SP1Beta install guides. Where can I find a SP1-RTM install guide?</description>
+    <dc:date>2008-08-12T14:17:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1268</comments>   
+    <dc:creator>Dave</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/creating_a_tfs.html#c002036</link>
+    <description>Dave,
+
+The version called &quot;TFSInstall-RTM-v080811.chm&quot; contains the latest SP1 information.  The owners of this document have been informed and hopefully they will update the name of it soon to make it less confusing.
+
+Martin.</description>
+    <dc:date>2008-08-12T16:14:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1268</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Sameer Dhoot+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/creating_a_tfs.html#c002037</link>
+    <description>I am trying to follow the same instructions, the setup quits without any pormpts. I checked the event viewer and its says 
+
+&quot;Product: Microsoft Visual Studio 2008 Team Foundation Server - ENU - Update &apos;KB949786&apos; installed successfully.&quot;
+
+But when i try to verify the file version they are indeeed RTM version i.e. 9.0.21022.8 and did not get updated as you noted. I have not yet installed the product as i have to use sql 2008.
+
+Regards,
+Sameer Dhoot.
+http://intellects.in</description>
+    <dc:date>2008-08-21T22:22:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1268</comments>   
+    <dc:creator>Sameer Dhoot</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/creating_a_tfs.html#c002038</link>
+    <description>Sameer, Are you running on Vista or Windows Server 2008?  If so, you will need to run the command prompt with admin rights before it will work correctly.  Otherwise when running the msiexec try running it with verbose logging enabled (i.e. &quot;msiexec /Lv logfile.txt /a \AT\vs_setup.msi /p TFS90sp1-KB949786.msp TARGETDIR=\AT&quot;)</description>
+    <dc:date>2008-08-22T11:18:48+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1268</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Michael Freidgeim+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/creating_a_tfs.html#c002039</link>
+    <description>Command in step 2 is truncated.
+And I couldn&apos;t find the file. Is it actually the name of SP1 download TFS90sp1-KB949786-ENU.exe ?
+Also I found that TFSInstall-SP1-RTM-v080908.chm has similar section
+&quot;How to: Integrate the Installation of Team Foundation Server and Service Pack 1&quot;</description>
+    <dc:date>2008-09-23T05:46:30+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1268</comments>   
+    <dc:creator>Michael Freidgeim</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Nick Pirocanac+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/creating_a_tfs.html#c002040</link>
+    <description>Hi Martin,
+
+Thanks so much for the detailed explanation of the TFS2008 slipstream build.
+
+I was able to get the Build and TFS client move up to SP1 as well by doing the following:
+
+For TFS Client, I used the VS2008sp1 release, followed your steps, and merged with: VS90sp1-KB945140-X86-ENU.msp. This produced a SP1 version of the TFS client in the TFS folder:
+
+msiexec /l* c:\1\out.txt /a \TFC\vs_setup.msi /p \VS90sp1-KB945140-X86-ENU.msp TARGETDIR=\TFC
+
+
+For the Build, I followed your steps exactly. When trying to do the setup, it biffed looking for this assembly: 
+
+\BUILD\Program Files\Microsoft Visual Studio 2008 Team Foundation Server\Web Services\Build\bin\Microsoft.TeamFoundation.Build.Client.dll
+
+So, I went to another machine, installed Build from the standard media, and updated with the service pack. Then I found this assembly in: 
+C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies
+
+Next, I sorted on version number in that folder, and took all version 9.0.30729.1 files and put them in the \BUILD\Program Files\Microsoft Visual Studio 2008 Team Foundation Server\Web Services\Build\bin folder. 
+Then, I went to yet another machine with no vs2008 components on it, and again tried to install Build, and that time, it installed with no errors.
+Sharepoint extensions and the Proxy do not appear to have a patch in the SP1 package that I could see. 
+So, if you apply the above to your TFS 2008 ISO, you should get a solid SP1 ISO!</description>
+    <dc:date>2009-04-09T22:30:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1268</comments>   
+    <dc:creator>Nick Pirocanac</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by daniel levite+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/creating_a_tfs.html#c002041</link>
+    <description>when r they going to fix TFS and have a DVD/ or download WITH SP1 applied or another version targeting sql server 2008 outright?   I am amazed they don&apos;t have this done.  Is it that few people use TFS or sql server 2008?</description>
+    <dc:date>2009-06-09T19:22:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1268</comments>   
+    <dc:creator>daniel levite</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/creating_a_tfs.html#c002042</link>
+    <description>I don&apos;t think there are any plans to provide a DVD with SP1 applied.  Crazy to me too but there you go.</description>
+    <dc:date>2009-06-10T08:59:22+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1268</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Manuel Rocha+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/creating_a_tfs.html#c002043</link>
+    <description>The crazy thing is They don&apos;t have the x64 version of TFS which is so stupid. 
+
+By their logic all devellopers enterprise which works with x64 server versions like mine does can&apos;t have TFS or if they won&apos;t they would have to install a virtual machine or windows a x86 server version which for a develloper enterprise is very bad because we want the x64 server version to deploy x64 programs version and the memory administration made by the x64 operating system is better then the administration made by a x86 server
+
+I have read at microsoft website that TFS 2010 will have a x64 version. Lets wait to see.
+
+Thanks for the tutorial
+
+By the way, what is the tfssp1 folder which you have at the root of your integration?</description>
+    <dc:date>2009-07-20T09:48:10+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1268</comments>   
+    <dc:creator>Manuel Rocha</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/creating_a_tfs.html#c002044</link>
+    <description>You&apos;ll be glad to hear that TFS 2010 does indeed have x64 support in the early betas.</description>
+    <dc:date>2009-07-20T10:42:38+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1268</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

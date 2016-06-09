@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Virtual Machine Additions for Linux</title>
+    <link>http://www.woodwardweb.com/technology/virtual_machine.html</link>
+    <description><![CDATA[Yesterday, Version 2.0 of the Virtual Machine Additions for Linux were released on the Microsoft Download Center.&nbsp; Officially, this provides addition support for Virtual Server 2005 SP1, however I have read reports from the beta program suggesting they may also...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-10-23T13:25:49+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by James+00:00</title>
+    <link>http://www.woodwardweb.com/technology/virtual_machine.html#c002467</link>
+    <description>You dont need the Linux Addons
+
+To get the mouse working add the boot option:
+
+i8042.noloop
+
+And to get X working just change the colordepth in /etc/X11/xorg.conf from 24 to 16</description>
+    <dc:date>2007-12-05T13:24:30+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1700</comments>   
+    <dc:creator>James</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/technology/virtual_machine.html#c002468</link>
+    <description>James,
+
+Thanks very much - see the following post for more details on that.  
+
+http://www.woodwardweb.com/programming/000387.html
+
+The reason I would want the drivers is so that if you move the mouse to the edge of the screen etc that it automatically goes back into the host machine.
+
+Thanks for mentioning the noloop thing though - great tip.
+
+Martin.</description>
+    <dc:date>2007-12-05T15:37:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1700</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by sean+00:00</title>
+    <link>http://www.woodwardweb.com/technology/virtual_machine.html#c002474</link>
+    <description>I absolutely, positively, definitely appreciated this post. Martin, thanks for putting the notes up in a public space like this.
+
+I sincerely hope that somebody will also take the trouble to get the additions working - particularly under Ubuntu.
+
+The value of the VPC additions for me also lies in the ability to move seamlessly and effortlessly between host and guest environmenets as well as the ability to drag &amp; drop files between the environments.
+
+Furthermore, when the additions have been installed you can access folders on the host machine as a shared folder under the VPC settings.
+
+The other &quot;tricks&quot; that get the environment to function do not overcome these issues.
+
+Comment:
+========
+Whereas VPC is still free (like in beer) VMWare full edition is not.  For us Windoze users it is still the cheapest option at this point in time - something the Linux users should not thumb their noses at too readily.</description>
+    <dc:date>2008-01-10T15:46:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1700</comments>   
+    <dc:creator>sean</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

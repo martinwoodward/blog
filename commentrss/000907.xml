@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Jet Brains .NET Profiler</title>
+    <link>http://www.woodwardweb.com/dotnet/jet_brains_net.html</link>
+    <description>Jet Brains have just announced the opening of the EAP for their new .NET Profiler, available for download. Resharper by Jet Brains and of course IntelliJ are excellent tools, however the future of Resharper and now the .NET Profiler are...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-01-26T12:29:57+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by ali raza+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/jet_brains_net.html#c001465</link>
+    <description>hello every body how r u all i m u r net friend</description>
+    <dc:date>2005-06-14T03:48:41+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=907</comments>   
+    <dc:creator>ali raza</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Pardeep Dhawan+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/jet_brains_net.html#c001466</link>
+    <description>Have you tried ProfileSharp by SoftProdigy (www.SoftProdigy.com).
+
+It gives line level profiling, excetion tracing and extesive mem profiling too.
+I have tried it on ASP.NET apps and all .NET Frameworks.
+Works beautifully!</description>
+    <dc:date>2006-08-29T19:34:22+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=907</comments>   
+    <dc:creator>Pardeep Dhawan</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

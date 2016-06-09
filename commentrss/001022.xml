@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Deadlock</title>
+    <link>http://www.woodwardweb.com/programming/deadlock.html</link>
+    <description><![CDATA[I&rsquo;ve been coding for around 25 years, since my parents bought me a VIC-20. I think it was probably a similar advert to this one by William Shatner that convinced them to buy it after seeing how much time my...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-02-24T12:21:14+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/programming/deadlock.html#c001610</link>
+    <description>I spent a couple of months investigating thread starvation issues in an old job a few years ago. I did have peculiar dreams during that time too, as I was thinking about the work most of the time.
+
+Deadlock happens in J2EE world quite a lot if you&apos;re not too careful with transaction demarcation. I&apos;ve seen a bunch of code written that produces spurious deadlocks, and it seems to have always been bad transaction demarcation.</description>
+    <dc:date>2006-02-24T13:21:27+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1022</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Eric Sink+00:00</title>
+    <link>http://www.woodwardweb.com/programming/deadlock.html#c001611</link>
+    <description>Started on a Vic-20?  Me too.</description>
+    <dc:date>2006-02-24T14:07:15+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1022</comments>   
+    <dc:creator>Eric Sink</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ian Olsen+00:00</title>
+    <link>http://www.woodwardweb.com/programming/deadlock.html#c001612</link>
+    <description>The VIC 20 was my first computer too, though I&apos;d never seen that Shatner commercial.  Good stuff.  My dad had a handful of Epson machines running CP/M for his business, and occasionally he brought one home and I&apos;d play with it a bit, but the VIC 20 was the first machine that was really mine.  I&apos;ll never forget waiting for what seemed like hours to load a BASIC program off the cassette drive, or typing thousands of lines out of Byte magazine followed by days trying to fix whatever I&apos;d gotten wrong.  Good memories!</description>
+    <dc:date>2006-02-24T15:23:35+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1022</comments>   
+    <dc:creator>Ian Olsen</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/programming/deadlock.html#c001613</link>
+    <description>That&apos;s how I learnt how to debug.  A couple of times it was actually the program in the magazine that was wrong - they were the best ones to figure out but they would take weeks.</description>
+    <dc:date>2006-02-24T15:31:24+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1022</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Jeff+00:00</title>
+    <link>http://www.woodwardweb.com/programming/deadlock.html#c001614</link>
+    <description>Vic-20... What?  No Apple IIe programmers here?  I think there are printouts of these programs at my parents house somewhere.
+
+Ahh.  Those were the days.  I remember begging and pleading for my folks to spend that money on the 5.25&quot; disk drive.</description>
+    <dc:date>2006-02-28T22:14:43+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1022</comments>   
+    <dc:creator>Jeff</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

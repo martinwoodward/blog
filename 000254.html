@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Martin Woodward: TFS MSSCCI Provider 1.1 is available</title>
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/styles-site.css" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/MartinWoodward" />
+
+<link rel="start" href="http://www.woodwardweb.com/" title="Martin Woodward" />
+<link rel="prev" href="http://www.woodwardweb.com/personal/000253.html" title="TechEd 2006 Review" />
+
+
+
+
+
+   <script type="text/javascript" src="http://www.woodwardweb.com/mt-site.js"></script>
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/000254.html">
+<dc:title>TFS MSSCCI Provider 1.1 is available</dc:title>
+<dc:description><![CDATA[ As announced yesterday by Brian Harry and also by&nbsp; Michal Malecki&nbsp;in the TFS Version Control Forum,&nbsp;version 1.1 of Team Foundation Msscci Provider is now available for download here. It incorporates the following changes:- Work items can be reviewed and...]]></dc:description>
+<dc:creator>Martin</dc:creator>
+<dc:date>2006-06-22T09:44:13+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+
+<!-- Google tracker -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-71966-1";
+urchinTracker();
+</script>
+
+</head>
+
+<body>
+
+<div id="banner">
+	<H1><SPAN CLASS="textVersion">Martin Woodward</SPAN></H1>
+</div>
+
+<div id="content">
+
+<div class="blog">
+
+<div id="menu">
+<a href="http://www.woodwardweb.com/personal/000253.html">&laquo; TechEd 2006 Review</a> |
+
+<a href="http://www.woodwardweb.com/">Martin Woodward</a>
+
+</div>
+
+</div>
+
+
+<div class="blog">
+
+<h2 class="date">June 22, 2006</h2>
+
+<div class="blogbody">
+
+<h3 class="title">TFS MSSCCI Provider 1.1 is available</h3>
+
+<p><span id="_ctl0_MainContent_PostFlatView"><span><br />
+<p>As announced yesterday by <a href="http://blogs.msdn.com/bharry/archive/2006/06/21/641884.aspx">Brian Harry</a> and also by&nbsp; <a href="http://blogs.msdn.com/michalma/">Michal Malecki</a>&nbsp;in the <a href="http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=494881&amp;SiteID=1">TFS Version Control Forum</a>,&nbsp;version 1.1 of Team Foundation Msscci Provider is now available for download <a title="http://www.microsoft.com/downloads/details.aspx?FamilyId=87E1FFBD-A484-4C3A-8776-D560AB1E6198&amp;displaylang=en" href="http://www.microsoft.com/downloads/details.aspx?FamilyId=87E1FFBD-A484-4C3A-8776-D560AB1E6198&amp;displaylang=en">here</a>.</p><br />
+<p>It incorporates the following changes:-</p><br />
+<ul><br />
+<li>Work items can be reviewed and edited from inside the Checkin Dialog </li><br />
+<li>Checkin locks are treated as exclusive </li><br />
+<li>Enhanced "Open from SCC"/"Add to SCC" process - both local and server path are specified in the single dialog. Also if the local path is already mapped, the process is done automatically.Support for Enterprise Architect 6.1 and PowerBuilder 10.5 </li><br />
+<li>Fixed order of parameters passed into external diff tools (it's the same as in VS2005 now) </li><br />
+<li>Setup is working in x64 architecture </li></ul><br />
+<p>And, the feature most commonly talked about whenever I talk to people about TFS,&nbsp;"Get latest" on Checkout.&nbsp; Yes, they&rsquo;ve added this in as an option that is&nbsp;disabled by default.&nbsp; </p><br />
+<p>As I&nbsp;<a href="http://www.woodwardweb.com/vsts/000179.html">mentioned back in February</a>, this is the same way that we are&nbsp;trying it with <a href="http://www.teamprise.com/">Teamprise</a> &ndash; it&rsquo;s not totally guaranteed because it is just a client side hack &ndash; it performs a Get Latest and then instantly&nbsp;notifies the server of a &ldquo;pending edit&rdquo;&nbsp;in a separate transaction.&nbsp; It is possible that somebody could check a file in during the few milliseconds between the &ldquo;get&rdquo; and the &ldquo;pend edit&rdquo; (especially if you are getting a large file over a slow network) &ndash; but having this as an option (disabled by default) should help&nbsp;the users who are used to the way VSS works.&nbsp; We actually opted to leave this feature out in the end from <a href="http://www.teamprise.com/">Teamprise</a> 1.0 because we were trying to encourage the TFS way of thinking &ndash; however I might have to add it back in now for V2 :-)</p><br />
+<p>If you are using the current version of the MSSCCI provider then I would encourage you to upgrade.&nbsp; I&rsquo;m very impressed at the level of effort going into the development of the provider.&nbsp; While this is still an &ldquo;unsupported tool&rdquo;, Brian <a href="http://blogs.msdn.com/bharry/archive/2006/06/21/641884.aspx">mentions</a> that he is investigating trying to change this and actually get it officially supported.&nbsp; Personally, I don&rsquo;t have any problems with the current state of support with the MSSCCI plugin as I feel that TFS via an unsupported MSSCCI provider is a much safer bet than VSS via&nbsp;MSSCCI provider &ndash; but I know that&nbsp;a&nbsp;reliance on&nbsp;unsupported tools is preventing many organisations from beginning their migration to TFS.</p></span></span></p>
+
+<a name="more"></a>
+
+
+<span class="posted">Posted by Martin at June 22, 2006 09:44 AM
+
+<br /></span>
+
+</div>
+
+
+                     
+
+                                          <div id="comments" class="comments">
+                        <div class="comments-content">
+                           
+                        </div>
+
+                         
+                        <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="254" />
+                           
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-head">Post a comment</h2>
+                              
+                              <div class="comments-body">
+                              
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">Name:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">Email Address:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          Remember personal info?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">Comments: </label>
+                                    <textarea id="comment-text" name="text" rows="10" cols="30"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="Preview" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="Post" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+
+
+
+
+
+
+</div>
+</div>
+
+
+<div id="links">
+
+<div class="sidetitle">
+Sections
+</div>
+<div class="side">
+
+<a href="http://www.woodwardweb.com/" TITLE="Martin Woodward">Home</a><br />
+<a href="http://www.woodwardweb.com/Books/">Books (8)</a><br />
+<a href="http://www.woodwardweb.com/Buddies/">Buddies (10)</a><br />
+<a href="http://www.woodwardweb.com/Dotnet/">Dotnet (25)</a><br />
+<a href="http://www.woodwardweb.com/Films/">Films (2)</a><br />
+<a href="http://www.woodwardweb.com/Gadgets/">Gadgets (10)</a><br />
+<a href="http://www.woodwardweb.com/Java/">Java (10)</a><br />
+<a href="http://www.woodwardweb.com/Personal/">Personal (34)</a><br />
+<a href="http://www.woodwardweb.com/Photos/">Photos (2)</a><br />
+<a href="http://www.woodwardweb.com/Podcasting/">Podcasting (8)</a><br />
+<a href="http://www.woodwardweb.com/Programming/">Programming (23)</a><br />
+<a href="http://www.woodwardweb.com/Sandbox/">Sandbox (2)</a><br />
+<a href="http://www.woodwardweb.com/Software/">Software (7)</a><br />
+<a href="http://www.woodwardweb.com/Teamprise/">Teamprise (20)</a><br />
+<a href="http://www.woodwardweb.com/Technology/">Technology (27)</a><br />
+<a href="http://www.woodwardweb.com/Vsts/">Vsts (68)</a><br />
+<a href="http://www.woodwardweb.com/Web Design/">Web Design (2)</a><br />
+<a href="http://www.woodwardweb.com/Web Sites/">Web Sites (19)</a><br />
+<a href="http://www.woodwardweb.com/Work/">Work (5)</a><br />
+
+</div>
+
+<div class="sidetitle">
+Search
+</div> 
+<div class="side">
+<form method="get" action="http://www.woodwardweb.com/mt/mt-search.cgi">
+<input type="hidden" name="IncludeBlogs" value="2" />
+<label for="search" accesskey="4">Search this site:</label><br />
+<input id="search" name="search" size="20" /><br />
+<input type="submit" value="Search" />
+</form>
+</div>
+
+<div class="syndicate">
+<a href="http://feeds.feedburner.com/MartinWoodward">Syndicate this site (XML)</a>
+<br/><br/>
+<a href="http://clustrmaps.com/counter/maps.php?url=http://www.woodwardweb.com" id="clustrMapsLink"><img src="http://clustrmaps.com/counter/index2.php?url=http://www.woodwardweb.com" border=0 alt="Locations of visitors to this page"onError="this.onError=null; this.src='http://www.meetomatic.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/'">
+</a>
+</div>
+
+<div class="syndicate">
+<a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights" /></a><br />
+This weblog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+</div>
+
+
+</div>
+
+<br clear="all" />
+
+
+</body>
+</html>

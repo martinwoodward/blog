@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Windows Vista Tip: Quick way to access Network Connections</title>
+    <link>http://www.woodwardweb.com/vista/windows_vista_t_2.html</link>
+    <description><![CDATA[One of the things I've always enjoyed about Windows 2000 -&gt; Windows XP -&gt; Windows Vista is that no matter how much the UI changes, some shortcuts just seem to stay around allowing me to quickly navigate around the system.&nbsp;...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-02-19T13:48:50+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Jon Redwood+00:00</title>
+    <link>http://www.woodwardweb.com/vista/windows_vista_t_2.html#c001786</link>
+    <description>A better way is to navigate to where you want to be, right click the last item in the address bar (i.e. Network Connections) then copy shortcut and past onto desktop or wherever . . .</description>
+    <dc:date>2007-03-16T12:18:48+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1156</comments>   
+    <dc:creator>Jon Redwood</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by cj+00:00</title>
+    <link>http://www.woodwardweb.com/vista/windows_vista_t_2.html#c001787</link>
+    <description>Excellent tip! thanks</description>
+    <dc:date>2007-03-21T14:09:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1156</comments>   
+    <dc:creator>cj</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by rockIT+00:00</title>
+    <link>http://www.woodwardweb.com/vista/windows_vista_t_2.html#c001788</link>
+    <description>This is AWESOME!  Thanks for posting this solution.  Now I feel back at home!
+
+Thanks again
+RockIT</description>
+    <dc:date>2007-05-29T02:50:46+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1156</comments>   
+    <dc:creator>rockIT</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by p+00:00</title>
+    <link>http://www.woodwardweb.com/vista/windows_vista_t_2.html#c001789</link>
+    <description>awesome. It would be better if there&apos;s a way to get network connection to appear in the menu item after right clicking on the network icon in the taskbar... just like in the good old days..</description>
+    <dc:date>2007-09-01T08:19:04+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1156</comments>   
+    <dc:creator>p</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Dipali+00:00</title>
+    <link>http://www.woodwardweb.com/vista/windows_vista_t_2.html#c001790</link>
+    <description>Hello sir,
+Can I use this content for educational purpose?
+Pls do the needful.
+
+Thanks</description>
+    <dc:date>2008-05-08T08:02:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1156</comments>   
+    <dc:creator>Dipali</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

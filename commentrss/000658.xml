@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Java on Debian</title>
+    <link>http://www.woodwardweb.com/java/java_on_debian.html</link>
+    <description><![CDATA[Thanks to Ben for passing this on. You can now do a straight forward &ldquo;apt-get install sun-java5&ndash;jre&rdquo; and have it install on Debian and Ubuntu.&nbsp; Due to the old licensing restrictions you used to have to package up the installation...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-05-17T12:54:17+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Shaw Terwilliger+00:00</title>
+    <link>http://www.woodwardweb.com/java/java_on_debian.html#c000855</link>
+    <description>Actually, Teamprise runs well with Java runtimes from IBM and BEA, both of which include the required encryption bits.  The only runtime I&apos;m aware of that we don&apos;t support because of this problem is GCJ/classpath.</description>
+    <dc:date>2006-05-17T14:42:11+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=658</comments>   
+    <dc:creator>Shaw Terwilliger</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Karl+00:00</title>
+    <link>http://www.woodwardweb.com/java/java_on_debian.html#c000856</link>
+    <description>Hi Martin,
+Gentoo users have always been able to use &quot;emerge&quot; to install Sun&apos;s SDK, you just need to download it yourself to tick the licences agreement, then drop it in your portage/distfiles directory.
+
+But the new way is better &apos;cause you won&apos;t have to do any boring license reading! :-)</description>
+    <dc:date>2006-05-18T07:45:49+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=658</comments>   
+    <dc:creator>Karl</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/java/java_on_debian.html#c000857</link>
+    <description>Young Karl: the issue wasn&apos;t that you *couldn&apos;t* do it, it was due to the license restrictions of the Sun JDK etc being included on a *free* distro such as Debian. Due to licensing restrictions; Debian couldn&apos;t distribute the JDK as part of Debian. With the new license, Debian can now distribute it - albeit under the &quot;non-free&quot; section.</description>
+    <dc:date>2006-05-18T12:01:17+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=658</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

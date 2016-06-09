@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>.NET Framework 2.0 Released</title>
+    <link>http://www.woodwardweb.com/vsts/net_framework_2.html</link>
+    <description>Taking me a little by suprise, the official RTM version of the .NET Framework 2.0 is now available. The really good news is that the official version is v2.0.50727 which is exactly the same version of the framework that shipped...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-10-28T11:33:35+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Paul Whitaker+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/net_framework_2.html#c000303</link>
+    <description>It looks like NAnt isn&apos;t ready for 2.0 RTM just yet. We&apos;re using a hybrid NAnt/msbuild system here, as the NAnt build targets don&apos;t appear to work so far. Good luck. -Paul</description>
+    <dc:date>2005-11-03T14:31:05+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=146</comments>   
+    <dc:creator>Paul Whitaker</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

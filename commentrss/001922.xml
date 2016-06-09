@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Sky+ Brings Marital Strife</title>
+    <link>http://www.woodwardweb.com/personal/sky_brings_mari.html</link>
+    <description><![CDATA[Sky+ has been the saviour of our television viewing since it arrived shortly after my son did (not a coincidence).&nbsp; For those non-UK citizens reading this blog Sky+ similar to the Tivo&nbsp;but more locked down as it comes from the...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-02-14T11:55:05+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/personal/sky_brings_mari.html#c002993</link>
+    <description>There was a similar campaign that got Jaguar into trouble; here&apos;s the link to the Advertising Standards page on it:
+
+http://www.asa.org.uk/asa/focus/case_studies/Jaguar.htm</description>
+    <dc:date>2006-02-20T14:14:57+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1922</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Visual Studio Team System 2008 SP1 Now Available!</title>
+    <link>http://www.woodwardweb.com/vsts/visual_studio_t.html</link>
+    <description> That&apos;s right folks, 2008 SP1 is now available for everyone to download.&#160; Get it while it&apos;s hot! Visual Studio 2008 SP1 (needed for Visual Studio and Visual Studio Team System client, including Team Explorer), (exe version) (iso image version)...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-08-11T18:35:24+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Uzair+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/visual_studio_t.html#c002034</link>
+    <description>tell me, does the VS 2008 sp1 also updates the team suite editions and the team explorer if they are installed??</description>
+    <dc:date>2009-02-16T07:28:28+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1267</comments>   
+    <dc:creator>Uzair</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

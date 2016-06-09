@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>In Redmond</title>
+    <link>http://www.woodwardweb.com/personal/in_redmond.html</link>
+    <description>Just a quick post from inside the MS Vistor Centre in Redmond. Just seen a Compaq Luggable I still have in my Dad&apos;s loft inside a museum exibit - that&apos;s bad. Anyway, I&apos;m now heading back to the office, then...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-08-04T21:19:37+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/personal/in_redmond.html#c000294</link>
+    <description>This is a comment from the Tablet PC exhibit.  The Compaq tc1100 is really nice - Think this is my favoutite Tablet PC form factor.  This one I am on is 1.1 Ghz with 512Mb Ram.  Pretty sweet...</description>
+    <dc:date>2005-08-04T21:28:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=122</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/personal/in_redmond.html#c000295</link>
+    <description>Urgh, does it not smell of sleaze there? ;-)</description>
+    <dc:date>2005-08-08T16:25:20+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=122</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/personal/in_redmond.html#c000296</link>
+    <description>Seriously, it is one of the coolest places I have worked in my entire life.  The developers and PM&apos;s you meet are just top-notch folks that just get it.  It was funny watching people&apos;s desktops to see how they use the operating system and which search engines were used...  Just because I have a soft spot for Java doesn&apos;t mean I cannot recognise talented people when I meet them.  But then again I&apos;ve always had a soft spot for the dark side...
+
+I also got to have a look round the Amazon HQ in Seattle.  That was good fun also.</description>
+    <dc:date>2005-08-08T22:48:24+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=122</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

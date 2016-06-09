@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Talk: Whats New With Team Foundation Server</title>
+    <link>http://www.woodwardweb.com/vsts/talk_whats_new.html</link>
+    <description> Tonight at NIMTUG I&apos;m going to be giving a talk to get everyone up to speed with the latest developments in the Team Foundation Server world.&#160; We are going to review what came along in 2008, talk about the...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-01-26T14:34:21+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Sajee+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/talk_whats_new.html#c003446</link>
+    <description>Hi Martin:  Nice deck.  Here&apos;s a VSTS 2010 deck in case you&apos;re interested.  I incorporated content from a number of source like C9, PDC, blogs, etc.  Hopefully, ppl will find it useful.
+
+A Lap Around Visual Studio Team System 2010</description>
+    <dc:date>2009-01-26T17:20:25+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2198</comments>   
+    <dc:creator>Sajee</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mark+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/talk_whats_new.html#c003447</link>
+    <description>There&apos;s an asterisk next to Explorer integration on the TFS Powertools slide. Is that just because it is an optional component - or is there more to the story?</description>
+    <dc:date>2009-01-27T00:17:31+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2198</comments>   
+    <dc:creator>Mark</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/talk_whats_new.html#c003448</link>
+    <description>The asterisk was just to represent bits that are new in the latest version of the powertools. Sorry for any confusion. M.</description>
+    <dc:date>2009-01-27T02:49:19+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2198</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/talk_whats_new.html#c003449</link>
+    <description>Great deck there Sajee!  I wish I&apos;d just asked you before doing my talk - would have saved me a lot of time :-)</description>
+    <dc:date>2009-01-27T09:39:06+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2198</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title><![CDATA[&quot;You are not running Vista&quot; Remote Desktop warning annoyance]]></title>
+    <link>http://www.woodwardweb.com/vista/you_are_not_run.html</link>
+    <description><![CDATA[ When running Remote Desktop from Windows Vista I've been getting the following error popping up everytime I connect.&nbsp; It is a little alarming and I've never really sat down and figured out what this was telling me - basically...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-03-28T10:41:38+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Rob Burke+00:00</title>
+    <link>http://www.woodwardweb.com/vista/you_are_not_run.html#c000996</link>
+    <description>Martin thank you; this is going to save me a lot of clicking.</description>
+    <dc:date>2007-03-28T15:40:58+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=749</comments>   
+    <dc:creator>Rob Burke</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Simon Phillips+00:00</title>
+    <link>http://www.woodwardweb.com/vista/you_are_not_run.html#c001001</link>
+    <description>Me too...</description>
+    <dc:date>2007-04-13T15:30:03+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=749</comments>   
+    <dc:creator>Simon Phillips</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

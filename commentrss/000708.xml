@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Running Virtual Machines</title>
+    <link>http://www.woodwardweb.com/technology/running_virtual.html</link>
+    <description><![CDATA[I use VMWare a lot.&nbsp; Not only do I use it for demonstrations of Teamprise, I also use it for day-to-day development and testing (one of the joys of developing a cross platform product that talks to a Microsoft server...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-10-31T12:13:40+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/technology/running_virtual.html#c000924</link>
+    <description>Fantastic tip! Given most of my dev is run on VMWare I&apos;m definitely going to run it from an external drive - ta! (^ ^)</description>
+    <dc:date>2006-11-06T14:16:34+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=708</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

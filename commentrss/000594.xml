@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Continuous Integration on Hanselminutes</title>
+    <link>http://www.woodwardweb.com/podcasting/continuous_inte.html</link>
+    <description>Scott Hanselman&apos;s Hanselminutes podcast continues with this weeks episode about Continuous Integration. Jamie Cansdale (the genius behind TestDriven.NET) has posted about the tool Scott was on the way to mentioning when Karl interrupted him. Probably also worth mentioning, as Scott...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-02-01T16:07:30+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Scott Hanselman+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/continuous_inte.html#c000797</link>
+    <description>Doh! I knew I forgot the big one. Sorry. ;)</description>
+    <dc:date>2006-02-02T02:14:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=594</comments>   
+    <dc:creator>Scott Hanselman</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/continuous_inte.html#c000798</link>
+    <description>&quot;Light builds&quot; - is that just using the command line when only compiling a couple of classes.
+
+Compare &quot;heavy builds&quot; when you use a build too ;-)</description>
+    <dc:date>2006-02-02T14:22:35+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=594</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/continuous_inte.html#c000799</link>
+    <description>Thanks!</description>
+    <dc:date>2006-02-02T14:37:02+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=594</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Oh iTunes, iLoath thee</title>
+    <link>http://www.woodwardweb.com/podcasting/oh_itunes_iloat.html</link>
+    <description><![CDATA[People go on about iPod + iTunes + Store being this all time great combination.&nbsp; I'll admit that I love my iPod, and if/when one comes out with similar capabilities to the iPhone player I'll be buying it.&nbsp; However, I...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-07-13T17:23:09+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Max+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/oh_itunes_iloat.html#c003256</link>
+    <description>I agree with you on everything you say.
+
+I recently switched to SongBird for my music. Already at version 0.6 and 0.7beta is much better than iTunes.
+
+I had several Issues on the past with iTunes.
+
+Here are some examples:
+- Removing iTunes from a Windows machine after restarting my cd-rom disappear.
+I resolved removing GEARAspiWDM from the registry at HKEY_LOCAL_MACHINE\SYSTEM\System\CurrentControlSet\Control\Class\{bunch of numbers} (look for the one that show CD-ROM on the right pannel.
+- I also had the same problem you had on one of your post about been unable to close it so I had to disable the Bonjour service.
+- Is slow like hell when you have a lot of music.
+- And the last one was that I tried to share the same external hard drive with Windows and Mac and use iTunes in both with the same library.
+After a few test my pc crash.
+After rebooting it say &quot;Verifying DMI pool data&quot; and then it hang.
+I had to re-install everything.
+
+I hate it.</description>
+    <dc:date>2008-07-29T04:48:46+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2101</comments>   
+    <dc:creator>Max</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

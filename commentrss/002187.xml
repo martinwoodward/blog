@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Windows 7 on the MSI Wind</title>
+    <link>http://www.woodwardweb.com/technology/windows_7_on_th.html</link>
+    <description> For the record, I like Windows Vista.&#160; However, for those of us who remember the Vista beta program and even early days of running Windows Vista it wasn&apos;t always fun - largely due to the driver support but there...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-11-13T11:34:43+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Simon Guettier+00:00</title>
+    <link>http://www.woodwardweb.com/technology/windows_7_on_th.html#c003435</link>
+    <description>Hey Martin,
+Very interesting article.
+Like you, running Windows 7 on the Advent 4211. It&apos;s great for a pre-release OS.
+One question - where did you get the drivers for the microphone. I&apos;ve used Realtek&apos;s Vista drivers, sound output is fine, but can&apos;t get the microphone working - either the inbuilt one, or external. Is yours OK?
+Thanks for a great article .. Simon</description>
+    <dc:date>2008-12-13T12:34:01+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2187</comments>   
+    <dc:creator>Simon Guettier</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Alli Flowers+00:00</title>
+    <link>http://www.woodwardweb.com/technology/windows_7_on_th.html#c003436</link>
+    <description>After reading your comments, I decided to install beta 7 on my MSI Wind. I panicked when I could not connect to the net even after installing the updated driver you recommended. The solution was so simple though....I picked up an ethernet cable and plugged it in. Updates started to flow *instantly* and the wireless came right up.
+
+Looks like MS has redeemed itself again!</description>
+    <dc:date>2009-01-04T01:53:43+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2187</comments>   
+    <dc:creator>Alli Flowers</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/technology/windows_7_on_th.html#c003437</link>
+    <description>The default Microsoft generic &quot;High Quality Audio&quot; drivers appear to work better than installing the Vista ones from RealTek.  That said - the internal mic still does not work very well.  I have boosted the volume all the way that the Microsoft driver will let me (30db) and turned up the volume to 100% but I can only hear very faint sounds from the microphone and plenty of noise.  I haven&apos;t tried the same process with the WiFi disabled (I hear that there are some issues with signal noise on the microphone wire from the WiFi antennna in the MSI Wind).
+
+Personally, I use a Plantronics DSP-400 USB headset for Skype calls which works great.  However I would quite like the internal mic to work on the Wind as it has been snaffled by the Wife and Kids now and I&apos;d be able to use it to video conference to them while travelling.  Instead I&apos;m just going to get them to use a cheap USB microphone attachment.</description>
+    <dc:date>2009-01-05T10:09:05+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2187</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by michael+00:00</title>
+    <link>http://www.woodwardweb.com/technology/windows_7_on_th.html#c003438</link>
+    <description>Hello
+
+can i get the 1024 x 768 modus under windows7</description>
+    <dc:date>2009-02-06T18:37:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2187</comments>   
+    <dc:creator>michael</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Richard+00:00</title>
+    <link>http://www.woodwardweb.com/technology/windows_7_on_th.html#c003439</link>
+    <description>Have you had any luck finding drivers for the touchpad. Win7 thinks my Wind touchpad is a PS/2 mouse, so I can&apos;t stop the default tap-to-click feature. I&apos;m tried loading separate drivers I&apos;ve read about in the forums, but the menu item to disable that feature was greyed out. Any experience with this?</description>
+    <dc:date>2009-04-21T06:16:12+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2187</comments>   
+    <dc:creator>Richard</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS 2010 Beta 1 with Teamprise</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_2010_beta_1.html</link>
+    <description> Now that TFS 2010 Beta 1 is publically available, I thought it would make sense to share our plans with everyone.&#160; Teamprise has been working closely with Microsoft on the TFS 2010 release.&#160; First of all, can I quickly...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-05-21T16:09:27+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by anjan+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_2010_beta_1.html#c003478</link>
+    <description>
+
+ 
+   Hi Martin,
+               Thanks a lot for giving such valuable information in the blog.Right now we are using TFS, VSTS2010. In addition, I am getting problems with that. My application is a standalone application which has a provision for accessing through the (citrix sever).When I recorded my test application. It working fine. However, at the time of play back it stuck somewhere due to synchronization problem. Therefore, I want to know that is there any provision given by the TFS to handle that one. In addition, I want to know that how TFS playback all the recorded script by checking the mouse action or by the object property. If it is, object property, then where it will store all the property values.
+</description>
+    <dc:date>2009-10-20T10:14:25+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2216</comments>   
+    <dc:creator>anjan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Nilesh+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_2010_beta_1.html#c003665</link>
+    <description>I have one question regarding TFS migration.
+We have TFS 2008 installed on Windows Server 2003 with domain xyz.com. Now we want to migrate our Database from TFS 2008 to TFS 2010 Beta2 but on a different domain named abc.com.
+
+Is it possible to migrate TFS database from One domain to another?
+
+Can you please help me how to perform it.</description>
+    <dc:date>2010-01-04T14:28:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2216</comments>   
+    <dc:creator>Nilesh</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

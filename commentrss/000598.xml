@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Delete Old Files</title>
+    <link>http://www.woodwardweb.com/programming/delete_old_file.html</link>
+    <description>I was just trying to get some backups configured and I wanted a way of deleting files from a directory stucture that were older than a certain date. I couldn&apos;t figure out how to do it easier from a Windows...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-02-09T13:29:52+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/programming/delete_old_file.html#c000803</link>
+    <description>Ah, pity you&apos;re not using OS X - you could use Automator at a fraction of the effort, and even use it to create plug-ins to other apps ;-)
+
+http://www.apple.com/macosx/features/automator/</description>
+    <dc:date>2006-02-20T14:17:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=598</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/programming/delete_old_file.html#c000816</link>
+    <description>Actually, that reminds me of my old job. I&apos;d set up a CVS repository, and one guy on the team was a dimwit, and kept on checking in stuff he shouldn&apos;t. He was continually asking me to get rid of it, and it started to p*ss me off. He came over one day after doing the same thing twice in one morning, so I SSHd to the box and went to clear the new directory he&apos;d created, using:
+
+rm -rf /home/cvsroot/project/spanner
+
+unfortunately (and I don&apos;t know why I typed the full path in anyway - saved doing a cd I guess) I actually typed:
+
+rm -rf / home/cvsroot/project/spanner
+
+(note the space!)
+
+I realised my mistake when pages of deleted files went flying past my eyes!</description>
+    <dc:date>2006-03-15T15:42:06+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=598</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Doug+00:00</title>
+    <link>http://www.woodwardweb.com/programming/delete_old_file.html#c001250</link>
+    <description>Thank you Martin,
+
+Just what I was looking for. I added my logging class and popped it into my code.
+</description>
+    <dc:date>2008-11-04T22:35:27+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=598</comments>   
+    <dc:creator>Doug</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

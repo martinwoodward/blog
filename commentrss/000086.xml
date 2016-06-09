@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Pagerank re-visited</title>
+    <link>http://www.woodwardweb.com/personal/pagerank_revisi.html</link>
+    <description>Well, for some reason I seem to be back at my No. 2 spot in Google when you search for &quot;Martin Woodward&quot;. I changes my blog templates a little bit. The Martin Woodward header at the top of every page...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-03-06T01:15:45+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/personal/pagerank_revisi.html#c000222</link>
+    <description>You&apos;re obsessed mate - you&apos;re forgetting again that someone would have to actually *want* to search for Martin Woodward! ;-)</description>
+    <dc:date>2005-03-07T22:54:22+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=86</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/personal/pagerank_revisi.html#c000239</link>
+    <description>I guess.  Surely everybody knows who I am.</description>
+    <dc:date>2005-03-14T18:26:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=86</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>iTunes Freezing on Close</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html</link>
+    <description><![CDATA[I swear, one day I'll learn.&nbsp; Despite having promised myself to steer clear of the initial release of any Windows version of iTunes because they are consistently broke in some pretty severe ways - I read this report on Engadget...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-01-21T09:40:53+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Karl B.+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002480</link>
+    <description>I was having the exact same problem.  Thanks for fixing it.</description>
+    <dc:date>2008-01-21T20:48:04+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Karl B.</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Adrian+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002481</link>
+    <description>Sounds just like my fix for Windows Defender :)  It doesn&apos;t crash my PC - it just hogs CPU when it kicks off (usually triggered by me wanting to do something in a hurry and needing all the CPU I can get.  How does it know?) In another stroke of great UI design it and doesn&apos;t have a pause button.  Now every time I boot up windows I smile when a pop up appears to say there&apos;s an error and it couldn&apos;t start the process.</description>
+    <dc:date>2008-01-22T10:23:20+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Adrian</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by andrew+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002485</link>
+    <description>thanks so much man</description>
+    <dc:date>2008-01-28T02:02:17+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>andrew</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Kazzart+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002487</link>
+    <description>OMG thank you SO much for this! I was having exactly the same problem with itunes freezing on close and it was driving me insane. I searched the apple site and found nothing helpful. I even tried reinstalling it to no avail. Stopping the Bonjour service fixed this perfectly for me. Thank you again!</description>
+    <dc:date>2008-01-29T11:27:36+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Kazzart</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Joakim+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002488</link>
+    <description>Thanks! Works like a charm</description>
+    <dc:date>2008-01-29T15:49:48+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Joakim</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Pamela+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002491</link>
+    <description>OMG!! You are the coolest! THANK YOU!!!!</description>
+    <dc:date>2008-01-31T17:59:18+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Pamela</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Felipe Ferreira+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002494</link>
+    <description>thanks so much for this!
+after 3 days thinking in a workaround to this same problem the solution was incredible simple =)
+
+thanks Martin</description>
+    <dc:date>2008-02-08T17:19:57+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Felipe Ferreira</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Luke Whiteman+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002496</link>
+    <description>Amazing. Great fix!</description>
+    <dc:date>2008-02-21T21:02:45+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Luke Whiteman</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by The Dude+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002508</link>
+    <description>Hey, thanks man.  I was having that same problem.  Nice find.  </description>
+    <dc:date>2008-03-08T02:07:03+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>The Dude</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Matt+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002514</link>
+    <description>Thankyou so much!  That&apos;s fixed it. :-D</description>
+    <dc:date>2008-03-24T00:59:20+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Matt</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by jan+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002516</link>
+    <description>fixed! - many, many thanks.</description>
+    <dc:date>2008-04-01T11:07:47+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>jan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Luke Ray+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002519</link>
+    <description>OMG! I&apos;ve been trying to sort this for ages! It has been doing my head in so much. You rule!!! 
+
+You having my deepest thanks.</description>
+    <dc:date>2008-04-13T03:35:12+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Luke Ray</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by HesH+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002529</link>
+    <description>Yup! Worked for me. Thnx</description>
+    <dc:date>2008-05-01T03:16:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>HesH</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by otis+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002549</link>
+    <description>well i have itunes and it sucks, first of all is super slow and thank god i dd nt set it up as my default player because it would take hours to load and well, i have an ipod and when i conected to my PC windows vista it takes like 30 min to update my music tht is why i dont update my ipod tht much, my friend got the new ipod nano and well he was going to conected to my laptop and i got an error saying tht my itunes was an old version i was ok, i&apos;d download the new itunes, wht a surprise the stupid new itunes took up to 4 hours to be downloadd to my computer, i was so mad tht i told my friend, to buy the zune or other mp3 player because this itunes crap its nt working fr me, i even thought of purchasing a new ipod but hell no!!!!!!! im going to sell my old version 27gb and get a &quot;normal&quot; mp3 player, and also i was thinking of getting a mcbook but hells to the NO!!!!!!i&apos;d rather keep my PC windows vista might suck but its better then the itunes</description>
+    <dc:date>2008-05-21T22:51:39+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>otis</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by James+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002550</link>
+    <description>Thanks so much, not being able to close iTunes in Vista was driving me nuts!</description>
+    <dc:date>2008-05-25T23:28:35+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>James</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Penny+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002582</link>
+    <description>Thanks so much. This was driving me crazy - I finally stopped getting mad and figured out where it was freezing, then searched and found your post. Fixed it right away.</description>
+    <dc:date>2008-07-13T22:04:07+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Penny</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Adrian+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002583</link>
+    <description>Same problem with the new itunes, followed this instruccions for the lates realease in jully 11, and new iphone fixed the problem.</description>
+    <dc:date>2008-07-14T10:46:16+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Adrian</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Tommy B+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002588</link>
+    <description>Thank you very much!!!!!!</description>
+    <dc:date>2008-07-25T04:00:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Tommy B</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Fredrik+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002593</link>
+    <description>Just want to join the chorus praising you for this simple and invaluable fix. Just followed your steps, and now iTunes closes without causing any trouble :)
+Thank you!</description>
+    <dc:date>2008-08-04T20:55:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Fredrik</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by CP+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002594</link>
+    <description>Great tip.  Thanks a million.</description>
+    <dc:date>2008-08-10T11:02:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>CP</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ron+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002605</link>
+    <description>hey man, thanks much. i google&apos;d this problem and i stumbled into your entry.</description>
+    <dc:date>2008-08-25T15:45:40+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>Ron</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by m+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002606</link>
+    <description>Thanks for the link to the ESET info. Worked perfectly.</description>
+    <dc:date>2008-08-26T19:42:09+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>m</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by foofooo+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/itunes_76_freez.html#c002610</link>
+    <description>EXCELLENT!
+
+Itunes was freezing up and doing my head in, and I thought it was bad programmers at Apple doing this on purpose. It turned out that my NOD32 2.7 was acting up.
+
+Thank you so much for the fix. Worked excellent.
+
+Itunes 7.7 in Windows XP SP3 runs smooth.
+
+
+=)</description>
+    <dc:date>2008-08-30T07:58:38+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1723</comments>   
+    <dc:creator>foofooo</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

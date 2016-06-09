@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>The World&apos;s Smallest TFS Proxy is Dead</title>
+    <link>http://www.woodwardweb.com/personal/the_worlds_smal_1.html</link>
+    <description><![CDATA[ This morning we had a power cut which killed a particular tricky upgrade mid-way through trashing the machine I was attempting it on.&nbsp; Luckily the machine in question was a VM Ware image and I had recent taken a...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-05-31T14:35:02+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Rob Burke+00:00</title>
+    <link>http://www.woodwardweb.com/personal/the_worlds_smal_1.html#c002400</link>
+    <description>Noooooooooooooooooooooooooooooooooooooo!
+
+You&apos;ll need to announce his resurrection, or at least let us know how the appointment with the Dell Engineer goes...</description>
+    <dc:date>2007-05-31T15:30:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1670</comments>   
+    <dc:creator>Rob Burke</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Simon Phillips+00:00</title>
+    <link>http://www.woodwardweb.com/personal/the_worlds_smal_1.html#c002405</link>
+    <description>In my last job, we had get the motherboard changed on nearly all our Dell Omni-Plexs GX-210??. It was like having loads of pop-corn machines with all the capacitors popping :S</description>
+    <dc:date>2007-06-07T09:42:33+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1670</comments>   
+    <dc:creator>Simon Phillips</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

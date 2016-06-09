@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>The Measurement Dilemma</title>
+    <link>http://www.woodwardweb.com/vsts/the_measurement.html</link>
+    <description><![CDATA[Visual Studio Team Foundation Server gives a fantastic ability to track and report on various facts about your software development process.&nbsp; It frees managers (and team members) from the chore of&nbsp;recording and collating&nbsp;data about the development process.&nbsp;&nbsp;Managers can now&nbsp;get on...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-09-14T11:37:09+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Adrian Lester+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/the_measurement.html#c001720</link>
+    <description>I think you hit a big issue the head, Martin!
+
+It seems to me that the main thing a manager of a software team needs to be focusing on is people - personalities, relationships within the team, between teams, etc.  Projects don&apos;t often fail because of a technical issue.  It tends to be &quot;politics&quot; that scuppers projects, and when people say politics they really mean people issues.  
+
+In my experience large companies don&apos;t seem to get this point.  Manager training tends to be things like &quot;Risk &amp; Issue Management&quot; and &quot;Metrics&quot;.  Spreadsheets will save the day!  I end up spending most of my time clearing corporate crud out of the way to let my developers get on with their job of developing.  It&apos;s what drove me into management in the first place.
+
+On your point about competition - I haven&apos;t got an answer yet either.  Competition is a very strong motivator, especially for men and the reality is that the software development industry is predominatly male.  We can&apos;t help but compete.  Why do you think someone came up with metrics in the first place?</description>
+    <dc:date>2006-09-18T14:30:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1113</comments>   
+    <dc:creator>Adrian Lester</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

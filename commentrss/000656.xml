@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Skype SMS</title>
+    <link>http://www.woodwardweb.com/software/skype_sms.html</link>
+    <description><![CDATA[I&rsquo;ve been using the new 2.5 beta version of Skype for a week now and I am loving it.&nbsp; The main new feature is the support for SMS messaging.&nbsp; When I am out of the country I use SMS as...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-05-15T15:50:01+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Sean McGurk+00:00</title>
+    <link>http://www.woodwardweb.com/software/skype_sms.html#c000858</link>
+    <description>Hi Martin,
+
+Can this (Skype SMS) be used to send SMS messages from another application? I&apos;m looking for something that I can plug into an existing web project that will enable me to send SMS messages to a list of users (possibly for free, but realistically not...)  There is a Web service here: http://www.webservicex.net/WS/WSDetails.aspx?CATID=4&amp;WSID=60 that&apos;ll do it, but not to UK mobiles. Any ideas? 
+
+Cheers and I&apos;ll see you soon (at the next developer conference possibly).
+
+Sean</description>
+    <dc:date>2006-05-23T14:09:01+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=656</comments>   
+    <dc:creator>Sean McGurk</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

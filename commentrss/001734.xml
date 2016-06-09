@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Teamprise Case Study: Thomson Reuters</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html</link>
+    <description><![CDATA[ I am proud to announce that Microsoft have just published a joint case study with us on the success Thomson Reuters have had using Team Foundation Server in a mixed development shop.&nbsp; This customer is particularly interesting, not just...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-06-06T14:55:49+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ed Blankenship+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002572</link>
+    <description>Martin,
+
+This was a great post.  So true!  These are great suggestions and pros about Agile software methodologies.</description>
+    <dc:date>2008-06-26T15:19:57+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Ed Blankenship</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by James+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002578</link>
+    <description>Agile techniques are worthwhile in any project, but a big problem in software project management is that the technology is changing so quickly.
+
+This is great for keeping the stuff interesting and fun (sometimes). But if you are laying bricks, it would be good to know that the latest version of the Earth (or the bricks) doesn&apos;t have any &apos;new features&apos;.</description>
+    <dc:date>2008-07-07T09:18:47+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>James</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Paul+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002579</link>
+    <description>Martin, although I know what you mean about estimating software development projects--I tend to lean toward the thought that as you gain experience this sort of things becomes easier, and guesstimating a project based on previous experience usually works well for me. I have learned the hard way to tack on 10% time/money to my guesstimates though for those unforeseen &quot;firewall&quot; issues.</description>
+    <dc:date>2008-07-08T17:42:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Paul</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Grant Holliday+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002580</link>
+    <description>Congratulations Martin &amp; Teamprise. This is great work!</description>
+    <dc:date>2008-07-11T05:32:21+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Grant Holliday</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Luis Fraile+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002586</link>
+    <description>Nice hehehe, we musty do something with builds and Multidomo ;)</description>
+    <dc:date>2008-07-23T22:41:47+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Luis Fraile</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mac Noland+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002589</link>
+    <description>This is great Martin!  If my manager&apos;s manager&apos;s manager, can approve the spending request, we might give this a shot!  If we do, I&apos;ll let you know how it goes.</description>
+    <dc:date>2008-07-28T20:52:07+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Mac Noland</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Dave+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002595</link>
+    <description>You mention the TFS Install Guide, but the link only contains pre-SP1 and SP1Beta install guides. Where can I find a SP1-RTM install guide?</description>
+    <dc:date>2008-08-12T14:17:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Dave</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002596</link>
+    <description>Dave,
+
+The version called &quot;TFSInstall-RTM-v080811.chm&quot; contains the latest SP1 information.  The owners of this document have been informed and hopefully they will update the name of it soon to make it less confusing.
+
+Martin.</description>
+    <dc:date>2008-08-12T16:14:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Edward Thomson+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002598</link>
+    <description>Martin - great post, the sudoku analogy is a lovely one.  My friends and family frequently don&apos;t understand it when I talk about planning and scheduling of software projects.
+
+&quot;Oh, so you&apos;re going to have it done by then?&quot;  they ask.  My response is always &quot;I hope so!&quot;
+
+Next time, I&apos;ll give them the sudoku analogy!</description>
+    <dc:date>2008-08-20T16:53:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Edward Thomson</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Anthony Borton+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002599</link>
+    <description>Hi Martin. 
+The refresh to your blog looks great and I love the cartoon image of you :)
+
+Cheers
+Anthony</description>
+    <dc:date>2008-08-21T05:55:00+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Anthony Borton</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Steven St Jean+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002600</link>
+    <description>Very nice update.  Very crisp and clean.  I&apos;m thinking that you need to ask the marketing folks to do an Anime or Manga version that you could rotate through randomly upon access. ;-)
+
+- Steve</description>
+    <dc:date>2008-08-21T18:51:45+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Steven St Jean</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002601</link>
+    <description>If you wait long enough, I wink...</description>
+    <dc:date>2008-08-21T19:31:15+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Sameer Dhoot+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002602</link>
+    <description>I am trying to follow the same instructions, the setup quits without any pormpts. I checked the event viewer and its says 
+
+&quot;Product: Microsoft Visual Studio 2008 Team Foundation Server - ENU - Update &apos;KB949786&apos; installed successfully.&quot;
+
+But when i try to verify the file version they are indeeed RTM version i.e. 9.0.21022.8 and did not get updated as you noted. I have not yet installed the product as i have to use sql 2008.
+
+Regards,
+Sameer Dhoot.
+http://intellects.in
+</description>
+    <dc:date>2008-08-21T22:22:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Sameer Dhoot</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002603</link>
+    <description>Sameer, Are you running on Vista or Windows Server 2008?  If so, you will need to run the command prompt with admin rights before it will work correctly.  Otherwise when running the msiexec try running it with verbose logging enabled (i.e. &quot;msiexec /Lv logfile.txt /a \AT\vs_setup.msi /p TFS90sp1-KB949786.msp TARGETDIR=\AT&quot;)  </description>
+    <dc:date>2008-08-22T11:18:48+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Kris Bogaert+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002611</link>
+    <description>I often apply the principle: A good developer should do this in X days. In the end I double all the numbers and add an additional margin of 10%. So far it often was succesfull for my type of IT projects (package integration and customisation) which mostly take around 6 months in duration. </description>
+    <dc:date>2008-09-04T21:00:11+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Kris Bogaert</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Michael Freidgeim+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002619</link>
+    <description>Command in step 2 is truncated.
+And I couldn&apos;t find the file. Is it actually the name of SP1 download TFS90sp1-KB949786-ENU.exe ?
+Also I found that TFSInstall-SP1-RTM-v080908.chm has similar section
+&quot;How to: Integrate the Installation of Team Foundation Server and Service Pack 1&quot; </description>
+    <dc:date>2008-09-23T05:46:30+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Michael Freidgeim</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Adrian+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002620</link>
+    <description>I think that dealing with the dumb user scenarios has driven a lot of usability styles and led to things like the &quot;Are you sure?&quot; type pop ups frequently seen on applications.  Unfortunately every user then has to endure all these pop ups to catch the few instances when someone is making a mistake, and being creatures of habit we get used to clicking through applications without paying much attention (but getting slightly frustrated at so many button clicks required just to do a simple operation).  So the Usability has suffered without making the application more usable.
+</description>
+    <dc:date>2008-10-02T10:42:23+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Adrian</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002621</link>
+    <description>I nearly wrote in the original post that it doesn&apos;t mean sticking a &quot;Are you sure?&quot; sign everywhere or a having a bajillion preferences :-)</description>
+    <dc:date>2008-10-02T13:34:35+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by oo+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002633</link>
+    <description>Cool, though you can&apos;t trust the bunny. My own rabbit is not reliable at all and hangs at least twice a day. But its good fun anyway, even when I have to reset it every few hours or so.</description>
+    <dc:date>2008-10-29T10:15:10+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>oo</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Howard van Rooijen+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002638</link>
+    <description>Hehe, actually the orginal motivation for my &quot;Team Foundation Server Notification Event project template&quot; project was to get my nabaztag working via TFS! Awesome project.</description>
+    <dc:date>2008-11-09T22:51:43+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Howard van Rooijen</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Simon Guettier+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002645</link>
+    <description>Hey Martin,
+Very interesting article.
+Like you, running Windows 7 on the Advent 4211. It&apos;s great for a pre-release OS.
+One question - where did you get the drivers for the microphone. I&apos;ve used Realtek&apos;s Vista drivers, sound output is fine, but can&apos;t get the microphone working - either the inbuilt one, or external. Is yours OK?
+Thanks for a great article .. Simon</description>
+    <dc:date>2008-12-13T12:34:01+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Simon Guettier</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Alli Flowers+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002649</link>
+    <description>After reading your comments, I decided to install beta 7 on my MSI Wind. I panicked when I could not connect to the net even after installing the updated driver you recommended. The solution was so simple though....I picked up an ethernet cable and plugged it in. Updates started to flow *instantly* and the wireless came right up.
+
+Looks like MS has redeemed itself again!</description>
+    <dc:date>2009-01-04T01:53:43+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Alli Flowers</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002652</link>
+    <description>The default Microsoft generic &quot;High Quality Audio&quot; drivers appear to work better than installing the Vista ones from RealTek.  That said - the internal mic still does not work very well.  I have boosted the volume all the way that the Microsoft driver will let me (30db) and turned up the volume to 100% but I can only hear very faint sounds from the microphone and plenty of noise.  I haven&apos;t tried the same process with the WiFi disabled (I hear that there are some issues with signal noise on the microphone wire from the WiFi antennna in the MSI Wind).
+
+Personally, I use a Plantronics DSP-400 USB headset for Skype calls which works great.  However I would quite like the internal mic to work on the Wind as it has been snaffled by the Wife and Kids now and I&apos;d be able to use it to video conference to them while travelling.  Instead I&apos;m just going to get them to use a cheap USB microphone attachment. </description>
+    <dc:date>2009-01-05T10:09:05+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Christian Jacob+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002670</link>
+    <description>We are using Team Build for only a couple of days now. After having read about Brian, I got myself a Nabaztag, too. And now guess what... company policies prevent me from getting it connected to the internet... *sigh*</description>
+    <dc:date>2009-02-05T18:57:01+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Christian Jacob</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by michael+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002671</link>
+    <description>Hello
+
+can i get the 1024 x 768 modus under windows7</description>
+    <dc:date>2009-02-06T18:37:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>michael</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by softwaredevelopment+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002673</link>
+    <description>interesting post!! thanks for this post its really helpful and have great suggestion.. give a thumbs up on su!!</description>
+    <dc:date>2009-02-10T00:58:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>softwaredevelopment</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Uzair+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002678</link>
+    <description>tell me, does the VS 2008 sp1 also updates the team suite editions and the team explorer if they are installed??</description>
+    <dc:date>2009-02-16T07:28:28+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Uzair</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Anup Pachlag+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002687</link>
+    <description>Very interesting post and the Soduku Analogy is just great ! I have also realized that a bottom up approach works better than a Top down approach when it comes to estimating</description>
+    <dc:date>2009-03-04T20:11:02+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Anup Pachlag</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Manny @SharpToss+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002709</link>
+    <description>Excellent post Martin. The Sudoku analogy IS very apt. </description>
+    <dc:date>2009-04-08T23:05:15+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Manny @SharpToss</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Nick Pirocanac+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002710</link>
+    <description>Hi Martin,
+
+Thanks so much for the detailed explanation of the TFS2008 slipstream build.
+
+I was able to get the Build and TFS client move up to SP1 as well by doing the following:
+
+For TFS Client, I used the VS2008sp1 release, followed your steps, and merged with: VS90sp1-KB945140-X86-ENU.msp. This produced a SP1 version of the TFS client in the TFS folder:
+
+msiexec /l* c:\1\out.txt /a \TFC\vs_setup.msi /p \VS90sp1-KB945140-X86-ENU.msp TARGETDIR=\TFC
+
+
+For the Build, I followed your steps exactly. When trying to do the setup, it biffed looking for this assembly: 
+
+\BUILD\Program Files\Microsoft Visual Studio 2008 Team Foundation Server\Web Services\Build\bin\Microsoft.TeamFoundation.Build.Client.dll
+
+So, I went to another machine, installed Build from the standard media, and updated with the service pack. Then I found this assembly in: 
+C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies
+
+Next, I sorted on version number in that folder, and took all version 9.0.30729.1 files and put them in the \BUILD\Program Files\Microsoft Visual Studio 2008 Team Foundation Server\Web Services\Build\bin folder. 
+Then, I went to yet another machine with no vs2008 components on it, and again tried to install Build, and that time, it installed with no errors.
+Sharepoint extensions and the Proxy do not appear to have a patch in the SP1 package that I could see. 
+So, if you apply the above to your TFS 2008 ISO, you should get a solid SP1 ISO!</description>
+    <dc:date>2009-04-09T22:30:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Nick Pirocanac</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Richard+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002715</link>
+    <description>Have you had any luck finding drivers for the touchpad. Win7 thinks my Wind touchpad is a PS/2 mouse, so I can&apos;t stop the default tap-to-click feature. I&apos;m tried loading separate drivers I&apos;ve read about in the forums, but the menu item to disable that feature was greyed out. Any experience with this?</description>
+    <dc:date>2009-04-21T06:16:12+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Richard</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by daniel levite+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002736</link>
+    <description>when r they going to fix TFS and have a DVD/ or download WITH SP1 applied or another version targeting sql server 2008 outright?   I am amazed they don&apos;t have this done.  Is it that few people use TFS or sql server 2008?</description>
+    <dc:date>2009-06-09T19:22:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>daniel levite</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002737</link>
+    <description>I don&apos;t think there are any plans to provide a DVD with SP1 applied.  Crazy to me too but there you go.</description>
+    <dc:date>2009-06-10T08:59:22+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Manuel Rocha+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002756</link>
+    <description>The crazy thing is They don&apos;t have the x64 version of TFS which is so stupid. 
+
+By their logic all devellopers enterprise which works with x64 server versions like mine does can&apos;t have TFS or if they won&apos;t they would have to install a virtual machine or windows a x86 server version which for a develloper enterprise is very bad because we want the x64 server version to deploy x64 programs version and the memory administration made by the x64 operating system is better then the administration made by a x86 server
+
+I have read at microsoft website that TFS 2010 will have a x64 version. Lets wait to see.
+
+Thanks for the tutorial
+
+By the way, what is the tfssp1 folder which you have at the root of your integration?
+</description>
+    <dc:date>2009-07-20T09:48:10+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Manuel Rocha</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/teamprise_case.html#c002757</link>
+    <description>You&apos;ll be glad to hear that TFS 2010 does indeed have x64 support in the early betas.</description>
+    <dc:date>2009-07-20T10:42:38+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1734</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

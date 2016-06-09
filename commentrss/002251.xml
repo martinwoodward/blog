@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Radio TFS 31: TFS at CodePlex</title>
+    <link>http://www.woodwardweb.com/radio_tfs_31_tf.html</link>
+    <description>In the latest episode of Radio TFS Mickey and I sat down for a chat with Jonathan Wanagel who is the Principal Development Manager over at CodePlex, Microsoft&apos;s open source project hosting site.&#160; We talk about what CodePlex is, how...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2010-09-15T10:12:55+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

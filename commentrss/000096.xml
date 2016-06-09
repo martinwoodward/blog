@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Adobe buys Macromedia</title>
+    <link>http://www.woodwardweb.com/technology/adobe_buys_macr.html</link>
+    <description>Wow, Adobe have announced plans to buy Macromedia. Guess I&apos;ll only be buying from one company in the future when I need to do creative stuff for the web. Not sure what I think about this move, hope the price...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-04-18T18:03:08+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/technology/adobe_buys_macr.html#c000271</link>
+    <description>If I were you I&apos;d boycott Adobe&apos;s products in full. Adobe&apos;s practices have already been fairly nefarious after making a legal complaint against a programmer; Dmitry Sklyarov:
+
+&quot;Dmitry helped create the Advanced eBook Processor (AEBPR) software for his Russian employer Elcomsoft. According to the company&apos;s website, the software permits eBook owners to translate from Adobe&apos;s secure eBook format into the more common Portable Document Format (PDF). The software only works on legitimately purchased eBooks. It has been used by blind people to read otherwise-inaccessible PDF user&apos;s manuals, and by people who want to move an eBook from one computer to another (just like anyone can move a music CD from the home player to a portable or car).
+
+Dmitry was arrested July 17, 2001 in Las Vegas, NV, at the behest of Adobe Systems, according to the DOJ complaint, and charged with distributing a product designed to circumvent copyright protection measures (the AEBPR). He was eventually released on $50,000 bail and restricted to California. In December 2001, was permitted to return home to Russia with his family. Charges have not been dropped, and he remains subject to prosecution in the US.&quot;
+
+Source: http://www.freesklyarov.org/
+
+Why not just use The GIMP?</description>
+    <dc:date>2005-04-21T14:05:03+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=96</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/technology/adobe_buys_macr.html#c000272</link>
+    <description>To paraphrase one of the kernel hackers; &quot;there is a special place in hell, down the hall from hitler, for flash&quot;
+
+
+;-)</description>
+    <dc:date>2005-04-21T16:09:24+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=96</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/technology/adobe_buys_macr.html#c000274</link>
+    <description>Yeah, though I do love Photoshop, Adobe have never been my favourite company.  Really unsure as to what this move means for Macromedia.  Some of the blogspeak about the move suggests that Adobe only bought the company because they were afraid Microsoft might, which seems like odd motivation to me.
+
+Also, didn&apos;t Adobe sue Macromedia because the Fireworks interface was too similar to the photoshop one and infringed software patents?  (Or am I just making that up).  Now, software patents - that&apos;s something that really makes me mad...</description>
+    <dc:date>2005-04-22T10:18:52+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=96</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

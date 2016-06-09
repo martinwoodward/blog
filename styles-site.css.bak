@@ -1,0 +1,339 @@
+body {
+		margin:0px 0px 20px 0px;
+	background-color : White;
+	background-repeat : no-repeat;
+	background-attachment : scroll;
+	background-position: top left;
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : x-small;
+	color : Black;
+
+		}
+	A 			{ color: #003366; text-decoration: underline; }
+	A:link		{ color: #003366; text-decoration: underline; }
+	A:visited	{ color: #003366; text-decoration: underline; }
+	A:active	{ color: #999999;  }
+	A:hover		{ color: #999999;  }
+
+	h1, h2, h3 {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#banner {
+	font-family : Arial, Helvetica, sans-serif;
+	color:#333;
+	font-size:x-large;
+	font-weight:normal;
+	background-color: #990000;
+	background-image: url(images/common/head_back.gif);
+	background-position: right top;
+	height: 76px;
+	width: auto;
+	background-repeat: no-repeat;
+		}
+
+	#banner a,
+        #banner a:link,
+        #banner a:visited,
+        #banner a:active,
+        #banner a:hover {
+		font-family : Arial, Helvetica, sans-serif;
+		font-size: xx-large;
+		color: #333;
+		text-decoration: none;
+		}
+
+#banner H1
+{
+	background-image: url(images/common/martin_woodward_990000.gif);
+	background-repeat : no-repeat;
+	background-position : right top;
+	height : 76px;
+	width:400px;
+	font-size : 16pt;
+}
+
+SPAN.textVersion
+{
+	display: none;
+}
+
+#breadcrumBar {
+	margin-bottom: 3px;
+	text-align : right;
+	position : absolute;
+}
+
+#breadcrumBar .breadcrum {
+	font-size: 8pt;
+}
+
+#breadcrumBar A {
+	color: Black;
+	text-decoration : none;
+}
+
+#breadcrumBar A:hover {
+	text-decoration : underline;
+}
+
+#intro {
+ font-family : Arial, Helvetica, sans-serif;
+ color:#333;
+ font-size:small;
+ font-weight:normal;
+ padding: 15px;
+}
+
+
+	.description {
+		font-family : Arial, Helvetica, sans-serif;
+		color:#333;
+		font-size:small;
+  		text-transform:none;	
+		}
+				
+	#content {
+	position:absolute;
+	background:#FFF;
+	margin-right:20px;
+	margin-left:200px;
+	margin-bottom:20px;
+	border:1px solid #FFF;
+	width: 70%;
+		}
+
+	#container {
+		background:#FFF;
+		border:1px solid #FFF;		
+		}
+
+	#links {	
+		padding:5px;				
+		border:1px solid #FFF;
+		width:180px;			
+		}
+		
+	.blog {
+  		padding:15px;
+		background:#FFF; 
+		}
+
+	.blogbody {
+		font-family : Arial, Helvetica, sans-serif;
+		color:#333;
+		font-size:small;
+		font-weight:normal;
+  		background:#FFF;
+  		line-height:200%;
+		}
+
+	.blogbody img {
+	border: 1px solid #CCCCCC;
+	padding: 7px;
+	float: right;
+	margin-bottom: 1px;
+	margin-left: 5px;
+	top: 20px;
+	margin-top: 10px;
+	background-color: #ffffff;
+	}
+
+	.inline {
+	border: 10px solid #CCCCCC;
+	padding: 7px;
+	float: left;
+	margin-bottom: 1px;
+	margin-left: 5px;
+	top: 20px;
+	margin-top: 10px;
+	background-color: #ffffff;
+	}
+
+	.blogbody a,
+	.blogbody a:link,
+	.blogbody a:visited,
+	.blogbody a:active,
+	.blogbody a:hover {
+		font-weight: normal;
+		text-decoration: underline;
+	}
+
+	.title	{
+		font-family : Arial, Helvetica, sans-serif;
+		font-size: medium;
+		color: #666;
+		}			
+
+	#menu {
+  		margin-bottom:15px;
+		background:#FFF;
+		text-align:center;
+		}		
+
+	.date	{ 
+		font-family : Verdana, Arial, Helvetica, sans-serif; 
+		font-size: 80%; 
+		color: #333; 
+		border-bottom:1px dashed #CCCCCC;
+		font-weight:bold;
+		}			
+		
+	.posted	{ 
+		font-family : Arial, Helvetica, sans-serif; 
+		font-size: x-small; 
+		color: #000000; 
+		margin-bottom:25px;
+		}
+		
+		
+	.calendar {
+		font-family:verdana, arial, sans-serif;
+		color:#666;
+		font-size:x-small;
+		font-weight:normal;
+  		background:#FFF;
+  		line-height:140%;
+  		padding:2px;
+                text-align:left;
+		}
+	
+	.calendarhead {	
+		font-family : Arial, Helvetica, sans-serif;
+		color:#666600;
+		font-size:small;
+		font-weight:normal;
+  		padding:2px;
+		letter-spacing: .3em;
+  		background:#FFF;
+  		text-transform:uppercase;
+		text-align:left;			
+		}	
+	
+	.side {
+	font-family:verdana, arial, sans-serif;
+	color:#333;
+	font-size:x-small;
+	font-weight:normal;
+	line-height:140%;
+	padding:2px;
+		}	
+		
+	.sidetitle {
+	font-family : Verdana, Arial, Helvetica, sans-serif;
+	color:#990000;
+	font-size:130%;
+	padding:15px 2px 2px;
+	letter-spacing: normal;
+	background-image: url(images/common/section_marker.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	height: 32px;
+	text-indent: 30px;
+	vertical-align: middle;
+	margin-top: 10px;
+		}		
+	
+	.syndicate {
+		font-family:verdana, arial, sans-serif;
+		font-size:xx-small;		
+  		line-height:140%;
+  		padding:2px;
+  		margin-top:15px;
+  		background:#FFF;  		
+ 		}	
+		
+	.powered, .powered a {
+	font-family : Arial, Helvetica, sans-serif;
+	color:#cccccc;
+	font-size:x-small;
+	line-height:140%;
+	padding:2px;
+	margin-top:50px;
+	text-transform: uppercase;
+	text-indent: 20px;
+		}	
+		
+	
+	.comments-body {
+		font-family : Arial, Helvetica, sans-serif;
+		color:#666;
+		font-size:small;
+		font-weight:normal;
+  		background:#FFF;
+  		line-height:140%;
+ 		padding-bottom:10px;
+  		padding-top:10px;		
+ 		border-bottom:1px dotted #999; 					
+		}		
+
+	.comments-post {
+		font-family:verdana, arial, sans-serif;
+		color:#666;
+		font-size:x-small;
+		font-weight:normal;
+  		background:#FFF;		
+		}	
+			
+	
+	.trackback-url {
+		font-family : Arial, Helvetica, sans-serif;
+		color:#666;
+		font-size:small;
+		font-weight:normal;
+  		background:#FFF;
+  		line-height:140%;
+ 		padding:5px;		
+ 		border:1px dotted #999; 					
+		}
+
+
+	.trackback-body {
+		font-family : Arial, Helvetica, sans-serif;
+		color:#666;
+		font-size:small;
+		font-weight:normal;
+  		background:#FFF;
+  		line-height:140%;
+ 		padding-bottom:10px;
+  		padding-top:10px;		
+ 		border-bottom:1px dotted #999; 					
+		}		
+
+	.trackback-post {
+		font-family:verdana, arial, sans-serif;
+		color:#666;
+		font-size:x-small;
+		font-weight:normal;
+  		background:#FFF;		
+		}	
+
+		
+	.comments-head	{ 
+		font-family : Arial, Helvetica, sans-serif; 
+		font-size:small; 
+		color: #666; 
+		border-bottom:1px solid #999;
+		margin-top:20px;
+		font-weight:bold;
+  		background:#FFF;		
+		}		
+
+	#banner-commentspop {
+		font-family : Arial, Helvetica, sans-serif;
+		color:#FFF;
+		font-size:large;
+		font-weight:bold;
+		border-left:1px solid #FFF;	
+		border-right:1px solid #FFF;  		
+		border-top:1px solid #FFF;  		
+  		background:#003366;
+  		padding-left:15px;
+  		padding-right:15px;
+  		padding-top:5px;
+  		padding-bottom:5px;  		  		  			 
+		}
+hr {
+	border: 1px dashed #CCCCCC;
+}

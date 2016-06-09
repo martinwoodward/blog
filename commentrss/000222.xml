@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Grabbed by the Monads</title>
+    <link>http://www.woodwardweb.com/vsts/grabbed_by_the.html</link>
+    <description><![CDATA[If (like me)&nbsp;you are slowly getting hooked on MSH (or Monad), the James Manning&rsquo;s latest post will interest you&nbsp;&ndash; an early implementation of a MSH Provider for Team Foundation Server Version Control allowing you to access the repository as if...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-04-07T21:16:32+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Mike C+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/grabbed_by_the.html#c001087</link>
+    <description>Scott Hanselman has done a great intro into this topic on his weekly podcast, Hanselminutes.
+Check Out http://www.hanselminutes.com/default.aspx?showID=12
+</description>
+    <dc:date>2006-04-11T13:52:58+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=222</comments>   
+    <dc:creator>Mike C</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

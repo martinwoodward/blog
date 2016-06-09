@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>The Best of Steve Jobs&apos; Comments</title>
+    <link>http://www.woodwardweb.com/technology/the_best_of_ste.html</link>
+    <description>With Apple about to celebrate it&apos;s 30th Anniversary, Wired is running a piece on the best Steve Jobs&apos; comments ever. While I don&apos;t particularly like the proprietary way in which Apple goes about things - you have to admire the...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-03-31T09:13:19+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/technology/the_best_of_ste.html#c002213</link>
+    <description>I&apos;m not sure &quot;I&apos;ve always wanted to own and control the primary technology in everything we do.&quot; is a *best* comment, but you know (^_^)
+
+My favorite is (actually top right hand corner of my blog) &quot;...it scrolls like butter&quot;:
+
+http://en.wikipedia.org/wiki/Scrolls_like_butter </description>
+    <dc:date>2006-03-31T11:24:06+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1532</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS Source Control for VS 2003</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_source_cont.html</link>
+    <description><![CDATA[Via Rob, Microsoft have now released a MSSCCI Provider that works in Visual Studio 2003 and Visual Studio 6.&nbsp;&nbsp;According to the overview on the&nbsp;download site, &ldquo;The Visual Studio Team Foundation Server MSSCCI Provider enables users of Visual Studio 6.0 and...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-02-21T09:23:27+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

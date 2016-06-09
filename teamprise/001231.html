@@ -1,0 +1,1033 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/teamprise/building_ant_pr.html">
+<dc:title>Building Ant projects from Team Build</dc:title>
+<dc:description>Update: With Teamprise 3.0 we included this work into the freely downloadable Teamprise Extensions for Team Build. The source is also provided under the MS-PL if you are interested. You should definately look at the new version as it contains...</dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2007-12-03T15:56:31+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/teamprise/building_ant_pr.html" title="Building Ant projects from Team Build" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/teamprise/building_ant_pr.html" title="Building Ant projects from Team Build" />
+    
+    <title>Building Ant projects from Team Build - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-1231" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Building Ant projects from Team Build</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author">Martin Woodward</span> on <abbr class="published" title="2007-12-03T15:56:31+00:00">December  3, 2007  3:56 PM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/teamprise/building_ant_pr.html#comments">3 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p><b>Update: </b> With <a href="http://www.teamprise.com/">Teamprise 3.0</a> we included this work into the freely downloadable <a href="http://www.teamprise.com/products/build/">Teamprise Extensions for Team Build</a>.  The source is also provided under the MS-PL if you are interested.  You should definately look at <a href="http://www.teamprise.com/products/build/">the new version </a>as it contains some fixes and additional features based on feedback during beta testing.</p>
+
+<p>Original Post:</p>
+<p>With the recent release of Microsoft Visual Studio 2008 Team Foundation Server we are seeing more and more people looking to use the build capabilities of TFS (often referred to as "Team Build") to manage their Java based builds as well as their .NET ones.&nbsp; We have an MSBuild task available internally that we use to trigger Ant based builds and report the progress back into TFS, and I wanted to share this with a wider audience to get some feeedback.&nbsp; This task is heavily influenced by <a href="http://blogs.msdn.com/aaronhallberg/archive/2007/07/12/team-build-devenv-task.aspx" target="_blank">Aaron Hallberg's Team Build DevEnv task</a> which I encourage you to go look at if you are interested in getting other build systems integration with Team Build.</p> <p>You can download an early version of the Ant task from here - (TeampriseBuildExtensions 1.1MB).&nbsp; There are two versions of the task included in the zip file - one for TFS2005 and one for TFS2008.&nbsp; Additionally there is a draft set of instructions included on how to get this working today.&nbsp; We hope to make the process much easier with future releases of Teamprise.</p> <p>The Ant task works by calling Java to run Ant. The task first parses the Ant file to locate the name of the project and the description. It then calls Ant and the resulting output from Ant is then parsed by the task to look for key information (such as javac and junit tasks) as well as to pass the results into the MSBuild log. Options which are normally available via ant launching script are available as additional attributes to the Ant task.  <h4>Example Usage</h4><code><pre>&lt;Ant TeamFoundationServerUrl="$(TeamFoundationServerUrl)" 
+  BuildFile="$(SolutionRoot)\java\HelloWorld\build.xml" 
+  BuildUri="$(BuildUri)" 
+  AntHome="$(ANT_HOME)" 
+  JavaHome="$(JAVA_HOME)" 
+  Flavor="%(ConfigurationToBuild.FlavorToBuild)" 
+  Platform="%(ConfigurationToBuild.PlatformToBuild)"   
+  Properties="BinariesRoot=$(BinariesRoot);BuildNumber=$(BuildNumber);SourceGetVersion=$(SourceGetVersion)" /&gt;</pre></code>
+<h4>Task Reference</h4>
+<p>The following is a complete list of all the attributes supported by the task, note that many of them are best left to the default values unless a different behavior is explicitly required. Items that are in bold are the ones that are frequently used. </p>
+<table class="MsoTableMediumShading1Accent3" style="border-right: medium none; border-top: medium none; border-left: medium none; border-bottom: medium none; border-collapse: collapse; mso-table-layout-alt: fixed; mso-border-alt: solid #b3cc82 1.0pt; mso-border-themecolor: accent3; mso-border-themetint: 191; mso-yfti-tbllook: 1184; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt" cellspacing="0" cellpadding="0" width="100%" border="1">
+<thead>
+<tr style="mso-yfti-irow: -1; mso-yfti-firstrow: yes">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: #b3cc82 1pt solid; padding-left: 5.4pt; background: #9bbb59; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-themecolor: accent3; mso-border-themetint: 191; mso-background-themecolor: accent3" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 5"><b><span lang="EN-US" style="color: white; mso-themecolor: background1">Parameter<o:p></o:p></span></b></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: #b3cc82 1pt solid; padding-left: 5.4pt; background: #9bbb59; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 1"><b><span lang="EN-US" style="color: white; mso-themecolor: background1">Required<o:p></o:p></span></b></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: #b3cc82 1pt solid; padding-left: 5.4pt; background: #9bbb59; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-themecolor: accent3; mso-border-themetint: 191; mso-background-themecolor: accent3" valign="top" width="397">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 1"><b><span lang="EN-US" style="color: white; mso-themecolor: background1">Description<o:p></o:p></span></b></p></td></tr></thead>
+<tbody>
+<tr style="mso-yfti-irow: 0; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 68"><b><span style="font-family: 'Courier New'; mso-ansi-language: en-gb; mso-bidi-language: ar-sa; mso-no-proof: yes">AntHome</span><span lang="EN-US"><o:p></o:p></span></b></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 64"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">No<o:p></o:p></span></b></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 64" align="left"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">Location of Ant on Build Server.<span style="mso-spacerun: yes">&nbsp; </span>If not specified then the value of the ANT_HOME environment variable will be used.<o:p></o:p></span></b></p></td></tr>
+<tr style="mso-yfti-irow: 1; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 132"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">AutoProxy<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 128"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 128" align="left"><span lang="EN-US">In Java 1.5+, use the OS proxies<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 2; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 68"><b><span style="font-family: 'Courier New'; mso-ansi-language: en-gb; mso-bidi-language: ar-sa; mso-no-proof: yes">BuildFile</span></b><b><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes"><o:p></o:p></span></b></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 64"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">No<o:p></o:p></span></b></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 64" align="left"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">Name of the build file to use, by default this is "build.xml" in the current directory.<o:p></o:p></span></b></p></td></tr>
+<tr style="mso-yfti-irow: 3; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 132"><b><span style="font-family: 'Courier New'; mso-ansi-language: en-gb; mso-bidi-language: ar-sa; mso-no-proof: yes">BuildUri</span><span lang="EN-US"><o:p></o:p></span></b></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 128"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">Yes<o:p></o:p></span></b></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 128" align="left"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">The team system URI which uniquely represents the instance of the build being run.<span style="mso-spacerun: yes">&nbsp; </span>With-in a Team Build MSBuild script, this is normally available in the MSBuild property $(BuildUri)<o:p></o:p></span></b></p></td></tr>
+<tr style="mso-yfti-irow: 4; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 68"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">Debug<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 64"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 64" align="left"><span lang="EN-US">Set to "true" to instruct Ant to print debugging information.<span style="mso-spacerun: yes">&nbsp; </span>By default this is set to "false".<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 5; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 132"><b><span style="font-family: 'Courier New'; mso-ansi-language: en-gb; mso-bidi-language: ar-sa; mso-no-proof: yes">Flavor</span><span lang="EN-US"><o:p></o:p></span></b></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 128"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">No<o:p></o:p></span></b></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 128" align="left"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">The flavor of the build i.e. Release, Debug etc.<span style="mso-spacerun: yes">&nbsp; </span>This will default to "Release".<span style="mso-spacerun: yes">&nbsp; </span>In the Team Build MSBuild scripts, this is normally available as the global property </span></b><b style="mso-bidi-font-weight: normal"><span style="mso-ansi-language: en-gb; mso-bidi-language: ar-sa">%(ConfigurationToBuild.FlavorToBuild)</span><span lang="EN-US"><o:p></o:p></span></b></p></td></tr>
+<tr style="mso-yfti-irow: 6; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 68"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">InputHandler<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 64"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 64" align="left"><span lang="EN-US">Specifies the Ant class which will handle input requests<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 7; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 132"><b><span style="font-family: 'Courier New'; mso-ansi-language: en-gb; mso-bidi-language: ar-sa; mso-no-proof: yes">JavaHome</span></b><b><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes"><o:p></o:p></span></b></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 128"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">No<o:p></o:p></span></b></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 128" align="left"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">Location of Java home directory on build server.<span style="mso-spacerun: yes">&nbsp; </span>If not specified then the value of the JAVA_HOME environment variable will be used.<o:p></o:p></span></b></p></td></tr>
+<tr style="mso-yfti-irow: 8; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 68"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">KeepGoing<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 64"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 64" align="left"><span lang="EN-US">Instruct Ant to execute all targets that do not depend on failed target(s)<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 9; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 132"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">Lib<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 128"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 128" align="left"><span lang="EN-US">Specifies a path for Ant to search for jars and classes.<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 10; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 68"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">Listener<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 64"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 64" align="left"><span lang="EN-US">Add an instance of an Ant class as a project listener<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 11; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 132"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">Logger<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 128"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 128" align="left"><span lang="EN-US">Specify an Ant class to perform logging.<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 12; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 68"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">Main<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 64"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 64" align="left"><span lang="EN-US">Override Ant's normal entry point with specified Ant class.<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 13; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 132"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">NoClasspath<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 128"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 128" align="left"><span lang="EN-US">Run ant without using CLASSPATH<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 14; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 68"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">Noinput<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 64"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 64" align="left"><span lang="EN-US">Do not allow interactive input in Ant script<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 15; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 132"><span style="font-family: 'Courier New'; mso-ansi-language: en-gb; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">NoJavacBuildSteps<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 128"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 128" align="left"><span lang="EN-US">Set to "true" to suppress the reporting of javac steps to TFS. <span style="mso-spacerun: yes">&nbsp;</span>By default javac steps are added as build steps.<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 16; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 68"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">NoUserLib<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 64"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 64" align="left"><span lang="EN-US">Run ant without using the jar files from ${user.home}/.ant/lib<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 17; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 132"><b><span style="font-family: 'Courier New'; mso-ansi-language: en-gb; mso-bidi-language: ar-sa; mso-no-proof: yes">Platform</span><span lang="EN-US"><o:p></o:p></span></b></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 128"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">No<o:p></o:p></span></b></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 128" align="left"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">The build platform i.e. Any CPU, x86, x64.<span style="mso-spacerun: yes">&nbsp; </span><span style="mso-spacerun: yes">&nbsp;</span>This will default to "Any CPU". <span style="mso-spacerun: yes">&nbsp;</span>In the Team Build MSBuild script, this is normally available as the global property </span></b><b style="mso-bidi-font-weight: normal"><span style="mso-ansi-language: en-gb; mso-bidi-language: ar-sa">%(ConfigurationToBuild.PlatformToBuild)</span><span lang="EN-US"><o:p></o:p></span></b></p></td></tr>
+<tr style="mso-yfti-irow: 18; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 68"><b><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes">Properties<o:p></o:p></span></b></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 64"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">No<o:p></o:p></span></b></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 64" align="left"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">Properties to pass to Ant in "name=value;name2=value2" syntax.<span style="mso-spacerun: yes">&nbsp; </span>When calling Ant, it is often useful to pass through properties from the originating MSBuild script - for example </span></b><b style="mso-bidi-font-weight: normal"><span style="mso-ansi-language: en-gb">Properties="BinariesRoot=$(BinariesRoot);BuildDefinitionName=$(BuildDefinitionName);"</span><span lang="EN-US"><o:p></o:p></span></b></p></td></tr>
+<tr style="mso-yfti-irow: 19; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 132"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">PropertyFile<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 128"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 128" align="left"><span lang="EN-US">Instruct Ant to load all properties from file with -D properties taking precedence<o:p></o:p></span></p></td></tr>
+<tr style="mso-yfti-irow: 20; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 68"><b><span style="font-family: 'Courier New'; mso-ansi-language: en-gb; mso-bidi-language: ar-sa; mso-no-proof: yes">Target<o:p></o:p></span></b></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 64"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">No<o:p></o:p></span></b></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 64" align="left"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">Single Ant Target to execute.<span style="mso-spacerun: yes">&nbsp; </span>If not specified then the default target specified in the script will be used. <span style="mso-spacerun: yes">&nbsp;</span>It is often useful to specify a target that is executed by Team Build and leave the default target to be what would get executed by a developer in a local workstation build.<o:p></o:p></span></b></p></td></tr>
+<tr style="mso-yfti-irow: 21; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 132"><span style="font-family: 'Courier New'; mso-ansi-language: en-gb; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">Targets<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 128"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 128" align="left"><span lang="EN-US">Comma separated list of ant targets to execute.<o:p></o:p></span></p></td></tr>
+<tr style="height: 3pt; mso-yfti-irow: 22; page-break-inside: avoid">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; height: 3pt; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 68"><b><span style="font-family: 'Courier New'; mso-ansi-language: en-gb; mso-bidi-language: ar-sa; mso-no-proof: yes">TeamFoundationServerUrl</span><span lang="EN-US"><o:p></o:p></span></b></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; height: 3pt; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 64"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">Yes<o:p></o:p></span></b></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; background: #e6eed5; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; height: 3pt; mso-background-themecolor: accent3; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-background-themetint: 63; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 64" align="left"><b style="mso-bidi-font-weight: normal"><span lang="EN-US">The URL of the Team Foundation Server to talk to. <span style="mso-spacerun: yes">&nbsp;</span>In the Team Build MSBuild script, this is often available in the property </span></b><b style="mso-bidi-font-weight: normal"><span style="mso-ansi-language: en-gb">$(TeamFoundationServerUrl)</span><span lang="EN-US"><o:p></o:p></span></b></p></td></tr>
+<tr style="mso-yfti-irow: 23; page-break-inside: avoid; mso-yfti-lastrow: yes">
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: #b3cc82 1pt solid; width: 154.25pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-left-themecolor: accent3; mso-border-left-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="206">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 132"><span lang="EN-US" style="font-family: 'Courier New'; mso-bidi-language: ar-sa; mso-no-proof: yes; mso-bidi-font-weight: bold">Verbose<o:p></o:p></span></p></td>
+<td style="border-right: medium none; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 49.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt" valign="top" width="66">
+<p class="MsoNormal" style="text-justify: inter-ideograph; margin-bottom: 0pt; line-height: normal; text-align: justify; mso-yfti-cnfc: 128"><span lang="EN-US">No<o:p></o:p></span></p></td>
+<td style="border-right: #b3cc82 1pt solid; padding-right: 5.4pt; border-top: medium none; padding-left: 5.4pt; padding-bottom: 0cm; border-left: medium none; width: 297.65pt; padding-top: 0cm; border-bottom: #b3cc82 1pt solid; mso-border-top-themecolor: accent3; mso-border-top-themetint: 191; mso-border-bottom-themecolor: accent3; mso-border-bottom-themetint: 191; mso-border-top-alt: solid #b3cc82 1.0pt; mso-border-right-themecolor: accent3; mso-border-right-themetint: 191" valign="top" width="397">
+<p class="MsoNormal" style="margin-bottom: 0pt; line-height: normal; text-align: left; mso-yfti-cnfc: 128" align="left"><span lang="EN-US">Set to "true" to instruct Ant to be extra verbose.<o:p></o:p></span></p></td></tr></tbody></table>
+<p>As part of the next version of Teamprise we will be providing integration with Team Build in the UI (i.e. inside Eclipse based IDE's or in the stand-alone Teamprise Explorer client).&nbsp; More on those build capabilities soon - but hopefully you can see that with the ability to run Ant based builds from Team Build and the ability to control/monitor from Eclipse you will have a nice build system that is fully integrated with TFS.</p>
+<p>If you find this task useful, then be sure to drop me a line with any feedback you might have.&nbsp; We have not yet decided how to make the source of this task available, either as an open source project of it's own or as part of a larger community of MSBuild tasks.&nbsp; There are pro's and con's to both.&nbsp; In the meantime, if anybody would like the source code then drop me a line.</p>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/teamprise/building_ant_pr.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/teamprise/" rel="tag">Teamprise</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/" rel="tag">Vsts</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/" rel="tag">tfs</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/tfs2005/" rel="tag">tfs2005</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/tfs/tfs2008/" rel="tag">tfs2008</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">3 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-1935" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.edsquared.com" href="http://www.edsquared.com" rel="nofollow">Ed Blankenship</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/teamprise/building_ant_pr.html#comment-1935"><abbr class="published" title="2007-12-04T09:21:46+00:00">December  4, 2007  9:21 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1935, 'Ed Blankenship')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Wow this is really helpful!  Please let us know when you make updates and include more features with the task in future releases of Teamprise.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1936" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Krishnamurthy Dixit</span>
+        
+                            | <a href="http://www.woodwardweb.com/teamprise/building_ant_pr.html#comment-1936"><abbr class="published" title="2008-04-21T05:48:58+00:00">April 21, 2008  5:48 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1936, 'Krishnamurthy Dixit')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I have created a Java Application in Eclipse IDE(Version 3.3.1.1), used AntBuild (Version </p>
+
+<p>1.7.0) and trying to do a Team Build using Team Foundation Server 2008. I have installed JDK </p>
+
+<p>6.0 (jdk1.6.0_06).I am facing the error while running the Team Build.</p>
+
+<p>    Ant project "C:\Documents and Settings\username\Local </p>
+
+<p>Settings\Temp\teamprojectname\BuildType\Sources\build.xml" is building with target(s) </p>
+
+<p>"default"</p>
+
+<p>Kindly suggest me the steps.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1937" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Larry</span>
+        
+                            | <a href="http://www.woodwardweb.com/teamprise/building_ant_pr.html#comment-1937"><abbr class="published" title="2009-02-23T16:37:54+00:00">February 23, 2009  4:37 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1937, 'Larry')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I am doing the build using the above you have mentioned. Build works fine. But now I want to checkin the ear file back to tfs using build process. I am not sure how to do it. THis is  how i tried but it fails.<br />
+ <br />
+    <br />
+  <br />
+  <br />
+    <br />
+    <br />
+  </p>
+
+<p>Error message<br />
+  Task "Exec"<br />
+    Command:<br />
+    "D:\Program Files\Microsoft Visual Studio 8\Common7\IDE\tf.exe" Checkout D:\Build\TFS_BUILDS\Distribution and Client Services\BulkEmail_OLD\BuildType\..\Sources\build\beadapter.ear<br />
+    Unable to determine the workspace.</p>
+
+<p>Can you please suggest a solution?</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="1231" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-836"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-837"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/changeset_comme.html">Changeset comments are editable in TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_on_the_main.html">TFS on the Mainframe</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/speaking_at_the.html">Speaking at the Virtual Team System Users Group</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/podcasting/radio_tfs_on_te.html">Radio TFS on Team System 2010 First Impressions</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/hosted_tfs_for.html">Hosted TFS for BizSpark Companies</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_2010_api_by.html">TFS 2010 API By Example: Introduction</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/codeplex_open_s.html">CodePlex Open Source Wiki Engine</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/ed_blankenship.html">Ed Blankenship on Using TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/case_study_igat.html">Case Study: iGate standardizing on TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/slotting_into_t.html">Slotting into TFS 2010</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

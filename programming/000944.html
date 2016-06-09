@@ -1,0 +1,923 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/programming/talking_to_vsts_1.html">
+<dc:title>Talking to VSTS from Java</dc:title>
+<dc:description>Update (Jan 2006): If you would like to use some of the features of VSTS from Eclipse then you might want to take a look at my new employer, Teamprise. They provide an eclipse plugin to access Team Foundation Source...</dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2005-06-29T23:26:30+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/programming/talking_to_vsts_1.html" title="Talking to VSTS from Java" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/programming/talking_to_vsts_1.html" title="Talking to VSTS from Java" />
+    
+    <title>Talking to VSTS from Java - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-944" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Talking to VSTS from Java</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author">Martin Woodward</span> on <abbr class="published" title="2005-06-29T23:26:30+00:00">June 29, 2005 11:26 PM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/programming/talking_to_vsts_1.html#comments">5 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p><strong>Update (Jan 2006):</strong>  If you would like to use some of the features of VSTS from Eclipse then you might want to take a look at my new employer, <a href="http://www.teamprise.com">Teamprise</a>.  They provide an eclipse plugin to access Team Foundation Source Control from Eclipse running on multiple platforms including Windows, Linux and Mac OS X.</p>
+
+<p><strong>Original Post:</strong>  I have just managed to get a quick test java client talking to VSTS and retrieving a list of projects running on my Team Foundation Server.  I know this is a small step towards the goals of the <a href="http://www.vstseclipse.org">VSTSEclpse</a> project, but I'm really happy I've got this working and wanted to tell everyone.  Thanks to <a href="http://blogs.cocoondev.org/dims/">Davanum Srinivas</a>, Dexter Wong, Evgeny Beskrovny and the rest of the folks over at the axis-user mailing list for all their help in getting NTLM authentication with a Windows Web Service working from a Java application.  I've been trying to get NTLM authentication working for something I needed to do at work recently, so this came in doubly handy (another example of working on Open Source projects in your own time directly benefiting your employer).</p>
+                                    </div>
+
+
+                                    <div id="more" class="asset-more">
+                                        <p>The test client uses <a href="http://ws.apache.org/axis/">Axis</a> 1.2.1, <a href="http://jakarta.apache.org/commons/httpclient/">Jakarta Commons HTTPClient</a> 3.0rc3, <a href="http://jakarta.apache.org/commons/codec/">Jakarta Commons Codec</a> 1.3 running in Java 1.4.2_08 on Windows XP SP2.  The Commons stuff is needed to allow you to talk to the VSTS Web Services because they are protected with NTLM authentication.  To get NTLM working from java, you need to do the following:-</p>
+
+<p>Download a copy of the WDSL to a local directory.  This is to allow you to run WSDL2Java over it to generate a starting point for your stubs.  You can point WSDL2Java to a URL, but not if that is protected by NTLM ;-)</p>
+
+<p>Run WDSL2Java pointing at your local WSDL file.  For more information on WSDL2Java see the <a href="http://ws.apache.org/axis/java/user-guide.html#WSDL2JavaBuildingStubsSkeletonsAndDataTypesFromWSDL">axis user documentation</a>.</p>
+
+<p>Edit the createCall method of your stub to include the credentials you would like to use in the call.  Currently I have this hard-coded like:-</p>
+
+<div style='font-family: Courier New; font-size: 80%;' >&nbsp;&nbsp;&nbsp;<span style=' color: Blue;'>protected</span>&nbsp;org.apache.axis.client.Call&nbsp;createCall()&nbsp;throws&nbsp;java.rmi.RemoteException&nbsp;{ <BR />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=' color: Blue;'>try</span>&nbsp;{ <BR />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;org.apache.axis.client.Call&nbsp;_call&nbsp;=&nbsp;super._createCall(); <BR />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.setUsername(<span style=' color: Maroon;'>"MY_DOMAIN\\myuser"</span>); <BR />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.setPassword(<span style=' color: Maroon;'>"mypassword"</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</div>
+
+<p><br />
+Obviously, this should be loaded from a configuration property somewhere.</p>
+
+<p>Now, you need to configure Axis to use the Commons HTTPClient class for the HTTP transport.  Luckily, the Axis folks have made it very configurable, so all you have to do is include a file called "client-config.wsdd" in the classpath.  My client config looks as follows:-</p>
+
+<p><DIV style="FONT-FAMILY: Courier New; font-size: 80%;"><SPAN style="COLOR: blue">&lt;?</SPAN><SPAN style="COLOR: maroon">xml</SPAN>&nbsp;<SPAN style="COLOR: red">version</SPAN>="<SPAN style="COLOR: blue">1.0</SPAN>"&nbsp;<SPAN style="COLOR: red">encoding</SPAN>="<SPAN style="COLOR: blue">UTF-8</SPAN>"<SPAN style="COLOR: blue">?&gt;</SPAN> <BR><SPAN style="COLOR: blue">&lt;</SPAN><SPAN style="COLOR: maroon">deployment</SPAN>&nbsp;<SPAN style="COLOR: red">name</SPAN>="<SPAN style="COLOR: blue">defaultClientConfig</SPAN>" <BR>&nbsp;<SPAN style="COLOR: red">xmlns</SPAN>="<SPAN style="COLOR: blue">http://xml.apache.org/axis/wsdd/</SPAN>" <BR>&nbsp;<SPAN style="COLOR: red">xmlns:java</SPAN>="<SPAN style="COLOR: blue">http://xml.apache.org/axis/wsdd/providers/java</SPAN>"<SPAN style="COLOR: blue">&gt;</SPAN> <BR>&nbsp;&nbsp;<SPAN style="COLOR: blue">&lt;</SPAN><SPAN style="COLOR: maroon">globalConfiguration</SPAN><SPAN style="COLOR: blue">&gt;</SPAN> <BR>&nbsp;&nbsp;&nbsp;&nbsp;<SPAN style="COLOR: blue">&lt;</SPAN><SPAN style="COLOR: maroon">parameter</SPAN>&nbsp;<SPAN style="COLOR: red">name</SPAN>="<SPAN style="COLOR: blue">disablePrettyXML</SPAN>"&nbsp;<SPAN style="COLOR: red">value</SPAN>="<SPAN style="COLOR: blue">true</SPAN>"/<SPAN style="COLOR: blue">&gt;</SPAN> <BR>&nbsp;&nbsp;<SPAN style="COLOR: blue">&lt;</SPAN>/<SPAN style="COLOR: maroon">globalConfiguration</SPAN><SPAN style="COLOR: blue">&gt;</SPAN> <BR>&nbsp;&nbsp;<SPAN style="COLOR: blue">&lt;</SPAN><SPAN style="COLOR: maroon">transport</SPAN>&nbsp;<SPAN style="COLOR: red">name</SPAN>="<SPAN style="COLOR: blue">http</SPAN>"&nbsp;<SPAN style="COLOR: red">pivot</SPAN>="<SPAN style="COLOR: blue">java:org.apache.axis.transport.http.CommonsHTTPSender</SPAN>"/<SPAN style="COLOR: blue">&gt;</SPAN> <BR>&nbsp;&nbsp;<SPAN style="COLOR: blue">&lt;</SPAN>!--&nbsp;transport&nbsp;<SPAN style="COLOR: red">name</SPAN>="<SPAN style="COLOR: blue">http</SPAN>"&nbsp;<SPAN style="COLOR: red">pivot</SPAN>="<SPAN style="COLOR: blue">java:org.apache.axis.transport.http.HTTPSender</SPAN>"/&nbsp;--<SPAN style="COLOR: blue">&gt;</SPAN> <BR>&nbsp;&nbsp;<SPAN style="COLOR: blue">&lt;</SPAN><SPAN style="COLOR: maroon">transport</SPAN>&nbsp;<SPAN style="COLOR: red">name</SPAN>="<SPAN style="COLOR: blue">local</SPAN>"&nbsp;<SPAN style="COLOR: red">pivot</SPAN>="<SPAN style="COLOR: blue">java:org.apache.axis.transport.local.LocalSender</SPAN>"/<SPAN style="COLOR: blue">&gt;</SPAN> <BR>&nbsp;&nbsp;<SPAN style="COLOR: blue">&lt;</SPAN><SPAN style="COLOR: maroon">transport</SPAN>&nbsp;<SPAN style="COLOR: red">name</SPAN>="<SPAN style="COLOR: blue">java</SPAN>"&nbsp;<SPAN style="COLOR: red">pivot</SPAN>="<SPAN style="COLOR: blue">java:org.apache.axis.transport.java.JavaSender</SPAN>"/<SPAN style="COLOR: blue">&gt;</SPAN> <BR><SPAN style="COLOR: blue">&lt;</SPAN>/<SPAN style="COLOR: maroon">deployment</SPAN><SPAN style="COLOR: blue">&gt;</SPAN></DIV><br />
+The org.apache.axis.transport.http.CommonsHTTPSender class implements the BasicHandler handler interface and has all the code to make axis use the version of the Commons HTTPClient classes that you have in your classpath.</p>
+
+<p>Now all you need to do is write a client class to use your stub to talk to VSTS.  Below is my first class which returns a list of the projects available in the team foundation server by talking to the Common Structure Service running on Team Foundation in the bisserver application.</p>
+
+<p><DIV style="FONT-FAMILY: Courier New; font-size: 80%;">package&nbsp;org.vstseclipse.experimental.martin; <BR><BR>import&nbsp;java.rmi.RemoteException; <BR><BR>import&nbsp;javax.xml.rpc.ServiceException; <BR><BR>import&nbsp;com.microsoft.VisualStudio.ArrayOfProjectInfo; <BR>import&nbsp;com.microsoft.VisualStudio.ProjectInfo; <BR>import&nbsp;com.microsoft.VisualStudio.ServiceLocator; <BR>import&nbsp;com.microsoft.VisualStudio.ServiceSoap; <BR><BR><SPAN style="COLOR: green">/** <BR>&nbsp;*&nbsp;Test&nbsp;client&nbsp;to&nbsp;talk&nbsp;to&nbsp;VSTS&nbsp;from&nbsp;Java. <BR>&nbsp;*&nbsp;@author&nbsp;mwo38 <BR>&nbsp;*/</SPAN> <BR><SPAN style="COLOR: blue">public</SPAN>&nbsp;<SPAN style="COLOR: blue">class</SPAN>&nbsp;TestClient&nbsp;{ <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;<SPAN style="COLOR: blue">public</SPAN>&nbsp;<SPAN style="COLOR: blue">static</SPAN>&nbsp;<SPAN style="COLOR: blue">void</SPAN>&nbsp;main(String[]&nbsp;args)&nbsp;{ <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceLocator&nbsp;commonStructureServiceLocator&nbsp;=&nbsp;<SPAN style="COLOR: blue">new</SPAN>&nbsp;ServiceLocator(); <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN style="COLOR: blue">try</SPAN>&nbsp;{ <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceSoap&nbsp;commonStructureService&nbsp;=&nbsp;commonStructureServiceLocator.getServiceSoap(); <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN style="COLOR: green">//&nbsp;Iterate&nbsp;over&nbsp;list&nbsp;of&nbsp;projects&nbsp;in&nbsp;team&nbsp;foundation.</SPAN> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ArrayOfProjectInfo&nbsp;arrayOfProjectInfo&nbsp;=&nbsp;commonStructureService.listProjects(); <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN style="COLOR: blue">for</SPAN>(<SPAN style="COLOR: blue">int</SPAN>&nbsp;i=<SPAN style="COLOR: maroon">0</SPAN>;&nbsp;i&nbsp;&lt;&nbsp;arrayOfProjectInfo.getProjectInfo().length;&nbsp;i++) <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProjectInfo&nbsp;info&nbsp;=&nbsp;arrayOfProjectInfo.getProjectInfo(i); <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.<SPAN style="COLOR: blue">out</SPAN>.println(<SPAN style="COLOR: maroon">"Project:&nbsp;"</SPAN>&nbsp;+&nbsp;info.getName());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<SPAN style="COLOR: blue">catch</SPAN>&nbsp;(ServiceException&nbsp;e)&nbsp;{ <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.printStackTrace(); <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<SPAN style="COLOR: blue">catch</SPAN>&nbsp;(RemoteException&nbsp;e)&nbsp;{ <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.printStackTrace(); <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;} <BR>} <BR></DIV><br />
+Works a treat!!  I have had a couple of weird errors when trying NTLM talking to a Windows 2000 workstation and the socket gets closed for no apparent reason, but works fine if I route the request over a proxy.  When talking to a VSTS server (running on Windows Server 2003) from a machine that is in a domain trusted by the domain that the VSTS Team Foundation server is running on by a user that has permissions to the VSTS repository I have no problems what-so-ever.</p>
+
+<p>Now the real work starts...</p>
+                                    </div>
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/programming/talking_to_vsts_1.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/dotnet/" rel="tag">Dotnet</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/java/" rel="tag">Java</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/programming/" rel="tag">Programming</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/vsts/" rel="tag">Vsts</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">5 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-1492" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Eoin Wren</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/talking_to_vsts_1.html#comment-1492"><abbr class="published" title="2006-03-02T10:59:18+00:00">March  2, 2006 10:59 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1492, 'Eoin Wren')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks for posting this...I have been trying to write a simple web services client for the Work Item tracking service on VSTS using java and axis..and ran into trouble with authentication...this helps a lot</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1493" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Ashish Dixit</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/talking_to_vsts_1.html#comment-1493"><abbr class="published" title="2006-03-30T17:37:22+00:00">March 30, 2006  5:37 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1493, 'Ashish Dixit')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>This absolutley fantastic site. Which gives us very useful information.<br />
+keep posting</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1494" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">ncarbonell</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/talking_to_vsts_1.html#comment-1494"><abbr class="published" title="2007-02-13T19:18:11+00:00">February 13, 2007  7:18 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1494, 'ncarbonell')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thank you for your article.  It really save me a week of research.  We are trying to integrate a .net application into our java software and the only authentication protocol they allow is ntlm.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1495" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">bPawn</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/talking_to_vsts_1.html#comment-1495"><abbr class="published" title="2008-06-22T09:43:22+00:00">June 22, 2008  9:43 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1495, 'bPawn')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I followed closely and I get the following:</p>
+
+<p>run:<br />
+- ntlm authentication scheme selected<br />
+- Credentials cannot be used for NTLM authentication: org.apache.commons.httpclient.UsernamePasswordCredentials<br />
+org.apache.commons.httpclient.auth.InvalidCredentialsException: Credentials cannot be used for NTLM authentication: org.apache.commons.httpclient.UsernamePasswordCredentials<br />
+        at org.apache.commons.httpclient.auth.NTLMScheme.authenticate(NTLMScheme.java:331)<br />
+        at org.apache.commons.httpclient.HttpMethodDirector.authenticateHost(HttpMethodDirector.java:277)<br />
+        at org.apache.commons.httpclient.HttpMethodDirector.authenticate(HttpMethodDirector.java:229)<br />
+        at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:167)<br />
+        at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:393)<br />
+        at org.apache.axis.transport.http.CommonsHTTPSender.invoke(CommonsHTTPSender.java:196)<br />
+        at org.apache.axis.strategies.InvocationStrategy.visit(InvocationStrategy.java:32)<br />
+        at org.apache.axis.SimpleChain.doVisiting(SimpleChain.java:118)<br />
+        at org.apache.axis.SimpleChain.invoke(SimpleChain.java:83)<br />
+        at org.apache.axis.client.AxisClient.invoke(AxisClient.java:165)<br />
+        at org.apache.axis.client.Call.invokeEngine(Call.java:2784)<br />
+        at org.apache.axis.client.Call.invoke(Call.java:2767)<br />
+        at org.apache.axis.client.Call.invoke(Call.java:2443)<br />
+        at org.apache.axis.client.Call.invoke(Call.java:2366)<br />
+        at <br />
+org.apache.axis.client.Call.invoke(Call.java:1812)<br />
+        at org.tempuri.InergopolosSoapStub.storms(InergopolosSoapStub.java:855)<br />
+        at dbclient.DbClient.doit(DbClient.java:28)<br />
+        at dbclient.Main.main(Main.java:21)<br />
+- Failure authenticating with NTLM @inergopta:80<br />
+(401)Unauthorized</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1496" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">johnwalker00</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/talking_to_vsts_1.html#comment-1496"><abbr class="published" title="2008-10-09T00:27:53+00:00">October  9, 2008 12:27 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1496, 'johnwalker00')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>@bpawn</p>
+
+<p>I had this problem when I passed in my username in the wrong format</p>
+
+<p>domain\\username is right<br />
+username@region threw the exception.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="944" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-836"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-837"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/changeset_comme.html">Changeset comments are editable in TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_on_the_main.html">TFS on the Mainframe</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/speaking_at_the.html">Speaking at the Virtual Team System Users Group</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/podcasting/radio_tfs_on_te.html">Radio TFS on Team System 2010 First Impressions</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/hosted_tfs_for.html">Hosted TFS for BizSpark Companies</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_2010_api_by.html">TFS 2010 API By Example: Introduction</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/codeplex_open_s.html">CodePlex Open Source Wiki Engine</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/ed_blankenship.html">Ed Blankenship on Using TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/case_study_igat.html">Case Study: iGate standardizing on TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/slotting_into_t.html">Slotting into TFS 2010</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

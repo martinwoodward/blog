@@ -1,0 +1,820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/vsts/understanding_t.html">
+<dc:title>Understanding the Branches Tab</dc:title>
+<dc:description><![CDATA[Showing branch history in a visual way&nbsp;is not something that the current version 1.0 of the Microsoft Team Foundation Server client is great at.&nbsp; In fairness to the team, showing the branch history of files in an&nbsp;graphical way is pretty&nbsp;complicated...]]></dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2006-08-11T12:36:55+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/technology/vmware_announce.html" title="VMWare Announce Intel Mac version at Apple WWDC" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/technology/windows_live_wr.html" title="Windows Live Writer" />
+    
+    <title>Understanding the Branches Tab - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-1585" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Understanding the Branches Tab</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-08-11T12:36:55+00:00">August 11, 2006 12:36 PM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/understanding_t.html#comments">4 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>Showing branch history in a visual way&nbsp;is not something that the current version 1.0 of the Microsoft Team Foundation Server client is great at.&nbsp; In fairness to the team, showing the branch history of files in an&nbsp;graphical way is pretty&nbsp;complicated and would involve many lines of code&nbsp;&ndash; especially when you build a version control system as flexible and powerful as Team Foundation Server.&nbsp; </p>
+<p>I&rsquo;ve been around the business for a good few years now, and before I joined a software company specialising in Version Control tools I had only used branching twice<a href="#only_twice">*</a>.&nbsp; This suggests that branching is not something that everyone uses all the time&nbsp; &ndash; and those that do don&rsquo;t often need to see the branch history.&nbsp; Therefore the VSTS team not spending an awful lot of time on a branch visualisation tool that will only get used&nbsp;less than&nbsp;1%&nbsp; of requests seems like a pragmatic approach to me (especially if the data is available &ndash; just not in the easiest way&nbsp;to understand)</p>
+<p>I&rsquo;ve been using Team Foundation Server in production project every working day&nbsp;for over a year now, today was the first day I needed the server to tell me the&nbsp;branch history for a file.&nbsp; So, until we get branch visualisation in the tool&nbsp;or from the open source project <a href="http://www.codeplex.com/Wiki/View.aspx?ProjectName=TFSVTreeBrowse">Vertigo</a>&nbsp;we are stuck with the Branches tab when you select a file in source control and select Properties&hellip;</p>
+<p><a href="http://www.woodwardweb.com/blog/branches_tab.png"><img style="FLOAT: none; MARGIN-LEFT: 25px" alt="Branches Tab" src="http://www.woodwardweb.com/blog/branches_tab_thumb.jpg" border="0" /></a><a href="http://www.woodwardweb.com/blog/branches.png"></a></p>
+<p>I sat and stared at the branches tab for about 10 minutes before I could work out what it was telling me.&nbsp; The &ldquo;F1&rdquo; help is ok here in that it introduces the concepts of branching.&nbsp; However, I know what branching&nbsp;is &ndash;&nbsp;I was trying to understand the dialog&hellip;</p>
+<p>To help understand, I drew a quick diagram on a bit of paper.&nbsp;&nbsp;For the purposes of the blog post I fired up&nbsp;Powerpoint 2007 Beta 2 to give you a&nbsp;prettier looking one:-</p>
+<p><a href="http://www.woodwardweb.com/blog/branch_diagram.png"><img style="FLOAT: none; MARGIN-LEFT: 25px" alt="Branch Diagram" src="http://www.woodwardweb.com/blog/branch_diagram_thumb.jpg" border="0" /></a></p>
+<p>Basically.&nbsp; The item in bold in the dialog is the item that you selected on for Properties.&nbsp; This particular example shows that the file itself was a branch of version 2750 of&nbsp;myProject/testFile.txt and has been subsequently branched as myproject-branch3/testFile2&ndash;branch.txt.&nbsp; Easily really.&nbsp; This means that if you were putting a patch into the file, you might want to consider patching the file it was branched from &ndash; but also all the other files that have been derived from that branch.</p>
+<p>As you can see, it would also be a lot easier to understand if you used a <a href="http://www.woodwardweb.com/vsts/000224.html">sensible naming structure</a> when branching files.&nbsp; However &ndash; the information you need is given to you, even if you have to concentrate for a while..</p>
+<p><a name="only_twice">*</a> If the statement that I only branched twice surprises you then here is an explanation.&nbsp; While I understood the concepts &ndash; it was still always a little scary but more importantly when you start branching your source code the whole team has to have the discipline to make sure changes are merged back into the appropriate branches etc.&nbsp; In&nbsp;a lot of&nbsp;internal IT projects, there is only the need for one main line of development and that line is best managed using continuous integration techniques to ensure it is always in a fit state.&nbsp; To be fair, in&nbsp;a lot of those internal IT projects, you would probably get benefit from branching at times &ndash; but the pain of managing those branches would outweigh many of the benefits &ndash; especially in you work in a place where you are struggling to just make people check their code compiles before committing it to version control &ndash; never mind making sure they have applied that fix in a sensible way to the appropriate branches&hellip;</p>
+<p>Now I work for an ISV, branching is vital.&nbsp; In our main line of code we have been working on the next version (version 2.0) since we stopped developing version 1 back in March of this year.&nbsp; Originally, work on NTLM authentication was slated to be a V2.0 feature but when it was completed earlier than we thought we wanted to make it available to our V1 customers but not include all the unfinished (and buggy) stuff in the main development line.&nbsp; When we released Version 1, we branched the code (from $/Teamprise/trunk to $/Teamprise/releases/1.0).&nbsp; This meant the new NTLM authentication logic could be merged into the V1.0 branch and a new release V1.1 be issued.&nbsp; This is just one example where branching is essential &ndash; but you can use branching for many other reasons (such as allowing greater parallel development etc).</p>
+<p>Like all tools at your disposal as a developer, you have to learn what it is good at and what the downsides are, then apply&nbsp;the technique&nbsp;appropriately.</p>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/vsts/understanding_t.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/vsts/" rel="tag">Vsts</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">4 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-2266" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.attrice.info" href="http://www.attrice.info" rel="nofollow">eugene.z</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/understanding_t.html#comment-2266"><abbr class="published" title="2006-08-11T16:57:16+00:00">August 11, 2006  4:57 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Martin,</p>
+
+<p>I will have to disagree about branches being used 1% of time. In enterprise level SCM branching is done frequently, and ability to view branching information and perform merges conveniently is a major selling point (ClearCase comes to my mind). May be that function falls into release managener domain and not developer, but you cannot just dismiss it.<br />
+I cannot emphasize enough how many of (prospective) clients have expressed dissatisfaction with current level of branch and merge data detalization in TFS.<br />
+So I do hope MS people will read my comment as well...<br />
+</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2267" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://blogs.msdn.com/buckh" href="http://blogs.msdn.com/buckh" rel="nofollow">Buck Hodges</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/understanding_t.html#comment-2267"><abbr class="published" title="2006-08-11T22:44:51+00:00">August 11, 2006 10:44 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>One thing to note for folks that get deep into branching and merging is that a baseless merge (tf merge /baseless ...) will create merge relationships that will not show up in the Branches tab.</p>
+
+<p>Buck</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2268" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.wackylabs.net" href="http://www.wackylabs.net" rel="nofollow">Sam Judson</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/understanding_t.html#comment-2268"><abbr class="published" title="2006-08-16T10:45:05+00:00">August 16, 2006 10:45 AM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Coding Horror just published an article about source control with some recommended reading.</p>
+
+<p><a href="http://www.codinghorror.com/blog/archives/000660.html" rel="nofollow">http://www.codinghorror.com/blog/archives/000660.html</a></p>
+
+<p>Amongst them are your own Eric Sink's Source Control HOWTO : <br />
+<a href="http://www.ericsink.com/scm/source_control.html" rel="nofollow">http://www.ericsink.com/scm/source_control.html</a></p>
+
+<p>and a branching and Merging Primer : <a href="http://blogs.msdn.com/chrisbirmele/archive/2006/05/31/611179.aspx" rel="nofollow">http://blogs.msdn.com/chrisbirmele/archive/2006/05/31/611179.aspx</a></p>
+
+<p>Thought they might interest anyone reading this post.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-2310" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.codeplex.com/Wiki/View.aspx?ProjectName=TFSBranchHistory" href="http://www.codeplex.com/Wiki/View.aspx?ProjectName=TFSBranchHistory" rel="nofollow">Yonatan Leonov</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/vsts/understanding_t.html#comment-2310"><abbr class="published" title="2006-11-06T21:55:51+00:00">November  6, 2006  9:55 PM</abbr></a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Full history including operations made on previous branches is not something I could live without.</p>
+
+<p>So I developed an Add-in for VS that return the minimal functionality which was exist in VSS.</p>
+
+<p>I have shared this Add-in as an open source project called        TFSBranchHistory and you can find it here:</p>
+
+<p><a href="http://www.codeplex.com/Wiki/View.aspx?ProjectName=TFSBranchHistory" rel="nofollow">http://www.codeplex.com/Wiki/View.aspx?ProjectName=TFSBranchHistory</a></p>
+
+<p>Hope it will help someone. and everyone invited to join and improve it.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-1741"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-1742"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-8"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=radiotfs&amp;limit=20';return false;" rel="tag">radiotfs</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2010/05/">May 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/04/">April 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/03/">March 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/02/">February 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/11/">November 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/speaking_at_the_1.html">Speaking at the Test Manager Forum</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/using_team_expl.html">Using Team Explorer Everywhere with CodePlex</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/goodbye_teampri.html">Goodbye Teamprise, Hello Team Explorer Everywhere</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/java/speaking_at_ecl.html">Speaking at EclipseCon 2010</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/whats_in_a_name.html">What&rsquo;s in a Name?</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs/bulk_editing_a.html">Bulk Editing a Build Definition Workspace Mapping</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/personal/working_for_mic.html">Working for Microsoft, Three Months In</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/teamprise/were_hiring.html">We are Hiring!</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs/creating_custom.html">Creating Custom Workflow Activities for TFS Build 2010</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/to_msbuild_or_n.html">To MSBuild or not to MSBuild</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

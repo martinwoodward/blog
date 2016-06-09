@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Sourcesafe ss.ini Not Found</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html</link>
+    <description>Some days I forget how much I hate SourceSafe. If for some reason you start being unable to log into your SourceSafe database and get the error &quot;ss.ini&quot; not found this is because the SourceSafe client has renamed the file...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-09-01T11:44:16+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by andy saul+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001509</link>
+    <description>I had this exact problem just now. This fixed it immedietly. Thanks.
+
+No thanks to sourcesafe though, I was considering rebuilding the entire database from source files before I found the fix. Of course, MSDN had nothing to say on the subject...</description>
+    <dc:date>2006-01-13T16:06:09+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>andy saul</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Anonymous+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001510</link>
+    <description>Thank you so much it helped me alot</description>
+    <dc:date>2006-07-19T14:47:40+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Anonymous</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Frank+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001511</link>
+    <description>Thanks!  This worked like a charm.</description>
+    <dc:date>2007-02-09T15:30:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Frank</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Sandy+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001512</link>
+    <description>Excellent, Thanks for the post.</description>
+    <dc:date>2007-02-15T14:20:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Sandy</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by KBPrinceO+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001513</link>
+    <description>Thanks! Fixed my problem right away!</description>
+    <dc:date>2007-02-20T15:15:49+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>KBPrinceO</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Tapan+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001514</link>
+    <description>Thanks Martin.  Now that&apos;s what I call a quick fix.</description>
+    <dc:date>2007-04-18T20:30:39+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Tapan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Jason+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001515</link>
+    <description>You just saved my bacon as well.</description>
+    <dc:date>2007-05-11T01:12:20+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Jason</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by senvaas+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001516</link>
+    <description>Thanks buddy, we fixed it</description>
+    <dc:date>2007-05-14T04:52:05+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>senvaas</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Anshu+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001517</link>
+    <description>Works like a charm. Thanks for the quick fix.</description>
+    <dc:date>2007-05-22T00:10:14+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Anshu</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Peter+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001518</link>
+    <description>Thanks!</description>
+    <dc:date>2007-06-27T04:04:32+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Peter</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Michael+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001519</link>
+    <description>Much thanks for this.</description>
+    <dc:date>2007-08-01T14:54:02+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Michael</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by parag shah+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001520</link>
+    <description>Many thanks for the solution.</description>
+    <dc:date>2007-08-09T12:07:19+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>parag shah</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ana+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001521</link>
+    <description>Hola, muchas gracias, funcionÃ³ a la perfecciÃ³n</description>
+    <dc:date>2007-09-07T16:18:31+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Ana</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by mortonato+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001522</link>
+    <description>Well I had a problem with ss.ini not found (the problem was not related to renamed file ss.ini to ss.tmp). 
+
+The solution was to change Environment Variables SSDIR and SSINI to the correct one.
+
+This happened to me because I changed Sourcesafe DB from place.</description>
+    <dc:date>2007-12-05T12:10:40+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>mortonato</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by jake+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001523</link>
+    <description>your solution really helped me solve my login problem in vss.. thanks!</description>
+    <dc:date>2008-02-07T02:22:21+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>jake</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by ddjohnson+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001524</link>
+    <description>Thanks for the fix!</description>
+    <dc:date>2008-05-19T17:13:41+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>ddjohnson</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by MaRatzinger+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001525</link>
+    <description>Great!!!</description>
+    <dc:date>2008-05-20T12:41:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>MaRatzinger</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by MaRatzinger+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001526</link>
+    <description>Great!!!</description>
+    <dc:date>2008-05-20T12:47:03+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>MaRatzinger</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Sandy+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001527</link>
+    <description>thank u so much.. worked like a charm</description>
+    <dc:date>2008-07-29T09:05:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Sandy</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ajay+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001528</link>
+    <description>Thank You SO much</description>
+    <dc:date>2008-07-31T20:10:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Ajay</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Raj+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001529</link>
+    <description>Thanks, this worked for me.</description>
+    <dc:date>2009-02-09T10:37:00+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Raj</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Randy+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001530</link>
+    <description>But why does it disappear in the first place?
+What is VSS doing to that file that requires it to make a tmp, then modify the existing?
+
+It looks all the users, who currently have tmp files in their VSS folders, are the users that VPN into our system remote.
+The local users do not have tmp files.</description>
+    <dc:date>2009-04-10T23:43:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Randy</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Yogesh+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001531</link>
+    <description>This worked. Great. Thanks much.</description>
+    <dc:date>2009-07-16T06:08:36+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Yogesh</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Alin S.+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/sourcesafe_ssin.html#c001532</link>
+    <description>10x a lot</description>
+    <dc:date>2009-09-24T09:41:37+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=966</comments>   
+    <dc:creator>Alin S.</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

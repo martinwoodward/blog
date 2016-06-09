@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS Top Tip #3:  Removing the Resolve Check-In Action from a Work Item</title>
+    <link>http://www.woodwardweb.com/vsts/top_tfs_tip_3_r.html</link>
+    <description><![CDATA[I don&rsquo;t know about you, but I love associating my check-ins with work items using the Pending Changes view, it makes it so easy to maintain requirements traceability and helps me feel less guilty as I&rsquo;m doing one more thing...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-04-27T13:35:40+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Grant Holliday+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/top_tfs_tip_3_r.html#c003051</link>
+    <description>Your blog is just a treasure trove of information Martin.
+
+Thanks again.</description>
+    <dc:date>2006-06-07T00:51:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1966</comments>   
+    <dc:creator>Grant Holliday</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Eric+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/top_tfs_tip_3_r.html#c003052</link>
+    <description>Does this only impact new projects to be created? Any way to do this on a project that&apos;s already active?</description>
+    <dc:date>2006-07-12T20:03:14+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1966</comments>   
+    <dc:creator>Eric</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/top_tfs_tip_3_r.html#c003053</link>
+    <description>Eric,
+
+This will work on an existing project as well as new ones.  Use the witimport.exe tool to import into an existing project.  (See http://msdn2.microsoft.com/en-us/library/ms253163.aspx) for more information in witimport.
+
+Alternatively, if the command line is not what you like to use then try out the excellent process template editor (http://www.gotdotnet.com/workspaces/workspace.aspx?id=812a68af-5e74-48c6-9623-1a4469142a84).
+
+Hope that helps,
+
+Martin.</description>
+    <dc:date>2006-07-13T09:59:41+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1966</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by owin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/top_tfs_tip_3_r.html#c003054</link>
+    <description>Hi Martin,
+
+I&apos;m trying to do the same for the Task workitem, but it does not seem to have a  section. 
+Do you know how is this done for the Task workitem?</description>
+    <dc:date>2007-05-30T09:02:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1966</comments>   
+    <dc:creator>owin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Henry Troup+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/top_tfs_tip_3_r.html#c003055</link>
+    <description>I found I could do this, for both Task and Bug but the Process Editor was not reliable for removing Actions.  witexport and witimport worked fine.</description>
+    <dc:date>2007-08-28T19:11:37+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1966</comments>   
+    <dc:creator>Henry Troup</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Paras Wadehra+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/top_tfs_tip_3_r.html#c003056</link>
+    <description>Where is this file that we need to modify?</description>
+    <dc:date>2008-03-03T23:03:28+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1966</comments>   
+    <dc:creator>Paras Wadehra</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Benjamin Fallar III+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/top_tfs_tip_3_r.html#c003057</link>
+    <description>This customization is great, but is there a way just to change the default action from &apos;Resolve&apos; to &apos;Associate&apos; without removing the &apos;Resolve&apos; item in the drop-down list?</description>
+    <dc:date>2008-06-12T09:53:52+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1966</comments>   
+    <dc:creator>Benjamin Fallar III</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Brad Morse+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/top_tfs_tip_3_r.html#c003058</link>
+    <description>Where is the XML file for the transition section from the MSF Agile Bug located? Is this VS2008 or will this also work with VS2005?
+Thanks.</description>
+    <dc:date>2008-07-23T15:08:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1966</comments>   
+    <dc:creator>Brad Morse</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

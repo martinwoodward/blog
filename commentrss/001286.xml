@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Getting Started with the TFS Data Warehouse</title>
+    <link>http://www.woodwardweb.com/vsts/getting_started.html</link>
+    <description>Whenever I talk about TFS, one of the things I always mention is the fact that because all the data about the software project is now being tracked in a SQL Server database, Microsoft were able to stick a Data...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-12-12T13:43:22+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Dmytro Lapshyn+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/getting_started.html#c002056</link>
+    <description>Martin,
+
+This is an excellent write-up on using Excel as a TFS reporting client, thanks! I should say, though, that there&apos;s an inherent problem with Excel-based reporting: security. Let me explain:
+
+Once your administrator gives you the permissions to access the warehouse, you get access to data from ALL team projects, and there&apos;s no easy way to restrict access to a single project. This might be OK for small shops or even large companies that do not need to pass any security-related certifications. 
+
+But imagine a big services firm developing software for a number of customers, or a firm developing software for the healthcare vertical - in such cases, inability to restrict warehouse access to a specific project really becomes an issue. Unfortunately, this issue affects my employer as well, so we had to ditch Excel-based reporting, even though it would have saved us some custom reports development.</description>
+    <dc:date>2008-12-13T07:34:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1286</comments>   
+    <dc:creator>Dmytro Lapshyn</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by anthony oden+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/getting_started.html#c002057</link>
+    <description>This is a fantastic write-up. I can tell that this helps give me a leg up into creating reports!
+
+A.</description>
+    <dc:date>2009-01-09T16:30:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1286</comments>   
+    <dc:creator>anthony oden</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

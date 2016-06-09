@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Workspace 101: Working Folder Mappings</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_w.html</link>
+    <description> So in my previous post, I introduced the concept of a TFS workspace. If you only have one TFS workspace then you might have so far been blissfully unaware that you had one. This is because one is created...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-03-02T15:04:48+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by El Guapo+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_w.html#c002355</link>
+    <description>Great series!</description>
+    <dc:date>2007-03-02T20:31:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1647</comments>   
+    <dc:creator>El Guapo</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Seyed+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_w.html#c002364</link>
+    <description>Thanks for this, It saved me a lot. actually I was wondering how to change my local copy of sorce control.</description>
+    <dc:date>2007-03-12T17:27:10+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1647</comments>   
+    <dc:creator>Seyed</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by jay+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_w.html#c002422</link>
+    <description>Martin-
+
+Your post mentions a followup that I hoped would answer this question.
+
+Lets say I have a workspace where I have all my code that I&apos;m actively working on. If I also want another workspace on the same machine where I can get a specific version of all the code, say to do a build, is this possible? I&apos;ve setup another workspace, pointed it to a different local folder, but anything I try using tf.exe get results in a &quot;the path XXX is already mapped in workspace YYY&quot;. XXX and YYY always refer to the &quot;working&quot; workspace, not the one I want to do my build from.</description>
+    <dc:date>2007-08-17T19:03:57+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1647</comments>   
+    <dc:creator>jay</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Anonymous+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_w.html#c002597</link>
+    <description>Why can&apos;t I have two workspaces defined as:
+c:\projects\sustainedEng
+and
+c:\projects\probation
+where one points to sustainedEng on the tfs server and the other to probation on the tfs server?
+If I define my workspaces as:
+c:\sustainedEng
+and
+c:\probation
+it works (!@#@$%$#^#)
+Why can&apos;t they be under my &apos;projects&apos; directory? </description>
+    <dc:date>2008-08-13T19:19:56+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1647</comments>   
+    <dc:creator>Anonymous</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by kishore+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_w.html#c002647</link>
+    <description>you are man of my day.. i was using eclipse and visual studio in parallel and trying to setup teamprise plug in for eclipse. And with team workspace i can&apos;t able to import project into eclipse since a project from repository is already tied to local directory as default workspace in visual studio.
+
+I&apos;m writing the fix i found for my issue here in case if anyone runs into it can easily get away with it. I deleted all the tfs workspaces from VS 2008 and started a fresh, first i imported project from TFS repository into eclipse and it was succefull since theres no workspace mapping conflict as i started a fresh. And to make sure things i renamed the default workspace file created for TFS to xxxxECLIPSE and then i opened my visual studio and then configured another ws with the default name and pointed to same tfs repository . since its new workspace it worked like a charm. thanks martin for explaing the TFS workspace inherent details. that helped in resolving my issue of setting up same repository in visual studio and eclipse as well. </description>
+    <dc:date>2008-12-18T23:45:52+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1647</comments>   
+    <dc:creator>kishore</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Tomy+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_w.html#c002721</link>
+    <description>Hi Martin,
+
+could you also explain about the working direcotry under build agent properties window and it&apos;s relation to the local path specified in the workspace. </description>
+    <dc:date>2009-05-01T05:34:02+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1647</comments>   
+    <dc:creator>Tomy</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Arun+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_w.html#c002759</link>
+    <description> &quot;cannot have two repository paths mapped to one local path on the same computer.&quot;
+
+How to remove the mapping?
+
+i need to map to same folder which was used by other person; he is nolonger going to use that folder.
+</description>
+    <dc:date>2009-07-22T11:14:59+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1647</comments>   
+    <dc:creator>Arun</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by senthil+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/workspace_101_w.html#c002772</link>
+    <description>Case 1:
+
+1. we have 2 branch of code in TFS 
+ a. branch1 b. branch2 
+2. we have virtual directories mapped to WS folders.
+
+Can we have 2 workspace mapping to same local folder , mapping to diffrent branch so i dont have remap all my virtual directories.
+
+thanks in advance
+
+senthil </description>
+    <dc:date>2009-08-24T22:20:58+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1647</comments>   
+    <dc:creator>senthil</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

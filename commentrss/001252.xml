@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS Build API by Example #1: Queue a build.</title>
+    <link>http://www.woodwardweb.com/dotnet/tfs_build_api_b.html</link>
+    <description><![CDATA[ As we all know by now - the build system in TFS2008 was substantially improved.&nbsp; Along with the many improvements came an official API for talking to the build system.&nbsp; This is the same API that the Team Foundation...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-04-21T14:23:34+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Jeff Snyder+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/tfs_build_api_b.html#c001984</link>
+    <description>Hi Martin,
+
+Great example!  Would you happen to know how to replace the &quot;Queue New Build&quot; popup menu item when you right-click on a build definition from the Team Explorer window.  I have written a custom add-in form, and I want to use my own form when the user clicks to queue a new build.
+
+Thanks in advance for any advice you might have.
+
+Jeff Snyder</description>
+    <dc:date>2009-01-07T22:36:23+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1252</comments>   
+    <dc:creator>Jeff Snyder</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Jason Camp+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/tfs_build_api_b.html#c001985</link>
+    <description>I would like to know the same thing as Jeff.</description>
+    <dc:date>2009-01-28T18:00:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1252</comments>   
+    <dc:creator>Jason Camp</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin Woodward+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/tfs_build_api_b.html#c001986</link>
+    <description>*Replacing* the form would be difficult. It should be possible to contribute extensions to the Team Explorer context menu in Visual Studio but I would have to dig around to get that to work.
+
+What I have seen people do in the past when they have some complex build queuing requirements is to disable build queuing permissions for nearly everyone and then have a web form that people have to go to when queuing a build.
+
+Can I ask why the built in dialog doesn&apos;t work for you?
+
+M.</description>
+    <dc:date>2009-01-28T19:08:00+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1252</comments>   
+    <dc:creator>Martin Woodward</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Janaka Goonasekera+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/tfs_build_api_b.html#c001987</link>
+    <description>Hi Martin,
+
+I am creating a custom application to queue builds. 
+
+If my build config file includes running tests, is there a way to programatically get back the test results, code coverage results and the code analysis results?
+
+Thanks!</description>
+    <dc:date>2009-03-02T21:33:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1252</comments>   
+    <dc:creator>Janaka Goonasekera</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Radio TFS #15: A Chat with Jeff Beehler</title>
+    <link>http://www.woodwardweb.com/podcasting/radio_tfs_15_a.html</link>
+    <description> Over the holidays we sat down for the last time of 2008 and had a relaxed chat with Jeff Beehler, Team System Chief of Staff.&#160; We talked about the history of Team System, how the teams in Microsoft go...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-12-29T13:40:01+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Skype Call Forwarding</title>
+    <link>http://www.woodwardweb.com/technology/skype_call_forw.html</link>
+    <description> Skypehave done it again. Using the latest windows beta version (1.4.0.47) you now have access to Call Forwarding features. If you are offline or do not answer a skype call then you can configure Skype to automatically forward the...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-09-04T20:07:23+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Adrian+00:00</title>
+    <link>http://www.woodwardweb.com/technology/skype_call_forw.html#c000770</link>
+    <description>Crazy indeed, but not as daft as eBay buying over Skype.  I hope that&apos;s not the end of stereo quality free VOIP calls</description>
+    <dc:date>2005-09-12T20:59:37+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=549</comments>   
+    <dc:creator>Adrian</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Hemant+00:00</title>
+    <link>http://www.woodwardweb.com/technology/skype_call_forw.html#c000771</link>
+    <description>I don&apos;t think so that ebay will make this another mistake by charging all skype calls, not in coming years, And I believe if they are really serious about taking it to next level than they should reduce the tariffs for outgoing landline calls and make people really use it, else have no option but to think that they lost over 2B$...
+
+www.sp2p.net</description>
+    <dc:date>2005-09-22T02:09:35+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=549</comments>   
+    <dc:creator>Hemant</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/">
+<dc:title>Martin Woodward</dc:title>
+<dc:description></dc:description>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+<!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+
+
+    <title>Martin Woodward: TFS Top Tip Archives</title>
+
+
+</head>
+<body id="mt-blog" class="mt-archive-listing mt-category-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+                            
+                            <h1 id="page-title" class="archive-title">Recently in <em>TFS Top Tip</em> Category</h1>
+
+
+
+
+
+
+                            
+                            <div id="entry-411" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/tfs_top_tip/000411.html" rel="bookmark">TFS Top Tip #15 - Baseline your Builds</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2008-01-16T07:36:36+00:00">January 16, 2008  7:36 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/tfs_top_tip/000411.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Microsoft Team Foundation Server 2008 has a great new improved build system (often referred to as "Team Build").&nbsp; An advantage of running your build from Team Build is that (by default) all changes between your current build and the last good one are reported in the build report and any work items that were associated with those changesets are automatically updated with the build number they were fixed in.</p> <p>However, when demonstrating this feature - the following thing always catches me out and is important to remember when using Team Build in production.&nbsp; The very first time you run a build, it does not associate that build with changesets or update any work items.</p> <p>Therefore, the first time your create a new build definition you should manually run a build and make sure it is successful.&nbsp; </p> <p>In fact I would recommend you do this anyway, even if the changeset association thing wasn't the case, after all you need to test that the new build definition you created actually works!</p> <p>The reason why Team Build 2008 works in this way is that when Team Build successfully completes a build it stores the label applied to that last good build.&nbsp; The next time it runs a build that is successful it will compare the two labels to detect which changesets were included in the build.&nbsp; It will then look over those changesets for any associated work items and update them to include the build number in which they were fixed.</p> <p>This tip is also true if you upgrade from TFS2005 to TFS2008.&nbsp; Once the upgrade is complete you should run your builds once manually to check that they are all still working fine and to give a baseline from which changes can be detected. </p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-390" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/tfs_top_tip/000390.html" rel="bookmark">TFS Top Tip #14: The only 2 things you need to know when customizing Team Build</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-10-26T23:09:24+00:00">October 26, 2007 11:09 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/tfs_top_tip/000390.html#comments">No Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>If you are customizing a team build, then there are only two things you need to know to get you started.&nbsp; The rest you can (mostly) figure out from there.</p> <ol> <li>Your build is defined in a file called TFSBuild.proj for your particular Team Build Type.&nbsp; You probably figured that bit out already.&nbsp; The first thing you need to know is that the TFSBuild.proj file inherits most of its logic from a file called Microsoft.TeamFoundation.Build.targets which lives in <br><code>%ProgramFiles%\MSBuild\Microsoft\VisualStudio\TeamBuild\Microsoft.TeamFoundation.Build.targets</code>.<br>If you open this file in Notepad you can see that it is exceptionally well commented.&nbsp; There is no smoke and mirrors with Team Build, if it happens at all then it triggered by this file. Note that you should <strong>never edit the Microsoft.TeamFoundation.Build.targets</strong> file.&nbsp; In Team Build 2008 there are so many hook points provided for you to insert your own logic into the build that you should never need to.&nbsp; Microsoft goes to some rather extreme lengths to ensure backwards compatibility with this file (i.e. a TFSBuild.proj file written with the TFS2005 targets file in mind will work just great with the 2008 targets file).&nbsp; If you modify the targets file, not only are you setting your self up for deployment nightmares but you servicing nightmares as well if you attempt to upgrade to later version or even possibly service packs - don't say I didn't tell you ;-) <li>If you get a bit lost in reading the targets file - the MSDN help for build customizations is pretty good.&nbsp; The best starting point is the page "<a href="http://msdn2.microsoft.com/en-us/library/ms400710(VS.90).aspx">Understanding Team Foundation Build Configuration Files</a>" - however the pages that this links to that I refer to constantly are <a href="http://msdn2.microsoft.com/aa337604(VS.90).aspx">Customizable Team Foundation Build Targets</a> and <a href="http://msdn2.microsoft.com/aa337598(VS.90).aspx">Customizable Team Foundation Build Properties</a>.&nbsp; That said - most of the comments in those MSDN help pages are actually in the targets file itself - just sometimes the property or task you are after is easier to find in the MSDN help.</li></ol>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-373" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/tfs_top_tip/000373.html" rel="bookmark">TFS Top Tip #13 - Watch where you drop stuff</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-07-21T05:13:51+00:00">July 21, 2007  5:13 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/tfs_top_tip/000373.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>With Team Build in Team Foundation Server, you can have multiple build types for multiple projects.&nbsp; For example, we have a build that runs fast that we can have running <a href="http://en.wikipedia.org/wiki/Continuous_Integration">Continuous Integration</a> on, and a slower build (that does obfuscation, release packaging etc) that is run on demand when we want to perform a release to QA (some of which later go on to become public releases).</p> <p>A neat feature in the Team Build stuff is that you specify a drop location for your builds and the packaged binaries along with the build log and test results will be placed in a folder corresponding to the build name.&nbsp; In all the demos you see, this will typically be specified as something like <a href="file://\\server\drop">\\server\drop</a> and you may well do this yourself at first.&nbsp; Pretty quickly the drop folder will fill up with builds and get confusing.</p> <p>A better way is a rather simple solution that I almost didn't mention, however&nbsp;when I mentioned this to a friend of mine and it caused some head-slapping, so I thought I'd discuss it here.&nbsp; Apologies if you'd already figured this out this rather basic step.</p> <p>Simply, put your builds into folders.&nbsp; Something like:-</p> <ul> <li>\\server\drop\product\buildType\</li></ul> <p>To give an example:-</p> <ul> <li>\\jeeves\drop\teamprise\ci  <li>\\jeeves\drop\teamprise\release</li></ul> <p>You can obviously take this further if need be.&nbsp; For example we currently have builds going on in two main places, we are putting Teamprise 2.2 through final testing while, in parallel, we work on the next major release in trunk.&nbsp; In the example above,&nbsp;it means we have 4 builds types in total and&nbsp;can follow the convention of \\server\drop\product\branch\buildType&nbsp;to make:-</p> <ul> <li>\\jeeves\drop\teamprise\2.2\ci  <li>\\jeeves\drop\teamprise\2.2\release  <li>\\jeeves\drop\teamprise\trunk\ci  <li>\\jeeves\drop\teamprise\trunk\release</li></ul> <p>&nbsp;Pretty simple really, but helps to plan this stuff up front.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-318" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/tfs_top_tip/000318.html" rel="bookmark">TFS Top Tip #12 - Specifying a proxy server at the command line</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2007-01-04T16:07:43+00:00">January  4, 2007  4:07 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/tfs_top_tip/000318.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>If (<a href="http://www.woodwardweb.com/vsts/000273.html">like me</a>) you are using the <a href="http://msdn2.microsoft.com/en-us/cc31bk2e(VS.80).aspx">tf.exe</a> command line to access your Team Foundation Server via a Version Control Proxy from a remote office, then the following tip is extremely useful - much more so than my previous <a href="http://www.woodwardweb.com/vsts/000286.html">registry hack</a>.&nbsp; </p> <p>There is currently no option with the Microsoft command line to pass a version control proxy server in to TF.exe.&nbsp; It will pick one up if you have one set in the registry if you have used&nbsp;the Team Explorer GUI&nbsp;- but that isn't great for scripted scenarios.&nbsp; <a href="http://blogs.msdn.com/jmanning/">James Manning</a> recently pointed me in the direction of an undocumented environment variable called TFSPROXY.&nbsp; If set, the TFS client will use that setting to proxy your requests.&nbsp; Therefore the following will call tf.exe passing a proxy server to use in your connection:-</p> <blockquote><pre>@echo off
+setlocal
+set TFSPROXY=http://your_proxy_server:8081
+tf %*
+endlocal</pre></blockquote>
+<p>I saved this in a batch file called "tfvp.cmd" (for "tf via proxy"), therefore if I want to call tf via my proxy and I'm in a shell that doesn't have the environment variable set I can call my script.</p>
+<p>The only command that this really useful for is when doing a tfs get command, as only the download is sent via the version control proxy server,&nbsp;the majority of requests go direct to the&nbsp;main Team Foundation Server application tier that you are connected to.</p>
+<p>By the way, if you are using the&nbsp;Teamprise command line&nbsp;client then you can use the&nbsp;/proxy:http://your_proxy_server:8081 argument to specify a proxy server to use for the connection, I've just logged a bug so that we will also accept this undocumented environment variable, but we'll make it so that passing one explicitly will override any picked up from the environment variable.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-312" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/tfs_top_tip/000312.html" rel="bookmark">TFS Top Tip #11 - Removing source control files from your local file system</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-12-12T12:45:58+00:00">December 12, 2006 12:45 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/tfs_top_tip/000312.html#comments">2 Comments</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>One of the questions that came up from one of our users was "how do I delete the files from my local file system - and tell Team Foundation Server that I have done this".</p> <p>The first thing you might try is to just delete them locally.&nbsp; However, Team Foundation Server (TFS)&nbsp;uses your <a href="http://msdn2.microsoft.com/en-us/library/ms181383(VS.80).aspx">workspace</a> to keep track of what files you have downloaded and what version you have of them.&nbsp; The reason it does this is so that it can maintain your files without a costly (both in terms of network and CPU processing) sync step.&nbsp; With TFS, when you say "Get latest", you only get the latest version of files that have changed since you last got them.&nbsp; Nothing is downloaded that you don't need (thereby saving you network traffic).&nbsp; A really neat thing about TFS is that if you delete a file on the server and check that delete in, then when somebody does a "Get Latest", the file is deleted&nbsp;on their local system as well -&nbsp;very nice.&nbsp; Moves and renames also exhibit this behavior -&nbsp;really useful for keeping&nbsp;the local file system in sync with the servers.&nbsp; </p> <p>But, if you have deleted a file locally (using Windows Explorer for example)&nbsp;then do a "Get Latest" the file is not downloaded - because the server thinks you already have it.&nbsp; You can easily download the file by going to "Get Specific Version..." and selecting the "Force get" option - which will download all files, regardless of if the server things you have them or not.</p> <p>The question I was asked was how&nbsp;to tell the server&nbsp;you have removed the file&nbsp;from&nbsp;your system, without deleting it from the server.&nbsp; In the end, it took me a while to figure out the answer (and the help of <a href="http://blogs.msdn.com/buckh/">Buck Hodges</a>)</p> <p><img style="float: none; margin-left: 25px" height="307" alt="The Get Specific Dialog with changeset 1 inside." src="http://www.woodwardweb.com/WindowsLiveWriter/TFSTopTip11Removingsourcecontrolfilesfro_B380/get_changeset_1%5B2%5D.png" width="514"> </p> <p>The answer is, if you do a "Get Specific Version..." on the files, and select <a href="http://msdn2.microsoft.com/en-us/library/ms181408(VS.80).aspx">Changeset</a> 1, the files will be deleted locally and the server will know this.&nbsp; The color of the file in the Source Control explorer will go from black to gray and will have the phrase "Not downloaded" in the latest column.</p> <p><a href="http://msdn2.microsoft.com/en-us/library/ms181408(VS.80).aspx">Changeset</a> 1 is a special <a href="http://msdn2.microsoft.com/en-us/library/ms181408(VS.80).aspx">changeset</a> on your Team Foundation Server instance.&nbsp; It was created as part of the setup routine and only contains one thing - the root node ($/) in your source control tree.&nbsp; If you do a get for <a href="http://msdn2.microsoft.com/en-us/library/ms181408(VS.80).aspx">changeset</a> 1 on any actual files then they will not exist at that point in time on the system so will be deleted locally and the server will know this.</p> <p>Anyway, I thought this worthy of a TFS Tip post.&nbsp; Not only because it highlights how to do something that is non-obvious, but also because once you understand how it works, you will&nbsp;understand&nbsp;a large part&nbsp;of what you need to know about Team Foundation Server Source Control.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-291" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/000291.html" rel="bookmark">TFS Top Tip #10 - Keep Your Shelves Tidy</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-10-05T11:03:00+00:00">October  5, 2006 11:03 AM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/000291.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>Team Foundation Server source control has a great feature called Shelving.&nbsp; Shelving lets you set store a batch of pending changes onto the server and optionally remove them from your local workspace.&nbsp; It comes in really handy for the times when you want to backup your code and store it on the server but don't want to commit it to source control.&nbsp; I also sometimes use it when I would like a remote colleague to take a look at some code I have written before I commit it into the code base.&nbsp; For more information about Shelving, see the <a href="http://msdn2.microsoft.com/en-us/library/ms181403.aspx">MSDN documentation</a>.&nbsp; A Shelveset is identified by developer and the name the developer gave it when shelving.</p> <p>One of the features of shelving (and how it differs from working in a private developer branch) is that a Shelveset is in itself not versioned.&nbsp; If the same developer saves a Shelveset with the same name, then it will overwrite the previous Shelveset.&nbsp; This comes in really handy when you have a Shelveset that you commonly use for one thing - for example, I have a Shelveset that I normally call "Work In Progress" (actually, I normally call it "wip" because I am lazy when it comes to typing, but you get the idea).&nbsp; If I need to stop work, but I haven't been able to get to a point where I can check-in the code, then I shelve the pending changes and call the Shelveset "Work In Progress".&nbsp; That way, I only have one of these and I know the purpose of it.</p> <p>However, most of the time when you shelve, it is a temporary thing.&nbsp; You create a Shelveset and then you unshelve it - and then you no longer want it.&nbsp; The old shelvesets will sit on your shelf gathering dust until you&nbsp;tidy them up by deleting them.&nbsp; The unshelve dialog has a "Delete" button that you can use to delete a particular shelveset.</p> <p><img style="border-top-width: 0px; border-left-width: 0px; float: none; border-bottom-width: 0px; margin-left: 25px; border-right-width: 0px" height="380" src="http://www.woodwardweb.com/WindowsLiveWriter/TFSTopTip10KeepYourShelvesTidy_9031/Unshelve_Dialog%5B7%5D.png" width="535"> </p> <p>Additionally, if you press "Details", then you get to see more information about the shelveset in question - but you also get a couple of other options controlling the behavior that occurs while the unshelve is being performed:-</p> <p><img style="border-top-width: 0px; border-left-width: 0px; float: none; border-bottom-width: 0px; margin-left: 25px; border-right-width: 0px" height="55" src="http://www.woodwardweb.com/WindowsLiveWriter/TFSTopTip10KeepYourShelvesTidy_9031/Shelveset_Details_Closeup%5B2%5D.png" width="230"> </p> <p>If you un-check the "Preserve shelveset on server" check-box then your shelveset will be automatically deleted after you successfully unshelve it - which is a quite handy (if slightly hidden) feature.</p> <p>It's good practice to delete the shelvesets when you no longer need them.&nbsp; Not only will it get rid of clutter for you, it will also help when another person is trying to unshelve something that you have placed there for them.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-286" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/vsts/000286.html" rel="bookmark">TFS Top Tip #9 - Secret Registry Hacks</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2006-09-18T19:28:25+00:00">September 18, 2006  7:28 PM</abbr>
+    
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.woodwardweb.com/vsts/000286.html#comments">1 Comment</a>
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>So,&nbsp;this isn't exactly original material - but I was having a chat with somebody today who I consider very knowledgeable about Visual Studio Team System and they were not aware of these so hopefully re-posting&nbsp;some will help more people discover them.&nbsp; Strictly speaking, as all of these have been mentioned somewhere before the word "Secret" isn't&nbsp;correct - however it gave&nbsp;an otherwise very dull post a certain bit of excitement which kept you reading this far so forgive me.&nbsp; The usual Caveats about messing with the registry apply, also the default settings are generally more logical to new users so use with caution.&nbsp; Most of these tips apply to HKEY_LOCAL_MACHINE as well as HKEY_CURRENT_USER - I normally set them as a user preference so as not to confuse anyone else that should happen to use my machine.</p> <h4>Hack #1 - Stopping Team Explorer from connecting on Visual Studio 2005 Start-up</h4> <blockquote> <p>Add a DWORD value called "AutoLoadServer" under HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation.&nbsp; Zero means do not reconnect automatically.</p></blockquote> <p>I first read about this setting over at <a>Tim Noonan</a>'s blog.&nbsp; This can be very handy if, like me, you frequently change TFS servers.&nbsp; I&nbsp;jump between the work TFS instance, CodePlex&nbsp;and a test or VPC versions of TFS.&nbsp; I know which server I want to connect to when starting VS 2005, and frequently it is not the one I connected to last time.&nbsp; Adding the following setting means that I have to manually pick the server I want to connect to from the "Add Existing Project..." button.</p> <h4>Hack #2 - Don't get Missing Files</h4> <blockquote> <p>Add a DWORD value called DisableGetMissingFiles under HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation\SourceControl.&nbsp; Any value other than zero will disable getting files from the server automatically.</p></blockquote> <p>Another <a>Tim Noonan</a>&nbsp;special.&nbsp; This setting determines if files missing from the solution or project are automatically downloaded.&nbsp; I normally switch this off and so get the files only when I say "Get Latest" on a particular solution or project, this is especially useful when you are not always connected.</p> <h4>Hack #3 - Bypass proxy server</h4> <blockquote> <p>Add a String value called BypassProxyOnLocal under HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation\RequestSettings.&nbsp; A value of "true" will bypass.</p></blockquote> <p>This one from the legendry <a href="http://blogs.msdn.com/buckh/">Buck Hodges</a>.&nbsp; In some network configurations, the Microsoft Team Foundation Server client will connect to your Team Foundation Server via a web proxy server.&nbsp; This should be avoided as it slows everything down and the NTLM authentication used by TFS doesn't play well with some proxy configurations.&nbsp; I've seen this&nbsp;pop up as a&nbsp;problem with environments that use a proxy.pac file to control proxy access rather than hard-coding the entries in the Internet Options, LAN Settings (or for folks that don't have Bypass local set up).&nbsp; You should probably only use this setting if you know you are having this problem (often diagnosed by an intermittent failure of Team Explorer to connect but easily checked using a network sniffing tool such as Ethereal).</p> <h4>Hack #4 - TFS Version Control Proxy Settings</h4> <blockquote> <p>See HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\TeamFoundation\SourceControl\Proxy.&nbsp; A String value called Url containing the proxy address and a String value called Enabled set to true will enable the source control proxy.</p></blockquote> <p>The easier way to enter values for what machine to use as a TFS Version Control Proxy&nbsp;is to go to into Visual Studio with Team Explorer installed and select Options, Source Control, Tools, Options, Source Control, Visual Studio Team Foundation Server, Proxy Settings.&nbsp; However, if you are running a tf.exe script or TFS .NET API code as part of a service and you want the code to go via a proxy then the HKEY_LOCAL_MACHINE version of this setting is very useful for setting a default.</p> <h4>Hack #5 - Configuring the TreeDiff Power Toy</h4> <p>See <a href="http://blogs.msdn.com/bharry/">Brian Harry</a>'s excellent post about some registry tweaks for <a href="http://blogs.msdn.com/bharry/archive/2006/09/08/746254.aspx">Configuring the TreeDiff Power Toy</a> to your whim.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+
+
+                            <div class="content-nav">
+                                <a href="http://www.woodwardweb.com/technology/">&laquo; Technology</a> |
+                                <a href="http://www.woodwardweb.com/">Main Index</a> |
+                                <a href="http://www.woodwardweb.com/archives.html">Archives</a>
+                                | <a href="http://www.woodwardweb.com/vista/">Vista &raquo;</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-445"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-446"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-9"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=films&amp;limit=20';return false;" rel="tag">films</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/tfs_top_tip/000411.html">TFS Top Tip #15 - Baseline your Builds</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/tfs_top_tip/000390.html">TFS Top Tip #14: The only 2 things you need to know when customizing Team Build</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/tfs_top_tip/000373.html">TFS Top Tip #13 - Watch where you drop stuff</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/tfs_top_tip/000318.html">TFS Top Tip #12 - Specifying a proxy server at the command line</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/tfs_top_tip/000312.html">TFS Top Tip #11 - Removing source control files from your local file system</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/000291.html">TFS Top Tip #10 - Keep Your Shelves Tidy</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/000286.html">TFS Top Tip #9 - Secret Registry Hacks</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/000276.html">TFS Top Tip #8 - Where to get help</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/tfs_top_tip/000260.html">TFS Top Tip #7 - Determine when TFS Trial Edition will expire</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/000257.html">TFS Top Tip #6 - Setting the Maximum Attachment Size for Work Items</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

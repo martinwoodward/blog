@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Teamprise V1.0 Now Released!</title>
+    <link>http://www.woodwardweb.com/vsts/teamprise_v10_n.html</link>
+    <description><![CDATA[A few minutes ago we flicked on the switch to release Teamprise v1.0 to public release.&nbsp; If you have tried out any of the preview versions then I urge you to upgrade as this one has a some new features...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-04-11T19:56:42+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Jeff Clausius+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teamprise_v10_n.html#c001653</link>
+    <description>Congratulations on a job well done.</description>
+    <dc:date>2006-04-11T21:53:07+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1056</comments>   
+    <dc:creator>Jeff Clausius</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mitch Denny+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teamprise_v10_n.html#c001654</link>
+    <description>Congratulations!</description>
+    <dc:date>2006-04-12T02:18:42+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1056</comments>   
+    <dc:creator>Mitch Denny</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by James Manning+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teamprise_v10_n.html#c001655</link>
+    <description>Congratulations!</description>
+    <dc:date>2006-04-12T03:00:29+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1056</comments>   
+    <dc:creator>James Manning</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Mike C+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/teamprise_v10_n.html#c001656</link>
+    <description>Congrats matey!</description>
+    <dc:date>2006-04-13T09:48:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1056</comments>   
+    <dc:creator>Mike C</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

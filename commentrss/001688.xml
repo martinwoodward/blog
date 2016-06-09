@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Running TFS 2008 (Beta 2) in Production</title>
+    <link>http://www.woodwardweb.com/teamprise/running_tfs_200.html</link>
+    <description><![CDATA[Yesterday I sat down with my freshly downloaded Orcas Beta 2 media (thanks to the Secure Content Downloader&nbsp;from&nbsp;the good folks at Microsoft Research in Cambridge)&nbsp;and upgraded our production TFS instance.&nbsp; The good news is that the set-up process in Beta...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-08-01T18:26:50+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Wes MacDonald+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/running_tfs_200.html#c002420</link>
+    <description>The WSS upgrade doesn&apos;t happen as part of the TFS upgrade, though I concur going to 2008 was smooth.  I did an in-place upgrade of WSS to v3 after the upgrade to TFS 2008 and all is well.</description>
+    <dc:date>2007-08-10T12:08:11+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1688</comments>   
+    <dc:creator>Wes MacDonald</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

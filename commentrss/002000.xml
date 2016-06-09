@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>MeeboMe</title>
+    <link>http://www.woodwardweb.com/web_sites/meebome.html</link>
+    <description>Poster child of the Web 2.0 movement and all round general legends Meebo have just launched a new service called MeeboMe that allows you to host a flash based chat window on your website and allow people to send you...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-08-02T15:18:49+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Adrian+00:00</title>
+    <link>http://www.woodwardweb.com/web_sites/meebome.html#c003088</link>
+    <description>Doesn&apos;t seem to work in firefox 1.5.0.5 :(</description>
+    <dc:date>2006-08-02T18:36:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2000</comments>   
+    <dc:creator>Adrian</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/web_sites/meebome.html#c003089</link>
+    <description>I use that version of Firefox and it works just fine for me.  Do you have the flash plugin installed?  
+
+Also - was this from behind a corporate proxy server?  It may have been blocking the traffic.
+
+Finally - I wasn&apos;t online at the time, maybe that was the problem.
+
+UPDATED:  I was updated to Firefox 1.5.0.6 today and it still works...</description>
+    <dc:date>2006-08-02T20:16:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2000</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

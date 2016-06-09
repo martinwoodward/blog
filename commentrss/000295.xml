@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Galway ICT Conference - Developer Track</title>
+    <link>http://www.woodwardweb.com/vsts/galway_ict_conf_1.html</link>
+    <description><![CDATA[Thanks to all the people who came along to the Developer Track of todays conference in Galway.&nbsp; It was great to see such a mix of people with different experience&nbsp;of .NET and Team System in General - but also nice...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-10-12T23:35:55+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by eugenez+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/galway_ict_conf_1.html#c004551</link>
+    <description>Martin, the adoption PDF link seems to be broken.</description>
+    <dc:date>2006-10-13T03:14:55+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=295</comments>   
+    <dc:creator>eugenez</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/galway_ict_conf_1.html#c004573</link>
+    <description>Apologies - should be working now.  The hotel WiFi was a little flaky and I&apos;d had one too many guinesses when uploading this.  Thanks for letting me know Eugene!</description>
+    <dc:date>2006-10-13T20:38:51+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=295</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

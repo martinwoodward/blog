@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>HDTV Confusion</title>
+    <link>http://www.woodwardweb.com/technology/hdtv_confusion.html</link>
+    <description>I&apos;m confused. Sometime this year, we want to buy a second TV for our house. As this TV will be around for a while in our &quot;posh&quot; room it makes sense (to me - not my wife) to get a...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-03-30T10:18:35+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/technology/hdtv_confusion.html#c000825</link>
+    <description>http://en.wikipedia.org/wiki/HDTV#Standard_resolutions
+http://en.wikipedia.org/wiki/HD_Upconverter
+
+(^_^)//</description>
+    <dc:date>2006-03-30T12:47:10+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=625</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/technology/hdtv_confusion.html#c000826</link>
+    <description>To be honest, there&apos;s probably not much true HDTV content you&apos;ll be able to watch. Most use an HD upconverter to convert regular signals to HDTV signals.</description>
+    <dc:date>2006-03-30T12:50:05+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=625</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

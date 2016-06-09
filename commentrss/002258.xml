@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>NRB Case Study on using TFS 2010 for Heterogeneous Development</title>
+    <link>http://www.woodwardweb.com/vsts/tfs/nrb_case_study.html</link>
+    <description>A couple of weeks ago I was in Antwerp for a partner event and I also had the pleasure of meeting with a few customers from the Belgium and Luxembourg region.&#160; One of the customers I spoke with was Network...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2010-12-03T12:54:46+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

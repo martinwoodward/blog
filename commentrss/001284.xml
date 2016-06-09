@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Removing Old Mail from the Inbox in GMail</title>
+    <link>http://www.woodwardweb.com/technology/removing_old_mail_in_gmail.html</link>
+    <description>I recently moved my domain email over to Google Apps for Domains. So far I have been very happy with it and all my family have been set up with accounts, and all is working well for them to. I...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2008-12-04T23:55:23+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Alan James+00:00</title>
+    <link>http://www.woodwardweb.com/technology/removing_old_mail_in_gmail.html#c002055</link>
+    <description>Thanks for this excellent work around. A pity you can&apos;t find such a solution on the Google site. I searched for ages after dropping my Gmail account since I didn&apos;t want copies of old emails out there. Your solution works perfectly.
+
+Alan</description>
+    <dc:date>2009-10-06T11:59:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1284</comments>   
+    <dc:creator>Alan James</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

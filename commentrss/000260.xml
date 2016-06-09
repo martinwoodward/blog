@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS Top Tip #7 - Determine when TFS Trial Edition will expire</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_7_d.html</link>
+    <description><![CDATA[UPDATE:&nbsp; Brian Harry has posted a new utility to help you determine the trial expiration dates on your server.&nbsp; View Brian's post for more details. Like a lot of early adopters, we installed the Team Foundation Server 180–day trial edition...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-07-06T11:31:17+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Jeff B.+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_7_d.html#c001353</link>
+    <description>Here&apos;s an on-line date calculator to help calculate the 180 days:
+
+http://www.timeanddate.com/date/dateadd.html
+</description>
+    <dc:date>2006-07-07T17:15:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=260</comments>   
+    <dc:creator>Jeff B.</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Dylan+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_7_d.html#c001764</link>
+    <description>I have Beta 3 Refresh installed.  My first changeset date is November 23, 2005.  How do I determine when the install will expire?  It&apos;s obviously not 180 days, as it&apos;s nearing 270 now.   Is there an expiry?  Am I going to be in trouble in 4 days (270 days from install)?</description>
+    <dc:date>2006-08-16T22:21:52+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=260</comments>   
+    <dc:creator>Dylan</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_7_d.html#c001770</link>
+    <description>Dylan.  Honestly, I&apos;ve no idea when (or if) Beta 3 Refresh expires.  It is very possible that they didn&apos;t put any timebomb code into the early Beta&apos;s - but I have no idea.
+
+My honest recommendation would be to migrate to the RTM version ASAP.  By sticking on Beta 3R you are exposed to a large number of bugs that the product team know about and have fixed.  Also - none of the Team System Extensions currently available will work against Beta 3R.</description>
+    <dc:date>2006-08-17T09:15:12+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=260</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by smart+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_7_d.html#c002322</link>
+    <description>TFS takes expiration date from registry.</description>
+    <dc:date>2006-08-30T16:59:41+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=260</comments>   
+    <dc:creator>smart</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by AbdelMoniem+00:00</title>
+    <link>http://www.woodwardweb.com/tfs_top_tip/tfs_top_tip_7_d.html#c011683</link>
+    <description>can I install the trial version again on the same machine without reinstalling OS.</description>
+    <dc:date>2007-03-06T14:12:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=260</comments>   
+    <dc:creator>AbdelMoniem</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,918 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/programming/why_software_es.html">
+<dc:title>Why Software Estimation is Hard</dc:title>
+<dc:description><![CDATA[Over the years, I have tried many different approaches to software estimation.&#160; From the Ceiling and Weller method (look up to the ceiling, scratch your chin and say &quot;Well-errr&quot;), FITA analysis (Finger In The Air) through various variations (both formal...]]></dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2008-06-26T14:46:55+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/vsts/coolest_team_sy.html" title="Coolest Team System Gadget contest" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/teamprise/teamprise_31_is.html" title="Teamprise 3.1 is now available" />
+    
+    <title>Why Software Estimation is Hard - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-439" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Why Software Estimation is Hard</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2008-06-26T14:46:55+00:00">June 26, 2008  2:46 PM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/programming/why_software_es.html#comments">8 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>Over the years, I have tried many different approaches to software estimation.&#160; From the Ceiling and Weller method (look up to the ceiling, scratch your chin and say &quot;Well-errr&quot;), FITA analysis (Finger In The Air) through various variations (both formal and informal) of metric based estimation techniques to things like IFPUG etc.</p>  <p>Today, I had something happen that reminded me why software estimation is so hard. I've just wasted about 8 hours trying to figure out an issue with what I thought was some bizarre firewall problem with Windows Vista SP1 x64 when it turns out that some code that <strong>I wrote</strong> was actually working correctly and was picking up a HTTP proxy preference that was pointing to a server that no longer exists.&#160; I'd just forgotten I'd fixed this bug, and that I had the proxy set in my preferences.</p>  <p>I took two lessons from this frustrating day.</p>  <ol>   <li>We need a better error message when your proxy is no-longer available</li>    <li>Software estimation is hard</li> </ol>  <p>In discussions with my wife she frequently struggles when some nights I finish work complaining that I am 3 days behind and the very next afternoon I can be caught up or even a little ahead.</p>  <p>The best way I have come up with to explain this, is to get her to imagine that I had given her 60 Suduko puzzles all rated as 10 minute puzzles.&#160; Should take you 10 hours right?&#160; Now see how long it takes you to do each puzzle.</p>  <p><img height="179" alt="suduko_times" src="http://www.woodwardweb.com/WindowsLiveWriter/WhySoftwareEstimationisHard_AF0D/suduko_times_3ca44dd6-d380-4653-a689-afb17ff4e34f.gif" width="298" align="right" /> <a href="http://en.wikipedia.org/wiki/Suduko" target="_blank">Suduko</a> is the closest analogy to computer programming that I can find for &quot;normals&quot; - i.e. people that don't code.&#160; This only really works if the person does Suduko puzzles, but my wife does so it works in our house.&#160; Suduko is a numeric analytical problem solving activity.&#160; While there are tricks and techniques to solving some puzzles, there is a significant challenge and difference to each one. Looking at the puzzle, it is hard to know if it is going to be hard or easy.&#160; You can get stuck down blind alleys and have to start all over. Also when you &quot;get into the zone&quot; you can often make surprising intuitive leaps that often defy verbal explanation afterwards. Finally, solving a hard Suduko puzzle quickly involves a fair degree of luck and depends on your state of mind at the time of trying the puzzle.&#160; There is a great amount of satisfaction to be gained from solving a Suduko puzzle along with a high degree of frustration when you cannot solve one - you know that it must be possible after all.</p>  <p>So.&#160; Each task (solving a Suduko puzzle) should take about 10 minutes, with-in a certain error range.&#160; In software estimation a really good developer doing a well known and well defined task can only hope to get their estimate to around 25% accuracy (a &quot;hard estimate&quot;) - and then there are always the odd random occurrences that throw you way off.</p>  <p>I've been in interviews where the candidate swears blind that they always finish a task on time.&#160; This tells me two things about that candidate:</p>  <ol>   <li>They are a liar</li>    <li>They either never estimate how long something is going to take up-front or they over-subscribe to the <a href="http://en.wikipedia.org/wiki/Montgomery_Scott" target="_blank">Scotty</a> principle of estimation. (Or as Microsoft are fond of saying, under promise - over deliver)</li> </ol>  <p>Does this mean that we should give up on estimation?&#160; Of course not.&#160; Planning a project is going to be pretty hard if you have no idea of roughly when you are going to be finished, what the end result is going to do or how much it is going to cost.&#160; Not to forget that when estimating a large number of tasks you can rely on the fact that some of the work you finish early will offset the work that takes longer than expected.&#160; However, understanding the nature of software development and how it differs from, say, laying bricks, helps you be more likely to succeed.</p>  <p>The problems inherent in software estimation also help me to understand why Agile software development methodologies work.&#160; </p>  <ul>   <li>You are forced to <strong>break problems down into small bits</strong> that can be managed, tracked and measured.</li>    <li><strong>Small iterations</strong> means that you can only get so far behind.</li>    <li>You <strong>re-estimate and re-prioritise work at each iteration</strong> when a hard estimate on that task is possible (and therefore your estimates are more likely to succeed)</li>    <li><strong>You frequently listen </strong>to the person who will be<strong> using the software</strong></li>    <li>You can load your iterations so that there is always work to do of the correct priority to the customer when you have finished a task early and things of the appropriate priority that you can drop off the list when something takes longer</li> </ul>  <p>There are also many other techniques that people can adopt from Agile methodologies or just from common sense to reduce the amount of time taken when a task is taking longer than expected, such as</p>  <ul>   <li><strong>Limit distractions.</strong> You need time to concentrate on a single problem otherwise you will never finish it.</li>    <li><strong>Pair programming</strong>. Identify when a second pair of eyes is needed and quickly as for help in your team (can be hard when your team are distributed across multiple time-zones)</li>    <li><strong>Daily progress meetings</strong>. The guy that has been stuck for 24 hours on what he thinks is a firewall issue is quickly identified)</li>    <li><strong>Lack of ego</strong>.&#160; I'm the &quot;Windows guy&quot; in our company, if I say something is a firewall issue with Windows Vista SP1 x64 and a probably collision with the new Eclipse 3.4 launcher executable - then the new intern who only knows about the Mac he used at college should feel like he can ask a &quot;dumb&quot; question and say &quot;Have you checked your proxy settings after that bug you were fixing yesterday&quot;.</li> </ul>  <p>Anyway.&#160; All common sense stuff and writing this post has been a nice way to get rid of the frustration of finding why I was stupidly stuck for the past day.&#160; Now to stop distracting myself further and get on with some more work :-)</p>
+                                    </div>
+
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/programming/why_software_es.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/programming/" rel="tag">Programming</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">8 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-71753" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.edsquared.com" href="http://www.edsquared.com" rel="nofollow">Ed Blankenship</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/why_software_es.html#comment-71753"><abbr class="published" title="2008-06-26T15:19:57+00:00">June 26, 2008  3:19 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(71753, 'Ed Blankenship')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Martin,</p>
+
+<p>This was a great post.  So true!  These are great suggestions and pros about Agile software methodologies.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-75498" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://nzfusion.com/james" href="http://nzfusion.com/james" rel="nofollow">James</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/why_software_es.html#comment-75498"><abbr class="published" title="2008-07-07T09:18:47+00:00">July  7, 2008  9:18 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(75498, 'James')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Agile techniques are worthwhile in any project, but a big problem in software project management is that the technology is changing so quickly.</p>
+
+<p>This is great for keeping the stuff interesting and fun (sometimes). But if you are laying bricks, it would be good to know that the latest version of the Earth (or the bricks) doesn't have any 'new features'.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-75944" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Paul</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/why_software_es.html#comment-75944"><abbr class="published" title="2008-07-08T17:42:59+00:00">July  8, 2008  5:42 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(75944, 'Paul')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Martin, although I know what you mean about estimating software development projects--I tend to lean toward the thought that as you gain experience this sort of things becomes easier, and guesstimating a project based on previous experience usually works well for me. I have learned the hard way to tack on 10% time/money to my guesstimates though for those unforeseen "firewall" issues.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84271" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.edwardthomson.com/" href="http://www.edwardthomson.com/" rel="nofollow">Edward Thomson</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/why_software_es.html#comment-84271"><abbr class="published" title="2008-08-20T16:53:32+00:00">August 20, 2008  4:53 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84271, 'Edward Thomson')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Martin - great post, the sudoku analogy is a lovely one.  My friends and family frequently don't understand it when I talk about planning and scheduling of software projects.</p>
+
+<p>"Oh, so you're going to have it done by then?"  they ask.  My response is always "I hope so!"</p>
+
+<p>Next time, I'll give them the sudoku analogy!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84292" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Kris Bogaert</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/why_software_es.html#comment-84292"><abbr class="published" title="2008-09-04T21:00:11+00:00">September  4, 2008  9:00 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84292, 'Kris Bogaert')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I often apply the principle: A good developer should do this in X days. In the end I double all the numbers and add an additional margin of 10%. So far it often was succesfull for my type of IT projects (package integration and customisation) which mostly take around 6 months in duration. </p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84365" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">softwaredevelopment</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/why_software_es.html#comment-84365"><abbr class="published" title="2009-02-10T00:58:32+00:00">February 10, 2009 12:58 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84365, 'softwaredevelopment')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>interesting post!! thanks for this post its really helpful and have great suggestion.. give a thumbs up on su!!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84381" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Anup Pachlag</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/why_software_es.html#comment-84381"><abbr class="published" title="2009-03-04T20:11:02+00:00">March  4, 2009  8:11 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84381, 'Anup Pachlag')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Very interesting post and the Soduku Analogy is just great ! I have also realized that a bottom up approach works better than a Top down approach when it comes to estimating</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-84407" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.sharptoss.com" href="http://www.sharptoss.com" rel="nofollow">Manny @SharpToss</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/why_software_es.html#comment-84407"><abbr class="published" title="2009-04-08T23:05:15+00:00">April  8, 2009 11:05 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(84407, 'Manny @SharpToss')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Excellent post Martin. The Sudoku analogy IS very apt. </p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="439" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-445"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-446"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=2&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/virtual_team_sy_1.html">Virtual Team System User Group coming to Europe with Brian Harry</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/catching_up_wit.html">Catching up with MIX09</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/podcasting/new_radio_tfs_e.html">New Radio TFS Episode on Adopting Team System with Steven Borg</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/team_system_mvp.html">Team System MVP of the Year</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/publishing_buil_1.html">Publishing Builds to a Deep Drop Location</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/podcasting/radio_tfs_podca.html">Radio TFS Podcast #17 - Getting Agile with Team Foundation Server</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/the_team_system.html">The Team System Twitterati</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/herding_develop.html">Herding Developers to Lunch</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/techdays09_talk.html">TechDays09 Talk: VSTS Interoperability</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/visual_studio_2_1.html">Visual Studio 2008 Project Template for TFS Utilities</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

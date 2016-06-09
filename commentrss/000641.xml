@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS Top Tip #1 - WIQL Seperators</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_1_w.html</link>
+    <description><![CDATA[ I thought I&rsquo;d try and post some quick Top Tips for Team Foundation Server &ndash; in no particular order apart from as I think of them.&nbsp; Today, this came up in the forums so I thought I&rsquo;d elaborate. WIQL...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-04-25T16:13:21+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Steven Hawkins+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_1_w.html#c000919</link>
+    <description>Hi,
+
+I am creating a little application in Visual Studio 2005 .NET using C#, that based on server name, project name and changeset brings back all associated work items.
+
+Using WIQL it was very easy to do this based on server and project name, but I have not found a way to search based on changeset ID.
+
+Any ideas?
+
+Many Thanks
+
+Steve</description>
+    <dc:date>2006-10-12T10:29:14+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=641</comments>   
+    <dc:creator>Steven Hawkins</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Basil+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_1_w.html#c001112</link>
+    <description>Sorry for not really related question but I&apos;m really stuck.
+We had a developer who leaved the company and left some files locked in his workspace.
+How can I make TFS 2008 forget about that lock?
+
+Thanks a lot
+Basil</description>
+    <dc:date>2008-02-23T11:53:51+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=641</comments>   
+    <dc:creator>Basil</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ralf Stofer+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_1_w.html#c001126</link>
+    <description>Hello,
+
+is it possible to enter a subselect statement in the Value field together with an IN operator.
+
+I wonder why there is nowhere a statement about a subselect. Isn&apos;t it verry suggesting to use this instate of hardcoded values?
+
+Do you know anywhy to fullfill this or is it impossible?</description>
+    <dc:date>2008-03-15T22:29:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=641</comments>   
+    <dc:creator>Ralf Stofer</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Khalil Jibran+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_top_tip_1_w.html#c001141</link>
+    <description>Hi , 
+Is it possible to extract WorkItemTypes and Fields Selected from query , which is stored in QueryDefinition object.
+
+As of now , I have written my own parser to extract above info.
+
+Is there any other existing thing which I can use.
+
+Thanx in advance.
+
+Regards
+Khalil J</description>
+    <dc:date>2008-04-24T16:05:38+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=641</comments>   
+    <dc:creator>Khalil Jibran</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

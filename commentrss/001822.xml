@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Will WebWork Work?</title>
+    <link>http://www.woodwardweb.com/programming/will_webwork_wo.html</link>
+    <description>Heard about WebWork from a few different sources lately. I hate Struts with a passion (especially in large teams) and find the aspx framework in .NET gets in the way between what I know I want to do and the...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-02-24T07:08:35+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/programming/will_webwork_wo.html#c002855</link>
+    <description>http://sf.net/projects/washi
+
+Ask and ye shall be answered! :-)</description>
+    <dc:date>2005-02-24T11:00:23+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1822</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/programming/will_webwork_wo.html#c002856</link>
+    <description>It&apos;s more just the hassle of migrating my templates and posts.
+
+At least if I revisited my templates I could in-ventigate google friendliness.  I&apos;ve been dropped off again from the latest index...</description>
+    <dc:date>2005-02-24T12:38:52+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1822</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

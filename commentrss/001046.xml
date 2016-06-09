@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Team Foundation Server Deployment</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_2.html</link>
+    <description><![CDATA[In some recent forums posts, it has struck me that it is sometimes not clear to people what an install of Microsoft Team Foundation Server looks like.&nbsp; I&rsquo;m posting a copy of a (very simple) slide I normally use when...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-04-03T15:04:14+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Daniel Westerdale+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/team_foundation_2.html#c001632</link>
+    <description>This looks really good. I did a presentation the other day on VS + TFS 2008 to our developer community and I could have done with this. Out of interest, is the build server able to automatically shedule deployments of the MSIs or update website and or web services.</description>
+    <dc:date>2007-10-16T17:56:49+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1046</comments>   
+    <dc:creator>Daniel Westerdale</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

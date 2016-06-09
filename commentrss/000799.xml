@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Update on Beta 2 VPC Premature Expiration</title>
+    <link>http://www.woodwardweb.com/vsts/update_on_beta.html</link>
+    <description><![CDATA[Jeff Beehler has posted an update on the Beta 2 expiration issue.&nbsp; He currently&nbsp;see's three possible alternatives: Do nothing: if you don't need to use your VPC for more than an hour or so at at time (for instance for...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-10-29T11:30:27+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+  </channel>
+</rss>

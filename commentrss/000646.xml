@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Bad Names</title>
+    <link>http://www.woodwardweb.com/technology/bad_names.html</link>
+    <description><![CDATA[For those of you morning the loss of Monad as it henceforth becomes known as Windows PowerShell (it&rsquo;s impossible to say that without putting some inflection into your voice to try and sound like a voice over for a cheesy...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-04-28T10:37:13+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Anonymous+00:00</title>
+    <link>http://www.woodwardweb.com/technology/bad_names.html#c000849</link>
+    <description>Actually I think PowerShell is a great name - Surely better than MSH. It&apos;s like arguing that MUTFS (Mac\Unix TFS) would be better than Teamprise? 
+Well, I do agree that Teamprise brings me bad memories of Borland&apos;s Inprise so maybe MUTFS would actually be better.
+
+But seriosuly, saying that geeks don&apos;t need good &quot;marketing&quot; names is like saying developer tools can look bad because developers don&apos;t care. Yet - the screen shots of Teamprise look very attractive...
+</description>
+    <dc:date>2006-04-28T11:07:50+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=646</comments>   
+    <dc:creator>Anonymous</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/technology/bad_names.html#c000850</link>
+    <description>Marketing bafflegab aside, geeks come up with the best names anyway. One of the best is the recursive name par-excellence: GNU.</description>
+    <dc:date>2006-04-28T12:12:26+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=646</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/technology/bad_names.html#c000851</link>
+    <description>You are probably right, after a few days the &quot;Powershell&quot; shock seems to have warn off, I must have just been in denial.  It was such a suprise, I was fully expecting Monad to have been the code-name and MSH to be the final one.  PowerShell seemed so different and more like a name for a Dishwasher tablet than a new shell.
+
+The whole Inprise thing passed me by at the time - though an older company changing it&apos;s name is usually a sign of trouble.  I think perhaps you are &quot;projecting&quot; some of your emotions over Borland&apos;s troubles towards Teamprise :-)
+
+However, I think we can all agree.  The name &quot;Wii&quot; is still terible after a few days consideration.</description>
+    <dc:date>2006-05-02T10:05:48+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=646</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by PowerUser+00:00</title>
+    <link>http://www.woodwardweb.com/technology/bad_names.html#c000887</link>
+    <description>Mighty scripting is very important, and not only for Geeks. As time passes, many users become technically more advanced, they use their computer as a toolshed for fast data processing.
+
+Just look what the Web has done ? Most web-developers have started with their own homepage and by the time they knew XML, XSLT, Javascript, CSS, HTML and PHP.
+
+I too think, that naming it &quot;PowerShell&quot; sounds a little stupid. But if it helps gaining momentum, attracts more users using a command-line, then I am fine with it.
+
+The disaster of Windows Scripting Host is still in my mind. What could that have been ?! Scriptable applications, IPC scripting, with any language you desire (Ruby, Python, Perl, ObjectRexx, Javascript, VBscript) Jesus! Instead it has become a toytoy for system-administrators, that use it to create desktop-shortcuts, create user-profiles, hookup printers and so on.
+
+I am pretty new to PowerShell and to me it seems, that the thing I dislike the most is not the name, but the lack of ActiveScript support (meaning: Take the language you want).
+
+PowerShell is for PowerUsers.</description>
+    <dc:date>2006-08-26T15:41:44+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=646</comments>   
+    <dc:creator>PowerUser</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

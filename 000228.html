@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Martin Woodward: TFS Top Tip #1 - WIQL Seperators</title>
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/styles-site.css" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/MartinWoodward" />
+
+<link rel="start" href="http://www.woodwardweb.com/" title="Martin Woodward" />
+<link rel="prev" href="http://www.woodwardweb.com/vsts/000227.html" title="NIMTUG Talk" />
+
+
+
+
+
+   <script type="text/javascript" src="http://www.woodwardweb.com/mt-site.js"></script>
+
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/000228.html">
+<dc:title>TFS Top Tip #1 - WIQL Seperators</dc:title>
+<dc:description><![CDATA[ I thought I&rsquo;d try and post some quick Top Tips for Team Foundation Server &ndash; in no particular order apart from as I think of them.&nbsp; Today, this came up in the forums so I thought I&rsquo;d elaborate. WIQL...]]></dc:description>
+<dc:creator>Martin</dc:creator>
+<dc:date>2006-04-25T16:13:21+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+
+<!-- Google tracker -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-71966-1";
+urchinTracker();
+</script>
+
+</head>
+
+<body>
+
+<div id="banner">
+	<H1><SPAN CLASS="textVersion">Martin Woodward</SPAN></H1>
+</div>
+
+<div id="content">
+
+<div class="blog">
+
+<div id="menu">
+<a href="http://www.woodwardweb.com/vsts/000227.html">&laquo; NIMTUG Talk</a> |
+
+<a href="http://www.woodwardweb.com/">Martin Woodward</a>
+
+</div>
+
+</div>
+
+
+<div class="blog">
+
+<h2 class="date">April 25, 2006</h2>
+
+<div class="blogbody">
+
+<h3 class="title">TFS Top Tip #1 - WIQL Seperators</h3>
+
+<p></p>
+<p>I thought I&rsquo;d try and post some quick Top Tips for Team Foundation Server &ndash; in no particular order apart from as I think of them.&nbsp; Today, this came up in the <a href="http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=366920&amp;SiteID=1">forums</a> so I thought I&rsquo;d elaborate.</p>
+<p>WIQL (pronounced Wickle), stands for Work Item Query Language and is what is used when talking to the work item store in Team Foundation Server.&nbsp; It has a SQL like construct and is used to pass queries to the server.&nbsp; Visual Studio 2005 comes with a Query Editor that generate WIQL.&nbsp; While the query editor is straightforward, it is pretty powerful and allows you to do most things.</p>
+<p>However, the query editor region sensitive which sometimes causes confusion.&nbsp; Take the following example where I am using an &ldquo;IN&rdquo; statement to list a set of values for the work item status:-</p>
+<p><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="An example of using the IN statement in Visual Studio 2005 Work Item Query Editor" src="http://www.woodwardweb.com/blog/in_usage_example.png" border="0" /></p>
+<p>Note that the values are separated by commas.&nbsp; Those of you from a SQL background find this very sensible, but what the query editor is actually doing is taking the list of values and converting them into the following WIQL statement:-</p>
+<div style="FONT-FAMILY: Courier New">SELECT&nbsp;&nbsp;&nbsp;[System.Id],&nbsp;[System.WorkItemType],&nbsp;[Microsoft.VSTS.Common.Rank],&nbsp;[System.State],&nbsp;[System.AssignedTo],&nbsp;[System.Title]&nbsp; <br />FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WorkItems&nbsp; <br />WHERE&nbsp;&nbsp;&nbsp;&nbsp;[System.TeamProject]&nbsp;=&nbsp;@project&nbsp;&nbsp; <br />AND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.State]&nbsp;IN&nbsp;(<span style="COLOR: maroon">'Active'</span>,&nbsp;<span style="COLOR: maroon">'Pending'</span>,&nbsp;<span style="COLOR: maroon">'Proposed'</span>,&nbsp;<span style="COLOR: maroon">'Requested'</span>)&nbsp; <br />ORDER&nbsp;BY&nbsp;[Microsoft.VSTS.Common.Rank],&nbsp;[System.WorkItemType],&nbsp;[System.Id]</div>
+<p>(A top sub-tip is that it is possible to save WIQL files from Visual Studio by editing the query then selecting File, Save Query As.. and then select file.&nbsp; To run a saved query from the file system double click the *.wiq file from explorer)</p>
+<p>The comma separator used by the query editor is actually being picked up from the &ldquo;List separator&rdquo; of your regional settings (shown below)&nbsp;(Start, Control Panel, Regional Settings, Customize&hellip;)</p>
+<p><a href="http://www.woodwardweb.com/blog/region_settings.png"><img alt="Region_settings" src="http://www.woodwardweb.com/blog/region_settings_thumb.jpg" border="0" /></a></p>
+<p>If you are in one of the many regions of the world that use a different list separator then you have to use that in the Visual Studio 2005 Query Editor.&nbsp; For example, if I change my list separator to be a semi-colon and then re-edit the query in the Visual Studio 2005 Query Editor I get the following:-</p>
+<p><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="Same WIQL, different list seperator" src="http://www.woodwardweb.com/blog/in_usage_example_semicolon.png" border="0" /></p>
+<p>This behaviour has some interesting side effects.&nbsp; Remember when I said that the Visual Studio 2005 Query Editor &ldquo;allows you to do most things&rdquo;.&nbsp; Well, one small problem is forcing the editor to take a character to say that you want the following to be treated as a string.&nbsp; For example, if you have a comma in the text value you are trying to use in an &ldquo;IN&rdquo; statement then you are hosed because the query editor assumes that this is a new value in your list.&nbsp; For example, if you try the following:</p>
+<p><img style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: none; MARGIN-LEFT: 25px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" alt="Query names" src="http://www.woodwardweb.com/blog/in_usage_example_names.png" border="0" /></p>
+<p>This actually gets translated by the query editor as the following:</p>
+<div style="FONT-FAMILY: Courier New">SELECT&nbsp;&nbsp;&nbsp;[System.Id],&nbsp;[System.WorkItemType],&nbsp;[Microsoft.VSTS.Common.Rank],&nbsp;[System.State],&nbsp;[System.AssignedTo],&nbsp;[System.Title]&nbsp; <br />FROM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WorkItems&nbsp; <br />WHERE&nbsp;&nbsp;&nbsp;&nbsp;[System.TeamProject]&nbsp;=&nbsp;@project&nbsp;&nbsp; <br />AND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.AssignedTo]&nbsp;IN&nbsp;(<span style="COLOR: maroon">''</span><span style="COLOR: maroon">'Woodward'</span>,&nbsp;<span style="COLOR: maroon">'Martin'</span><span style="COLOR: maroon">''</span>,&nbsp;<span style="COLOR: maroon">''</span><span style="COLOR: maroon">'Sell'</span>,&nbsp;<span style="COLOR: maroon">'Clark'</span><span style="COLOR: maroon">''</span>)&nbsp; <br />ORDER&nbsp;BY&nbsp;[Microsoft.VSTS.Common.Rank],&nbsp;[System.WorkItemType],&nbsp;[System.Id]</div>
+<p>As you can tell, it parses on the commas first, which is not want you wanted at all.&nbsp; If you manually type in the WIQL correctly as <code>IN (&lsquo;Woodward, Martin&rsquo;, &lsquo;Sell, Clark&rsquo;)</code> then the query editor will display this as <code>Woodward, Martin, Sell, Clark</code> &ndash; which in turn gets treated as <code>IN (&lsquo;Woodward&rsquo;,&rsquo;Martin&rsquo;,&rsquo;Sell&rsquo;,&rsquo;Clark&rsquo;)</code> when the WIQL is generated by the editor.&nbsp; </p>
+<p>Hey ho &ndash; <a href="http://www.csell.net/">Clark Sell</a> has a <a href="http://csell.net/PermaLink,guid,aae3824a-d5d5-4326-a5b0-d7ee1b5c1d25.aspx">post</a> about changing the regional settings to enable to to query assigned to names but be warned it may have nasty side effects in other programs on your machine.</p>
+<p>Hmm.&nbsp; When I thought about posting a TFS Tip a day for the next couple of weeks I didn&rsquo;t intend them to be this long.&nbsp; Expect the next one to be more concise&hellip;</p>
+<p><font size="1"><strong>Now playing:</strong> <a href="http://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?artistTerm=Carl Franklin">Carl Franklin</a> - <a href="http://phobos.apple.com/WebObjects/MZSearch.woa/wa/advancedSearchResults?songTerm=Avalon, AJAX, Vista, and more with Tim Huckaby&amp;artistTerm=Carl Franklin">Avalon, AJAX, Vista, and more with Tim Huckaby</a></font></p>
+
+<a name="more"></a>
+
+
+<span class="posted">Posted by Martin at April 25, 2006 04:13 PM
+
+<br /></span>
+
+</div>
+
+
+                     
+
+                                          <div id="comments" class="comments">
+                        <div class="comments-content">
+                           
+                        </div>
+
+                         
+                        <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" onsubmit="if (this.bakecookie.checked) rememberMe(this)">
+                           <input type="hidden" name="static" value="1" />
+                           <input type="hidden" name="entry_id" value="228" />
+                           
+                           <div class="comments-open" id="comments-open">
+                              <h2 class="comments-head">Post a comment</h2>
+                              
+                              <div class="comments-body">
+                              
+                                 
+
+                                 <div id="comments-open-data">
+                                    <div id="name-email">
+                                       <p>
+                                          <label for="comment-author">Name:</label>
+                                          <input id="comment-author" name="author" size="30" />
+                                       </p>
+                                       <p>
+                                          <label for="comment-email">Email Address:</label>
+                                          <input id="comment-email" name="email" size="30" />
+                                       </p>
+                                    </div>
+
+                                    <p>
+                                       <label for="comment-url">URL:</label>
+                                       <input id="comment-url" name="url" size="30" />
+                                    </p>
+                                    <p>
+                                       <label for="comment-bake-cookie"><input type="checkbox"
+                                          id="comment-bake-cookie" name="bakecookie" onclick="if (!this.checked) forgetMe(document.comments_form)" value="1" />
+                                          Remember personal info?</label>
+                                    </p>
+                                 </div>
+
+                                 <p id="comments-open-text">
+                                    <label for="comment-text">Comments: </label>
+                                    <textarea id="comment-text" name="text" rows="10" cols="30"></textarea>
+                                 </p>
+                                 <div id="comments-open-footer" class="comments-open-footer">
+                                    <input type="submit" accesskey="v" name="preview" id="comment-preview" value="Preview" />
+                                    <input type="submit" accesskey="s" name="post" id="comment-post" value="Post" />
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                        
+                     </div>
+                     
+
+
+
+
+
+
+</div>
+</div>
+
+
+<div id="links">
+
+<div class="sidetitle">
+Sections
+</div>
+<div class="side">
+
+<a href="http://www.woodwardweb.com/" TITLE="Martin Woodward">Home</a><br />
+<a href="http://www.woodwardweb.com/Books/">Books (8)</a><br />
+<a href="http://www.woodwardweb.com/Buddies/">Buddies (10)</a><br />
+<a href="http://www.woodwardweb.com/Dotnet/">Dotnet (23)</a><br />
+<a href="http://www.woodwardweb.com/Films/">Films (2)</a><br />
+<a href="http://www.woodwardweb.com/Gadgets/">Gadgets (9)</a><br />
+<a href="http://www.woodwardweb.com/Java/">Java (9)</a><br />
+<a href="http://www.woodwardweb.com/Personal/">Personal (31)</a><br />
+<a href="http://www.woodwardweb.com/Photos/">Photos (2)</a><br />
+<a href="http://www.woodwardweb.com/Podcasting/">Podcasting (8)</a><br />
+<a href="http://www.woodwardweb.com/Programming/">Programming (23)</a><br />
+<a href="http://www.woodwardweb.com/Sandbox/">Sandbox (2)</a><br />
+<a href="http://www.woodwardweb.com/Software/">Software (6)</a><br />
+<a href="http://www.woodwardweb.com/Teamprise/">Teamprise (12)</a><br />
+<a href="http://www.woodwardweb.com/Technology/">Technology (26)</a><br />
+<a href="http://www.woodwardweb.com/Vsts/">Vsts (52)</a><br />
+<a href="http://www.woodwardweb.com/Web Design/">Web Design (2)</a><br />
+<a href="http://www.woodwardweb.com/Web Sites/">Web Sites (19)</a><br />
+<a href="http://www.woodwardweb.com/Work/">Work (5)</a><br />
+
+</div>
+
+<div class="sidetitle">
+Search
+</div> 
+<div class="side">
+<form method="get" action="http://www.woodwardweb.com/mt/mt-search.cgi">
+<input type="hidden" name="IncludeBlogs" value="2" />
+<label for="search" accesskey="4">Search this site:</label><br />
+<input id="search" name="search" size="20" /><br />
+<input type="submit" value="Search" />
+</form>
+</div>
+
+<div class="syndicate">
+<a href="http://feeds.feedburner.com/MartinWoodward">Syndicate this site (XML)</a>
+<br/><br/>
+<a href="http://clustrmaps.com/counter/maps.php?url=http://www.woodwardweb.com" id="clustrMapsLink"><img src="http://clustrmaps.com/counter/index2.php?url=http://www.woodwardweb.com" border=0 alt="Locations of visitors to this page"onError="this.onError=null; this.src='http://www.meetomatic.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com/'">
+</a>
+</div>
+
+<div class="syndicate">
+<a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights" /></a><br />
+This weblog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+</div>
+
+
+</div>
+
+<br clear="all" />
+
+
+</body>
+</html>

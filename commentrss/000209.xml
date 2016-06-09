@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>TFS Source Control Lock Types</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_source_cont_1.html</link>
+    <description>As I have mentioned before, when you check out a file for edit in Team Foundation Source Control, you are actually telling the server that you are going to edit a particular version of a particular file that you have...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-03-23T08:54:48+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Ben+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_source_cont_1.html#c000706</link>
+    <description>I&apos;d pick none too, but then I am a cvs/svn type  b(^_^)
+
+I&apos;m reading with interest the work you&apos;re doing.</description>
+    <dc:date>2006-03-24T12:52:10+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=209</comments>   
+    <dc:creator>Ben</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by David Aronchick+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_source_cont_1.html#c005583</link>
+    <description>Is there anyway to force Lock &quot;Check-in&quot; across a project?</description>
+    <dc:date>2006-11-07T18:03:13+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=209</comments>   
+    <dc:creator>David Aronchick</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Martin+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_source_cont_1.html#c005643</link>
+    <description>Not really.
+
+You can however force a &quot;check-out&quot; lock when check-outs occur on a project which is normally what people want (thereby stopping two people checking out the file at the same time).  To do that in Viusal Studio, right click on the Team Project in the Team Explorer, Select Team Project Settings, Source Control.  There is a tab with &quot;Check-out Settings&quot; - if you un-check the option &quot;Enable multiple check out&quot; then only one person can check out the file at any one time.
+
+Personally I have strong opinions why I think multiple check-outs being enabled are a good idea, but I&apos;m aware of folks with equally strong opinions to the opposite - it very much depends on the culture of your organization.
+</description>
+    <dc:date>2006-11-08T07:44:23+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=209</comments>   
+    <dc:creator>Martin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by BalochDude+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/tfs_source_cont_1.html#c084475</link>
+    <description>We have a problem. Don&apos;t know how to resolve it. Whenever someone adds or deletes a file in our project. The project file is checked out. I understand why (Because Visual Studio needs to update the .vbproj file). 
+
+Here is the problem.
+
+If I want to add files but I am not finished working on my bit of code and I also check out the .vbproj file then nobody else can add/delete files at the same time. Now I cant check in the incomplete bit of code and now everyone else has to wait for me to check in so that they can do their stuff.
+
+Any solution.</description>
+    <dc:date>2009-08-04T11:33:35+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=209</comments>   
+    <dc:creator>BalochDude</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

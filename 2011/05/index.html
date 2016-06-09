@@ -1,0 +1,700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/">
+<dc:title>Martin Woodward</dc:title>
+<dc:description></dc:description>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <title>Martin Woodward: May 2011 Archives</title>
+
+
+    <link rel="prev" href="http://www.woodwardweb.com/2011/03/" title="March 2011" />
+    <link rel="next" href="http://www.woodwardweb.com/2011/06/" title="June 2011" />
+
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-archive-listing mt-datebased-monthly-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <h1 id="page-title" class="archive-title">May 2011 Archives</h1>
+
+
+
+
+
+                            
+                            <div id="entry-2266" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/programming/getting_started_1.html" rel="bookmark">Getting Started with the TFS SDK for Java</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2011-05-26T18:19:03+00:00">May 26, 2011  6:19 PM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>As you may have read over on <a href="http://blogs.msdn.com/b/bharry/archive/2011/05/16/announcing-a-java-sdk-for-tfs.aspx">Brian Harry’s blog</a>, we recently made available a TFS SDK for Java.&#160; This is the same core code that we use in Team Explorer Everywhere 2010 SP1 to talk to TFS from Eclipse and from our Cross-platform command line client – just packaged up into a single jar file to make it easier to consume and re-distribute in your own applications.</p>  <p>The TFS SDK for Java ships with a bunch of sample applications, check-in policies, custom work item controls and some handy snippets of code.&#160; It also includes an Ant build script to allow you to build the samples that we ship.&#160; However – I thought it would be interesting to walk through how you can consume the SDK in a simple Eclipse project and make use of some of the nice Eclipse features such as inline Javadoc.</p>  <p>To begin, download the TFS SDK for Java 10.1.0 from the download site and unzip it to a handy location. Next create a new blank Java project in Eclipse (File, New, Java Project).</p>  <p><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="New Java Project dialog" border="0" alt="New Java Project dialog in Eclipse" src="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-the-TFS-SDK-for-Jav_8CCD/image_3.png" width="280" height="338" /></p>  <p>Give the project a name (i.e. com.contoso.tfsplay), then press Finish to create the empty project.&#160; The next thing that we are going to do is browse to the empty project in the file system to copy over the relevant files in the SDK.&#160; Having the SDK as part of your Java project makes it much easier to build and deploy it later.</p>  <p>First of all, browse to your Eclipse workspace folder in the file system (for example mine is at C:\play\tfssdk4j\com.contoso.tfsplay but you can find where yours is by right clicking on the project you just created and selecting properties).&#160; Inside the project folder, create a new folder to hold your TFS SDK bits.&#160; Mine is called tfssdk at the root at the folder.&#160; Inside this copy the redist folder from the TFS SDK ZIP archive.&#160; I also personally ZIP up the Javadoc folder from the TFS and also include it – however if you have a copy of the TFS SDK Javadoc installed on an intranet server somewhere you could just point to it later on.</p>  <p>Now that we have the SDK inside our project, if I press refresh back in Eclipse on the package explorer I get something that looks like the following:</p>  <p><a href="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-the-TFS-SDK-for-Jav_8CCD/image_5.png"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="Eclipse with the TFS SDK in a project" border="0" alt="Eclipse with the TFS SDK in a project" src="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-the-TFS-SDK-for-Jav_8CCD/image_thumb_1.png" width="640" height="480" /></a></p>  <p>Now we want to configure the project to include the SDK in it’s build path. Right click on your project, select Properties, then Java Build Path.&#160; In the Libraries tab press Add JAR… Select the com.microsoft.tfs.sdk-10.1.0.jar file from your tfssdk/redist/lib folder.&#160; Now that the JAR file is included, we want to expand it to let Eclipse know about the Javadoc and the natives.&#160; Double click on the Javadoc location and point it to where the TFS SDK Javadoc is located.&#160; Do the same for the natives for your platform.</p>  <p><a href="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-the-TFS-SDK-for-Jav_8CCD/image_11.png"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="Configuring Java build path in Eclipse" border="0" alt="Configuring Java build path in Eclipse" src="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-the-TFS-SDK-for-Jav_8CCD/image_thumb_4.png" width="640" height="345" /></a></p>  <p>Your JAR file definition should then look like the above and you are now up and ready to start talking to TFS via the SDK in your Java project.</p>  <p>For our example, let’s create a quick class with a main method. (Right click on the project, New, Class…)</p>  <p><a href="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-the-TFS-SDK-for-Jav_8CCD/image_9.png"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="New Class Dialog" border="0" alt="New Class Dialog" src="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-the-TFS-SDK-for-Jav_8CCD/image_thumb_3.png" width="542" height="637" /></a></p>  <p>Then inside the main method, I’ll quickly steal the code that Brian used in his <a href="http://blogs.msdn.com/b/bharry/archive/2011/05/16/announcing-a-java-sdk-for-tfs.aspx">TFS SDK for Java announcement blog</a> post.&#160; </p>  <p><a href="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-the-TFS-SDK-for-Jav_8CCD/image_15.png"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="Example code in Eclipse" border="0" alt="Example code in Eclipse" src="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-the-TFS-SDK-for-Jav_8CCD/image_thumb_6.png" width="640" height="371" /></a></p>  <p>Once the code is included and modified to point at my TFS project collection, I’ll quickly debug the code (Run, Debug As…, Java Application…)</p>  <p>I’ll be posting more samples shortly, but now the code is running let’s step through it.&#160; To begin with we first need to get hold of a project collection. In Brian’s example he uses:</p>  <p><font face="Courier New">TFSTeamProjectCollection tpc =      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; new TFSTeamProjectCollection(&quot;http://tfs2010:8080/tfs/DefaultCollection&quot;);</font></p>  <p>The reason this works is that the native code libraries are configured correctly so the SDK can then get the credentials of the logged in user and use those to authenticate with TFS.&#160; However – what if you don’t want to use those credentials but want to pass them in via code?&#160; Well luckily the TFSTeamProjectCollection has lots of overloads including one that allows you to pass username, password and domain.</p>  <p><a href="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-the-TFS-SDK-for-Jav_8CCD/image_17.png"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="Javadoc for TFSTeamProjectCollection" border="0" alt="Javadoc for TFSTeamProjectCollection" src="http://www.woodwardweb.com/Windows-Live-Writer/Getting-Started-with-the-TFS-SDK-for-Jav_8CCD/image_thumb_7.png" width="640" height="324" /></a></p>  <p><font face="Courier New">TFSTeamProjectCollection tpc =      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; new TFSTeamProjectCollection(&quot;http://tfs2010:8080/tfs/DefaultCollection&quot;,       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &quot;username&quot;,&quot;domain&quot;,&quot;password&quot;);</font></p>  <p>In our example, we now want to query work items – so we get hold of a work item client as follows:</p>  <p><font face="Courier New">WorkItemClient workItemClient = tpc.getWorkItemClient();</font></p>  <p>We then create the query that we want to run.&#160; In the example we’re going to execute an ad-hoc query in TFS’s Work Item Query Language (WIQL).</p>  <p><font face="Courier New">// Define the WIQL query.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />String wiqlQuery =       <br />&#160;&#160;&#160; </font><font face="Courier New">&quot;Select ID, Title from WorkItems where (State = 'Active') order by Title&quot;;</font></p>  <p><font face="Courier New">// Run the query and get the results.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />WorkItemCollection workItems = workItemClient.query(wiqlQuery);</font>     <br /></p>  <p>&#160;</p>  <p>Finally, we then need to loop over the collection of results and display them.&#160; The WorkItemCollection class contains logic to efficiently handle large result sets.&#160; It will page in a set of query results as needed rather than waiting for all the results to be returned before you can start iterating over them.&#160; This makes it much more efficient if you just need a page of data – i.e.</p>  <p><font face="Courier New">final int maxToPrint = 20;</font></p>  <p><font face="Courier New">for (int i = 0; i &lt; workItems.size(); i++)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />{       <br />&#160;&#160;&#160; if (i &gt;= maxToPrint)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160; {       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; System.out.println(&quot;[...]&quot;);&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; break;       <br />&#160;&#160;&#160; }       <br />&#160;&#160;&#160; WorkItem workItem = workItems.getWorkItem(i);       <br />&#160;&#160;&#160; <br />&#160;&#160;&#160; System.out.println(workItem.getID() + &quot;\t&quot; + workItem.getTitle());&#160; <br />}       <br /></font></p>  <p>&#160;</p>  <p>The full code for the QueryWorkItemExample is below.&#160; Hope that is makes a bit more sense now that we’ve walked through it.&#160;&#160; </p>  <p><font face="Courier New">package com.contso.tfsplay;</font></p>  <p><font face="Courier New">import com.microsoft.tfs.core.TFSTeamProjectCollection;      <br />import com.microsoft.tfs.core.clients.workitem.WorkItem;       <br />import com.microsoft.tfs.core.clients.workitem.WorkItemClient;       <br />import com.microsoft.tfs.core.clients.workitem.query.WorkItemCollection;</font></p>  <p><font face="Courier New">public class QueryWorkitemExample {</font></p>  <p><font face="Courier New">&#160;&#160;&#160; /**      <br />&#160;&#160;&#160;&#160; * @param args       <br />&#160;&#160;&#160;&#160; */       <br />&#160;&#160;&#160; public static void main(String[] args)       <br />&#160;&#160;&#160; {       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; TFSTeamProjectCollection tpc =       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; new TFSTeamProjectCollection(&quot;</font><font face="Courier New">http://tfs2010:8080/tfs/DefaultCollection&quot;</font><font face="Courier New">,      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &quot;username&quot;,&quot;password&quot;,&quot;domain&quot;);       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; WorkItemClient workItemClient = tpc.getWorkItemClient();       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; // Define the WIQL query.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; String wiqlQuery =       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &quot;Select ID, Title from WorkItems where (State = 'Active') order by Title&quot;;       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; // Run the query and get the results.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; WorkItemCollection workItems = workItemClient.query(wiqlQuery);</font></p>  <p><font face="Courier New">&#160;&#160;&#160;&#160;&#160;&#160;&#160; System.out.println(&quot;Found &quot; + workItems.size() + &quot; work items.&quot;);      <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; System.out.println();       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; // Write out the heading.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; System.out.println(&quot;ID\tTitle&quot;);       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; // Output the first 20 results of the query       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; final int maxToPrint = 20;       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; for (int i = 0; i &lt; workItems.size(); i++)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; {       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; if (i &gt;= maxToPrint)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; {       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; System.out.println(&quot;[...]&quot;);&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; break;       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; }       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; WorkItem workItem = workItems.getWorkItem(i);       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; System.out.println(workItem.getID() + &quot;\t&quot; + workItem.getTitle());&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; }       <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160; System.out.println(&quot;Done&quot;);       <br />&#160;&#160;&#160; }</font></p>  <p><font face="Courier New">}</font></p>  <p>In future posts I’ll talk about how to do more advanced things in Java against TFS.&#160; If you have any requests then please drop me a line, but for now take a look at the snippets that we ship in the SDK.&#160; I’ll also be posting walkthrough posts discussing custom check-in policies in Team Explorer Everywhere, custom Work Item Controls as well as other ways of extending Team Explorer Everywhere and using the SDK.&#160; Again – if you have anything in particular that you’d like me to use as an example then let me know.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+                            
+                            <div id="entry-2265" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.woodwardweb.com/personal/excel_year_plan_1.html" rel="bookmark">Excel Year Planner Re-visited</a></h2>
+        <div class="asset-meta">
+            <span class="byline">
+    
+                By <span class="vcard author"><a class="fn url" href="http://www.woodwardweb.com">Martin Woodward</a></span> on <abbr class="published" title="2011-05-18T02:49:28+00:00">May 18, 2011  2:49 AM</abbr>
+    
+            </span>
+
+            
+            
+
+        </div>
+    </div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p><a href="http://cid-c7a08ae2600d197a.office.live.com/view.aspx/Public/YearPlanner/CurrentYearPlanner.xlsx"><img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px 0px 0px 5px; padding-left: 0px; padding-right: 0px; display: inline; float: right; border-top: 0px; border-right: 0px; padding-top: 0px" title="current_year_planner" border="0" alt="current_year_planner" align="right" src="http://www.woodwardweb.com/Windows-Live-Writer/Excel-Year-Planner-Re-visited_12D6E/current_year_planner_3.png" width="179" height="126" /></a>A <a href="http://www.woodwardweb.com/personal/excel_year_plan.html">while ago I blogged about my surprising obsession for having a year planner by my desk</a>.&#160; For people that know me this probably comes as a huge shock as I don’t come across as someone who is particularly well organized – but I just find it very useful.&#160; Today I had an email from Roz Aidie asking me if it was possible to make the calendar display the Academic year.&#160;&#160; As the spreadsheet is all based on conditional formatting formulas, the answer is happily yes.&#160; Just change the months at the top of the column and you get the days displayed for that month.</p>  <p>I posted a <a href="http://cid-c7a08ae2600d197a.office.live.com/view.aspx/Public/YearPlanner/CurrentYearPlanner.xlsx">new version of the year planner</a> that shows the current calendar year, alongside the Financial (April – March) and Academic (September – August) year.&#160; You can get a version that shows the current calendar year along with the previous and next year <a href="http://cid-c7a08ae2600d197a.office.live.com/view.aspx/Public/YearPlanner/YearPlanner.xlsx">here</a> (which is the version that I use).&#160; Judging by the feedback, other people find this spreadsheet year planner helpful too – do let me know if you find yourself using it.</p>
+        </div>
+
+
+
+    </div>
+    <div class="asset-footer"></div>
+</div>
+
+
+
+
+                            <div class="content-nav">
+                                <a href="http://www.woodwardweb.com/2011/03/">&laquo; March 2011</a> |
+                                <a href="http://www.woodwardweb.com/">Main Index</a> |
+                                <a href="http://www.woodwardweb.com/archives.html">Archives</a>
+                                | <a href="http://www.woodwardweb.com/2011/06/">June 2011 &raquo;</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-1741"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-1742"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tee&amp;limit=20';return false;" rel="tag">tee</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=4&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2011/06/">June 2011</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2011/05/">May 2011</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2011/03/">March 2011</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/12/">December 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/11/">November 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/10/">October 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/09/">September 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/06/">June 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/05/">May 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/04/">April 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/03/">March 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2010/02/">February 2010</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/11/">November 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/programming/getting_started_1.html">Getting Started with the TFS SDK for Java</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/personal/excel_year_plan_1.html">Excel Year Planner Re-visited</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

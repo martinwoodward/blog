@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Talking to VSTS from Java</title>
+    <link>http://www.woodwardweb.com/programming/talking_to_vsts_1.html</link>
+    <description>Update (Jan 2006): If you would like to use some of the features of VSTS from Eclipse then you might want to take a look at my new employer, Teamprise. They provide an eclipse plugin to access Team Foundation Source...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-06-29T23:26:30+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Eoin Wren+00:00</title>
+    <link>http://www.woodwardweb.com/programming/talking_to_vsts_1.html#c000492</link>
+    <description>Thanks for posting this...I have been trying to write a simple web services client for the Work Item tracking service on VSTS using java and axis..and ran into trouble with authentication...this helps a lot</description>
+    <dc:date>2006-03-02T10:59:18+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=111</comments>   
+    <dc:creator>Eoin Wren</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Ashish Dixit+00:00</title>
+    <link>http://www.woodwardweb.com/programming/talking_to_vsts_1.html#c000831</link>
+    <description>This absolutley fantastic site. Which gives us very useful information.
+keep posting</description>
+    <dc:date>2006-03-30T17:37:22+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=111</comments>   
+    <dc:creator>Ashish Dixit</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by ncarbonell+00:00</title>
+    <link>http://www.woodwardweb.com/programming/talking_to_vsts_1.html#c010344</link>
+    <description>Thank you for your article.  It really save me a week of research.  We are trying to integrate a .net application into our java software and the only authentication protocol they allow is ntlm.</description>
+    <dc:date>2007-02-13T19:18:11+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=111</comments>   
+    <dc:creator>ncarbonell</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by bPawn+00:00</title>
+    <link>http://www.woodwardweb.com/programming/talking_to_vsts_1.html#c070418</link>
+    <description>I followed closely and I get the following:
+
+run:
+- ntlm authentication scheme selected
+- Credentials cannot be used for NTLM authentication: org.apache.commons.httpclient.UsernamePasswordCredentials
+org.apache.commons.httpclient.auth.InvalidCredentialsException: Credentials cannot be used for NTLM authentication: org.apache.commons.httpclient.UsernamePasswordCredentials
+        at org.apache.commons.httpclient.auth.NTLMScheme.authenticate(NTLMScheme.java:331)
+        at org.apache.commons.httpclient.HttpMethodDirector.authenticateHost(HttpMethodDirector.java:277)
+        at org.apache.commons.httpclient.HttpMethodDirector.authenticate(HttpMethodDirector.java:229)
+        at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:167)
+        at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:393)
+        at org.apache.axis.transport.http.CommonsHTTPSender.invoke(CommonsHTTPSender.java:196)
+        at org.apache.axis.strategies.InvocationStrategy.visit(InvocationStrategy.java:32)
+        at org.apache.axis.SimpleChain.doVisiting(SimpleChain.java:118)
+        at org.apache.axis.SimpleChain.invoke(SimpleChain.java:83)
+        at org.apache.axis.client.AxisClient.invoke(AxisClient.java:165)
+        at org.apache.axis.client.Call.invokeEngine(Call.java:2784)
+        at org.apache.axis.client.Call.invoke(Call.java:2767)
+        at org.apache.axis.client.Call.invoke(Call.java:2443)
+        at org.apache.axis.client.Call.invoke(Call.java:2366)
+        at 
+org.apache.axis.client.Call.invoke(Call.java:1812)
+        at org.tempuri.InergopolosSoapStub.storms(InergopolosSoapStub.java:855)
+        at dbclient.DbClient.doit(DbClient.java:28)
+        at dbclient.Main.main(Main.java:21)
+- Failure authenticating with NTLM @inergopta:80
+(401)Unauthorized</description>
+    <dc:date>2008-06-22T09:43:22+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=111</comments>   
+    <dc:creator>bPawn</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by johnwalker00+00:00</title>
+    <link>http://www.woodwardweb.com/programming/talking_to_vsts_1.html#c084305</link>
+    <description>@bpawn
+
+I had this problem when I passed in my username in the wrong format
+
+domain\\username is right
+username@region threw the exception.</description>
+    <dc:date>2008-10-09T00:27:53+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=111</comments>   
+    <dc:creator>johnwalker00</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

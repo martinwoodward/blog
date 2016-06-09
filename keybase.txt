@@ -1,0 +1,59 @@
+==================================================================
+https://keybase.io/martinwoodward
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://www.woodwardweb.com
+  * I am martinwoodward (https://keybase.io/martinwoodward) on keybase.
+  * I have a public key with fingerprint 8381 3ADC DA45 92A6 2D11  7EB5 07AA 6B77 975E 6D50
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "83813adcda4592a62d117eb507aa6b77975e6d50",
+            "host": "keybase.io",
+            "key_id": "07aa6b77975e6d50",
+            "uid": "ed628ed04370dfb1e22ece1b59ce5a00",
+            "username": "martinwoodward"
+        },
+        "service": {
+            "hostname": "www.woodwardweb.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1412710703,
+    "expire_in": 157680000,
+    "prev": "d71aabb84743bb8396ade6fd4f3da20350c0f747834f9dc650cf5fa8752d9c5c",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+owFtkb9rFEEUxzdnVDwUjK3dgI0cx8zOr93tbKxFUoiFx8y8t5cx3s66u7nNGYKF
+KVIGQUQQBBtBGxt7eztLxcJG/wU7nT2Szmke773P9ztv5p1cOZeMti6+3+1fPljc
+2fjy+a9NtsUtdUBsgBUpDsgurkPpqzk2deOrjhQk4xnjBhwYIfPUqBQY02gl1cYo
+q3WuJSqQlEzITmgHRbSxpsWpD7EWk5mHWP0Pv7duIKg0Q6CCawqlZZim6JBZmTuU
+hq7BFpvKLDDSC9N0vupDgN40QA4nJPaW3uEw+TDAKdf3/fSM6tFOXVhEo7oJXXDh
+UQR2uq4uBn23qtcCtLNTq5n1FcRPiIIlNq0PFSlYJF3nB28mWKoZ1ZRPCO7XvsGZ
+HwipVUbjGa7BZbQEzYyxNhNa8Bh4rgygKkGUHExKuaSOllrojIsyB6diXsrSZFqm
+kDvpyPC4x1UghYhjmnm0bP28Mt1eg+RwfHx7M9kaJRfOj4Y1JuNLV8+W+8QnrzbG
+x6tn0xO1/fvu5k37/fKH1zeeJ2/u/Xx69OPttfsfv3769vDF9aM/7+DXPw==
+=yt9L
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/martinwoodward
+
+==================================================================

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Podcasts in iTunes</title>
+    <link>http://www.woodwardweb.com/podcasting/podcasts_in_itu.html</link>
+    <description>I downloaded version 4.9 of iTunes today that contains support for Podcasts. Overall it seems ok, very easy to use but no support for Bittorrent which means I&apos;ll be sticking with nimiq for a while yet to keep up to...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-07-03T20:40:01+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Carl Franklin+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/podcasts_in_itu.html#c000758</link>
+    <description>.NET Rocks! no longer requires bittorrent for podcast downloading. It&apos;s both a blessing and a curse, as we&apos;re once again maxed out, bandwidth-wise. As soon as BitTorrent goes into iTunes, we&apos;ll switch back.
+
+Carl</description>
+    <dc:date>2005-07-04T07:08:14+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=527</comments>   
+    <dc:creator>Carl Franklin</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Sound Monkey+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/podcasts_in_itu.html#c000759</link>
+    <description>I sure hope it comes.</description>
+    <dc:date>2005-07-04T07:10:04+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=527</comments>   
+    <dc:creator>Sound Monkey</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Time to Dump iTunes</title>
+    <link>http://www.woodwardweb.com/podcasting/time_to_dump_it.html</link>
+    <description>Via Wired, there is now a WinAmp plugin that allows you to sync your iPod from WinAmp. Called mlipod, it also allows you to copy songs from your iPod back onto your computer - fantastic. Anyone know a plugin for...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2005-05-25T07:07:32+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+    <item>
+    <title>Comment by Svein+00:00</title>
+    <link>http://www.woodwardweb.com/podcasting/time_to_dump_it.html#c000287</link>
+    <description>I am also waiting for better support for podcasts.  I have been using WinAmp w/ml_ipod for almost a year and I love it.  But I also love podcasts and I like the new way iTunes integrate the two.
+
+I want to do it all from WinAmp...  browse podcasts, download and transfer to iPod.  So please make the WinAmp/iPod experience even better :D</description>
+    <dc:date>2005-07-04T20:21:23+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=102</comments>   
+    <dc:creator>Svein</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

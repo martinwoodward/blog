@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Policy Override Email Alerts</title>
+    <link>http://www.woodwardweb.com/vsts/policy_override.html</link>
+    <description>A guiding principle with Team Foundation Server is that all the flexibility of configuration and all the control should not get in the way of getting work done.&#160; For example, if you try to do a check-in that fails a...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2009-06-10T12:42:45+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Tom Hall+00:00</title>
+    <link>http://www.woodwardweb.com/vsts/policy_override.html#c003462</link>
+    <description>Funny that you&apos;ve blogged about this because the other day I was considering asking you a how-to question which was how to stop policy overrides on certain policies... Realising it wasnt possible I subscribed to all check-in alerts - we only have about 10 projects and 9-12 developers at the moment so I&apos;m not being mailbombed yet... Your tip will come in useful :)</description>
+    <dc:date>2009-06-11T23:45:23+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=2218</comments>   
+    <dc:creator>Tom Hall</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

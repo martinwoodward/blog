@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>VS 2005 Web Application Project V1.0 Released</title>
+    <link>http://www.woodwardweb.com/dotnet/vs_2005_web_app.html</link>
+    <description><![CDATA[OK, so the odds that you read my blog and not Scott Guthrie&rsquo;s are pretty low, especially if you have any interest in this topic.&nbsp; However, Scott just announced that the VS 2005 Web Application Project has gone V1.0.&nbsp; I...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2006-05-09T10:47:43+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by scottgu+00:00</title>
+    <link>http://www.woodwardweb.com/dotnet/vs_2005_web_app.html#c001682</link>
+    <description>Cool stuff -- thanks for the nice comments! :-)
+
+Scott</description>
+    <dc:date>2006-05-09T15:18:08+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1069</comments>   
+    <dc:creator>scottgu</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

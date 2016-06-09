@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Building Ant projects from Team Build</title>
+    <link>http://www.woodwardweb.com/teamprise/building_ant_pr.html</link>
+    <description>Update: With Teamprise 3.0 we included this work into the freely downloadable Teamprise Extensions for Team Build. The source is also provided under the MS-PL if you are interested. You should definately look at the new version as it contains...</description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-12-03T15:56:31+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.32-en" />
+    <admin:errorReportsTo rdf:resource="mailto:webmaster@woodwardweb.com"/>
+
+    
+    <item>
+    <title>Comment by Ed Blankenship+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/building_ant_pr.html#c002465</link>
+    <description>Wow this is really helpful!  Please let us know when you make updates and include more features with the task in future releases of Teamprise.</description>
+    <dc:date>2007-12-04T09:21:46+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1718</comments>   
+    <dc:creator>Ed Blankenship</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Krishnamurthy Dixit+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/building_ant_pr.html#c002524</link>
+    <description>I have created a Java Application in Eclipse IDE(Version 3.3.1.1), used AntBuild (Version 
+
+1.7.0) and trying to do a Team Build using Team Foundation Server 2008. I have installed JDK 
+
+6.0 (jdk1.6.0_06).I am facing the error while running the Team Build.
+
+    Ant project &quot;C:\Documents and Settings\username\Local 
+
+Settings\Temp\teamprojectname\BuildType\Sources\build.xml&quot; is building with target(s) 
+
+&quot;default&quot;
+
+Kindly suggest me the steps.
+</description>
+    <dc:date>2008-04-21T05:48:58+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1718</comments>   
+    <dc:creator>Krishnamurthy Dixit</dc:creator>
+  </item>
+  
+    <item>
+    <title>Comment by Larry+00:00</title>
+    <link>http://www.woodwardweb.com/teamprise/building_ant_pr.html#c002679</link>
+    <description><![CDATA[I am doing the build using the above you have mentioned. Build works fine. But now I want to checkin the ear file back to tfs using build process. I am not sure how to do it. THis is  how i tried but it fails.
+ 
+    
+         BuildFile="$(SolutionRoot)\build\build.xml"
+         BuildUri="$(BuildUri)"
+         Lib="&quot;D:\Build\TFS_BUILDS\Distribution and Client Services\BulkEmail_OLD\Sources\source\lib"
+         />
+  
+  
+    
+    
+  
+
+Error message
+  Task "Exec"
+    Command:
+    "D:\Program Files\Microsoft Visual Studio 8\Common7\IDE\tf.exe" Checkout D:\Build\TFS_BUILDS\Distribution and Client Services\BulkEmail_OLD\BuildType\..\Sources\build\beadapter.ear
+    Unable to determine the workspace.
+
+Can you please suggest a solution?]]></description>
+    <dc:date>2009-02-23T16:37:54+00:00</dc:date>  <comments>http://www.woodwardweb.com/mt/mt-comments.cgi?entry_id=1718</comments>   
+    <dc:creator>Larry</dc:creator>
+  </item>
+  
+  </channel>
+</rss>

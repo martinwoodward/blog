@@ -1,0 +1,1286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="application-name" content="Martin Woodward"/>
+<meta name="description" content="Woodwardweb, the blog of Martin Woodward"/>
+<meta name="application-url" content="http://www.woodwardweb.com"/>
+
+<link rel="icon" href="http://www.woodwardweb.com/favicon.ico" type="image/ico" />
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_32.png" sizes="32x32"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_48.png" sizes="48x48"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_64.png" sizes="64x64"/>
+<link rel="icon" href="http://www.woodwardweb.com/mwicons/Martin_128.png" sizes="128x128"/>
+
+<link rel="openid.server" href="http://www.myopenid.com/server" />
+<link rel="openid.delegate" href="http://martinwoodward.myopenid.com/" />
+
+<link rel="stylesheet" href="http://www.woodwardweb.com/woodwardweb.css" type="text/css" />
+<link rel="start" href="http://www.woodwardweb.com/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://www.woodwardweb.com/index.xml" />
+
+<script type="text/javascript" src="http://www.woodwardweb.com/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.woodwardweb.com/programming/getting_ubuntu.html">
+<dc:title>Getting Ubuntu 7.10 working in Microsoft Virtual PC 2007</dc:title>
+<dc:description><![CDATA[The new "Gutsy Gibbon" version of Ubuntu was officially released this week.&nbsp; While some of the developers at Teamprise use Ubuntu as their primary OS, I personally prefer Windows Vista, however I keep an Ubuntu image around so that I...]]></dc:description>
+<dc:creator>Martin Woodward</dc:creator>
+<dc:date>2007-10-19T15:29:43+00:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by/1.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by/1.0/">
+<requires rdf:resource="http://web.resource.org/cc/Attribution" />
+<requires rdf:resource="http://web.resource.org/cc/Notice" />
+<permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+<permits rdf:resource="http://web.resource.org/cc/Distribution" />
+<permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+
+
+
+    <link rel="prev bookmark" href="http://www.woodwardweb.com/programming/getting_ubuntu.html" title="Getting Ubuntu 7.10 working in Microsoft Virtual PC 2007" />
+    <link rel="next bookmark" href="http://www.woodwardweb.com/programming/getting_ubuntu.html" title="Getting Ubuntu 7.10 working in Microsoft Virtual PC 2007" />
+    
+    <title>Getting Ubuntu 7.10 working in Microsoft Virtual PC 2007 - Martin Woodward</title>
+    <!-- Google tracker -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-71966-1");
+pageTracker._trackPageview();
+</script>
+</head>
+<body id="mt-blog" class="mt-entry-archive layout-wt">
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <div id="header-name"><a href="http://www.woodwardweb.com/" accesskey="1">Martin Woodward</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+
+                            <div id="entry-794" class="entry-asset asset hentry">
+                                <div class="asset-header">
+                                    <h1 id="page-title" class="asset-name entry-title">Getting Ubuntu 7.10 working in Microsoft Virtual PC 2007</h1>
+                                    <div class="asset-meta">
+                                        <span class="byline">
+
+                                            By <span class="vcard author">Martin Woodward</span> on <abbr class="published" title="2007-10-19T15:29:43+00:00">October 19, 2007  3:29 PM</abbr>
+
+                                        </span>
+
+                                        <span class="separator">|</span> <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comments">21 Comments</a>
+
+
+                                    </div>
+                                </div>
+                                <div class="asset-content entry-content">
+
+                                    <div class="asset-body">
+                                        <p>The new "Gutsy Gibbon" version of <a href="http://www.ubuntu.com">Ubuntu</a> was officially <a href="http://www.ubuntu.com/news/ubuntu710">released</a> this week.&nbsp; While some of the developers at Teamprise use Ubuntu as their primary OS, I personally prefer Windows Vista, however I keep an Ubuntu image around so that I can quickly test any new UI code I write in an alternate OS.&nbsp; Getting Ubuntu to install in VMWare is pretty trivial - the standard installation seems to work just fine.&nbsp; However getting it to work in Microsoft Virtual PC is a little more complicated - the various tricks are located in various forum and bug posts around the web that I can never find when I need them so I am collating them here for my own use later - hopefully you may also find them useful.&nbsp; Please bear in mind that I know enough about Linux to be dangerous rather than useful, so this may not be the "best" way - however it is my way ;-)</p>
+                                    </div>
+
+
+                                    <div id="more" class="asset-more">
+                                        <p> <p>There are a few basic issues with getting Ubuntu 7.10 working inside Virtual PC.</p> <ol> <li>The default display color settings use a higher color depth than Virtual PC supports  <li>Ubuntu has a hard time recognizing the emulated Virtual PC mouse  <li>Networking does not work initially  <li>Time syncronization with the host can be a little off.  <li>Soundcard does not work initially  <li>The ubuntu splash screen "usplash" causes problems when shutting down/restarting.</li></ol> <p>Anyway, here we go.&nbsp; Obviously first things first, you need Virtual PC 2007 and Ubuntu 7.10 (x86 desktop).</p> <p></p> <h4>Installation:</h4> <ul> <li>In Virtual PC, create a new virtual machine by pressing "New..." in the console.&nbsp; I use the following settings:  <ul> <li>In the OS selection select "Other"  <li>Ram 512Mb  <li>New Disk of 8192 Mb</li></ul> <li>One created, go back into settings and Enable Hardware Virtualization if available (only available if you have a modern processor, and even then you probably had to enable this in your host machines BIOS first).&nbsp; This can make a serious difference if your hardware supports it, however having the flag enabled makes the image less portable as some machines cannot support this option so they have to switch it off before using the image for the first time.&nbsp; <li>Start the VM.&nbsp; Then go to Edit, Capture ISO Image... and select the downloaded Ubuntu install image.&nbsp; You may need to restart your Virtual PC to get it to boot from the mounted DVD  <li>When the ubuntu install menu comes up, move down to "Start Ubuntu in safe graphics mode" then press "F6" for more options.&nbsp; <li>In the boot options, add the text "i8042.noloop" without the quotes.&nbsp; This is a parameter we are passing to the kernel to get the emulated Virtual PC mouse to work correctly.&nbsp; You entire boot options line should look like this:<br><code>file=/cdrom/pressed/ubuntu.seed boot=casper xforcevesa initrd=/casper/initrd.gz quiet splash&nbsp; -- i8042.noloop</code>&nbsp; <li>Press enter to start the boot into the installation live cd.&nbsp; Sometime when I do this, when the UI comes into view and the mouse is captured but it is like the virtual PC is only showing the top left hand corner of the screen.&nbsp; Not sure why, but to fix it hit CTRL-ALT-F1 to go into a console and then CTRL-ALT-F7 to restart the window manager.&nbsp; You should be able to see the whole screen now.  <li>Install by double-clicking on the Install icon on the desktop.&nbsp; I use the guided partition manager to assign the whole virtual disk.  <li>Once the install has completed, unmount the DVD from Virtual PC by going to "CD" and Release "ubuntu-7.10-desktop-x386.iso" (remembering that in Virtual PC, the right ALT button releases your mouse from the guest machine).&nbsp; Then go to Action, Reset to restart the VPC.</li></ul> <h4>Initial Configuration:</h4> <p>When you boot for the first time, there are a few things that you need to do to get everything working properly.&nbsp; We need to get all the things (including the mouse etc) working again.&nbsp; These changes will then be stored on the virtual machine disk so you won't need to do them again for this image.</p> <ul> <li>Log in (remember the mouse isn't working yet), so press CTRL-ALT-F1 to drop into a console.  <li>Let's now get the mouse working again.&nbsp; type <code>sudo nano /boot/grub/menu.lst</code>.&nbsp; Page down to the bottom of the file and find the first kernel line after the phrase "<code> ## ## End Default Options ##</code>".  <li>Add <code>i8042.noloop clock=pit</code> to the kernel parameters.&nbsp; You'll recognize the <code>i8042.noloop</code> thing from before, the <code>clock=pit</code> is a fix for the time drift issues (<a href="http://support.microsoft.com/Default.aspx?kbid=918461">KB918461</a>)  <li>Now we want to ensure the modules are loaded for the Virtual PC soundcard and Network card.&nbsp; <code>type sudo nano /etc/modules</code>.&nbsp; At the end of the file add the lines <code><br>tulip<br>snd-sb16</code><br>Ensuring that each is on a line of it's own, followed by a carriage return.  <li>Then we want to remove the fancy Ubuntu splash screen that has some issues under Virtual PC.&nbsp; Type <code>sudo apt-get remove usplash -y</code>  <li>Restart by typing sudo reboot  <li>When you restart your soundcard will be working - you might want to get rid of the login/logout sounds...&nbsp; System, Preferences, Sound, Sounds, setting Log out and Log in to "None".  <li>As this is a virtual pc, depending on the usuage you may also want it to automatically log-in with the user account created on install.&nbsp; In which case go to System, Administration, Login Window, Security and check the "Automatic login" box - selecting your user.&nbsp; Also, because this is a virtual PC you may also want to disable the display power-management (System, Preferences, Power Management, Display) and disable the screen saver (System, Preferences, Screen Saver, uncheck Activate Screensaver when computer is idle).  <li>To get networking fully enabled, I've found that I have problems with the "Roaming Mode" introduced in 7.10.&nbsp; Therefore I go to System, Adminitstation, Network.&nbsp; Click on the Wired Network and select properties.&nbsp; Disable the "enable roaming mode" check box and then select DHCP configuration then press ok.&nbsp; Finally, check the checkbox next to the "Wired connection" box to make this the default connection used on startup.</li></ul> <h4>Configuring to run Teamprise</h4> <p>Now I have a booting Ubuntu instance, I usually want to configure it with Java, Eclipse and Teamprise.&nbsp; This part may be of interest to less folks, but I need to do it so I'll write down the steps but feel free to ignore.</p> <ul> <li>Installing Sun Java.&nbsp; Teamprise needs some encryption stuff to support NTLM authentication that is not available in the CGJ - therefore another JVM needs to be installed - in this case I'll use Sun's.&nbsp; Go to Applications, Add/Remove programs, change the drop down to "All available applications" and then in the search box type "Sun Java".&nbsp; In my case I'm going to pick Sun Java 6 Console then I press "Apply". <li>Next is Eclipse.&nbsp; Easy way is from Add/Remove programs, search for "Eclipse" and Apply - however that was Eclipse 3.2 at the time of writing.&nbsp; Nothing wrong with Eclipse 3.2 of course, I just like to be on the Early Adopter curve so I go to the Eclipse.org site and download the latest for linux. <li>Then finally, I install Teamprise.&nbsp; That part is easy for me (copy paste the update site URL into Eclipse and unzip Teamprise Explorer)</li></ul> <p>Hope that helps if you are going on a similar journey.</p></p>
+                                    </div>
+
+                                </div>
+<div class="shareblock">
+<script src="http://feeds.feedburner.com/~s/MartinWoodward?i=http://www.woodwardweb.com/programming/getting_ubuntu.html" type="text/javascript" charset="utf-8"></script>
+</div>
+                                <div class="asset-footer">
+
+    
+                                    <div class="entry-categories">
+                                        <h4>Categories<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="http://www.woodwardweb.com/programming/" rel="tag">Programming</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/teamprise/" rel="tag">Teamprise</a><span class="delimiter">,</span></li> <li class="entry-category"><a href="http://www.woodwardweb.com/technology/" rel="tag">Technology</a></li>
+                                        </ul>
+                                    </div>
+    
+
+
+                                    <div class="entry-tags">
+                                        <h4>Tags<span class="delimiter">:</span></h4>
+                                        <ul>
+                                            <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a><span class="delimiter">,</span></li> <li><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                    
+                    <div id="comments" class="comments">
+
+
+    
+    
+        
+    <h2 class="comments-header">21 Comments</h2>
+    <div class="comments-content">
+        
+        <div id="comment-1061" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Devon</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1061"><abbr class="published" title="2007-10-30T06:41:22+00:00">October 30, 2007  6:41 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1061, 'Devon')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Fantastic tips, I actually had to disable hardware virtualization before I could get anywhere, but that wasn't the first time that a *nix flavor rejected my BIOS.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1064" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.bassdriven.com" href="http://www.bassdriven.com" rel="nofollow">Enos</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1064"><abbr class="published" title="2007-11-16T17:47:35+00:00">November 16, 2007  5:47 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1064, 'Enos')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I just attempted virtualizing ubuntu7.10 with virtualPC and encountered exactly the same problems with the mouse and video resolution. Is there "better" virtualization software that would make this easie?</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1066" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Lane</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1066"><abbr class="published" title="2007-11-19T07:35:56+00:00">November 19, 2007  7:35 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1066, 'Lane')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thank you for your tips! I found myself lovin' it!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1067" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Rowan</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1067"><abbr class="published" title="2007-11-19T10:24:19+00:00">November 19, 2007 10:24 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1067, 'Rowan')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Your help is much appreciated, I can now here and touch.</p>
+
+<p>Cheers.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1069" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Martin</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1069"><abbr class="published" title="2007-11-19T15:16:17+00:00">November 19, 2007  3:16 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1069, 'Martin')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Enos,</p>
+
+<p>As mentioned, VMWare works with Ubuntu no problems.</p>
+
+<p>Martin.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1072" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.zoombody.com" href="http://www.zoombody.com" rel="nofollow">Dan</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1072"><abbr class="published" title="2007-11-23T20:26:48+00:00">November 23, 2007  8:26 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1072, 'Dan')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Great tips. When editing menu.lst, though, it is better practice to update the Automagic Kernels List portion of the file. Modify either the "default kernel options" or "additional options to use with the default boot option, but not with the alternatives" section. (Follow the comments in menu.lst.) After you've made the change, run update-grub to rebuild the boot choices. This method ensures that your custom options will be included when you install kernel updates.</p>
+
+<p>Also, instead of removing the usplash package, which breaks a dependency for the ubuntu-desktop metapackage, you can just disable it by removing the "splash" kernel option from menu.lst.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1079" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Greg</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1079"><abbr class="published" title="2007-11-30T19:10:34+00:00">November 30, 2007  7:10 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1079, 'Greg')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Wow, Martin!  Very detailed yet simple instructions!  Thanks you for taking the time to share with us linux noobs.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1084" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://gabriel.lozano-moran.name" href="http://gabriel.lozano-moran.name" rel="nofollow">Gabriel Lozano-Moran</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1084"><abbr class="published" title="2007-12-13T21:06:54+00:00">December 13, 2007  9:06 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1084, 'Gabriel Lozano-Moran')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>> Sometime when I do this,<br />
+> when the UI comes into view<br />
+> and the mouse is captured<br />
+> but it is like the virtual<br />
+> PC is only showing the top<br />
+> left hand corner of the screen</p>
+
+<p>I had the same problem. On the boot screen remove the "splash" from the options as well.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1085" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">J-J</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1085"><abbr class="published" title="2007-12-20T12:55:06+00:00">December 20, 2007 12:55 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1085, 'J-J')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Linux newbie here!<br />
+I tried and I guess I did exactly as adviced, but I can't get the mouse to work.</p>
+
+<p>It worked for a while between liveboot and installation.</p>
+
+<p>Maybe I do somethin wrong but I can't figure out what.</p>
+
+<p>Cheers,<br />
+J-J</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1086" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://www.truCubed.com" href="http://www.truCubed.com" rel="nofollow">Matt Jacoby</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1086"><abbr class="published" title="2007-12-24T06:09:46+00:00">December 24, 2007  6:09 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1086, 'Matt Jacoby')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks alot! You definitely saved me a lot of time fixing that mouse issue. </p>
+
+<p>Happy Holidays!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1090" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://codespin.blogspot.com" href="http://codespin.blogspot.com" rel="nofollow">Greg Ritter</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1090"><abbr class="published" title="2008-01-11T18:13:47+00:00">January 11, 2008  6:13 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1090, 'Greg Ritter')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks for the great article. I wrote a similar article at <a><a href="http://arcanecode.wordpress.com/2007/10/18/installing-ubuntu-710-under-virtual-pc-2007/" rel="nofollow">http://arcanecode.wordpress.com/2007/10/18/installing-ubuntu-710-under-virtual-pc-2007/</a></a><br />
+today that describes my experience with getting Ubuntu 7.10 running on Virtual PC 2007; I ran into a couple of additional issues not described here, so my steps are slightly different.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1105" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Mark</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1105"><abbr class="published" title="2008-01-31T01:05:44+00:00">January 31, 2008  1:05 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1105, 'Mark')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Great info, and thanks Dan for the very helpful comment too!</p>
+
+<p>Between this and the ArcaneCode blog entry, I got things working nicely...</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1107" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Sebastian N</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1107"><abbr class="published" title="2008-02-03T14:31:45+00:00">February  3, 2008  2:31 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1107, 'Sebastian N')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thank You so much! Really appreciate it.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1114" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">vipul </span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1114"><abbr class="published" title="2008-02-28T14:40:20+00:00">February 28, 2008  2:40 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1114, 'vipul ')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>thanks for ur help till now <br />
+but plz extend ur courtesy to help me install my wifi card and <br />
+use it for internet access</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1116" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author"><a title="http://bloh.xinki.org.uk" href="http://bloh.xinki.org.uk" rel="nofollow">Gary</a></span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1116"><abbr class="published" title="2008-03-02T08:12:56+00:00">March  2, 2008  8:12 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1116, 'Gary')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Still not got networkin working after following the steps. It worked on the Live CD though without any configuration :( - any help?</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1118" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">lpameifk3</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1118"><abbr class="published" title="2008-03-04T17:48:14+00:00">March  4, 2008  5:48 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1118, 'lpameifk3')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Very awesome tips.  The 'tulip' in the modules got my network working like a champ.</p>
+
+<p>I wonder why they force you to click "Wired" connection.  Shouldn't that be the default?</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1125" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">karl</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1125"><abbr class="published" title="2008-03-15T21:25:25+00:00">March 15, 2008  9:25 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1125, 'karl')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>For networking all I selected was manual and dhcp and everything connected fine through my host pc through a router and a cable modem.The remove Usplash has totally destroyed my linux installation gives this error and wont load.<br />
+Kernel Panic - not syncing: VFS unable to mount root fs on unknown wn-block(0,0) so thanks for that now I have to reinstall it.<br />
+</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1133" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Alex</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1133"><abbr class="published" title="2008-04-10T01:48:42+00:00">April 10, 2008  1:48 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1133, 'Alex')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Thanks a billion! I've tried a whack of different web guides on how to get Ubuntu working on VPC2007 -- yours actually works!</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1137" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Craig</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1137"><abbr class="published" title="2008-04-18T21:57:47+00:00">April 18, 2008  9:57 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1137, 'Craig')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I have tried the i8042.noloop command everywhere it just wont work, i have managed to install ubuntu already on the virtual hd, but the mouse will not work, what ever i try</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1138" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Craig</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1138"><abbr class="published" title="2008-04-18T21:58:06+00:00">April 18, 2008  9:58 PM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1138, 'Craig')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>I have tried the i8042.noloop command everywhere it just wont work, i have managed to install ubuntu already on the virtual hd, but the mouse will not work, what ever i try</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div id="comment-1263" class="comment">
+            <div class="inner">
+                <div class="comment-header">
+                    <div class="asset-meta">
+                        <span class="byline">
+                            
+        
+                            <span class="vcard author">Milind</span>
+        
+                            | <a href="http://www.woodwardweb.com/programming/getting_ubuntu.html#comment-1263"><abbr class="published" title="2008-12-19T05:41:21+00:00">December 19, 2008  5:41 AM</abbr></a>
+        
+                            | <a title="Reply" href="javascript:void(0);" onclick="mtReplyCommentOnClick(1263, 'Milind')">Reply</a>
+        
+                        </span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <p>Hey Martin <br />
+i have setup ubuntu 7.10 in virtual pc 2007 with win xp sp1 as host.<br />
+Can you tell me step by step instructions to access the ubuntu from my host using telnet? Because right now i cannot telnet to my virutal pc ubuntu ?</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+    
+
+
+    
+    
+    <div class="comments-open" id="comments-open">
+        <h2 class="comments-open-header">Leave a comment</h2>
+        <div class="comments-open-content">
+
+        
+            <div id="comment-greeting"></div>
+
+            <form method="post" action="http://www.woodwardweb.com/mt/mt-comments.cgi" name="comments_form" id="comments-form" onsubmit="return mtCommentOnSubmit(this)">
+                <input type="hidden" name="static" value="1" />
+                <input type="hidden" name="entry_id" value="794" />
+                <input type="hidden" name="__lang" value="en" />
+                <input type="hidden" name="parent_id" value="" id="comment-parent-id" />
+                <input type="hidden" name="armor" value="1" />
+                <input type="hidden" name="preview" value="" />
+                <input type="hidden" name="sid" value="" />
+                <div id="comments-open-data">
+                    <div id="comment-form-name">
+                        <label for="comment-author">Name</label>
+                        <input id="comment-author" name="author" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-email">
+                        <label for="comment-email">Email Address</label>
+                        <input id="comment-email" name="email" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-url">
+                        <label for="comment-url">URL</label>
+                        <input id="comment-url" name="url" size="30" value="" onfocus="mtCommentFormOnFocus()" />
+                    </div>
+                    <div id="comment-form-remember-me">
+                        <input type="checkbox" id="comment-bake-cookie" name="bakecookie" onclick="mtRememberMeOnClick(this)" value="1" accesskey="r" />
+                        <label for="comment-bake-cookie">Remember personal info?</label>
+                    </div>
+                </div>
+                <div id="comment-form-reply" style="display:none">
+                    <input type="checkbox" id="comment-reply" name="comment_reply" value="" onclick="mtSetCommentParentID()" />
+                    <label for="comment-reply" id="comment-reply-label"></label>
+                </div>
+                <div id="comments-open-text">
+                    <label for="comment-text">Comments
+                    (You may use HTML tags for style)</label>
+                    <textarea id="comment-text" name="text" rows="15" cols="50" onfocus="mtCommentFormOnFocus()"></textarea>
+                </div>
+                <div id="comments-open-captcha"></div>
+                <div id="comments-open-footer">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" value="Preview" onclick="this.form.preview.value='1';" />
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" value="Submit" />
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    <!--
+    mtAttachEvent("load", mtEntryOnLoad);
+    mtAttachEvent("unload", mtEntryOnUnload);
+    //-->
+    </script>
+    
+
+
+</div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-syndication widget">
+    <div class="widget-content">
+        <ul>
+            <li><img src="http://www.woodwardweb.com/mt/mt-static/images/status_icons/feed.gif" alt="Subscribe to feed" width="9" height="9" /> <a href="http://www.woodwardweb.com/index.xml">Subscribe to this blog's feed</a></li>
+        </ul>
+    </div>
+</div>
+<div class="widget-pages widget">
+    <div class="widget-content">
+        <ul>
+    
+            <li class="page page-836"><a href="http://www.woodwardweb.com/about.html">About</a></li>
+    
+            <li class="page page-837"><a href="http://www.woodwardweb.com/contact.html">Contact Me</a></li>
+    
+    
+        </ul>
+    </div>
+</div>
+
+<div class="widget-tag-cloud widget">
+    <h3 class="widget-header">Tag Cloud</h3>
+    <div class="widget-content">
+        <ul>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=books&amp;limit=20';return false;" rel="tag">books</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=buddies&amp;limit=20';return false;" rel="tag">buddies</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=dotnet&amp;limit=20';return false;" rel="tag">dotnet</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=gadgets&amp;limit=20';return false;" rel="tag">gadgets</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=java&amp;limit=20';return false;" rel="tag">java</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=personal&amp;limit=20';return false;" rel="tag">personal</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=podcasting&amp;limit=20';return false;" rel="tag">podcasting</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=programming&amp;limit=20';return false;" rel="tag">programming</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=software&amp;limit=20';return false;" rel="tag">software</a></li>
+    
+            <li class="rank-3"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=teamprise&amp;limit=20';return false;" rel="tag">teamprise</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=technology&amp;limit=20';return false;" rel="tag">technology</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs&amp;limit=20';return false;" rel="tag">tfs</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2005&amp;limit=20';return false;" rel="tag">tfs2005</a></li>
+    
+            <li class="rank-4"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2008&amp;limit=20';return false;" rel="tag">tfs2008</a></li>
+    
+            <li class="rank-6"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=tfs2010&amp;limit=20';return false;" rel="tag">tfs2010</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=toptip&amp;limit=20';return false;" rel="tag">toptip</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vista&amp;limit=20';return false;" rel="tag">vista</a></li>
+    
+            <li class="rank-1"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=vsts&amp;limit=20';return false;" rel="tag">vsts</a></li>
+    
+            <li class="rank-5"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=web&amp;limit=20';return false;" rel="tag">web</a></li>
+    
+            <li class="rank-7"><a href="javascript:void(0)" onclick="location.href='http://www.woodwardweb.com/mt/mt-search.cgi?blog_id=3&amp;tag=work&amp;limit=20';return false;" rel="tag">work</a></li>
+    
+        </ul>
+    </div>
+</div>
+<div class="widget-search widget">
+    <h3 class="widget-header">Search</h3>
+    <div class="widget-content">
+      <!-- Google CSE Search Box Begins -->
+      <form id="searchbox_005734105946009878802:nczju-nslyq" action="http://www.google.com/cse">
+        <input type="hidden" name="cx" value="005734105946009878802:nczju-nslyq" />
+        <input name="q" type="text" size=20" />
+        <!--input type="submit" name="sa" value="Go" / -->
+        <input type="hidden" name="cof" value="FORID:0" />
+      </form>
+      <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_005734105946009878802%3Anczju-nslyq"></script>
+      <!-- Google CSE Search Box Ends -->
+    </div>
+</div>
+
+<div class="widget-archive-monthly-dropdown widget-archive widget">
+   <h3 class="widget-header"><a href="http://www.woodwardweb.com/archives.html">Archives</a></h3>
+   <div class="widget-content">
+      <select onchange="nav(this)">
+         <option>Select a Month...</option>
+         
+         <option value="http://www.woodwardweb.com/2009/10/">October 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/09/">September 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/08/">August 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/07/">July 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/06/">June 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/05/">May 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/04/">April 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/03/">March 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/02/">February 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2009/01/">January 2009</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/12/">December 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/11/">November 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/10/">October 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/09/">September 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/08/">August 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/07/">July 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/06/">June 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/05/">May 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/04/">April 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/03/">March 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/02/">February 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2008/01/">January 2008</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/12/">December 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/11/">November 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/10/">October 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/09/">September 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/08/">August 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/07/">July 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/06/">June 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/05/">May 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/04/">April 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/03/">March 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/02/">February 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2007/01/">January 2007</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/12/">December 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/11/">November 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/10/">October 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/09/">September 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/08/">August 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/07/">July 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/06/">June 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/05/">May 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/04/">April 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/03/">March 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/02/">February 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2006/01/">January 2006</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/12/">December 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/11/">November 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/10/">October 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/09/">September 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/08/">August 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/07/">July 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/06/">June 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/05/">May 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/04/">April 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/03/">March 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/02/">February 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2005/01/">January 2005</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/12/">December 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/11/">November 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/10/">October 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/09/">September 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/08/">August 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/07/">July 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/06/">June 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/05/">May 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/04/">April 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/03/">March 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/02/">February 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2004/01/">January 2004</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/12/">December 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/11/">November 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/10/">October 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2003/09/">September 2003</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/12/">December 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/07/">July 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/05/">May 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/04/">April 2000</option>
+         
+    
+        
+         <option value="http://www.woodwardweb.com/2000/01/">January 2000</option>
+         
+      </select>
+   </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+/* <![CDATA[ */
+function nav(sel) {
+   if (sel.selectedIndex == -1) return;
+   var opt = sel.options[sel.selectedIndex];
+   if (opt && opt.value)
+      location.href = opt.value;
+}
+/* ]]> */
+</script>
+        
+    
+
+<div class="widget-recent-entries widget-archives widget">
+    <h3 class="widget-header">Recent Entries</h3>
+    <div class="widget-content">
+        <ul>
+        
+            <li><a href="http://www.woodwardweb.com/vsts/changeset_comme.html">Changeset comments are editable in TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_on_the_main.html">TFS on the Mainframe</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/speaking_at_the.html">Speaking at the Virtual Team System Users Group</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/podcasting/radio_tfs_on_te.html">Radio TFS on Team System 2010 First Impressions</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/hosted_tfs_for.html">Hosted TFS for BizSpark Companies</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/tfs_2010_api_by.html">TFS 2010 API By Example: Introduction</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/dotnet/codeplex_open_s.html">CodePlex Open Source Wiki Engine</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/ed_blankenship.html">Ed Blankenship on Using TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/case_study_igat.html">Case Study: iGate standardizing on TFS</a></li>
+        
+    
+        
+            <li><a href="http://www.woodwardweb.com/vsts/slotting_into_t.html">Slotting into TFS 2010</a></li>
+        
+        </ul>
+    </div>
+</div>
+        
+    
+
+<div class="widget-creative-commons widget">
+   <div class="widget-content">
+      <a href="http://creativecommons.org/licenses/by/1.0/"><img alt="Creative Commons License" src="http://creativecommons.org/images/public/somerights" /></a><br />
+      This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+   </div>
+</div>
+
+<div id="mvp-logo">
+  <a href="http://mvp.support.microsoft.com/profile=ED29B713-2B80-4717-A498-83B1FBDA14F5">
+    <img src="/css-image/mvplogo.gif" height="61" width="151" 
+     alt="Microsoft Most Valuable Professional for Visual Studio Team System"/>
+  </a>
+</div>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+    <div id="footer-inner">
+        <div id="footer-content">
+
+
+            <div class="widget-creative-commons widget">
+                <div class="widget-content">
+                    This blog is licensed under a <a href="http://creativecommons.org/licenses/by/1.0/">Creative Commons License</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <channel>
+    <title>Buck Hodges on No Keyword Expansion in TFS</title>
+    <link>http://www.woodwardweb.com/vsts/buck_hodges_on.html</link>
+    <description><![CDATA[As I've mentioned before - keyword expansion is a feature that many SCM tools have, but TFS does not.&nbsp; Buck Hodges has just published an excellent post on why this is the case and talks about some of the approaches...]]></description>
+    <dc:language>en-us</dc:language>
+    <dc:creator>Martin</dc:creator>
+    <dc:date>2007-07-09T10:44:04+00:00</dc:date>
+    <admin:generatorAgent rdf:resource="http://www.movabletype.org/?v=4.2-en" />
+    <admin:errorReportsTo rdf:resource="mailto:martin@teamprise.com"/>
+
+    
+  </channel>
+</rss>
